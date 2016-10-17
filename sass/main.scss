@@ -1,0 +1,152 @@
+	
+body{
+	font-family: robotoFont;
+	width: 100%;
+
+	.loadPage{
+		display: none;
+		background: gray;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		opacity: 0.5;
+		z-index: 98;
+	}
+	.loader-circle {
+		border: 16px solid #f3f3f3;
+		border-radius: 50%;
+		border-top: 16px solid blue;
+		border-right: 16px solid green;
+		border-bottom: 16px solid red;
+		width: 120px;
+		height: 120px;
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+		//center of page
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 99;
+	}
+
+	@-webkit-keyframes spin {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+}
+
+header{
+	text-align: center;
+
+	.up{
+		max-width: 1024px;   
+	    margin: 0 auto;
+	   	min-height: 100px;
+		text-align: center;
+				
+		h1{
+			display: inline-block;
+		}
+		
+		img{
+			cursor: pointer;
+		}
+	}
+	
+	.down{
+		button{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			width: 150px;
+		}
+	}
+}
+
+.content{
+	
+	max-width: 1024px;   
+    margin: 0 auto;
+	text-align: center;
+
+	p{
+		margin: 0;	
+	}
+	
+	ul{
+		list-style-type: none;
+		padding: 0;
+	}	
+	.notesList{
+		height: 562px;
+		overflow-y: scroll;
+		border-radius: 4px;
+	}
+	
+	.notesList > li{
+		background: #D6D6D6;
+	}
+	
+	.notesList ul{
+		list-style-type: none;
+	}
+	
+	.notesList > li:nth-child(odd){
+		background: #EDEDED;
+	}
+	
+	.notesList li ul li:nth-child(1){
+		text-align: left;
+		font-weight: bold;
+	}
+	
+	.notesList li ul li:nth-child(3){
+		margin-bottom: 10px;
+	}
+	
+	.notesList li ul li p{
+		font-weight: bold;
+		margin: 0;
+		font-size: 20px;
+	}
+	input[type=text]{
+		width:400px;
+		margin: 0 auto;
+	}
+	
+	.newNote ul{
+		list-style-type: none;
+		padding: 0;
+		background: #FCC7C7;
+		max-width: 50%;
+		margin: 0 auto;
+		border-radius: 4px;
+	}
+	
+	.detail li{
+		margin-bottom: 15px;
+	}
+	.detail li p{
+		font-weight: bold;
+		font-size: 18px;
+	}
+	
+}
+
+
+footer{
+	max-width: 1024px;   
+    margin: 0 auto;
+	text-align: right;
+	font-weight: bold;
+}
+

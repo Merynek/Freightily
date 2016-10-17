@@ -1,0 +1,24 @@
+<h1>Registorvat noveho vozidlo</h1>
+<form>
+   <div class="form-group">
+    <label for="type">Typ:</label>
+    <input type="text" class="form-control" id="type" placeholder="typ" ng-model="type" required="string" required/>
+  </div>
+  <div class="form-group">
+    <label for="brand">Značka:</label>
+    <input type="text" class="form-control" id="brand" placeholder="značka" ng-model="brand" required="string" required/>
+  </div>
+  <div class="form-group">
+    <label for="capacity">Kapacita:</label>
+    <input type="text" class="form-control" id="capacity" placeholder="kapacita" ng-model="capacity" required="string" required/>
+  </div>
+  <div class="form-group">
+    <label for="rz">RZ:</label>
+    <input type="text" class="form-control" id="rz" placeholder="rz" ng-model="rz" required="string" required/>
+  </div>
+  <div class="form-group">
+    <label for="size">Size:</label>
+    <input type="text" class="form-control" id="size" placeholder="size" ng-model="size" required="string" required/>
+  </div>
+  <input type="submit" class="btn btn-primary" ng-click="AddVehicle()" value="Registrace vozidla"/>
+</form>

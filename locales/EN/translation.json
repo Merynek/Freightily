@@ -1,0 +1,25 @@
+{
+	"texts": {
+		"footer": "Web is for testing, so SHUT THE FUCK UP",
+		"Username" : "Username",
+		"Password": "Password",
+		"Login": "Login",
+		"Logout": "Logout",
+		"Registration": "Registration",
+		"ConfirmPassword": "Confirm password",
+		"Email": "Email",
+		"Phone_number": "Phone number",
+		"Shipments": "Shipments",
+		"ShipmentDetail": "Detail of shipment",
+		"AddShipment": "Add shipment"
+	},
+	"errors": {
+		"wrong_login": "Login failed",
+		"wrong_registration": "Registration failed"
+	},
+	"success": {
+		"save_succeded": "Save was Succeded",
+		"add_note": "Note was added",
+		"delete": "Delete succeeded"	
+	}
+}

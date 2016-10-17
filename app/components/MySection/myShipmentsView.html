@@ -1,0 +1,12 @@
+
+<h3>Moje jízdy</h3>
+<table>
+    <tr>
+        <th>Číslo aukce</th>
+        <th>Detail</th>
+    </tr>
+    <tr ng-repeat="item in myshipments">
+        <td>{{item.id_auction}}</td>
+        <td><button ui-sref="auctionItem({id: item.id_auction})">DETAIL</button></td>
+    </tr>
+</table>

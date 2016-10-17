@@ -1,0 +1,25 @@
+{
+	"texts": {
+		"footer": "Web je pro testování tak nepičuj!",
+		"Username" : "Uživatelské jméno",
+		"Password": "Heslo",
+		"Login": "Přihlášení",
+		"Logout": "Odhlásit",
+		"Registration": "Registrace",
+		"ConfirmPassword": "Potvrďte heslo",
+		"Email": "Email",
+		"Phone_number": "Telefoní číslo",
+		"Shipments": "Zásilky",
+		"ShipmentDetail": "Podrobnosti o zásilce",
+		"AddShipment": "Přidat zásilku"
+	},
+	"errors": {
+		"wrong_login": "Přihlašování se nezdařilo",
+		"wrong_registration": "Registrace se nezdařila"
+	},
+	"success": {
+		"save_succeded": "Uložení bylo úspěšné",
+		"add_note": "Poznámka byla přidána",
+		"delete": "Smazání bylo úspěšné"	
+	}
+}

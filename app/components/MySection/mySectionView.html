@@ -1,0 +1,40 @@
+<h1>My section</h1>
+
+
+
+<input ng-if="isDispatcher" type="submit" class="btn btn-primary" ui-sref="myauction" value="My auction"/>
+<input ng-if="isSender" type="submit" class="btn btn-primary" ui-sref="createdauction" value="My created auction"/>
+
+<div ng-if="isDispatcher">
+    <input type="submit" class="btn btn-primary" ui-sref="newvehicle" value="Registration new vehicle"/>
+    <div ng-if="isTransporter">
+        <input type="submit" class="btn btn-primary" ui-sref="newuser" value="Registration new employee"/>
+        <h3>Company</h3>
+        <h2>Dispatchers</h2>
+        <ul>
+            <li ng-repeat="dispatcher in dispatchers">
+                {{dispatcher.username}} - {{dispatcher.name}} {{dispatcher.surname}} <br>
+                <input type="submit" class="btn btn-primary" ng-click="deleteUser(dispatcher.ID)" value="Delete"/>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Drivers</h2>
+        <ul>
+            <li ng-repeat="driver in drivers">
+                {{driver.username}} - {{driver.name}} {{driver.surname}} - {{driver.driver_licence}} <br>
+                <input type="submit" class="btn btn-primary" ng-click="deleteUser(driver.ID)" value="Delete"/>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h2>Vehicles</h2>
+        <ul>
+            <li ng-repeat="vehicle in vehicles">
+                {{vehicle.type}} - {{vehicle.brand}} Nosnost: {{vehicle.capacity}}, RZ: {{vehicle.RZ}}, Size: {{vehicle.size}} <br>
+                <input type="submit" class="btn btn-primary" ng-click="deleteVehicle(vehicle.ID)" value="Delete"/>
+            </li>
+        </ul>
+    </div>
+</div>

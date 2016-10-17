@@ -1,0 +1,52 @@
+
+<h1>Detail aukce</h1>
+<div ng-if="auctionItem">
+    <h2>O zásilce</h2>
+    <ul>
+        <li>Odkud: {{auctionItem.from}} </li>
+        <li>Kam: {{auctionItem.to}} </li>
+        <li>Load: {{auctionItem.load}} </li>
+        <li>Unload: {{auctionItem.unload}} </li>
+        <li>Currency: {{auctionItem.currency}} </li>
+        <li>Price: {{auctionItem.price}} </li>
+    </ul>
+    <h2>O nákladu</h2>
+    <ul>
+        <li>Popis: {{auctionItem.freight_description}} </li>
+        <li>Typ: {{auctionItem.freight_type}} </li>
+        <li>Velikost: {{auctionItem.freight_size}} </li>
+        <li>Váha: {{auctionItem.freight_weight}} </li>
+    </ul>
+    <h3>Aukce</h3>
+    <ul>
+        <li>End auction: {{auctionItem.end_auction}} </li>
+        <li>Min amount: {{auctionItem.min_amount}} </li>
+    </ul>
+    <div ng-if="auctionItem.nonExpired && isDispatcher">
+        <button ng-if="auctionItem.isFavourite"  ng-click="deleteFromFavourite()">Odebrat z oblíbených</button>
+        <button ng-if="!auctionItem.isFavourite"  ng-click="addToFavourite()">Přidat do oblíbených</button>
+    </div>
+    <h3>Historie</h3>
+    <ul>
+        <li ng-repeat="item in auctionHistory">User:{{item.user_img}} - Amount:{{item.amount}} - Date:{{item.date}}</li>
+    </ul>
+    <div ng-if="auctionItem.nonExpired && isDispatcher">
+        <h4>Vehicles:<h4> 
+            <select ng-model="vehicleSelect">
+                <option ng-repeat="vehicle in vehicles" value="{{vehicle.ID}}">
+                    {{vehicle.type}} - {{vehicle.brand}} Nosnost: {{vehicle.capacity}}, RZ: {{vehicle.RZ}}, Size: {{vehicle.size}}
+                </option>
+            </select>
+        <br>
+        <label for="add_amount">Add amount:</label>
+        <input type="text" class="form-control" id="add_amount" placeholder="Add amount" ng-model="add_amount" required="string" required/>
+        <button ng-click="bidAuction(add_amount, vehicleSelect)">Make a deal</button>
+        <div id="CountDown" elem-ready="setTime()"></div>
+    </div>
+</div>
+
+
+
+
+
+

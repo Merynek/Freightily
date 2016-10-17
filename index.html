@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8"/>
+		<title>Freightily</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- scripts from NPM -->
+		<script src="/node_modules/jquery/dist/jquery.js"></script>
+		<script src="/node_modules/jquery-simple-timer/jquery.simple.timer.js"></script>
+		<script src="/node_modules/jquery-countdown/dist/jquery.countdown.min.js"></script>
+		<script src="/node_modules/moment/min/moment.min.js"></script>
+		<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="/node_modules/angular/angular.js"></script>
+		<script src="/node_modules/lodash/lodash.js"></script>
+		<script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="/node_modules/restangular/src/restangular.js"></script>
+		<script src="/node_modules/angular-ui-notification/dist/angular-ui-notification.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="/js/i18next-1.10.1.min.js"></script>
+		<script src="/js/ng-i18next.js"></script>
+		
+		<script type="text/javascript" src="/js/loader.js"></script>
+		<script type="text/javascript" src="/js/dateTime.js"></script>
+		<script type="text/javascript" src="/js/map.js"></script>
+		
+		<!-- Main File -->
+		
+		<script src="/app/app.js"></script>	
+		
+		<!-- Services -->
+		
+		<script src="/app/shared/dataProviderService.js"></script>
+		<script src="/app/shared/ShipmentsService.js"></script>
+		<script src="/app/shared/AuctionService.js"></script>
+		<script src="/app/shared/UserService.js"></script>
+		<script src="/app/shared/UserAbilityService.js"></script>
+		
+		<!-- Controllers -->
+		
+		<script src="/app/shared/mainController.js"></script>
+		<script src="/app/components/Account/Login/loginController.js"></script>
+		<script src="/app/components/Account/Registration/registrationController.js"></script>
+		<script src="/app/components/Account/Registration/addUserController.js"></script>
+		<script src="/app/components/Account/Registration/addVehicleController.js"></script>
+		<script src="/app/components/Home/homeController.js"></script>
+		<script src="/app/components/Shipments/List/shipmentsController.js"></script>
+		<script src="/app/components/Shipments/Detail/shipmentDetailController.js"></script>
+		<script src="/app/components/Auction/Add/auctionAddController.js"></script>
+		<script src="/app/components/Auction/Detail/auctionDetailController.js"></script>
+		<script src="/app/components/Auction/List/auctionListController.js"></script>
+		<script src="/app/components/Auction/MyAuction/myAuctionController.js"></script>
+		<script src="/app/components/Auction/MyCreatedAuction/myCreatedAuctionController.js"></script>
+		<script src="/app/components/MySection/mySectionController.js"></script>
+		<script src="/app/components/MySection/myShipmentsController.js"></script>
+		<script src="/app/components/MySection/sendersWinController.js"></script>
+	
+		<!-- Route File -->
+		<script src="/app/routes.js"></script>
+
+		<!-- Google Maps JavaScript API -->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyDv7qv63UymYWbSAL1m8ZRgYOj9yyrifxE"></script>
+		<!-- vsGoogleAutocomplete -->
+		<script src="/node_modules/vsGoogleAutocomplete/dist/vs-google-autocomplete.js"></script>
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="/node_modules/angular-ui-notification/dist/angular-ui-notification.css" />
+		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />	
+		<link rel="stylesheet" href="/css/main.css" />	
+
+
+		<base href="http://localhost:9000/" />
+	</head>
+	
+	
+	<body ng-app="myApp" ng-controller="MainController">
+		<div class="loadPage">
+			<div class="loader-circle"></div>		
+		</div>
+		<header>
+			<h1>Freightily</h1>
+			
+			<div class="languages">
+				<img src="images/en.png" ng-click="ENlng()"/>
+				<img src="images/cz.png" ng-click="CZlng()"/>	
+			</div>
+			<input type="submit" class="btn btn-primary" onclick="window.history.back();" value="Zpet"/>
+			<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>
+			<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>
+			<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>
+			<br><br>
+			<div class="user" style="width:300px; background: orange; text-align: left; margin: 0 auto;">
+				<ul>
+					<li>USER: {{usernameMain}}</li>
+					<li>ROLE: {{roleNameMain}}</li>
+				</ul>
+			</div>
+			
+		</header>
+		<div class="content" ui-view></div>
+		<footer>
+			<span>{{'texts.footer' | i18next}} :-)</span>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<h1>Home Page</h1>
+<!--<input type="submit" class="btn btn-primary" ui-sref="shipments" value="{{'texts.Shipments' | i18next}}"/>
+<input type="submit" class="btn btn-primary" ui-sref="AddShipment" value="{{'texts.AddShipment' | i18next}}"/>-->
+
+<input type="submit" class="btn btn-primary" ui-sref="auction" value="Auction"/>
+
+<input ng-if="isSender" type="submit" class="btn btn-primary" ui-sref="addauction" value="Add auction"/>
+<input ng-if="isDispatcher" type="submit" class="btn btn-primary" ui-sref="myauction" value="My auction"/>
+<input ng-if="isSender" type="submit" class="btn btn-primary" ui-sref="createdauction" value="My created auction"/>
+
+
+
+<div ng-if="isDispatcher">
+    <input type="submit" class="btn btn-primary" ui-sref="mysection" value="My section"/>
+</div>
+
+<div ng-if="isDriver">
+    <input type="submit" class="btn btn-primary" ui-sref="mydrivershipments" value="My shipments"/>
+    
+</div>
+
+<div ng-if="isSender">
+    <input type="submit" class="btn btn-primary" ui-sref="senderswin" value="My created win"/>
+</div>
