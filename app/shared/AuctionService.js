@@ -50,7 +50,8 @@ angular.module('appServices')
 					})
 			});
 		};
-        /* GET to REST api => Get auction item */ 
+
+        /* GET to REST api => Get auction history */
 		Auction.getAuctionHistory = function(id){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -87,7 +88,7 @@ angular.module('appServices')
 			});
 		};
 
-		/* POST to REST api => auction comeUp */ 
+		/* POST to REST api => bid auction */
 		Auction.bidAuction = function(data){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -124,7 +125,7 @@ angular.module('appServices')
 			});
 		};
 
-        /* POST to REST api => Add auction to favourite */ 
+        /* POST to REST api => Delete auction item from favourite */
 		Auction.deleteFromFavourite = function(id){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -141,7 +142,6 @@ angular.module('appServices')
 				})
 			});
 		};
-
 
         /* GET to REST api => Get all my win auction */ 
 		Auction.getMyWinAuction = function(){
@@ -179,7 +179,7 @@ angular.module('appServices')
 			});
 		};
 
-        /* GET to REST api => Get all my amounted auction */ 
+        /* GET to REST api => Get my bid auction */
 		Auction.getMyBidsAuction = function(){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -197,7 +197,7 @@ angular.module('appServices')
 			});
 		};
 
-        /* GET to REST api => Get all my created auction */ 
+        /* GET to REST api => Get my created auction */
 		Auction.getCreatedAuction = function(){
 			startLoading();
 			return $q(function(resolve, reject){

@@ -33,7 +33,7 @@ angular.module('appServices')
 			});
 		};
 
-		/* GET to REST api => Get shipments */ 
+		/* GET to REST api => Get shipment */
 		Shipments.getShipment = function(id){
 			startLoading();
 			return $q(function(resolve, reject){

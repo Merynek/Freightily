@@ -17,7 +17,7 @@ angular.module('appControllers')
           }
       }
 
-
+    var s = "asdas";
 
      $scope.distance = "";
      $scope.addAuction = function(){

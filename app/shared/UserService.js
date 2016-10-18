@@ -1,9 +1,5 @@
 /**
  * User Service contains user informatios
- *
- * @class UserService
- * @module Service
- * @constructor
  */
 
 angular.module('appServices')
@@ -20,6 +16,7 @@ angular.module('appServices')
 			role: "",
 			roleName : ""
 		};
+
 		//role:  1-sender  2-transporter 3-dispatcher 3-driver
 		User.set = function (prop, value) {
 			User[prop] = value;
@@ -50,6 +47,7 @@ angular.module('appServices')
 		User.isDriver = function(){
 			return User.role == 4;
 		}
+
 		/* POST to REST api => Login */ 
 		User.login = function(username, password){
 			startLoading();

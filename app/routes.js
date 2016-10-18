@@ -130,16 +130,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-		.state('addauction', {
-			url: "/add/auction",
+		.state('addAuction', {
+			url: "/auction/add",
 			controller: 'addAuctionController',
 			templateUrl: "app/components/Auction/Add/auctionAddView.html",
 			data: {
 				minRole: 1
 			}
 		})
-		.state('myauction', {
-			url: "/my/auction",
+		.state('myAuction', {
+			url: "/auction/my",
 			controller: 'myAuctionController',
 			templateUrl: "app/components/Auction/MyAuction/myAuctionView.html",
 			data: {
@@ -190,8 +190,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-		.state('senderswin', {
-			url: "/my/senderswin",
+		.state('winAuction', {
+			url: "/auction/win",
 			controller: 'sendersWinController',
 			templateUrl: "app/components/MySection/sendersWinView.html",
 			data: {
@@ -256,7 +256,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
       		}
 		})
 		.state('createdauction', {
-			url: "/my/createdauction",
+			url: "/auction/created",
 			controller: 'myCreatedAuctionController',
 			templateUrl: "app/components/Auction/MyCreatedAuction/myCreatedAuctionView.html",
 			data: {

@@ -15,7 +15,7 @@ angular.module('appServices')
 
 		var UserAbility = {};
 
-		/* GET to REST api => Get all auction */ 
+		/* GET to REST api => Get my drivers */
 		UserAbility.getDrivers = function(){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -33,14 +33,10 @@ angular.module('appServices')
 			});
 		};
 
-		/* GET to REST api => Get auction item */ 
+		/* GET to REST api => Get my vehicles */
 		UserAbility.getVehicles = function(){
 			startLoading();
 			return $q(function(resolve, reject){
-                if(User.isSender() || User.isDriver()){
-                    reject();
-                    return;
-                }   
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
@@ -55,7 +51,7 @@ angular.module('appServices')
 			});
 		};
 
-        /* GET to REST api => Get dispatchers */ 
+        /* GET to REST api => Get my dispatchers */
 		UserAbility.getDispatchers = function(){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -73,7 +69,7 @@ angular.module('appServices')
 			});
 		};
 
-        /* GET to REST api => Get assigments */ 
+        /* GET to REST api => Get assigments in my company */
 		UserAbility.getAssigments = function(){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -109,9 +105,7 @@ angular.module('appServices')
 			});
 		};
 
-        
-
-        /* POST to REST api => assigment driver to auction */ 
+        /* POST to REST api => assignment driver to auction */
 		UserAbility.assigment = function(data){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -167,8 +161,6 @@ angular.module('appServices')
 					})
 			});
 		};
-
-
 
 		return UserAbility;
 
