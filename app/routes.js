@@ -12,14 +12,14 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 	};  
 
 	$urlRouterProvider.otherwise("/404");
- 
+
  $stateProvider
  		.state('home', {
 			url: "/",
 			controller: 'homeController',
 			templateUrl: "app/components/home/HomeView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			}
 		})
 		.state('login', {
@@ -37,7 +37,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'addUserController',
 			templateUrl: "app/components/Account/Registration/addUserView.html",
 			data: {
-				minRole: 1
+				role: [2,3]
 			},
 		})
 		.state('newvehicle', {
@@ -45,7 +45,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'addVehicleController',
 			templateUrl: "app/components/Account/Registration/addVehicleView.html",
 			data: {
-				minRole: 1
+				role: [2,3]
 			},
 		})
 		.state('shipments', {
@@ -53,7 +53,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'shipmentsController',
 			templateUrl: "app/components/Shipments/List/shipmentsView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			},
 			resolve: {
 				shipments: function(Shipments){
@@ -70,7 +70,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'shipmentDetailController',
 			templateUrl: "app/components/Shipments/Detail/shipmentDetailView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			},
 			resolve: {
 				shipment: function(Shipments, $stateParams){
@@ -87,7 +87,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			},
 			resolve: {
 				AuctionList: function(Auction){
@@ -104,7 +104,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'auctionDetailController',
 			templateUrl: "app/components/Auction/Detail/auctionDetailView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			},
 			resolve: {
 				auctionItem: function(Auction, $stateParams){
@@ -135,7 +135,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'addAuctionController',
 			templateUrl: "app/components/Auction/Add/auctionAddView.html",
 			data: {
-				minRole: 1
+				role: [1]
 			}
 		})
 		.state('myAuction', {
@@ -143,7 +143,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'myAuctionController',
 			templateUrl: "app/components/Auction/MyAuction/myAuctionView.html",
 			data: {
-				minRole: 1
+				role: [2,3]
 			},
 			resolve: {
 				WinAuction: function(Auction){
@@ -195,7 +195,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'sendersWinController',
 			templateUrl: "app/components/MySection/sendersWinView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3]
 			},
 			resolve: {
 				WinAuction: function(Auction){
@@ -212,7 +212,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'mySectionController',
 			templateUrl: "app/components/MySection/mySectionView.html",
 			data: {
-				minRole: 1
+				role: [1,2,3,4]
 			},
 			resolve: {
 				drivers: function(UserAbility){
@@ -243,7 +243,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'myShipmentsController',
 			templateUrl: "app/components/MySection/myShipmentsView.html",
 			data: {
-				minRole: 1
+				role: [4]
 			},
 			resolve: {
 				myshipments: function(UserAbility){
@@ -260,7 +260,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'myCreatedAuctionController',
 			templateUrl: "app/components/Auction/MyCreatedAuction/myCreatedAuctionView.html",
 			data: {
-				minRole: 1
+				role: [1]
 			},
 			resolve: {
 				createdAuction: function(Auction){

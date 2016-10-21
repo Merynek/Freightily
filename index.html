@@ -25,17 +25,17 @@
 		<script type="text/javascript" src="/js/loader.js"></script>
 		<script type="text/javascript" src="/js/dateTime.js"></script>
 		<script type="text/javascript" src="/js/map.js"></script>
-		
+
 		<!-- Main File -->
-		<script src="/app/app.js"></script>	
-		
+		<script src="/app/app.js"></script>
+
 		<!-- Services -->
 		<script src="/app/shared/dataProviderService.js"></script>
 		<script src="/app/shared/ShipmentsService.js"></script>
 		<script src="/app/shared/AuctionService.js"></script>
 		<script src="/app/shared/UserService.js"></script>
 		<script src="/app/shared/UserAbilityService.js"></script>
-		
+
 		<!-- Controllers -->
 		<script src="/app/shared/mainController.js"></script>
 		<script src="/app/components/Account/Login/loginController.js"></script>
@@ -53,7 +53,7 @@
 		<script src="/app/components/MySection/mySectionController.js"></script>
 		<script src="/app/components/MySection/myShipmentsController.js"></script>
 		<script src="/app/components/MySection/sendersWinController.js"></script>
-	
+
 		<!-- Route File -->
 		<script src="/app/routes.js"></script>
 
@@ -64,9 +64,12 @@
 
 		<!-- Styles -->
 		<link rel="stylesheet" href="/node_modules/angular-ui-notification/dist/angular-ui-notification.css" />
-		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />	
-		<link rel="stylesheet" href="/css/main.css" />	
-
+		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+		<!-- My Styles -->
+		<link rel="stylesheet" href="css/loader.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/content.css" />
 
 		<base href="http://localhost:9000/" />
 	</head>
@@ -77,28 +80,71 @@
 			<div class="loader-circle"></div>		
 		</div>
 		<header>
-			<h1>Freightily</h1>
-			
-			<div class="languages">
-				<img src="images/en.png" ng-click="ENlng()"/>
-				<img src="images/cz.png" ng-click="CZlng()"/>	
+			<div class="header-top">
+				<h1>Freightily Logo</h1>
+				<div class="languages">
+					<ul>
+						<li><span ng-click="CZlng()"/>cz</span></li>
+						<li><span ng-click="ENlng()">en</span></li>
+						<li><span>de</span></li>
+					</ul>
+
+
+				</div>
+				<div class="header-menu">
+					MENUuu
+				</div>
 			</div>
-			<input type="submit" class="btn btn-primary" onclick="window.history.back();" value="Zpet"/>
-			<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>
-			<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>
-			<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>
-			<br><br>
-			<div class="user" style="width:300px; background: orange; text-align: left; margin: 0 auto;">
-				<ul>
-					<li>USER: {{usernameMain}}</li>
-					<li>ROLE: {{roleNameMain}}</li>
-				</ul>
+			<div class="header-bottom">
+				<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>
+				<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>
+				<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>
+				<br><br>
+				<div class="user" style="width:300px; background: orange; text-align: left; margin: 0 auto;">
+					<ul>
+						<li>USER: {{usernameMain}}</li>
+						<li>ROLE: {{roleNameMain}}</li>
+					</ul>
+				</div>
 			</div>
-			
 		</header>
 		<div class="content" ui-view></div>
 		<footer>
-			<span>{{'texts.footer' | i18next}} :-)</span>
+			<div class="footer-top">
+				<div class="company-contact">
+					<ul>
+						<li>00 420 645 854 215</li>
+						<li>info@freightily.com</li>
+						<li>F, You, IN</li>
+					</ul>
+				</div>
+				<div class="company-about">
+					<ul>
+						<li>Pro média</li>
+						<li>Kariéra</li>
+						<li>Kontakty</li>
+						<li>Přehled služeb</li>
+						<li>FAQ</li>
+						<li>Poradna</li>
+						<li>Obchodní podmínky</li>
+						<li>Možnosti platby</li>
+					</ul>
+				</div>
+				<div class="payment-gateway">
+					PAY PAL, VISA
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="copyright">
+					C 2016 FREIGHTILY s.r.o.
+				</div>
+				<div class="footer-logo">
+					FR
+				</div>
+				<div class="studio">
+					<span>Vytvořilo grafické studio BOXART <- pičovina -> to já Merynátor.</span>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>

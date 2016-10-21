@@ -34,24 +34,22 @@
                                 return;
                             }
 
-                            if(!User.isLoggedIn && toState.data && toState.data.minRole){
+                            if(!User.isLoggedIn && toState.data && toState.data.role){
                                 event.preventDefault();
                                 LoginHandler(function(loginFailed){
                                     if(loginFailed){
                                         $state.go('login');
                                     }  
                                     else{
-                                        if(User.role >= toState.data.minRole){
-                                            //práva sedí
+                                        for (var i = 0; i < toState.data.role.length; i++) {
+                                            if(User.role == toState.data.role[i]){
+                                                $state.transitionTo(toState, toParams, {
+                                                    reload: true,
+                                                    inherit: false,
+                                                    notify: true
+                                                });
+                                            }
                                         }
-                                        else{
-                                            //nemá práva
-                                        }
-                                        $state.transitionTo(toState, toParams, {
-                                            reload: true,
-                                            inherit: false,
-                                            notify: true
-                                        });    
                                     }
                                    
                                 });

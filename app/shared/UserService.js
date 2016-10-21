@@ -7,7 +7,7 @@ angular.module('appServices')
 		'use strict';
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/";
+		var url = "http://freightily.com/api/";
 
 		var User = {
 			isLoggedIn: false,
@@ -17,7 +17,7 @@ angular.module('appServices')
 			roleName : ""
 		};
 
-		//role:  1-sender  2-transporter 3-dispatcher 3-driver
+		//role:  1-sender  2-transporter 3-dispatcher 4-driver
 		User.set = function (prop, value) {
 			User[prop] = value;
 		};

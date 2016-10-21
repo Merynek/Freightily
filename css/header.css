@@ -1,0 +1,23 @@
+body{
+    color: #2c2d51;
+}
+
+.languages ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.languages ul li{
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.languages ul li:nth-child(n+2){
+    border-left: 1px solid #2c2d51;
+}
+
+.languages ul li:hover span{
+    color: #e91d27;
+}

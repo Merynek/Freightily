@@ -17,6 +17,10 @@
 		"wrong_login": "Přihlašování se nezdařilo",
 		"wrong_registration": "Registrace se nezdařila"
 	},
+	"warnings": {
+		"wrong_login": "Přihlašování se nezdařilo",
+		"wrong_registration": "Registrace se nezdařila"
+	},
 	"success": {
 		"save_succeded": "Uložení bylo úspěšné",
 		"add_note": "Poznámka byla přidána",
