@@ -4,6 +4,7 @@ footer{
 
 .footer-top{
     padding-top: 40px;
+    padding-bottom: 40px;
     padding-left: 80px;
     padding-right: 80px;
     background: #e6e6f1;
@@ -36,6 +37,18 @@ footer{
 .company-contact ul{
     list-style-type: none;
     padding: 0;
+}
+
+.company-contact ul li{
+    margin-bottom: 16px;
+}
+
+.company-contact ul li:nth-child(-n+2) span:nth-child(1){
+    margin-right: 14px;
+}
+
+.social-icons span{
+    margin-right: 26px;
 }
 
 .company-about ul{

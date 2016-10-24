@@ -81,20 +81,43 @@
 		</div>
 		<header>
 			<div class="header-top">
-				<div class="header-logo">Freightily Logo</div>
-				<div class="languages">
-					<ul>
-						<li><span ng-click="CZlng()"/>cz</span></li>
-						<li><span ng-click="ENlng()">en</span></li>
-						<li><span>de</span></li>
-					</ul>
-				</div>
-				<div class="header-menu">
-					<div class="header-button">About</div>
-					<div class="header-button">Hover</div>
-					<div class="header-button">Dropdown</div>
-					<div class="header-button-important">Contact</div>
-				</div>
+				<nav class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="navbar-brand">
+							<div class="header-logo">Freightily Logo</div>
+						</div>
+						<div class="languages">
+							<ul>
+								<li><span ng-click="CZlng()"/>cz</span></li>
+								<li><span ng-click="ENlng()">en</span></li>
+								<li><span>de</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#" class="header-button">About</a></li>
+							<li><a href="#" class="header-button">Hover</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="header-button-important">Contact</a></li>
+						</ul>
+					</div>
+				</nav>
 			</div>
 			<div class="header-bottom">
 				<div class="header-left">
@@ -118,15 +141,19 @@
 			<div class="footer-top">
 				<div class="footer-content">
 					<div class="company-contact">
+						<h3>Freightily</h3>
 						<ul>
-							<li><a class="btn btn-social-icon btn-twitter">
-								<span class="fa fa-twitter"></span>
-							</a><span class="fa fa-google"></span><span>00 420 645 854 215</span></li>
+							<li><span class="glyphicon glyphicon-earphone"></span><span>00 420 645 854 215</span></li>
 							<li><span class="glyphicon glyphicon-envelope"></span><span>info@freightily.com</span></li>
-							<li>F, You, IN</li>
+							<li class="social-icons">
+								<span class="fa fa-facebook"></span>
+								<span class="fa fa-youtube"></span>
+								<span class="fa fa-linkedin"></span>
+							</li>
 						</ul>
 					</div>
 					<div class="company-about">
+						<h3>O společnosti</h3>
 						<ul>
 							<li><span class="glyphicon glyphicon-menu-right"></span><span>Pro média</span></li>
 							<li><span class="glyphicon glyphicon-menu-right"></span><span>Kariéra</span></li>

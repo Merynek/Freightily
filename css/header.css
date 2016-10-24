@@ -17,6 +17,11 @@ body{
     font-family: MyFont;
 }
 
+h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+
 header{
     padding-top: 29px;
 }
@@ -25,7 +30,21 @@ header{
     min-height: 80px;
     padding-left: 80px;
     padding-right: 80px;
-    overflow: hidden;
+}
+
+.navbar-default{
+    background: none;
+    border: none;
+}
+
+
+.navbar-collapse{
+    padding: 0;
+}
+
+.navbar-brand{
+    padding: 0;
+    width: 120px;
 }
 
 .header-bottom{
@@ -39,10 +58,12 @@ header{
 
 .header-logo{
     float: left;
+     padding-top: 12px;
 }
 
 .languages{
     float: left;
+    padding-top: 12px;
 }
 
 .languages ul{
@@ -68,15 +89,36 @@ header{
 
 .header-menu{
     display: inline-block;
-    float: right;
 }
 
 .header-button{
     width: 94px;
-    float: left;
     text-align: center;
-    padding: 12px 12px 29px 12px;
     cursor: pointer;
+}
+
+.dropdown-toggle{
+    width: 94px;
+}
+
+.nav > li > a{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-nav > li > a{
+    padding-bottom: 29px;
+}
+
+.navbar-nav > li:nth-child(n+3) > a{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+    background: none;
+    color: #2c2d51; 
+    border: 1px solid #e6e6f1;
 }
 
 .header-button:hover{
@@ -84,11 +126,18 @@ header{
     border-bottom: 1px solid #e91d27;
 }
 
+.navbar-default .navbar-nav > li > a{
+    color: #2c2d51;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+    font-weight: bold;
+    color: #2c2d51;
+}
+
 .header-button-important{
     width: 94px;
-    float: left;
-    margin-left: 12px;
-    padding: 12px 22px 12px 22px;
+    margin-left: 8px;
     text-align: center;
     cursor: pointer;
     border: 1px solid #e6e6f1;
@@ -138,5 +187,55 @@ header{
 .header-right .logout{
     color: #e91d27;
 }
+
+
+/**/
+@media (max-width: 767px) {
+    .header-top{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .header-bottom{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .navbar-toggle{
+        margin-right: 0;
+    }
+    .header-button{
+        width: 100%;
+        height: 50px;
+    }
+    .dropdown-toggle{
+        text-align: center;
+        width: 100%;
+        height: 50px;
+    }
+    .header-button-important{
+        margin-left: 0;
+        text-align: center;
+        width:100%;
+        height: 50px;
+    }
+    .navbar-nav{
+        margin: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .languages{
+        width: 100%;
+        padding-top: 0;
+        text-align: center
+    }
+    .languages ul{
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        padding-bottom: 12px;
+    }
+}
+
+
 
 
