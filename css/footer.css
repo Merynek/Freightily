@@ -1,0 +1,70 @@
+footer{
+
+}
+
+.footer-top{
+    padding-top: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    background: #e6e6f1;
+    overflow: hidden;
+}
+
+.footer-bottom{
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 30px;
+    background: #12133d;
+    overflow: hidden;
+    min-height: 80px;
+    color: white;
+}
+
+.footer-content{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.company-contact{
+    float: left;
+}
+
+.company-about{
+    float: right;
+}
+
+.company-contact ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.company-about ul{
+    float: left;
+    padding: 0;
+    list-style-type: none;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.company-about ul li span:nth-child(1){
+    color: #e91d27;
+    font-weight: lighter;
+    padding-right: 8px;
+}
+
+.company-about .payment-gateway{
+    float: left;
+}
+
+.copyright{
+    float: left;
+    display: inline-block;
+}
+
+.studio{
+    float: right;
+}

@@ -13,6 +13,7 @@
     "angular-ui-notification": "~0.1.0",
     "angular-ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
+    "bootstrap-social": "^5.0.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.42",
     "gulp": "~3.9.1",
     "gulp-connect": "~3.2.1",

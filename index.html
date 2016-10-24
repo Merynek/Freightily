@@ -23,14 +23,12 @@
 
 		<!-- My Scripts -->
 		<script type="text/javascript" src="/js/loader.js"></script>
-		<script type="text/javascript" src="/js/dateTime.js"></script>
 		<script type="text/javascript" src="/js/map.js"></script>
 
 		<!-- Main File -->
 		<script src="/app/app.js"></script>
 
 		<!-- Services -->
-		<script src="/app/shared/dataProviderService.js"></script>
 		<script src="/app/shared/ShipmentsService.js"></script>
 		<script src="/app/shared/AuctionService.js"></script>
 		<script src="/app/shared/UserService.js"></script>
@@ -64,7 +62,9 @@
 
 		<!-- Styles -->
 		<link rel="stylesheet" href="/node_modules/angular-ui-notification/dist/angular-ui-notification.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="/node_modules/bootstrap-social/bootstrap-social.css" />
 		<!-- My Styles -->
 		<link rel="stylesheet" href="css/loader.css" />
 		<link rel="stylesheet" href="css/header.css" />
@@ -81,65 +81,71 @@
 		</div>
 		<header>
 			<div class="header-top">
-				<h1>Freightily Logo</h1>
+				<div class="header-logo">Freightily Logo</div>
 				<div class="languages">
 					<ul>
 						<li><span ng-click="CZlng()"/>cz</span></li>
 						<li><span ng-click="ENlng()">en</span></li>
 						<li><span>de</span></li>
 					</ul>
-
-
 				</div>
 				<div class="header-menu">
-					MENUuu
+					<div class="header-button">About</div>
+					<div class="header-button">Hover</div>
+					<div class="header-button">Dropdown</div>
+					<div class="header-button-important">Contact</div>
 				</div>
 			</div>
 			<div class="header-bottom">
-				<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>
-				<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>
-				<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>
-				<br><br>
-				<div class="user" style="width:300px; background: orange; text-align: left; margin: 0 auto;">
+				<div class="header-left">
 					<ul>
-						<li>USER: {{usernameMain}}</li>
-						<li>ROLE: {{roleNameMain}}</li>
+						<li><span>Hlavní stránka</span></li>
+						<li><span>About company</span></li>
+						<li><span>Detail</span></li>
 					</ul>
 				</div>
+				<div class="header-right">
+					<div class="user">User name(role)</div>
+					<div class="logout">Odhlásit se</div>
+				</div>
+				<!--<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>-->
+				<!--<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>-->
+				<!--<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>-->
 			</div>
 		</header>
 		<div class="content" ui-view></div>
 		<footer>
 			<div class="footer-top">
-				<div class="company-contact">
-					<ul>
-						<li>00 420 645 854 215</li>
-						<li>info@freightily.com</li>
-						<li>F, You, IN</li>
-					</ul>
-				</div>
-				<div class="company-about">
-					<ul>
-						<li>Pro média</li>
-						<li>Kariéra</li>
-						<li>Kontakty</li>
-						<li>Přehled služeb</li>
-						<li>FAQ</li>
-						<li>Poradna</li>
-						<li>Obchodní podmínky</li>
-						<li>Možnosti platby</li>
-					</ul>
-				</div>
-				<div class="payment-gateway">
-					PAY PAL, VISA
+				<div class="footer-content">
+					<div class="company-contact">
+						<ul>
+							<li><a class="btn btn-social-icon btn-twitter">
+								<span class="fa fa-twitter"></span>
+							</a><span class="fa fa-google"></span><span>00 420 645 854 215</span></li>
+							<li><span class="glyphicon glyphicon-envelope"></span><span>info@freightily.com</span></li>
+							<li>F, You, IN</li>
+						</ul>
+					</div>
+					<div class="company-about">
+						<ul>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Pro média</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Kariéra</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Kontakty</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Přehled služeb</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>FAQ</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Poradna</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Obchodní podmínky</span></li>
+							<li><span class="glyphicon glyphicon-menu-right"></span><span>Možnosti platby</span></li>
+						</ul>
+						<div class="payment-gateway">
+							PAY PAL, VISA
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="footer-bottom">
 				<div class="copyright">
 					C 2016 FREIGHTILY s.r.o.
-				</div>
-				<div class="footer-logo">
-					FR
 				</div>
 				<div class="studio">
 					<span>Vytvořilo grafické studio BOXART <- pičovina -> to já Merynátor.</span>

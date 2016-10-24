@@ -1,10 +1,54 @@
+@font-face {
+    font-family: "MyFont";
+    src: url(../fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "socicon";
+    url(../fonts/fonts/socicon.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body{
     color: #2c2d51;
+    font-size: 16px;
+    font-family: MyFont;
+}
+
+header{
+    padding-top: 29px;
+}
+
+.header-top{
+    min-height: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    overflow: hidden;
+}
+
+.header-bottom{
+    min-height: 40px;
+    background: #e6e6f1;
+    padding-top: 8.6px;
+    padding-left: 80px;
+    padding-right: 80px;
+    overflow: hidden;
+}
+
+.header-logo{
+    float: left;
+}
+
+.languages{
+    float: left;
 }
 
 .languages ul{
     list-style-type: none;
     display: flex;
+    margin: 0;
 }
 
 .languages ul li{
@@ -21,3 +65,78 @@ body{
 .languages ul li:hover span{
     color: #e91d27;
 }
+
+.header-menu{
+    display: inline-block;
+    float: right;
+}
+
+.header-button{
+    width: 94px;
+    float: left;
+    text-align: center;
+    padding: 12px 12px 29px 12px;
+    cursor: pointer;
+}
+
+.header-button:hover{
+    font-weight: bold;
+    border-bottom: 1px solid #e91d27;
+}
+
+.header-button-important{
+    width: 94px;
+    float: left;
+    margin-left: 12px;
+    padding: 12px 22px 12px 22px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #e6e6f1;
+}
+.header-button-important:hover{
+    font-weight: bold;
+}
+
+.header-left{
+    float: left;
+}
+
+.header-left ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header-left ul li{
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 6px;
+}
+
+.header-left ul li:nth-child(n+2){
+    border-left: 1px solid white;
+    padding-left: 6px;
+}
+
+.header-left ul li:hover span{
+    font-weight: bold;
+    border-bottom: 1px solid #2c2d51;
+}
+
+.header-right{
+    display: inline-block;
+    float: right;
+}
+
+.header-right div{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.header-right .logout{
+    color: #e91d27;
+}
+
+
