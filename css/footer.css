@@ -81,3 +81,72 @@ footer{
 .studio{
     float: right;
 }
+
+@media (max-width: 900px) {
+    .footer-top{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .footer-bottom{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .footer-bottom{
+        text-align: center;
+        padding-top: 15px;
+    }
+    .copyright{
+        float: none;
+        display: block;
+    }
+    .studio{
+        float: none;
+    }
+}
+
+
+/**/
+@media (max-width: 600px) {
+    .social-icons span{
+        margin-right: 0px;
+    }
+    .social-icons span:nth-child(1){
+        margin-right: 26px;
+    }
+    .social-icons span:nth-child(3){
+        margin-left: 26px;
+    }
+
+    .footer-content{
+        text-align: center;
+    }
+    .company-contact{
+        float: none;
+        padding-bottom: 20px;
+    }
+    .company-about{
+        float: none;
+    }
+    .company-about ul{
+        text-align: left;
+        width: 290px;
+        margin: 0 auto;
+        float: none;
+    }
+    .company-about ul li{
+        width: 135px;
+    }
+    .company-about ul li:nth-child(n+5){
+        width: 162px;
+    }
+    .footer-top{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
