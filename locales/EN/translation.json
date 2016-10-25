@@ -4,6 +4,7 @@
 		"Username" : "Username",
 		"Password": "Password",
 		"Login": "Login",
+		"Login_to_system": "Login to the system",
 		"Logout": "Logout",
 		"Registration": "Registration",
 		"ConfirmPassword": "Confirm password",

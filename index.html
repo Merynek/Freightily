@@ -66,6 +66,7 @@
 		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="/node_modules/bootstrap-social/bootstrap-social.css" />
 		<!-- My Styles -->
+		<link rel="stylesheet" href="css/form.css" />
 		<link rel="stylesheet" href="css/loader.css" />
 		<link rel="stylesheet" href="css/header.css" />
 		<link rel="stylesheet" href="css/footer.css" />
@@ -136,7 +137,9 @@
 				<!--<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>-->
 			</div>
 		</header>
-		<div class="content" ui-view></div>
+		<div class="middle">
+			<div class="content" ui-view></div>
+		</div>
 		<footer>
 			<div class="footer-top">
 				<div class="footer-content">

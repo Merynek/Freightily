@@ -82,7 +82,8 @@ footer{
     float: right;
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 767px) {
     .footer-top{
         padding-left: 5px;
         padding-right: 5px;
@@ -94,9 +95,6 @@ footer{
         padding-right: 5px;
     }
 
-}
-
-@media (max-width: 767px) {
     .footer-bottom{
         text-align: center;
         padding-top: 15px;
