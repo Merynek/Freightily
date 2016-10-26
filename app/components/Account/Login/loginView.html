@@ -1,14 +1,14 @@
 <div class="login-page">
   <h1>{{'texts.Login' | i18next}}</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.</p>
-  <form>
+  <form name="loginForm" novalidate>
     <div class="form-group has-feedback has-feedback-left">
       <!--<label class="control-label">Username</label>-->
-      <input type="text" class="form-control my-input" placeholder="{{'texts.Username' | i18next}}" id="name"  ng-model="name"/>
+      <input type="text" name="username" class="form-control my-input" placeholder="{{'texts.Username' | i18next}}" ng-model="user.name" ng-class="{'input-error' : loginForm.username.$invalid && (!loginForm.username.$pristine || clicked)}" ng-minlength="3" required/>
       <i class="glyphicon glyphicon-user form-control-feedback"></i>
     </div>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" class="form-control my-input" id="password" placeholder="{{'texts.Password' | i18next}}" ng-model="password"/>
+      <input type="password" name="password" class="form-control my-input" placeholder="{{'texts.Password' | i18next}}" ng-model="user.password" ng-class="{'input-error' : loginForm.password.$invalid && (!loginForm.password.$pristine || clicked)}" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group">

@@ -8,7 +8,12 @@
 angular.module('appControllers')
   .controller('registrationController', ['$scope', 'Notification', '$state', '$filter', 'User', function($scope, Notification, $state, $filter, User){
 
-      $scope.registration = function(){    
+      $scope.registration = function(){
+          $scope.clicked = false;
+          $scope.clicked = true;
+          if(!$scope.registrationForm.$valid) {
+              return;
+          }
         if($scope.username && $scope.password && $scope.confirmPassword && $scope.contact_person_name && 
           $scope.contact_person_surname && $scope.company_name && $scope.ico && $scope.dic && $scope.bank_account && 
           $scope.address_street && $scope.address_state && $scope.address_house_number && $scope.psc && $scope.phone_number && 

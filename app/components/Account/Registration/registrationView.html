@@ -3,18 +3,15 @@
 <input type="radio" name="transporter" id="transporter" ng-model="transporter" value="true" />
 <label for="sender">Sender</label>
 <input type="radio" name="sender" id="sender" ng-model="transporter" value="" ng-checked="true"/>
-<form>
+<form name="registrationForm" novalidate>
   <div class="form-group">
-    <label for="name">{{'texts.username' | i18next}}:</label>
-    <input type="text" class="form-control" id="name" placeholder="{{'texts.Username' | i18next}}" ng-model="username" required="string" required/>
+    <input type="text" name="username" class="form-control" placeholder="{{'texts.Username' | i18next}}" ng-model="user.username" ng-class="{'input-error' : registrationForm.username.$invalid && (!registrationForm.username.$pristine || clicked)}" ng-minlength="8" required/>
   </div>
   <div class="form-group">
-    <label for="password">{{'texts.Password' | i18next}}:</label>
-    <input type="password" class="form-control" id="password" placeholder="{{'texts.Password' | i18next}}" ng-model="password" required="string" required/>
+    <input type="password" name="password" class="form-control" placeholder="{{'texts.Password' | i18next}}" ng-model="user.password" ng-class="{'input-error' : registrationForm.password.$invalid && (!registrationForm.password.$pristine || clicked)}" ng-minlength="8" required/>
   </div>
   <div class="form-group">
-    <label for="password">{{'texts.ConfirmPassword' | i18next}}:</label>
-    <input type="password" class="form-control" id="confirmPassword" placeholder="{{'texts.ConfirmPassword' | i18next}}" ng-model="confirmPassword" required="string" required/>
+    <input type="password" name="confirmPassword" class="form-control" placeholder="{{'texts.ConfirmPassword' | i18next}}" ng-model="user.confirmPassword" ng-class="{'input-error' : registrationForm.confirmPassword.$invalid && (!registrationForm.confirmPassword.$pristine || clicked)}" ng-minlength="8" required/>
   </div>
   <div class="form-group">
     <label for="contact_person_name">contact_person_name:</label>

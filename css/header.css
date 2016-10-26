@@ -23,8 +23,34 @@ h3{
 }
 
 header{
-
+    position: relative;
+    z-index: 5;
 }
+
+.message{
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 80px;
+    padding-top: 8.6px;
+    z-index: 0;
+}
+
+.error-message{
+    background: #e91d27;
+}
+.success-message{
+    background: #43b749;
+}
+.warning-message{
+    background: #ff810a;
+}
+
+
+
+
 
 .header-top{
     min-height: 80px;

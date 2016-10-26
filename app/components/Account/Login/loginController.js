@@ -13,14 +13,18 @@ angular.module('appControllers')
       $state.go('home');
     }
 
+    $scope.clicked = false;
+
     $scope.login = function(){
-      if($scope.name && $scope.password){
-        User.login($scope.name, $scope.password).then(function(){
-          $state.go('home');
+        $scope.clicked = true;
+        if(!$scope.loginForm.$valid) {
+            return;
+        }
+        User.login($scope.user.name, $scope.user.password).then(function(){
+        $state.go('home');
         }).catch(function(){
-          Notification.error($filter('i18next')('errors.wrong_login'));
+            message(3,$filter('i18next')('errors.wrong_login'));
         })
-      }
     }
   }
 ]);
