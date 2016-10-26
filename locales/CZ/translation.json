@@ -1,30 +1,48 @@
 {
 	"texts": {
-		"footer": "Web je pro testování tak nepičuj!",
-		"Username" : "Uživatelské jméno",
-		"Password": "Heslo",
-		"Login": "Přihlášení",
-		"Login_to_system": "Přihlášení do systému",
-		"Logout": "Odhlásit",
-		"Registration": "Registrace",
-		"ConfirmPassword": "Potvrďte heslo",
-		"Email": "Email",
-		"Phone_number": "Telefoní číslo",
-		"Shipments": "Zásilky",
-		"ShipmentDetail": "Podrobnosti o zásilce",
-		"AddShipment": "Přidat zásilku"
+		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
+		"login": "Přihlášení",
+		"username": "Uživatelské jméno",
+		"password": "Heslo",
+		"login_to_system": "Přihlášení do systému",
+		"registration": "Registrace",
+		"registration_employee": "Registrace zaměstnance",
+		"registration_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
+		"forgot_password": "Zapomenuté heslo",
+		"logout": "Odhlásit se",
+		"about": "O nás",
+		"contact": "Kontakt",
+		"main_page": "Hlavní stránka",
+		"about_company": "O firmě",
+		"detail": "Detail",
+		"footer_text": "Vytvořilo grafické studio BOXART -> Leda hovno -> to já Merynátor.",
+		"transporter": "Přepravce",
+		"sender": "Odesílatel",
+		"confirmPassword": "Potvrzení hesla",
+		"contact_person_name" : "Kontaktní osoba - Jméno",
+		"contact_person_surname" : "Kontaktní osoba - Příjmení",
+		"company_name" : "Název firmy",
+		"ico" : "IČO",
+		"dic" : "DIČ",
+		"bank_account" : "Bankovní účet",
+		"address_state" : "Stát",
+		"address_street" : "Ulice",
+		"address_house_number" : "Číslo popisné",
+		"psc" : "Poštovní číslo",
+		"phone_number" : "Telefoní číslo",
+		"email" : "Email"
 	},
 	"errors": {
-		"wrong_login": "Přihlašování se nezdařilo",
-		"wrong_registration": "Registrace se nezdařila"
+		"passwords_not_match" : "Hesla se neshodují",
+		"wrong_login" : "Chyba při přihlašování",
+		"wrong_registration": "Chyba při registraci",
+		"select_role": "Vyberte roli",
+		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"warnings": {
-		"wrong_login": "Přihlašování se nezdařilo",
-		"wrong_registration": "Registrace se nezdařila"
 	},
 	"success": {
-		"save_succeded": "Uložení bylo úspěšné",
-		"add_note": "Poznámka byla přidána",
-		"delete": "Smazání bylo úspěšné"	
+		"login": "Přihlášení úspěšné",
+		"registration": "Registrace proběhla v pořádku"
 	}
 }

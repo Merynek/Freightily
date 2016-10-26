@@ -9,6 +9,10 @@ function endLoading(text) {
 function message(type, message){
 	if(!message_active) {
 		message_active = true;
+		$('html, body').animate({
+			scrollTop: $(".message").offset().top
+        }, 300);
+
 		switch (type) {
 			case 1:
 				$(".message").addClass("success-message");
@@ -23,12 +27,13 @@ function message(type, message){
 		$(".message").text(message);
 		$(".message").animate({
 			top: "+=40px",
-		}, 600, function () {
+		}, 400, function () {
 			setTimeout(function () {
 				$(".message").animate({
 					top: "-=40px"
 				}, function () {
 					$(".message").empty();
+					$(".message").css("top", "auto");
 					message_active = false;
 				});
 

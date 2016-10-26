@@ -1,26 +1,46 @@
 {
 	"texts": {
-		"footer": "Web is for testing, so SHUT THE FUCK UP",
-		"Username" : "Username",
-		"Password": "Password",
-		"Login": "Login",
-		"Login_to_system": "Login to the system",
-		"Logout": "Logout",
-		"Registration": "Registration",
-		"ConfirmPassword": "Confirm password",
-		"Email": "Email",
-		"Phone_number": "Phone number",
-		"Shipments": "Shipments",
-		"ShipmentDetail": "Detail of shipment",
-		"AddShipment": "Add shipment"
+		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
+		"login": "Login",
+		"username": "Username",
+		"password": "Password",
+		"login_to_system": "Login to system",
+		"registration": "Registration",
+		"registration_employee": "Registration employee",
+		"registration_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
+		"forgot_password": "Forgot password",
+		"logout": "Logout",
+		"about": "About",
+		"contact": "Contact",
+		"main_page": "Main page",
+		"about_company": "About company",
+		"detail": "Detail",
+		"footer_text": "By BOXART studio -> not an option -> its my work!",
+		"transporter": "Transporter",
+		"sender": "Sender",
+		"confirmPassword": "Confirm password",
+		"contact_person_name" : "Contact person - Name",
+		"contact_person_surname" : "Contact person - Surname",
+		"company_name" : "Company name",
+		"ico" : "Identification number",
+		"dic" : "VAT",
+		"bank_account" : "Bank account",
+		"address_state" : "Country",
+		"address_street" : "Street",
+		"address_house_number" : "House number",
+		"psc" : "ZIP",
+		"phone_number" : "Phone number",
+		"email" : "Email"
 	},
 	"errors": {
-		"wrong_login": "Login failed",
-		"wrong_registration": "Registration failed"
+		"passwords_not_match" : "Passwords do not match",
+		"wrong_login" : "Login error",
+		"wrong_registration": "Registration error",
+		"select_role": "Select role",
+		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"success": {
-		"save_succeded": "Save was Succeded",
-		"add_note": "Note was added",
-		"delete": "Delete succeeded"	
+		"login": "Login success",
+		"registration": "Registration success"	
 	}
 }

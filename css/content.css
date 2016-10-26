@@ -12,8 +12,17 @@
     margin: 0 auto;
 }
 
-h1{
-    font-size: 34px;
+/*Login page*/
+.login-page .my-button{
+    float: left;
+}
+.login-page{
+    max-width: 558px;
+}
+
+/*Registration page*/
+.registration-page{
+    max-width: 558px;
 }
 
 @media (max-width: 767px) {
@@ -23,10 +32,18 @@ h1{
         padding-top: 15px;
         padding-bottom: 15px;
     }
+    /*Login page*/
     .login-page{
         margin: 0 auto;
         text-align: center;
     }
+    /*Registration page*/
+    .registration-page{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .registration-page .my-button{
+        margin: 0 auto;
 }
 
 @media (max-width: 500px) {

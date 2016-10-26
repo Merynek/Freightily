@@ -22,6 +22,7 @@
 		<script src="/js/ng-i18next.js"></script>
 
 		<!-- My Scripts -->
+		<script type="text/javascript" src="/js/shared.js"></script>
 		<script type="text/javascript" src="/js/loader.js"></script>
 		<script type="text/javascript" src="/js/map.js"></script>
 
@@ -81,14 +82,13 @@
 		<div class="loadPage">
 			<div class="loader-circle"></div>		
 		</div>
-		<!-- Messages -->
-		<div class="message"></div>
 		<header>
+			<!-- Messages -->
+			<div class="message"></div>
 			<div class="header-top">
 				<nav class="navbar navbar-default">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -106,10 +106,10 @@
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#" class="header-button">About</a></li>
+							<li><a href="#" class="header-button">{{'texts.about' | i18next}}</a></li>
 							<li><a href="#" class="header-button">Hover</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dropdown<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Item</a></li>
 									<li><a href="#">Item</a></li>
@@ -118,7 +118,7 @@
 									<li><a href="#">Separated Item</a></li>
 								</ul>
 							</li>
-							<li><a href="#" class="header-button-important">Contact</a></li>
+							<li><a href="#" class="header-button-important">{{'texts.contact' | i18next}}</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -126,14 +126,14 @@
 			<div class="header-bottom">
 				<div class="header-left">
 					<ul>
-						<li><span>Hlavní stránka</span></li>
-						<li><span>About company</span></li>
-						<li><span>Detail</span></li>
+						<li><span>{{'texts.main_page' | i18next}}</span></li>
+						<li><span>{{'texts.about_company' | i18next}}</span></li>
+						<li><span>{{'texts.detail' | i18next}}</span></li>
 					</ul>
 				</div>
 				<div class="header-right">
 					<div class="user">User name(role)</div>
-					<div class="logout">Odhlásit se</div>
+					<div class="logout">{{'texts.logout' | i18next}}</div>
 				</div>
 				<!--<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>-->
 				<!--<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>-->
@@ -159,7 +159,7 @@
 						</ul>
 					</div>
 					<div class="company-about">
-						<h3>O společnosti</h3>
+						<h3>{{'texts.about_company' | i18next}}</h3>
 						<ul>
 							<li><span class="glyphicon glyphicon-menu-right"></span><span>Pro média</span></li>
 							<li><span class="glyphicon glyphicon-menu-right"></span><span>Kariéra</span></li>
@@ -181,7 +181,7 @@
 					C 2016 FREIGHTILY s.r.o.
 				</div>
 				<div class="studio">
-					<span>Vytvořilo grafické studio BOXART <- pičovina -> to já Merynátor.</span>
+					<span>{{'texts.footer_text' | i18next}}</span>
 				</div>
 			</div>
 			<!--<iframe src="http://walrus.gmc.net/workhours/WorkHours.aspx?month_year=201610&user=MMe" width="800" height="900">-->

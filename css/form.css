@@ -35,19 +35,19 @@
 .input-error{
     border: 1px solid #e91d27;
 }
+.text-error{
+    color: #e91d27;
+}
 
 .form-control:focus{
     border-color: #e6e6f1;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(230, 230, 241, .6);
 }
 
-.login-page{
-    max-width: 558px;
-}
-
 .my-button{
     width: 165px;
     height: 40px;
+    line-height: 40px;
     border: none;
     color: white;
     text-align: center;
@@ -69,6 +69,23 @@
     color: #2c2d51;
 }
 
-.login-page .my-button{
-    float: left;
+
+input[type=radio] {
+    display: none;
 }
+input[type=radio] + label::before {
+    content: '';
+    display: inline-block;
+    border: 3px solid #12133d;
+    border-radius: 50%;
+    margin: -2px 0.5em;
+}
+input[type=radio]:checked + label::before {
+    background-color: #e91d27;
+}
+
+.my-radio + label::before {
+    width: 1em;
+    height: 1em;
+}
+

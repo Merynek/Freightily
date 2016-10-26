@@ -17,25 +17,35 @@ body{
     font-family: MyFont;
 }
 
+h1{
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 27px;
+}
+
 h3{
     font-size: 16px;
     font-weight: bold;
 }
 
+p{
+    padding-bottom: 27px;
+}
+
+
 header{
     position: relative;
-    z-index: 5;
 }
 
 .message{
     position: absolute;
-    top: 0;
+    bottom: 0;
     text-align: center;
     width: 100%;
     height: 40px;
-    margin-top: 80px;
     padding-top: 8.6px;
-    z-index: 0;
+    font-weight: bold;
 }
 
 .error-message{
@@ -75,6 +85,7 @@ header{
 }
 
 .header-bottom{
+    position: relative;
     min-height: 40px;
     background: #e6e6f1;
     padding-top: 8.6px;
