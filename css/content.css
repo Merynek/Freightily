@@ -25,25 +25,42 @@
     max-width: 558px;
 }
 
+/*Add vehicle*/
+.add-vehicle-page{
+    max-width: 558px;
+}
+
 @media (max-width: 767px) {
-    .middle{
+    .middle {
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 15px;
         padding-bottom: 15px;
     }
+
     /*Login page*/
-    .login-page{
+    .login-page {
         margin: 0 auto;
         text-align: center;
     }
+
     /*Registration page*/
-    .registration-page{
+    .registration-page {
         margin: 0 auto;
         text-align: center;
     }
-    .registration-page .my-button{
+    .registration-page .my-button {
         margin: 0 auto;
+    }
+
+    /*Add vehicle*/
+    .add-vehicle-page{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .add-vehicle-page .my-button {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 500px) {

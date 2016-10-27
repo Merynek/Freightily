@@ -236,6 +236,14 @@ header{
     color: #e91d27;
 }
 
+.header-right span{
+    margin-right: 10px;
+}
+
+.header-right .glyphicon{
+    top: 2px;
+}
+
 @media (max-width: 900px) {
     .header-top{
         padding: 0;

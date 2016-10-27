@@ -30,14 +30,25 @@
 		"address_house_number" : "House number",
 		"psc" : "ZIP",
 		"phone_number" : "Phone number",
-		"email" : "Email"
+		"email" : "Email",
+
+		"registration_vehicle": "Registration vehicle",
+		"vehicle_type": "Vehicle type",
+		"vehicle_brand": "Vehicle brand",
+		"vehicle_capacity": "Vehicle capacity",
+		"vehicle_rz": "Vehicle ID",
+		"vehicle_size": "Vehicle size",
+		"add_vehicle": "Vehicle registered"
 	},
 	"errors": {
 		"passwords_not_match" : "Passwords do not match",
 		"wrong_login" : "Login error",
 		"wrong_registration": "Registration error",
 		"select_role": "Select role",
-		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
+		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT",
+		"add_vehicle": "Error registration vehicle"
+	},
+	"warnings": {
 	},
 	"success": {
 		"login": "Login success",

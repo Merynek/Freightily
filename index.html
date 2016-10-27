@@ -3,6 +3,7 @@
     <head>
 		<meta charset="utf-8"/>
 		<title>Freightily</title>
+		<base href="/" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<!-- scripts from NPM -->
@@ -73,7 +74,7 @@
 		<link rel="stylesheet" href="css/footer.css" />
 		<link rel="stylesheet" href="css/content.css" />
 
-		<base href="http://localhost:9000/" />
+
 	</head>
 	
 	
@@ -130,12 +131,9 @@
 					</ul>
 				</div>
 				<div class="header-right">
-					<div class="user">User name(role)</div>
-					<div class="logout">{{'texts.logout' | i18next}}</div>
+					<div class="user" ng-if="isLoggedUser()"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
-				<!--<input type="submit" class="btn btn-primary" ui-sref="login" value="{{'texts.Login' | i18next}}" ng-hide="isLoggedUser()"/>-->
-				<!--<input type="submit" class="btn btn-primary" value="{{'texts.Logout' | i18next}}" ng-if="isLoggedUser()" ng-click="logout()"/>-->
-				<!--<input type="submit" class="btn btn-primary" ui-sref="registration" value="{{'texts.Registration' | i18next}}" ng-hide="isLoggedUser()"/>-->
 			</div>
 		</header>
 		<div class="middle">

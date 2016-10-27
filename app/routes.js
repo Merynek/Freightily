@@ -38,7 +38,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			templateUrl: "app/components/Account/Registration/addUserView.html",
 			data: {
 				role: [2,3]
-			},
+			}
 		})
 		.state('newvehicle', {
 			url: "/registration/vehicle",
@@ -46,7 +46,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			templateUrl: "app/components/Account/Registration/addVehicleView.html",
 			data: {
 				role: [2,3]
-			},
+			}
 		})
 		.state('shipments', {
 			url: "/shipments",

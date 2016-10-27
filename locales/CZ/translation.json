@@ -30,14 +30,23 @@
 		"address_house_number" : "Číslo popisné",
 		"psc" : "Poštovní číslo",
 		"phone_number" : "Telefoní číslo",
-		"email" : "Email"
+		"email" : "Email",
+
+		"registration_vehicle": "Registrace vozidla",
+		"vehicle_type": "Typ vozidla",
+		"vehicle_brand": "Značka",
+		"vehicle_capacity": "Nosnost",
+		"vehicle_rz": "Registrační značka",
+		"vehicle_size": "Velikost vozidla",
+		"add_vehicle": "Nové vozidlo registrováno"
 	},
 	"errors": {
 		"passwords_not_match" : "Hesla se neshodují",
 		"wrong_login" : "Chyba při přihlašování",
 		"wrong_registration": "Chyba při registraci",
 		"select_role": "Vyberte roli",
-		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
+		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT",
+		"add_vehicle": "Vozidlo se nepodařilo registrovat"
 	},
 	"warnings": {
 	},
