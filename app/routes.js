@@ -87,8 +87,9 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				role: [1,2,3,4]
-			},
+				role: [1,2,3,4],
+              	css: ['css/auction.css']
+            },
 			resolve: {
 				AuctionList: function(Auction){
 					return Auction.getAuctionList().then(function(res){
@@ -131,7 +132,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
       		}
 		})
 		.state('addAuction', {
-			url: "/auction/add",
+			url: "/add/auction",
 			controller: 'addAuctionController',
 			templateUrl: "app/components/Auction/Add/auctionAddView.html",
 			data: {

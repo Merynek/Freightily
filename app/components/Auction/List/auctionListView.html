@@ -1,28 +1,37 @@
-<style>
-    .expired{
-        background: red;
-    }
-    .nonexpired{
-        background: green;
-    }
-</style>
-<h1>Aukce</h1>
-<table>
-    <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>Freight description</th>
-        <th>Price</th>
-        <th>Currency</th>
-        <th>End auction</th>
-    </tr>
-    <tr ng-repeat="item in AuctionList" ng-class="(item.expired) ? 'expired' : 'nonexpired'">
-        <td>{{item.from}}</td>
-        <td>{{item.to}}</td>
-        <td>{{item.freight_description}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.currency}}</td>
-        <td>{{item.end_auction}}</td>
-        <td><button ui-sref="auctionItem({id: item.ID})">DETAIL</button></td>
-    </tr>
-</table>
+<div class="auction-list-page">
+    <style>
+        .expired{
+            background: red;
+        }
+        .nonexpired{
+            background: green;
+        }
+    </style>
+
+    
+    <h1>Aukce</h1>
+    <div class="auction-list">
+        <div class="auction-header">
+            <div class="auction-cell">From</div>
+            <div class="auction-cell">To</div>
+            <div class="auction-cell">Freight description</div>
+            <div class="auction-cell">Price</div>
+            <div class="auction-cell">Currency</div>
+            <div class="auction-cell">End auction</div>
+            <div class="auction-cell"></div>
+        </div>
+        <div class="auction-body">
+            <div class="auction-item" ng-repeat="item in AuctionList">
+                <div class="auction-cell">{{item.from}}</div>
+                <div class="auction-cell">{{item.to}}</div>
+                <div class="auction-cell">{{item.freight_description}}</div>
+                <div class="auction-cell">{{item.price}}</div>
+                <div class="auction-cell">{{item.currency}}</div>
+                <div class="auction-cell">{{item.end_auction}}</div>
+                <div class="auction-cell"><div class="my-button normal-button">DETAIL</div></div>
+            </div>
+        </div>
+	</div>
+</div>
+
+ <!--<td><button ui-sref="auctionItem({id: item.ID})">DETAIL</button></td>-->

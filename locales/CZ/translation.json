@@ -31,14 +31,16 @@
 		"psc" : "Poštovní číslo",
 		"phone_number" : "Telefoní číslo",
 		"email" : "Email",
-
 		"registration_vehicle": "Registrace vozidla",
 		"vehicle_type": "Typ vozidla",
 		"vehicle_brand": "Značka",
 		"vehicle_capacity": "Nosnost",
 		"vehicle_rz": "Registrační značka",
 		"vehicle_size": "Velikost vozidla",
-		"add_vehicle": "Nové vozidlo registrováno"
+		"add_vehicle": "Nové vozidlo registrováno",
+		"registration_user": "Registrace zaměstnance",
+		"driver": "Řidič",
+		"dispatcher": "Dispečer"
 	},
 	"errors": {
 		"passwords_not_match" : "Hesla se neshodují",

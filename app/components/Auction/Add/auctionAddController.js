@@ -67,7 +67,7 @@ angular.module('appControllers')
      };
 
      //////
-    /*
+    
 $scope.options = {
     types: ['(cities)'],
     componentRestrictions: { country: 'FR' }
@@ -91,6 +91,6 @@ $scope.options = {
         long: ''
       }
     }
-  };*/
+  };
   }
 ]);

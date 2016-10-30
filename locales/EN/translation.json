@@ -31,14 +31,16 @@
 		"psc" : "ZIP",
 		"phone_number" : "Phone number",
 		"email" : "Email",
-
 		"registration_vehicle": "Registration vehicle",
 		"vehicle_type": "Vehicle type",
 		"vehicle_brand": "Vehicle brand",
 		"vehicle_capacity": "Vehicle capacity",
 		"vehicle_rz": "Vehicle ID",
 		"vehicle_size": "Vehicle size",
-		"add_vehicle": "Vehicle registered"
+		"add_vehicle": "Vehicle registered",
+		"registration_user": "Registration user",
+		"driver": "Driver",
+		"dispatcher": "Dispatcher"
 	},
 	"errors": {
 		"passwords_not_match" : "Passwords do not match",

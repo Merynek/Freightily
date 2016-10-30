@@ -17,6 +17,7 @@ $(function () {
 
     <span class="help-block"><b>Model: </b>{{from}}</span>
     <span class="help-block"><b>Model: </b>{{to}}</span>
+    <span class="help-block"><b>Model: </b>{{address}}</span>
     <div id="map" style="display:none"></div>
     <div id="distance" style="display:none"></div>
     
@@ -29,6 +30,15 @@ $(function () {
             type="text" 
             name="from"
             id="from"
+            vs-place="address.place" 
+            vs-place-id="address.components.placeId"
+            vs-street-number="address.components.streetNumber" 
+            vs-street="address.components.street"
+            vs-city="address.components.city"
+            vs-state="address.components.state"
+            vs-country-short="address.components.countryCode"
+            vs-country="address.components.country"
+            vs-district = "address.components.district"
             class="form-control" 
             placeholder="Enter any address">
   </div>

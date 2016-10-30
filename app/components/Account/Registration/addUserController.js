@@ -8,47 +8,50 @@
 angular.module('appControllers')
   .controller('addUserController', ['$scope', 'Notification', '$state', '$filter', 'User', function($scope, Notification, $state, $filter, User){
 
-      $scope.AddUser = function(){    
-        if($scope.username && $scope.password && $scope.confirmPassword && $scope.name && 
-          $scope.surname && $scope.address_street && $scope.address_state && $scope.address_house_number && 
-          $scope.psc && $scope.phone_number && $scope.email){
-            if($scope.password != $scope.confirmPassword){
-              Notification.error($filter('i18next')('errors.wrong_registration'));
-            }
-           else{
-              var data = {
-                idCompany: User.ID,
-                username: $scope.username,
-                password: $scope.password,
-                confirmpassword: $scope.confirmPassword,
-                role: ($scope.driver) ? 4 : 3,
-                name: $scope.name,
-                surname: $scope.surname,
-                address_state: $scope.address_state,
-                address_street: $scope.address_street,
-                address_house_number: $scope.address_house_number,
-                psc: $scope.psc,
-                phone_number: $scope.phone_number,
-                email: $scope.email,
-              };
-              if($scope.driver){
-                  if($scope.driver_licence){
-                      data.driver_licence = $scope.driver_licence
-                  }
-                  else{
-                      Notification.error($filter('i18next')('errors.wrong_registration'));
-                  }
-              }
+      $scope.employee = {
+        driver_licence: ""
+      };
+      $scope.clicked = false;
 
-              if(User.AddUser(data)){
-              }
-              else{
-                Notification.error($filter('i18next')('errors.wrong_registration'));
-              }
-            }
+      $scope.AddUser = function(){    
+        $scope.clicked = true;
+        if(!$scope.employee.role) {
+          message(3, $filter('i18next')('errors.select_role'));
+          return;
         }
+
+        if(!$scope.addUserForm.$valid) {
+          return;
+        }
+        
+        if($scope.employee.password != $scope.employee.confirmPassword){
+          message(3, $filter('i18next')('errors.passwords_not_match'));
+        }
+
         else{
-          Notification.error($filter('i18next')('errors.wrong_registration'));
+          var data = {
+            idCompany: User.ID,
+            username: $scope.employee.username,
+            password: $scope.employee.password,
+            confirmpassword: $scope.employee.confirmPassword,
+            role: $scope.employee.role,
+            name: $scope.employee.name,
+            surname: $scope.employee.surname,
+            address_state: $scope.employee.address_state,
+            address_street: $scope.employee.address_street,
+            address_house_number: $scope.employee.address_house_number,
+            psc: $scope.employee.psc,
+            phone_number: $scope.employee.phone_number,
+            email: $scope.employee.email,
+            driver_licence: $scope.employee.driver_licence,
+          };
+
+          console.log(data);
+         /* if(User.AddUser(data)){
+          }
+          else{
+            Notification.error($filter('i18next')('errors.wrong_registration'));
+          }*/
         }
       };
   }

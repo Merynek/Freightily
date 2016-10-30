@@ -12,6 +12,23 @@
     margin: 0 auto;
 }
 
+/*auction*/
+.auction-list-page .auction-list{
+    width: 100%;
+}
+
+.auction-list-page .auction-item{
+    
+}
+
+.auction-list-page .auction-cell{
+    display: inline-block;
+    width: 14%;
+    height: 50px;
+    overflow: hidden;
+}
+
+
 /*Login page*/
 .login-page .my-button{
     float: left;
@@ -22,6 +39,11 @@
 
 /*Registration page*/
 .registration-page{
+    max-width: 558px;
+}
+
+/*Add user*/
+.add-user-page{
     max-width: 558px;
 }
 
@@ -50,6 +72,15 @@
         text-align: center;
     }
     .registration-page .my-button {
+        margin: 0 auto;
+    }
+
+    /*Add user*/
+    .add-user-page{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .add-user-page .my-button {
         margin: 0 auto;
     }
 
