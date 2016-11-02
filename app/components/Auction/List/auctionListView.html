@@ -8,30 +8,30 @@
         }
     </style>
 
-    
     <h1>Aukce</h1>
-    <div class="auction-list">
-        <div class="auction-header">
-            <div class="auction-cell">From</div>
-            <div class="auction-cell">To</div>
-            <div class="auction-cell">Freight description</div>
-            <div class="auction-cell">Price</div>
-            <div class="auction-cell">Currency</div>
-            <div class="auction-cell">End auction</div>
-            <div class="auction-cell"></div>
+    <div class="auction-list col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0">
+        <div class="auction-header-line col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0">
+            <div class="auction-header col-xs-10 col-sm-10 col-sm-offset-0 col-md-10 col-md-offset-0 col-lg-10 col-lg-offset-0">
+                <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0">From</div>
+                <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0">To</div>
+                <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-4 col-lg-offset-0">Freight description</div>
+                <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0">Price</div>
+                <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0">End auction</div>
+            </div>
         </div>
-        <div class="auction-body">
+        <div class="auction-body col-xs-12 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-12 col-lg-offset-0">
             <div class="auction-item" ng-repeat="item in AuctionList">
-                <div class="auction-cell">{{item.from}}</div>
-                <div class="auction-cell">{{item.to}}</div>
-                <div class="auction-cell">{{item.freight_description}}</div>
-                <div class="auction-cell">{{item.price}}</div>
-                <div class="auction-cell">{{item.currency}}</div>
-                <div class="auction-cell">{{item.end_auction}}</div>
-                <div class="auction-cell"><div class="my-button normal-button">DETAIL</div></div>
+                <div class="auction-info col-xs-8 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0 col-lg-10">
+                    <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0"><span>{{item.from}}</span></div>
+                    <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0"><span>{{item.to}}</span></div>
+                    <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-4 col-lg-offset-0"><span>{{item.freight_description}}</span></div>
+                    <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0"><span>{{item.price}}</span></div>
+                    <div class="auction-cell col-xs-2 col-sm-2 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0"><span>{{item.end_auction}}</span></div>
+                </div>
+                <div class="auction-button-detail col-xs-2 col-sm-4 col-sm-offset-0 col-md-2 col-md-offset-0 col-lg-2 col-lg-offset-0"><div class="my-button normal-button"><span>DETAIL</span></div></div>
             </div>
         </div>
 	</div>
-</div>
 
+</div>
  <!--<td><button ui-sref="auctionItem({id: item.ID})">DETAIL</button></td>-->
