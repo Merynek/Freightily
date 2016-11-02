@@ -26,22 +26,25 @@
 }
 .auction-list-page .auction-list .auction-header{
     padding: 0;
-    height: 50px;
+    height: 40px;
 }
 .auction-list-page .auction-list .auction-cell{
     padding: 0;
-    padding-top: 13px;
-    padding-left: 13px;
+    padding-top: 8px;
+    padding-left: 7px;
 }
 .auction-list-page .auction-list .auction-body{
     padding: 0;
 }
 .auction-list-page .auction-list .auction-body .auction-item{
+    margin-top: 15px;
     padding: 0;
-    min-height: 50px;
+    min-height: 40px;
     overflow: hidden;
 }
 .auction-list-page .auction-list .auction-body .auction-item .auction-info{
+    min-height: 40px;
+    border: 2px solid #e6e6f1;
     padding: 0;
 }
 .auction-list-page .auction-list .auction-body .auction-item .auction-button-detail{
@@ -75,6 +78,13 @@
 /*Add vehicle*/
 .add-vehicle-page{
     max-width: 558px;
+}
+
+@media (max-width: 900px) {
+    .no-padding{
+        padding-left: 5px;
+        padding-right: 5px; 
+    }
 }
 
 @media (max-width: 767px) {
