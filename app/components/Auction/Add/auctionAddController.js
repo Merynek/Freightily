@@ -16,12 +16,8 @@ angular.module('appControllers')
              Notification.error('Musi byt vyopneni from a to');
           }
       }
-
-    var s = "asdas";
-
      $scope.distance = "";
      $scope.addAuction = function(){
-         
        if($scope.from && $scope.to && $scope.freight_description && $scope.freight_type && $scope.freight_size && 
        $scope.freight_weight && $scope.price && $scope.currency && $scope.email_addressee && $scope.min_amount && $scope.maturity){
          var load_from = $("#load_from").val();
@@ -29,10 +25,22 @@ angular.module('appControllers')
          var unload_from = $("#unload_from").val();
          var unload_to = $("#unload_to").val();
          var end_auction = $("#end_auction").val();
+         
+
          if(load_from && load_to && unload_from && unload_to && end_auction){
            var data = {
-             from: $scope.from,
-             to: $scope.to,
+             from_city: $scope.from_address.components.city,
+             from_street:$scope.from_address.components.street,
+             from_country: $scope.from_address.components.country,
+             from_house_number: $scope.from_address.place.address_components[1].long_name,
+             from_street_number: $scope.from_address.place.address_components[0].long_name,
+
+             to_city: $scope.to_address.components.city,
+             to_street:$scope.to_address.components.street,
+             to_country: $scope.to_address.components.country,
+             to_house_number: $scope.to_address.place.address_components[1].long_name,
+             to_street_number: $scope.to_address.place.address_components[0].long_name,
+
              freight_description: $scope.freight_description,
              freight_type: $scope.freight_type,
              freight_size: $scope.freight_size,
@@ -65,15 +73,31 @@ angular.module('appControllers')
        }
 
      };
-
-     //////
     
 $scope.options = {
     types: ['(cities)'],
     componentRestrictions: { country: 'FR' }
   };
   
-  $scope.address = {
+  $scope.from_address = {
+    name: '',
+    place: '',
+    components: {
+      placeId: '',
+      streetNumber: '', 
+      street: '',
+      city: '',
+      state: '',
+      countryCode: '',
+      country: '',
+      postCode: '',
+      district: '',
+      location: {
+        lat: '',
+        long: ''
+      }
+    }
+  };$scope.to_address = {
     name: '',
     place: '',
     components: {

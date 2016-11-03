@@ -131,7 +131,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-		.state('addAuction', {
+		.state('addauction', {
 			url: "/add/auction",
 			controller: 'addAuctionController',
 			templateUrl: "app/components/Auction/Add/auctionAddView.html",
@@ -283,6 +283,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			templateUrl: '/404.html', 
 			controller: function($scope){}
 		});
+		
 
     $locationProvider.html5Mode(true);
 });

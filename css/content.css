@@ -44,69 +44,56 @@
 .auction-list-page .auction-list .auction-body{
     padding: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item{
+.auction-item{
     margin-top: 15px;
     padding: 0;
     min-height: 40px;
     overflow: hidden;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-info{
+.auction-item .auction-info{
     min-height: 40px;
     border: 2px solid #e6e6f1;
     padding: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-button-detail{
+.auction-item .auction-button-detail{
     padding: 0;
     text-align: right;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-button-detail .my-button{
+.auction-item .auction-button-detail .my-button{
     margin-right: 0;
     margin-bottom: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail{
+.auction-item .auction-detail{
     padding: 8px;
     margin-top: 15px;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail span{
+.auction-item .auction-detail span{
     padding: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item{
+.auction-detail .auction-detail-item{
     padding: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-last-child(1) > div:nth-last-child(1){
-    text-align: right;
-}
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-last-child(1) span{
-    text-align: center;
-    line-height: 40px;
-}
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+5){
-    margin-top: 30px;
-}
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row{
+.auction-detail .auction-detail-item .detail-row{
     padding: 0;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row div:nth-child(1){
-    font-weight: bold;
-}
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item h2{
+.auction-detail .auction-detail-item h2{
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item div{
-    padding: 0;
-}
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .my-button{
+.auction-detail .auction-detail-item .my-button{
     margin-right: 0;
     margin-bottom: 0;
     width: 155px;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .my-input{
+.auction-detail .auction-detail-item .my-input{
     margin-bottom: 8px;
 }
-.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .bid{
+.auction-detail .auction-detail-item .bid{
     margin-bottom: 0;
+}
+.detail-auction-directive{
+    padding: 0;
 }
 
 
@@ -159,9 +146,9 @@
 }
 
 @media (max-width: 991px) {
-    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+4){
+    .auction-detail .auction-detail-item:nth-child(n+4){
         margin-top: 30px;
-    }
+    }   
 }
 
 @media (max-width: 900px) {
@@ -179,10 +166,10 @@
         padding-bottom: 15px;
     }
     /*Auction*/
-    .auction-list-page .auction-list .auction-header-line{
+    .auction-header-line{
         display: none;
     }
-    .auction-list-page .auction-list .auction-body .auction-item .auction-button-detail{
+    .auction-item .auction-button-detail{
         text-align: center;
     }
     .auction-list-page .auction-list .auction-cell{
@@ -192,10 +179,10 @@
     .auction-list-page .auction-list .auction-label{
         display: block;
     }
-    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+3){
+    .auction-detail .auction-detail-item:nth-child(n+3){
         margin-top: 30px;
     }
-    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row > div:nth-child(2){
+    .auction-detail .auction-detail-item .detail-row > div:nth-child(2){
         text-align: center;
     }
 

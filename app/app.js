@@ -2,9 +2,10 @@
         'use strict';
         angular.module('appServices', []);
         angular.module('appControllers', []);
+        angular.module('appDirectives', []);
         
         angular.module('myApp', [
-                'appServices', 'appControllers', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete'
+                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete'
                 ])
                 
                 .config(function(NotificationProvider){
