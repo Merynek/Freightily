@@ -31,8 +31,16 @@
 .auction-list-page .auction-list .auction-cell{
     padding: 0;
     padding-top: 8px;
-    padding-left: 7px;
+    padding-left: 8px;
 }
+.auction-list-page .auction-list .auction-label{
+    display: none;
+    padding: 0;
+    text-align: center;
+    background: #e6e6f1;
+    font-weight: bold;
+}
+
 .auction-list-page .auction-list .auction-body{
     padding: 0;
 }
@@ -54,6 +62,76 @@
 .auction-list-page .auction-list .auction-body .auction-item .auction-button-detail .my-button{
     margin-right: 0;
     margin-bottom: 0;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail{
+    padding: 8px;
+    margin-top: 15px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail span{
+    padding: 0;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item{
+    padding: 0;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-last-child(1) > div:nth-last-child(1){
+    text-align: right;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-last-child(1) span{
+    text-align: center;
+    line-height: 40px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+5){
+    margin-top: 30px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row{
+    padding: 0;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row div:nth-child(1){
+    font-weight: bold;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item h2{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item div{
+    padding: 0;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .my-button{
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 155px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .my-input{
+    margin-bottom: 8px;
+}
+.auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .bid{
+    margin-bottom: 0;
+}
+
+
+/*Arrow on detail box*/
+.popover {
+    position: relative;
+    display: block;
+    max-width: none;
+    border-radius: 0;
+    border-top: 2px solid #e6e6f1;
+    border-left: 2px solid #e6e6f1;
+    border-right: 2px solid #e6e6f1;
+    border-bottom: 2px solid #e6e6f1;
+}
+.popover.bottom>.arrow:after {
+    top:2px;
+    border-bottom-color: white;
+}
+.popover.bottom>.arrow {
+    margin-left:-5px;
+    border-bottom-color: #e6e6f1;
+    margin-top:-1px;
+}
+.popover>.arrow {
+    border-width: 12px;
 }
 
 
@@ -80,6 +158,12 @@
     max-width: 558px;
 }
 
+@media (max-width: 991px) {
+    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+4){
+        margin-top: 30px;
+    }
+}
+
 @media (max-width: 900px) {
     .no-padding{
         padding-left: 5px;
@@ -93,6 +177,26 @@
         padding-right: 5px;
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+    /*Auction*/
+    .auction-list-page .auction-list .auction-header-line{
+        display: none;
+    }
+    .auction-list-page .auction-list .auction-body .auction-item .auction-button-detail{
+        text-align: center;
+    }
+    .auction-list-page .auction-list .auction-cell{
+        text-align: center;
+        padding: 0;
+    }
+    .auction-list-page .auction-list .auction-label{
+        display: block;
+    }
+    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item:nth-child(n+3){
+        margin-top: 30px;
+    }
+    .auction-list-page .auction-list .auction-body .auction-item .auction-detail .auction-detail-item .detail-row > div:nth-child(2){
+        text-align: center;
     }
 
     /*Login page*/

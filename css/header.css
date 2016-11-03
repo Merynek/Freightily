@@ -9,7 +9,9 @@
     font-style: normal;
 }
 
-
+.red{
+    color: #e91d27;
+}
 
 body{
     color: #2c2d51;
@@ -22,6 +24,12 @@ h1{
     margin: 0;
     padding: 0;
     padding-bottom: 27px;
+}
+
+h2{
+    color: #2c2d51;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 h3{
