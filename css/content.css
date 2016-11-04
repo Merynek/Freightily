@@ -13,6 +13,12 @@
 }
 
 /*auction*/
+.clean-line-sm{
+    display: none;
+}
+.clean-line-lg{
+    display: block;
+}
 .auction-list-page{
 
 }
@@ -148,7 +154,13 @@
 @media (max-width: 991px) {
     .auction-detail .auction-detail-item:nth-child(n+4){
         margin-top: 30px;
-    }   
+    }
+    .clean-line-sm{
+        display: block;
+    }
+    .clean-line-lg{
+        display: none;
+    }
 }
 
 @media (max-width: 900px) {
@@ -166,6 +178,12 @@
         padding-bottom: 15px;
     }
     /*Auction*/
+    .clean-line-sm{
+        display: none;
+    }
+    .clean-line-lg{
+        display: none;
+    }
     .auction-header-line{
         display: none;
     }
