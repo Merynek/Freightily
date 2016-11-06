@@ -18,6 +18,7 @@
 }
 .clean-line-lg{
     display: block;
+    margin-bottom: 25px;
 }
 .auction-list-page{
 
@@ -99,6 +100,22 @@
     margin-bottom: 0;
 }
 .detail-auction-directive{
+    display: none;
+    padding: 0;
+}
+.auction-bid > div {
+    padding: 0;
+}
+.auction-bid > span {
+    line-height: 40px;
+    text-align: center;
+}
+.auction-bid > div:nth-last-child(1){
+    padding: 0;
+    text-align: right;
+}
+.auction-detail-item .detail-row .detail-label{
+    font-weight: bold;
     padding: 0;
 }
 
@@ -152,14 +169,17 @@
 }
 
 @media (max-width: 991px) {
-    .auction-detail .auction-detail-item:nth-child(n+4){
-        margin-top: 30px;
-    }
     .clean-line-sm{
         display: block;
     }
     .clean-line-lg{
         display: none;
+    }
+    .auction-detail-item{
+        margin-bottom: 30px;
+    }
+    .auction-detail-item:nth-last-child(1){
+        margin-bottom: 0;
     }
 }
 
@@ -197,10 +217,16 @@
     .auction-list-page .auction-list .auction-label{
         display: block;
     }
-    .auction-detail .auction-detail-item:nth-child(n+3){
-        margin-top: 30px;
+    .auction-detail h2{
+        text-align: center;
     }
-    .auction-detail .auction-detail-item .detail-row > div:nth-child(2){
+    .auction-detail-item .detail-row .detail-content{
+        text-align: left;
+    }
+    .auction-bid > div:nth-last-child(1){
+        text-align: center;
+    }
+    .auction-bid > div{
         text-align: center;
     }
 

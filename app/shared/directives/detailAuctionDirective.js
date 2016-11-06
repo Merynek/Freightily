@@ -6,10 +6,12 @@ angular.module('appDirectives')
                     bindToController: true,
                     controllerAs: 'vm',
                     scope: {
-                       auctionItem: '=' 
+                       auctionItem: '=',
+                       display: '=',
                     },
                     controller: function($scope){
                         this.item = this.auctionItem.item;
+                        console.log(this.item);
                     }
                 };
 });

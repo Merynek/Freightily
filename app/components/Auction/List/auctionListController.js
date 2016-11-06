@@ -15,6 +15,14 @@ angular.module('appControllers')
         middle_no_padding();
       }
     });
+    $scope.detail = function(id){
+      if ($("#"+id).css("display") == "none") {
+        $("#"+id).css("display","block");
+      }
+      else{
+        $("#"+id).css("display","none")
+      }
+    }
   }
 ]);
 
