@@ -6,12 +6,24 @@ angular.module('appDirectives')
                     bindToController: true,
                     controllerAs: 'vm',
                     scope: {
-                       auctionItem: '=',
-                       display: '=',
+                       auctionItem: '='
                     },
                     controller: function($scope){
+                        $scope.expired = false;
                         this.item = this.auctionItem.item;
-                        console.log(this.item);
+                        this.show = false;
+                        this.detail = function(){
+                            switch(this.show){
+                                case true: this.show = false;
+                                    break;
+                                case false: this.show = true;
+                                    break;
+                            }
+                        }
+                        $scope.$on('timer-stopped', function (event, data){
+                            console.log('Timer Stopped - data = ', data);
+                            $scope.expired = true;
+                        });
                     }
                 };
 });

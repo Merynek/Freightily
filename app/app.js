@@ -5,7 +5,7 @@
         angular.module('appDirectives', []);
         
         angular.module('myApp', [
-                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete'
+                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete', 'timer'
                 ])
                 
                 .config(function(NotificationProvider){

@@ -1,14 +1,27 @@
-<div class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
+    <div class="auction-label col-xs-12">From</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.item.from.city}}</span></div>
+    <div class="auction-label col-xs-12">To</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.item.to.city}}</span></div>
+    <div class="auction-label col-xs-12">Freight description</div>
+    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{vm.item.freight_description}}</span></div>
+    <div class="auction-label col-xs-12">Price</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.item.price}}</span></div>
+    <div class="auction-label col-xs-12">End auction</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.item.end_auction}}</span></div>
+</div>
+<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2"><div class="my-button normal-button" ng-click="vm.detail()"><span>DETAIL</span></div></div>
+<div ng-show="vm.show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Místa vyzvednutí nákladu</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Odkud:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.from.city}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.from.city}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Kam:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.to.city}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.to.city}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Nahráno:</span></div>
@@ -16,26 +29,26 @@
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Konec:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.end_auction}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.end_auction}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O nákladu</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Popis:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_description}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Typ:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_type}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.freight_type}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Velikost:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_size}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.freight_size}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Váha:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_weight}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.freight_weight}}</span></div>
         </div>
     </div>
     <div class="clean-line-sm col-xs-0 col-sm-12 col-md-0 col-lg-0"></div>
@@ -43,11 +56,11 @@
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Aukce</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Konec aukce:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.end_auction}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.end_auction}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Minimální příhoz:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.min_amount}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{vm.item.min_amount}}</span></div>
         </div>
     </div>
     <div class="clean-line-lg col-xs-0 col-sm-0 col-md-12 col-lg-12"></div>
@@ -72,10 +85,11 @@
             <input type="text" class="form-control my-input bid" placeholder="Přihodit"/>
             <i class="glyphicon glyphicon-lock form-control-feedback"></i>
         </div>
-        <span class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>18 dní 00:25:15</span></span>
+        <span class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <timer countdown="vm.item.secondsToEndAuction" max-time-unit="'day'" interval="1000">{{days}} D, {{hours}}:{{minutes}}:{{seconds}}</timer>
+        </span>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <div class="my-button important-button"><span>PŘIHODIT</span></div>
         </div>
-
     </div>
 </div>

@@ -99,10 +99,6 @@
 .auction-detail .auction-detail-item .bid{
     margin-bottom: 0;
 }
-.detail-auction-directive{
-    display: none;
-    padding: 0;
-}
 .auction-bid > div {
     padding: 0;
 }
@@ -117,6 +113,9 @@
 .auction-detail-item .detail-row .detail-label{
     font-weight: bold;
     padding: 0;
+}
+.auction-expired{
+    background: red;
 }
 
 
