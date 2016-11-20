@@ -14,7 +14,7 @@ angular.module('appControllers')
         $scope.usernameMain = User.username;
         $scope.roleNameMain = User.roleName;
         $scope.isSender = User.isSender();
-        $scope.isDispatcher = User.isDispatcher() || User.isTransporter();
+        $scope.isDispatcher = User.isDispatcher();
         $scope.isTransporter = User.isTransporter(); 
         $scope.isDriver = User.isDriver();  
         return true;

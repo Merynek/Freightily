@@ -6,9 +6,8 @@
 */
 
 angular.module('appControllers')
-  .controller('auctionListController', ['$scope', 'AuctionList', 'vehicles', function($scope, AuctionList, vehicles){
-    $scope.AuctionList = AuctionList;
-    $scope.vehicles = vehicles;
+  .controller('winAuctionController', ['$scope', 'winAuction', function($scope, winAuction){
+    $scope.AuctionList = winAuction;
     middle_no_padding();
     $(window).resize(function () {
       if(window.innerWidth <= 900){
@@ -16,6 +15,7 @@ angular.module('appControllers')
       }
     });
   }
+
 ]);
 
 

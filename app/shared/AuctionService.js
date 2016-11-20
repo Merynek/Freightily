@@ -130,9 +130,9 @@ angular.module('appServices')
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
-					method: 'POST',
+					method: 'DELETE',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/favourite/delete/'+id,
+					url: url+'data/auction/favourite/'+id,
 				}).then(function(response) {
 					endLoading();
 					resolve();

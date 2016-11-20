@@ -1,194 +1,171 @@
-<h1>Add auction</h1>
-<style type="text/css">
-        #map {
-            height: 500px;
-            width: 600px;
-            border: 1px solid #000;
-        }
-    </style>
-<script>
-$(function () {
-                $('.datetimepicker1').datetimepicker({
-                  format: 'YYYY/MM/DD HH:mm',
-                });
-            }); 
-</script>
+<div class="auction-add-page">
+  <h1>Add auction</h1>
+  <style type="text/css">
+          #map {
+              height: 500px;
+              width: 600px;
+              border: 1px solid #000;
+          }
+      </style>
+  <script>
+  $(function () {
+                  $('.datetimepicker1').datetimepicker({
+                    format: 'YYYY/MM/DD HH:mm',
+                  });
+              }); 
+  </script>
 
-    <div id="map" style="display:none"></div>
-    <div id="distance" style="display:none"></div>
-    
-<form>     
-  <h3>Shipment</h3>
-  <div class="form-group">
-    <label for="from">From:</label>
-    <input vs-google-autocomplete
-            ng-model="from" 
-            type="text" 
-            name="from"
-            id="from"
-            vs-place="from_address.place" 
-            vs-place-id="from_address.components.placeId"
-            vs-street-number="from_address.components.streetNumber" 
-            vs-street="from_address.components.street"
-            vs-city="from_address.components.city"
-            vs-state="from_address.components.state"
-            vs-country-short="from_address.components.countryCode"
-            vs-country="from_address.components.country"
-            vs-district = "from_address.components.district"
-            class="form-control" 
-            placeholder="Enter any address">
-  </div>
-  <div class="form-group">
-    <label for="to">To:</label>
-    <input vs-google-autocomplete
-            ng-model="to" 
-            type="text" 
-            name="to"
-            id="to"
-            vs-place="to_address.place" 
-            vs-place-id="to_address.components.placeId"
-            vs-street-number="to_address.components.streetNumber" 
-            vs-street="to_address.components.street"
-            vs-city="to_address.components.city"
-            vs-state="to_address.components.state"
-            vs-country-short="to_address.components.countryCode"
-            vs-country="to_address.components.country"
-            vs-district = "to_address.components.district"
-            class="form-control" 
-            placeholder="Enter any address">
-  </div>
-  <button ng-click="showMap()">Show map</button>
-  <div class="form-group">
-    <label for="price">Price:</label>
-    <input type="text" class="form-control" id="price" placeholder="Price" ng-model="price" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="currency">Currency:</label>
-    <input type="text" class="form-control" id="currency" placeholder="Currency" ng-model="currency" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="date">Load from:</label>
-    <div class='input-group datetimepicker1'>
-      <input type='text' class="form-control"  id="load_from" placeholder="Date" required="string" required/>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+  <div id="map" style="display:none"></div>
+  <div id="distance" style="display:none"></div>
+      
+  <form name="addAuctionForm" novalidate>   
+    <h3>Shipment</h3>
+    <div class="form-group">
+      <input class="form-control my-input" placeholder="{{'texts.from' | i18next}}" ng-model="auction.from" 
+        ng-class="{'input-error' : addAuctionForm.from.$invalid && (!addAuctionForm.from.$pristine || clicked)}" 
+        vs-google-autocomplete
+        ng-model="auction.from" 
+        type="text" 
+        name="from"
+        id="from"
+        vs-place="from_address.place" 
+        vs-place-id="from_address.components.placeId"
+        vs-street-number="from_address.components.streetNumber" 
+        vs-street="from_address.components.street"
+        vs-city="from_address.components.city"
+        vs-state="from_address.components.state"
+        vs-country-short="from_address.components.countryCode"
+        vs-country="from_address.components.country"
+        vs-district = "from_address.components.district"
+        required />
     </div>
-  </div>
-  <div class="form-group">
-    <label for="date">Load to:</label>
-    <div class='input-group datetimepicker1'>
-      <input type='text' class="form-control"  id="load_to" placeholder="Date" required="string" required/>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+
+    <div class="form-group">
+      <input class="form-control my-input" placeholder="{{'texts.to' | i18next}}" ng-model="auction.to" 
+        ng-class="{'input-error' : addAuctionForm.to.$invalid && (!addAuctionForm.to.$pristine || clicked)}" 
+        vs-google-autocomplete
+        ng-model="auction.to" 
+        type="text" 
+        name="to"
+        id="to"
+        vs-place="to_address.place" 
+        vs-place-id="to_address.components.placeId"
+        vs-street-number="to_address.components.streetNumber" 
+        vs-street="to_address.components.street"
+        vs-city="to_address.components.city"
+        vs-state="to_address.components.state"
+        vs-country-short="to_address.components.countryCode"
+        vs-country="to_address.components.country"
+        vs-district = "to_address.components.district"
+        required />
     </div>
-  </div>
-  <div class="form-group">
-    <label for="date">Unload from:</label>
-    <div class='input-group datetimepicker1'>
-      <input type='text' class="form-control"  id="unload_from" placeholder="Date" required="string" required/>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+    <div class="form-group">
+      <div class="my-button easy-button" ng-click="showMap()">{{'texts.show_map' | i18next}}</div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="date">Unload to:</label>
-    <div class='input-group datetimepicker1'>
-      <input type='text' class="form-control"  id="unload_to" placeholder="Date" required="string" required/>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+    <div class="form-group">
+      <input type="text" name="price" class="form-control my-input" placeholder="{{'texts.price' | i18next}}" ng-model="auction.price" 
+          ng-class="{'input-error' : addAuctionForm.price.$invalid && (!addAuctionForm.price.$pristine || clicked)}" 
+          required />
     </div>
-  </div>           
-  <h3>Freight</h3>
-  <div class="form-group">
-    <label for="freight_description">Description:</label>
-    <input type="text" class="form-control" id="freight_description" placeholder="Description" ng-model="freight_description" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="freight_type">Type:</label>
-    <input type="text" class="form-control" id="freight_type" placeholder="Type" ng-model="freight_type" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="freight_size">Size:</label>
-    <input type="text" class="form-control" id="freight_size" placeholder="Size" ng-model="freight_size" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="freight_weight">Weight:</label>
-    <input type="text" class="form-control" id="freight_weight" placeholder="Weight" ng-model="freight_weight" required="string" required/>
-  </div>
-
-  <h3>Auction</h3>
-  <div class="form-group">
-    <label for="email_addressee">Email addressee:</label>
-    <input type="text" class="form-control" id="email_addressee" placeholder="Email addressee" ng-model="email_addressee" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="end_auction">End auction:</label>
-    <div class='input-group datetimepicker1'>
-      <input type='text' class="form-control" id="end_auction" placeholder="Date" required="string" required/>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
+    <div class="form-group">
+      <input type="text" name="currency" class="form-control my-input" placeholder="{{'texts.currency' | i18next}}" ng-model="auction.currency" 
+          ng-class="{'input-error' : addAuctionForm.currency.$invalid && (!addAuctionForm.currency.$pristine || clicked)}" 
+          required />
     </div>
-  </div> 
-  <div class="form-group">
-    <label for="min_amount">Min amount:</label>
-    <input type="text" class="form-control" id="min_amount" placeholder="Min amount" ng-model="min_amount" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="maturity">Doba splatnosti:</label>
-    <input type="text" class="form-control" id="maturity" placeholder="Maturity" ng-model="maturity" required="string" required/>
-  </div>
-  <div class="form-group">
-    <label for="hot">Hot:</label>
-    <input type="checkbox" class="form-control" id="hot" ng-model="hot" required="string"/>
-  </div>          
 
-  <input type="submit" class="btn btn-primary" ng-click="addAuction()"/>
-</form>
+    <div class="form-group">
+      <div class='input-group datetimepicker1'>
+        <input type='text' name="load_from" class="form-control my-input"  id="load_from" placeholder="{{'texts.date' | i18next}}" 
+        ng-class="{'input-error' : addAuctionForm.load_from.$invalid && (!addAuctionForm.load_from.$pristine || clicked)}" 
+        required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='input-group datetimepicker1'>
+        <input type='text' name="load_to" class="form-control my-input"  id="load_to" placeholder="{{'texts.date' | i18next}}" 
+        ng-class="{'input-error' : addAuctionForm.load_to.$invalid && (!addAuctionForm.load_to.$pristine || clicked)}" 
+        required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='input-group datetimepicker1'>
+        <input type='text' name="unload_from" class="form-control my-input"  id="unload_from" placeholder="{{'texts.date' | i18next}}" 
+        ng-class="{'input-error' : addAuctionForm.unload_from.$invalid && (!addAuctionForm.unload_from.$pristine || clicked)}" 
+        required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='input-group datetimepicker1'>
+        <input type='text' name="unload_to" class="form-control my-input"  id="unload_to" placeholder="{{'texts.date' | i18next}}" 
+        ng-class="{'input-error' : addAuctionForm.unload_to.$invalid && (!addAuctionForm.unload_to.$pristine || clicked)}" 
+        required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>        
+    <h3>Freight</h3>
+    <div class="form-group">
+      <input type="text" name="freight_description" class="form-control my-input" placeholder="{{'texts.freight_description' | i18next}}" ng-model="auction.freight_description" 
+          ng-class="{'input-error' : addAuctionForm.freight_description.$invalid && (!addAuctionForm.freight_description.$pristine || clicked)}" 
+          required />
+    </div>
+    <div class="form-group">
+      <input type="text" name="freight_type" class="form-control my-input" placeholder="{{'texts.freight_type' | i18next}}" ng-model="auction.freight_type" 
+          ng-class="{'input-error' : addAuctionForm.freight_type.$invalid && (!addAuctionForm.freight_type.$pristine || clicked)}" 
+          required />
+    </div>
+    <div class="form-group">
+      <input type="text" name="freight_size" class="form-control my-input" placeholder="{{'texts.freight_size' | i18next}}" ng-model="auction.freight_size" 
+          ng-class="{'input-error' : addAuctionForm.freight_size.$invalid && (!addAuctionForm.freight_size.$pristine || clicked)}" 
+          required />
+    </div>
+    <div class="form-group">
+      <input type="text" name="freight_weight" class="form-control my-input" placeholder="{{'texts.freight_weight' | i18next}}" ng-model="auction.freight_weight" 
+          ng-class="{'input-error' : addAuctionForm.freight_weight.$invalid && (!addAuctionForm.freight_weight.$pristine || clicked)}" 
+          required />
+    </div>
 
-
-
- <!-- parsing address components 
-        <div class="form-group">
-          <label for="address">Address</label>
-          <span>(parsing address components example)</span>
-          <input vs-google-autocomplete
-                 
-                 ng-model="address.name"
-                 vs-place="address.place" 
-                 vs-place-id="address.components.placeId"
-                 vs-street-number="address.components.streetNumber" 
-                 vs-street="address.components.street"
-                 vs-city="address.components.city"
-                 vs-state="address.components.state"
-                 vs-country-short="address.components.countryCode"
-                 vs-country="address.components.country"
-                 vs-post-code="address.components.postCode"
-                 vs-district="address.components.district"
-                 vs-latitude="address.components.location.lat"
-                 vs-longitude="address.components.location.long"
-                 
-                 type="text" 
-                 name="address"
-                 id="address"
-                 class="form-control" 
-                 placeholder="Enter address">
-          <span class="help-block"><b>Model: </b>{{address.name}}</span>
-          <span class="help-block"><b>Place id: </b>{{address.components.placeId}}</span>
-          <span class="help-block"><b>Street number: </b>{{address.components.streetNumber}}</span>
-          <span class="help-block"><b>Street: </b>{{address.components.street}}</span>
-          <span class="help-block"><b>City: </b>{{address.components.city}}</span>
-          <span class="help-block"><b>State: </b>{{address.components.state}}</span>
-          <span class="help-block"><b>Country code: </b>{{address.components.countryCode}}</span>
-          <span class="help-block"><b>Country: </b>{{address.components.country}}</span>
-          <span class="help-block"><b>Postcode: </b>{{address.components.postCode}}</span>
-          <span class="help-block"><b>District: </b>{{address.components.district}}</span>
-          <span class="help-block"><b>Latitude: </b>{{address.components.location.lat}}</span>
-          <span class="help-block"><b>Longitude: </b>{{address.components.location.long}}</span>
-          <pre class="help-block"><b>Place: </b>{{address.place | json}}</pre>
-        </div>
-         -->
+    <h3>Auction</h3>
+    <div class="form-group">
+      <input type="text" name="email_addressee" class="form-control my-input" placeholder="{{'texts.email_addressee' | i18next}}" ng-model="auction.email_addressee" 
+          ng-class="{'input-error' : addAuctionForm.email_addressee.$invalid && (!addAuctionForm.email_addressee.$pristine || clicked)}" 
+          required />
+    </div>
+    <div class="form-group">
+      <div class='input-group datetimepicker1'>
+        <input type='text' name="end_auction" class="form-control my-input"  id="end_auction" placeholder="{{'texts.date' | i18next}}" 
+        ng-class="{'input-error' : addAuctionForm.end_auction.$invalid && (!addAuctionForm.end_auction.$pristine || clicked)}" 
+        required/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div> 
+    <div class="form-group">
+      <input type="text" name="min_amount" class="form-control my-input" placeholder="{{'texts.min_amount' | i18next}}" ng-model="auction.min_amount" 
+          ng-class="{'input-error' : addAuctionForm.min_amount.$invalid && (!addAuctionForm.min_amount.$pristine || clicked)}" 
+          required />
+    </div>
+    <div class="form-group">
+      <input type="text" name="maturity" class="form-control my-input" placeholder="{{'texts.maturity' | i18next}}" ng-model="auction.maturity" 
+          ng-class="{'input-error' : addAuctionForm.maturity.$invalid && (!addAuctionForm.maturity.$pristine || clicked)}" 
+          required />
+    </div>   
+    <div class="form-group">
+      <input type="text" name="hot" class="form-control my-input" placeholder="{{'texts.hot' | i18next}}" ng-model="auction.hot" 
+          ng-class="{'input-error' : addAuctionForm.hot.$invalid && (!addAuctionForm.hot.$pristine || clicked)}" 
+          required />
+    </div>      
+    <div class="my-button important-button" ng-click="addAuction()">{{'texts.addAuction' | i18next}}</div>
+  </form>
+</div>

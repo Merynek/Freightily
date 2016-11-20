@@ -72,6 +72,7 @@
 .easy-button{
     background: white;
     color: #2c2d51;
+    border: 1px solid #12133d;
 }
 
 
@@ -94,3 +95,8 @@ input[type=radio]:checked + label::before {
     height: 1em;
 }
 
+.input-group-addon{
+    border: none;
+    border-radius: 0px;
+    background: e6e6f1;
+}

@@ -39,14 +39,13 @@ angular.module('appControllers')
             dic: $scope.user.dic,
             bank_account: $scope.user.bank_account,
             address_state: $scope.user.address_state,
-            address_street: $scope.address_street,
+            address_street: $scope.user.address_street,
             address_house_number: $scope.user.address_house_number,
             psc: $scope.user.psc,
             phone_number: $scope.user.phone_number,
             email: $scope.user.email,
             have_drivers: "false"
           };
-
           if(User.registration(data)){
             message(1, $filter('i18next')('success.registration'));
             $state.go('login');

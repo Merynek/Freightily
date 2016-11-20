@@ -6,8 +6,8 @@
 */
 
 angular.module('appControllers')
-  .controller('auctionListController', ['$scope', 'AuctionList', 'vehicles', function($scope, AuctionList, vehicles){
-    $scope.AuctionList = AuctionList;
+  .controller('bidsAuctionController', ['$scope', 'bidsAuction', 'vehicles', function($scope, bidsAuction, vehicles){
+    $scope.AuctionList = bidsAuction;
     $scope.vehicles = vehicles;
     middle_no_padding();
     $(window).resize(function () {
@@ -16,6 +16,7 @@ angular.module('appControllers')
       }
     });
   }
+
 ]);
 
 

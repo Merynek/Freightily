@@ -48,47 +48,12 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				role: [2,3]
 			}
 		})
-		.state('shipments', {
-			url: "/shipments",
-			controller: 'shipmentsController',
-			templateUrl: "app/components/Shipments/List/shipmentsView.html",
-			data: {
-				role: [1,2,3,4]
-			},
-			resolve: {
-				shipments: function(Shipments){
-					return Shipments.getAllShipments().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
-		.state('shipment', {
-			url: "/shipment/:id",
-			controller: 'shipmentDetailController',
-			templateUrl: "app/components/Shipments/Detail/shipmentDetailView.html",
-			data: {
-				role: [1,2,3,4]
-			},
-			resolve: {
-				shipment: function(Shipments, $stateParams){
-					return Shipments.getShipment($stateParams.id).then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
 		.state('auction', {
 			url: "/auction",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				role: [1,2,3,4],
-              	css: ['css/auction.css']
+				role: [1,2,3,4]
             },
 			resolve: {
 				AuctionList: function(Auction){
@@ -97,32 +62,9 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 					}).catch(function(){
 						return null;
 					})
-				}
-      		}
-		})
-		.state('auctionItem', {
-			url: "/auction/:id",
-			controller: 'auctionDetailController',
-			templateUrl: "app/components/Auction/Detail/auctionDetailView.html",
-			data: {
-				role: [1,2,3,4]
-			},
-			resolve: {
-				auctionItem: function(Auction, $stateParams){
-					return Auction.getAuctionItem($stateParams.id).then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
 				},
-				auctionHistory : function(Auction, $stateParams){
-					return Auction.getAuctionHistory($stateParams.id).then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility){
+				vehicles: function(UserAbility, User){
+					if(User.isSender() || User.isDriver()) return{};
 					return UserAbility.getVehicles().then(function(res){
 						return res;
 					}).catch(function(){
@@ -139,12 +81,97 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				role: [1]
 			}
 		})
-		.state('myAuction', {
-			url: "/auction/my",
+		.state('favouriteauction', {
+			url: "/auction/favourite",
+			controller: 'favouriteAuctionController',
+			templateUrl: "app/components/Auction/FavouriteAuction/favouriteAuctionView.html",
+			data: {
+				role: [2,3]
+			},
+			resolve: {
+				favouriteAuction: function(Auction){
+					return Auction.getMyFavouriteAuction().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				},
+				vehicles: function(UserAbility, User){
+					if(User.isSender() || User.isDriver()) return{};
+					return UserAbility.getVehicles().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				}
+			}
+		})
+		.state('bidsauction', {
+			url: "/auction/bids",
+			controller: 'bidsAuctionController',
+			templateUrl: "app/components/Auction/bidsAuction/bidsAuctionView.html",
+			data: {
+				role: [2,3]
+			},
+			resolve: {
+				bidsAuction: function(Auction){
+					return Auction.getMyBidsAuction().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				},
+				vehicles: function(UserAbility, User){
+					if(User.isSender() || User.isDriver()) return{};
+					return UserAbility.getVehicles().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				}
+			}
+		})
+		.state('winauction', {
+			url: "/auction/win",
+			controller: 'winAuctionController',
+			templateUrl: "app/components/Auction/winAuction/winAuctionView.html",
+			data: {
+				role: [2,3]
+			},
+			resolve: {
+				winAuction: function(Auction){
+					return Auction.getMyWinAuction().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				}
+			}
+		})
+		.state('shipments', {
+			url: "/auction/shipment",
+			controller: 'shipmentController',
+			templateUrl: "app/components/Auction/Shipments/shipmentView.html",
+			data: {
+				role: [4]
+			},
+			resolve: {
+				shipments: function(UserAbility){
+					return UserAbility.getMyShipments().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				}
+      		}
+		})
+
+		.state('myauction', {
+			url: "/myAuction",
 			controller: 'myAuctionController',
 			templateUrl: "app/components/Auction/MyAuction/myAuctionView.html",
 			data: {
-				role: [2,3]
+				role: [1,2,3,4]
 			},
 			resolve: {
 				WinAuction: function(Auction){
@@ -191,23 +218,6 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-		.state('winAuction', {
-			url: "/auction/win",
-			controller: 'sendersWinController',
-			templateUrl: "app/components/MySection/sendersWinView.html",
-			data: {
-				role: [1,2,3]
-			},
-			resolve: {
-				WinAuction: function(Auction){
-					return Auction.getMyWinAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
 		.state('mysection', {
 			url: "/my/section",
 			controller: 'mySectionController',
@@ -239,44 +249,6 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-		.state('mydrivershipments', {
-			url: "/my/shipments",
-			controller: 'myShipmentsController',
-			templateUrl: "app/components/MySection/myShipmentsView.html",
-			data: {
-				role: [4]
-			},
-			resolve: {
-				myshipments: function(UserAbility){
-					return UserAbility.getMyShipments().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
-		.state('createdauction', {
-			url: "/auction/created",
-			controller: 'myCreatedAuctionController',
-			templateUrl: "app/components/Auction/MyCreatedAuction/myCreatedAuctionView.html",
-			data: {
-				role: [1]
-			},
-			resolve: {
-				createdAuction: function(Auction){
-					return Auction.getCreatedAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
-
-
-		
-
 
 		.state('404', {
 			url: '/404',

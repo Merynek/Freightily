@@ -117,6 +117,16 @@
 .auction-expired{
     background: red;
 }
+.is-favourite{
+    color: gold;
+}
+.non-favourite{
+    color: gray;
+}
+.favouriteButton{
+    cursor: pointer;
+}
+
 
 
 /*Arrow on detail box*/
@@ -164,6 +174,11 @@
 
 /*Add vehicle*/
 .add-vehicle-page{
+    max-width: 558px;
+}
+
+/*auction ADD*/
+.auction-add-page{
     max-width: 558px;
 }
 
@@ -259,6 +274,14 @@
         text-align: center;
     }
     .add-vehicle-page .my-button {
+        margin: 0 auto;
+    }
+    /*Add auction*/
+    .auction-add-page{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .auction-add-page .my-button {
         margin: 0 auto;
     }
 }
