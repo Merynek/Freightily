@@ -6,7 +6,7 @@
 */
 
 angular.module('appControllers')
-  .controller('MainController', ['$scope', '$i18next', 'User', '$state', function($scope, $i18next, User, $state){
+  .controller('MainController', ['$scope', '$i18next', 'User', '$state', '$filter', function($scope, $i18next, User, $state, $filter){
 
 
     $scope.isLoggedUser = function(){
@@ -21,6 +21,7 @@ angular.module('appControllers')
       }
       $scope.usernameMain = "";
       $scope.roleNameMain = "";
+      $scope.navigationPath = "";
       $scope.isSender = false;
       $scope.isDispatcher = false;
       $scope.isTransporter = false;
@@ -43,6 +44,20 @@ angular.module('appControllers')
        $scope.CZlng = function(){
         $i18next.options.lng = 'CZ';
         $i18next.options.resGetPath = '../locales/CZ/translation.json';
+      };
+
+      $scope.setNavigationPath = function(path){
+        var pathArray = path.split("|"),
+            navigationList = [],
+            i = 0;
+
+        for(i; i < pathArray.length; i++) {
+            navigationList.push({
+                link: pathArray[i],
+                path: 'texts.navigation.' + pathArray[i]
+            });
+        }
+        $scope.navigationPath = navigationList;
       };
       
   

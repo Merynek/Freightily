@@ -39,7 +39,6 @@ function message(type, message){
 					$(".message").css("top", "auto");
 					message_active = false;
 				});
-
 			}, 1500);
 		});
 	}

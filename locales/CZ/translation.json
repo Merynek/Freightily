@@ -40,7 +40,16 @@
 		"add_vehicle": "Nové vozidlo registrováno",
 		"registration_user": "Registrace zaměstnance",
 		"driver": "Řidič",
-		"dispatcher": "Dispečer"
+		"dispatcher": "Dispečer",
+		"navigation": {
+			"home": "Domů",
+			"favouriteAuction": "Oblíbené aukce",
+			"createdAuction": "Vytvořené aukce",
+			"bidsAuction": "Aktivní aukce",
+			"winAuction": "Vyhrané aukce",
+			"auctionList": "Aukce",
+			"addAuction": "Přidat aukci"
+		}
 	},
 	"errors": {
 		"passwords_not_match" : "Hesla se neshodují",

@@ -112,6 +112,7 @@ header{
 
 .header-logo{
     float: left;
+    cursor: pointer;
 }
 
 .languages{
@@ -223,6 +224,10 @@ header{
     border-left: 1px solid white;
     padding-left: 6px;
 }
+.header-left ul li:last-child span{
+    font-weight: bold;
+    border-bottom: 1px solid #2c2d51;
+}
 
 .header-left ul li:hover span{
     font-weight: bold;
@@ -258,8 +263,8 @@ header{
         padding-top: 28px;
     }
     .header-bottom{
-        padding: 0;
-        padding-top: 8.6px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -268,28 +273,22 @@ header{
 
 /**/
 @media (max-width: 767px) {
-    .header-right{
-        margin-top: 5px;
-    }
-    .header-right div{
-        margin-left: 20px;
-    }
     .header-bottom{
         text-align: center;
     }
     .header-right{
-        float: none;
+        width: 100%;
     }
     .header-left{
-        float: none;
+        display: none;
     }
-    .header-left{
-        display: block;
+    .header-right .user{
+        float: left;
+        margin-left: 0;
     }
-    .header-left ul{
-        display: block;
+    .header-right .logout{
+        float: right;
     }
-
     .navbar-nav > li{
         width: 100%;
     }
@@ -330,6 +329,14 @@ header{
 }
 
 @media (max-width: 500px) {
+    .header-right .user{
+        width: 100%;
+    }
+    .header-right .logout{
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
     .languages{
         width: 100%;
         padding-top: 0;

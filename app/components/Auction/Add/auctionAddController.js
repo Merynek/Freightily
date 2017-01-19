@@ -6,8 +6,8 @@
 */
 
 angular.module('appControllers')
-  .controller('addAuctionController', ['$scope','Auction', 'Notification', function($scope, Auction, Notification){
-
+  .controller('addAuctionController', ['$scope','Auction', 'Notification', '$filter', function($scope, Auction, Notification, $filter){
+    $scope.setNavigationPath("home|addAuction");
     $scope.auction = {};
     $scope.clicked = false;
     $scope.distance = "";

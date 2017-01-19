@@ -12,6 +12,9 @@ angular.module('appDirectives')
                     controller: function($scope, $filter, Auction, User){
                         $scope.expired = false;
                         $scope.item = this.auctionItem.item;
+                        var end_auction = $scope.item.end_auction.split(" ");
+                        end_auction = end_auction[0].slice(0,-4) + " " + end_auction[1].slice(0,-3);
+                        $scope.item.end_auction = end_auction;
                         $scope.isFavourite = $scope.item.isFavourite;
                         $scope.history = {};
                         this.withFavourite = true;

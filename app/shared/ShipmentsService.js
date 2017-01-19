@@ -11,7 +11,7 @@ angular.module('appServices')
 		'use strict';
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/";
+		var url = "http://freightily.com/api/";
 
 		var Shipments = {};
 

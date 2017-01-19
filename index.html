@@ -102,7 +102,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<img src="../images/logo.svg" class="header-logo" alt="FREIGHTILY LOGO">
+							<img src="../images/logo.svg" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home">
 						</div>
 						<div class="languages">
 							<ul>
@@ -132,9 +132,9 @@
 			<div class="header-bottom">
 				<div class="header-left">
 					<ul>
-						<li><span>{{'texts.main_page' | i18next}}</span></li>
-						<li><span>{{'texts.about_company' | i18next}}</span></li>
-						<li><span>{{'texts.detail' | i18next}}</span></li>
+						<li ng-repeat="item in navigationPath">
+							<span ui-sref="{{item.link}}">{{item.path | i18next}}</span>
+						</li>
 					</ul>
 				</div>
 				<div class="header-right">

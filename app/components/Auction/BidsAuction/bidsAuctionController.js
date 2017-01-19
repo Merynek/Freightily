@@ -7,6 +7,7 @@
 
 angular.module('appControllers')
   .controller('bidsAuctionController', ['$scope', 'bidsAuction', 'vehicles', function($scope, bidsAuction, vehicles){
+    $scope.setNavigationPath("home|bidsAuction");
     $scope.AuctionList = bidsAuction;
     $scope.vehicles = vehicles;
     middle_no_padding();

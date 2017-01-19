@@ -9,7 +9,7 @@ gulp.task('default',['server']);
 
 gulp.task('server', function() {
   	connect.server({
-  	port: 9000,
+  	port: 9005,
   	host: 'localhost',
 	fallback: 'index.html'
 	});

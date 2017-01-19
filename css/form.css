@@ -98,5 +98,5 @@ input[type=radio]:checked + label::before {
 .input-group-addon{
     border: none;
     border-radius: 0px;
-    background: e6e6f1;
+    background: #e6e6f1;
 }

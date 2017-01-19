@@ -51,6 +51,10 @@
 .auction-list-page .auction-list .auction-body{
     padding: 0;
 }
+.auction-list-page .auction-list .auction-body .no-auction{
+    text-align: center;
+}
+
 .auction-item{
     margin-top: 15px;
     padding: 0;
@@ -58,9 +62,13 @@
     overflow: hidden;
 }
 .auction-item .auction-info{
-    min-height: 40px;
+    height: 40px;
     border: 2px solid #e6e6f1;
     padding: 0;
+}
+.auction-item .auction-info.auction-expired{
+    background: red;
+    border: none;
 }
 .auction-item .auction-button-detail{
     padding: 0;
@@ -114,9 +122,6 @@
     font-weight: bold;
     padding: 0;
 }
-.auction-expired{
-    background: red;
-}
 .is-favourite{
     color: gold;
 }
@@ -125,6 +130,9 @@
 }
 .favouriteButton{
     cursor: pointer;
+    float: right;
+    padding-top: 2px;
+    padding-right: 10px;
 }
 
 
@@ -205,11 +213,21 @@
 }
 
 @media (max-width: 767px) {
+    .content h1{
+        text-align: center;
+    }
     .middle {
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+    /*Home*/
+    .homePage{
+        text-align: center;
+    }
+    .homePage .my-button{
+        margin: 0;
     }
     /*Auction*/
     .clean-line-sm{
@@ -221,8 +239,16 @@
     .auction-header-line{
         display: none;
     }
+    .auction-item .auction-info{
+        height: auto;
+    }
+    .auction-item .auction-info.auction-expired{
+        background: none;
+        border: 2px solid red;
+    }
     .auction-item .auction-button-detail{
         text-align: center;
+        padding-top: 3px;
     }
     .auction-list-page .auction-list .auction-cell{
         text-align: center;
@@ -230,6 +256,9 @@
     }
     .auction-list-page .auction-list .auction-label{
         display: block;
+    }
+    .auction-detail .history-list{
+        text-align: center;
     }
     .auction-detail h2{
         text-align: center;
@@ -243,6 +272,11 @@
     .auction-bid > div{
         text-align: center;
     }
+    .favouriteButton{
+        float: none;
+        padding: 0;
+    }
+
 
     /*Login page*/
     .login-page {

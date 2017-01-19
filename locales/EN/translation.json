@@ -40,7 +40,16 @@
 		"add_vehicle": "Vehicle registered",
 		"registration_user": "Registration user",
 		"driver": "Driver",
-		"dispatcher": "Dispatcher"
+		"dispatcher": "Dispatcher",
+		"navigation": {
+			"home": "Home",
+			"favouriteAuction": "Favourite auction",
+			"createdAuction": "Created auction",
+			"bidsAuction": "Active auction",
+			"winAuction": "Win auction",
+			"auctionList": "Auction",
+			"addAuction": "Add auction"
+		}
 	},
 	"errors": {
 		"passwords_not_match" : "Passwords do not match",
