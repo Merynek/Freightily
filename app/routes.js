@@ -32,6 +32,20 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'registrationController',
 			templateUrl: "app/components/Account/Registration/registrationView.html"
 		})
+		 .state('account', {
+			 url: "/account",
+			 controller: 'userProfileController',
+			 templateUrl: "app/components/Account/Profile/userProfileView.html",
+			 resolve: {
+				 userInfo: function(UserAbility){
+					 return UserAbility.getAccountInfo().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
 		.state('newuser', {
 			url: "/registration/user",
 			controller: 'addUserController',
@@ -49,15 +63,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		.state('auction', {
-			url: "/auction",
+			url: "/auction?sort",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
 				role: [1,2,3,4]
             },
 			resolve: {
-				AuctionList: function(Auction){
-					return Auction.getAuctionList().then(function(res){
+				AuctionList: function(Auction, $stateParams){
+					var sort = $stateParams.sort || "";
+					return Auction.getAuctionList(sort).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;

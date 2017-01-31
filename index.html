@@ -44,6 +44,7 @@
 		<script src="/app/components/Account/Registration/registrationController.js"></script>
 		<script src="/app/components/Account/Registration/addUserController.js"></script>
 		<script src="/app/components/Account/Registration/addVehicleController.js"></script>
+		<script src="/app/components/Account/Profile/userProfileController.js"></script>
 		<script src="/app/components/Home/homeController.js"></script>
 		<script src="/app/components/Shipments/List/shipmentsController.js"></script>
 		<script src="/app/components/Shipments/Detail/shipmentDetailController.js"></script>
@@ -102,7 +103,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<img src="../images/logo.svg" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home">
+							<img src="../images/logo.svg" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home" />
 						</div>
 						<div class="languages">
 							<ul>
@@ -138,7 +139,7 @@
 					</ul>
 				</div>
 				<div class="header-right">
-					<div class="user" ng-if="isLoggedUser()"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+					<div class="user" ng-if="isLoggedUser()" ui-sref="account"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
 					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
 			</div>
@@ -189,37 +190,6 @@
 			</div>
 			<!--<iframe src="http://walrus.gmc.net/workhours/WorkHours.aspx?month_year=201610&user=MMe" width="800" height="900">-->
 			<!--</iframe>-->
-			<script>
-//				var cheat = setInterval(function(){
-//					var d = new Date();
-//					var n = d.getTime();
-//					var hours = d.getHours();
-//					var minutes = d.getMinutes();
-//					if(true){
-//						console.log("XX");
-//						$("#MRepeater_theDataList_DayRepeater_24_theRepeater_24_TxtAddFrom").focus();
-//						$("#MRepeater_theDataList_DayRepeater_24_theRepeater_24_TxtAddFrom").click();
-//						var e = jQuery.Event("keypress");
-//						e.which = 13; //choose the one you want
-//						e.keyCode = 13;
-//						 $("#MRepeater_theDataList_DayRepeater_24_theRepeater_24_TxtAddFrom").trigger(e);
-//						//document.getElementById("MRepeater_theDataList_DayRepeater_24_theRepeater_24_TxtAddFrom").value = '1250';
-//						/*$( "#form11" ).submit();
-//						finish();*/
-//					}
-//					else{
-//						location.reload();
-//					}
-//					/*if(hours == 12 && minutes == 33){
-//						//document.getElementById("MRepeater_theDataList_DayRepeater_24_theRepeater_24_TxtAddFrom").value = '';
-//						console.log("OK");
-//					}*/
-//
-//				}, 1000);
-//				var finish = function(){
-//					clearInterval(cheat);
-//				}
-			</script>
 		</footer>
 	</body>
 </html>

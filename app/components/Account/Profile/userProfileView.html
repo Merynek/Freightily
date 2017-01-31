@@ -1,23 +1,39 @@
 <div class="user-page">
-  <h1>{{'texts.login' | i18next}}</h1>
-  <p>{{'texts.login_text' | i18next}}</p>
-  <form name="loginForm" novalidate>
+  <h1>Your ACC</h1>
+  <p>Summary</p>
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><span>{{userInfo.name}}</span></td>
+    </tr>
+    <tr>
+      <td>Surname:</td>
+      <td><span>{{userInfo.surname}}</span></td>
+    </tr>
+    <tr>
+      <td>Role:</td>
+      <td><span>{{userInfo.role}}</span></td>
+    </tr>
+    <tr>
+      <td>Avatar:</td>
+      <td><span>{{userInfo.avatar}}</span></td>
+    </tr>
+  </table>
+  <form name="changePasswordForm" novalidate>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="text" name="username" class="form-control my-input" placeholder="{{'texts.username' | i18next}}" ng-model="user.name" ng-class="{'input-error' : loginForm.username.$invalid && (!loginForm.username.$pristine || clicked)}" ng-minlength="5" required/>
-      <i class="glyphicon glyphicon-user form-control-feedback"></i>
+      <input type="password" name="currentPass" class="form-control my-input" placeholder="Aktualni heslo" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="password" class="form-control my-input" placeholder="{{'texts.password' | i18next}}" ng-model="user.password" ng-class="{'input-error' : loginForm.password.$invalid && (!loginForm.password.$pristine || clicked)}" ng-minlength="8" required/>
+      <input type="password" name="newPass" class="form-control my-input" placeholder="Nové heslo" ng-model="account.newPass" ng-class="{'input-error' : changePasswordForm.newPass.$invalid && (!changePasswordForm.newPass.$pristine || clicked)}" ng-minlength="8" required/>
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+    </div>
+    <div class="form-group has-feedback has-feedback-left">
+      <input type="password" name="newPassRe" class="form-control my-input" placeholder="Znova nove heslo" ng-model="account.newPassRe" ng-class="{'input-error' : changePasswordForm.newPassRe.$invalid && (!changePasswordForm.newPassRe.$pristine || clicked)}" ng-minlength="8" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group">
-      <div class="my-button normal-button" ng-click="login()" >{{'texts.login' | i18next}}</div>
-    </div>
-    <div class="form-group">
-      <div class="my-button important-button" ui-sref="registration" >{{'texts.registration' | i18next}}</div>
-    </div>
-    <div class="form-group">
-      <div class="my-button easy-button">{{'texts.forgot_password' | i18next}}</div>
+      <div class="my-button important-button" ng-click="changePassword()">Change</div>
     </div>
   </form>
 </div>

@@ -19,7 +19,7 @@
                             positionY: 'top'
                         });
                 
-                }).run(['$rootScope', '$state', 'User', function ($rootScope, $state, User) {    
+                }).run(['$rootScope', '$state', 'User', '$stateParams', function ($rootScope, $state, User, $stateParams) {
                         var LoginHandler = function(callback){
                             var token = window.localStorage.getItem("TOKEN");
 

@@ -77,6 +77,9 @@ angular.module('appDirectives')
                         function refreshItem(id){
                             Auction.getAuctionItem(id).then(function(auctionItem){
                                 $scope.item = auctionItem;
+                                var end_auction = $scope.item.end_auction.split(" ");
+                                end_auction = end_auction[0].slice(0,-4) + " " + end_auction[1].slice(0,-3);
+                                $scope.item.end_auction = end_auction;
                                 $scope.isFavourite = auctionItem.isFavourite;
                             }).catch(function(){
                                 message(3, $filter('i18next')('Chyba při aktualizaci položky v aukci'));

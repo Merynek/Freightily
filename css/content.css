@@ -40,6 +40,18 @@
     padding-top: 8px;
     padding-left: 8px;
 }
+.auction-list-page .auction-list .auction-cell > div span:nth-child(1){
+    float: left;
+}
+.auction-list-page .auction-list .auction-cell > div span:nth-child(2){
+    float: right;
+}
+.auction-list-page .auction-list .auction-cell .glyphicon{
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    padding-left: 3px;
+}
 .auction-list-page .auction-list .auction-label{
     display: none;
     padding: 0;
@@ -130,9 +142,10 @@
 }
 .favouriteButton{
     cursor: pointer;
-    float: right;
-    padding-top: 2px;
-    padding-right: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
 }
 
 
@@ -273,8 +286,7 @@
         text-align: center;
     }
     .favouriteButton{
-        float: none;
-        padding: 0;
+        font-size: 40px;
     }
 
 
@@ -283,7 +295,11 @@
         margin: 0 auto;
         text-align: center;
     }
-
+    /*User page*/
+    .user-page {
+        margin: 0 auto;
+        text-align: center;
+    }
     /*Registration page*/
     .registration-page {
         margin: 0 auto;

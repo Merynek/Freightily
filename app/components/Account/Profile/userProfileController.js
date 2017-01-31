@@ -1,33 +1,35 @@
 /**
-* loginController 
-*
-* @class loginController
-* @constructor
-*/
+ * loginController
+ *
+ * @class loginController
+ * @constructor
+ */
 
 angular.module('appControllers')
-  .controller('loginController', ['$scope','User', '$filter', '$state', function($scope, User, $filter, $state){
-    
-    if(User.isLoggedIn){
-      $state.go('home');
-    }
+    .controller('userProfileController', ['$scope', 'userInfo', '$filter', function ($scope, userInfo, $filter) {
+        $scope.userInfo = userInfo;
 
-    $scope.clicked = false;
+        $scope.changePassword = function () {
+            var data;
 
-    $scope.login = function(){
-        $scope.clicked = true;
-        if(!$scope.loginForm.$valid) {
-            return;
+            $scope.clicked = true;
+            if (!$scope.changePasswordForm.$valid) {
+                return;
+            }
+            data = {
+                currentPass: $scope.account.currentPass,
+                newPass: $scope.account.newPass,
+                newPassRe: $scope.account.newPassRe
+            };
+
+            User.changePassword(data).then(function () {
+                message(1, $filter('i18next')('Heslo bylo zmeneno'));
+            }).catch(function () {
+                message(3, $filter('i18next')('Heslo nebylo zmeneno'));
+            })
         }
-        User.login($scope.user.name, $scope.user.password).then(function(){
-          message(1, $filter('i18next')('success.login'));
-          $state.go('home');
-        }).catch(function(){
-            message(3, $filter('i18next')('errors.wrong_login'));
-        })
     }
-  }
-]);
+    ]);
 
 
 

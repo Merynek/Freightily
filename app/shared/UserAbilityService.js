@@ -162,6 +162,43 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => get info about user */
+		UserAbility.getAccountInfo = function(){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'account',
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+		/* POST to REST api => change password */
+		UserAbility.changePassword = function(data){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'POST',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					data: param(data),
+					url: url+'changePassword',
+				}).then(function() {
+					endLoading();
+					resolve();
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
 		return UserAbility;
 
 	}]

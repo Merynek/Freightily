@@ -16,13 +16,19 @@ angular.module('appServices')
 		var Auction = {};
 
 		/* GET to REST api => Get all auction */ 
-		Auction.getAuctionList = function(){
+		Auction.getAuctionList = function(sort){
+			var parametres = "";
+
+			if(sort) {
+				parametres = "&" + sort;
+			}
 			startLoading();
+
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction',
+					url: url+'data/auction' + parametres
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
