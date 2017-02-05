@@ -63,7 +63,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		.state('auction', {
-			url: "/auction?sort",
+			url: "/auction?sort?order",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
@@ -72,7 +72,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			resolve: {
 				AuctionList: function(Auction, $stateParams){
 					var sort = $stateParams.sort || "";
-					return Auction.getAuctionList(sort).then(function(res){
+					var order = $stateParams.order || "";
+					return Auction.getAuctionList(sort, order).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;

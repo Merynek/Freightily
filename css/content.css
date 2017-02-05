@@ -23,6 +23,9 @@
 .auction-list-page{
 
 }
+.redArrow {
+    color: red;
+}
 .auction-list-page .auction-list{
     padding: 0;
     width: 100%;
