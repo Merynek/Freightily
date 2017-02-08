@@ -1,0 +1,35 @@
+<h2>Dispatchers</h2>
+<ul class="company-list">
+    <li class="item" ng-repeat="dispatcher in dispatchers">
+        <div class="info">
+            {{dispatcher.username}} - {{dispatcher.name}} {{dispatcher.surname}}
+        </div>
+        <div class="form-group">
+            <div class="my-button important-button" ng-click="deleteUser(dispatcher.ID)">Delete</div>
+        </div>
+    </li>
+</ul>
+
+<h2>Drivers</h2>
+<ul class="company-list">
+    <li class="item" ng-repeat="driver in drivers">
+        <div class="info">
+            {{driver.username}} - {{driver.name}} {{driver.surname}} - {{driver.driver_licence}}
+        </div>
+        <div class="form-group">
+            <div class="my-button important-button" ng-click="deleteUser(driver.ID)">Delete</div>
+        </div>
+    </li>
+</ul>
+
+<h2>Vehicles</h2>
+<ul class="company-list">
+    <li class="item" ng-repeat="vehicle in vehicles">
+        <div class="info">
+            {{vehicle.type}} - {{vehicle.brand}} Nosnost: {{vehicle.capacity}}, RZ: {{vehicle.RZ}}, Size: {{vehicle.size}}
+        </div>
+        <div class="form-group">
+            <div class="my-button important-button" ng-click="deleteVehicle(vehicle.ID)">Delete</div>
+        </div>
+    </li>
+</ul>

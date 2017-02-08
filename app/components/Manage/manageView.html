@@ -1,0 +1,22 @@
+<h1>Manage</h1>
+<div ng-if="isSender">
+    <div class="form-group">
+        <div class="my-button normal-button" ui-sref="createdauction">My created auction</div>
+    </div>
+</div>
+
+<div ng-if="isTransporter || isTransporter">
+    <div class="form-group">
+        <div class="my-button normal-button" ui-sref="shipments_manage">Shipments manage</div>
+    </div>
+    <h3>Company</h3>
+    <div class="form-group">
+        <div class="my-button normal-button" ui-sref="new_vehicle">New vehicle</div>
+    </div>
+    <div class="form-group">
+        <div class="my-button normal-button" ui-sref="new_employee">New employee</div>
+    </div>
+    <div class="form-group">
+        <div class="my-button normal-button" ui-sref="my_company">My company</div>
+    </div>
+</div>

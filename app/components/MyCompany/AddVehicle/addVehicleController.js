@@ -7,7 +7,7 @@
 
 angular.module('appControllers')
   .controller('addVehicleController', ['$scope', '$filter', 'User', function($scope, $filter, User){
-
+      $scope.setNavigationPath("home|manage|new_vehicle");
       $scope.vehicle = {
       };
       $scope.clicked = false;

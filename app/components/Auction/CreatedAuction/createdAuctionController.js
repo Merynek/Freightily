@@ -6,7 +6,7 @@
 */
 
 angular.module('appControllers')
-  .controller('myCreatedAuctionController', ['$scope', 'createdAuction', '$filter', function($scope, createdAuction, $filter){
+  .controller('createdAuctionController', ['$scope', 'createdAuction', '$filter', function($scope, createdAuction, $filter){
     $scope.setNavigationPath("home|createdAuction");
     $scope.AuctionList = createdAuction;
     middle_no_padding();

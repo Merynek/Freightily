@@ -6,8 +6,8 @@
 */
 
 angular.module('appControllers')
-  .controller('addUserController', ['$scope', 'Notification', '$state', '$filter', 'User', function($scope, Notification, $state, $filter, User){
-
+  .controller('addEmployeeController', ['$scope', 'Notification', '$state', '$filter', 'User', function($scope, Notification, $state, $filter, User){
+      $scope.setNavigationPath("home|manage|new_employee");
       $scope.employee = {
         driver_licence: ""
       };

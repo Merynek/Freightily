@@ -48,7 +48,13 @@
 			"bidsAuction": "Aktivní aukce",
 			"winAuction": "Vyhrané aukce",
 			"auctionList": "Aukce",
-			"addAuction": "Přidat aukci"
+			"addAuction": "Přidat aukci",
+			"manage": "Správce",
+			"my_company": "My company",
+			"new_employee": "Nový zaměstnanec",
+			"new_vehicle": "Nové vozidlo",
+			"my_auction": "Moje aukce",
+			"my_shipments": "Moje zásilky"
 		}
 	},
 	"errors": {

@@ -48,7 +48,13 @@
 			"bidsAuction": "Active auction",
 			"winAuction": "Win auction",
 			"auctionList": "Auction",
-			"addAuction": "Add auction"
+			"addAuction": "Add auction",
+			"manage": "Manage",
+			"my_company": "My company",
+			"new_employee": "New employee",
+			"new_vehicle": "New vehicle",
+			"my_auction": "My auction",
+			"my_shipments": "My shipments"
 		}
 	},
 	"errors": {

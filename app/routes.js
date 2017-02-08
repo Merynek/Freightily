@@ -46,18 +46,18 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				 }
 			 }
 		 })
-		.state('newuser', {
-			url: "/registration/user",
-			controller: 'addUserController',
-			templateUrl: "app/components/Account/Registration/addUserView.html",
+		.state('new_employee', {
+			url: "/manage/new_employee",
+			controller: 'addEmployeeController',
+			templateUrl: "app/components/MyCompany/AddEmployee/addEmployeeView.html",
 			data: {
 				role: [2,3]
 			}
 		})
-		.state('newvehicle', {
-			url: "/registration/vehicle",
+		.state('new_vehicle', {
+			url: "/manage/new_vehicle",
 			controller: 'addVehicleController',
-			templateUrl: "app/components/Account/Registration/addVehicleView.html",
+			templateUrl: "app/components/MyCompany/AddVehicle/addVehicleView.html",
 			data: {
 				role: [2,3]
 			}
@@ -164,6 +164,23 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
 			}
 		})
+		 .state('createdauction', {
+			 url: "/auction/created",
+			 controller: 'createdAuctionController',
+			 templateUrl: "app/components/Auction/CreatedAuction/createdAuctionView.html",
+			 data: {
+				 role: [1]
+			 },
+			 resolve: {
+				 createdAuction: function(Auction){
+					 return Auction.getCreatedAuction().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
 		.state('shipments', {
 			url: "/auction/shipment",
 			controller: 'shipmentController',
@@ -181,90 +198,84 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
       		}
 		})
-
-		.state('myauction', {
-			url: "/myAuction",
-			controller: 'myAuctionController',
-			templateUrl: "app/components/Auction/MyAuction/myAuctionView.html",
-			data: {
-				role: [1,2,3,4]
-			},
-			resolve: {
-				WinAuction: function(Auction){
-					return Auction.getMyWinAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				myFavouriteAuction: function(Auction){
-					return Auction.getMyFavouriteAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				myBidsAuction: function(Auction){
-					return Auction.getMyBidsAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				drivers: function(UserAbility){
-					return UserAbility.getDrivers().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility){
-					return UserAbility.getVehicles().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				assigments: function(UserAbility){
-					return UserAbility.getAssigments().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
-		.state('mysection', {
-			url: "/my/section",
+		.state('manage', {
+			url: "/manage",
 			controller: 'mySectionController',
-			templateUrl: "app/components/MySection/mySectionView.html",
+			templateUrl: "app/components/Manage/manageView.html",
 			data: {
 				role: [1,2,3,4]
-			},
-			resolve: {
-				drivers: function(UserAbility){
-					return UserAbility.getDrivers().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility){
-					return UserAbility.getVehicles().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				dispatchers: function(UserAbility){
-					return UserAbility.getDispatchers().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
+			}
 		})
+		 .state('shipments_manage', {
+			 url: "/manage/shipments_manage",
+			 controller: 'shipmentsManageController',
+			 templateUrl: "app/components/Manage/ShipmentsManage/shipmentsManageView.html",
+			 data: {
+				 role: [2,3]
+			 },
+			 resolve: {
+				 WinAuction: function(Auction){
+					 return Auction.getMyWinAuction().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 drivers: function(UserAbility){
+					 return UserAbility.getDrivers().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 vehicles: function(UserAbility){
+					 return UserAbility.getVehicles().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 assigments: function(UserAbility){
+					 return UserAbility.getAssigments().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
+		 .state('my_company', {
+			 url: "/manage/my_company",
+			 controller: 'myCompanyController',
+			 templateUrl: "app/components/MyCompany/myCompanyView.html",
+			 data: {
+				 role: [2,3]
+			 },
+			 resolve: {
+				 drivers: function(UserAbility){
+					 return UserAbility.getDrivers().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 vehicles: function(UserAbility){
+					 return UserAbility.getVehicles().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 dispatchers: function(UserAbility){
+					 return UserAbility.getDispatchers().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
+
 
 		.state('404', {
 			url: '/404',
