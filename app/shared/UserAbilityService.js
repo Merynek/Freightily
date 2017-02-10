@@ -199,6 +199,24 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => send new password to email*/
+		UserAbility.sendNewPassword = function(data){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'POST',
+					data: param(data),
+					url: url+'newPassword',
+				}).then(function() {
+					endLoading();
+					resolve();
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
 		return UserAbility;
 
 	}]

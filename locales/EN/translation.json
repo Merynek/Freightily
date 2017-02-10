@@ -54,7 +54,10 @@
 			"new_employee": "New employee",
 			"new_vehicle": "New vehicle",
 			"my_auction": "My auction",
-			"my_shipments": "My shipments"
+			"my_shipments": "My shipments",
+			"my_profile": "My profile",
+			"forgot_password": "Forgot password",
+			"registration": "Registration"
 		}
 	},
 	"errors": {

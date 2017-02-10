@@ -6,8 +6,10 @@
  */
 
 angular.module('appControllers')
-    .controller('userProfileController', ['$scope', 'userInfo', '$filter', function ($scope, userInfo, $filter) {
+    .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', function ($scope, $filter, userInfo, UserAbility) {
+        $scope.setNavigationPath("home|my_profile");
         $scope.userInfo = userInfo;
+        $scope.clicked = false;
 
         $scope.changePassword = function () {
             var data;
@@ -22,7 +24,7 @@ angular.module('appControllers')
                 newPassRe: $scope.account.newPassRe
             };
 
-            User.changePassword(data).then(function () {
+            UserAbility.changePassword(data).then(function () {
                 message(1, $filter('i18next')('Heslo bylo zmeneno'));
             }).catch(function () {
                 message(3, $filter('i18next')('Heslo nebylo zmeneno'));

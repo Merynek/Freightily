@@ -1,7 +1,7 @@
 <div class="auction-list-page">
     <h1>Shipments</h1>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+        <div ng-if="shipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
                 <div class="auction-cell col-sm-2 col-md-2 col-lg-2">From</div>
                 <div class="auction-cell col-sm-2 col-md-2 col-lg-2">To</div>
@@ -11,9 +11,10 @@
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="auction-item" ng-repeat="item in AuctionList">
+            <div ng-if="!shipments.length" class="no-auction">Žádné dostupné jízdy...</div>
+            <div class="auction-item" ng-repeat="item in shipments">
                 <detail-auction auction-item="{item}"></detail-auction>
             </div>
         </div>
-	</div>
+    </div>
 </div>

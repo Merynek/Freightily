@@ -1,23 +1,31 @@
+<h1>My company</h1>
+<div ng-if="isTransporter">
 <h2>Dispatchers</h2>
 <ul class="company-list">
     <li class="item" ng-repeat="dispatcher in dispatchers">
         <div class="info">
-            {{dispatcher.username}} - {{dispatcher.name}} {{dispatcher.surname}}
+            <span>{{dispatcher.username}}</span>
+            <span>{{dispatcher.name}}</span>
+            <span>{{dispatcher.surname}}</span>
         </div>
-        <div class="form-group">
-            <div class="my-button important-button" ng-click="deleteUser(dispatcher.ID)">Delete</div>
+        <div class="delete">
+            <span class="glyphicon glyphicon-remove" ng-click="deleteUser(dispatcher.ID)"></span>
         </div>
     </li>
 </ul>
+</div>
 
 <h2>Drivers</h2>
 <ul class="company-list">
     <li class="item" ng-repeat="driver in drivers">
         <div class="info">
-            {{driver.username}} - {{driver.name}} {{driver.surname}} - {{driver.driver_licence}}
+            <span>{{driver.username}}</span>
+            <span>{{driver.name}}</span>
+            <span>{{driver.surname}}</span>
+            <span>{{driver.driver_licence}}</span>
         </div>
-        <div class="form-group">
-            <div class="my-button important-button" ng-click="deleteUser(driver.ID)">Delete</div>
+        <div class="delete">
+            <span class="glyphicon glyphicon-remove" ng-click="deleteUser(driver.ID)"></span>
         </div>
     </li>
 </ul>
@@ -26,10 +34,14 @@
 <ul class="company-list">
     <li class="item" ng-repeat="vehicle in vehicles">
         <div class="info">
-            {{vehicle.type}} - {{vehicle.brand}} Nosnost: {{vehicle.capacity}}, RZ: {{vehicle.RZ}}, Size: {{vehicle.size}}
+            <span>Type: {{vehicle.type}}</span>
+            <span>Brand: {{vehicle.brand}}</span>
+            <span>Capacity: {{vehicle.capacity}}</span>
+            <span>RZ: {{vehicle.RZ}}</span>
+            <span>Size: {{vehicle.size}}</span>
         </div>
-        <div class="form-group">
-            <div class="my-button important-button" ng-click="deleteVehicle(vehicle.ID)">Delete</div>
+        <div class="delete">
+            <span class="glyphicon glyphicon-remove" ng-click="deleteVehicle(vehicle.ID)"></span>
         </div>
     </li>
 </ul>

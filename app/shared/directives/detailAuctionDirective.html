@@ -14,9 +14,9 @@
     </div>
 </div>
 <div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
-    <div class="my-button normal-button" ng-click="vm.detail()"><span>DETAIL</span></div>    
+    <div class="my-button normal-button" ng-click="toggleDetail()"><span>DETAIL</span></div>
 </div>
-<div ng-show="vm.show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Místa vyzvednutí nákladu</h2>
@@ -75,7 +75,7 @@
             <span>kolik: {{item_history.amount}} Datum: {{item_history.date}} id_uziv:{{item_history.user_img}}</span>
         </div>
     </div>
-    <div ng-if="withBids" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
+    <div ng-if="withBids && !canAssign" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Chcete přihodi?</h2>
         <div class="has-feedback has-feedback-left col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
             <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="vehicleSelect">
@@ -94,6 +94,20 @@
         </span>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <div class="my-button important-button" ng-click="vm.bidAuction(bid, vehicleSelect)"><span>PŘIHODIT</span></div>
+        </div>
+    </div>
+    <div ng-if="canAssign" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
+        <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Přiřadit řidiče</h2>
+        <div class="has-feedback has-feedback-left col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="driverSelect">
+                <option ng-repeat="driver in vm.driverList" value="{{driver.ID}}">
+                    {{driver.username}}
+                </option>
+            </select>
+            <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="my-button important-button" ng-click="vm.assign(driverSelect)"><span>Přiřadit</span></div>
         </div>
     </div>
 </div>

@@ -151,7 +151,47 @@
     font-size: 20px;
 }
 
+/*assignments*/
+.assignments {
+}
+.assignments table{
+    width: 100%;
+}
+.assignments table tr{
+    border: 1px solid #e6e6f1;
+    line-height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.assignments table tr td:last-child{
+    text-align: center;
+}
+.assignments table tr td:last-child span{
+    cursor: pointer;
+}
 
+/*My company*/
+.company-list{
+    width: 100%;
+    line-height: 40px;
+    list-style-type: none;
+}
+.company-list li{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.company-list li .info{
+    float: left;
+    margin-right: 10px;
+}
+.company-list li .delete{
+    margin-left: 15px;
+    color: red;
+    font-weight: bold;
+}
+.company-list li .delete span{
+    font-weight: bold;
+}
 
 /*Arrow on detail box*/
 .popover {
@@ -291,8 +331,6 @@
     .favouriteButton{
         font-size: 40px;
     }
-
-
     /*Login page*/
     .login-page {
         margin: 0 auto;

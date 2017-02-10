@@ -54,7 +54,10 @@
 			"new_employee": "Nový zaměstnanec",
 			"new_vehicle": "Nové vozidlo",
 			"my_auction": "Moje aukce",
-			"my_shipments": "Moje zásilky"
+			"my_shipments": "Moje zásilky",
+			"my_profile": "Můj profil",
+			"forgot_password": "Zapomenuté heslo",
+			"registration": "Registrace"
 		}
 	},
 	"errors": {

@@ -1,43 +1,69 @@
-<h2>Vyhrané aukce</h2>
-<table>
-    <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>Freight description</th>
-        <th>Price</th>
-        <th>Currency</th>
-        <th>End auction</th>
-    </tr>
-    <tr ng-repeat="item in myWinAuction">
-        <td>{{item.from}}</td>
-        <td>{{item.to}}</td>
-        <td>{{item.freight_description}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.currency}}</td>
-        <td>{{item.end_auction}}</td>
-        <td><button ui-sref="auctionItem({id: item.ID})">DETAIL</button></td>
-        <td>My drivers:
-            <select ng-model="driverSelect">
-                <option ng-repeat="driver in drivers" value="{{driver.ID}}">
-                    {{driver.username}} - {{driver.name}} {{driver.surname}} - {{driver.driver_licence}}
-                </option>
-            </select>
-        </td>
-        <td><button ng-click="assigment(item.ID, driverSelect)">přiřadit</button></td>
-    </tr>
-</table>
-
-<h2>Přiřazené auta a řidiči</h2>
-<table>
-    <tr>
-        <th>Detail Aukce</th>
-        <th>Car</th>
-        <th>Driver - name</th>
-        <th>Driver - surname</th>
-    </tr>
-    <tr ng-repeat="item in assigments">
-        <td><button ui-sref="auctionItem({id: item.id_auction})">DETAIL</button></td>
-        <td>{{item.car_brand}}</td>
-        <td>ID: {{item.id_driver}} - {{item.driver_name}}  {{item.driver_surname}}</td>
-    </tr>
-</table>
+<div class="auction-list-page">
+    <h1>Shipments manage</h1>
+    <h2>Nepřiřazené aukce</h2>
+    <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div ng-if="myWinAuction.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+            <div class="auction-header col-sm-9 col-md-9 col-lg-10">
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">From</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">To</div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Freight description</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Price</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">End auction</div>
+            </div>
+        </div>
+        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-if="!myWinAuction.length" class="no-auction">Žádné dostupné aukce...</div>
+            <div class="auction-item" ng-repeat="item in myWinAuction">
+                <detail-auction auction-item="{item}" drivers="{drivers}"></detail-auction>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="assignments">
+    <table>
+        <caption>Přiřazení řidiči na zásilky</caption>
+        <tr>
+            <th>Jméno</th>
+            <th>Přijmení</th>
+            <th>Řidičák</th>
+            <th>Bydliště</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Meravý</td>
+            <td>B</td>
+            <td>Revúcká 1204, Litovel 78401</td>
+            <td>
+                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1002)"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Meravý</td>
+            <td>B</td>
+            <td>Revúcká 1204, Litovel 78401</td>
+            <td>
+                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1003)"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Meravý</td>
+            <td>B</td>
+            <td>Revúcká 1204, Litovel 78401</td>
+            <td>
+                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1004)"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Meravý</td>
+            <td>B</td>
+            <td>Revúcká 1204, Litovel 78401</td>
+            <td>
+                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1002)"></span>
+            </td>
+        </tr>
+    </table>
+</div>

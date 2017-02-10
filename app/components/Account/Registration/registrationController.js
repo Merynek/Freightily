@@ -7,7 +7,7 @@
 
 angular.module('appControllers')
   .controller('registrationController', ['$scope', '$state', '$filter', 'User', function($scope, $state, $filter, User){
-
+      $scope.setNavigationPath("registration");
       $scope.user = {
       };
       $scope.clicked = false;

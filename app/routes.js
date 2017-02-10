@@ -37,7 +37,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 controller: 'userProfileController',
 			 templateUrl: "app/components/Account/Profile/userProfileView.html",
 			 resolve: {
-				 userInfo: function(UserAbility){
+				 userInfo: function(){
 					 return UserAbility.getAccountInfo().then(function(res){
 						 return res;
 					 }).catch(function(){
@@ -45,6 +45,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 					 })
 				 }
 			 }
+		 })
+		 .state('forgotPassword', {
+			 url: "/forgot_password",
+			 controller: 'forgotPasswordController',
+			 templateUrl: "app/components/Account/ForgotPassword/forgotPasswordView.html"
 		 })
 		.state('new_employee', {
 			url: "/manage/new_employee",
@@ -90,7 +95,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
       		}
 		})
 		.state('addauction', {
-			url: "/add/auction",
+			url: "/auction/add",
 			controller: 'addAuctionController',
 			templateUrl: "app/components/Auction/Add/auctionAddView.html",
 			data: {
@@ -184,7 +189,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 		.state('shipments', {
 			url: "/auction/shipment",
 			controller: 'shipmentController',
-			templateUrl: "app/components/Auction/Shipments/shipmentView.html",
+			templateUrl: "app/components/Shipments/myShipmentsView.html",
 			data: {
 				role: [4]
 			},
@@ -266,7 +271,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 						 return null;
 					 })
 				 },
-				 dispatchers: function(UserAbility){
+				 dispatchers: function(UserAbility, User){
+					 if(User.isDispatcher()) return {};
 					 return UserAbility.getDispatchers().then(function(res){
 						 return res;
 					 }).catch(function(){
