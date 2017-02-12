@@ -10,7 +10,7 @@ angular.module('appDirectives')
                 vehicles: '=',
                 drivers: '='
             },
-            controller: function ($scope, $filter, Auction, User) {
+            controller: function ($scope, $filter, Auction, User, UserAbility) {
                 $scope.expired = false;
                 $scope.item = this.auctionItem.item;
                 $scope.ID = this.auctionItem.item.ID;
@@ -95,6 +95,18 @@ angular.module('appDirectives')
                     else {
                         message(3, $filter('i18next')('Nevybral jste auto'));
                     }
+                };
+
+                this.assigment = function(driver){
+                    var data = {
+                        id_driver : driver,
+                        id_auction : $scope.item.ID
+                    };
+                    UserAbility.assigment(data).then(function(){
+                        message(1, $filter('i18next')('Zásilka byla přiřazena na řidiče'));
+                    }).catch(function(){
+                        message(3, $filter('i18next')('Chyba při přiřazení'));
+                    })
                 };
 
                 function refreshItem(id) {

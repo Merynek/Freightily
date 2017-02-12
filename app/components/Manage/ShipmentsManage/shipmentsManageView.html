@@ -29,40 +29,13 @@
             <th>Bydliště</th>
             <th></th>
         </tr>
-        <tr>
-            <td>Martin</td>
-            <td>Meravý</td>
+        <tr ng-repeat="item in assigments">
+            <td>{{item.driver_name}}</td>
+            <td>{{item.driver_surname}}</td>
             <td>B</td>
-            <td>Revúcká 1204, Litovel 78401</td>
+            <td>Revucka 1204/16 78401 Litovel</td>
             <td>
-                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1002)"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>Martin</td>
-            <td>Meravý</td>
-            <td>B</td>
-            <td>Revúcká 1204, Litovel 78401</td>
-            <td>
-                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1003)"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>Martin</td>
-            <td>Meravý</td>
-            <td>B</td>
-            <td>Revúcká 1204, Litovel 78401</td>
-            <td>
-                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1004)"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>Martin</td>
-            <td>Meravý</td>
-            <td>B</td>
-            <td>Revúcká 1204, Litovel 78401</td>
-            <td>
-                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(1002)"></span>
+                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
             </td>
         </tr>
     </table>
