@@ -180,6 +180,27 @@ angular.module('appServices')
 				})
 			});
 		}
+
+
+		/* POST to REST api => Registration user */ 
+		User.getCompany = function(data){
+			startLoading();
+			return $q(function(resolve, reject) {
+				$http({
+					method: 'GET',
+					data: param(data),
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'Account/company',
+				}).then(function(response) {
+					endLoading();
+					resolve();
+				}).catch(function(error){
+					endLoading();
+					reject();			
+				})
+			});
+		}
+
 		return User;
 	}]
 );
