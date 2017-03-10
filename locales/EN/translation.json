@@ -57,7 +57,8 @@
 			"my_shipments": "My shipments",
 			"my_profile": "My profile",
 			"forgot_password": "Forgot password",
-			"registration": "Registration"
+			"registration": "Registration",
+			"view_shipments": "View shipments"
 		}
 	},
 	"errors": {

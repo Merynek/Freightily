@@ -57,7 +57,8 @@
 			"my_shipments": "Moje zásilky",
 			"my_profile": "Můj profil",
 			"forgot_password": "Zapomenuté heslo",
-			"registration": "Registrace"
+			"registration": "Registrace",
+			"view_shipments": "Sleduj jízdy"
 		}
 	},
 	"errors": {

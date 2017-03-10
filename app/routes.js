@@ -211,6 +211,32 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				role: [1,2,3,4]
 			}
 		})
+		 .state('view_shipments', {
+			 url: "/manage/view_shipments",
+			 controller: 'viewShipmentsController',
+			 templateUrl: "app/components/Manage/ViewShipments/viewShipmentsView.html",
+			 data: {
+				 role: [1,2,3,4]
+			 },
+			 resolve: {
+				 actualShipments: function(Shipments){
+					 return {};
+					 return Shipments.getActualShipments().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+				 pastShipments: function(Shipments){
+					 return {};
+					 return Shipments.getActualShipments().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
 		 .state('shipments_manage', {
 			 url: "/manage/shipments_manage",
 			 controller: 'shipmentsManageController',

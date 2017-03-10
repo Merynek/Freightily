@@ -11,7 +11,7 @@ angular.module('appServices')
 		'use strict';
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/";
+		var url = "http://freightily.com/api/";
 
 		var Shipments = {};
 
@@ -50,6 +50,44 @@ angular.module('appServices')
 					})
 			});
 		};
+
+		/* GET to REST api => Get actual shipment */
+		Shipments.getActualShipments = function(){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'data/shipments'
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+		/* GET to REST api => Get past shipments */
+		Shipments.getPastShipments = function(){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'data/past-shipments'
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+
 
 		return Shipments;
 
