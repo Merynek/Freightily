@@ -28,6 +28,7 @@
             <th>Řidičák</th>
             <th>Bydliště</th>
             <th></th>
+            <th>Fix</th>
         </tr>
         <tr ng-repeat="item in assigments">
             <td>{{item.driver_name}}</td>
@@ -36,6 +37,9 @@
             <td>Revucka 1204/16 78401 Litovel</td>
             <td>
                 <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-pushpin" ng-class="(item.is_fixed) ? 'is-fixed' : ''" ng-click="fixAssignment(item)"></span>
             </td>
         </tr>
     </table>

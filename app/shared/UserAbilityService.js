@@ -124,6 +124,25 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => assignment driver to auction FIXED */
+		UserAbility.fixAssigment = function(data){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'POST',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					data: param(data),
+					url: url+'fixAssignment',
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
         /* POST to REST api => delete user */ 
 		UserAbility.deleteUser = function(data){
 			startLoading();

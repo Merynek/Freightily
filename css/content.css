@@ -157,6 +157,9 @@
 .assignments table{
     width: 100%;
 }
+.assignments table th:last-child{
+    text-align: center;
+}
 .assignments table tr{
     border: 1px solid #e6e6f1;
     line-height: 40px;
@@ -166,8 +169,12 @@
 .assignments table tr td:last-child{
     text-align: center;
 }
-.assignments table tr td:last-child span{
+.assignments table tr td .glyphicon{
     cursor: pointer;
+}
+.assignments table tr td .is-fixed {
+    color: red;
+    cursor: default;
 }
 
 /*My company*/
