@@ -27,7 +27,7 @@ angular.module('appControllers')
                     return;
                 }
 
-                UserAbility.assigment(data).then(function(){
+                UserAbility.fixAssigment(data).then(function(){
                     message(1, $filter('i18next')('Zásilka byla přiřazena na řidiče na stálo'));
                     item.is_fixed = true;
                     $scope.refresh();
