@@ -3,7 +3,7 @@
         angular.module('appServices', []);
         angular.module('appControllers', []);
         angular.module('appDirectives', []);
-        
+
         angular.module('myApp', [
                 'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete', 'timer'
                 ])
