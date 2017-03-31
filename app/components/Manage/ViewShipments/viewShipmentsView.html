@@ -1,58 +1,37 @@
 <div class="auction-list-page">
-    <h1>View Shipments on map</h1>
-    <h2>Actual</h2>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        Seznam auktuálních jízd s možností zobrazení mapy kde právě je a zobrazení fotek(při převzetí)
+        <div class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+            <div class="auction-header col-sm-9 col-md-9 col-lg-10">
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+            </div>
+        </div>
+        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Actual</h2>
+            <div class="auction-item" ng-repeat="item in actualShipments">
+                <detail-shipment shipment-item="{item}"></detail-shipment>
+            </div>
+            <h2>History</h2>
+            <div class="auction-item" ng-repeat="item in pastShipments">
+                <detail-shipment shipment-item="{item}"></detail-shipment>
+            </div>
+            <!-- Only for andorid app-->
+            <!--<input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
+            <input class="btn btn-primary" type="button" ng-click="uploadPhoto(photos)" value="upload">-->
+
+            <!-- 
+            <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                Seznam auktuálních jízd s možností zobrazení mapy kde právě je a zobrazení fotek(při převzetí)
+                <ul>
+                    <li ng-click="showPhoto(1008, true)">Show Photos</li>
+                    <li ng-click="showPhoto(1, true)">Show Photos</li>
+                </ul>
+            </div>
+
+            -->
+       
+        </div>
     </div>
-    <h2>History</h2>
-    <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        Seznam jízd které se již jeli s možnosti zobrazeni mapy jeho cesty a zobrazení fotek (při převzeti i při odevzdání)
-    </div>
-</div>
-<div class="view-map">
-    <h3>Mapa</h3>
-    Zobrazení mapy
-</div>
-<div class="view-photos">
-    <h3>Fotky</h3>
-    Zobrazení fotek
-
-    <input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
-    <input class="btn btn-primary" type="button" ng-click="uploadPhoto(photos)" value="upload">
-
-    <input class="btn btn-primary" type="button" ng-click="getPhoto()" value="GET">
-    <ul class="list-inline" ng-show="hasPhoto">
-        <li><strong>files:</strong></li>
-        <li ng-repeat="photo in photos"> {{photo.name}}</li>
-    </ul>
-    <img ng-src="album/{{vm.previewPhoto.name}}" style="max-height: 150px" ng-show="vm.previewPhoto" class="img-responsive" alt="vm.previewPhoto.name" />
-
-<!--
-    <body>
-        <form name="form1" method="post" enctype="multipart/form-data" action="http://localhost:51246/api/data/filesX">
-            <div>
-                <label for="id_auction">Auction ID</label>
-                <input name="id_auction" type="text" />
-            </div>
-            
-            <div>
-                <label for="image1">Image File</label>
-                <input name="image1" type="file" />
-            </div>
-            <div>
-                <label for="image2">Image File</label>
-                <input name="image2" type="file" />
-            </div>
-            <div>
-                <label for="image3">Image File</label>
-                <input name="image3" type="file" />
-            </div>
-            <div>
-                <input type="submit" value="Submit" />
-            </div>
-        </form>
-    </body>
-
-    -->
-
 </div>

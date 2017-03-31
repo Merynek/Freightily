@@ -12,6 +12,10 @@
     margin: 0 auto;
 }
 
+.shipment-photos .photo{
+    height: 150px;
+}
+
 /*auction*/
 .clean-line-sm{
     display: none;
@@ -224,6 +228,28 @@
     border-width: 12px;
 }
 
+.photo-buttons .my-button{
+    margin-bottom: 15px!important;
+}
+
+.map-section .map {
+    overflow: hidden;
+}
+.map-section .map #map {
+    height: 300px;
+    width: 100%;
+}
+
+.shipment-photos {
+    overflow: hidden;
+    min-height: 150px;
+    border: 2px solid gray;
+}
+.shipment-photos .no-photo {
+    color: gray;
+    text-align: center;
+    line-height: 130px;
+}
 
 /*Login page*/
 .login-page .my-button{
@@ -276,6 +302,9 @@
 }
 
 @media (max-width: 767px) {
+    .shipment-photos .photo{
+        height: 150px;
+    }
     .content h1{
         text-align: center;
     }

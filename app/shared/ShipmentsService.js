@@ -11,7 +11,8 @@ angular.module('appServices')
 		'use strict';
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://freightily.com/api/";
+		//var url = "http://freightily.com/api/";
+		var url = "http://localhost:51246/api/";
 
 		var Shipments = {};
 
@@ -58,7 +59,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipments'
+					url: url+'data/shipment/fixedShipments'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -76,7 +77,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/past-shipments'
+					url: url+'data/shipment/fixedShipments?past=1'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -86,8 +87,6 @@ angular.module('appServices')
 				})
 			});
 		};
-
-
 
 		return Shipments;
 

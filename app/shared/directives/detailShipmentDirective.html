@@ -1,0 +1,105 @@
+<style type="text/css">
+          #map {
+              height: 500px;
+              width: 600px;
+              border: 1px solid #000;
+          }
+      </style>
+
+<div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10">
+    <div class="auction-label col-xs-12">From</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
+    <div class="auction-label col-xs-12">To</div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
+    <div class="auction-label col-xs-12">Freight description</div>
+    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight_description}}</span></div>
+    <div class="auction-label col-xs-12">Driver</div>
+    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.user.username}}</span></div>
+</div>
+<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
+    <div class="my-button normal-button" ng-click="toggleDetail()"><span>DETAIL</span></div>
+</div>
+<div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="arrow"></div>
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Místa vyzvednutí nákladu</h2>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Odkud:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.from.city}} - {{item.from.street}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Kam:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.to.city}} - {{item.to.street}}</span></div>
+        </div>
+    </div>
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O nákladu</h2>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Popis:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_description}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Typ:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_type}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Velikost:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_size}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Váha:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_weight}}</span></div>
+        </div>
+    </div>
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O řidiči</h2>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Jméno:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.name}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Příjmení:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.surname}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Driver licence:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.driver_licence}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Telefoní číslo:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.phone_number}}</span></div>
+        </div>
+    </div>
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O autě</h2>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Značka:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.brand}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Nosnost:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.capacity}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Typ:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.type}}</span></div>
+        </div>
+    </div>
+    <div class="auction-detail-item photo-buttons col-xs-12 col-sm-3 col-md-3 col-lg-2">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Fotografie</h2>
+        <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>Zobraz fotky před</span></div>
+        <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>Zobraz fotky po</span></div>
+    </div>
+    <div class="shipment-photos auction-detail-item col-xs-12 col-sm-12 col-md-4 col-lg-6">
+        <div class="no-photo" ng-if="!photoReady">Prostor pro fotky</div>
+        <img ng-repeat="photo in photos" src="{{photo}}" class="photo col-xs-3 col-sm-3 col-md-3 col-lg-3"/>
+    </div>
+    <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Mapa jízdy</h2>
+        <div class="my-button normal-button" ng-click="vm.showMap(item.id_auction)"><span>Zobraz mapu jízdy</span></div>
+        <div class="map col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div id="map"></div>
+        </div>
+        <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1.1014.0')"><span>Check QR Code</span></div> -->
+    </div>
+</div>

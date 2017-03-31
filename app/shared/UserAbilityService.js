@@ -11,7 +11,7 @@ angular.module('appServices')
 		'use strict';
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://freightily.com/api/data/company/";
+		var url = "http://localhost:51246/api/data/company/";
 
 		var UserAbility = {};
 
@@ -86,6 +86,65 @@ angular.module('appServices')
 					})
 			});
 		};
+
+		/* GET to REST api => Get all photos in shipment*/
+		UserAbility.getPhotos = function(idAuction, firstPart){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'files',
+					params: {
+						id_auction: idAuction,
+						first_part: firstPart
+					}
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+		/* GET to REST api => Get map of driver path*/
+		UserAbility.getMap = function(id_auction){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN") },
+					url: url+'map/'+id_auction
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};	
+
+		/* GET to REST api => Get map of driver path*/
+		UserAbility.getMapy = function(id_auction){
+			startLoading();
+			return $q(function(resolve, reject){
+					$http({
+						method: 'GET',
+						headers: { 'token': window.localStorage.getItem("TOKEN") },
+						url: url+'mapy'
+					}).then(function(response) {
+						endLoading();
+						resolve(response.data);
+					}).catch(function(error){
+						endLoading();
+						reject();
+					})
+				});
+		};	
+
 
          /* GET to REST api => Get my shipments  */ 
 		UserAbility.getMyShipments = function(){
@@ -229,6 +288,26 @@ angular.module('appServices')
 				}).then(function() {
 					endLoading();
 					resolve();
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+
+		/* POST to REST api => Check qr code*/
+		UserAbility.checkQrCode = function(data){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'POST',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: 'http://localhost:51246/api/data/shipment/qrcode',
+					data: param(data)
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
 					reject();

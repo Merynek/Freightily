@@ -220,7 +220,6 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 },
 			 resolve: {
 				 actualShipments: function(Shipments){
-					 return {};
 					 return Shipments.getActualShipments().then(function(res){
 						 return res;
 					 }).catch(function(){
@@ -228,8 +227,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 					 })
 				 },
 				 pastShipments: function(Shipments){
-					 return {};
-					 return Shipments.getActualShipments().then(function(res){
+					 return Shipments.getPastShipments().then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;

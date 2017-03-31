@@ -5,7 +5,7 @@
     <div class="form-group radio-group">
       <input type="radio" name="role" class="my-radio" id="driver" ng-model="employee.role" value="4" required/>
       <label for="driver">{{'texts.driver' | i18next}}</label>
-      <input type="radio" name="role" class="my-radio" id="dispatcher" ng-model="employee.role" value="3"/>
+      <input type="radio" name="role" class="my-radio" id="dispatcher" ng-model="employee.role" value="3" ng-disabled="isDispatcher"/>
       <label for="dispatcher">{{'texts.dispatcher' | i18next}}</label>
     </div>
 
