@@ -232,7 +232,14 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 					 }).catch(function(){
 						 return null;
 					 })
-				 }
+				 },
+				 notStartedShipments: function(Shipments){
+					 return Shipments.getNotStartedShipments().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
 			 }
 		 })
 		 .state('shipments_manage', {
@@ -252,13 +259,6 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				 },
 				 drivers: function(UserAbility){
 					 return UserAbility.getDrivers().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 vehicles: function(UserAbility){
-					 return UserAbility.getVehicles().then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;

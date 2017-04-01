@@ -57,6 +57,17 @@ angular.module('appDirectives')
                         message(3, $filter('i18next')('Error with get map from server'));
                     })
                 };
+                 //for android client only
+                this.postGPS = function(idAuction){
+                    var data = {
+                        id_auction: idAuction,
+                        route: "49.7003929,17.0867981"
+                    };
+                    UserAbility.postGPS(data).then(function(data){
+                    }).catch(function(data){
+                        message(3, $filter('i18next')('Error with get map from server'));
+                    })
+                };
             }
         };
     });

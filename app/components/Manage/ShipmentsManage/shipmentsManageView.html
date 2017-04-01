@@ -1,6 +1,6 @@
 <div class="auction-list-page">
     <h1>Shipments manage</h1>
-    <h2>Nepřiřazené aukce</h2>
+    <h2>Aukce na přiřazení</h2>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         <div ng-if="myWinAuction.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
@@ -36,7 +36,7 @@
             <td>B</td>
             <td>Revucka 1204/16 78401 Litovel</td>
             <td>
-                <span class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
+                <span ng-if="!item.is_fixed" class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
             </td>
             <td>
                 <span class="glyphicon glyphicon-pushpin" ng-class="(item.is_fixed) ? 'is-fixed' : ''" ng-click="fixAssignment(item)"></span>

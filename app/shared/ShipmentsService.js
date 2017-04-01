@@ -88,6 +88,24 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => Get Not started shipments */
+		Shipments.getNotStartedShipments = function(){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'data/shipment/fixedShipments?notStarted=1'
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
 		return Shipments;
 
 	}]

@@ -1,6 +1,7 @@
 <div class="auction-list-page">
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+        <h2>Not started</h2>
+        <div ng-if="notStartedShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
                 <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
                 <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
@@ -9,29 +10,43 @@
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h2>Actual</h2>
+            <div ng-if="!notStartedShipments.length" class="no-auction">Žádné čekající jízdy...</div>
+            <div class="auction-item" ng-repeat="item in notStartedShipments">
+                <detail-shipment shipment-item="{item}"></detail-shipment>
+            </div>
+        </div>
+        <h2>Actual</h2>
+        <div ng-if="actualShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+            <div class="auction-header col-sm-9 col-md-9 col-lg-10">
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+            </div>
+        </div>
+        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-if="!actualShipments.length" class="no-auction">Žádné probíhající jízdy...</div>
             <div class="auction-item" ng-repeat="item in actualShipments">
                 <detail-shipment shipment-item="{item}"></detail-shipment>
             </div>
-            <h2>History</h2>
+        </div>
+        <h2>History</h2>
+        <div ng-if="pastShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+            <div class="auction-header col-sm-9 col-md-9 col-lg-10">
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+            </div>
+        </div>
+        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-if="!pastShipments.length" class="no-auction">Žádné ukončené jízdy...</div>
             <div class="auction-item" ng-repeat="item in pastShipments">
                 <detail-shipment shipment-item="{item}"></detail-shipment>
             </div>
+        </div>
             <!-- Only for andorid app-->
             <!--<input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
             <input class="btn btn-primary" type="button" ng-click="uploadPhoto(photos)" value="upload">-->
-
-            <!-- 
-            <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                Seznam auktuálních jízd s možností zobrazení mapy kde právě je a zobrazení fotek(při převzetí)
-                <ul>
-                    <li ng-click="showPhoto(1008, true)">Show Photos</li>
-                    <li ng-click="showPhoto(1, true)">Show Photos</li>
-                </ul>
-            </div>
-
-            -->
-       
-        </div>
     </div>
 </div>

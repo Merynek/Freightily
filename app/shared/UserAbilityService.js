@@ -315,6 +315,27 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => Post gps data to server*/
+		UserAbility.postGPS = function(data){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'POST',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: url+'map',
+					data: param(data)
+				}).then(function(response) {
+					endLoading();
+					resolve(response.data);
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+		};
+
+		
+
 		return UserAbility;
 
 	}]

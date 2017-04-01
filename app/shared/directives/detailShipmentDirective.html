@@ -1,11 +1,3 @@
-<style type="text/css">
-          #map {
-              height: 500px;
-              width: 600px;
-              border: 1px solid #000;
-          }
-      </style>
-
 <div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10">
     <div class="auction-label col-xs-12">From</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
@@ -100,6 +92,7 @@
         <div class="map col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div id="map"></div>
         </div>
-        <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1.1014.0')"><span>Check QR Code</span></div> -->
+        <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1.1016.1')"><span>Check QR Code</span></div>-->
+        <div class="my-button normal-button" ng-click="vm.postGPS(item.id_auction)"><span>Post GPS</span></div>
     </div>
 </div>
