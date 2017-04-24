@@ -153,7 +153,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'myShipments',
+					url: 'http://localhost:51246/api/data/shipment/fixedShipments',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);

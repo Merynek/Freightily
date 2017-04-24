@@ -18,7 +18,7 @@ angular.module('appControllers')
         $scope.uploadPhoto = function upload(photos)
         {
             var formData = new FormData();
-            formData.append("id_auction", 1018);
+            formData.append("id_auction", 2019);
             angular.forEach(photos, function (photo) {
                 formData.append(photo.name, photo);
             });

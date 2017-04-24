@@ -102,7 +102,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				role: [1]
 			}
 		})
-		.state('favouriteauction', {
+		.state('favouriteAuction', {
 			url: "/auction/favourite",
 			controller: 'favouriteAuctionController',
 			templateUrl: "app/components/Auction/FavouriteAuction/favouriteAuctionView.html",
