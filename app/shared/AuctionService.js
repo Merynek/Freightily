@@ -9,12 +9,8 @@
 angular.module('appServices')
 	.factory('Auction', ['$http', '$q', function ($http, $q) {
 		'use strict';
-
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/";
-
+		
 		var Auction = {};
-
 		/* GET to REST api => Get all auction */ 
 		Auction.getAuctionList = function(sort, order){
 			var parametres = "?";
@@ -28,7 +24,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction'+parametres
+					url: CONFIG.server.url+'data/auction'+parametres
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -46,7 +42,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/'+id,
+					url: CONFIG.server.url+'data/auction/'+id,
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -64,7 +60,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/history/'+id,
+					url: CONFIG.server.url+'data/auction/history/'+id,
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -83,7 +79,7 @@ angular.module('appServices')
 					method: 'POST',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/new',
+					url: CONFIG.server.url+'data/auction/new',
 					}).then(function(response) {
 						endLoading();
 						resolve();
@@ -102,7 +98,7 @@ angular.module('appServices')
 					method: 'POST',
                     data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/bid',
+					url: CONFIG.server.url+'data/auction/bid',
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -120,7 +116,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/favourite/'+id,
+					url: CONFIG.server.url+'data/auction/favourite/'+id,
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -138,7 +134,7 @@ angular.module('appServices')
 				$http({
 					method: 'DELETE',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/favourite/'+id,
+					url: CONFIG.server.url+'data/auction/favourite/'+id,
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -156,7 +152,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/win',
+					url: CONFIG.server.url+'data/auction/win',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -174,7 +170,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/favourite',
+					url: CONFIG.server.url+'data/auction/favourite',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -192,7 +188,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/mybids',
+					url: CONFIG.server.url+'data/auction/mybids',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -210,7 +206,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/auction/created',
+					url: CONFIG.server.url+'data/auction/created',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);

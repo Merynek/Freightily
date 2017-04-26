@@ -9,10 +9,7 @@
 angular.module('appServices')
 	.factory('UserAbility', ['$http', '$q', 'User', function ($http, $q, User) {
 		'use strict';
-
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/data/company/";
-
+		var url = CONFIG.server.url+"data/";
 		var UserAbility = {};
 
 		/* GET to REST api => Get my drivers */
@@ -22,7 +19,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'drivers',
+					url: url+'company/drivers',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -40,7 +37,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'vehicles',
+					url: url+'company/vehicles',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -58,7 +55,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'dispatchers',
+					url: url+'company/dispatchers',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -76,7 +73,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'assignments',
+					url: url+'company/assignments',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -94,7 +91,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'files',
+					url: url+'company/files',
 					params: {
 						id_auction: idAuction,
 						first_part: firstPart
@@ -116,7 +113,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN") },
-					url: url+'map/'+id_auction
+					url: url+'company/map/'+id_auction
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -134,7 +131,7 @@ angular.module('appServices')
 					$http({
 						method: 'GET',
 						headers: { 'token': window.localStorage.getItem("TOKEN") },
-						url: url+'mapy'
+						url: url+'company/mapy'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -153,7 +150,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: 'http://localhost:51246/api/data/shipment/fixedShipments',
+					url: url+'shipment/fixedShipments',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -172,7 +169,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
                     data: param(data),
-					url: url+'assignment',
+					url: url+'company/assignment',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -191,7 +188,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
 					data: param(data),
-					url: url+'fixAssignment',
+					url: url+'company/fixAssignment',
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -210,7 +207,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
                     data: param(data),
-					url: url+'delete/user',
+					url: url+'company/delete/user',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -229,7 +226,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
                     data: param(data),
-					url: url+'delete/vehicle',
+					url: url+'company/delete/vehicle',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -247,7 +244,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'account',
+					url: url+'company/account',
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -266,7 +263,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
 					data: param(data),
-					url: url+'changePassword',
+					url: url+'company/changePassword',
 				}).then(function() {
 					endLoading();
 					resolve();
@@ -284,7 +281,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: url+'newPassword',
+					url: url+'company/newPassword',
 				}).then(function() {
 					endLoading();
 					resolve();
@@ -303,7 +300,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: 'http://localhost:51246/api/data/shipment/qrcode',
+					url: url+'shipment/qrcode',
 					data: param(data)
 				}).then(function(response) {
 					endLoading();
@@ -322,7 +319,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'map',
+					url: url+'company/map',
 					data: param(data)
 				}).then(function(response) {
 					endLoading();

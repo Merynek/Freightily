@@ -5,9 +5,6 @@ angular.module('appServices')
 	.factory('User', ['$http', '$q', function ($http, $q) {
 		'use strict';
 
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		var url = "http://localhost:51246/api/";
-
 		var User = {
 			isLoggedIn: false,
 			username: "",
@@ -58,7 +55,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: url+'Account/login'
+					url: CONFIG.server.url+'Account/login'
 				}).then(function(response) {
 					if (window.localStorage) {
 						if(response.data && response.data.User && response.data.Token){
@@ -89,7 +86,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'POST',
-					url: url+'Account/logout'
+					url: CONFIG.server.url+'Account/logout'
 				}).then(function(response) {
 					User.set('isLoggedIn', false);
 					window.localStorage.clear();
@@ -108,7 +105,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject) {
 				$http({
 					method: 'POST',
-					url: url+'Account/checkToken',
+					url: CONFIG.server.url+'Account/checkToken',
 					headers: { 'token': token }
 				}).then(function(response) {
 					User.set('isLoggedIn', true);
@@ -132,7 +129,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: url+'Account/Registration',
+					url: CONFIG.server.url+'Account/Registration',
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -151,7 +148,7 @@ angular.module('appServices')
 					method: 'POST',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'Account/Registration/Adduser',
+					url: CONFIG.server.url+'Account/Registration/Adduser',
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -170,7 +167,7 @@ angular.module('appServices')
 					method: 'POST',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'Account/Registration/Addvehicle',
+					url: CONFIG.server.url+'Account/Registration/Addvehicle',
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -190,7 +187,7 @@ angular.module('appServices')
 					method: 'GET',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'Account/company',
+					url: CONFIG.server.url+'Account/company',
 				}).then(function(response) {
 					endLoading();
 					resolve();

@@ -19,7 +19,9 @@
                             positionY: 'top'
                         });
                 
-                }).run(['$rootScope', '$state', 'User', '$stateParams', function ($rootScope, $state, User, $stateParams) {
+                }).run(['$rootScope', '$state', 'User', '$stateParams', '$http', function ($rootScope, $state, User, $stateParams, $http) {
+                        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
+                        
                         var LoginHandler = function(callback){
                             var token = window.localStorage.getItem("TOKEN");
 

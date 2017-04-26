@@ -10,10 +10,6 @@ angular.module('appServices')
 	.factory('Shipments', ['$http', '$q', function ($http, $q) {
 		'use strict';
 
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
-		//var url = "http://freightily.com/api/";
-		var url = "http://localhost:51246/api/";
-
 		var Shipments = {};
 
 		/* GET to REST api => Get all shipments */ 
@@ -23,7 +19,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipments',
+					url: CONFIG.server.url+'data/shipments',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -41,7 +37,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipment/'+id,
+					url: CONFIG.server.url+'data/shipment/'+id,
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -59,7 +55,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipment/fixedShipments'
+					url: CONFIG.server.url+'data/shipment/fixedShipments'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -77,7 +73,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipment/fixedShipments?past=1'
+					url: CONFIG.server.url+'data/shipment/fixedShipments?past=1'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -95,7 +91,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'data/shipment/fixedShipments?notStarted=1'
+					url: CONFIG.server.url+'data/shipment/fixedShipments?notStarted=1'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
