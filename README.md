@@ -1,7 +1,12 @@
 # Freightily
+## Install
+You must have installed git and nodeJS
+> Clone this repository
 
-Steps to run application on port 9005
+> npm install --global gulp-cli (install gulp)
 
--npm install --global gulp-cli
--npm i
--gulp
+> npm install (install depedencies)
+
+> gulp (start http server,...)
+
+> Application running on http://localhost:9005/
