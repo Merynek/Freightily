@@ -1,7 +1,7 @@
 /**
-* noteNewController 
+* addEmployeeController 
 *
-* @class noteNewController
+* @class addEmployeeController
 * @constructor
 */
 

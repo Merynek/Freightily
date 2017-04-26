@@ -1,7 +1,7 @@
 /**
-* noteNewController 
+* bidsAuctionController 
 *
-* @class noteNewController
+* @class bidsAuctionController
 * @constructor
 */
 

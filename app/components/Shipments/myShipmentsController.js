@@ -1,7 +1,7 @@
 /**
- * noteNewController
+ * shipmentController
  *
- * @class noteNewController
+ * @class shipmentController
  * @constructor
  */
 

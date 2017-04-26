@@ -1,7 +1,7 @@
 /**
- * User Service contains user informatios
+ * Auction Service
  *
- * @class UserService
+ * @class AuctionService
  * @module Service
  * @constructor
  */

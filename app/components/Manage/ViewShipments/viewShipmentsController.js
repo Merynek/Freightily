@@ -1,5 +1,5 @@
 /**
- * noteNewController
+ * viewShipmentsController
  *
  * @class viewSchipmentsController
  * @constructor
@@ -29,7 +29,7 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('Upload FAIL!'));
             })
         };
-
+        //only for post photos, but never use on web client
         var postPhotos = function(formData){
 			return $q(function(resolve, reject){
 				$http({

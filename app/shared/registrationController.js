@@ -1,7 +1,7 @@
 /**
-* noteNewController 
+* registrationController 
 *
-* @class noteNewController
+* @class registrationController
 * @constructor
 */
 

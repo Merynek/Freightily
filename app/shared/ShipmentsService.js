@@ -1,7 +1,7 @@
 /**
- * User Service contains user informatios
+ * Shipments Service
  *
- * @class UserService
+ * @class ShipmentsService
  * @module Service
  * @constructor
  */

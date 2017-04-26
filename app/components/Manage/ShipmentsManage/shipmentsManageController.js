@@ -1,5 +1,5 @@
 /**
- * noteNewController
+ * shipmentsManageController
  *
  * @class shipmentsManageController
  * @constructor

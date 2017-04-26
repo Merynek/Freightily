@@ -1,7 +1,7 @@
 /**
-* noteNewController 
+* mySectionController 
 *
-* @class noteNewController
+* @class mySectionController
 * @constructor
 */
 

@@ -1,7 +1,7 @@
 /**
- * loginController
+ * userProfileController
  *
- * @class loginController
+ * @class userProfileController
  * @constructor
  */
 
