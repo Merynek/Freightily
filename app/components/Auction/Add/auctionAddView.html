@@ -125,14 +125,22 @@
           required />
     </div>
     <div class="form-group">
-      <input type="text" name="freight_size" class="form-control my-input" placeholder="{{'texts.freight_size' | i18next}}" ng-model="auction.freight_size" 
-          ng-class="{'input-error' : addAuctionForm.freight_size.$invalid && (!addAuctionForm.freight_size.$pristine || clicked)}" 
-          required />
+      <select class="form-control my-input" ng-model="auction.freight_size"
+              ng-class="{'input-error' : addAuctionForm.freight_size.$invalid && (!addAuctionForm.freight_size.$pristine || clicked)}" required>
+        <option value="" disabled selected>{{'texts.freight_size' | i18next}}</option>
+        <option value="1">do 1x1 m<sup>2</sup></option>
+        <option value="2">do 2x2 m<sup>2</sup></option>
+        <option value="3">více</option>
+      </select>
     </div>
     <div class="form-group">
-      <input type="text" name="freight_weight" class="form-control my-input" placeholder="{{'texts.freight_weight' | i18next}}" ng-model="auction.freight_weight" 
-          ng-class="{'input-error' : addAuctionForm.freight_weight.$invalid && (!addAuctionForm.freight_weight.$pristine || clicked)}" 
-          required />
+      <select class="form-control my-input" ng-model="auction.freight_weight"
+              ng-class="{'input-error' : addAuctionForm.freight_weight.$invalid && (!addAuctionForm.freight_weight.$pristine || clicked)}" required>
+        <option value="" disabled selected>{{'texts.freight_weight' | i18next}}</option>
+        <option value="1">do 50kg</option>
+        <option value="2">do 100kg</option>
+        <option value="3">více</option>
+      </select>
     </div>
 
     <h3>Auction</h3>

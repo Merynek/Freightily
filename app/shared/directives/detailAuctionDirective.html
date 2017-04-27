@@ -79,6 +79,7 @@
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Chcete přihodi?</h2>
         <div class="has-feedback has-feedback-left col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
             <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="vehicleSelect">
+                <option value="" disabled selected>{{'texts.vehicle' | i18next}}</option>
                 <option ng-repeat="vehicle in vm.vehicleList" value="{{vehicle.ID}}">
                     {{vehicle.brand}}
                 </option>
@@ -100,6 +101,7 @@
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Přiřadit řidiče</h2>
         <div class="has-feedback has-feedback-left col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
             <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="driverSelect">
+                <option value="" disabled selected>{{'texts.driver' | i18next}}</option>
                 <option ng-repeat="driver in vm.driverList" value="{{driver.ID}}">
                     {{driver.username}}
                 </option>

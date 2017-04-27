@@ -61,18 +61,74 @@ angular.module('appControllers')
       else{
         Notification.error('Musi byt vyopneni from a to');
       }
-    }
+    };
+
+    var validateDate = function(value){
+      return new Date(value) < new Date();
+    };
     
     $scope.addAuction = function(){
       $scope.clicked = true;
       if(!$scope.addAuctionForm.$valid) {
         return;
       }
-      var load_from = $("#load_from").val();
-      var load_to = $("#load_to").val();
-      var unload_from = $("#unload_from").val();
-      var unload_to = $("#unload_to").val();
-      var end_auction = $("#end_auction").val();               
+
+      var load_from = $("#load_from");
+      var load_to = $("#load_to");
+      var unload_from = $("#unload_from");
+      var unload_to = $("#unload_to");
+      var end_auction = $("#end_auction");
+
+      if (validateDate(load_from.val())) {
+        load_from.addClass("input-error");
+        message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
+        return;
+      }
+      load_from.removeClass("input-error");
+      if (validateDate(load_to.val())) {
+        load_to.addClass("input-error");
+        message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
+        return;
+      }
+      load_to.removeClass("input-error");
+      if (validateDate(end_auction.val())) {
+        end_auction.addClass("input-error");
+        message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
+        return;
+      }
+      end_auction.removeClass("input-error");
+
+      var from = new Date(load_from.val());
+      var to = new Date(load_to.val());
+      var end = new Date(end_auction.val());
+
+      if (from > to) {
+        message(3, $filter('i18next')('load_to musí byt stejný nebo vetší jak load_from'));
+        return;
+      }
+
+      from = new Date(unload_from.val());
+      to = new Date(unload_to.val());
+
+      if (from > to) {
+        message(3, $filter('i18next')('unload_to musí byt stejný nebo vetší jak unload_from'));
+        return;
+      }
+
+      from = new Date(load_to.val());
+      to = new Date(unload_to.val());
+
+      if (from.setDate(from.getDate() + 7) > to) {
+        message(3, $filter('i18next')('Datum pro vyložení musí být minimálně 7 dní od datumu naložení'));
+        return;
+      }
+
+      from = new Date(load_from.val());
+
+      if (end.setDate(end.getDate() + 2) > from) {
+        message(3, $filter('i18next')('Datum ukončení aukce musí být 2dny před datumem naložení nákladu'));
+        return;
+      }
 
       if(load_from && load_to && unload_from && unload_to && end_auction){
         var data = {
@@ -92,18 +148,19 @@ angular.module('appControllers')
           freight_type: $scope.auction.freight_type,
           freight_size: $scope.auction.freight_size,
           freight_weight: $scope.auction.freight_weight,
-          load_from: load_from,
-          load_to: load_to,
-          unload_from: unload_from,
-          unload_to: unload_to,
+          load_from: load_from.val(),
+          load_to: load_to.val(),
+          unload_from: unload_from.val(),
+          unload_to: unload_to.val(),
           price: $scope.auction.price,
           currency: $scope.auction.currency,
           email_addressee: $scope.auction.email_addressee,
-          end_auction: end_auction,
+          end_auction: end_auction.val(),
           min_amount: $scope.auction.min_amount,
           maturity: $scope.auction.maturity,
           hot: ($scope.auction.hot) ? "true" : "false"
-        }
+        };
+
         Auction.newAuction(data).then(function(){
           message(1, $filter('i18next')('Aukce byla založena'));
         }).catch(function(){
