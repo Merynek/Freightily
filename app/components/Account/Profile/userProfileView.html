@@ -1,7 +1,10 @@
 <div class="user-page">
   <h1>Your ACC</h1>
-  <p>Summary</p>
   <table>
+    <tr>
+      <td>Username:</td>
+      <td><span>{{userInfo.username}}</span></td>
+    </tr>
     <tr>
       <td>Name:</td>
       <td><span>{{userInfo.name}}</span></td>
@@ -13,10 +16,6 @@
     <tr>
       <td>Role:</td>
       <td><span>{{userInfo.role}}</span></td>
-    </tr>
-    <tr>
-      <td>Avatar:</td>
-      <td><span>{{userInfo.avatar}}</span></td>
     </tr>
   </table>
   <form name="changePasswordForm" novalidate>

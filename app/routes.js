@@ -37,7 +37,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 controller: 'userProfileController',
 			 templateUrl: "app/components/Account/Profile/userProfileView.html",
 			 resolve: {
-				 userInfo: function(){
+				 userInfo: function(UserAbility){
 					 return UserAbility.getAccountInfo().then(function(res){
 						 return res;
 					 }).catch(function(){
