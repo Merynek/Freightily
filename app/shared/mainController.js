@@ -62,7 +62,58 @@ angular.module('appControllers')
         }
         $scope.navigationPath = navigationList;
       };
-      
-  
+
+      // Visuals by Aloush
+      $scope.afterRender = function() {
+          clearTimeout(this.renderDebouncer);
+          this.renderDebouncer = setTimeout(function(){
+              $scope.footerFix();
+          }, 10);
+      };
+
+      // fix footer
+      $scope.footerFix = function () {
+          var win = window.innerHeight,
+              $con = $('body').height(),
+              $f = $('footer');
+
+          $con += $f.css('position') == 'absolute' ? 270 : 30;
+          if (win > $con) {
+              $f.css({
+                  position: 'absolute'
+              });
+          } else {
+              $f.css({
+                  position: 'relative'
+              });
+          }
+      };
+
+      // forms
+      $scope.formLabels = function (name) {
+          clearTimeout(this.formDebouncer);
+          this.formDebouncer = setTimeout(function(){
+              var $form = $("[name='" + name + "']"),
+                  $inputs,
+                  makeLabel = function (element) {
+                      if ($(element).attr("data-label-moved")) return;
+                      $(element).attr("data-label-moved", "true");
+                      var inputType = $(element).attr('type');
+                      if (inputType == "file" || inputType == "checkbox") {
+                          return;
+                      }
+                      var labelElement = $("<div />").addClass("input-label").text($(element).attr("placeholder"));
+                      labelElement.hide();
+                      $(element).parent(".form-group").prepend(labelElement);
+                      labelElement.fadeIn();
+                  };
+              if ($form.length > 0) {
+                  $inputs = $form.find("input");
+                  $inputs.on("keydown", function () {
+                      makeLabel(this);
+                  });
+              }
+          }, 10);
+      }
   }
 ]);

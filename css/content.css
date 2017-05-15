@@ -253,15 +253,21 @@
 
 /*Login page*/
 .login-page .my-button{
-    float: left;
 }
 .login-page{
     max-width: 558px;
+    margin: 0 auto;
 }
 
 /*Registration page*/
 .registration-page{
+    max-width: 100%;
+}
+
+/*ForgetPassword page*/
+.forget-password-page{
     max-width: 558px;
+    margin: 0 auto;
 }
 
 /*Add user*/
