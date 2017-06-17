@@ -112,15 +112,32 @@
     padding: 0;
 }
 .auction-detail .auction-detail-item{
-    padding: 0;
+    padding: 10px 15px;
+    border-right: 1px solid #ffffff;
+}
+
+.auction-detail .auction-detail-item:last-child{
+    border-right: none;
 }
 .auction-detail .auction-detail-item .detail-row{
-    padding: 0;
+    padding: 5px 0;
+}
+.auction-detail .auction-detail-item .detail-row.cities{
+    padding-bottom: 15px;
+}
+.auction-detail .auction-detail-item .city-from{
+    text-align: right;
+}
+.auction-detail .auction-detail-item .city-icons{
+    text-align: center;
+}
+.auction-detail .auction-detail-item .detail-row.cities div{
+    padding: 0 10px;
 }
 .auction-detail .auction-detail-item h2{
+    font-family: MyFont, serif;
     margin: 0;
-    padding: 0;
-    margin-bottom: 20px;
+    padding: 0 0 15px 15px;
 }
 .auction-detail .auction-detail-item .my-button{
     margin-right: 0;
@@ -132,6 +149,17 @@
 }
 .auction-detail .auction-detail-item .bid{
     margin-bottom: 0;
+}
+.auction-detail .history-header{
+    font-weight: bold;
+    background: #f8f8ff;
+}
+.auction-detail .history-header div{
+    padding: 5px;
+}
+.auction-detail .history-list{}
+.auction-detail .history-list div{
+    padding: 5px;
 }
 .auction-bid > div {
     padding: 0;
