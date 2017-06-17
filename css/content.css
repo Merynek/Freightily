@@ -39,13 +39,17 @@
     background: #e6e6f1;
 }
 .auction-list-page .auction-list .auction-header{
-    padding: 0;
-    height: 40px;
+    padding: 5px 0 0 0;
+    height: 50px;
+    font-weight: bold;
 }
 .auction-list-page .auction-list .auction-cell{
-    padding: 0;
-    padding-top: 8px;
-    padding-left: 8px;
+    padding: 8px 0 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.auction-list-page .auction-list .auction-cell span{
+    white-space: nowrap;
 }
 .auction-list-page .auction-list .auction-cell > div span:nth-child(1){
     float: left;
@@ -55,9 +59,7 @@
 }
 .auction-list-page .auction-list .auction-cell .glyphicon{
     cursor: pointer;
-    position: absolute;
-    top: 12px;
-    padding-left: 3px;
+    padding-left: 4px;
 }
 .auction-list-page .auction-list .auction-label{
     display: none;
@@ -72,21 +74,26 @@
 }
 .auction-list-page .auction-list .auction-body .no-auction{
     text-align: center;
+    padding: 10px 0 15px 0;
 }
 
 .auction-item{
     margin-top: 15px;
     padding: 0;
-    min-height: 40px;
+    min-height: 50px;
     overflow: hidden;
+    border-bottom: 1px solid #e6e6f1;
+}
+
+.auction-item:last-child{
+    border-bottom: none;
 }
 .auction-item .auction-info{
-    height: 40px;
-    border: 2px solid #e6e6f1;
+    height: 50px;
     padding: 0;
 }
-.auction-item .auction-info.auction-expired{
-    background: red;
+.auction-item .auction-info.auction-expired .end-date{
+    color: red;
     border: none;
 }
 .auction-item .auction-button-detail{
@@ -98,7 +105,7 @@
     margin-bottom: 0;
 }
 .auction-item .auction-detail{
-    padding: 8px;
+    padding: 10px;
     margin-top: 15px;
 }
 .auction-item .auction-detail span{
@@ -142,17 +149,21 @@
     padding: 0;
 }
 .is-favourite{
-    color: gold;
+    color: #12133d;
 }
 .non-favourite{
-    color: gray;
+    color: #aaaaaa;
 }
 .favouriteButton{
     cursor: pointer;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 5px;
     font-size: 20px;
+}
+
+.favouriteButton:hover{
+    transform: scale(1.2);
 }
 
 /*assignments*/
@@ -210,19 +221,18 @@
     display: block;
     max-width: none;
     border-radius: 0;
-    border-top: 2px solid #e6e6f1;
-    border-left: 2px solid #e6e6f1;
-    border-right: 2px solid #e6e6f1;
-    border-bottom: 2px solid #e6e6f1;
+    border: none;
+    background: #e6e6f1;
 }
 .popover.bottom>.arrow:after {
     top:2px;
-    border-bottom-color: white;
+    border-bottom-color: #e6e6f1;
 }
 .popover.bottom>.arrow {
     margin-left:-5px;
     border-bottom-color: #e6e6f1;
     margin-top:-1px;
+    left: 92%;
 }
 .popover>.arrow {
     border-width: 12px;

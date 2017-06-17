@@ -77,7 +77,7 @@ angular.module('appControllers')
               $con = $('body').height(),
               $f = $('footer');
 
-          $con += $f.css('position') == 'absolute' ? 270 : 30;
+          $con += $f.css('position') === 'absolute' ? 312 : 0;
           if (win > $con) {
               $f.css({
                   position: 'absolute'

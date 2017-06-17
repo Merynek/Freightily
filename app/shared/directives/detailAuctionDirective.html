@@ -8,7 +8,7 @@
     <div class="auction-label col-xs-12">Price</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}}</span></div>
     <div class="auction-label col-xs-12">End auction</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.end_auction}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
     <div ng-if="vm.withFavourite" class="favouriteButton" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
         <span class="glyphicon glyphicon glyphicon-star" ng-click="vm.favourite()"></span>
     </div>
