@@ -15,14 +15,7 @@ angular.module('appDirectives')
                 $scope.photoReady = false;
                 $scope.show = false;
                 $scope.toggleDetail = function () {
-                    switch ($scope.show) {
-                        case true:
-                            $scope.show = false;
-                            break;
-                        case false:
-                            $scope.show = true;
-                            break;
-                    }
+                    $scope.show = !$scope.show;
                 };
 
                 this.showPhoto = function(idAuction, firstPart) {
