@@ -39,8 +39,8 @@
     background: #e6e6f1;
 }
 .auction-list-page .auction-list .auction-header{
-    padding: 5px 0 0 0;
-    height: 50px;
+    padding: 5px 0 10px 0;
+    min-height: 50px;
     font-weight: bold;
 }
 .auction-list-page .auction-list .auction-cell{
@@ -115,10 +115,6 @@
     padding: 10px 15px;
     border-right: 1px solid #ffffff;
 }
-
-.auction-detail .auction-detail-item:last-child{
-    border-right: none;
-}
 .auction-detail .auction-detail-item .detail-row{
     padding: 5px 0;
 }
@@ -158,8 +154,22 @@
     padding: 5px;
 }
 .auction-detail .history-list{}
+.auction-detail .history-list-item{
+    border-bottom: 1px solid #f8f8ff;
+}
+.auction-detail .history-list-item:last-child{
+    border-bottom: none;
+}
 .auction-detail .history-list div{
     padding: 5px;
+}
+.auction-detail .border-fix{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: #e6e6f1;
 }
 .auction-bid > div {
     padding: 0;
@@ -307,6 +317,11 @@
     max-width: 558px;
     margin: 0 auto;
 }
+/*Manage page*/
+.manage-page{
+    max-width: 558px;
+    margin: 0 auto;
+}
 
 /*Add user*/
 .add-user-page{
@@ -410,6 +425,9 @@
     }
     .favouriteButton{
         font-size: 40px;
+    }
+    .popover.bottom>.arrow{
+        left: 50%;
     }
     /*Login page*/
     .login-page {
