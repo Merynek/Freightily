@@ -39,6 +39,7 @@
     display: inline-block;
     width: 45%;
     margin: 40px 2% 0 2%;
+    vertical-align: top;
 }
 
 .form-group .input-label{
