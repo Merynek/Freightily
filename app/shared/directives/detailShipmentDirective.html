@@ -88,12 +88,21 @@
     </div>
     <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Mapa jízdy</h2>
-        <div class="my-button normal-button" ng-click="vm.showMap(item.id_auction)"><span>Zobraz mapu jízdy</span></div>
-        <div class="map col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div id="map"></div>
+        <div class="map-container-{{item.id_auction}}">
+            <div class="text-center show-map">
+                <div class="my-button normal-button big-button" ng-click="vm.showMap(item.id_auction)">
+                <span>
+                    Zobraz mapu jízdy
+                </span>
+                </div>
+            </div>
+            <div class="map-wrap col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="map-{{item.id_auction}}" class="map"></div>
+            </div>
         </div>
         <!-- Only for Android app-->
         <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1.2019.1')"><span>Check QR Code</span></div> -->
         <!--<div class="my-button normal-button" ng-click="vm.postGPS(item.id_auction)"><span>Post GPS</span></div> -->
     </div>
+    <div class="border-fix"></div>
 </div>

@@ -28,15 +28,22 @@ angular.module('appDirectives')
                     }).catch(function(data){
                         message(3, $filter('i18next')('Error with get photos from server'));
                     })
-                }
+                };
 
                 this.showMap = function(id_auction) {
+                    var container = $(".map-container-"+id_auction);
+
                     UserAbility.getMap(id_auction).then(function(data){
-                        showRouteMap(data);
+                        // toggle button and map
+                        container.find(".map-wrap").show();
+                        container.find(".show-map").hide();
+                        // show route
+                        showRouteMap(data, id_auction);
                     }).catch(function(data){
+                        container.parents(".map-section").hide();
                         message(3, $filter('i18next')('Error with get map from server'));
                     })
-                }
+                };
 
 
                 //for android client only

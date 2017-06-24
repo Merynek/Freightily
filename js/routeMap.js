@@ -1,4 +1,4 @@
-function showRouteMap(route){
+function showRouteMap(route, id_auction){
            var myRouter = {
             map_: null,
             directionsHelper_: null,
@@ -76,6 +76,6 @@ function showRouteMap(route){
         };
         $("#map").css("display", "block");
         //$("#distance").css("display", "block");
-        myRouter.init('map');
+        myRouter.init('map-'+id_auction);
         return;
 };
