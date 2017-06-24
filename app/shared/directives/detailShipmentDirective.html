@@ -77,14 +77,18 @@
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.type}}</span></div>
         </div>
     </div>
-    <div class="auction-detail-item photo-buttons col-xs-12 col-sm-3 col-md-3 col-lg-2">
+    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Fotografie</h2>
-        <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>Zobraz fotky před</span></div>
-        <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>Zobraz fotky po</span></div>
-    </div>
-    <div class="shipment-photos auction-detail-item col-xs-12 col-sm-12 col-md-4 col-lg-6">
-        <div class="no-photo" ng-if="!photoReady">Prostor pro fotky</div>
-        <img ng-repeat="photo in photos" src="{{photo}}" class="photo col-xs-3 col-sm-3 col-md-3 col-lg-3"/>
+        <div class="photo-buttons">
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>Zobraz fotky před</span></div>
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>Zobraz fotky po</span></div>
+        </div>
+
+        <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-photo" ng-if="!photoReady">Vyberte fotky k zobrazení.</div>
+            <div ng-repeat="photo in photos" style="background-image: url({{photo}})" class="photo">
+            </div>
+        </div>
     </div>
     <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Mapa jízdy</h2>

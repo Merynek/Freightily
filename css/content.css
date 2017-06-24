@@ -12,10 +12,6 @@
     margin: 0 auto;
 }
 
-.shipment-photos .photo{
-    height: 150px;
-}
-
 /*auction*/
 .clean-line-sm{
     display: none;
@@ -106,7 +102,8 @@
 }
 .auction-item .auction-detail{
     padding: 10px;
-    margin-top: 15px;
+    margin: 15px 0;
+    box-shadow: none;
 }
 .auction-item .auction-detail span{
     padding: 0;
@@ -276,6 +273,13 @@
     border-width: 12px;
 }
 
+.photo-buttons{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    text-align: right;
+}
+
 .photo-buttons .my-button{
     margin-bottom: 15px!important;
 }
@@ -283,6 +287,8 @@
 .map-section .map-wrap {
     overflow: hidden;
     display: none;
+    padding: 0;
+    border: 1px solid #ffffff;
 }
 .map-section .map-wrap .map {
     height: 300px;
@@ -290,14 +296,29 @@
 }
 
 .shipment-photos {
-    overflow: hidden;
-    min-height: 150px;
-    border: 2px solid gray;
+    min-height: 80px;
+    background: #ffffff;
+    text-align: center;
 }
+
+.shipment-photos .photo{
+    display: inline-block;
+    background-size: cover;
+    width: 150px;
+    height: 100px;
+    margin: 8px;
+    border: 1px solid #e6e6f1;
+}
+
+.shipment-photos .photo:hover{
+    transform: scale(1.5);
+    box-shadow: 0 0 5px #000;
+}
+
 .shipment-photos .no-photo {
     color: gray;
     text-align: center;
-    line-height: 130px;
+    line-height: 80px;
 }
 
 /*Login page*/
@@ -429,6 +450,12 @@
     }
     .popover.bottom>.arrow{
         left: 50%;
+    }
+
+    .photo-buttons{
+        position: relative;
+        right: 0;
+        text-align: center;
     }
     /*Login page*/
     .login-page {
