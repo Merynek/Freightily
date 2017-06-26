@@ -1,4 +1,4 @@
-function showRouteMap(route){
+function showRouteMap(route, id_auction){
            var myRouter = {
             map_: null,
             directionsHelper_: null,
@@ -46,14 +46,16 @@ function showRouteMap(route){
 
                 var _SELF = this;
                 var distance = document.getElementById('distance');
-                this.directionsHelper_.route(request, function(response, status) {
-                    if (status == google.maps.DirectionsStatus.OK) {
-                        _SELF.directionsDisplay_.setDirections(response);
-                        distance.innerHTML = response.routes[0].legs[0].distance.text;
-                        return;
-                    }
-                    console.log('Directions Status: ' + status);
-                });
+                if (distance) {
+                    this.directionsHelper_.route(request, function(response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            _SELF.directionsDisplay_.setDirections(response);
+                            distance.innerHTML = response.routes[0].legs[0].distance.text;
+                            return;
+                        }
+                        console.log('Directions Status: ' + status);
+                    });
+                }
             },
 
             init: function(mapid) {
@@ -76,6 +78,6 @@ function showRouteMap(route){
         };
         $("#map").css("display", "block");
         //$("#distance").css("display", "block");
-        myRouter.init('map');
+        myRouter.init('map-'+id_auction);
         return;
 };

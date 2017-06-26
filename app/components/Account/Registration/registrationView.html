@@ -1,4 +1,4 @@
-<div class="registration-page">
+<div class="registration-page" ng-open="formLabels('registrationForm')" >
   <h1>{{'texts.registration_employee' | i18next}}</h1>
   <p>{{'texts.registration_text' | i18next}}</p>
   <form name="registrationForm" novalidate>
@@ -8,81 +8,88 @@
       <input type="radio" name="role" class="my-radio" id="sender" ng-model="user.role" value="1"/>
       <label for="sender">{{'texts.sender' | i18next}}</label>
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="username" class="form-control my-input" placeholder="{{'texts.username' | i18next}}" ng-model="user.username" 
         ng-class="{'input-error' : registrationForm.username.$invalid && (!registrationForm.username.$pristine || clicked)}" 
         ng-minlength="8" required />
     </div>
-    <div class="form-group">
+
+    <div class="form-group half">
+      <input type="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="user.email"
+             ng-class="{'input-error' : registrationForm.email.$invalid && (!registrationForm.email.$pristine || clicked)}"
+             required />
+    </div>
+    <div class="form-group half">
       <input type="password" name="password" class="form-control my-input" placeholder="{{'texts.password' | i18next}}" ng-model="user.password" 
       ng-class="{'input-error' : registrationForm.password.$invalid && (!registrationForm.password.$pristine || clicked)}" 
       ng-minlength="8" required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="password" name="confirmPassword" class="form-control my-input" placeholder="{{'texts.confirmPassword' | i18next}}" ng-model="user.confirmPassword" 
       ng-class="{'input-error' : registrationForm.confirmPassword.$invalid && (!registrationForm.confirmPassword.$pristine || clicked)}" 
       ng-minlength="8" required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="contact_person_name" class="form-control my-input" placeholder="{{'texts.contact_person_name' | i18next}}" ng-model="user.contact_person_name" 
       ng-class="{'input-error' : registrationForm.contact_person_name.$invalid && (!registrationForm.contact_person_name.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="contact_person_surname" class="form-control my-input" placeholder="{{'texts.contact_person_surname' | i18next}}" ng-model="user.contact_person_surname" 
       ng-class="{'input-error' : registrationForm.contact_person_surname.$invalid && (!registrationForm.contact_person_surname.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="company_name" class="form-control my-input" placeholder="{{'texts.company_name' | i18next}}" ng-model="user.company_name" 
       ng-class="{'input-error' : registrationForm.company_name.$invalid && (!registrationForm.company_name.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="ico" class="form-control my-input" placeholder="{{'texts.ico' | i18next}}" ng-model="user.ico" 
       ng-class="{'input-error' : registrationForm.ico.$invalid && (!registrationForm.ico.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="dic" class="form-control my-input" placeholder="{{'texts.dic' | i18next}}" ng-model="user.dic" 
       ng-class="{'input-error' : registrationForm.dic.$invalid && (!registrationForm.dic.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="bank_account" class="form-control my-input" placeholder="{{'texts.bank_account' | i18next}}" ng-model="user.bank_account" 
       ng-class="{'input-error' : registrationForm.bank_account.$invalid && (!registrationForm.bank_account.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="address_state" class="form-control my-input" placeholder="{{'texts.address_state' | i18next}}" ng-model="user.address_state" 
       ng-class="{'input-error' : registrationForm.address_state.$invalid && (!registrationForm.address_state.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="address_street" class="form-control my-input" placeholder="{{'texts.address_street' | i18next}}" ng-model="user.address_street" 
       ng-class="{'input-error' : registrationForm.address_street.$invalid && (!registrationForm.address_street.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="address_house_number" class="form-control my-input" placeholder="{{'texts.address_house_number' | i18next}}" ng-model="user.address_house_number" 
       ng-class="{'input-error' : registrationForm.address_house_number.$invalid && (!registrationForm.address_house_number.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="psc" class="form-control my-input" placeholder="{{'texts.psc' | i18next}}" ng-model="user.psc" 
       ng-class="{'input-error' : registrationForm.psc.$invalid && (!registrationForm.psc.$pristine || clicked)}" 
       required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="user.phone_number" 
       ng-class="{'input-error' : registrationForm.phone_number.$invalid && (!registrationForm.phone_number.$pristine || clicked)}" 
       ng-minlength="9" required />
     </div>
-    <div class="form-group">
-      <input type="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="user.email" 
-      ng-class="{'input-error' : registrationForm.email.$invalid && (!registrationForm.email.$pristine || clicked)}" 
-      required />
+    <div class="form-group half">
+      <label><input type="checkbox"> Souhlasím s podmínkama - TODO for Merin</label>
     </div>
-    <div class="my-button important-button" ng-click="registration()">{{'texts.registration' | i18next}}</div>
+    <div class="form-group buttons">
+      <div class="my-button big-button important-button" ng-click="registration()">{{'texts.registration' | i18next}}</div>
+    </div>
+
   </form>
 </div>

@@ -51,14 +51,7 @@ angular.module('appDirectives')
 
                 $scope.show = false;
                 $scope.toggleDetail = function () {
-                    switch ($scope.show) {
-                        case true:
-                            $scope.show = false;
-                            break;
-                        case false:
-                            $scope.show = true;
-                            break;
-                    }
+                    $scope.show = !$scope.show;
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {
@@ -97,14 +90,14 @@ angular.module('appDirectives')
                     }
                 };
 
-                this.assigment = function(driver){
+                this.assigment = function (driver) {
                     var data = {
-                        id_driver : driver,
-                        id_auction : $scope.item.ID
+                        id_driver: driver,
+                        id_auction: $scope.item.ID
                     };
-                    UserAbility.assigment(data).then(function(){
+                    UserAbility.assigment(data).then(function () {
                         message(1, $filter('i18next')('Zásilka byla přiřazena na řidiče'));
-                    }).catch(function(){
+                    }).catch(function () {
                         message(3, $filter('i18next')('Chyba při přiřazení'));
                     })
                 };

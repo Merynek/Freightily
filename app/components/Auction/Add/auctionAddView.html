@@ -1,12 +1,16 @@
-<div class="auction-add-page">
+<div class="auction-add-page" ng-open="formLabels('addAuctionForm')" >
   <h1>Add auction</h1>
   <style type="text/css">
-          #map {
-              height: 500px;
-              width: 600px;
-              border: 1px solid #000;
-          }
-      </style>
+    #map {
+      height: 450px;
+      width: 100%;
+      border: 1px solid #e6e6f1;
+    }
+    #distance{
+      text-align: center;
+      margin: 10px 0;
+    }
+  </style>
   <script>
   $(function () {
                   $('.datetimepicker1').datetimepicker({
@@ -15,12 +19,9 @@
               }); 
   </script>
 
-  <div id="map" style="display:none"></div>
-  <div id="distance" style="display:none"></div>
-      
-  <form name="addAuctionForm" novalidate>   
-    <h3>Shipment</h3>
-    <div class="form-group">
+  <h3>Shipment</h3>
+  <form name="addAuctionForm" novalidate>
+  <div class="form-group half">
       <input class="form-control my-input" placeholder="{{'texts.from' | i18next}}" ng-model="auction.from" 
         ng-class="{'input-error' : addAuctionForm.from.$invalid && (!addAuctionForm.from.$pristine || clicked)}" 
         vs-google-autocomplete
@@ -40,7 +41,7 @@
         required />
     </div>
 
-    <div class="form-group">
+    <div class="form-group half">
       <input class="form-control my-input" placeholder="{{'texts.to' | i18next}}" ng-model="auction.to" 
         ng-class="{'input-error' : addAuctionForm.to.$invalid && (!addAuctionForm.to.$pristine || clicked)}" 
         vs-google-autocomplete
@@ -59,21 +60,25 @@
         vs-district = "to_address.components.district"
         required />
     </div>
-    <div class="form-group">
-      <div class="my-button easy-button" ng-click="showMap()">{{'texts.show_map' | i18next}}</div>
+    <div class="form-group text-center">
+      <div class="my-button easy-button big-button" ng-click="showMap()">{{'texts.show_map' | i18next}}</div>
     </div>
-    <div class="form-group">
+    <div class="map-wrapper">
+      <div id="distance" style="display:none"></div>
+      <div id="map" style="display:none"></div>
+    </div>
+    <div class="form-group half">
       <input type="text" name="price" class="form-control my-input" placeholder="{{'texts.price' | i18next}}" ng-model="auction.price" 
           ng-class="{'input-error' : addAuctionForm.price.$invalid && (!addAuctionForm.price.$pristine || clicked)}" 
           required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="currency" class="form-control my-input" placeholder="{{'texts.currency' | i18next}}" ng-model="auction.currency" 
           ng-class="{'input-error' : addAuctionForm.currency.$invalid && (!addAuctionForm.currency.$pristine || clicked)}" 
           required />
     </div>
 
-    <div class="form-group">
+    <div class="form-group half">
       <div class='input-group datetimepicker1'>
         <input type='text' name="load_from" class="form-control my-input"  id="load_from" placeholder="{{'texts.load_from' | i18next}}"
         ng-class="{'input-error' : addAuctionForm.load_from.$invalid && (!addAuctionForm.load_from.$pristine || clicked)}" 
@@ -83,7 +88,7 @@
         </span>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <div class='input-group datetimepicker1'>
         <input type='text' name="load_to" class="form-control my-input"  id="load_to" placeholder="{{'texts.load_to' | i18next}}"
         ng-class="{'input-error' : addAuctionForm.load_to.$invalid && (!addAuctionForm.load_to.$pristine || clicked)}" 
@@ -93,7 +98,7 @@
         </span>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <div class='input-group datetimepicker1'>
         <input type='text' name="unload_from" class="form-control my-input"  id="unload_from" placeholder="{{'texts.unload_from' | i18next}}"
         ng-class="{'input-error' : addAuctionForm.unload_from.$invalid && (!addAuctionForm.unload_from.$pristine || clicked)}" 
@@ -103,7 +108,7 @@
         </span>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <div class='input-group datetimepicker1'>
         <input type='text' name="unload_to" class="form-control my-input"  id="unload_to" placeholder="{{'texts.unload_to' | i18next}}"
         ng-class="{'input-error' : addAuctionForm.unload_to.$invalid && (!addAuctionForm.unload_to.$pristine || clicked)}" 
@@ -112,19 +117,20 @@
             <span class="glyphicon glyphicon-calendar"></span>
         </span>
       </div>
-    </div>        
+    </div>
+    <div class="form-group"></div>
     <h3>Freight</h3>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="freight_description" class="form-control my-input" placeholder="{{'texts.freight_description' | i18next}}" ng-model="auction.freight_description" 
           ng-class="{'input-error' : addAuctionForm.freight_description.$invalid && (!addAuctionForm.freight_description.$pristine || clicked)}" 
           required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="freight_type" class="form-control my-input" placeholder="{{'texts.freight_type' | i18next}}" ng-model="auction.freight_type" 
           ng-class="{'input-error' : addAuctionForm.freight_type.$invalid && (!addAuctionForm.freight_type.$pristine || clicked)}" 
           required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <select class="form-control my-input" ng-model="auction.freight_size"
               ng-class="{'input-error' : addAuctionForm.freight_size.$invalid && (!addAuctionForm.freight_size.$pristine || clicked)}" required>
         <option value="" disabled selected>{{'texts.freight_size' | i18next}}</option>
@@ -133,7 +139,7 @@
         <option value="3">více</option>
       </select>
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <select class="form-control my-input" ng-model="auction.freight_weight"
               ng-class="{'input-error' : addAuctionForm.freight_weight.$invalid && (!addAuctionForm.freight_weight.$pristine || clicked)}" required>
         <option value="" disabled selected>{{'texts.freight_weight' | i18next}}</option>
@@ -142,14 +148,14 @@
         <option value="3">více</option>
       </select>
     </div>
-
+    <div class="form-group"></div>
     <h3>Auction</h3>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="email_addressee" class="form-control my-input" placeholder="{{'texts.email_addressee' | i18next}}" ng-model="auction.email_addressee" 
           ng-class="{'input-error' : addAuctionForm.email_addressee.$invalid && (!addAuctionForm.email_addressee.$pristine || clicked)}" 
           required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <div class='input-group datetimepicker1'>
         <input type='text' name="end_auction" class="form-control my-input"  id="end_auction" placeholder="{{'texts.end_auction' | i18next}}"
         ng-class="{'input-error' : addAuctionForm.end_auction.$invalid && (!addAuctionForm.end_auction.$pristine || clicked)}" 
@@ -159,21 +165,23 @@
         </span>
       </div>
     </div> 
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="min_amount" class="form-control my-input" placeholder="{{'texts.min_amount' | i18next}}" ng-model="auction.min_amount" 
           ng-class="{'input-error' : addAuctionForm.min_amount.$invalid && (!addAuctionForm.min_amount.$pristine || clicked)}" 
           required />
     </div>
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="maturity" class="form-control my-input" placeholder="{{'texts.maturity' | i18next}}" ng-model="auction.maturity" 
           ng-class="{'input-error' : addAuctionForm.maturity.$invalid && (!addAuctionForm.maturity.$pristine || clicked)}" 
           required />
     </div>   
-    <div class="form-group">
+    <div class="form-group half">
       <input type="text" name="hot" class="form-control my-input" placeholder="{{'texts.hot' | i18next}}" ng-model="auction.hot" 
           ng-class="{'input-error' : addAuctionForm.hot.$invalid && (!addAuctionForm.hot.$pristine || clicked)}" 
           required />
-    </div>      
-    <div class="my-button important-button" ng-click="addAuction()">{{'texts.addAuction' | i18next}}</div>
+    </div>
+    <div class="form-group text-center">
+      <div class="my-button important-button big-button" ng-click="addAuction()">{{'texts.addAuction' | i18next}}</div>
+    </div>
   </form>
 </div>

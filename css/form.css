@@ -30,6 +30,27 @@
   padding-left: 46px;  @input-height-large;
 }
 
+.form-group{
+    position: relative;
+    margin-top: 40px;
+}
+
+.form-group.half{
+    display: inline-block;
+    width: 45%;
+    margin: 40px 2% 0 2%;
+    vertical-align: top;
+}
+
+.form-group .input-label{
+    position: absolute;
+    top: -30px;
+    left: 25px;
+}
+
+.form-group.buttons{
+    text-align: center;
+}
 
 .my-input{
     border: 1px solid #e6e6f1;
@@ -61,18 +82,36 @@
     margin-bottom: 15px;
 }
 
+.big-button{
+    width: 350px;
+    padding-top: 5px;
+    height: 50px;
+}
+
 .important-button{
     background: #e91d27;
+}
+
+.important-button:hover{
+    background: #d11a23   ;
 }
 
 .normal-button{
     background: #12133d;
 }
 
+.normal-button:hover{
+    background: #292a50 ;
+}
+
 .easy-button{
     background: white;
     color: #2c2d51;
     border: 1px solid #12133d;
+}
+
+.easy-button:hover{
+    background: #EEEEEE;
 }
 
 
@@ -88,6 +127,10 @@ input[type=radio] + label::before {
 }
 input[type=radio]:checked + label::before {
     background-color: #e91d27;
+}
+
+input[type=checkbox] {
+    margin-right: 15px;
 }
 
 .my-radio + label::before {
