@@ -32,8 +32,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'registrationController',
 			templateUrl: "app/components/Account/Registration/registrationView.html"
 		})
-		 .state('account', {
-			 url: "/account",
+		 .state('my_profile', {
+			 url: "/my_profile",
 			 controller: 'userProfileController',
 			 templateUrl: "app/components/Account/Profile/userProfileView.html",
 			 resolve: {

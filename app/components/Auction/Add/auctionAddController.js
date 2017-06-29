@@ -6,9 +6,10 @@
 */
 
 angular.module('appControllers')
-  .controller('addAuctionController', ['$scope','Auction', 'Notification', '$filter', function($scope, Auction, Notification, $filter){
+  .controller('addAuctionController', ['$scope','Auction', '$filter', function($scope, Auction, $filter){
     $scope.setNavigationPath("home|addAuction");
     $scope.auction = {};
+    $scope.mapIsShown = false;
     $scope.clicked = false;
     $scope.distance = "";
     $scope.options = {
@@ -56,10 +57,16 @@ angular.module('appControllers')
 
     $scope.showMap = function(){
       if($scope.auction.from && $scope.auction.to){
-        showMap($scope.auction.from, $scope.auction.to);
-      }
-      else{
-        Notification.error('Musi byt vyopneni from a to');
+          if ($scope.mapIsShown) {
+              $scope.mapIsShown = false;
+              $("#map").hide();
+              $("#distance").hide();
+          } else {
+            $scope.mapIsShown = true;
+            showMap($scope.auction.from, $scope.auction.to);
+          }
+      } else{
+          message(3, $filter('i18next')('texts.show_map_fail'));
       }
     };
 
@@ -158,7 +165,7 @@ angular.module('appControllers')
           end_auction: end_auction.val(),
           min_amount: $scope.auction.min_amount,
           maturity: $scope.auction.maturity,
-          hot: ($scope.auction.hot) ? "true" : "false"
+          hot: "false"
         };
 
         Auction.newAuction(data).then(function(){
