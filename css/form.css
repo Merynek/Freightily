@@ -143,3 +143,10 @@ input[type=checkbox] {
     border-radius: 0px;
     background: #e6e6f1;
 }
+
+@media (max-width: 767px) {
+    .big-button{
+        min-width: 150px;
+        width: 73%;
+    }
+}

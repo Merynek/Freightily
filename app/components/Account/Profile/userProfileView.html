@@ -1,43 +1,47 @@
-<div class="user-page">
-  <h1>Your ACC</h1>
-  <table>
-    <tr>
-      <td>Username:</td>
-      <td><span>{{userInfo.username}}</span></td>
-    </tr>
-    <tr>
-      <td>State:</td>
-      <td><span>{{userInfo.address_state}}</span></td>
-    </tr>
-    <tr>
-      <td>Street:</td>
-      <td><span>{{userInfo.address_street}}</span></td>
-    </tr>
-    <tr>
-      <td>Email:</td>
-      <td><span>{{userInfo.email}}</span></td>
-    </tr>
-    <tr>
-      <td>Company:</td>
-      <td><span>{{userInfo.company_name}}</span></td>
-    </tr>
-  </table>
-  <h2>Change Password</h2>
-  <form name="changePasswordForm" novalidate>
-    <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="currentPass" class="form-control my-input" placeholder="Aktualni heslo" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>
-      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-    </div>
-    <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="newPass" class="form-control my-input" placeholder="Nové heslo" ng-model="account.newPass" ng-class="{'input-error' : changePasswordForm.newPass.$invalid && (!changePasswordForm.newPass.$pristine || clicked)}" ng-minlength="8" required/>
-      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-    </div>
-    <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="newPassRe" class="form-control my-input" placeholder="Znova nove heslo" ng-model="account.newPassRe" ng-class="{'input-error' : changePasswordForm.newPassRe.$invalid && (!changePasswordForm.newPassRe.$pristine || clicked)}" ng-minlength="8" required/>
-      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-    </div>
-    <div class="form-group">
-      <div class="my-button important-button" ng-click="changePassword()">Change</div>
-    </div>
-  </form>
+<div class="user-page" ng-open="formLabels('changePasswordForm')">
+  <div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">
+    <h1>Your ACC</h1>
+    <table class="table table-striped table-responsive">
+      <tr>
+        <th>Username:</th>
+        <td>{{userInfo.username}}</td>
+      </tr>
+      <tr>
+        <th>State:</th>
+        <td>{{userInfo.address_state}}</td>
+      </tr>
+      <tr>
+        <th>Street:</th>
+        <td>{{userInfo.address_street}}</td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td>{{userInfo.email}}</td>
+      </tr>
+      <tr>
+        <th>Company:</th>
+        <td>{{userInfo.company_name}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">
+    <h1>Change Password</h1>
+    <form name="changePasswordForm" novalidate>
+      <div class="form-group has-feedback has-feedback-left">
+        <input type="password" name="currentPass" class="form-control my-input" placeholder="Aktualni heslo" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>
+        <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      </div>
+      <div class="form-group has-feedback has-feedback-left">
+        <input type="password" name="newPass" class="form-control my-input" placeholder="Nové heslo" ng-model="account.newPass" ng-class="{'input-error' : changePasswordForm.newPass.$invalid && (!changePasswordForm.newPass.$pristine || clicked)}" ng-minlength="8" required/>
+        <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      </div>
+      <div class="form-group has-feedback has-feedback-left">
+        <input type="password" name="newPassRe" class="form-control my-input" placeholder="Znova nove heslo" ng-model="account.newPassRe" ng-class="{'input-error' : changePasswordForm.newPassRe.$invalid && (!changePasswordForm.newPassRe.$pristine || clicked)}" ng-minlength="8" required/>
+        <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      </div>
+      <div class="form-group text-center">
+        <div class="my-button big-button normal-button" ng-click="changePassword()">Change</div>
+      </div>
+    </form>
+  </div>
 </div>
