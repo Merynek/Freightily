@@ -52,7 +52,7 @@ header{
     position: relative;
 }
 
-.message{
+#message{
     position: absolute;
     bottom: 0;
     text-align: center;

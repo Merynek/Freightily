@@ -44,8 +44,8 @@ function showMap(from, to){
                 this.calcRoute();
             }
         };
-        $("#map").css("display", "block");
-        $("#distance").css("display", "block");
+        $("#map").show();
+        $("#distance").show();
         myRouter.init('map');
         return;
 };

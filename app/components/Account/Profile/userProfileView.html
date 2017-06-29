@@ -6,18 +6,23 @@
       <td><span>{{userInfo.username}}</span></td>
     </tr>
     <tr>
-      <td>Name:</td>
-      <td><span>{{userInfo.name}}</span></td>
+      <td>State:</td>
+      <td><span>{{userInfo.address_state}}</span></td>
     </tr>
     <tr>
-      <td>Surname:</td>
-      <td><span>{{userInfo.surname}}</span></td>
+      <td>Street:</td>
+      <td><span>{{userInfo.address_street}}</span></td>
     </tr>
     <tr>
-      <td>Role:</td>
-      <td><span>{{userInfo.role}}</span></td>
+      <td>Email:</td>
+      <td><span>{{userInfo.email}}</span></td>
+    </tr>
+    <tr>
+      <td>Company:</td>
+      <td><span>{{userInfo.company_name}}</span></td>
     </tr>
   </table>
+  <h2>Change Password</h2>
   <form name="changePasswordForm" novalidate>
     <div class="form-group has-feedback has-feedback-left">
       <input type="password" name="currentPass" class="form-control my-input" placeholder="Aktualni heslo" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>

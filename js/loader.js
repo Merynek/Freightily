@@ -10,33 +10,36 @@ function middle_no_padding(){
 }
 //1->success(green) 2->warning(orange) 3->error(red)
 function message(type, message){
+    var messageElement = $("#message");
+
 	if(!message_active) {
 		message_active = true;
 		$('html, body').animate({
-			scrollTop: $(".message").offset().top
+			scrollTop: messageElement.offset().top
         }, 300);
 
 		switch (type) {
 			case 1:
-				$(".message").addClass("success-message");
+                messageElement.addClass("success-message");
 				break;
 			case 2:
-				$(".message").addClass("warning-message");
+                messageElement.addClass("warning-message");
 				break;
 			case 3:
-				$(".message").addClass("error-message");
+                messageElement.addClass("error-message");
 				break;
 		}
-		$(".message").text(message);
-		$(".message").animate({
-			top: "+=40px",
+        messageElement.text(message);
+        messageElement.animate({
+			top: "+=40px"
 		}, 400, function () {
 			setTimeout(function () {
-				$(".message").animate({
+                messageElement.animate({
 					top: "-=40px"
 				}, function () {
-					$(".message").empty();
-					$(".message").css("top", "auto");
+                    messageElement.empty();
+                    messageElement.css("top", "auto");
+                    messageElement.removeClass();
 					message_active = false;
 				});
 			}, 1500);

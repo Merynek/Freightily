@@ -99,7 +99,7 @@
 		</div>
 		<header>
 			<!-- Messages -->
-			<div class="message"></div>
+			<div id="message"></div>
 			<div class="header-top">
 				<nav class="navbar navbar-default">
 					<div class="navbar-header">
@@ -145,7 +145,7 @@
 					</ul>
 				</div>
 				<div class="header-right">
-					<div class="user" ng-if="isLoggedUser()" ui-sref="account"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+					<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
 					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
 			</div>
