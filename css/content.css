@@ -347,11 +347,12 @@
 
 /*Add user*/
 .add-user-page{
-    max-width: 558px;
+    margin: 0 auto;
 }
 
 /*Add vehicle*/
 .add-vehicle-page{
+    margin: 0 auto;
     max-width: 558px;
 }
 

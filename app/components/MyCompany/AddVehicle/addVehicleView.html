@@ -1,4 +1,4 @@
-<div class="add-vehicle-page">
+<div class="add-vehicle-page" ng-open="formLabels('vehicleForm')" >
   <h1>{{'texts.registration_vehicle' | i18next}}</h1>
   <form name="vehicleForm" novalidate>
      <div class="form-group">
@@ -26,6 +26,8 @@
              ng-class="{'input-error' : vehicleForm.size.$invalid && (!vehicleForm.size.$pristine || clicked)}"
              required />
     </div>
-    <div class="my-button important-button" ng-click="AddVehicle()">{{'texts.registration_vehicle' | i18next}}</div>
+    <div class="form-group text-center">
+      <div class="my-button important-button big-button" ng-click="AddVehicle()">{{'texts.registration_vehicle' | i18next}}</div>
+    </div>
   </form>
 </div>
