@@ -114,6 +114,15 @@
     background: #EEEEEE;
 }
 
+.radio-group{
+    text-align: right;
+    font-size: 24px;
+    margin: 20px 2% !important;
+}
+
+.radio-group:nth-of-type(2){
+    text-align: left;
+}
 
 input[type=radio] {
     display: none;
@@ -121,12 +130,19 @@ input[type=radio] {
 input[type=radio] + label::before {
     content: '';
     display: inline-block;
-    border: 3px solid #12133d;
+    border: 0.15em solid #12133d;
+    vertical-align: -8%;
     border-radius: 50%;
-    margin: -2px 0.5em;
+    margin: -2px 0.5em 0 0;
+    opacity: 0.2;
 }
 input[type=radio]:checked + label::before {
-    background-color: #e91d27;
+    background: #aaaaaf;
+    opacity: 0.6;
+}
+
+input[type=radio]:hover + label::before {
+    opacity: 0.6;
 }
 
 input[type=checkbox] {
@@ -144,9 +160,31 @@ input[type=checkbox] {
     background: #e6e6f1;
 }
 
+/* datetimepicker */
+
+.bootstrap-datetimepicker-widget table td.today:before {
+    border-bottom-color: #12133d;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background-color: #12133d;
+}
+.bootstrap-datetimepicker-widget table td span.active {
+    background-color: #12133d;
+}
+
 @media (max-width: 767px) {
     .big-button{
         min-width: 150px;
         width: 73%;
+    }
+
+    .form-group.half{
+        display: block;
+        width: 95%;
+    }
+
+    .radio-group, .radio-group:nth-of-type(2){
+        text-align: center;
     }
 }
