@@ -30,19 +30,14 @@ function message(type, message){
 				break;
 		}
         messageElement.text(message);
-        messageElement.animate({
-			top: "+=40px"
-		}, 400, function () {
-			setTimeout(function () {
-                messageElement.animate({
-					top: "-=40px"
-				}, function () {
+		messageElement.fadeIn(300, function () {
+            setTimeout(function () {
+            	messageElement.fadeOut(300, function () {
                     messageElement.empty();
-                    messageElement.css("top", "auto");
                     messageElement.removeClass();
-					message_active = false;
-				});
-			}, 1500);
-		});
+                    message_active = false;
+                });
+			}, 2500);
+        });
 	}
 }

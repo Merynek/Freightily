@@ -53,23 +53,32 @@ header{
 }
 
 #message{
+    display: none;
     position: absolute;
-    bottom: 0;
+    right: 4%;
+    top: 135px;
     text-align: center;
-    width: 100%;
-    height: 40px;
-    padding-top: 8.6px;
+    width: 340px;
+    max-width: 90%;
     font-weight: bold;
+    padding: 15px 20px;
+    z-index: 1000;
 }
 
 .error-message{
-    background: #e91d27;
+    background: #ffeaeb;
+    border-bottom: 2px solid #e91d27;
+    box-shadow: 0 0 15px -5px #e91d27;
 }
 .success-message{
-    background: #43b749;
+    background: #e6e6f1;
+    border-bottom: 2px solid #12133d;
+    box-shadow: 0 0 15px -5px #12133d;
 }
 .warning-message{
-    background: #ff810a;
+    background: #ffecdb;
+    border-bottom: 2px solid #ff810a;
+    box-shadow: 0 0 15px -5px #ff810a;
 }
 
 .header-top{
