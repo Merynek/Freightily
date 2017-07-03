@@ -68,6 +68,7 @@ angular.module('appControllers')
             clearTimeout(this.renderDebouncer);
             this.renderDebouncer = setTimeout(function () {
                 $scope.footerFix();
+                $scope.formLabelsUpdate();
             }, 10);
         };
 
@@ -101,7 +102,7 @@ angular.module('appControllers')
                         if ($(element).attr("data-label-moved")) return;
                         $(element).attr("data-label-moved", "true");
                         var inputType = $(element).attr('type');
-                        if (inputType == "file" || inputType == "checkbox") {
+                        if (inputType === "file" || inputType === "checkbox") {
                             return;
                         }
                         var labelElement = $("<div />").addClass("input-label").text($(element).attr("placeholder"));
@@ -128,6 +129,14 @@ angular.module('appControllers')
                     });
                 }
             }, 10);
+        };
+
+        $scope.formLabelsUpdate = function () {
+            var labels = $(".input-label");
+
+            labels.each(function (i, e) {
+                $(e).text($($(e).parent().find("input")).attr("placeholder"));
+            })
         }
     }
     ]);

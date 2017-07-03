@@ -82,6 +82,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="/node_modules/bootstrap-social/bootstrap-social.css" />
+		<link rel="stylesheet" href="/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
 		<!-- My Styles -->
 		<link rel="stylesheet" href="css/form.css" />
 		<link rel="stylesheet" href="css/loader.css" />
@@ -100,7 +101,6 @@
 		</div>
 		<header>
 			<!-- Messages -->
-			<div id="message"></div>
 			<div class="header-top">
 				<nav class="navbar navbar-default">
 					<div class="navbar-header">
@@ -152,6 +152,7 @@
 			</div>
 		</header>
 		<div class="middle" ng-open="afterRender()">
+			<div id="message"></div>
 			<div class="content" ui-view></div>
 		</div>
 		<footer>

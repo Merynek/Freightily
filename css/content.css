@@ -24,7 +24,7 @@
     margin-bottom: 10px;
 }
 .redArrow {
-    color: red;
+    color: #e91d27;
 }
 .auction-list-page .auction-list{
     padding: 0;
@@ -89,7 +89,7 @@
     padding: 0;
 }
 .auction-item .auction-info.auction-expired .end-date{
-    color: red;
+    color: #e91d27;
     border: none;
 }
 .auction-item .auction-button-detail{
@@ -191,12 +191,12 @@
 }
 .favouriteButton{
     cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 5px;
+    margin: 5px 0 0 0;
     font-size: 20px;
 }
-
+.detail-button{
+    width: calc(100% - 60px);
+}
 .favouriteButton:hover{
     transform: scale(1.2);
 }
@@ -228,26 +228,14 @@
 }
 
 /*My company*/
-.company-list{
-    width: 100%;
-    line-height: 40px;
-    list-style-type: none;
-}
-.company-list li{
-    width: 100%;
-    margin-bottom: 10px;
-}
-.company-list li .info{
-    float: left;
-    margin-right: 10px;
-}
-.company-list li .delete{
-    margin-left: 15px;
-    color: red;
+.company-list .delete{
+    color: #e91d27;
     font-weight: bold;
 }
-.company-list li .delete span{
+.company-list .delete:hover{
+    color: #d11a23;
     font-weight: bold;
+    cursor: pointer;
 }
 
 /*Arrow on detail box*/
@@ -347,11 +335,12 @@
 
 /*Add user*/
 .add-user-page{
-    max-width: 558px;
+    margin: 0 auto;
 }
 
 /*Add vehicle*/
 .add-vehicle-page{
+    margin: 0 auto;
     max-width: 558px;
 }
 
@@ -412,23 +401,39 @@
     .auction-header-line{
         display: none;
     }
+    .auction-item{
+        border-bottom: none;
+        padding-bottom: 20px;
+    }
+    .auction-item:nth-child(odd){
+        background: #e6e6f1;
+    }
+    .auction-item .favouriteButton{
+        position: relative;
+        margin-top: 4px;
+        margin-left: 10px;
+        font-size: 28px;
+    }
+    .detail-button{
+        width: calc(80% - 50px);
+    }
     .auction-item .auction-info{
         height: auto;
-    }
-    .auction-item .auction-info.auction-expired{
-        background: none;
-        border: 2px solid red;
     }
     .auction-item .auction-button-detail{
         text-align: center;
         padding-top: 3px;
     }
     .auction-list-page .auction-list .auction-cell{
-        text-align: center;
-        padding: 0;
+        padding: 3px 0 3px 8px;
+        display: inline-block;
+        text-align: left;
     }
     .auction-list-page .auction-list .auction-label{
-        display: block;
+        padding: 3px 8px 3px 0;
+        display: inline-block;
+        background: none;
+        text-align: right;
     }
     .auction-detail .history-list{
         text-align: center;
