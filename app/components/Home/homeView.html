@@ -1,47 +1,47 @@
 <h1>Home Page</h1>
 <div class="homePage">
     <div class="form-group">
-        <div class="my-button important-button" ui-sref="auction" >Auction</div>
+        <div class="my-button important-button" ui-sref="auction" >{{'texts.auction.auction_list' | i18next}}</div>
     </div>
     <div ng-if="isSender">
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="createdauction" >Created auction</div>
+          <div class="my-button normal-button" ui-sref="createdauction" >{{'texts.auction.created_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="addauction" >Add auction</div>
+          <div class="my-button normal-button" ui-sref="addauction" >{{'texts.auction.add_auction' | i18next}}</div>
         </div>
     </div>
     <div ng-if="isTransporter">
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="favouriteAuction" >Favourite auction</div>
+          <div class="my-button normal-button" ui-sref="favouriteAuction" >{{'texts.auction.favourite_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="bidsauction" >My Bids auction</div>
+          <div class="my-button normal-button" ui-sref="bidsauction" >{{'texts.auction.bids_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="winauction" >Win Auction</div>
+          <div class="my-button normal-button" ui-sref="winauction" >{{'texts.win_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="manage" >Manage</div>
+          <div class="my-button normal-button" ui-sref="manage" >{{'texts.manage' | i18next}}</div>
         </div>
     </div>
     <div ng-if="isDispatcher">
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="favouriteauction" >Favourite auction</div>
+          <div class="my-button normal-button" ui-sref="favouriteauction" >{{'texts.auction.favourite_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="bidsauction" >My Bids auction</div>
+          <div class="my-button normal-button" ui-sref="bidsauction" >{{'texts.auction.bids_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="winauction" >Win Auction</div>
+          <div class="my-button normal-button" ui-sref="winauction" >{{'texts.win_auction' | i18next}}</div>
         </div>
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="manage" >Manage</div>
+          <div class="my-button normal-button" ui-sref="manage" >{{'texts.manage' | i18next}}</div>
         </div>
     </div>
     <div ng-if="isDriver">
         <div class="form-group">
-          <div class="my-button normal-button" ui-sref="shipments" >My shipments</div>
+          <div class="my-button normal-button" ui-sref="shipments" >{{'texts.my_shipment' | i18next}}</div>
         </div>
     </div>
 </div>

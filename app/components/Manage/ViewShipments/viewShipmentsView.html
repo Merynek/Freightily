@@ -1,46 +1,46 @@
 <div class="auction-list-page">
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <h2>Not started</h2>
+        <h2>{{'texts.shipment.not_started' | i18next}}</h2>
         <div ng-if="notStartedShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.driver' | i18next}}</div>
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!notStartedShipments.length" class="no-auction">Žádné čekající jízdy...</div>
+            <div ng-if="!notStartedShipments.length" class="no-auction">{{'texts.shipment.no_wait_shipments' | i18next}}</div>
             <div class="auction-item" ng-repeat="item in notStartedShipments">
                 <detail-shipment shipment-item="{item}"></detail-shipment>
             </div>
         </div>
-        <h2>Actual</h2>
+        <h2>{{'texts.shipment.actual' | i18next}}</h2>
         <div ng-if="actualShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.driver' | i18next}}</div>
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!actualShipments.length" class="no-auction">Žádné probíhající jízdy...</div>
+            <div ng-if="!actualShipments.length" class="no-auction">{{'texts.shipment.no_actual_shipments' | i18next}}</div>
             <div class="auction-item" ng-repeat="item in actualShipments">
                 <detail-shipment shipment-item="{item}"></detail-shipment>
             </div>
         </div>
-        <h2>History</h2>
+        <h2>{{'texts.shipment.history' | i18next}}</h2>
         <div ng-if="pastShipments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>From</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>To</span></div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>Freight description</span></div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>Driver</span></div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.driver' | i18next}}</div>
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!pastShipments.length" class="no-auction">Žádné ukončené jízdy...</div>
+            <div ng-if="!pastShipments.length" class="no-auction">{{'texts.shipment.no_ended_shipments' | i18next}}</div>
             <div class="auction-item" ng-repeat="item in pastShipments">
                 <detail-shipment shipment-item="{item}"></detail-shipment>
             </div>

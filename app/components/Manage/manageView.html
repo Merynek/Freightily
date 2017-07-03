@@ -1,21 +1,21 @@
 <div class="manage-page">
-    <h1>Manage</h1>
+    <h1>{{'texts.manage' | i18next}}</h1>
     <div ng-if="isSender">
         <div class="form-group">
-            <div class="my-button normal-button" ui-sref="createdauction">My created auction</div>
+            <div class="my-button normal-button" ui-sref="createdauction">{{'texts.auction.created_auction' | i18next}}</div>
         </div>
     </div>
 
     <div ng-if="isTransporter || isDispatcher">
         <div class="form-group">
-            <div class="my-button normal-button big-button" ui-sref="shipments_manage">Shipments manage</div>
-            <div class="my-button normal-button" ui-sref="view_shipments">View shipments</div>
+            <div class="my-button normal-button big-button" ui-sref="shipments_manage">{{'texts.shipment_manage' | i18next}}</div>
+            <div class="my-button normal-button" ui-sref="view_shipments">{{'texts.my_shipment' | i18next}}</div>
         </div>
-        <h1>Company</h1>
+        <h1>{{'texts.my_company' | i18next}}</h1>
         <div class="form-group">
-            <div class="my-button normal-button" ui-sref="new_vehicle">New vehicle</div>
-            <div class="my-button normal-button" ui-sref="new_employee">New employee</div>
-            <div class="my-button normal-button" ui-sref="my_company">My company</div>
+            <div class="my-button normal-button" ui-sref="new_vehicle">{{'texts.new_vehicle' | i18next}}</div>
+            <div class="my-button normal-button" ui-sref="new_employee">{{'texts.new_employee' | i18next}}</div>
+            <div class="my-button normal-button" ui-sref="my_company">{{'texts.my_company' | i18next}}</div>
         </div>
     </div>
 </div>

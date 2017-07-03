@@ -1,43 +1,43 @@
 <div class="user-page">
-  <h1>Your ACC</h1>
+  <h1>{{'texts.your_acc' | i18next}}</h1>
   <table>
     <tr>
-      <td>Username:</td>
+      <td>{{'texts.username' | i18next}}:</td>
       <td><span>{{userInfo.username}}</span></td>
     </tr>
     <tr>
-      <td>State:</td>
+      <td>{{'texts.address_state' | i18next}}:</td>
       <td><span>{{userInfo.address_state}}</span></td>
     </tr>
     <tr>
-      <td>Street:</td>
+      <td>{{'texts.address_street' | i18next}}:</td>
       <td><span>{{userInfo.address_street}}</span></td>
     </tr>
     <tr>
-      <td>Email:</td>
+      <td>{{'texts.email' | i18next}}:</td>
       <td><span>{{userInfo.email}}</span></td>
     </tr>
     <tr>
-      <td>Company:</td>
+      <td>{{'texts.company_name' | i18next}}:</td>
       <td><span>{{userInfo.company_name}}</span></td>
     </tr>
   </table>
-  <h2>Change Password</h2>
+  <h2>{{'texts.change_password' | i18next}}</h2>
   <form name="changePasswordForm" novalidate>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="currentPass" class="form-control my-input" placeholder="Aktualni heslo" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>
+      <input type="password" name="currentPass" class="form-control my-input" placeholder="{{'texts.actual_password' | i18next}}" ng-model="account.currentPass" ng-class="{'input-error' : changePasswordForm.currentPass.$invalid && (!changePasswordForm.currentPass.$pristine || clicked)}" ng-minlength="8" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="newPass" class="form-control my-input" placeholder="Nové heslo" ng-model="account.newPass" ng-class="{'input-error' : changePasswordForm.newPass.$invalid && (!changePasswordForm.newPass.$pristine || clicked)}" ng-minlength="8" required/>
+      <input type="password" name="newPass" class="form-control my-input" placeholder="{{'texts.new_password' | i18next}}" ng-model="account.newPass" ng-class="{'input-error' : changePasswordForm.newPass.$invalid && (!changePasswordForm.newPass.$pristine || clicked)}" ng-minlength="8" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="newPassRe" class="form-control my-input" placeholder="Znova nove heslo" ng-model="account.newPassRe" ng-class="{'input-error' : changePasswordForm.newPassRe.$invalid && (!changePasswordForm.newPassRe.$pristine || clicked)}" ng-minlength="8" required/>
+      <input type="password" name="newPassRe" class="form-control my-input" placeholder="{{'texts.retype_password' | i18next}}" ng-model="account.newPassRe" ng-class="{'input-error' : changePasswordForm.newPassRe.$invalid && (!changePasswordForm.newPassRe.$pristine || clicked)}" ng-minlength="8" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group">
-      <div class="my-button important-button" ng-click="changePassword()">Change</div>
+      <div class="my-button important-button" ng-click="changePassword()">{{'texts.change' | i18next}}</div>
     </div>
   </form>
 </div>

@@ -1,6 +1,6 @@
-<h1>My company</h1>
+<h1>{{'texts.my_company' | i18next}}</h1>
 <div ng-if="isTransporter">
-<h2>Dispatchers</h2>
+<h2>{{'texts.dispatchers' | i18next}}</h2>
 <ul class="company-list">
     <li class="item" ng-repeat="dispatcher in dispatchers">
         <div class="info">
@@ -15,7 +15,7 @@
 </ul>
 </div>
 
-<h2>Drivers</h2>
+<h2>{{'texts.drivers' | i18next}}</h2>
 <ul class="company-list">
     <li class="item" ng-repeat="driver in drivers">
         <div class="info">
@@ -30,7 +30,7 @@
     </li>
 </ul>
 
-<h2>Vehicles</h2>
+<h2>{{'texts.vehicles' | i18next}}</h2>
 <ul class="company-list">
     <li class="item" ng-repeat="vehicle in vehicles">
         <div class="info">

@@ -1,102 +1,102 @@
 <div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10">
-    <div class="auction-label col-xs-12">From</div>
+    <div class="auction-label col-xs-12">{{'texts.auction.from' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
-    <div class="auction-label col-xs-12">To</div>
+    <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
-    <div class="auction-label col-xs-12">Freight description</div>
+    <div class="auction-label col-xs-12">{{'texts.auction.freight_description' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight_description}}</span></div>
-    <div class="auction-label col-xs-12">Driver</div>
+    <div class="auction-label col-xs-12">{{'texts.auction.driver' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.user.username}}</span></div>
 </div>
 <div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
-    <div class="my-button normal-button" ng-click="toggleDetail()"><span>DETAIL</span></div>
+    <div class="my-button normal-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Místa vyzvednutí nákladu</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.pickup_places' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Odkud:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.from' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.from.city}} - {{item.from.street}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Kam:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.to' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.to.city}} - {{item.to.street}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O nákladu</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Popis:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Typ:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_type' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_type}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Velikost:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_size}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Váha:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_weight}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O řidiči</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.about_driver' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Jméno:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_name' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.name}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Příjmení:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_surname' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.surname}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Driver licence:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_licence' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.driver_licence}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Telefoní číslo:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_phone_number' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.phone_number}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">O autě</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.about_vehicle' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Značka:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_brand' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.brand}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Nosnost:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_capacity' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.capacity}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>Typ:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_type' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.type}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-8 col-lg-8">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Fotografie</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
         <div class="photo-buttons">
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>Zobraz fotky před</span></div>
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>Zobraz fotky po</span></div>
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
         </div>
 
         <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="no-photo" ng-if="!photoReady">Vyberte fotky k zobrazení.</div>
+            <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.choose_photos' | i18next}}</div>
             <div ng-repeat="photo in photos" style="background-image: url({{photo}})" class="photo">
             </div>
         </div>
     </div>
     <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">Mapa jízdy</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.map' | i18next}}</h2>
         <div class="map-container-{{item.id_auction}}">
             <div class="text-center show-map">
                 <div class="my-button normal-button big-button" ng-click="vm.showMap(item.id_auction)">
                 <span>
-                    Zobraz mapu jízdy
+                    {{'texts.shipment.show_map' | i18next}}
                 </span>
                 </div>
             </div>

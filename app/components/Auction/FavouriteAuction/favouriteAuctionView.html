@@ -1,17 +1,17 @@
 <div class="auction-list-page">
-    <h1>Favourite Auction</h1>
+    <h1>{{'texts.auction.favourite_auction' | i18next}}</h1>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         <div ng-if="AuctionList.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-9 col-md-9 col-lg-10">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">From</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">To</div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Freight description</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Price</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">End auction</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
+                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.price' | i18next}}</div>
+                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.end_auction' | i18next}}</div>
             </div>
         </div>
         <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!AuctionList.length" class="no-auction">Žádné dostupné aukce...</div>
+            <div ng-if="!AuctionList.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
             <div class="auction-item" ng-repeat="item in AuctionList">
                 <detail-auction auction-item="{item}" vehicles="{vehicles}"></detail-auction>
             </div>
