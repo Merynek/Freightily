@@ -53,30 +53,38 @@ header{
 }
 
 #message{
+    display: none;
     position: absolute;
-    bottom: 0;
+    right: 4%;
+    top: 135px;
     text-align: center;
-    width: 100%;
-    height: 40px;
-    padding-top: 8.6px;
+    width: 340px;
+    max-width: 90%;
     font-weight: bold;
+    padding: 15px 20px;
+    z-index: 1000;
 }
 
 .error-message{
-    background: #e91d27;
+    background: #ffeaeb;
+    border-bottom: 2px solid #e91d27;
+    box-shadow: 0 0 15px -5px #e91d27;
 }
 .success-message{
-    background: #43b749;
+    background: #e6e6f1;
+    border-bottom: 2px solid #12133d;
+    box-shadow: 0 0 15px -5px #12133d;
 }
 .warning-message{
-    background: #ff810a;
+    background: #ffecdb;
+    border-bottom: 2px solid #ff810a;
+    box-shadow: 0 0 15px -5px #ff810a;
 }
 
 .header-top{
     min-height: 80px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 28px;
+    padding: 28px 80px 8px 80px;
+    background: #e6e6f1;
 }
 
 .navbar-default{
@@ -262,6 +270,60 @@ header{
 .header-right .glyphicon{
     top: 2px;
 }
+/* MENU */
+.menu-tabs{
+    padding-left: 17%;
+    border-bottom: 1px solid #e6e6f1;
+    margin-bottom: 15px;
+}
+.menu-tabs .tab{
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 120px;
+    max-width: 200px;
+    padding: 10px 15px;
+    margin: 0 7px;
+    text-align: center;
+    border: 1px solid #e6e6f1;
+    background: #e6e6f1;
+}
+.menu-tabs .tab:hover{
+    padding: 12px 15px 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-tabs .tab.active{
+    background: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 12px 15px;
+    font-weight: bold;
+    margin-bottom: -1px;
+}
+.menu-vertical{
+    padding-top: 5px;
+    padding-right: 25px;
+}
+.menu-vertical .tab{
+    padding: 10px 15px;
+    margin: 10px 0;
+    color: #2c2d51;
+    background: #e6e6f1;
+    border: 1px solid #e6e6f1;
+}
+.menu-vertical .tab:hover {
+    font-weight: bold;
+    margin-right: -5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.menu-vertical .tab.active{
+    background: white;
+    font-weight: bold;
+    margin-right: -5px;
+    margin-left: 5px;
+}
+.tab-content{
+}
 
 @media (max-width: 900px) {
     .header-top{
@@ -271,6 +333,9 @@ header{
     .header-bottom{
         padding-left: 0;
         padding-right: 0;
+    }
+    .menu-tabs{
+        padding-left: 20px;
     }
 }
 

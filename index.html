@@ -82,6 +82,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="/node_modules/bootstrap-social/bootstrap-social.css" />
+		<link rel="stylesheet" href="/node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
 		<!-- My Styles -->
 		<link rel="stylesheet" href="css/form.css" />
 		<link rel="stylesheet" href="css/loader.css" />
@@ -100,7 +101,6 @@
 		</div>
 		<header>
 			<!-- Messages -->
-			<div id="message"></div>
 			<div class="header-top">
 				<nav class="navbar navbar-default">
 					<div class="navbar-header">
@@ -120,7 +120,11 @@
 							</ul>
 						</div>
 					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="header-right">
+						<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+						<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
+					</div>
+					<!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#" class="header-button">{{'texts.about' | i18next}}</a></li>
 							<li><a href="#" class="header-button">Hover</a></li>
@@ -134,10 +138,10 @@
 							</li>
 							<li><a href="#" class="header-button-important">{{'texts.contact' | i18next}}</a></li>
 						</ul>
-					</div>
+					</div -->
 				</nav>
 			</div>
-			<div class="header-bottom">
+			<!--div class="header-bottom">
 				<div class="header-left">
 					<ul>
 						<li ng-repeat="item in navigationPath">
@@ -149,9 +153,10 @@
 					<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
 					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
-			</div>
+			</div-->
 		</header>
 		<div class="middle" ng-open="afterRender()">
+			<div id="message"></div>
 			<div class="content" ui-view></div>
 		</div>
 		<footer>
@@ -189,7 +194,7 @@
 			</div>
 			<div class="footer-bottom">
 				<div class="copyright">
-					C 2016 FREIGHTILY s.r.o.
+					© 2017 FREIGHTILY s.r.o.
 				</div>
 				<div class="studio">
 					<span>{{'texts.footer_text' | i18next}}</span>

@@ -8,7 +8,7 @@
 angular.module('appControllers')
     .controller('addAuctionController', ['$scope', 'Auction', '$filter', function ($scope, Auction, $filter) {
         $scope.setNavigationPath("home|addAuction");
-        $scope.route = "route";
+        $scope.route = "auction|add";
         $scope.auction = {};
         $scope.mapIsShown = false;
         $scope.clicked = false;

@@ -11,6 +11,7 @@ angular.module('appControllers')
       $scope.vehicle = {
       };
       $scope.clicked = false;
+      $scope.route = "company|vehicle";
 
       $scope.AddVehicle = function(){
           $scope.clicked = true;

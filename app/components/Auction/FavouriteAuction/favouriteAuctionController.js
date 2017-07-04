@@ -9,6 +9,7 @@ angular.module('appControllers')
   .controller('favouriteAuctionController', ['$scope', 'favouriteAuction', 'vehicles', '$filter', function($scope, favouriteAuction, vehicles, $filter){
     $scope.setNavigationPath("home|favouriteAuction");
     $scope.AuctionList = favouriteAuction;
+    $scope.route = "auction|favourite"
     $scope.vehicles = vehicles;
     middle_no_padding();
     $(window).resize(function () {

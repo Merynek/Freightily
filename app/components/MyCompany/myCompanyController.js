@@ -11,6 +11,7 @@ angular.module('appControllers')
         $scope.drivers = drivers;
         $scope.vehicles = vehicles;
         $scope.dispatchers = dispatchers;
+        $scope.route = "company|overview";
 
         $scope.deleteVehicle = function(id_vehicle){
             var data = {

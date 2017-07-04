@@ -13,6 +13,7 @@ angular.module('appControllers')
         $scope.pastShipments = pastShipments;
         $scope.notStartedShipments = notStartedShipments;
         $scope.photos = [];
+        $scope.route = "shipments|overview";
 
         //only for post photos, but never use on web client
         $scope.uploadPhoto = function upload(photos)

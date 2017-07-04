@@ -1,20 +1,21 @@
 <div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
-    <div class="auction-label col-xs-12">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.freight_description' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight_description}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.end_auction' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
-    <div ng-if="vm.withFavourite" class="favouriteButton" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+    <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.freight_description' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight_description}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
+
+</div>
+<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2 text-center">
+    <div ng-if="vm.withFavourite" class="favouriteButton col-xs-2" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
         <span class="glyphicon glyphicon glyphicon-star" ng-click="vm.favourite()"></span>
     </div>
-</div>
-<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
-    <div class="my-button normal-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
+    <div class="my-button normal-button phone-big-button detail-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
