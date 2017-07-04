@@ -10,6 +10,7 @@ angular.module('appControllers')
         function($scope, WinAuction, drivers, assigments, UserAbility, Notification, $filter){
             $scope.setNavigationPath("home|manage|my_shipments");
             $scope.myWinAuction = WinAuction;
+            $scope.route = "shipments|manage";
             $scope.assigments = assigments;
             $scope.drivers = drivers;
 

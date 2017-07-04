@@ -1,4 +1,45 @@
-<div>
-    Menu
-    {{routePath}}
+<div class="menu-tabs col-md-12">
+    <div class="tab" ui-sref="auction" ng-class="aboveRoute == 'auction' ? 'active' : null">
+        Auction
+    </div>
+    <div class="tab" ui-sref="shipments_manage" ng-class="aboveRoute == 'shipments' ? 'active' : null">
+        Shipments
+    </div>
+    <div class="tab" ui-sref="my_company" ng-class="aboveRoute == 'company' ? 'active' : null">
+        Company
+    </div>
 </div>
+<div class="menu-vertical col-md-2" ng-if="aboveRoute == 'auction'">
+    <div class="tab" ui-sref="auction" ng-class="underRoute == 'list' ? 'active' : null">
+        List
+    </div>
+    <div class="tab" ui-sref="favouriteAuction" ng-class="underRoute == 'favourite' ? 'active' : null">
+        Favourite
+    </div>
+    <div class="tab" ui-sref="bidsauction"  ng-class="underRoute == 'bids' ? 'active' : null">
+        Bids
+    </div>
+    <div class="tab" ui-sref="winauction" ng-class="underRoute == 'win' ? 'active' : null" >
+        Win
+    </div>
+</div>
+<div class="menu-vertical col-md-2" ng-if="aboveRoute == 'shipments'">
+    <div class="tab" ui-sref="shipments_manage" ng-class="underRoute == 'manage' ? 'active' : null" >
+        Manage
+    </div>
+    <div class="tab"ui-sref="view_shipments" ng-class="underRoute == 'overview' ? 'active' : null" >
+        Overview
+    </div>
+</div>
+<div class="menu-vertical col-md-2" ng-if="aboveRoute == 'company'">
+    <div class="tab" ui-sref="my_company" ng-class="underRoute == 'overview' ? 'active' : null">
+        Overview
+    </div>
+    <div class="tab" ui-sref="new_employee" ng-class="underRoute == 'employee' ? 'active' : null">
+        Add Employee
+    </div>
+    <div class="tab" ui-sref="new_vehicle" ng-class="underRoute == 'vehicle' ? 'active' : null">
+        Add Vehicle
+    </div>
+</div>
+<div class="col-md-10 tab-content" ng-transclude></div>

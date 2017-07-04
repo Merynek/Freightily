@@ -8,6 +8,7 @@
 angular.module('appControllers')
   .controller('auctionListController', ['$scope', 'AuctionList', 'vehicles', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', function($scope, AuctionList, vehicles, Auction, User, UserAbility, $location, $stateParams){
     $scope.setNavigationPath("home|auction_list");
+    $scope.route = "auction|list";
     $scope.AuctionList = AuctionList;
     $scope.vehicles = vehicles;
     $scope.filter = $stateParams.sort;

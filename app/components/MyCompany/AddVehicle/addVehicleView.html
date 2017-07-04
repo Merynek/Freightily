@@ -1,33 +1,35 @@
-<div class="add-vehicle-page" ng-open="formLabels('vehicleForm')" >
-  <h1>{{'texts.registration_vehicle' | i18next}}</h1>
-  <form name="vehicleForm" novalidate>
-     <div class="form-group">
-       <input type="text" name="type" class="form-control my-input" placeholder="{{'texts.vehicle_type' | i18next}}" ng-model="vehicle.type"
-              ng-class="{'input-error' : vehicleForm.type.$invalid && (!vehicleForm.type.$pristine || clicked)}"
-              required />
-    </div>
-    <div class="form-group">
-      <input type="text" name="brand" class="form-control my-input" placeholder="{{'texts.vehicle_brand' | i18next}}" ng-model="vehicle.brand"
-             ng-class="{'input-error' : vehicleForm.brand.$invalid && (!vehicleForm.brand.$pristine || clicked)}"
-             required />
-    </div>
-    <div class="form-group">
-      <input type="text" name="capacity" class="form-control my-input" placeholder="{{'texts.vehicle_capacity' | i18next}}" ng-model="vehicle.capacity"
-             ng-class="{'input-error' : vehicleForm.capacity.$invalid && (!vehicleForm.capacity.$pristine || clicked)}"
-             required />
-    </div>
-    <div class="form-group">
-      <input type="text" name="rz" class="form-control my-input" placeholder="{{'texts.vehicle_rz' | i18next}}" ng-model="vehicle.rz"
-             ng-class="{'input-error' : vehicleForm.rz.$invalid && (!vehicleForm.rz.$pristine || clicked)}"
-             required />
-    </div>
-    <div class="form-group">
-      <input type="text" name="size" class="form-control my-input" placeholder="{{'texts.vehicle_size' | i18next}}" ng-model="vehicle.size"
-             ng-class="{'input-error' : vehicleForm.size.$invalid && (!vehicleForm.size.$pristine || clicked)}"
-             required />
-    </div>
-    <div class="form-group text-center">
-      <div class="my-button important-button big-button" ng-click="AddVehicle()">{{'texts.registration_vehicle' | i18next}}</div>
-    </div>
-  </form>
-</div>
+<m param="{route}">
+  <div class="add-vehicle-page" ng-open="formLabels('vehicleForm')" >
+    <h1>{{'texts.registration_vehicle' | i18next}}</h1>
+    <form name="vehicleForm" novalidate>
+       <div class="form-group">
+         <input type="text" name="type" class="form-control my-input" placeholder="{{'texts.vehicle_type' | i18next}}" ng-model="vehicle.type"
+                ng-class="{'input-error' : vehicleForm.type.$invalid && (!vehicleForm.type.$pristine || clicked)}"
+                required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="brand" class="form-control my-input" placeholder="{{'texts.vehicle_brand' | i18next}}" ng-model="vehicle.brand"
+               ng-class="{'input-error' : vehicleForm.brand.$invalid && (!vehicleForm.brand.$pristine || clicked)}"
+               required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="capacity" class="form-control my-input" placeholder="{{'texts.vehicle_capacity' | i18next}}" ng-model="vehicle.capacity"
+               ng-class="{'input-error' : vehicleForm.capacity.$invalid && (!vehicleForm.capacity.$pristine || clicked)}"
+               required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="rz" class="form-control my-input" placeholder="{{'texts.vehicle_rz' | i18next}}" ng-model="vehicle.rz"
+               ng-class="{'input-error' : vehicleForm.rz.$invalid && (!vehicleForm.rz.$pristine || clicked)}"
+               required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="size" class="form-control my-input" placeholder="{{'texts.vehicle_size' | i18next}}" ng-model="vehicle.size"
+               ng-class="{'input-error' : vehicleForm.size.$invalid && (!vehicleForm.size.$pristine || clicked)}"
+               required />
+      </div>
+      <div class="form-group text-center">
+        <div class="my-button important-button big-button" ng-click="AddVehicle()">{{'texts.registration_vehicle' | i18next}}</div>
+      </div>
+    </form>
+  </div>
+</m>

@@ -1,51 +1,53 @@
-<div class="auction-list-page row">
-    <h1>{{'texts.shipment_manage' | i18next}}</h1>
-    <h2>{{'texts.auction_for_assign' | i18next}}</h2>
-    <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div ng-if="myWinAuction.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
-            <div class="auction-header col-sm-9 col-md-9 col-lg-10">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.price' | i18next}}</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.end_auction' | i18next}}</div>
-            </div>
-        </div>
-        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!myWinAuction.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
-            <div class="auction-item" ng-repeat="item in myWinAuction">
-                <detail-auction auction-item="{item}" drivers="{drivers}"></detail-auction>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="assignments auction-list-page row">
-    <h2>Přiřazení řidiči na zásilky</h2>
-    <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-        <div ng-if="assigments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
-            <div class="auction-header col-sm-12 col-md-12 col-lg-12">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Jméno</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Přijmení</div>
-                <div class="auction-cell col-sm-1 col-md-1 col-lg-1">Řidičák</div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Bydliště</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Todo?</div>
-                <div class="auction-cell col-sm-1 col-md-1 col-lg-1">Fix</div>
-            </div>
-        </div>
-        <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div ng-if="!assigments.length" class="no-auction">Žádní řidiči k zobrazení...</div>
-            <div class="auction-item" ng-repeat="item in assigments">
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{item.driver_name}}</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{item.driver_surname}}</div>
-                <div class="auction-cell col-sm-1 col-md-1 col-lg-1">B</div>
-                <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Revucka 1204/16 78401 Litovel</div>
-                <div class="auction-cell col-sm-2 col-md-2 col-lg-2">
-                    <span ng-if="!item.is_fixed" class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
+<m param="{route}">
+    <div class="auction-list-page row">
+        <h1>{{'texts.shipment_manage' | i18next}}</h1>
+        <h2>{{'texts.auction_for_assign' | i18next}}</h2>
+        <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <div ng-if="myWinAuction.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+                <div class="auction-header col-sm-9 col-md-9 col-lg-10">
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
+                    <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.price' | i18next}}</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.end_auction' | i18next}}</div>
                 </div>
-                <div class="auction-cell col-sm-1 col-md-1 col-lg-1">
-                    <span class="glyphicon glyphicon-pushpin" ng-class="(item.is_fixed) ? 'is-fixed' : ''" ng-click="fixAssignment(item)"></span>
+            </div>
+            <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div ng-if="!myWinAuction.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
+                <div class="auction-item" ng-repeat="item in myWinAuction">
+                    <detail-auction auction-item="{item}" drivers="{drivers}"></detail-auction>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="assignments auction-list-page row">
+        <h2>Přiřazení řidiči na zásilky</h2>
+        <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <div ng-if="assigments.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+                <div class="auction-header col-sm-12 col-md-12 col-lg-12">
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Jméno</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Přijmení</div>
+                    <div class="auction-cell col-sm-1 col-md-1 col-lg-1">Řidičák</div>
+                    <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Bydliště</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">Todo?</div>
+                    <div class="auction-cell col-sm-1 col-md-1 col-lg-1">Fix</div>
+                </div>
+            </div>
+            <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div ng-if="!assigments.length" class="no-auction">Žádní řidiči k zobrazení...</div>
+                <div class="auction-item" ng-repeat="item in assigments">
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{item.driver_name}}</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{item.driver_surname}}</div>
+                    <div class="auction-cell col-sm-1 col-md-1 col-lg-1">B</div>
+                    <div class="auction-cell col-sm-4 col-md-4 col-lg-4">Revucka 1204/16 78401 Litovel</div>
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2">
+                        <span ng-if="!item.is_fixed" class="glyphicon glyphicon-hand-up" ng-click="showDetail(item.id_auction)"></span>
+                    </div>
+                    <div class="auction-cell col-sm-1 col-md-1 col-lg-1">
+                        <span class="glyphicon glyphicon-pushpin" ng-class="(item.is_fixed) ? 'is-fixed' : ''" ng-click="fixAssignment(item)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</m>

@@ -12,6 +12,7 @@ angular.module('appControllers')
         driver_licence: ""
       };
       $scope.clicked = false;
+      $scope.route = "company|employee";
 
       $scope.AddUser = function(){  
         $scope.clicked = true;
