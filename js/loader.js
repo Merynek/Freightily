@@ -14,10 +14,6 @@ function message(type, message){
 
 	if(!message_active) {
 		message_active = true;
-		$('html, body').animate({
-			scrollTop: messageElement.offset().top
-        }, 300);
-
 		switch (type) {
 			case 1:
                 messageElement.addClass("success-message");

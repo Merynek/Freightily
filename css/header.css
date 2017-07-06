@@ -54,15 +54,14 @@ header{
 
 #message{
     display: none;
-    position: absolute;
-    right: 4%;
-    top: 135px;
+    position: fixed;
+    top: 0;
+    right: 25%;
+    left: 25%;
     text-align: center;
-    width: 340px;
-    max-width: 90%;
     font-weight: bold;
     padding: 15px 20px;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .error-message{
@@ -71,7 +70,7 @@ header{
     box-shadow: 0 0 15px -5px #e91d27;
 }
 .success-message{
-    background: #e6e6f1;
+    background: #ffffff;
     border-bottom: 2px solid #12133d;
     box-shadow: 0 0 15px -5px #12133d;
 }
@@ -91,7 +90,6 @@ header{
     background: none;
     border: none;
 }
-
 
 .navbar-collapse{
     padding: 0;
@@ -272,6 +270,7 @@ header{
 }
 /* MENU */
 .menu-tabs{
+    padding-right: 0;
     padding-left: 17%;
     border-bottom: 1px solid #e6e6f1;
     margin-bottom: 15px;
@@ -302,6 +301,7 @@ header{
 .menu-vertical{
     padding-top: 5px;
     padding-right: 25px;
+    padding-left: 0;
 }
 .menu-vertical .tab{
     padding: 10px 15px;
@@ -312,17 +312,14 @@ header{
 }
 .menu-vertical .tab:hover {
     font-weight: bold;
-    margin-right: -5px;
-    margin-left: 5px;
     cursor: pointer;
 }
 .menu-vertical .tab.active{
     background: white;
     font-weight: bold;
-    margin-right: -5px;
-    margin-left: 5px;
 }
 .tab-content{
+    padding-right: 0;
 }
 
 @media (max-width: 900px) {
