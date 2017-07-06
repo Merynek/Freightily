@@ -92,7 +92,6 @@ header{
     border: none;
 }
 
-
 .navbar-collapse{
     padding: 0;
 }
@@ -272,6 +271,7 @@ header{
 }
 /* MENU */
 .menu-tabs{
+    padding-right: 0;
     padding-left: 17%;
     border-bottom: 1px solid #e6e6f1;
     margin-bottom: 15px;
@@ -302,6 +302,7 @@ header{
 .menu-vertical{
     padding-top: 5px;
     padding-right: 25px;
+    padding-left: 0;
 }
 .menu-vertical .tab{
     padding: 10px 15px;
@@ -312,17 +313,14 @@ header{
 }
 .menu-vertical .tab:hover {
     font-weight: bold;
-    margin-right: -5px;
-    margin-left: 5px;
     cursor: pointer;
 }
 .menu-vertical .tab.active{
     background: white;
     font-weight: bold;
-    margin-right: -5px;
-    margin-left: 5px;
 }
 .tab-content{
+    padding-right: 0;
 }
 
 @media (max-width: 900px) {
