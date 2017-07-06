@@ -6,7 +6,7 @@
  */
 
 angular.module('appControllers')
-    .controller('viewShipmentsController', ['$scope', 'actualShipments', 'pastShipments', 'notStartedShipments', '$http', '$q', '$filter', 'UserAbility', function($scope, actualShipments, pastShipments, notStartedShipments, $http, $q, $filter, UserAbility){
+    .controller('viewShipmentsController', ['$scope', 'actualShipments', 'pastShipments', 'notStartedShipments', '$http', '$q', '$filter', 'UserAbility', 'Shipments', function($scope, actualShipments, pastShipments, notStartedShipments, $http, $q, $filter, UserAbility, Shipments){
         $scope.setNavigationPath("home|manage|view_shipments");
 
         $scope.actualShipments = actualShipments;
@@ -14,6 +14,11 @@ angular.module('appControllers')
         $scope.notStartedShipments = notStartedShipments;
         $scope.photos = [];
         $scope.route = "shipments|overview";
+
+        // get Invoice
+        $scope.getInvoice = function(id_auction) {
+            Shipments.getInvoice(id_auction);
+        };
 
         //only for post photos, but never use on web client
         $scope.uploadPhoto = function upload(photos)

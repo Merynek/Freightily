@@ -8,7 +8,7 @@ angular.module('appDirectives')
             scope: {
                 shipmentItem: '='
             },
-            controller: function ($scope, $filter, Auction, User, UserAbility) {
+            controller: function ($scope, $filter, Auction, User, UserAbility, Shipments) {
                 $scope.item = this.shipmentItem.item;
                 $scope.ID = this.shipmentItem.item.ID;
                 $scope.photos = [];
@@ -43,6 +43,11 @@ angular.module('appDirectives')
                         container.parents(".map-section").hide();
                         message(3, $filter('i18next')('Error with get map from server'));
                     })
+                };
+
+                // get Invoice
+                this.getInvoice = function(id_auction) {
+                    Shipments.getInvoice(id_auction);
                 };
 
 

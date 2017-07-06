@@ -48,6 +48,30 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => get invoice */ 
+		Shipments.getInvoice = function(id){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					responseType: 'arraybuffer',
+					url: CONFIG.server.url+'data/shipment/invoice/'+id
+				}).then(function(response) {
+					var reader = new FileReader();
+					var out = new Blob([response.data], {type: 'application/pdf'});
+					reader.onload = function(e){
+						window.open(reader.result);
+					}
+					reader.readAsDataURL(out);
+					resolve()
+					endLoading();
+				}).catch(function(error){
+					endLoading();
+					reject();
+				})
+			});
+    	};
+
 		/* GET to REST api => Get actual shipment */
 		Shipments.getActualShipments = function(){
 			startLoading();
