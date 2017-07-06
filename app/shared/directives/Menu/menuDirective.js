@@ -9,10 +9,11 @@ angular.module('appDirectives')
             scope: {
                 param: '='
             },
-            controller: function ($scope) {
+            controller: function ($scope, User) {
                 var route = this.param.route;
                 $scope.aboveRoute = route.split("|")[0];
                 $scope.underRoute = route.split("|")[1];
+                $scope.user = User;
             }
         };
     });
