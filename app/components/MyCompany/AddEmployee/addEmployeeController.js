@@ -21,7 +21,7 @@ angular.module('appControllers')
           return;
         }
 
-        if(!$scope.addUserForm.$valid) {
+        if(!this.addUserForm.$valid) {
           return;
         }
         

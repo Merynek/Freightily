@@ -77,7 +77,7 @@ angular.module('appControllers')
 
         $scope.addAuction = function () {
             $scope.clicked = true;
-            if (!$scope.addAuctionForm.$valid) {
+            if (!this.addAuctionForm.$valid) {
                 return;
             }
 

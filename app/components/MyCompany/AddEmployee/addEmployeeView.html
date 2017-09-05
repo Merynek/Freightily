@@ -4,12 +4,12 @@
     <form name="addUserForm" novalidate>
 
       <div class="form-group radio-group half">
-        <input type="radio" name="role" class="my-radio" id="transporter" ng-model="user.role" value="2" required/>
-        <label for="transporter">{{'texts.transporter' | i18next}}</label>
+        <input type="radio" name="role" class="my-radio" id="driver" ng-model="employee.role" value="4" required/>
+        <label for="driver">{{'texts.driver' | i18next}}</label>
       </div>
       <div class="form-group radio-group half">
-        <input type="radio" name="role" class="my-radio" id="sender" ng-model="user.role" value="1"/>
-        <label for="sender">{{'texts.sender' | i18next}}</label>
+        <input type="radio" name="role" class="my-radio" id="dispatcher" ng-model="employee.role" value="3"/>
+        <label for="dispatcher">{{'texts.dispatcher' | i18next}}</label>
       </div>
 
       <div class="form-group half">

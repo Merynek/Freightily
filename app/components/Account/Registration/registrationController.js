@@ -19,7 +19,7 @@ angular.module('appControllers')
           return;
         }
 
-        if(!$scope.registrationForm.$valid) {
+        if(!this.registrationForm.$valid) {
           return;
         }
         

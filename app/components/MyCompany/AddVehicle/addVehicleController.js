@@ -15,7 +15,7 @@ angular.module('appControllers')
 
       $scope.AddVehicle = function(){
           $scope.clicked = true;
-          if(!$scope.vehicleForm.$valid) {
+          if(!this.vehicleForm.$valid) {
               return;
           }
           var data = {

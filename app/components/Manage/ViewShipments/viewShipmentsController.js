@@ -6,7 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('viewShipmentsController', ['$scope', 'actualShipments', 'pastShipments', 'notStartedShipments', '$http', '$q', '$filter', 'UserAbility', 'Shipments', function($scope, actualShipments, pastShipments, notStartedShipments, $http, $q, $filter, UserAbility, Shipments){
+    .controller('viewShipmentsController', ['$scope', 'actualShipments', 'pastShipments', 'notStartedShipments', '$http', '$q', '$filter', 'UserAbility', 'Shipments',
+        function($scope, actualShipments, pastShipments, notStartedShipments, $http, $q, $filter, UserAbility, Shipments){
         $scope.setNavigationPath("home|manage|view_shipments");
 
         $scope.actualShipments = actualShipments;

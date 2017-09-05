@@ -23,7 +23,7 @@ angular.module('appControllers')
 
     $scope.sort = function() {
       $scope.order = $scope.order === "ASC" ? "DESC" : "ASC";
-    } 
+    };
 
     $scope.arrowState = function(param) {
       var class_style = "";
@@ -36,7 +36,7 @@ angular.module('appControllers')
       }
       
       return class_style;
-    }
+    };
   }
 ]);
 
