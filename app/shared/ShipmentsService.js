@@ -37,7 +37,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/shipment/'+id,
+					url: CONFIG.server.url+'data/shipment/'+id
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -54,16 +54,21 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
 					responseType: 'arraybuffer',
 					url: CONFIG.server.url+'data/shipment/invoice/'+id
 				}).then(function(response) {
 					var reader = new FileReader();
 					var out = new Blob([response.data], {type: 'application/pdf'});
-					reader.onload = function(e){
-						window.open(reader.result);
+                    var fileURL = URL.createObjectURL(out);
+                    var win = window.open();
+                    win.document.write('<iframe src="' + fileURL + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; overflow: hidden" allowfullscreen></iframe>')
+
+					/*reader.onload = function(e){
+						window.open(reader.result, "_blank");
 					}
-					reader.readAsDataURL(out);
-					resolve()
+					reader.readAsDataURL(out);*/
+					resolve();
 					endLoading();
 				}).catch(function(error){
 					endLoading();
