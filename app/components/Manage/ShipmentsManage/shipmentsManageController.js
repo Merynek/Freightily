@@ -20,17 +20,16 @@ angular.module('appControllers')
 
             $scope.fixAssignment = function(item) {
                 var data = {
-                    id_auction : item.id_auction,
-                    id_driver : item.id_driver
+                    id_auction : 2025,
+                    id_driver : 3009
                 };
 
-                if(item.is_fixed) {
+                /*if(item.is_fixed) {
                     return;
-                }
+                }*/
 
                 UserAbility.fixAssigment(data).then(function(){
                     message(1, $filter('i18next')('Zásilka byla přiřazena na řidiče na stálo'));
-                    item.is_fixed = true;
                     $scope.refresh();
                 }).catch(function(){
                     message(3, $filter('i18next')('Chyba při přiřazení na stálo'));

@@ -19,7 +19,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/shipments',
+					url: CONFIG.server.url+'data/shipments'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -49,14 +49,14 @@ angular.module('appServices')
 		};
 
 		/* GET to REST api => get invoice */ 
-		Shipments.getInvoice = function(id){
+		Shipments.getInvoice = function(id, byTransporter){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
                     headers: { 'token': window.localStorage.getItem("TOKEN")},
 					responseType: 'arraybuffer',
-					url: CONFIG.server.url+'data/shipment/invoice/'+id
+					url: CONFIG.server.url+'data/shipment/invoice?auctionId=' +id + '&byTransporter=' + byTransporter
 				}).then(function(response) {
 					var reader = new FileReader();
 					var out = new Blob([response.data], {type: 'application/pdf'});
