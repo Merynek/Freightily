@@ -12,7 +12,6 @@
                     <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.end_auction' | i18next}}</div>
                 </div>
             </div>
-            <span ng-click="fixAssignment(item)">FIX!</span>
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div ng-if="!myWinAuction.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
                 <div class="auction-item" ng-repeat="item in myWinAuction">

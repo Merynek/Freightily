@@ -65,6 +65,28 @@ angular.module('appDirectives')
                     $scope.withBids = false;
                 });
 
+                this.fixAssignment = function(item, driver) {
+                    if(!driver) {
+                        message(3, $filter('i18next')('Není vybrany ridič'));
+                        return;
+                    }
+                    var data = {
+                        id_auction : item.ID,
+                        id_driver : driver
+                    };
+    
+                    if(item.is_fixed) {
+                        return;
+                    }
+    
+                    UserAbility.fixAssigment(data).then(function(){
+                        message(1, $filter('i18next')('Zásilka byla přiřazena na řidiče na stálo'));
+                        refreshItem($scope.item.ID);
+                    }).catch(function(){
+                        message(3, $filter('i18next')('Chyba při přiřazení na stálo'));
+                    })
+                };
+
                 this.bidAuction = function (bid, vehicle) {
                     if (vehicle) {
                         console.log($scope.item.price - bid);

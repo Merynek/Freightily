@@ -6,11 +6,14 @@ angular.module('appDirectives')
             bindToController: true,
             controllerAs: 'vm',
             scope: {
-                shipmentItem: '='
+                shipmentItem: '=',
+                finished: '='
             },
-            controller: function ($scope, $filter, Auction, User, UserAbility, Shipments) {
+            controller: function ($scope, $filter, Auction, User, UserAbility, Shipments, $q, $http) {
                 $scope.item = this.shipmentItem.item;
+                $scope.finished = this.finished;
                 $scope.ID = this.shipmentItem.item.ID;
+                $scope.showPhotos = [];
                 $scope.photos = [];
                 $scope.photoReady = false;
                 $scope.show = false;
@@ -19,10 +22,10 @@ angular.module('appDirectives')
                 };
 
                 this.showPhoto = function(idAuction, firstPart) {
-                    $scope.photos = [];
+                    $scope.showPhotos = [];
                     UserAbility.getPhotos(idAuction, firstPart).then(function(data){
                         for(var i = 0; i < data.length; i++) {
-                            $scope.photos.push("data:image/png;base64," +data[i]);
+                            $scope.showPhotos.push("data:image/png;base64," +data[i]);
                         }
                         $scope.photoReady = true;
                     }).catch(function(data){
@@ -44,10 +47,9 @@ angular.module('appDirectives')
                         message(3, $filter('i18next')('Error with get map from server'));
                     })
                 };
-
                 // get Invoice
                 this.getInvoice = function(id_auction) {
-                    Shipments.getInvoice(id_auction);
+                    Shipments.getInvoice(id_auction, true);
                 };
 
 
@@ -66,12 +68,46 @@ angular.module('appDirectives')
                 this.postGPS = function(idAuction){
                     var data = {
                         id_auction: idAuction,
-                        route: "49.7003929,17.0867981"
+                        route: "49.7003929,18.0867981"
                     };
                     UserAbility.postGPS(data).then(function(data){
                     }).catch(function(data){
                         message(3, $filter('i18next')('Error with get map from server'));
                     })
+                };
+
+                //for android client only
+                //only for post photos, but never use on web client
+                this.uploadPhoto = function upload(id, photos)
+                {
+                    var formData = new FormData();
+                    formData.append("id_auction", id);
+                    angular.forEach(photos, function (photo) {
+                        formData.append(photo.name, photo);
+                    });
+
+                    postPhotos(formData).then(function(){
+                        message(1, $filter('i18next')('Upload OK!'));
+                    }).catch(function(){
+                        message(3, $filter('i18next')('Upload FAIL!'));
+                    })
+                };
+
+                //only for post photos, but never use on web client
+                var postPhotos = function(formData){
+                    return $q(function(resolve, reject){
+                        $http({
+                            method: 'POST',
+                            transformRequest: angular.identity,
+                            data: formData,
+                            headers: { 'token': window.localStorage.getItem("TOKEN"), 'Content-Type': undefined},
+                            url: 'http://localhost:51246/api/data/company/files'
+                        }).then(function(response) {
+                            resolve(response.data);
+                        }).catch(function(error){
+                            reject();
+                        })
+                    });
                 };
             }
         };

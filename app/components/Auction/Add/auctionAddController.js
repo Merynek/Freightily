@@ -123,21 +123,6 @@ angular.module('appControllers')
                 return;
             }
 
-            from = new Date(load_to.val());
-            to = new Date(unload_to.val());
-
-            if (from.setDate(from.getDate() + 7) > to) {
-                message(3, $filter('i18next')('Datum pro vyložení musí být minimálně 7 dní od datumu naložení'));
-                return;
-            }
-
-            from = new Date(load_from.val());
-
-            if (end.setDate(end.getDate() + 2) > from) {
-                message(3, $filter('i18next')('Datum ukončení aukce musí být 2dny před datumem naložení nákladu'));
-                return;
-            }
-
             if (load_from && load_to && unload_from && unload_to && end_auction) {
                 var data = {
                     from_city: $scope.from_address.components.city,

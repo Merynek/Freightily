@@ -43,13 +43,9 @@
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div ng-if="!pastShipments.length" class="no-auction">{{'texts.shipment.no_ended_shipments' | i18next}}</div>
                 <div class="auction-item" ng-repeat="item in pastShipments">
-                    <detail-shipment shipment-item="{item}"></detail-shipment>
+                    <detail-shipment shipment-item="{item}" finished="true"></detail-shipment>
                 </div>
             </div>
-            <div ng-click="getInvoice(2025, false)">INVOICE</div>
-                <!-- Only for andorid app -->
-                <input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
-                <input class="btn btn-primary" type="button" ng-click="uploadPhoto(photos)" value="upload">
         </div>
     </div>
 </m>
