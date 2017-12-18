@@ -14,12 +14,29 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 	$urlRouterProvider.otherwise("/404");
 
  $stateProvider
- 		.state('home', {
+		.state('home', {
 			url: "/",
-			controller: 'homeController',
-			templateUrl: "app/components/home/HomeView.html",
+			controller: 'auctionListController',
+			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
 				role: [1,2,3,4]
+			},
+			resolve: {
+				AuctionList: function(Auction, $stateParams){
+					return Auction.getAuctionList("", "").then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				},
+				vehicles: function(UserAbility, User){
+					if(User.isSender() || User.isDriver()) return{};
+					return UserAbility.getVehicles().then(function(res){
+						return res;
+					}).catch(function(){
+						return null;
+					})
+				}
 			}
 		})
 		.state('login', {
