@@ -160,14 +160,6 @@
 .auction-detail .history-list div{
     padding: 5px;
 }
-.auction-detail .border-fix{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 2px;
-    height: calc(100% - 20px);
-    background: #e6e6f1;
-}
 .auction-bid > div {
     padding: 0;
 }

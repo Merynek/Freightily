@@ -84,7 +84,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/shipment/fixedShipments'
+					url: CONFIG.server.url+'data/shipment/myShipments'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -102,7 +102,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/shipment/fixedShipments?past=1'
+					url: CONFIG.server.url+'data/shipment/myShipments?past=1'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -120,7 +120,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/shipment/fixedShipments?notStarted=1'
+					url: CONFIG.server.url+'data/shipment/myShipments?notStarted=1'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);

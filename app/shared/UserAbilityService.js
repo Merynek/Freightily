@@ -150,7 +150,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'shipment/fixedShipments',
+					url: url+'shipment/myShipments',
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -177,25 +177,6 @@ angular.module('appServices')
 						endLoading();
 						reject();		
 					})
-			});
-		};
-
-		/* POST to REST api => assignment driver to auction FIXED */
-		UserAbility.fixAssigment = function(data){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					data: param(data),
-					url: url+'company/fixAssignment',
-				}).then(function(response) {
-					endLoading();
-					resolve(response.data);
-				}).catch(function(error){
-					endLoading();
-					reject();
-				})
 			});
 		};
 
