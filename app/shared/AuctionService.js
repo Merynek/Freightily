@@ -163,6 +163,24 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => Get all my win unassigned auction */ 
+		Auction.getMyWinUnassignedAuction = function(){
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+					headers: { 'token': window.localStorage.getItem("TOKEN")},
+					url: CONFIG.server.url+'data/auction/winUnassigned',
+					}).then(function(response) {
+						endLoading();
+						resolve(response.data);
+					}).catch(function(error){
+						endLoading();
+						reject();
+					})
+			});
+		};
+
         /* GET to REST api => Get all my favourite auction */ 
 		Auction.getMyFavouriteAuction = function(){
 			startLoading();

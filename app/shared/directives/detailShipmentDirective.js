@@ -61,18 +61,18 @@ angular.module('appDirectives')
                     };
                     UserAbility.checkQrCode(data).then(function(data){
                     }).catch(function(data){
-                        message(3, $filter('i18next')('Error with get map from server'));
+                        message(3, $filter('i18next')('Error with QR'));
                     })
                 };
                  //for android client only
                 this.postGPS = function(idAuction){
                     var data = {
                         id_auction: idAuction,
-                        route: "49.7003929,18.0867981"
+                        route: "49.7103929,17.1867981"
                     };
                     UserAbility.postGPS(data).then(function(data){
                     }).catch(function(data){
-                        message(3, $filter('i18next')('Error with get map from server'));
+                        message(3, $filter('i18next')('Error with GPS'));
                     })
                 };
 

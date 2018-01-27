@@ -268,7 +268,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 },
 			 resolve: {
 				 WinAuction: function(Auction){
-					 return Auction.getMyWinAuction().then(function(res){
+					 return Auction.getMyWinUnassignedAuction().then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;

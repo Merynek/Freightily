@@ -1,11 +1,24 @@
 function showRouteMap(route, id_auction){
-           var myRouter = {
-            map_: null,
-            directionsHelper_: null,
+    $("#map").css("display", "block");
+    initMap('map-'+id_auction, route);
+};
 
-            stores: [],
+function initMap(mapid, route) {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var map = new google.maps.Map(document.getElementById(mapid), {
+      zoom: 6,
+      center: {lat: 41.85, lng: -87.65}
+    });
+    directionsDisplay.setMap(map);
 
-            calcRoute: function() {
+    calculateAndDisplayRoute(directionsService, directionsDisplay, route);
+}
+
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, route) {
+                var waypts = [];
+                var stores = [];
                 var start, 
                     gps,
                     end,
@@ -19,65 +32,31 @@ function showRouteMap(route, id_auction){
                         indexName++;
                         continue;
                     }
-                    this.stores.push(
+                    stores.push(
                         {name: "store"+indexName, location: new google.maps.LatLng(gps[0], gps[1])}
                     )
                     indexName++;
                 }
                 end = new google.maps.LatLng(gps[0], gps[1]);
 
-                var waypts = [];
-                for (var i in this.stores) {
+                for (var i in stores) {
                     waypts.push({
-                        location: this.stores[i].location,
+                        location: stores[i].location,
                         stopover:true
                     });
                 }
-                //new google.maps.LatLng(47.7006494, 18.0882306);
-                
 
-                var request = {
-                    origin: start,
-                    destination: end,
-                    waypoints: waypts,
-                    optimizeWaypoints: true,
-                    travelMode: google.maps.DirectionsTravelMode.DRIVING
-                };
-
-                var _SELF = this;
-                var distance = document.getElementById('distance');
-                if (distance) {
-                    this.directionsHelper_.route(request, function(response, status) {
-                        if (status == google.maps.DirectionsStatus.OK) {
-                            _SELF.directionsDisplay_.setDirections(response);
-                            distance.innerHTML = response.routes[0].legs[0].distance.text;
-                            return;
-                        }
-                        console.log('Directions Status: ' + status);
-                    });
+                directionsService.route({
+                origin: start,
+                destination: end,
+                waypoints: waypts,
+                optimizeWaypoints: true,
+                travelMode: 'DRIVING'
+                }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
                 }
-            },
-
-            init: function(mapid) {
-
-                this.directionsHelper_ = new google.maps.DirectionsService();
-                this.directionsDisplay_ = new google.maps.DirectionsRenderer();
-                //console.log(this.directionsDisplay.directions.routes[0].legs[0].distance.text);
-
-                var center = new google.maps.LatLng(50.82788, 3.26499);
-                var myOptions = {
-                    zoom:7,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: center
-                }
-                this.map_ = new google.maps.Map(document.getElementById(mapid), myOptions);
-                this.directionsDisplay_.setMap(this.map_);
-
-                this.calcRoute();
-            }
-        };
-        $("#map").css("display", "block");
-        //$("#distance").css("display", "block");
-        myRouter.init('map-'+id_auction);
-        return;
-};
+                });
+  }
