@@ -25,7 +25,7 @@ angular.module('appDirectives')
                     $scope.showPhotos = [];
                     UserAbility.getPhotos(idAuction, firstPart).then(function(data){
                         for(var i = 0; i < data.length; i++) {
-                            $scope.showPhotos.push("data:image/png;base64," +data[i]);
+                            $scope.showPhotos.push(data[i]);
                         }
                         $scope.photoReady = true;
                     }).catch(function(data){

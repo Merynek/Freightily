@@ -91,7 +91,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/files',
+					url: url+'company/photo',
 					params: {
 						id_auction: idAuction,
 						first_part: firstPart
