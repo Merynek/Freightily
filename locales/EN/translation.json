@@ -3,10 +3,14 @@
 		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"login": "Login",
 		"username": "Username",
+		"name": "Name",
+		"surname": "Username",
 		"password": "Password",
 		"date": "Date",
 		"amount": "Amount",
+		"driver_licence": "Driver licence",
 		"no_amounts": "No amounts",
+		"accept_conditions": "Accept conditions",
 		"bid": "Bid",
 		"want_bid": "Want bid?",
 		"driver_assign": "Assign driver",
@@ -90,9 +94,11 @@
 			"photos": "Photos",
 			"photos_before": "Before",
 			"photos_after": "After",
-			"choose_photos": "Choose photos",
+			"no_photos": "No photos",
 			"map": "Map",
-			"show_map": "Display map"
+			"show_map": "Display map",
+			"hide_map": "Hide map",
+			"open_invoice": "Open invoice"
 		},
 		"auction": {
 			"auction_list": "Auction",

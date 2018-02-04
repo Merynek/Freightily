@@ -20,6 +20,7 @@ angular.module('appDirectives')
                 $scope.toggleDetail = function () {
                     $scope.show = !$scope.show;
                 };
+                $scope.mapIsDisplayed = false;
 
                 this.showPhoto = function(idAuction, firstPart) {
                     $scope.showPhotos = [];
@@ -27,25 +28,32 @@ angular.module('appDirectives')
                         for(var i = 0; i < data.length; i++) {
                             $scope.showPhotos.push(data[i]);
                         }
-                        $scope.photoReady = true;
+                        $scope.photoReady = $scope.showPhotos.length > 0;
                     }).catch(function(data){
                         message(3, $filter('i18next')('Error with get photos from server'));
+                        $scope.photoReady = false;
                     })
                 };
 
                 this.showMap = function(id_auction) {
                     var container = $(".map-container-"+id_auction);
 
-                    UserAbility.getMap(id_auction).then(function(data){
-                        // toggle button and map
-                        container.find(".map-wrap").show();
-                        container.find(".show-map").hide();
-                        // show route
-                        showRouteMap(data, id_auction);
-                    }).catch(function(data){
-                        container.parents(".map-section").hide();
-                        message(3, $filter('i18next')('Error with get map from server'));
-                    })
+                    if(!$scope.mapIsDisplayed) {
+                        UserAbility.getMap(id_auction).then(function(data){
+                            // toggle button and map
+                            $scope.mapIsDisplayed = true;
+                            container.find(".map-wrap").show();
+                            // show route
+                            showRouteMap(data, id_auction);
+                        }).catch(function(data){
+                            $scope.mapIsDisplayed = false;
+                            container.find(".map-wrap").hide();
+                            message(3, $filter('i18next')('Error with get map from server'));
+                        })
+                    } else {
+                        $scope.mapIsDisplayed = false;
+                        container.find(".map-wrap").hide();
+                    }
                 };
                 // get Invoice
                 this.getInvoice = function(id_auction) {

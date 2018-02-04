@@ -3,10 +3,14 @@
 		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"login": "Přihlášení",
 		"username": "Uživatelské jméno",
+		"name": "Jméno",
+		"surname": "Příjmení",
 		"password": "Heslo",
 		"date": "Datum",
 		"amount": "Příhoz",
+		"driver_licence": "Řidičský průkaz",
 		"no_amounts": "Žádné příhozy",
+		"accept_conditions": "Souhlasím s podmínkama",
 		"bid": "Přihodit",
 		"want_bid": "Chcete přihodit?",
 		"driver_assign": "Přiřadit řidiče",
@@ -90,9 +94,11 @@
 			"photos": "Fotografie",
 			"photos_before": "Před",
 			"photos_after": "Po",
-			"choose_photos": "Vyberte fotky",
+			"no_photos": "Žádné fotky",
 			"map": "Mapa jízdy",
-			"show_map": "Zobraz mapu jízdy"
+			"show_map": "Zobraz mapu jízdy",
+			"hide_map": "Skrýt mapu jízdy",
+			"open_invoice": "Otevřít fakturu"
 		},
 		"auction": {
 			"auction_list": "Aukce",

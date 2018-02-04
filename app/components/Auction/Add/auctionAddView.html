@@ -19,8 +19,6 @@
                     });
                 });
     </script>
-
-    <h3>{{'texts.shipment' | i18next}}</h3>
     <form name="addAuctionForm" novalidate>
     <div class="form-group half">
         <input class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.from"
@@ -177,7 +175,7 @@
             required />
       </div>
       <div class="form-group text-center">
-        <div class="my-button important-button big-button" ng-click="addAuction()">{{'texts.add_auction' | i18next}}</div>
+        <div class="my-button important-button big-button" ng-click="addAuction()">{{'texts.auction.add_auction' | i18next}}</div>
       </div>
     </form>
   </div>
