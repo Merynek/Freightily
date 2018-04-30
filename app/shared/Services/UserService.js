@@ -13,7 +13,7 @@ angular.module('appServices')
 			roleName : ""
 		};
 
-		//role:  1-sender  2-transporter 3-dispatcher 4-driver
+		//role:  1-sender  2-transporter 3-driver
 		User.set = function (prop, value) {
 			User[prop] = value;
 		};
@@ -24,25 +24,19 @@ angular.module('appServices')
 					break;
 				case 2: User.set('roleName', "Transporter");
 					break;
-				case 3: User.set('roleName', "Dispatcher");
-					break;
-				case 4: User.set('roleName', "Driver");
+				case 3: User.set('roleName', "Driver");
 					break;
 			}
-		}
-
+		};
 		User.isSender = function(){
-			return User.role == 1;
-		}
+			return User.role === 1;
+		};
 		User.isTransporter = function(){
-			return User.role == 2;
-		}
-		User.isDispatcher = function(){
-			return User.role == 3;
-		}
+			return User.role === 2;
+		};
 		User.isDriver = function(){
-			return User.role == 4;
-		}
+			return User.role === 4;
+		};
 
 		/* POST to REST api => Login */ 
 		User.login = function(username, password){
@@ -55,7 +49,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: CONFIG.server.url+'Account/login'
+					url: CONFIG.server.url+'login'
 				}).then(function(response) {
 					if (window.localStorage) {
 						if(response.data && response.data.User && response.data.Token){
@@ -86,7 +80,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'POST',
-					url: CONFIG.server.url+'Account/logout'
+					url: CONFIG.server.url+'logout'
 				}).then(function(response) {
 					User.set('isLoggedIn', false);
 					window.localStorage.clear();
@@ -97,7 +91,7 @@ angular.module('appServices')
 					reject();
 				})
 			});
-		}
+		};
 
 		/* POST to REST api => verify token */ 
 		User.getUserForToken = function(token){
@@ -105,7 +99,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject) {
 				$http({
 					method: 'POST',
-					url: CONFIG.server.url+'Account/checkToken',
+					url: CONFIG.server.url+'checkToken',
 					headers: { 'token': token }
 				}).then(function(response) {
 					User.set('isLoggedIn', true);
@@ -120,16 +114,16 @@ angular.module('appServices')
 					reject();
 				})
 			});
-		}
+		};
 
-		/* POST to REST api => Registration */ 
-		User.registration = function(data){
+		/* POST to REST api => Registration sender */
+		User.registrationSender = function(data){
 			startLoading();
 			return $q(function(resolve, reject) {
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: CONFIG.server.url+'Account/Registration',
+					url: CONFIG.server.url+'registration/sender'
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -138,7 +132,25 @@ angular.module('appServices')
 					reject();			
 				})
 			});
-		}
+		};
+
+		/* POST to REST api => Registration transporter */
+        User.registrationTransporter = function(data){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    data: param(data),
+                    url: CONFIG.server.url+'registration/transporter'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject();
+                })
+            });
+        };
 
 		/* POST to REST api => Registration user */ 
 		User.AddUser = function(data){
@@ -148,7 +160,7 @@ angular.module('appServices')
 					method: 'POST',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'Account/Registration/Adduser',
+					url: CONFIG.server.url+'registration/driver'
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -157,26 +169,7 @@ angular.module('appServices')
 					reject();			
 				})
 			});
-		}
-
-		/* POST to REST api => Registration vehicle*/ 
-		User.AddVehicle = function(data){
-			startLoading();
-			return $q(function(resolve, reject) {
-				$http({
-					method: 'POST',
-					data: param(data),
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'Account/Registration/Addvehicle',
-				}).then(function(response) {
-					endLoading();
-					resolve();
-				}).catch(function(error){
-					endLoading();
-					reject();			
-				})
-			});
-		}
+		};
 
 
 		/* POST to REST api => Registration user */ 
@@ -187,7 +180,7 @@ angular.module('appServices')
 					method: 'GET',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'Account/company',
+					url: CONFIG.server.url+'Account/company'
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -196,7 +189,7 @@ angular.module('appServices')
 					reject();			
 				})
 			});
-		}
+		};
 
 		return User;
 	}]

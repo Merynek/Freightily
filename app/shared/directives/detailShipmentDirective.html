@@ -43,40 +43,6 @@
             <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_weight}}</span></div>
         </div>
     </div>
-    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.about_driver' | i18next}}</h2>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_name' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.name}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_surname' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.surname}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_licence' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.driver_licence}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.driver_phone_number' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.user.phone_number}}</span></div>
-        </div>
-    </div>
-    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.about_vehicle' | i18next}}</h2>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_brand' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.brand}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_capacity' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.capacity}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.shipment.vehicle_type' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.vehicle.type}}</span></div>
-        </div>
-    </div>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
         <div class="photo-buttons">
@@ -101,9 +67,6 @@
             <div class="map-wrap col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div id="map-{{item.id_auction}}" class="map"></div>
             </div>
-        </div>
-        <div ng-if="finished" class="my-button normal-button big-button"  ng-click="vm.getInvoice(item.id_auction)">
-            <span>{{'texts.shipment.open_invoice' | i18next}}</span>
         </div>
         <!-- Only for Android app-->
         <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1008.2020.0')"><span>Check QR Code</span></div>

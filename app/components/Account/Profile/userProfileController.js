@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
     .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', function ($scope, $filter, userInfo, UserAbility) {
-        $scope.setNavigationPath("home|my_profile");
         $scope.userInfo = userInfo;
         $scope.clicked = false;
 

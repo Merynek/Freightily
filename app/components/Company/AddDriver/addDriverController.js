@@ -1,13 +1,13 @@
 /**
-* addEmployeeController 
+* addDriverController
 *
-* @class addEmployeeController
+* @class addDriverController
 * @constructor
 */
 
 angular.module('appControllers')
-  .controller('addEmployeeController', ['$scope', 'Notification', '$state', '$filter', 'User', function($scope, Notification, $state, $filter, User){
-      $scope.setNavigationPath("home|manage|new_employee");
+  .controller('addDriverController', ['$scope', 'Notification', '$state', '$filter', 'User',
+      function($scope, Notification, $state, $filter, User){
       $scope.employee = {
         driver_licence: ""
       };
@@ -16,16 +16,12 @@ angular.module('appControllers')
 
       $scope.AddUser = function(){  
         $scope.clicked = true;
-        if(!$scope.employee.role) {
-          message(3, $filter('i18next')('errors.select_role'));
-          return;
-        }
 
         if(!this.addUserForm.$valid) {
           return;
         }
         
-        if($scope.employee.password != $scope.employee.confirmPassword){
+        if($scope.employee.password !== $scope.employee.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
         else{
@@ -33,7 +29,6 @@ angular.module('appControllers')
             username: $scope.employee.username,
             password: $scope.employee.password,
             confirmpassword: $scope.employee.confirmPassword,
-            role: $scope.employee.role,
             name: $scope.employee.name,
             surname: $scope.employee.surname,
             address_state: $scope.employee.address_state,
@@ -42,9 +37,11 @@ angular.module('appControllers')
             psc: $scope.employee.psc,
             phone_number: $scope.employee.phone_number,
             email: $scope.employee.email,
-            driver_licence: $scope.employee.driver_licence,
+            driver_licence: $scope.employee.driver_licence
           };
-          if(User.AddUser(data)){
+          if(User.AddUser(data)) {
+              message(1, $filter('i18next')('success.registration'));
+              $state.go('company');
           }
           else{
             Notification.error($filter('i18next')('errors.wrong_registration'));

@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
   .controller('loginController', ['$scope','User', '$filter', '$state', function($scope, User, $filter, $state){
-    $scope.setNavigationPath("");
     if(User.isLoggedIn){
       $state.go('home');
     }

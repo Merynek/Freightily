@@ -24,7 +24,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction'+parametres
+					url: CONFIG.server.url+'auction'+parametres
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -42,7 +42,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/'+id,
+					url: CONFIG.server.url+'auction/'+id
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -60,7 +60,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/history/'+id,
+					url: CONFIG.server.url+'auction/history/'+id
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -71,15 +71,15 @@ angular.module('appServices')
 			});
 		};
 
-		/* POST to REST api => Add auction */ 
-		Auction.newAuction = function(data){
+		/* POST to REST api => Create auction */
+		Auction.create = function(data){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'POST',
 					data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/new',
+					url: CONFIG.server.url+'auction/create'
 					}).then(function(response) {
 						endLoading();
 						resolve();
@@ -98,7 +98,7 @@ angular.module('appServices')
 					method: 'POST',
                     data: param(data),
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/bid',
+					url: CONFIG.server.url+'auction/bid'
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -116,7 +116,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/favourite/'+id,
+					url: CONFIG.server.url+'auction/favourite/'+id
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -134,7 +134,7 @@ angular.module('appServices')
 				$http({
 					method: 'DELETE',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/favourite/'+id,
+					url: CONFIG.server.url+'auction/favourite/'+id
 				}).then(function(response) {
 					endLoading();
 					resolve();
@@ -146,31 +146,13 @@ angular.module('appServices')
 		};
 
         /* GET to REST api => Get all my win auction */ 
-		Auction.getMyWinAuction = function(){
+		Auction.getWinAuction = function(){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/win',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();
-					})
-			});
-		};
-
-		/* GET to REST api => Get all my win unassigned auction */ 
-		Auction.getMyWinUnassignedAuction = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/winUnassigned',
+					url: CONFIG.server.url+'auction/win'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -182,13 +164,13 @@ angular.module('appServices')
 		};
 
         /* GET to REST api => Get all my favourite auction */ 
-		Auction.getMyFavouriteAuction = function(){
+		Auction.getFavouriteAuction = function(){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/favourite',
+					url: CONFIG.server.url+'auction/favourite'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -200,13 +182,13 @@ angular.module('appServices')
 		};
 
         /* GET to REST api => Get my bid auction */
-		Auction.getMyBidsAuction = function(){
+		Auction.getBidsAuction = function(){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/mybids',
+					url: CONFIG.server.url+'auction/bids'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -224,7 +206,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'data/auction/created',
+                    url: CONFIG.server.url+'auction/created'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);

@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
   .controller('winAuctionController', ['$scope', 'winAuction', function($scope, winAuction){
-    $scope.setNavigationPath("home|win_auction");
     $scope.AuctionList = winAuction;
     $scope.route = "auction|win";
     middle_no_padding();

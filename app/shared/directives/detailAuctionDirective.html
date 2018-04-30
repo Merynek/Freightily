@@ -34,10 +34,6 @@
                 </div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.loaded' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>pičovina</span></div>
-            </div>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.end_auction' | i18next}}:</span></div>
                 <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.end_auction}}</span></div>
             </div>
@@ -114,15 +110,6 @@
     </div>
     <div ng-if="withBids && !canAssign" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.want_bid' | i18next}}</h2>
-        <div class="has-feedback has-feedback-left col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-            <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="vehicleSelect">
-                <option value="" disabled selected>{{'texts.vehicle' | i18next}}</option>
-                <option ng-repeat="vehicle in vm.vehicleList" value="{{vehicle.ID}}">
-                    {{vehicle.brand}}
-                </option>
-            </select>
-            <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-        </div>
         <div class="has-feedback has-feedback-left col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <input type="text" ng-model="bid" class="form-control my-input bid" placeholder="{{'texts.bid' | i18next}}"/>
             <i class="glyphicon glyphicon-lock form-control-feedback"></i>
@@ -131,22 +118,7 @@
             <timer countdown="item.secondsToEndAuction" max-time-unit="'day'" interval="1000">{{days}} D, {{hours}}:{{minutes}}:{{seconds}}</timer>
         </span>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div class="my-button important-button" ng-click="vm.bidAuction(bid, vehicleSelect)"><span>{{'texts.bid' | i18next}}</span></div>
-        </div>
-    </div>
-    <div ng-if="canAssign" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
-        <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.driver_assign' | i18next}}</h2>
-        <div class="has-feedback has-feedback-left col-xs-12 col-sm-8 col-md-8 col-lg-8 ">
-            <select class="form-control my-input col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-model="driverSelect">
-                <option value="" disabled selected>{{'texts.driver' | i18next}}</option>
-                <option ng-repeat="driver in vm.driverList" value="{{driver.ID}}">
-                    {{driver.username}}
-                </option>
-            </select>
-            <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div class="my-button important-button" ng-click="vm.assigment(driverSelect)"><span>{{'texts.assign' | i18next}}</span></div>
+            <div class="my-button important-button" ng-click="vm.bidAuction(bid)"><span>{{'texts.bid' | i18next}}</span></div>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ angular.module('appDirectives')
                 shipmentItem: '=',
                 finished: '='
             },
-            controller: function ($scope, $filter, Auction, User, UserAbility, Shipments, $q, $http) {
+            controller: function ($scope, $filter, Auction, User, UserAbility) {
                 $scope.item = this.shipmentItem.item;
                 $scope.finished = this.finished;
                 $scope.ID = this.shipmentItem.item.ID;
@@ -55,19 +55,14 @@ angular.module('appDirectives')
                         container.find(".map-wrap").hide();
                     }
                 };
-                // get Invoice
-                this.getInvoice = function(id_auction) {
-                    Shipments.getInvoice(id_auction, true);
-                };
-
 
                 //for android client only
-                this.checkQrCode = function(idAuction, qrCode){
+                this.checkCode = function(idAuction, qrCode){
                     var data = {
                         id_auction: idAuction,
                         qr_code: qrCode
                     };
-                    UserAbility.checkQrCode(data).then(function(data){
+                    UserAbility.checkCode(data).then(function(data){
                     }).catch(function(data){
                         message(3, $filter('i18next')('Error with QR'));
                     })
@@ -99,23 +94,6 @@ angular.module('appDirectives')
                     }).catch(function(){
                         message(3, $filter('i18next')('Upload FAIL!'));
                     })
-                };
-
-                //only for post photos, but never use on web client
-                var postPhotos = function(formData){
-                    return $q(function(resolve, reject){
-                        $http({
-                            method: 'POST',
-                            transformRequest: angular.identity,
-                            data: formData,
-                            headers: { 'token': window.localStorage.getItem("TOKEN"), 'Content-Type': undefined},
-                            url: 'http://localhost:51246/api/data/company/files'
-                        }).then(function(response) {
-                            resolve(response.data);
-                        }).catch(function(error){
-                            reject();
-                        })
-                    });
                 };
             }
         };

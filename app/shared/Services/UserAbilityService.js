@@ -9,7 +9,7 @@
 angular.module('appServices')
 	.factory('UserAbility', ['$http', '$q', 'User', function ($http, $q, User) {
 		'use strict';
-		var url = CONFIG.server.url+"data/";
+		var url = CONFIG.server.url;
 		var UserAbility = {};
 
 		/* GET to REST api => Get my drivers */
@@ -19,67 +19,13 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/drivers',
+					url: url+'company/drivers'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
 					}).catch(function(error){
 						endLoading();
 						reject();
-					})
-			});
-		};
-
-		/* GET to REST api => Get my vehicles */
-		UserAbility.getVehicles = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/vehicles',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
-					})
-			});
-		};
-
-        /* GET to REST api => Get my dispatchers */
-		UserAbility.getDispatchers = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/dispatchers',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
-					})
-			});
-		};
-
-        /* GET to REST api => Get assigments in my company */
-		UserAbility.getAssigments = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/assignments',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
 					})
 			});
 		};
@@ -122,62 +68,6 @@ angular.module('appServices')
 					reject();
 				})
 			});
-		};	
-
-		/* GET to REST api => Get map of driver path*/
-		UserAbility.getMapy = function(id_auction){
-			startLoading();
-			return $q(function(resolve, reject){
-					$http({
-						method: 'GET',
-						headers: { 'token': window.localStorage.getItem("TOKEN") },
-						url: url+'company/mapy'
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();
-					})
-				});
-		};	
-
-
-         /* GET to REST api => Get my shipments  */ 
-		UserAbility.getMyShipments = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'shipment/myShipments',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
-					})
-			});
-		};
-
-        /* POST to REST api => assignment driver to auction */
-		UserAbility.assigment = function(data){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-                    data: param(data),
-					url: url+'company/assignment',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
-					})
-			});
 		};
 
         /* POST to REST api => delete user */ 
@@ -188,26 +78,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
                     data: param(data),
-					url: url+'company/delete/user',
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject();		
-					})
-			});
-		};
-
-        /* POST to REST api => delete vehicle */ 
-		UserAbility.deleteVehicle = function(data){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-                    data: param(data),
-					url: url+'company/delete/vehicle',
+					url: url+'company/delete/user'
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -225,7 +96,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/account',
+					url: url+'company/account'
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -244,7 +115,7 @@ angular.module('appServices')
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
 					data: param(data),
-					url: url+'company/changePassword',
+					url: url+'company/changePassword'
 				}).then(function() {
 					endLoading();
 					resolve();
@@ -262,7 +133,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: url+'company/newPassword',
+					url: url+'company/newPassword'
 				}).then(function() {
 					endLoading();
 					resolve();
@@ -275,7 +146,7 @@ angular.module('appServices')
 
 
 		/* POST to REST api => Check qr code*/
-		UserAbility.checkQrCode = function(data){
+		UserAbility.checkCode = function(data){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
@@ -311,8 +182,6 @@ angular.module('appServices')
 				})
 			});
 		};
-
-		
 
 		return UserAbility;
 

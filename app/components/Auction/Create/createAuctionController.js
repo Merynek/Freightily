@@ -1,13 +1,12 @@
 /**
- * addAuctionController
+ * createAuctionController
  *
- * @class addAuctionController
+ * @class createAuctionController
  * @constructor
  */
 
 angular.module('appControllers')
-    .controller('addAuctionController', ['$scope', 'Auction', '$filter', function ($scope, Auction, $filter) {
-        $scope.setNavigationPath("home|addAuction");
+    .controller('createAuctionController', ['$scope', 'Auction', '$filter', function ($scope, Auction, $filter) {
         $scope.route = "auction|add";
         $scope.auction = {};
         $scope.mapIsShown = false;
@@ -75,30 +74,22 @@ angular.module('appControllers')
             return new Date(value) < new Date();
         };
 
-        $scope.addAuction = function () {
+        $scope.createAuction = function () {
             $scope.clicked = true;
-            if (!this.addAuctionForm.$valid) {
+            if (!this.createAuctionForm.$valid) {
                 return;
             }
 
-            var load_from = $("#load_from");
-            var load_to = $("#load_to");
-            var unload_from = $("#unload_from");
-            var unload_to = $("#unload_to");
+            var load = $("#load");
+            var unload = $("#unload");
             var end_auction = $("#end_auction");
 
-            if (validateDate(load_from.val())) {
-                load_from.addClass("input-error");
+            if (validateDate(load.val())) {
+                load.addClass("input-error");
                 message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
                 return;
             }
-            load_from.removeClass("input-error");
-            if (validateDate(load_to.val())) {
-                load_to.addClass("input-error");
-                message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
-                return;
-            }
-            load_to.removeClass("input-error");
+            load.removeClass("input-error");
             if (validateDate(end_auction.val())) {
                 end_auction.addClass("input-error");
                 message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
@@ -106,24 +97,7 @@ angular.module('appControllers')
             }
             end_auction.removeClass("input-error");
 
-            var from = new Date(load_from.val());
-            var to = new Date(load_to.val());
-            var end = new Date(end_auction.val());
-
-            if (from > to) {
-                message(3, $filter('i18next')('load_to musí byt stejný nebo vetší jak load_from'));
-                return;
-            }
-
-            from = new Date(unload_from.val());
-            to = new Date(unload_to.val());
-
-            if (from > to) {
-                message(3, $filter('i18next')('unload_to musí byt stejný nebo vetší jak unload_from'));
-                return;
-            }
-
-            if (load_from && load_to && unload_from && unload_to && end_auction) {
+            if (load && unload && end_auction) {
                 var data = {
                     from_city: $scope.from_address.components.city,
                     from_street: $scope.from_address.components.street,
@@ -141,20 +115,16 @@ angular.module('appControllers')
                     freight_type: $scope.auction.freight_type,
                     freight_size: $scope.auction.freight_size,
                     freight_weight: $scope.auction.freight_weight,
-                    load_from: load_from.val(),
-                    load_to: load_to.val(),
-                    unload_from: unload_from.val(),
-                    unload_to: unload_to.val(),
+                    load: load.val(),
+                    load_note: $scope.auction.load_note,
+                    unload: unload.val(),
+                    unload_note: $scope.auction.unload_note,
                     price: $scope.auction.price,
-                    currency: $scope.auction.currency,
-                    email_addressee: $scope.auction.email_addressee,
                     end_auction: end_auction.val(),
-                    min_amount: $scope.auction.min_amount,
-                    maturity: $scope.auction.maturity,
-                    hot: "false"
+                    maturity: $scope.auction.maturity
                 };
 
-                Auction.newAuction(data).then(function () {
+                Auction.createAuction(data).then(function () {
                     message(1, $filter('i18next')('Aukce byla založena'));
                 }).catch(function () {
                     Notification.error('nejde přidat');

@@ -19,19 +19,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				role: [1,2,3,4]
+				role: [1,2,3]
 			},
 			resolve: {
-				AuctionList: function(Auction, $stateParams){
+				AuctionList: function(Auction){
 					return Auction.getAuctionList("", "").then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility, User){
-					if(User.isSender() || User.isDriver()) return{};
-					return UserAbility.getVehicles().then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -68,28 +60,39 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 controller: 'forgotPasswordController',
 			 templateUrl: "app/components/Account/ForgotPassword/forgotPasswordView.html"
 		 })
-		.state('new_employee', {
-			url: "/manage/new_employee",
-			controller: 'addEmployeeController',
-			templateUrl: "app/components/MyCompany/AddEmployee/addEmployeeView.html",
+	 	// COMPANY
+		.state('add_driver', {
+			url: "/company/add_driver",
+			controller: 'addDriverController',
+			templateUrl: "app/components/Company/AddDriver/addDriverView.html",
 			data: {
-				role: [2,3]
+				role: [2]
 			}
 		})
-		.state('new_vehicle', {
-			url: "/manage/new_vehicle",
-			controller: 'addVehicleController',
-			templateUrl: "app/components/MyCompany/AddVehicle/addVehicleView.html",
-			data: {
-				role: [2,3]
-			}
-		})
+		 .state('company', {
+			 url: "/company",
+			 controller: 'companyController',
+			 templateUrl: "app/components/Company/companyView.html",
+			 data: {
+				 role: [2]
+			 },
+			 resolve: {
+				 drivers: function(UserAbility){
+					 return UserAbility.getDrivers().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 }
+			 }
+		 })
+	 	// AUCTION
 		.state('auction', {
 			url: "/auction?sort?order",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				role: [1,2,3,4]
+				role: [1,2]
             },
 			resolve: {
 				AuctionList: function(Auction, $stateParams){
@@ -100,21 +103,13 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 					}).catch(function(){
 						return null;
 					})
-				},
-				vehicles: function(UserAbility, User){
-					if(User.isSender() || User.isDriver()) return{};
-					return UserAbility.getVehicles().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
 				}
       		}
 		})
-		.state('addauction', {
-			url: "/auction/add",
-			controller: 'addAuctionController',
-			templateUrl: "app/components/Auction/Add/auctionAddView.html",
+		.state('createAuction', {
+			url: "/auction/create",
+			controller: 'createAuctionController',
+			templateUrl: "app/components/Auction/Create/createAuctionView.html",
 			data: {
 				role: [1]
 			}
@@ -124,19 +119,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			controller: 'favouriteAuctionController',
 			templateUrl: "app/components/Auction/FavouriteAuction/favouriteAuctionView.html",
 			data: {
-				role: [2,3]
+				role: [2]
 			},
 			resolve: {
 				favouriteAuction: function(Auction){
-					return Auction.getMyFavouriteAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility, User){
-					if(User.isSender() || User.isDriver()) return{};
-					return UserAbility.getVehicles().then(function(res){
+					return Auction.getFavouriteAuction().then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -144,24 +131,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
 			}
 		})
-		.state('bidsauction', {
+		.state('bidsAuction', {
 			url: "/auction/bids",
 			controller: 'bidsAuctionController',
 			templateUrl: "app/components/Auction/bidsAuction/bidsAuctionView.html",
 			data: {
-				role: [2,3]
+				role: [2]
 			},
 			resolve: {
 				bidsAuction: function(Auction){
-					return Auction.getMyBidsAuction().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				},
-				vehicles: function(UserAbility, User){
-					if(User.isSender() || User.isDriver()) return{};
-					return UserAbility.getVehicles().then(function(res){
+					return Auction.getBidsAuction().then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -169,16 +148,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
 			}
 		})
-		.state('winauction', {
+		.state('winAuction', {
 			url: "/auction/win",
 			controller: 'winAuctionController',
 			templateUrl: "app/components/Auction/winAuction/winAuctionView.html",
 			data: {
-				role: [2,3]
+				role: [2]
 			},
 			resolve: {
 				winAuction: function(Auction){
-					return Auction.getMyWinAuction().then(function(res){
+					return Auction.getWinAuction().then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -186,7 +165,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				}
 			}
 		})
-		 .state('createdauction', {
+		 .state('createdAuction', {
 			 url: "/auction/created",
 			 controller: 'createdAuctionController',
 			 templateUrl: "app/components/Auction/CreatedAuction/createdAuctionView.html",
@@ -203,86 +182,17 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				 }
 			 }
 		 })
-		.state('shipments', {
-			url: "/auction/shipment",
-			controller: 'shipmentController',
-			templateUrl: "app/components/Shipments/myShipmentsView.html",
-			data: {
-				role: [4]
-			},
-			resolve: {
-				shipments: function(UserAbility){
-					return UserAbility.getMyShipments().then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-      		}
-		})
-		.state('manage', {
-			url: "/manage",
-			controller: 'mySectionController',
-			templateUrl: "app/components/Manage/manageView.html",
-			data: {
-				role: [1,2,3,4]
-			}
-		})
-		 .state('view_shipments', {
-			 url: "/manage/view_shipments",
-			 controller: 'viewShipmentsController',
-			 templateUrl: "app/components/Manage/ViewShipments/viewShipmentsView.html",
+	 	// SHIPMENTS
+		 .state('new_shipments', {
+			 url: "/shipments/new",
+			 controller: 'newShipmentsController',
+			 templateUrl: "app/components/Shipments/new/newShipmentsView.html",
 			 data: {
-				 role: [1,2,3,4]
+				 role: [2]
 			 },
 			 resolve: {
-				 actualShipments: function(Shipments){
-					 return Shipments.getActualShipments().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 pastShipments: function(Shipments){
-					 return Shipments.getPastShipments().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 notStartedShipments: function(Shipments){
-					 return Shipments.getNotStartedShipments().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-			 }
-		 })
-		 .state('shipments_manage', {
-			 url: "/manage/shipments_manage",
-			 controller: 'shipmentsManageController',
-			 templateUrl: "app/components/Manage/ShipmentsManage/shipmentsManageView.html",
-			 data: {
-				 role: [2,3]
-			 },
-			 resolve: {
-				 WinAuction: function(Auction){
-					 return Auction.getMyWinUnassignedAuction().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 drivers: function(UserAbility){
-					 return UserAbility.getDrivers().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 assigments: function(UserAbility){
-					 return UserAbility.getAssigments().then(function(res){
+				 newShipments: function(Shipments){
+					 return Shipments.getNewShipments().then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;
@@ -290,40 +200,41 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 				 }
 			 }
 		 })
-		 .state('my_company', {
-			 url: "/manage/my_company",
-			 controller: 'myCompanyController',
-			 templateUrl: "app/components/MyCompany/myCompanyView.html",
+		 .state('in_progress_shipments', {
+			 url: "/shipments/progress",
+			 controller: 'inProgressShipmentsController',
+			 templateUrl: "app/components/Shipments/inProgress/inProgressShipmentsView.html",
 			 data: {
-				 role: [2,3]
+				 role: [2]
 			 },
 			 resolve: {
-				 drivers: function(UserAbility){
-					 return UserAbility.getDrivers().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 vehicles: function(UserAbility){
-					 return UserAbility.getVehicles().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-				 dispatchers: function(UserAbility, User){
-					 if(User.isDispatcher()) return {};
-					 return UserAbility.getDispatchers().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 }
+                 inProgressShipments: function(Shipments){
+                     return Shipments.getInProgressShipments().then(function(res){
+                         return res;
+                     }).catch(function(){
+                         return null;
+                     })
+                 }
 			 }
 		 })
-
-
+		 .state('finished_shipments', {
+			 url: "/shipments/finished",
+			 controller: 'finishedShipmentsController',
+			 templateUrl: "app/components/Shipments/finished/finishedShipmentsView.html",
+			 data: {
+				 role: [2]
+			 },
+			 resolve: {
+                 finishedShipments: function(Shipments){
+                     return Shipments.getFinishedShipments().then(function(res){
+                         return res;
+                     }).catch(function(){
+                         return null;
+                     })
+                 }
+			 }
+		 })
+		// ERROR
 		.state('404', {
 			url: '/404',
 			templateUrl: '/404.html', 

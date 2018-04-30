@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
     .controller('forgotPasswordController', ['$scope', 'UserAbility', '$filter', function ($scope, UserAbility, $filter) {
-         $scope.setNavigationPath("forgot_password");
          $scope.clicked = false;
 
          $scope.sendMail = function () {
