@@ -7,7 +7,7 @@
  */
 
 angular.module('appServices')
-	.factory('UserAbility', ['$http', '$q', 'User', function ($http, $q, User) {
+	.factory('UserAbility', ['$http', '$q', function ($http, $q) {
 		'use strict';
 		var url = CONFIG.server.url;
 		var UserAbility = {};
@@ -31,15 +31,15 @@ angular.module('appServices')
 		};
 
 		/* GET to REST api => Get all photos in shipment*/
-		UserAbility.getPhotos = function(idAuction, firstPart){
+		UserAbility.getPhotos = function(idShipment, firstPart){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/photo',
+					url: url+'shipment/photo',
 					params: {
-						id_auction: idAuction,
+                        id_shipment: idShipment,
 						first_part: firstPart
 					}
 				}).then(function(response) {
@@ -53,13 +53,13 @@ angular.module('appServices')
 		};
 
 		/* GET to REST api => Get map of driver path*/
-		UserAbility.getMap = function(id_auction){
+		UserAbility.getMap = function(id_shipment){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN") },
-					url: url+'company/map/'+id_auction
+					url: url+'shipment/route/'+id_shipment
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -152,7 +152,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'shipment/qrcode',
+					url: url+'shipment/code',
 					data: param(data)
 				}).then(function(response) {
 					endLoading();
@@ -171,7 +171,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/map',
+					url: url+'shipment/route',
 					data: param(data)
 				}).then(function(response) {
 					endLoading();

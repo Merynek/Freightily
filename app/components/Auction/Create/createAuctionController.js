@@ -124,7 +124,7 @@ angular.module('appControllers')
                     maturity: $scope.auction.maturity
                 };
 
-                Auction.createAuction(data).then(function () {
+                Auction.create(data).then(function () {
                     message(1, $filter('i18next')('Aukce byla založena'));
                 }).catch(function () {
                     Notification.error('nejde přidat');
@@ -134,7 +134,5 @@ angular.module('appControllers')
                 Notification.error('All inputs are required');
             }
         };
-
-
     }
     ]);

@@ -1,6 +1,6 @@
-function showRouteMap(route, id_auction){
+function showRouteMap(route, id_shipment){
     $("#map").css("display", "block");
-    initMap('map-'+id_auction, route);
+    initMap('map-'+id_shipment, route);
 };
 
 function initMap(mapid, route) {

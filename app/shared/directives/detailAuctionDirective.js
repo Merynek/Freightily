@@ -6,9 +6,8 @@ angular.module('appDirectives')
             bindToController: true,
             controllerAs: 'vm',
             scope: {
-                scope: {
-                    auctionItem: '='
-                },
+                auctionItem: '='
+            },
                 controller: function ($scope, $filter, Auction, User) {
                     $scope.expired = false;
                     $scope.item = this.auctionItem.item;
@@ -46,28 +45,21 @@ angular.module('appDirectives')
                         $scope.withBids = false;
                     });
 
-                    this.bidAuction = function (bid, id_company) {
-                        if (id_company) {
-                            console.log($scope.item.price - bid);
-                            if (bid && (($scope.item.price - bid) >= 1)) {
-                                var data = {
-                                    id_auction: $scope.item.ID,
-                                    amount: bid,
-                                    id_driver: id_company
-                                };
-                                Auction.bidAuction(data).then(function () {
-                                    refreshItem($scope.item.ID);
-                                    message(1, $filter('i18next')('Přihozeno'));
-                                }).catch(function () {
-                                    message(3, $filter('i18next')('Nejde si to vzit'));
-                                });
-                            }
-                            else {
-                                message(3, $filter('i18next')('Neplatná částka'));
-                            }
+                    this.bidAuction = function (bid) {
+                        if (bid && (($scope.item.price - bid) >= 1)) {
+                            var data = {
+                                id_auction: $scope.item.ID,
+                                amount: bid
+                            };
+                            Auction.bidAuction(data).then(function () {
+                                refreshItem($scope.item.ID);
+                                message(1, $filter('i18next')('Přihozeno'));
+                            }).catch(function () {
+                                message(3, $filter('i18next')('Nejde si to vzit'));
+                            });
                         }
                         else {
-                            message(3, $filter('i18next')('Nevybral jste auto'));
+                            message(3, $filter('i18next')('Neplatná částka'));
                         }
                     };
 
@@ -106,5 +98,4 @@ angular.module('appDirectives')
                     };
                 }
             }
-        }
     });

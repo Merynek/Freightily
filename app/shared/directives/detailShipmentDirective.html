@@ -46,8 +46,8 @@
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
         <div class="photo-buttons">
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.id_auction, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
+            <div class="my-button normal-button" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
         </div>
 
         <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -57,21 +57,21 @@
     </div>
     <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.map' | i18next}}</h2>
-        <div class="map-container-{{item.id_auction}}">
+        <div class="map-container-{{item.ID}}">
             <div class="text-center show-map">
-                <div class="my-button normal-button big-button" ng-click="vm.showMap(item.id_auction)">
+                <div class="my-button normal-button big-button" ng-click="vm.showMap(item.ID)">
                     <span ng-show="!mapIsDisplayed">{{'texts.shipment.show_map' | i18next}}</span>
                     <span ng-show="mapIsDisplayed">{{'texts.shipment.hide_map' | i18next}}</span>
                 </div>
             </div>
             <div class="map-wrap col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div id="map-{{item.id_auction}}" class="map"></div>
+                <div id="map-{{item.ID}}" class="map"></div>
             </div>
         </div>
         <!-- Only for Android app-->
-        <!--<div class="my-button normal-button" ng-click="vm.checkQrCode(item.id_auction, '1008.2020.0')"><span>Check QR Code</span></div>
-        <div class="my-button normal-button" ng-click="vm.postGPS(item.id_auction)"><span>Post GPS</span></div>
+        <div class="my-button normal-button" ng-click="vm.checkCode(item.ID, '92B048')"><span>Check Code</span></div>
+        <div class="my-button normal-button" ng-click="vm.postGPS(item.ID)"><span>Post GPS</span></div>
         <input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
-        <input class="btn btn-primary" type="button" ng-click="vm.uploadPhoto(item.id_auction, photos)" value="upload">-->
+        <input class="btn btn-primary" type="button" ng-click="vm.uploadPhoto(item.ID, photos)" value="upload">
     </div>
 </div>
