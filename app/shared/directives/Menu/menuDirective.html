@@ -57,4 +57,11 @@
         </div>
     </div>
 </span>
+<span ng-if="user.isAdmin()">
+    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'users'">
+        <div class="tab" ui-sref="users" ng-class="underRoute == 'users' ? 'active' : null">
+            {{'texts.tab.users' | i18next}}
+        </div>
+    </div>
+</span>
 <div class="col-md-10 tab-content" ng-transclude></div>

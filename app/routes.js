@@ -60,6 +60,24 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 controller: 'forgotPasswordController',
 			 templateUrl: "app/components/Account/ForgotPassword/forgotPasswordView.html"
 		 })
+	 	// ADMIN
+		 .state('users', {
+			 url: "/users",
+			 controller: 'usersController',
+			 templateUrl: "app/components/Admin/Users/usersView.html",
+			 data: {
+				 role: [99]
+			 },
+             resolve: {
+                 users: function(User){
+                     return User.GetUsers().then(function(res){
+                         return res;
+                     }).catch(function(){
+                         return null;
+                     })
+                 }
+             }
+		 })
 	 	// COMPANY
 		.state('add_driver', {
 			url: "/company/add_driver",

@@ -20,7 +20,11 @@ angular.module('appControllers')
         }
         User.login($scope.user.name, $scope.user.password).then(function(){
           message(1, $filter('i18next')('success.login'));
-          $state.go('home');
+          if (User.isAdmin()) {
+              $state.go('users');
+          } else {
+              $state.go('home');
+          }
         }).catch(function(){
             message(3, $filter('i18next')('errors.wrong_login'));
         })

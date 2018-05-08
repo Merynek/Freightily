@@ -65,6 +65,8 @@
 		"company": "Moje firma",
 		"win_auction": "Vyhrané aukce",
 		"vacation": "Dovolená",
+        "admin": "Administrace",
+        "users": "Uživatelé",
 		"shipment": {
 			"new": "Nové",
 			"in_progress": "Probíhající",
@@ -98,7 +100,8 @@
 			"in_progress": "Probíhající",
 			"finished": "Ukončené",
 			"created": "Vytvořené",
-			"create_auction": "Vytvořit Aukci"
+			"create_auction": "Vytvořit Aukci",
+            "users": "Uživatelé"
 		},
 		"auction": {
 			"auction_list": "Aukce",
@@ -137,6 +140,9 @@
 		"select_role": "Vyberte roli",
 		"set_vacation": "Datum dovolené se nepodařilo uložit",
 		"delete_vacation": "Datum dovolené se nepodařilo smazat",
+        "ban_user": "Uživatelovi se nepodařilo změnit stav banu",
+        "delete_user": "Uživatelovi se nepodařilo změnit stav smazání",
+        "verify_user": "Uživatelovi se nepodařilo změnit stav verifikace",
 		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"warnings": {
@@ -145,6 +151,9 @@
 		"login": "Přihlášení úspěšné",
 		"registration": "Registrace proběhla v pořádku",
 		"set_vacation": "Datum dovolené byl uložen",
-		"delete_vacation": "Datum dovolené byl smazán"
+		"delete_vacation": "Datum dovolené byl smazán",
+        "ban_user": "Uživatelovi  byl změněn stav banu",
+        "delete_user": "Uživatelovi  byl změněn stav smazání",
+        "verify_user": "Uživatelovi  byl změněn stav verifikace"
 	}
 }

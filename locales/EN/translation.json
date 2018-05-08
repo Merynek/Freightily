@@ -65,6 +65,8 @@
 		"company": "My company",
 		"win_auction": "Win auction",
 		"vacation": "Vacation",
+        "admin": "Admin",
+        "users": "Users",
 		"shipment": {
 			"new": "New",
 			"in_progress": "In progress",
@@ -98,7 +100,8 @@
 			"in_progress": "In Progress",
 			"finished": "Finished",
 			"created": "Created",
-			"create_auction": "Create Auction"
+			"create_auction": "Create Auction",
+            "users": "Users"
 		},
 		"auction": {
 			"auction_list": "Auction",
@@ -137,6 +140,9 @@
 		"select_role": "Select role",
 		"set_vacation": "Date of vacation was not saved",
 		"delete_vacation": "Date of vacation was not deleted",
+        "ban_user": "Error during change ban state",
+        "delete_user": "Error during change delete state",
+        "verify_user": "Error during change verify state",
 		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"warnings": {
@@ -145,6 +151,9 @@
 		"login": "Login success",
 		"registration": "Registration success",
 		"set_vacation": "Date of vacation was saved",
-		"delete_vacation": "Date of vacation was deleted"
+		"delete_vacation": "Date of vacation was deleted",
+        "ban_user": "Ban state was changed",
+        "delete_user": "Delete state was changed",
+        "verify_user": "Verify state was changed"
 	}
 }

@@ -219,6 +219,18 @@
     cursor: default;
 }
 
+/*Users Admin*/
+.user-list td{
+    vertical-align: middle!important;
+}
+.user-list .active {
+    color: green;
+}
+.user-list td .glyphicon {
+    cursor: pointer;
+    font-weight: bold;
+    padding-right: 15px;
+}
 /*My company*/
 .company-list .delete{
     color: #e91d27;
