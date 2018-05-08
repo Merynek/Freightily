@@ -171,8 +171,49 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => Set user vacation */
+        User.SetVacation = function(data){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    data: param(data),
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'company/vacation'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject();
+                })
+            });
+        };
 
-		/* POST to REST api => Registration user */ 
+		/* DELETE to REST api => Delete user vacation */
+        User.DeleteVacation = function(ID, date){
+            startLoading();
+            return $q(function(resolve, reject) {
+                var parameters = "?";
+
+                parameters += "id_user=" + ID;
+                parameters += "&date=" + date;
+
+                $http({
+                    method: 'DELETE',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'company/vacation'+parameters
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject();
+                })
+            });
+        };
+
+        /* POST to REST api => Registration user */
 		User.getCompany = function(data){
 			startLoading();
 			return $q(function(resolve, reject) {

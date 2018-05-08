@@ -4,9 +4,7 @@
     <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.freight_description' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight_description}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.driver' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.user.username}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight.freight_description}}</span></div>
 </div>
 <div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
     <div class="my-button normal-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
@@ -28,19 +26,19 @@
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_description}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_type' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_type}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_type}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_size}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_size}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight_weight}}</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_weight}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -69,9 +67,9 @@
             </div>
         </div>
         <!-- Only for Android app-->
-        <div class="my-button normal-button" ng-click="vm.checkCode(item.ID, '92B048')"><span>Check Code</span></div>
+        <!--<div class="my-button normal-button" ng-click="vm.checkCode(item.ID, '86F10E')"><span>Check Code</span></div>
         <div class="my-button normal-button" ng-click="vm.postGPS(item.ID)"><span>Post GPS</span></div>
         <input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
-        <input class="btn btn-primary" type="button" ng-click="vm.uploadPhoto(item.ID, photos)" value="upload">
+        <input class="btn btn-primary" type="button" ng-click="vm.uploadPhoto(item.ID, photos)" value="upload">  -->
     </div>
 </div>

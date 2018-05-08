@@ -16,6 +16,26 @@
     padding-right: 12px; /* @padding-base-horizontal */
 }
 
+.datePickerVacation {
+    width: 75%;
+    display: inline-table;
+}
+
+.date-vacation {
+    background: red;
+}
+
+.vacation-actions {
+    display: inline-block;
+    position: absolute;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.vacation-actions span{
+    cursor: pointer;
+    padding-right: 10px;
+}
+
 .has-feedback-left .form-control-feedback {
     left: 0; 
 }

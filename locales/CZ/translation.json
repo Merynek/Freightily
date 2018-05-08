@@ -30,8 +30,6 @@
 		"transporter": "Přepravce",
 		"sender": "Odesílatel",
 		"confirmPassword": "Potvrzení hesla",
-		"person_name" : "Kontaktní osoba - Jméno",
-		"person_surname" : "Kontaktní osoba - Příjmení",
 		"company_name" : "Název firmy",
 		"ico" : "IČO",
 		"dic" : "DIČ",
@@ -66,6 +64,7 @@
 		"add_driver": "Přidat řidiče",
 		"company": "Moje firma",
 		"win_auction": "Vyhrané aukce",
+		"vacation": "Dovolená",
 		"shipment": {
 			"new": "Nové",
 			"in_progress": "Probíhající",
@@ -136,12 +135,16 @@
 		"wrong_login" : "Chyba při přihlašování",
 		"wrong_registration": "Chyba při registraci",
 		"select_role": "Vyberte roli",
+		"set_vacation": "Datum dovolené se nepodařilo uložit",
+		"delete_vacation": "Datum dovolené se nepodařilo smazat",
 		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"warnings": {
 	},
 	"success": {
 		"login": "Přihlášení úspěšné",
-		"registration": "Registrace proběhla v pořádku"
+		"registration": "Registrace proběhla v pořádku",
+		"set_vacation": "Datum dovolené byl uložen",
+		"delete_vacation": "Datum dovolené byl smazán"
 	}
 }

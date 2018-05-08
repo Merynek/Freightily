@@ -30,8 +30,6 @@
 		"transporter": "Transporter",
 		"sender": "Sender",
 		"confirmPassword": "Confirm password",
-		"person_name" : "Contact person - Name",
-		"person_surname" : "Contact person - Surname",
 		"company_name" : "Company name",
 		"ico" : "Identification number",
 		"dic" : "VAT",
@@ -66,6 +64,7 @@
 		"add_driver": "Add driver",
 		"company": "My company",
 		"win_auction": "Win auction",
+		"vacation": "Vacation",
 		"shipment": {
 			"new": "New",
 			"in_progress": "In progress",
@@ -136,12 +135,16 @@
 		"wrong_login" : "Login error",
 		"wrong_registration": "Registration error",
 		"select_role": "Select role",
+		"set_vacation": "Date of vacation was not saved",
+		"delete_vacation": "Date of vacation was not deleted",
 		"longest_error_35": "XXXXX XXXXX XXXXX XXXXX XXXXX XXXXT"
 	},
 	"warnings": {
 	},
 	"success": {
 		"login": "Login success",
-		"registration": "Registration success"	
+		"registration": "Registration success",
+		"set_vacation": "Date of vacation was saved",
+		"delete_vacation": "Date of vacation was deleted"
 	}
 }

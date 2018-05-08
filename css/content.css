@@ -230,6 +230,10 @@
     cursor: pointer;
 }
 
+.company-list td{
+    vertical-align: middle!important;
+}
+
 /*Arrow on detail box*/
 .popover {
     position: relative;

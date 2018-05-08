@@ -7,14 +7,12 @@
 
 angular.module('appControllers')
   .controller('addDriverController', ['$scope', 'Notification', '$state', '$filter', 'User',
-      function($scope, Notification, $state, $filter, User){
-      $scope.employee = {
-        driver_licence: ""
-      };
+      function($scope, Notification, $state, $filter, User) {
+      $scope.employee = {};
       $scope.clicked = false;
       $scope.route = "company|employee";
 
-      $scope.AddUser = function(){  
+      $scope.AddUser = function() {
         $scope.clicked = true;
 
         if(!this.addUserForm.$valid) {
@@ -24,7 +22,7 @@ angular.module('appControllers')
         if($scope.employee.password !== $scope.employee.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
-        else{
+        else {
           var data = {
             username: $scope.employee.username,
             password: $scope.employee.password,
@@ -36,12 +34,16 @@ angular.module('appControllers')
             address_house_number: $scope.employee.address_house_number,
             psc: $scope.employee.psc,
             phone_number: $scope.employee.phone_number,
-            email: $scope.employee.email,
-            driver_licence: $scope.employee.driver_licence
+            email: $scope.employee.email
           };
           if(User.AddUser(data)) {
               message(1, $filter('i18next')('success.registration'));
-              $state.go('company');
+              // refresh data
+              setTimeout(function() {
+                  $state.transitionTo('company', {}, {
+                      reload: true
+                  });
+              }, 50);
           }
           else{
             Notification.error($filter('i18next')('errors.wrong_registration'));
