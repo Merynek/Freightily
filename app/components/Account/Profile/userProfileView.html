@@ -22,6 +22,10 @@
         <th>{{'texts.company_name' | i18next}}:</th>
         <td>{{userInfo.company_name}}</td>
       </tr>
+      <tr ng-if="userInfo.role === 2">
+        <th>{{'texts.credit' | i18next}}({{'texts.share' | i18next}}):</th>
+        <td>{{userInfo.credit}}({{userInfo.share}})</td>
+      </tr>
     </table>
   </div>
   <div class="col-md-6 col-xs-10 col-xs-offset-1 col-md-offset-0">

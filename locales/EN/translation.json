@@ -31,6 +31,8 @@
 		"sender": "Sender",
 		"confirmPassword": "Confirm password",
 		"company_name" : "Company name",
+        "credit": "Credit",
+        "share": "share",
 		"ico" : "Identification number",
 		"dic" : "VAT",
 		"bank_account" : "Bank account",

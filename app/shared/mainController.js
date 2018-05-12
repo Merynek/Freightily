@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
     .controller('MainController', ['$scope', '$i18next', 'User', '$state', '$filter', function ($scope, $i18next, User, $state, $filter) {
-
         $scope.isLoggedUser = function () {
             if (User.isLoggedIn) {
                 $scope.usernameMain = User.username;
@@ -15,13 +14,19 @@ angular.module('appControllers')
                 $scope.isSender = User.isSender();
                 $scope.isTransporter = User.isTransporter();
                 $scope.isDriver = User.isDriver();
+                $scope.isAdmin = User.isAdmin();
                 return true;
             }
             $scope.usernameMain = "";
             $scope.roleNameMain = "";
             $scope.isSender = false;
             $scope.isTransporter = false;
+            $scope.isAdmin = false;
             return false;
+        };
+
+        $scope.isLoggedAdmin = function () {
+            return User.isAdmin();
         };
 
         $scope.logout = function () {

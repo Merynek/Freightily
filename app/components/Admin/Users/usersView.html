@@ -7,12 +7,14 @@
                 <th>Username</th>
                 <th>Name</th>
                 <th>Surname</th>
+                <th>Credit</th>
                 <th>Actions</th>
             </tr>
             <tr class="item" ng-repeat="user in users">
                 <td>{{user.username}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.surname}}</td>
+                <td>{{user.credit}}({{user.share}})</td>
                 <td>
                     <span class="glyphicon glyphicon-ok-circle"
                           ng-class="(user.verified) ? 'active' : ''"

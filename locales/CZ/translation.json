@@ -31,6 +31,8 @@
 		"sender": "Odesílatel",
 		"confirmPassword": "Potvrzení hesla",
 		"company_name" : "Název firmy",
+        "credit": "Kredit",
+        "share": "podíl",
 		"ico" : "IČO",
 		"dic" : "DIČ",
 		"bank_account" : "Bankovní účet",

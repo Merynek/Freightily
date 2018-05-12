@@ -110,11 +110,12 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<img src="../images/logo.svg" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home" />
+							<img src="../images/logo.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home" />
+							<img src="../images/logo.svg" ng-if="isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="users" />
 						</div>
 						<div class="languages">
 							<ul>
-								<li><span ng-click="CZlng()"/>cz</span></li>
+								<li><span ng-click="CZlng()">cz</span></li>
 								<li><span ng-click="ENlng()">en</span></li>
 								<li><span>de</span></li>
 							</ul>
