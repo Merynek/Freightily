@@ -45,12 +45,12 @@ angular.module('appControllers')
           };
           var registration = $scope.user.role === "1" ? User.registrationSender : User.registrationTransporter;
 
-          if(registration(data)){
+          registration(data).then(function(){
               message(1, $filter('i18next')('success.registration'));
               $state.go('login');
-          } else{
-            message(1, $filter('i18next')('errors.wrong_registration'));
-          }
+          }).catch(function(){
+              message(1, $filter('i18next')('errors.wrong_registration'));
+          })
         }
       };
   }

@@ -2,7 +2,7 @@
 <html>
     <head>
 		<meta charset="utf-8"/>
-		<title>Freightily</title>
+		<title>Nohe</title>
 		<base href="/" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -100,61 +100,21 @@
 			<div class="loader-circle"></div>		
 		</div>
 		<header>
-			<!-- Messages -->
 			<div class="header-top">
-				<nav class="navbar navbar-default">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<div class="navbar-brand">
-							<img src="../images/logo.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home" />
-							<img src="../images/logo.svg" ng-if="isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="users" />
-						</div>
-						<div class="languages">
-							<ul>
-								<li><span ng-click="CZlng()">cz</span></li>
-								<li><span ng-click="ENlng()">en</span></li>
-								<li><span>de</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="header-right">
-						<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
-						<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
-					</div>
-					<!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#" class="header-button">{{'texts.about' | i18next}}</a></li>
-							<li><a href="#" class="header-button">Hover</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dropdown<span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Item</a></li>
-									<li><a href="#">Item</a></li>
-									<li><a href="#">Item</a></li>
-								</ul>
-							</li>
-							<li><a href="#" class="header-button-important">{{'texts.contact' | i18next}}</a></li>
-						</ul>
-					</div -->
-				</nav>
-			</div>
-			<!--div class="header-bottom">
-				<div class="header-left">
+				<img src="../images/nohelogo2.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="home" />
+				<img src="../images/nohelogo2.svg" ng-if="isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="users" />
+				<div class="languages">
 					<ul>
-						<li ng-repeat="item in navigationPath">
-							<span ui-sref="{{item.link}}">{{item.path | i18next}}</span>
-						</li>
+						<li><span ng-click="CZlng()">cz</span></li>
+						<li><span ng-click="ENlng()">en</span></li>
+						<li><span>de</span></li>
 					</ul>
 				</div>
 				<div class="header-right">
 					<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
 					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
-			</div-->
+			</div>
 		</header>
 		<div class="middle" ng-open="afterRender()">
 			<div class="content" ui-view></div>

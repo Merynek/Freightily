@@ -86,20 +86,6 @@ header{
     background: #e6e6f1;
 }
 
-.navbar-default{
-    background: none;
-    border: none;
-}
-
-.navbar-collapse{
-    padding: 0;
-}
-
-.navbar-brand{
-    padding: 0;
-    width: 190px;
-}
-
 .header-bottom{
     position: relative;
     min-height: 40px;
@@ -125,6 +111,9 @@ header{
 .header-logo{
     float: left;
     cursor: pointer;
+    height: 43px;
+    position: relative;
+    top: -9px;
 }
 
 .languages{
@@ -161,47 +150,9 @@ header{
     cursor: pointer;
 }
 
-.navbar{
-    margin-bottom: 0;
-}
-
-.navbar-nav > li{
-    width: 94px;
-}
-
-.navbar-right{
-    margin-right: 0;
-}
-
-
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
-    background: none;
-    color: #2c2d51;
-}
-
 .header-button:hover{
     font-weight: bold;
     border-bottom: 1px solid #e91d27;
-}
-
-.navbar-default .navbar-nav > li:nth-child(-n+3) > a{
-    color: #2c2d51;
-    padding: 0;
-    padding-bottom: 30px;
-}
-
-.navbar-default .navbar-nav > li:nth-child(3) > a {
-    padding: 0;
-}
-
-.navbar-default .navbar-nav > li:nth-child(4) > a {
-    color: #2c2d51;
-}
-
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-    font-weight: bold;
-    color: #2c2d51;
 }
 
 .header-button-important{
@@ -341,6 +292,9 @@ header{
 
 /**/
 @media (max-width: 767px) {
+    .header-top{
+        min-height: 130px;
+    }
     .header-bottom{
         text-align: center;
     }
@@ -357,13 +311,6 @@ header{
     .header-right .logout{
         float: right;
     }
-    .navbar-nav > li{
-        width: 100%;
-    }
-    .navbar-toggle{
-        margin-right: 0;
-        margin-top: -5px;
-    }
     .header-button{
         width: 100%;
         height: 50px;
@@ -376,24 +323,6 @@ header{
         text-align: center;
         margin-top: 0;
     }
-    .navbar-nav{
-        margin: 0;
-    }
-    .navbar-default .navbar-nav > li:nth-child(-n+3) > a{
-        padding-top: 10px;
-    }
-    .navbar-default .navbar-nav > li:nth-child(3) > a{
-        padding-bottom: 30px;
-    }
-    .navbar-default .navbar-nav > li:nth-child(3) > a{
-        padding-top: 10px;
-        padding-bottom: 20px;
-    }
-    .navbar-default .navbar-nav > li:nth-child(4) > a{
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
 }
 
 @media (max-width: 500px) {
@@ -405,10 +334,8 @@ header{
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    .languages{
-        width: 100%;
-        padding-top: 0;
-        text-align: center
+    .languages {
+        float: right;
     }
     .languages ul{
         display: block;
