@@ -13,13 +13,16 @@ angular.module('appServices')
 		var Shipments = {};
 
 		/* GET to REST api => Get in progress shipments */
-		Shipments.getInProgressShipments = function(){
+		Shipments.getInProgressShipments = function(page){
+            var parameters = "?";
+            parameters += "page=" + page;
+
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'shipment/myShipments'
+					url: CONFIG.server.url+'shipment/myShipments'+parameters
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -31,13 +34,17 @@ angular.module('appServices')
 		};
 
 		/* GET to REST api => Get finished shipments */
-		Shipments.getFinishedShipments = function(){
+		Shipments.getFinishedShipments = function(page){
+            var parameters = "?";
+            parameters += "past=1";
+            parameters += "&page=" + page;
+
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'shipment/myShipments?past=1'
+					url: CONFIG.server.url+'shipment/myShipments'+parameters
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);
@@ -49,13 +56,17 @@ angular.module('appServices')
 		};
 
 		/* GET to REST api => Get new shipments */
-		Shipments.getNewShipments = function(){
+		Shipments.getNewShipments = function(page){
+            var parameters = "?";
+            parameters += "notStarted=1";
+            parameters += "&page=" + page;
+
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'shipment/myShipments?notStarted=1'
+					url: CONFIG.server.url+'shipment/myShipments'+parameters
 				}).then(function(response) {
 					endLoading();
 					resolve(response.data);

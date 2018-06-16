@@ -14,8 +14,9 @@
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div ng-if="!AuctionList.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
                 <div class="auction-item" ng-repeat="item in AuctionList">
-                    <detail-auction auction-item="{item}" vehicles="{vehicles}"></detail-auction>
+                    <detail-auction auction-item="{item}"></detail-auction>
                 </div>
+                <paging item-count="AuctionList.length"></paging>
             </div>
         </div>
     </div>

@@ -6,10 +6,12 @@ angular.module('appDirectives')
             bindToController: true,
             controllerAs: 'vm',
             scope: {
-                auctionItem: '='
+                auctionItem: '=',
+                withFavourite: '='
             },
                 controller: function ($scope, $filter, Auction, User) {
                     $scope.expired = false;
+                    $scope.withFavourite = this.withFavourite;
                     $scope.item = this.auctionItem.item;
                     $scope.ID = this.auctionItem.item.ID;
                     var end_auction = $scope.item.end_auction.split(" ");

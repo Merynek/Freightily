@@ -69,6 +69,15 @@
 		"vacation": "Dovolená",
         "admin": "Administrace",
         "users": "Uživatelé",
+		"sorting": {
+			"label": "Řazení",
+			"from": "Odkud",
+			"to": "Kam",
+			"price": "Cena",
+			"end_auction": "Konec aukce",
+			"ASC": "Vzestupně",
+			"DESC": "Sestupně"
+		},
 		"shipment": {
 			"new": "Nové",
 			"in_progress": "Probíhající",

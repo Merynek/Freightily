@@ -106,7 +106,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 		 })
 	 	// AUCTION
 		.state('auction', {
-			url: "/auction?sort?order",
+			url: "/auction?page?sort?order",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
@@ -114,9 +114,10 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
             },
 			resolve: {
 				AuctionList: function(Auction, $stateParams){
+                    var page = $stateParams.page || 1;
 					var sort = $stateParams.sort || "";
 					var order = $stateParams.order || "";
-					return Auction.getAuctionList(sort, order).then(function(res){
+					return Auction.getAuctionList(sort, order, page).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -133,15 +134,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		.state('favouriteAuction', {
-			url: "/auction/favourite",
+			url: "/auction/favourite?page",
 			controller: 'favouriteAuctionController',
 			templateUrl: "app/components/Auction/FavouriteAuction/favouriteAuctionView.html",
 			data: {
 				role: [2]
 			},
 			resolve: {
-				favouriteAuction: function(Auction){
-					return Auction.getFavouriteAuction().then(function(res){
+				favouriteAuction: function(Auction, $stateParams){
+                    var page = $stateParams.page || 1;
+					return Auction.getFavouriteAuction(page).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -150,15 +152,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		.state('bidsAuction', {
-			url: "/auction/bids",
+			url: "/auction/bids?page",
 			controller: 'bidsAuctionController',
 			templateUrl: "app/components/Auction/bidsAuction/bidsAuctionView.html",
 			data: {
 				role: [2]
 			},
 			resolve: {
-				bidsAuction: function(Auction){
-					return Auction.getBidsAuction().then(function(res){
+				bidsAuction: function(Auction, $stateParams){
+                    var page = $stateParams.page || 1;
+					return Auction.getBidsAuction(page).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -167,15 +170,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		.state('winAuction', {
-			url: "/auction/win",
+			url: "/auction/win?page",
 			controller: 'winAuctionController',
 			templateUrl: "app/components/Auction/winAuction/winAuctionView.html",
 			data: {
 				role: [2]
 			},
 			resolve: {
-				winAuction: function(Auction){
-					return Auction.getWinAuction().then(function(res){
+				winAuction: function(Auction, $stateParams){
+                    var page = $stateParams.page || 1;
+					return Auction.getWinAuction(page).then(function(res){
 						return res;
 					}).catch(function(){
 						return null;
@@ -184,15 +188,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			}
 		})
 		 .state('createdAuction', {
-			 url: "/auction/created",
+			 url: "/auction/created?page",
 			 controller: 'createdAuctionController',
 			 templateUrl: "app/components/Auction/CreatedAuction/createdAuctionView.html",
 			 data: {
 				 role: [1]
 			 },
 			 resolve: {
-				 createdAuction: function(Auction){
-					 return Auction.getCreatedAuction().then(function(res){
+				 createdAuction: function(Auction, $stateParams){
+                     var page = $stateParams.page || 1;
+					 return Auction.getCreatedAuction(page).then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;
@@ -202,15 +207,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 		 })
 	 	// SHIPMENTS
 		 .state('new_shipments', {
-			 url: "/shipments/new",
+			 url: "/shipments/new?page",
 			 controller: 'newShipmentsController',
 			 templateUrl: "app/components/Shipments/new/newShipmentsView.html",
 			 data: {
 				 role: [2]
 			 },
 			 resolve: {
-				 newShipments: function(Shipments){
-					 return Shipments.getNewShipments().then(function(res){
+				 newShipments: function(Shipments, $stateParams){
+                     var page = $stateParams.page || 1;
+					 return Shipments.getNewShipments(page).then(function(res){
 						 return res;
 					 }).catch(function(){
 						 return null;
@@ -219,15 +225,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 }
 		 })
 		 .state('in_progress_shipments', {
-			 url: "/shipments/progress",
+			 url: "/shipments/progress?page",
 			 controller: 'inProgressShipmentsController',
 			 templateUrl: "app/components/Shipments/inProgress/inProgressShipmentsView.html",
 			 data: {
 				 role: [2]
 			 },
 			 resolve: {
-                 inProgressShipments: function(Shipments){
-                     return Shipments.getInProgressShipments().then(function(res){
+                 inProgressShipments: function(Shipments, $stateParams){
+                     var page = $stateParams.page || 1;
+                     return Shipments.getInProgressShipments(page).then(function(res){
                          return res;
                      }).catch(function(){
                          return null;
@@ -236,15 +243,16 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 }
 		 })
 		 .state('finished_shipments', {
-			 url: "/shipments/finished",
+			 url: "/shipments/finished?page",
 			 controller: 'finishedShipmentsController',
 			 templateUrl: "app/components/Shipments/finished/finishedShipmentsView.html",
 			 data: {
 				 role: [2]
 			 },
 			 resolve: {
-                 finishedShipments: function(Shipments){
-                     return Shipments.getFinishedShipments().then(function(res){
+                 finishedShipments: function(Shipments, $stateParams){
+                     var page = $stateParams.page || 1;
+                     return Shipments.getFinishedShipments(page).then(function(res){
                          return res;
                      }).catch(function(){
                          return null;

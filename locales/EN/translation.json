@@ -69,6 +69,15 @@
 		"vacation": "Vacation",
         "admin": "Admin",
         "users": "Users",
+		"sorting": {
+			"label": "Sorting",
+			"from": "From",
+			"to": "To",
+			"price": "Price",
+			"end_auction": "End auction",
+			"ASC": "Ascending",
+			"DESC": "Descending"
+		},
 		"shipment": {
 			"new": "New",
 			"in_progress": "In progress",

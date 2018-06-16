@@ -101,6 +101,20 @@
     margin-right: 15px;
     margin-bottom: 15px;
 }
+.my-button.navigation {
+    width: 40px;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+.navigation-text-input {
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+    width: 80px;
+}
+.navigation-bar {
+    text-align: center;
+}
 
 .big-button{
     width: 350px;
