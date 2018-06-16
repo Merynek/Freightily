@@ -10,9 +10,10 @@ angular.module('appDirectives')
                 withFavourite: '='
             },
                 controller: function ($scope, $filter, Auction, User) {
-                    $scope.expired = false;
                     $scope.withFavourite = this.withFavourite;
                     $scope.item = this.auctionItem.item;
+                    $scope.expired = this.auctionItem.item.expired;
+                    $scope.win = $scope.item.last_amount_user === User.ID;
                     $scope.ID = this.auctionItem.item.ID;
                     var end_auction = $scope.item.end_auction.split(" ");
                     end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
@@ -42,9 +43,16 @@ angular.module('appDirectives')
 
 
                     $scope.$on('timer-stopped', function (event, data) {
-                        console.log('Timer Stopped - data = ', data);
+                        if ($scope.expired) {
+                            return;
+                        }
+                        console.log("Auction end");
                         $scope.expired = true;
                         $scope.withBids = false;
+                        $scope.win = $scope.item.last_amount_user === User.ID;
+                        setTimeout(function() {
+                            refreshItem($scope.item.ID)
+                        }, 100);
                     });
 
                     this.bidAuction = function (bid) {
@@ -97,6 +105,10 @@ angular.module('appDirectives')
                                 message(3, $filter('i18next')('nejde si aukci pridat do oblíbených'));
                             });
                         }
+                    };
+
+                    this.getFreightType = function (type) {
+                        return $filter('i18next')('texts.auction.freight_type.'+type);
                     };
                 }
             }

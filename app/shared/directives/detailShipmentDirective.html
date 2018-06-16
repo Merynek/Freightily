@@ -3,8 +3,8 @@
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.freight_description' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight.freight_description}}</span></div>
+    <div class="auction-label col-xs-12">{{'texts.auction.freight_type.label' | i18next}}</div>
+    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
 </div>
 <div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
     <div class="my-button normal-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
@@ -12,40 +12,59 @@
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.pickup_places' | i18next}}</h2>
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.from' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.from' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.from.city}} - {{item.from.street}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.city}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.to' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.to.city}} - {{item.to.street}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.street}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_house_number' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.house_number}}</span></div>
+        </div>
+    </div>
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.to' | i18next}}</h2>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.city}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.street}}</span></div>
+        </div>
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_house_number' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.house_number}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_description}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_type' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_type}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_type.label' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_size}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_size}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-3 col-lg-3"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-9 col-lg-9"><span>{{item.freight.freight_weight}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_weight}}</span></div>
         </div>
     </div>
-    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
         <div class="photo-buttons">
             <div class="my-button normal-button" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
+            <div class="my-button normal-button" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
         </div>
 
         <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -53,7 +72,7 @@
             <img ng-repeat="photo in showPhotos" src="{{photo}}" class="photo" />
         </div>
     </div>
-    <div class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div ng-if="!newShipment" class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.map' | i18next}}</h2>
         <div class="map-container-{{item.ID}}">
             <div class="text-center show-map">

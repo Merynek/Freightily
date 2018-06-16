@@ -3,8 +3,8 @@
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.freight_description' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{item.freight.freight_description}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.current_price}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
@@ -21,21 +21,33 @@
     <div class="arrow"></div>
     <div>
         <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.pickup_places' | i18next}}</h2>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12 cities">
-                <div class="detail-label col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 city-from">{{item.from.city}}</div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 city-icons">
-                        <span class="glyphicon glyphicon-home" style="float: left; opacity: 0.4"></span>
-                        <span class="glyphicon glyphicon-arrow-right"></span>
-                        <span class="glyphicon glyphicon-flag" style="float: right; opacity: 0.4"></span>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{item.to.city}}</div>
-                </div>
+            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.from' | i18next}}</h2>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.city}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.end_auction' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.end_auction}}</span></div>
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.street}}</span></div>
+            </div>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_house_number' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.house_number}}</span></div>
+            </div>
+        </div>
+        <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.to' | i18next}}</h2>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.city}}</span></div>
+            </div>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.street}}</span></div>
+            </div>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_house_number' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.house_number}}</span></div>
             </div>
         </div>
         <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -45,8 +57,8 @@
                 <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_description}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_type' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_type}}</span></div>
+                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_type.label' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
@@ -55,13 +67,6 @@
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
                 <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_weight}}</span></div>
-            </div>
-        </div>
-        <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.auction_list' | i18next}}</h2>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.auction.end_auction' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.end_auction}}</span></div>
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
             {{'texts.no_amounts' | i18next}}
         </div>
     </div>
-    <div ng-if="withBids" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
+    <div ng-if="withBids && !expired" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.want_bid' | i18next}}</h2>
         <div class="has-feedback has-feedback-left col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <input type="text" ng-model="bid" class="form-control my-input bid" placeholder="{{'texts.bid' | i18next}}"/>
@@ -115,6 +120,15 @@
         </span>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <div class="my-button important-button" ng-click="vm.bidAuction(bid)"><span>{{'texts.bid' | i18next}}</span></div>
+        </div>
+    </div>
+    <div ng-if="expired" class="auction-detail-item auction-bid col-xs-12 col-sm-12 col-md-8 col-lg-6">
+        <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction_complete' | i18next}}</h2>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="auction-result">
+                <span ng-if="win" class="win">{{'texts.auction_win' | i18next}}</span>
+                <span ng-if="!win" class="lose">{{'texts.auction_lose' | i18next}}</span>
+            </div>
         </div>
     </div>
 </div>

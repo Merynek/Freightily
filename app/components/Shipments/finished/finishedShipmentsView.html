@@ -6,13 +6,13 @@
                 <div class="auction-header col-sm-9 col-md-9 col-lg-10">
                     <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.from' | i18next}}</div>
                     <div class="auction-cell col-sm-2 col-md-2 col-lg-2">{{'texts.auction.to' | i18next}}</div>
-                    <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_description' | i18next}}</div>
+                    <div class="auction-cell col-sm-4 col-md-4 col-lg-4">{{'texts.auction.freight_type.label' | i18next}}</div>
                 </div>
             </div>
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div ng-if="!finishedShipments.length" class="no-auction">{{'texts.shipment.no_shipments' | i18next}}</div>
                 <div class="auction-item" ng-repeat="item in finishedShipments">
-                    <detail-shipment shipment-item="{item}"></detail-shipment>
+                    <detail-shipment shipment-item="{item}" finished-shipment="true"></detail-shipment>
                 </div>
                 <paging item-count="finishedShipments.length"></paging>
             </div>

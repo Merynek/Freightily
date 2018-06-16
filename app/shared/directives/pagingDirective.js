@@ -23,7 +23,6 @@ angular.module('appDirectives')
                     redirect();
                 };
                 this.plus = function () {
-                    debugger;
                     var page = (parseInt($stateParams.page));
 
                     if (page) {

@@ -68,34 +68,13 @@
       </div>
       <div class="form-group half">
         <input type="text" name="price" class="form-control my-input" placeholder="{{'texts.auction.price' | i18next}}" ng-model="auction.price"
-            ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createForm.price.$pristine || clicked)}"
+            ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createAuctionForm.price.$pristine || clicked)}"
             required />
-      </div>
-
-      <div class="form-group half">
-        <div class='input-group datetimepicker1'>
-          <input type='text' name="load" class="form-control my-input"  id="load" placeholder="{{'texts.auction.load' | i18next}}"
-          ng-class="{'input-error' : createAuctionForm.load.$invalid && (!createAuctionForm.load.$pristine || clicked)}"
-          required/>
-          <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-        </div>
       </div>
       <div class="form-group half">
         <input type="text" name="load_note" class="form-control my-input" placeholder="{{'texts.auction.load_note' | i18next}}" ng-model="auction.load_note"
                ng-class="{'input-error' : createAuctionForm.load_note.$invalid && (!createAuctionForm.load_note.$pristine || clicked)}"
                required />
-      </div>
-      <div class="form-group half">
-        <div class='input-group datetimepicker1'>
-          <input type='text' name="unload" class="form-control my-input"  id="unload" placeholder="{{'texts.auction.unload' | i18next}}"
-          ng-class="{'input-error' : createAuctionForm.unload.$invalid && (!createAuctionForm.unload.$pristine || clicked)}"
-          required/>
-          <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-        </div>
       </div>
       <div class="form-group half">
         <input type="text" name="unload_note" class="form-control my-input" placeholder="{{'texts.auction.unload_note' | i18next}}" ng-model="auction.unload_note"
@@ -105,32 +84,26 @@
       <div class="form-group"></div>
       <h3>{{'texts.about_freight' | i18next}}</h3>
       <div class="form-group half">
-        <input type="text" name="freight_description" class="form-control my-input" placeholder="{{'texts.auction.freight_description' | i18next}}" ng-model="auction.freight_description"
-            ng-class="{'input-error' : createAuctionForm.freight_description.$invalid && (!createAuctionForm.freight_description.$pristine || clicked)}"
-            required />
+        <input type="text" name="freight_description" class="form-control my-input" placeholder="{{'texts.auction.freight_description' | i18next}}" ng-model="auction.freight_description"/>
       </div>
       <div class="form-group half">
-        <input type="text" name="freight_type" class="form-control my-input" placeholder="{{'texts.auction.freight_type' | i18next}}" ng-model="auction.freight_type"
-            ng-class="{'input-error' : createAuctionForm.freight_type.$invalid && (!createAuctionForm.freight_type.$pristine || clicked)}"
-            required />
-      </div>
-      <div class="form-group half">
-        <select class="form-control my-input" ng-model="auction.freight_size"
-                ng-class="{'input-error' : createAuctionForm.freight_size.$invalid && (!createAuctionForm.freight_size.$pristine || clicked)}" required>
-          <option value="" disabled selected>{{'texts.auction.freight_size' | i18next}}</option>
-          <option value="1">do 1x1 m<sup>2</sup></option>
-          <option value="2">do 2x2 m<sup>2</sup></option>
-          <option value="3">{{'texts.more' | i18next}}</option>
+        <select class="form-control my-input" ng-model="auction.freight_type"
+                ng-class="{'input-error' : createAuctionForm.freight_type.$invalid && (!createAuctionForm.freight_type.$pristine || clicked)}" required>
+          <option value="" disabled selected>{{'texts.auction.freight_type.label' | i18next}}</option>
+          <option value="1">{{'texts.auction.freight_type.1' | i18next}}</option>
+          <option value="2">{{'texts.auction.freight_type.2' | i18next}}</option>
+          <option value="3">{{'texts.auction.freight_type.3' | i18next}}</option>
         </select>
       </div>
       <div class="form-group half">
-        <select class="form-control my-input" ng-model="auction.freight_weight"
-                ng-class="{'input-error' : createAuctionForm.freight_weight.$invalid && (!createAuctionForm.freight_weight.$pristine || clicked)}" required>
-          <option value="" disabled selected>{{'texts.auction.freight_weight' | i18next}}</option>
-          <option value="1">do 50kg</option>
-          <option value="2">do 100kg</option>
-          <option value="3">{{'texts.more' | i18next}}</option>
-        </select>
+        <input type="text" name="freight_size" class="form-control my-input" placeholder="{{'texts.auction.freight_size' | i18next}}" ng-model="auction.freight_size"
+               ng-class="{'input-error' : createAuctionForm.freight_size.$invalid && (!createAuctionForm.freight_size.$pristine || clicked)}"
+               required />
+      </div>
+      <div class="form-group half">
+        <input type="text" name="freight_weight" class="form-control my-input" placeholder="{{'texts.auction.freight_weight' | i18next}}" ng-model="auction.freight_weight"
+               ng-class="{'input-error' : createAuctionForm.freight_weight.$invalid && (!createAuctionForm.freight_weight.$pristine || clicked)}"
+               required />
       </div>
       <div class="form-group"></div>
       <h3>{{'texts.auction.auction_list' | i18next}}</h3>

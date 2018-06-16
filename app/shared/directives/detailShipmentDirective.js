@@ -7,11 +7,15 @@ angular.module('appDirectives')
             controllerAs: 'vm',
             scope: {
                 shipmentItem: '=',
-                finished: '='
+                newShipment: '=',
+                inProgressShipment: '=',
+                finishedShipment: '='
             },
             controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http) {
                 $scope.item = this.shipmentItem.item;
-                $scope.finished = this.finished;
+                $scope.newShipment = this.newShipment;
+                $scope.inProgressShipment = this.inProgressShipment;
+                $scope.finishedShipment = this.finishedShipment;
                 $scope.ID = this.shipmentItem.item.ID;
                 $scope.showPhotos = [];
                 $scope.photos = [];
@@ -111,6 +115,10 @@ angular.module('appDirectives')
                             reject();
                         })
                     });
+                };
+
+                this.getFreightType = function (type) {
+                    return $filter('i18next')('texts.auction.freight_type.'+type);
                 };
             }
         };

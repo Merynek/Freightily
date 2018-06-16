@@ -151,6 +151,19 @@
     padding: 10px 15px;
     border-right: 1px solid #ffffff;
 }
+.auction-detail .auction-detail-item .auction-result {
+    text-align: left;
+}
+.auction-detail .auction-detail-item .auction-result .win {
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+}
+.auction-detail .auction-detail-item .auction-result .lose {
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
 .auction-detail .auction-detail-item .detail-row{
     padding: 5px 0;
 }
@@ -170,6 +183,7 @@
     font-family: MyFont, serif;
     margin: 0;
     padding: 0 0 15px 15px;
+    padding-left: 0px;
 }
 .auction-detail .auction-detail-item .my-button{
     margin-right: 0;

@@ -29,7 +29,7 @@ angular.module('appControllers')
             confirmpassword: $scope.employee.confirmPassword,
             name: $scope.employee.name,
             surname: $scope.employee.surname,
-            address_state: $scope.employee.address_state,
+            address_city: $scope.employee.address_city,
             address_street: $scope.employee.address_street,
             address_house_number: $scope.employee.address_house_number,
             psc: $scope.employee.psc,
