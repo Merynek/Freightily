@@ -12,16 +12,6 @@ footer{
     overflow: hidden;
 }
 
-.footer-bottom{
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 30px;
-    background: #12133d;
-    overflow: hidden;
-    min-height: 80px;
-    color: white;
-}
-
 .footer-content{
     max-width: 1140px;
     margin: 0 auto;
@@ -29,10 +19,6 @@ footer{
 
 .company-contact{
     float: left;
-}
-
-.company-about{
-    float: right;
 }
 
 .company-contact ul{
@@ -48,41 +34,6 @@ footer{
     margin-right: 14px;
 }
 
-.social-icons span{
-    margin-right: 26px;
-}
-
-.company-about ul{
-    float: left;
-    padding: 0;
-    list-style-type: none;
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    column-count: 2;
-    column-gap: 20px;
-}
-
-.company-about ul li span:nth-child(1){
-    color: #e91d27;
-    font-weight: lighter;
-    padding-right: 8px;
-}
-
-.company-about .payment-gateway{
-    float: left;
-}
-
-.copyright{
-    float: left;
-    display: inline-block;
-}
-
-.studio{
-    float: right;
-}
-
 
 @media (max-width: 767px) {
     .footer-top{
@@ -91,58 +42,17 @@ footer{
         padding-top: 15px;
         padding-bottom: 15px;
     }
-    .footer-bottom{
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .footer-bottom{
-        text-align: center;
-        padding-top: 15px;
-    }
-    .copyright{
-        float: none;
-        display: block;
-    }
-    .studio{
-        float: none;
-    }
 }
 
 
 /**/
 @media (max-width: 600px) {
-    .social-icons span{
-        margin-right: 0px;
-    }
-    .social-icons span:nth-child(1){
-        margin-right: 26px;
-    }
-    .social-icons span:nth-child(3){
-        margin-left: 26px;
-    }
-
     .footer-content{
         text-align: center;
     }
     .company-contact{
         float: none;
         padding-bottom: 20px;
-    }
-    .company-about{
-        float: none;
-    }
-    .company-about ul{
-        text-align: left;
-        width: 290px;
-        margin: 0 auto;
-        float: none;
-    }
-    .company-about ul li{
-        width: 135px;
-    }
-    .company-about ul li:nth-child(n+5){
-        width: 162px;
     }
     .footer-top{
         padding-left: 0px;

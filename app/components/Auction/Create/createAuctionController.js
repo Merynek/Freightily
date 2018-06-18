@@ -89,7 +89,7 @@ angular.module('appControllers')
         }
 
         function addressIsSet() {
-            return cityIsSet() && streetIsSet() && houseNumberIsSet();
+            return cityIsSet() && streetIsSet();
         }
 
         function cityIsSet() {
@@ -105,21 +105,6 @@ angular.module('appControllers')
 
             return $scope.from_street && $scope.to_street;
         }
-
-        function houseNumberIsSet() {
-            var to_street = $scope.to_address.components.street;
-            var from_street = $scope.from_address.components.street;
-
-            if ($scope.from_address.place && $scope.from_address.place.name
-                && $scope.to_address.place && $scope.to_address.place.name) {
-                $scope.from_house_number = $scope.from_address.place.name.substring(from_street.length +1);
-                $scope.to_house_number = $scope.to_address.place.name.substring(to_street.length +1);
-
-                return $scope.to_house_number && $scope.from_house_number;
-            }
-            return false
-        }
-
 
         $scope.createAuction = function () {
             $scope.clicked = true;
@@ -142,12 +127,10 @@ angular.module('appControllers')
             if (end_auction) {
                 var data = {
                     from_city: $scope.from_city,
-                    from_street: $scope.from_street,
-                    from_house_number: $scope.from_house_number,
+                    from_street: $scope.from_address.place.name,
 
                     to_city: $scope.to_city,
-                    to_street: $scope.to_street,
-                    to_house_number: $scope.to_house_number,
+                    to_street: $scope.to_address.place.name,
 
                     freight_description: $scope.auction.freight_description,
                     freight_type: $scope.auction.freight_type,
