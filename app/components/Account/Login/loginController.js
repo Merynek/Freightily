@@ -25,8 +25,8 @@ angular.module('appControllers')
           } else {
               $state.go('home');
           }
-        }).catch(function(){
-            message(3, $filter('i18next')('errors.wrong_login'));
+        }).catch(function(error){
+            message(3, $filter('i18next')(getErrorKeyByCode(error)));
         })
     }
   }

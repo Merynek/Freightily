@@ -47,7 +47,7 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
@@ -65,26 +65,25 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
 
         /* POST to REST api => delete user */ 
-		UserAbility.deleteUser = function(data){
+		UserAbility.deleteUser = function(id_user){
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
-					method: 'POST',
+					method: 'DELETE',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-                    data: param(data),
-					url: url+'company/delete/user'
+					url: url+'company/user?id_user=' + id_user
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
 					}).catch(function(error){
 						endLoading();
-						reject();		
+						reject(error);
 					})
 			});
 		};
@@ -121,7 +120,7 @@ angular.module('appServices')
 					resolve();
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
@@ -139,13 +138,13 @@ angular.module('appServices')
 					resolve();
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
 
 
-		/* POST to REST api => Check qr code*/
+		/* POST to REST api => Check code*/
 		UserAbility.checkCode = function(data){
 			startLoading();
 			return $q(function(resolve, reject){
@@ -159,7 +158,7 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
@@ -178,7 +177,7 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};

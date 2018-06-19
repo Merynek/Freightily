@@ -67,7 +67,7 @@ angular.module('appControllers')
 
         $scope.showMap = function () {
             if (!addressIsSet()) {
-                message(3, $filter('i18next')('Adresa je zadaná špatně'));
+                message(3, $filter('i18next')('errors.wrong_address'));
                 return;
             }
             if ($scope.auction.from && $scope.auction.to) {
@@ -80,7 +80,7 @@ angular.module('appControllers')
                     showMap($scope.auction.from, $scope.auction.to);
                 }
             } else {
-                message(3, $filter('i18next')('texts.show_map_fail'));
+                message(3, $filter('i18next')('errors.wrong_address'));
             }
         };
 
@@ -112,14 +112,15 @@ angular.module('appControllers')
                 return;
             }
             if (!addressIsSet()) {
-                message(3, $filter('i18next')('Adresa je zadaná špatně'));
+                message(3, $filter('i18next')('errors.wrong_address'));
                 return;
             }
             var end_auction = $("#end_auction");
 
             if (validateDate(end_auction.val())) {
                 end_auction.addClass("input-error");
-                message(3, $filter('i18next')('Datum musí být vetší jak aktuální datum'));
+                message(3, $filter('i18next')('errors.invalid_auction_date'));
+
                 return;
             }
             end_auction.removeClass("input-error");
@@ -144,13 +145,13 @@ angular.module('appControllers')
                 };
 
                 Auction.create(data).then(function () {
-                    message(1, $filter('i18next')('Aukce byla založena'));
-                }).catch(function () {
-                    Notification.error('nejde přidat');
+                    message(1, $filter('i18next')('success.auction_created'));
+                }).catch(function (error) {
+                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 })
             }
             else {
-                Notification.error('All inputs are required');
+                message(3, $filter('i18next')('errors.set_required_inputs'));
             }
         };
     }

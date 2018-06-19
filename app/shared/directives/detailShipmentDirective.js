@@ -33,8 +33,8 @@ angular.module('appDirectives')
                             $scope.showPhotos.push(data[i]);
                         }
                         $scope.photoReady = $scope.showPhotos.length > 0;
-                    }).catch(function(data){
-                        message(3, $filter('i18next')('Error with get photos from server'));
+                    }).catch(function(error){
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         $scope.photoReady = false;
                     })
                 };
@@ -49,10 +49,10 @@ angular.module('appDirectives')
                             container.find(".map-wrap").show();
                             // show route
                             showRouteMap(data, id_shipment);
-                        }).catch(function(data){
+                        }).catch(function(error){
                             $scope.mapIsDisplayed = false;
                             container.find(".map-wrap").hide();
-                            message(3, $filter('i18next')('Error with get map from server'));
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         })
                     } else {
                         $scope.mapIsDisplayed = false;
@@ -67,8 +67,8 @@ angular.module('appDirectives')
                         code: code
                     };
                     UserAbility.checkCode(data).then(function(data){
-                    }).catch(function(data){
-                        message(3, $filter('i18next')('Error with QR'));
+                    }).catch(function(error){
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     })
                 };
                  //for android client only
@@ -78,8 +78,8 @@ angular.module('appDirectives')
                         route: "49.7103929,17.1867981"
                     };
                     UserAbility.postGPS(data).then(function(data){
-                    }).catch(function(data){
-                        message(3, $filter('i18next')('Error with GPS'));
+                    }).catch(function(error){
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     })
                 };
 
@@ -95,8 +95,8 @@ angular.module('appDirectives')
 
                     postPhotos(formData).then(function(){
                         message(1, $filter('i18next')('Upload OK!'));
-                    }).catch(function(){
-                        message(3, $filter('i18next')('Upload FAIL!'));
+                    }).catch(function(error){
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     })
                 };
 
@@ -112,7 +112,7 @@ angular.module('appDirectives')
                         }).then(function(response) {
                             resolve(response.data);
                         }).catch(function(error){
-                            reject();
+                            reject(error);
                         })
                     });
                 };

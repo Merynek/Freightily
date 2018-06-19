@@ -21,9 +21,9 @@ angular.module('appControllers')
              };
 
              UserAbility.sendNewPassword(data).then(function () {
-                message(1, $filter('i18next')('Heslo bylo posláno'));
-             }).catch(function () {
-                message(3, $filter('i18next')('Heslo nebylo posláno'));
+                message(1, $filter('i18next')('success.resend_password'));
+             }).catch(function (error) {
+                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
              })
          }
     }

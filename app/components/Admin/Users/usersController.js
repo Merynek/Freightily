@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('usersController', ['$scope', 'users', 'User', 'Notification', '$filter', '$state',
-    function($scope, users, User, Notification, $filter, $state) {
+    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state',
+    function($scope, users, User, $filter, $state) {
         $scope.users = users;
         $scope.route = "admin|users";
 
@@ -30,8 +30,8 @@ angular.module('appControllers')
                         reload: true
                     });
                 }, 50);
-            }).catch(function() {
-                message(3, $filter('i18next')('errors.ban_user'));
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         };
 
@@ -46,8 +46,8 @@ angular.module('appControllers')
                         reload: true
                     });
                 }, 50);
-            }).catch(function() {
-                message(3, $filter('i18next')('errors.delete_user'));
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         };
 
@@ -62,8 +62,8 @@ angular.module('appControllers')
                         reload: true
                     });
                 }, 50);
-            }).catch(function() {
-                message(3, $filter('i18next')('errors.verify_user'));
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         };
     }

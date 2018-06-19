@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('companyController', ['$scope', 'drivers', 'UserAbility', 'Notification', 'User', '$filter', '$state',
-        function($scope, drivers, UserAbility, Notification, User, $filter, $state) {
+    .controller('companyController', ['$scope', 'drivers', 'UserAbility', 'User', '$filter', '$state',
+        function($scope, drivers, UserAbility, User, $filter, $state) {
         $scope.drivers = drivers;
         $scope.route = "company|overview";
 
@@ -20,13 +20,10 @@ angular.module('appControllers')
         }
 
         $scope.deleteUser = function(id_user) {
-            var data = {
-                ID : id_user
-            };
-            UserAbility.deleteUser(data).then(function() {
-                Notification.success('User deleted');
-            }).catch(function() {
-                Notification.error('nejde smazat');
+            UserAbility.deleteUser(id_user).then(function() {
+                message(1, $filter('i18next')('success.driver_deleted'));
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         };
 
@@ -57,7 +54,7 @@ angular.module('appControllers')
                     date: dateTime
                 };
 
-                if(User.SetVacation(data)) {
+                User.SetVacation(data).then(function() {
                     message(1, $filter('i18next')('success.set_vacation'));
                     // refresh data
                     setTimeout(function() {
@@ -65,9 +62,9 @@ angular.module('appControllers')
                             reload: true
                         });
                     }, 50);
-                } else {
-                    message(3, $filter('i18next')('errors.set_vacation'));
-                }
+                }).catch(function(error) {
+                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                });
             }
         };
 
@@ -75,7 +72,8 @@ angular.module('appControllers')
             var dateTime = $(".inputDatePicker-"+id).val();
 
             if (dateTime) {
-                if(User.DeleteVacation(id, dateTime)) {
+
+                User.DeleteVacation(id, dateTime).then(function() {
                     message(1, $filter('i18next')('success.delete_vacation'));
                     // refresh data
                     setTimeout(function() {
@@ -83,9 +81,9 @@ angular.module('appControllers')
                             reload: true
                         });
                     }, 50);
-                } else {
-                    message(3, $filter('i18next')('errors.delete_vacation'));
-                }
+                }).catch(function(error) {
+                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                });
             }
         };
     }

@@ -74,7 +74,7 @@ angular.module('appServices')
 					resolve();
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
     	};
@@ -134,7 +134,7 @@ angular.module('appServices')
 					resolve();
 				}).catch(function(error){
 					endLoading();
-					reject();			
+					reject(error);
 				})
 			});
 		};
@@ -152,7 +152,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };
@@ -171,7 +171,7 @@ angular.module('appServices')
 					resolve();
 				}).catch(function(error){
 					endLoading();
-					reject();			
+					reject(error);
 				})
 			});
 		};
@@ -190,7 +190,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };
@@ -213,7 +213,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };
@@ -273,7 +273,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };
@@ -296,7 +296,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };
@@ -319,7 +319,7 @@ angular.module('appServices')
                     resolve();
                 }).catch(function(error){
                     endLoading();
-                    reject();
+                    reject(error);
                 })
             });
         };

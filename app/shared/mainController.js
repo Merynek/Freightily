@@ -6,7 +6,7 @@
  */
 
 angular.module('appControllers')
-    .controller('MainController', ['$scope', '$i18next', 'User', '$state', '$filter', function ($scope, $i18next, User, $state, $filter) {
+    .controller('MainController', ['$scope', '$i18next', 'User', '$state', function ($scope, $i18next, User, $state) {
         $scope.isLoggedUser = function () {
             if (User.isLoggedIn) {
                 $scope.usernameMain = User.username;

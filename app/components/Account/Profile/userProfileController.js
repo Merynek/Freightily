@@ -24,9 +24,9 @@ angular.module('appControllers')
             };
 
             UserAbility.changePassword(data).then(function () {
-                message(1, $filter('i18next')('Heslo bylo zmeneno'));
-            }).catch(function () {
-                message(3, $filter('i18next')('Heslo nebylo zmeneno'));
+                message(1, $filter('i18next')('success.change_password'));
+            }).catch(function (error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         }
     }

@@ -28,3 +28,14 @@ var param = function(obj) {
 
 		return query.length ? query.substr(0, query.length - 1) : query;
   };
+
+function getErrorKeyByCode(error) {
+	var errorData = error.data,
+		code;
+
+	if (errorData && errorData.errorCode) {
+        code = errorData.errorCode;
+        return 'errors.codes.' + code;
+	}
+    return 'errors.codes.fatal';
+}

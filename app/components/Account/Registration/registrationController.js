@@ -48,8 +48,8 @@ angular.module('appControllers')
           registration(data).then(function(){
               message(1, $filter('i18next')('success.registration'));
               $state.go('login');
-          }).catch(function(){
-              message(1, $filter('i18next')('errors.wrong_registration'));
+          }).catch(function(error){
+              message(3, $filter('i18next')(getErrorKeyByCode(error)));
           })
         }
       };

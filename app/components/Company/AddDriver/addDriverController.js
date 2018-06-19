@@ -6,8 +6,8 @@
 */
 
 angular.module('appControllers')
-  .controller('addDriverController', ['$scope', 'Notification', '$state', '$filter', 'User',
-      function($scope, Notification, $state, $filter, User) {
+  .controller('addDriverController', ['$scope', '$state', '$filter', 'User',
+      function($scope, $state, $filter, User) {
       $scope.employee = {};
       $scope.clicked = false;
       $scope.route = "company|employee";
@@ -36,18 +36,18 @@ angular.module('appControllers')
             phone_number: $scope.employee.phone_number,
             email: $scope.employee.email
           };
-          if(User.AddUser(data)) {
-              message(1, $filter('i18next')('success.registration'));
-              // refresh data
-              setTimeout(function() {
-                  $state.transitionTo('company', {}, {
-                      reload: true
-                  });
-              }, 50);
-          }
-          else{
-            Notification.error($filter('i18next')('errors.wrong_registration'));
-          }
+
+            User.AddUser(data).then(function(){
+                message(1, $filter('i18next')('success.registration'));
+                // refresh data
+                setTimeout(function() {
+                    $state.transitionTo('company', {}, {
+                        reload: true
+                    });
+                }, 50);
+            }).catch(function(error){
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            });
         }
       };
   }

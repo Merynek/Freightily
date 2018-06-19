@@ -28,8 +28,8 @@ angular.module('appDirectives')
 
                     Auction.getAuctionHistory($scope.item.ID).then(function (history) {
                         $scope.history = history;
-                    }).catch(function () {
-                        message(3, $filter('i18next')('Chyba při nacitani historie'));
+                    }).catch(function (error) {
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
 
                     $scope.show = false;
@@ -63,13 +63,13 @@ angular.module('appDirectives')
                             };
                             Auction.bidAuction(data).then(function () {
                                 refreshItem($scope.item.ID);
-                                message(1, $filter('i18next')('Přihozeno'));
-                            }).catch(function () {
-                                message(3, $filter('i18next')('Nejde si to vzit'));
+                                message(1, $filter('i18next')('success.bid_auction'));
+                            }).catch(function (error) {
+                                message(3, $filter('i18next')(getErrorKeyByCode(error)));
                             });
                         }
                         else {
-                            message(3, $filter('i18next')('Neplatná částka'));
+                            message(3, $filter('i18next')('errors.wrong_bid'));
                         }
                     };
 
@@ -80,13 +80,13 @@ angular.module('appDirectives')
                             end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
                             $scope.item.end_auction = end_auction;
                             $scope.isFavourite = auctionItem.isFavourite;
-                        }).catch(function () {
-                            message(3, $filter('i18next')('Chyba při aktualizaci položky v aukci'));
+                        }).catch(function (error) {
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });
                         Auction.getAuctionHistory($scope.item.ID).then(function (history) {
                             $scope.history = history;
-                        }).catch(function () {
-                            message(3, $filter('i18next')('Chyba při nacitani historie'));
+                        }).catch(function (error) {
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });
                     }
 
@@ -94,15 +94,15 @@ angular.module('appDirectives')
                         if ($scope.item.isFavourite) {
                             Auction.deleteFromFavourite($scope.item.ID).then(function () {
                                 refreshItem($scope.item.ID);
-                            }).catch(function () {
-                                message(3, $filter('i18next')('nejde aukci odebrat z oblíbených'));
+                            }).catch(function (error) {
+                                message(3, $filter('i18next')(getErrorKeyByCode(error)));
                             });
                         }
                         else {
                             Auction.addToFavourite($scope.item.ID).then(function () {
                                 refreshItem($scope.item.ID);
-                            }).catch(function () {
-                                message(3, $filter('i18next')('nejde si aukci pridat do oblíbených'));
+                            }).catch(function (error) {
+                                message(3, $filter('i18next')(getErrorKeyByCode(error)));
                             });
                         }
                     };

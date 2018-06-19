@@ -5,21 +5,9 @@
         angular.module('appDirectives', []);
 
         angular.module('myApp', [
-                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'ui-notification', 'jm.i18next', 'vsGoogleAutocomplete', 'timer'
+                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'restangular', 'jm.i18next', 'vsGoogleAutocomplete', 'timer'
                 ])
-                
-                .config(function(NotificationProvider){
-                	 NotificationProvider.setOptions({
-                            delay: 3000,
-                            startTop: 20,
-                            startRight: 10,
-                            verticalSpacing: 20,
-                            horizontalSpacing: 20,
-                            positionX: 'center',
-                            positionY: 'top'
-                        });
-                
-                }).run(['$rootScope', '$state', 'User', '$stateParams', '$http', function ($rootScope, $state, User, $stateParams, $http) {
+            .run(['$rootScope', '$state', 'User', '$stateParams', '$http', function ($rootScope, $state, User, $stateParams, $http) {
                         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
                         
                         var LoginHandler = function(callback){

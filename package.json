@@ -10,7 +10,6 @@
   "license": "BSD",
   "dependencies": {
     "angular": "~1.5.2",
-    "angular-ui-notification": "~0.1.0",
     "angular-ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
     "bootstrap-datepicker": "^1.8.0",
