@@ -6,7 +6,7 @@
  */
 
 angular.module('appControllers')
-    .controller('createAuctionController', ['$scope', 'Auction', '$filter', function ($scope, Auction, $filter) {
+    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', function ($scope, Auction, $filter, $state) {
         $scope.route = "auction|add";
         $scope.auction = {};
         $scope.mapIsShown = false;
@@ -15,11 +15,9 @@ angular.module('appControllers')
 
         $scope.to_city = "";
         $scope.to_street = "";
-        $scope.to_house_number = "";
 
         $scope.from_city = "";
         $scope.from_street = "";
-        $scope.from_house_number = "";
 
 
         $scope.options = {
@@ -146,6 +144,7 @@ angular.module('appControllers')
 
                 Auction.create(data).then(function () {
                     message(1, $filter('i18next')('success.auction_created'));
+                    $state.go('home');
                 }).catch(function (error) {
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 })
