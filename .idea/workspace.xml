@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="po založení aukce redirect to home,&#10;detaul shipmentu a aukce nebude house_number">
+    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" afterPath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.js" afterPath="$PROJECT_DIR$/app/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" afterPath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" afterPath="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="Freightily.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,16 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/Services/UserService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4752">
-              <caret line="198" column="8" lean-forward="false" selection-start-line="198" selection-start-column="8" selection-end-line="198" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,11 +74,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailShipmentDirective.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detailShipmentDirective.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="109" column="67" lean-forward="false" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -219,7 +216,6 @@
         <option value="$PROJECT_DIR$/app/shared/directives/pagingDirective.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Registration/registrationView.html" />
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/content.css" />
         <option value="$PROJECT_DIR$/app/components/Account/Login/loginController.js" />
         <option value="$PROJECT_DIR$/app/components/Account/ForgotPassword/forgotPasswordController.js" />
@@ -243,6 +239,7 @@
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -1322,7 +1319,7 @@
       <workItem from="1528727423710" duration="29592000" />
       <workItem from="1529163150801" duration="16447000" />
       <workItem from="1529404989626" duration="1204000" />
-      <workItem from="1529414033421" duration="1674000" />
+      <workItem from="1529414033421" duration="1742000" />
     </task>
     <task id="LOCAL-00001" summary="ready for menu">
       <created>1499088129083</created>
@@ -1436,11 +1433,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529396610005</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="po založení aukce redirect to home,&#10;detaul shipmentu a aukce nebude house_number">
+      <created>1529416961132</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1529416961132</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349668000" />
+    <option name="totallyTimeSpent" value="349736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1518,7 +1522,9 @@
     <MESSAGE value="city + street + house_number, refactoring" />
     <MESSAGE value="odstraneni nepotrebnych vecí + adresa staci jen street a city" />
     <MESSAGE value="lokalizace chyb ze serveru, + loklizovane vsechny hlasky" />
-    <option name="LAST_COMMIT_MESSAGE" value="lokalizace chyb ze serveru, + loklizovane vsechny hlasky" />
+    <MESSAGE value="po založení aukce redirect to home,&#10;detaul shipmentu a aukce nebude house_number" />
+    <MESSAGE value="smazani de jazyku" />
+    <option name="LAST_COMMIT_MESSAGE" value="smazani de jazyku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1633,13 +1639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="124" column="36" lean-forward="false" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1898,6 +1897,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="109" column="67" lean-forward="false" selection-start-line="109" selection-start-column="67" selection-end-line="109" selection-end-column="67" />
           <folding />
         </state>
       </provider>
