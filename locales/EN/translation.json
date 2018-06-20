@@ -163,6 +163,9 @@
 		"set_required_inputs": "Set all required fields",
 		"auction_history": "Load history failed",
 		"wrong_bid": "Wrong bid",
+		"weight_is_number": "Weight must be a number",
+		"price_is_number": "Price must be a number",
+		"maturity_is_number": "Maturity must be a number",
 		"codes": {
 			"fatal": "Unknown error, contact administrator",
 			"0": "Server error, please contact administrator",

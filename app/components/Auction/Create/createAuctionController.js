@@ -104,6 +104,40 @@ angular.module('appControllers')
             return $scope.from_street && $scope.to_street;
         }
 
+        function isNumber(value) {
+            return !isNaN(value);
+        }
+
+
+        function numberFieldsIsValid() {
+            var freight_weight = $("#freight_weight"),
+                maturity = $("#maturity"),
+                price = $("#price");
+
+            if (!isNumber($scope.auction.freight_weight)) {
+                freight_weight.addClass("input-error");
+                message(3, $filter('i18next')('errors.weight_is_number'));
+                return false;
+            }
+            freight_weight.removeClass("input-error");
+
+            if (!isNumber($scope.auction.maturity)) {
+                maturity.addClass("input-error");
+                message(3, $filter('i18next')('errors.maturity_is_number'));
+                return false;
+            }
+            maturity.removeClass("input-error");
+
+            if (!isNumber($scope.auction.price)) {
+                price.addClass("input-error");
+                message(3, $filter('i18next')('errors.price_is_number'));
+                return false;
+            }
+            price.removeClass("input-error");
+
+            return true;
+        }
+
         $scope.createAuction = function () {
             $scope.clicked = true;
             if (!this.createAuctionForm.$valid) {
@@ -118,7 +152,10 @@ angular.module('appControllers')
             if (validateDate(end_auction.val())) {
                 end_auction.addClass("input-error");
                 message(3, $filter('i18next')('errors.invalid_auction_date'));
+                return;
+            }
 
+            if (!numberFieldsIsValid()) {
                 return;
             }
             end_auction.removeClass("input-error");

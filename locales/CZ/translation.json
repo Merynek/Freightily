@@ -163,6 +163,9 @@
 		"set_required_inputs": "Vyplňte všechny povinné položky",
 		"auction_history": "Načítání historie se nezdařilo",
 		"wrong_bid": "Neplatná částka přihození",
+		"weight_is_number": "Hmotnost musí být číslo",
+		"price_is_number": "Cena musí být číslo",
+		"maturity_is_number": "Splatnost dní musí být číslo",
 		"codes": {
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
 			"0": "Chyba na serveru, prosím kontaktujte administrátora",

@@ -67,7 +67,7 @@
         <div id="map" style="display:none"></div>
       </div>
       <div class="form-group half">
-        <input type="text" name="price" class="form-control my-input" placeholder="{{'texts.auction.price' | i18next}}" ng-model="auction.price"
+        <input type="text" name="price" id="price" class="form-control my-input" placeholder="{{'texts.auction.price' | i18next}}" ng-model="auction.price"
             ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createAuctionForm.price.$pristine || clicked)}"
             required />
       </div>
@@ -101,7 +101,7 @@
                required />
       </div>
       <div class="form-group half">
-        <input type="text" name="freight_weight" class="form-control my-input" placeholder="{{'texts.auction.freight_weight' | i18next}}" ng-model="auction.freight_weight"
+        <input type="text" name="freight_weight" id="freight_weight" class="form-control my-input" placeholder="{{'texts.auction.freight_weight' | i18next}}" ng-model="auction.freight_weight"
                ng-class="{'input-error' : createAuctionForm.freight_weight.$invalid && (!createAuctionForm.freight_weight.$pristine || clicked)}"
                required />
       </div>
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="form-group half">
-        <input type="text" name="maturity" class="form-control my-input" placeholder="{{'texts.auction.maturity' | i18next}}" ng-model="auction.maturity"
+        <input type="text" name="maturity" id="maturity" class="form-control my-input" placeholder="{{'texts.auction.maturity' | i18next}}" ng-model="auction.maturity"
             ng-class="{'input-error' : createAuctionForm.maturity.$invalid && (!createAuctionForm.maturity.$pristine || clicked)}"
             required />
       </div>
