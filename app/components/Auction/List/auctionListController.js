@@ -6,14 +6,31 @@
 */
 
 angular.module('appControllers')
-  .controller('auctionListController', ['$scope', 'AuctionList', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter',
-      function($scope, AuctionList, Auction, User, UserAbility, $location, $stateParams, $filter){
+  .controller('auctionListController', ['$scope', 'AuctionList', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state',
+      function($scope, AuctionList, Auction, User, UserAbility, $location, $stateParams, $filter, $state){
     $scope.route = "auction|list";
     $scope.AuctionList = AuctionList;
     $scope.filter = $stateParams.sort;
     $scope.order = $stateParams.order ? $stateParams.order : "ASC";
     $scope.page = $stateParams.page ? $stateParams.page : "1";
     $scope.sorting = getSortingText();
+    refreshingData();
+
+    function refreshingData() {
+        if ($state.current.name === "auction") {
+            Auction.getAuctionCache().then(function (data) {
+
+                for (var i = 0; i < data.length; i++) {
+                    $scope.$broadcast('updateAuctionPrice', data[i].ID, data[i].price);
+                }
+                setTimeout(function() {
+                    refreshingData();
+                }, 1000);
+            }).catch(function (error) {
+                // message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            });
+        }
+    }
 
     function getSortingText() {
         var locText = "";

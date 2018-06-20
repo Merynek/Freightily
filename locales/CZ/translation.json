@@ -187,8 +187,8 @@
 			"19": "Tuto jízdu má jiný řidič",
 			"20": "Tato jízda musí být ve stavu in progress",
 			"21": "Sledování této jízdy nebylo nalezeno v databázi",
-			"22": "Token neexistuje nebo je nevalidní",
-			"23": "Token je nevalidní",
+			"22": "Nemáte právo, obraťte se na administratora",
+			"23": "Nemáte právo, obraťte se na administratora",
 			"24": "Heslo není správné",
 			"25": "Uživatel již existuje"
 		}

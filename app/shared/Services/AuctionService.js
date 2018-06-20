@@ -72,6 +72,21 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => Get active auction cache */
+        Auction.getAuctionCache = function(){
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'auction/cache'
+                }).then(function(response) {
+                    resolve(response.data);
+                }).catch(function(error){
+                    reject(error);
+                })
+            });
+        };
+
 		/* POST to REST api => Create auction */
 		Auction.create = function(data){
 			startLoading();

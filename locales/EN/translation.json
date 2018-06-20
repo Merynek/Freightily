@@ -187,8 +187,8 @@
 			"19": "This shipment has another driver",
 			"20": "This shipment must be in progress",
 			"21": "Shipment route for this shipment not exist in database",
-			"22": "Token does not exist or is not valid",
-			"23": "Token is not valid",
+			"22": "No rights, contact administrator",
+			"23": "No rights, contact administrator",
 			"24": "Password is incorrect",
 			"25": "Username already exists"
 		}

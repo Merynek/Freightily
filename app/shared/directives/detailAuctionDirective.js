@@ -41,6 +41,12 @@ angular.module('appDirectives')
                         $scope.show = id === $scope.ID;
                     });
 
+                    $scope.$on("updateAuctionPrice", function (evt, id, price) {
+                        $scope.priceUpdated = false;
+                        if (id === $scope.ID) {
+                            $scope.refreshPrice(price);
+                        }
+                    });
 
                     $scope.$on('timer-stopped', function (event, data) {
                         if ($scope.expired) {
@@ -54,6 +60,13 @@ angular.module('appDirectives')
                             refreshItem($scope.item.ID)
                         }, 100);
                     });
+
+                    $scope.refreshPrice = function(price) {
+                        if ($scope.item.current_price !== price) {
+                            $scope.priceUpdated = true;
+                            $scope.item.current_price = price;
+                        }
+                    };
 
                     this.bidAuction = function (bid) {
                         if (bid && (($scope.item.price - bid) >= 1)) {

@@ -6,7 +6,9 @@
     <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.current_price}}</span></div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
+        <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}}</span>
+    </div>
     <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
 
