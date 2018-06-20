@@ -17,7 +17,8 @@ angular.module('appControllers')
     refreshingData();
 
     function refreshingData() {
-        if ($state.current.name === "auction") {
+        var route = $state.current.name;
+        if (route === "auction" || route === "home") {
             Auction.getAuctionCache().then(function (data) {
 
                 for (var i = 0; i < data.length; i++) {

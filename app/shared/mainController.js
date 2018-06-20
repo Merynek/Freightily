@@ -60,9 +60,10 @@ angular.module('appControllers')
         $scope.footerFix = function () {
             var win = window.innerHeight,
                 $con = $('body').height(),
-                $f = $('footer');
+                $f = $('footer'),
+                footerHeight = $f.height();
 
-            $con += $f.css('position') === 'absolute' ? 312 : 0;
+            $con += $f.css('position') === 'absolute' ? footerHeight : 0;
             if (win > $con) {
                 $f.css({
                     position: 'absolute'
