@@ -166,6 +166,10 @@
 		"weight_is_number": "Weight must be a number",
 		"price_is_number": "Price must be a number",
 		"maturity_is_number": "Maturity must be a number",
+		"bid_is_number": "Bid must be a number",
+		"psc_is_number": "ZIP must be a number",
+		"ico_is_number": "Identification number must be a number",
+		"dic_is_number": "VAT must be a number",
 		"codes": {
 			"fatal": "Unknown error, contact administrator",
 			"0": "Server error, please contact administrator",

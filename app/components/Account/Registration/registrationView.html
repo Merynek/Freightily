@@ -47,12 +47,12 @@
       required />
     </div>
     <div class="form-group half">
-      <input type="text" name="ico" class="form-control my-input" placeholder="{{'texts.ico' | i18next}}" ng-model="user.ico" 
+      <input type="text" name="ico" id="ico" class="form-control my-input" placeholder="{{'texts.ico' | i18next}}" ng-model="user.ico"
       ng-class="{'input-error' : registrationForm.ico.$invalid && (!registrationForm.ico.$pristine || clicked)}" 
       required />
     </div>
     <div class="form-group half">
-      <input type="text" name="dic" class="form-control my-input" placeholder="{{'texts.dic' | i18next}}" ng-model="user.dic"
+      <input type="text" name="dic" id="dic" class="form-control my-input" placeholder="{{'texts.dic' | i18next}}" ng-model="user.dic"
       />
     </div>
     <div class="form-group half">
@@ -76,7 +76,7 @@
       required />
     </div>
     <div class="form-group half">
-      <input type="text" name="psc" class="form-control my-input" placeholder="{{'texts.psc' | i18next}}" ng-model="user.psc" 
+      <input type="text" name="psc" id="psc" class="form-control my-input" placeholder="{{'texts.psc' | i18next}}" ng-model="user.psc"
       ng-class="{'input-error' : registrationForm.psc.$invalid && (!registrationForm.psc.$pristine || clicked)}" 
       required />
     </div>

@@ -18,6 +18,10 @@ angular.module('appControllers')
         if(!this.addUserForm.$valid) {
           return;
         }
+
+        if(!numberFieldsIsValid()) {
+            return;
+        }
         
         if($scope.employee.password !== $scope.employee.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
@@ -50,5 +54,18 @@ angular.module('appControllers')
             });
         }
       };
+
+          function numberFieldsIsValid() {
+              var psc = $("#psc");
+
+              if (isNaN($scope.employee.psc)) {
+                  psc.addClass("input-error");
+                  message(3, $filter('i18next')('errors.psc_is_number'));
+                  return false;
+              }
+              psc.removeClass("input-error");
+
+              return true;
+          }
   }
 ]);

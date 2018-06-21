@@ -69,6 +69,10 @@ angular.module('appDirectives')
                     };
 
                     this.bidAuction = function (bid) {
+                        if (isNaN(bid)) {
+                            message(3, $filter('i18next')('errors.bid_is_number'));
+                            return;
+                        }
                         if (bid && (($scope.item.price - bid) >= 1)) {
                             var data = {
                                 id_auction: $scope.item.ID,

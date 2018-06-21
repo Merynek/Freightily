@@ -104,31 +104,26 @@ angular.module('appControllers')
             return $scope.from_street && $scope.to_street;
         }
 
-        function isNumber(value) {
-            return !isNaN(value);
-        }
-
-
         function numberFieldsIsValid() {
             var freight_weight = $("#freight_weight"),
                 maturity = $("#maturity"),
                 price = $("#price");
 
-            if (!isNumber($scope.auction.freight_weight)) {
+            if (isNaN($scope.auction.freight_weight)) {
                 freight_weight.addClass("input-error");
                 message(3, $filter('i18next')('errors.weight_is_number'));
                 return false;
             }
             freight_weight.removeClass("input-error");
 
-            if (!isNumber($scope.auction.maturity)) {
+            if (isNaN($scope.auction.maturity)) {
                 maturity.addClass("input-error");
                 message(3, $filter('i18next')('errors.maturity_is_number'));
                 return false;
             }
             maturity.removeClass("input-error");
 
-            if (!isNumber($scope.auction.price)) {
+            if (isNaN($scope.auction.price)) {
                 price.addClass("input-error");
                 message(3, $filter('i18next')('errors.price_is_number'));
                 return false;

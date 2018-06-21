@@ -21,6 +21,10 @@ angular.module('appControllers')
         if(!this.registrationForm.$valid) {
           return;
         }
+
+        if(!numberFieldsIsValid()) {
+          return;
+        }
         
         if($scope.user.password !== $scope.user.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
@@ -53,5 +57,35 @@ angular.module('appControllers')
           })
         }
       };
+
+      function numberFieldsIsValid() {
+          var psc = $("#psc"),
+              ico = $("#ico"),
+              dic = $("#dic");
+
+          if (isNaN($scope.user.psc)) {
+              psc.addClass("input-error");
+              message(3, $filter('i18next')('errors.psc_is_number'));
+              return false;
+          }
+          psc.removeClass("input-error");
+
+          if (isNaN($scope.user.ico)) {
+              ico.addClass("input-error");
+              message(3, $filter('i18next')('errors.ico_is_number'));
+              return false;
+          }
+          ico.removeClass("input-error");
+
+          if (isNaN($scope.user.dic)) {
+              dic.addClass("input-error");
+              message(3, $filter('i18next')('errors.dic_is_number'));
+              return false;
+          }
+          dic.removeClass("input-error");
+
+          return true;
+      }
+
   }
 ]);

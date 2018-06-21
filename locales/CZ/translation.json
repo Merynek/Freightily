@@ -166,6 +166,10 @@
 		"weight_is_number": "Hmotnost musí být číslo",
 		"price_is_number": "Cena musí být číslo",
 		"maturity_is_number": "Splatnost dní musí být číslo",
+		"bid_is_number": "Příhoz musí být číslo",
+		"psc_is_number": "PSČ musí být číslo",
+		"ico_is_number": "IČO musí být číslo",
+		"dic_is_number": "DIČ musí být číslo",
 		"codes": {
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
 			"0": "Chyba na serveru, prosím kontaktujte administrátora",
