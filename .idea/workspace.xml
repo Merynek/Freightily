@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Account/Registration/registrationController.js" afterPath="$PROJECT_DIR$/app/components/Account/Registration/registrationController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Account/Registration/registrationView.html" afterPath="$PROJECT_DIR$/app/components/Account/Registration/registrationView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" afterPath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverController.js" afterPath="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverView.html" afterPath="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" afterPath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locales/CZ/translation.json" afterPath="$PROJECT_DIR$/locales/CZ/translation.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locales/EN/translation.json" afterPath="$PROJECT_DIR$/locales/EN/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" afterPath="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.js" afterPath="$PROJECT_DIR$/app/config.js" />
     </list>
     <ignored path="Freightily.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addDriverController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addDriverController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/Company/AddDriver/addDriverController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
@@ -91,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createAuctionView.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="createAuctionView.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
-              <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+            <state relative-caret-position="191">
+              <caret line="112" column="85" lean-forward="false" selection-start-line="112" selection-start-column="85" selection-end-line="112" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -111,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auctionListController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -236,9 +230,7 @@
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
         <option value="$PROJECT_DIR$/css/footer.css" />
         <option value="$PROJECT_DIR$/app/shared/mainController.js" />
-        <option value="$PROJECT_DIR$/app/config.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" />
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Registration/registrationView.html" />
@@ -247,6 +239,8 @@
         <option value="$PROJECT_DIR$/locales/EN/translation.json" />
         <option value="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverView.html" />
         <option value="$PROJECT_DIR$/app/components/Company/AddDriver/addDriverController.js" />
+        <option value="$PROJECT_DIR$/app/config.js" />
+        <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" />
       </list>
     </option>
   </component>
@@ -1161,7 +1155,7 @@
       <workItem from="1529414033421" duration="2948000" />
       <workItem from="1529495486298" duration="9431000" />
       <workItem from="1529510030828" duration="3915000" />
-      <workItem from="1529566031058" duration="847000" />
+      <workItem from="1529566031058" duration="1683000" />
     </task>
     <task id="LOCAL-00001" summary="ready for menu">
       <created>1499088129083</created>
@@ -1310,11 +1304,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529519684541</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="všechny validace na čísla">
+      <created>1529566997217</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1529566997217</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365135000" />
+    <option name="totallyTimeSpent" value="365971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1404,7 +1405,8 @@
     <MESSAGE value="update ceny kazdou sekundu a jeji zvýraznění" />
     <MESSAGE value="zpraveni footeru, update ceny aukce bude i na home" />
     <MESSAGE value="validace cisla pro price, maturity, weight + hlásky" />
-    <option name="LAST_COMMIT_MESSAGE" value="validace cisla pro price, maturity, weight + hlásky" />
+    <MESSAGE value="všechny validace na čísla" />
+    <option name="LAST_COMMIT_MESSAGE" value="všechny validace na čísla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1706,26 +1708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1790,6 +1776,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="112" column="85" lean-forward="false" selection-start-line="112" selection-start-column="85" selection-end-line="112" selection-end-column="85" />
           <folding />
         </state>
       </provider>

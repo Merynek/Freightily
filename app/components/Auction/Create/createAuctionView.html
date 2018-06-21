@@ -109,7 +109,7 @@
       <h3>{{'texts.auction.auction_list' | i18next}}</h3>
       <div class="form-group half">
         <div class='input-group datetimepicker1'>
-          <input type='text' name="end_auction" class="form-control my-input"  id="end_auction" placeholder="{{'texts.auction.end_auction' | i18next}}"
+          <input type='text' name="end_auction" class="form-control my-input" onkeydown="return false"  id="end_auction" placeholder="{{'texts.auction.end_auction' | i18next}}"
           ng-class="{'input-error' : createAuctionForm.end_auction.$invalid && (!createAuctionForm.end_auction.$pristine || clicked)}"
           required/>
           <span class="input-group-addon">
