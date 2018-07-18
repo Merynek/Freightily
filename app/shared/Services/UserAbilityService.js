@@ -143,6 +143,25 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => Stop shipment */
+        UserAbility.stopShipment = function(data){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: url+'shipment/stop',
+                    data: param(data)
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 
 		/* POST to REST api => Check code*/
 		UserAbility.checkCode = function(data){

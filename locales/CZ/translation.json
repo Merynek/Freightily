@@ -91,6 +91,7 @@
 			"driver_surname": "Příjmení",
 			"driver_licence": "Řidičák",
 			"driver_phone_number": "Telefon",
+			"stopShipment": "Předčasně ukončit",
 			"photos": "Fotografie",
 			"photos_before": "Před",
 			"photos_after": "Po",
@@ -207,6 +208,7 @@
 		}
 	},
 	"warnings": {
+		"stop_shipment": "Jste si jistý?\nTato jízda se neprodlěne ukončí."
 	},
 	"success": {
 		"login": "Přihlášení úspěšné",

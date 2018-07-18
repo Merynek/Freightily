@@ -156,6 +156,9 @@
     margin-right: 0;
     margin-bottom: 0;
 }
+.auction-item .my-button.stop-shipment{
+    float: right;
+}
 .auction-item .auction-detail{
     padding: 10px;
     margin: 15px 0;

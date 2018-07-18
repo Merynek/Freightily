@@ -91,6 +91,7 @@
 			"driver_surname": "Surname",
 			"driver_licence": "Driver licence",
 			"driver_phone_number": "Phone number",
+			"stopShipment": "Stop shipment",
 			"photos": "Photos",
 			"photos_before": "Before",
 			"photos_after": "After",
@@ -207,6 +208,7 @@
 		}
 	},
 	"warnings": {
+		"stop_shipment": "Are you sure?\nThis shipment will immediately stop."
 	},
 	"success": {
 		"login": "Login success",

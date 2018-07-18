@@ -52,6 +52,9 @@
             <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.freight.freight_weight}}</span></div>
         </div>
     </div>
+    <div ng-if="!finishedShipment" class="my-button important-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
+        <span>{{'texts.shipment.stopShipment' | i18next}}</span>
+    </div>
     <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
         <div class="photo-buttons">

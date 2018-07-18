@@ -11,7 +11,7 @@ angular.module('appDirectives')
                 inProgressShipment: '=',
                 finishedShipment: '='
             },
-            controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http) {
+            controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state) {
                 $scope.item = this.shipmentItem.item;
                 $scope.newShipment = this.newShipment;
                 $scope.inProgressShipment = this.inProgressShipment;
@@ -25,6 +25,22 @@ angular.module('appDirectives')
                     $scope.show = !$scope.show;
                 };
                 $scope.mapIsDisplayed = false;
+
+                this.stopShipment = function(ID){
+                    var data = {
+                        id_shipment: ID
+                    };
+
+                    if (window.confirm($filter('i18next')("warnings.stop_shipment"))) {
+                        UserAbility.stopShipment(data).then(function(){
+                            $state.transitionTo($state.current, {}, {
+                                reload: true
+                            });
+                        }).catch(function(error){
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                        })
+                    }
+                };
 
                 this.showPhoto = function(idShipment, firstPart) {
                     $scope.showPhotos = [];
