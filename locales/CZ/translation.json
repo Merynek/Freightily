@@ -137,9 +137,15 @@
 			"freight_description": "Popis zásilky",
 			"freight_type": {
 				"label": "Typ zásilky",
-				"1": "prvni",
-				"2": "druha",
-				"3": "treti"
+				"1": "Chemické kapaliny",
+				"2": "Sypké",
+				"3": "Pohonné hmoty a oleje",
+				"4": "Plyny ve speciálních zařízeních",
+				"5": "Zboží citlivé povahy",
+				"6": "Rychle se kazící zboží",
+				"7": "Potravinářské zboží a krmiva",
+				"8": "Umělecké předměty",
+				"9": "Nábytek"
 			},
 			"freight_size": "Velikost zásilky",
 			"freight_weight": "Váha zásilky",

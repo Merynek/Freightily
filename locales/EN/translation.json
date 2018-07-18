@@ -137,9 +137,15 @@
 			"freight_description": "Freight description",
 			"freight_type": {
 				"label": "Freight type",
-				"1": "first",
-				"2": "second",
-				"3": "third"
+				"1": "Chemical liquids",
+				"2": "Sweet",
+				"3": "Fuels and oils",
+				"4": "Gases in special equipment",
+				"5": "Zboží citlivé povahy",
+				"6": "Goods of a sensitive nature",
+				"7": "Food and fodder",
+				"8": "Art objects",
+				"9": "Furniture"
 			},
 			"freight_size": "Freight size",
 			"freight_weight": "Freight weight",

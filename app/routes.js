@@ -3,11 +3,11 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
     
   // translations 
 	$i18nextProvider.options = {
-		lng: 'EN',
+		lng: 'CZ',
 		useCookie: false,
 		useLocalStorage: false,
 		fallbackLng: 'dev',
-		resGetPath: '../locales/EN/translation.json',
+		resGetPath: '../locales/CZ/translation.json',
 		defaultLoadingValue: ''
 	};  
 
