@@ -134,7 +134,7 @@
 			"load": "Naložení",
 			"load_note": "Poznámka pro naložení nákladu",
 			"unload": "Vyložení",
-			"unload_note": "Poznámka pro naložení nákladu",
+			"unload_note": "Poznámka pro vyložení nákladu",
 			"freight_description": "Popis zásilky",
 			"freight_type": {
 				"label": "Typ zásilky",
