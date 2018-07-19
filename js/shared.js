@@ -39,3 +39,9 @@ function getErrorKeyByCode(error) {
 	}
     return 'errors.codes.fatal';
 }
+
+function isValueNumber(value) {
+	var val = value.replace(/ /g,'');
+
+	return $.isNumeric(val);
+}

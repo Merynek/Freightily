@@ -1,6 +1,5 @@
 {
 	"texts": {
-		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"login": "Přihlášení",
 		"username": "Uživatelské jméno",
 		"name": "Jméno",
@@ -21,7 +20,6 @@
 		"login_to_system": "Přihlášení do systému",
 		"registration": "Registrace",
 		"registration_employee": "Registrace zaměstnance",
-		"registration_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"forgot_password": "Zapomenuté heslo",
 		"logout": "Odhlásit se",
 		"about": "O nás",
@@ -51,7 +49,7 @@
 		"dispatcher": "Dispečer",
 		"dispatchers": "Dispečeři",
 		"show_hidden_map": "Zobrazit/Skrýt Mapu",
-		"forgot_password_text": "Pošlete si heslo na email a poté ho změňte v sekci 'Account'.",
+		"forgot_password_text": "Na zadaný email vám pošleme heslo, kterým se přihlásíte a poté si můžete změnit heslo na vašem profilu.",
 		"send_password": "Poslat heslo",
 		"your_acc": "Váš účet",
 		"actual_password": "Aktuální heslo",
@@ -72,6 +70,7 @@
 		"vacation": "Dovolená",
         "admin": "Administrace",
         "users": "Uživatelé",
+		"no_drivers": "Žádní řidiči",
 		"sorting": {
 			"label": "Řazení",
 			"from": "Odkud",
@@ -176,7 +175,7 @@
 		"bid_is_number": "Příhoz musí být číslo",
 		"psc_is_number": "PSČ musí být číslo",
 		"ico_is_number": "IČO musí být číslo",
-		"dic_is_number": "DIČ musí být číslo",
+		"accept_conditions": "Musíte souhlasit s podmínkami",
 		"codes": {
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
 			"0": "Chyba na serveru, prosím kontaktujte administrátora",
@@ -204,7 +203,8 @@
 			"22": "Nemáte právo, obraťte se na administratora",
 			"23": "Nemáte právo, obraťte se na administratora",
 			"24": "Heslo není správné",
-			"25": "Uživatel již existuje"
+			"25": "Uživatel již existuje",
+			"26": "Musíte souhlasit s podmínkami"
 		}
 	},
 	"warnings": {

@@ -109,21 +109,21 @@ angular.module('appControllers')
                 maturity = $("#maturity"),
                 price = $("#price");
 
-            if (isNaN($scope.auction.freight_weight)) {
+            if (!isValueNumber($scope.auction.freight_weight)) {
                 freight_weight.addClass("input-error");
                 message(3, $filter('i18next')('errors.weight_is_number'));
                 return false;
             }
             freight_weight.removeClass("input-error");
 
-            if (isNaN($scope.auction.maturity)) {
+            if (!isValueNumber($scope.auction.maturity)) {
                 maturity.addClass("input-error");
                 message(3, $filter('i18next')('errors.maturity_is_number'));
                 return false;
             }
             maturity.removeClass("input-error");
 
-            if (isNaN($scope.auction.price)) {
+            if (!isValueNumber($scope.auction.price)) {
                 price.addClass("input-error");
                 message(3, $filter('i18next')('errors.price_is_number'));
                 return false;

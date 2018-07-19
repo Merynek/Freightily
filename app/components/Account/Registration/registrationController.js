@@ -17,15 +17,16 @@ angular.module('appControllers')
           message(3, $filter('i18next')('errors.select_role'));
           return;
         }
-
         if(!this.registrationForm.$valid) {
           return;
         }
-
         if(!numberFieldsIsValid()) {
           return;
         }
-        
+        if(!$scope.user.accept_conditions) {
+          message(3, $filter('i18next')('errors.accept_conditions'));
+          return;
+        }
         if($scope.user.password !== $scope.user.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
@@ -38,14 +39,14 @@ angular.module('appControllers')
             surname: $scope.user.surname,
             company_name: $scope.user.company_name,
             ico: $scope.user.ico,
-            dic: $scope.user.dic || 0,
             bank_account: $scope.user.bank_account,
             address_city: $scope.user.address_city,
             address_street: $scope.user.address_street,
             address_house_number: $scope.user.address_house_number,
             psc: $scope.user.psc,
             phone_number: $scope.user.phone_number,
-            email: $scope.user.email
+            email: $scope.user.email,
+            accept_conditions: $scope.user.accept_conditions
           };
           var registration = $scope.user.role === "1" ? User.registrationSender : User.registrationTransporter;
 
@@ -60,30 +61,21 @@ angular.module('appControllers')
 
       function numberFieldsIsValid() {
           var psc = $("#psc"),
-              ico = $("#ico"),
-              dic = $("#dic");
+              ico = $("#ico");
 
-          if (isNaN($scope.user.psc)) {
+          if (!isValueNumber($scope.user.psc)) {
               psc.addClass("input-error");
               message(3, $filter('i18next')('errors.psc_is_number'));
               return false;
           }
           psc.removeClass("input-error");
 
-          if (isNaN($scope.user.ico)) {
+          if (!isValueNumber($scope.user.ico)) {
               ico.addClass("input-error");
               message(3, $filter('i18next')('errors.ico_is_number'));
               return false;
           }
           ico.removeClass("input-error");
-
-          if (isNaN($scope.user.dic)) {
-              dic.addClass("input-error");
-              message(3, $filter('i18next')('errors.dic_is_number'));
-              return false;
-          }
-          dic.removeClass("input-error");
-
           return true;
       }
 

@@ -1,6 +1,5 @@
 {
 	"texts": {
-		"login_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"login": "Login",
 		"username": "Username",
 		"name": "Name",
@@ -21,7 +20,6 @@
 		"login_to_system": "Login to system",
 		"registration": "Registration",
 		"registration_employee": "Registration employee",
-		"registration_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et tempor nisi. Ut pellentesque tortor nec justo ullamcorper, sed hendrerit risus ultricies.",
 		"forgot_password": "Forgot password",
 		"logout": "Logout",
 		"about": "About",
@@ -51,7 +49,7 @@
 		"dispatcher": "Dispatcher",
 		"dispatchers": "Dispatchers",
 		"show_hidden_map": "Show/Hide Map",
-		"forgot_password_text": "Send new password to your email and change him in 'Account' section.",
+		"forgot_password_text": "Send new password to your email and you can your profile.",
 		"send_password": "Send password",
 		"your_acc": "Your account",
 		"actual_password": "Actual password",
@@ -72,6 +70,7 @@
 		"vacation": "Vacation",
         "admin": "Admin",
         "users": "Users",
+		"no_drivers": "No drivers",
 		"sorting": {
 			"label": "Sorting",
 			"from": "From",
@@ -176,7 +175,7 @@
 		"bid_is_number": "Bid must be a number",
 		"psc_is_number": "ZIP must be a number",
 		"ico_is_number": "Identification number must be a number",
-		"dic_is_number": "VAT must be a number",
+		"accept_conditions": "You must accept conditions",
 		"codes": {
 			"fatal": "Unknown error, contact administrator",
 			"0": "Server error, please contact administrator",
@@ -204,7 +203,8 @@
 			"22": "No rights, contact administrator",
 			"23": "No rights, contact administrator",
 			"24": "Password is incorrect",
-			"25": "Username already exists"
+			"25": "Username already exists",
+			"26": "You must accept conditions"
 		}
 	},
 	"warnings": {

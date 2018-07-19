@@ -69,7 +69,7 @@ angular.module('appDirectives')
                     };
 
                     this.bidAuction = function (bid) {
-                        if (isNaN(bid)) {
+                        if (!isValueNumber(bid)) {
                             message(3, $filter('i18next')('errors.bid_is_number'));
                             return;
                         }

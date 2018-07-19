@@ -1,6 +1,5 @@
 <div class="login-page">
   <h1>{{'texts.login' | i18next}}</h1>
-  <p>{{'texts.login_text' | i18next}}</p>
   <form name="loginForm" ng-open="formLabels('loginForm')" novalidate>
     <div class="form-group has-feedback has-feedback-left">
       <input type="text" name="username" class="form-control my-input" placeholder="{{'texts.username' | i18next}}" ng-model="user.name" ng-class="{'input-error' : loginForm.username.$invalid && (!loginForm.username.$pristine || clicked)}" ng-minlength="5" required/>

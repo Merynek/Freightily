@@ -1,6 +1,5 @@
 <div class="registration-page" ng-open="formLabels('registrationForm')" >
   <h1>{{'texts.registration_employee' | i18next}}</h1>
-  <p>{{'texts.registration_text' | i18next}}</p>
   <form name="registrationForm" novalidate>
     <div class="form-group radio-group half">
       <input type="radio" name="role" class="my-radio" id="transporter" ng-model="user.role" value="2" required/>
@@ -52,10 +51,6 @@
       required />
     </div>
     <div class="form-group half">
-      <input type="text" name="dic" id="dic" class="form-control my-input" placeholder="{{'texts.dic' | i18next}}" ng-model="user.dic"
-      />
-    </div>
-    <div class="form-group half">
       <input type="text" name="bank_account" class="form-control my-input" placeholder="{{'texts.bank_account' | i18next}}" ng-model="user.bank_account" 
       ng-class="{'input-error' : registrationForm.bank_account.$invalid && (!registrationForm.bank_account.$pristine || clicked)}" 
       required />
@@ -86,7 +81,9 @@
       ng-minlength="9" required />
     </div>
     <div class="form-group half">
-      <label><input type="checkbox">{{'texts.accept_conditions' | i18next}}</label>
+      <label><input type="checkbox" name="accept_conditions" ng-model="user.accept_conditions"/>
+        {{'texts.accept_conditions' | i18next}}
+      </label>
     </div>
     <div class="form-group buttons">
       <div class="my-button big-button important-button" ng-click="registration()">{{'texts.registration' | i18next}}</div>
