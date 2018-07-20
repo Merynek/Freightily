@@ -5,7 +5,7 @@
         <span class="sorting-label">{{'texts.sorting.label' | i18next}}:</span>
         <div class="btn-group">
             <button class="sorting-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>{{sorting}}</span>
+                <span ng-if="sorting">{{sorting}}</span>
                 <i class="glyphicon glyphicon-triangle-bottom"></i>
             </button>
             <div class="dropdown-menu">
