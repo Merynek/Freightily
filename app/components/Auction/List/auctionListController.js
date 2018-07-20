@@ -45,6 +45,7 @@ angular.module('appControllers')
                 break;
             case 'end_auction': locText += $filter('i18next')('texts.sorting.end_auction');
                 break;
+            default: return "";
         }
         locText += " (";
         switch ($scope.order) {

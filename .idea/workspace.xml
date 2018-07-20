@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Shipments/finished/finishedShipmentsView.html" afterPath="$PROJECT_DIR$/app/components/Shipments/finished/finishedShipmentsView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Shipments/inProgress/inProgressShipmentsView.html" afterPath="$PROJECT_DIR$/app/components/Shipments/inProgress/inProgressShipmentsView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Shipments/new/newShipmentsView.html" afterPath="$PROJECT_DIR$/app/components/Shipments/new/newShipmentsView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" afterPath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" afterPath="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Auction/List/auctionListController.js" afterPath="$PROJECT_DIR$/app/components/Auction/List/auctionListController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/content.css" afterPath="$PROJECT_DIR$/css/content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="Freightily.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,21 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="translation.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/locales/EN/translation.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+            <state relative-caret-position="432">
+              <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -78,31 +66,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="content.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/content.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="119" column="28" lean-forward="false" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="newShipmentsView.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/Shipments/new/newShipmentsView.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="114" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/content.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5280">
-              <caret line="220" column="24" lean-forward="false" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detailAuctionDirective.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,11 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagingDirective.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/directives/pagingDirective.js">
+      <file leaf-file-name="auctionListView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="168">
+              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auctionListController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -141,11 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>unload_note</find>
-      <find>logo.svg</find>
-      <find>is</find>
-      <find>i</find>
-      <find>isN</find>
       <find>isNa</find>
       <find>isNaN</find>
       <find>login_text</find>
@@ -171,6 +164,11 @@
       <find>history</find>
       <find>username</find>
       <find>current_price</find>
+      <find>sorting</find>
+      <find>tab-content</find>
+      <find>co</find>
+      <find>content</find>
+      <find>.middle</find>
     </findStrings>
     <replaceStrings>
       <replace>createAuctionForm</replace>
@@ -211,9 +209,7 @@
         <option value="$PROJECT_DIR$/app/components/Admin/Users/usersController.js" />
         <option value="$PROJECT_DIR$/app/shared/Services/UserService.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/shared/Services/AuctionService.js" />
-        <option value="$PROJECT_DIR$/app/components/Auction/List/auctionListController.js" />
         <option value="$PROJECT_DIR$/css/footer.css" />
         <option value="$PROJECT_DIR$/app/shared/mainController.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
@@ -237,13 +233,15 @@
         <option value="$PROJECT_DIR$/app/components/Company/companyController.js" />
         <option value="$PROJECT_DIR$/locales/CZ/translation.json" />
         <option value="$PROJECT_DIR$/locales/EN/translation.json" />
-        <option value="$PROJECT_DIR$/css/content.css" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" />
         <option value="$PROJECT_DIR$/app/components/Shipments/new/newShipmentsView.html" />
         <option value="$PROJECT_DIR$/app/components/Shipments/finished/finishedShipmentsView.html" />
         <option value="$PROJECT_DIR$/app/components/Shipments/inProgress/inProgressShipmentsView.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailShipmentDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
+        <option value="$PROJECT_DIR$/app/components/Auction/List/auctionListController.js" />
+        <option value="$PROJECT_DIR$/css/content.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -539,7 +537,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Account" />
+              <option name="myItemId" value="Auction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Freightily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Freightily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Auction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="List" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1074,7 +1098,7 @@
       <workItem from="1530018266114" duration="1525000" />
       <workItem from="1530263427879" duration="608000" />
       <workItem from="1531899011299" duration="19953000" />
-      <workItem from="1532088588866" duration="1038000" />
+      <workItem from="1532088588866" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="ready for menu">
       <created>1499088129083</created>
@@ -1272,11 +1296,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532080365338</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="-zobrazeni ceny u shipmentu&#10;-stylovani detailu aukce a shipmentu">
+      <created>1532089684226</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1532089684226</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="393922000" />
+    <option name="totallyTimeSpent" value="395801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1354,7 +1385,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="faktury se oteviraji v novem okne a fakci v kazdem browseru" />
     <MESSAGE value="invoices are ready" />
     <MESSAGE value="fixed auctions delete" />
     <MESSAGE value="smazani a napojeni na novy api" />
@@ -1379,7 +1409,8 @@
     <MESSAGE value="oprava lokalizace" />
     <MESSAGE value="-pridano souhlaseni s podminkami&#10;-odstraneni zbytecnych textů&#10;-oprava validace na to jestli je vstup number" />
     <MESSAGE value="-confirm při mazani drivera&#10;-opraveni tabu v shipment sekci&#10;-scrollbar v historiji prihozů" />
-    <option name="LAST_COMMIT_MESSAGE" value="-confirm při mazani drivera&#10;-opraveni tabu v shipment sekci&#10;-scrollbar v historiji prihozů" />
+    <MESSAGE value="-zobrazeni ceny u shipmentu&#10;-stylovani detailu aukce a shipmentu" />
+    <option name="LAST_COMMIT_MESSAGE" value="-zobrazeni ceny u shipmentu&#10;-stylovani detailu aukce a shipmentu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1427,13 +1458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="46" column="104" lean-forward="false" selection-start-line="46" selection-start-column="92" selection-end-line="46" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Auction/BidsAuction/bidsAuctionController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -1459,13 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1510,6 +1527,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1531,6 +1551,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="124" column="17" lean-forward="true" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1538,13 +1559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35">
           <caret line="146" column="32" lean-forward="false" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="108" column="67" lean-forward="false" selection-start-line="108" selection-start-column="67" selection-end-line="108" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1559,6 +1573,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1694,26 +1709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/content.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5280">
-          <caret line="220" column="24" lean-forward="false" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/shared/directives/pagingDirective.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1760,8 +1759,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        <state relative-caret-position="432">
+          <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared/directives/pagingDirective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="119" column="28" lean-forward="false" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
           <folding />
         </state>
       </provider>
