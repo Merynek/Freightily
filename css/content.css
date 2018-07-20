@@ -219,11 +219,16 @@
 .auction-detail .history-header{
     font-weight: bold;
     background: #f8f8ff;
+    margin-right: 0;
 }
 .auction-detail .history-header div{
     padding: 5px;
 }
-.auction-detail .history-list{}
+.auction-detail .history-list{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+}
 .auction-detail .history-list-item{
     border-bottom: 1px solid #f8f8ff;
 }

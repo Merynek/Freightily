@@ -128,7 +128,7 @@
 			"loaded": "Nahráno",
 			"from": "Odkud",
 			"to": "Kam",
-			"price": "Cena",
+			"price": "Cena v Kč",
 			"currency": "Měna",
 			"load": "Naložení",
 			"load_note": "Poznámka pro naložení nákladu",
@@ -147,8 +147,8 @@
 				"8": "Umělecké předměty",
 				"9": "Nábytek"
 			},
-			"freight_size": "Velikost zásilky",
-			"freight_weight": "Váha zásilky",
+			"freight_size": "Velikost zásilky (slovy)",
+			"freight_weight": "Váha zásilky v kg",
 			"email_addressee": "Email adresáta",
 			"end_auction": "Konec aukce",
 			"min_amount": "Minimální příhoz",
@@ -208,7 +208,8 @@
 		}
 	},
 	"warnings": {
-		"stop_shipment": "Jste si jistý?\nTato jízda se neprodlěne ukončí."
+		"stop_shipment": "Jste si jistý?\nTato jízda se neprodlěne ukončí.",
+		"delete_driver": "Jste si jisty?\nŘidič bude nenávratně smazán."
 	},
 	"success": {
 		"login": "Přihlášení úspěšné",

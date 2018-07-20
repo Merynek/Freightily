@@ -128,7 +128,7 @@
 			"loaded": "Loaded",
 			"from": "From",
 			"to": "To",
-			"price": "Price",
+			"price": "Price in CZK",
 			"currency": "Currency",
 			"load": "Load",
 			"load_note": "Note for freight load",
@@ -147,8 +147,8 @@
 				"8": "Art objects",
 				"9": "Furniture"
 			},
-			"freight_size": "Freight size",
-			"freight_weight": "Freight weight",
+			"freight_size": "Freight size (words)",
+			"freight_weight": "Freight weight in kg",
 			"email_addressee": "Email addressee",
 			"end_auction": "End auction",
 			"min_amount": "Min amount",
@@ -208,7 +208,8 @@
 		}
 	},
 	"warnings": {
-		"stop_shipment": "Are you sure?\nThis shipment will immediately stop."
+		"stop_shipment": "Are you sure?\nThis shipment will immediately stop.",
+		"delete_driver": "Are you sure?\nDriver will be irrevocably deleted."
 	},
 	"success": {
 		"login": "Login success",

@@ -20,11 +20,13 @@ angular.module('appControllers')
         }
 
         $scope.deleteUser = function(id_user) {
-            UserAbility.deleteUser(id_user).then(function() {
-                message(1, $filter('i18next')('success.driver_deleted'));
-            }).catch(function(error) {
-                message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            })
+            if (window.confirm($filter('i18next')("warnings.delete_driver"))) {
+                UserAbility.deleteUser(id_user).then(function() {
+                    message(1, $filter('i18next')('success.driver_deleted'));
+                }).catch(function(error) {
+                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                })
+            }
         };
 
         $scope.clickDatePicker = function(id) {
