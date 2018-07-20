@@ -204,7 +204,10 @@
 			"23": "Nemáte právo, obraťte se na administratora",
 			"24": "Heslo není správné",
 			"25": "Uživatel již existuje",
-			"26": "Musíte souhlasit s podmínkami"
+			"26": "Musíte souhlasit s podmínkami",
+			"27": "Tento uživatel má ban",
+			"28": "Tento uživatel není schválený",
+			"29": "Tento uživatel je smazaný"
 		}
 	},
 	"warnings": {

@@ -204,7 +204,10 @@
 			"23": "No rights, contact administrator",
 			"24": "Password is incorrect",
 			"25": "Username already exists",
-			"26": "You must accept conditions"
+			"26": "You must accept conditions",
+			"27": "This user is banned",
+			"28": "This user is not verified",
+			"29": "This user is deleted"
 		}
 	},
 	"warnings": {
