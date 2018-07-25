@@ -178,7 +178,7 @@
 		"accept_conditions": "Musíte souhlasit s podmínkami",
 		"codes": {
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
-			"0": "Chyba na serveru, prosím kontaktujte administrátora",
+			"0": "Neznámá na serveru, prosím kontaktujte administrátora",
 			"1": "Možné hodnoty pro ban uživatele jsou 0 nebo 1",
 			"2": "Možné hodnoty pro verifikaci uživatele jsou 0 nebo 1",
 			"3": "Možné hodnoty pro smazání uživatele jsou 0 nebo 1",

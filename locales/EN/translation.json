@@ -178,7 +178,7 @@
 		"accept_conditions": "You must accept conditions",
 		"codes": {
 			"fatal": "Unknown error, contact administrator",
-			"0": "Server error, please contact administrator",
+			"0": "Unknown error, please contact administrator",
 			"1": "Allowed values for ban user are 0 or 1",
 			"2": "Allowed values for verify user are 0 or 1",
 			"3": "Allowed values for delete user are 0 or 1",
@@ -193,7 +193,7 @@
 			"12": "This shipment is finished",
 			"13": "Minimal photos for shipment is 1",
 			"14": "You cannot start shipment in progress",
-			"15": "You can finish  only shipment in progress",
+			"15": "You can finish only shipment in progress",
 			"16": "Code for this shipment is wrong",
 			"17": "No photos at the end of shipment",
 			"18": "No photos for this shipment",
