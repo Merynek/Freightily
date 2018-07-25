@@ -207,7 +207,8 @@
 			"26": "You must accept conditions",
 			"27": "This user is banned",
 			"28": "This user is not verified",
-			"29": "This user is deleted"
+			"29": "This user is deleted",
+			"30": "This shipment not found"
 		}
 	},
 	"warnings": {

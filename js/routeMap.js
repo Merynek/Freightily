@@ -34,7 +34,7 @@ function initMap(mapid, route) {
                     }
                     stores.push(
                         {name: "store"+indexName, location: new google.maps.LatLng(gps[0], gps[1])}
-                    )
+                    );
                     indexName++;
                 }
                 end = new google.maps.LatLng(gps[0], gps[1]);
