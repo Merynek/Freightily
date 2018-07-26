@@ -165,6 +165,8 @@
 		"wrong_registration": "Registration error",
 		"select_role": "Select role",
 		"wrong_address": "Wrong set address",
+		"wrong_address_city": "Wrong set city in address",
+		"wrong_address_street": "Wrong set street in address",
 		"invalid_auction_date": "Date of end auction must be greater than currently date",
 		"auction_created": "Auction not created, check form",
 		"set_required_inputs": "Set all required fields",

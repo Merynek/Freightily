@@ -13,52 +13,25 @@
       }
     </style>
     <script>
-    $(function () {
-                    $('.datetimepicker1').datetimepicker({
-                      format: 'YYYY/MM/DD HH:mm',
-                    });
-                });
+      $(function () {
+          $('.datetimepicker1').datetimepicker({
+            format: 'YYYY/MM/DD HH:mm'
+          });
+      });
     </script>
     <form name="createAuctionForm" novalidate>
-    <div class="form-group half">
-        <input class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.address_from"
+      <div class="form-group half">
+        <input id="geoCompleteFrom" class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.address_from"
           ng-class="{'input-error' : createAuctionForm.from.$invalid && (!createAuctionForm.from.$pristine || clicked)}"
-          vs-google-autocomplete
-          ng-model="auction.address_from"
-          type="text"
-          name="from"
-          id="from"
-          vs-place="from_address.place"
-          vs-place-id="from_address.components.placeId"
-          vs-street-number="from_address.components.streetNumber"
-          vs-street="from_address.components.street"
-          vs-city="from_address.components.city"
-          vs-state="from_address.components.state"
-          vs-country-short="from_address.components.countryCode"
-          vs-country="from_address.components.country"
-          vs-district = "from_address.components.district"
           required />
       </div>
 
       <div class="form-group half">
-        <input class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.address_to"
+        <input id="geoCompleteTo" class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.address_to"
           ng-class="{'input-error' : createAuctionForm.to.$invalid && (!createAuctionForm.to.$pristine || clicked)}"
-          vs-google-autocomplete
-          ng-model="auction.address_to"
-          type="text"
-          name="to"
-          id="to"
-          vs-place="to_address.place"
-          vs-place-id="to_address.components.placeId"
-          vs-street-number="to_address.components.streetNumber"
-          vs-street="to_address.components.street"
-          vs-city="to_address.components.city"
-          vs-state="to_address.components.state"
-          vs-country-short="to_address.components.countryCode"
-          vs-country="to_address.components.country"
-          vs-district = "to_address.components.district"
           required />
       </div>
+      {{bindGeoEvents()}}
       <div class="form-group text-center">
         <div class="my-button easy-button big-button" ng-click="showMap()">{{'texts.show_hidden_map' | i18next}}</div>
       </div>

@@ -6,7 +6,7 @@
 */
 
 angular.module('appControllers')
-  .controller('favouriteAuctionController', ['$scope', 'favouriteAuction', '$filter',
+  .controller('favouriteAuctionController', ['$scope', 'favouriteAuction',
       function($scope, favouriteAuction){
     $scope.AuctionList = favouriteAuction;
     $scope.route = "auction|favourite";

@@ -165,6 +165,8 @@
 		"wrong_registration": "Chyba při registraci",
 		"select_role": "Vyberte roli",
 		"wrong_address": "Špatně zadaná adresa",
+		"wrong_address_city": "Špatně zadané město v adrese",
+		"wrong_address_street": "Špatně zadaná ulice v adrese",
 		"invalid_auction_date": "Datum ukončení aukce musí být vetší jak aktuální datum",
 		"auction_created": "Aukce nebyla založena, zkontrolujte formulář",
 		"set_required_inputs": "Vyplňte všechny povinné položky",

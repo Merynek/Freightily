@@ -7,78 +7,110 @@
 
 angular.module('appControllers')
     .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', function ($scope, Auction, $filter, $state) {
+        var autoCompleteIsInitialized = false;
+
         $scope.route = "auction|add";
         $scope.auction = {};
         $scope.mapIsShown = false;
         $scope.clicked = false;
         $scope.distance = "";
 
-        $scope.to_city = "";
-        $scope.to_street = "";
-
-        $scope.from_city = "";
-        $scope.from_street = "";
-
-
-        $scope.options = {
-            types: ['(cities)'],
-            componentRestrictions: {country: 'FR'}
+        $scope.full_adress_from = {
+            city: "",
+            street: "",
+            rest: "",
+            formatted_address: ""
         };
-        $scope.from_address = {
-            name: '',
-            place: '',
-            components: {
-                placeId: '',
-                streetNumber: '',
-                street: '',
-                city: '',
-                state: '',
-                countryCode: '',
-                country: '',
-                postCode: '',
-                district: '',
-                location: {
-                    lat: '',
-                    long: ''
-                }
+        $scope.full_adress_to = {
+            city: "",
+            street: "",
+            rest: "",
+            formatted_address: ""
+        };
+
+
+        $scope.bindGeoEvents = function () {
+            if (!autoCompleteIsInitialized) {
+                autoCompleteIsInitialized = true;
+                $("#geoCompleteFrom").geocomplete().bind("geocode:result", function(event, result) {
+                    parseAdress(result, true);
+                });
+                $("#geoCompleteTo").geocomplete().bind("geocode:result", function(event, result) {
+                    parseAdress(result, false);
+                });
             }
         };
-        $scope.to_address = {
-            name: '',
-            place: '',
-            components: {
-                placeId: '',
-                streetNumber: '',
-                street: '',
-                city: '',
-                state: '',
-                countryCode: '',
-                country: '',
-                postCode: '',
-                district: '',
-                location: {
-                    lat: '',
-                    long: ''
+
+        function parseAdress(locationObj, isFromAddress) {
+            var components = locationObj.address_components,
+                formatted_address = locationObj.formatted_address,
+                street_number,
+                component,
+                premise,
+                street,
+                city,
+                name,
+                i;
+
+            for (i = 0; i < components.length; i++) {
+                component = components[i];
+                name = component.long_name;
+
+                // Revucka
+                if (component.types.indexOf("route") > -1) {
+                    street = name;
+                }
+                // Litovel
+                if (component.types.indexOf("locality") > -1) {
+                    city = name;
+                } else if(component.types.indexOf("sublocality") > -1){
+                    city = name;
+                }
+                // /16
+                if (component.types.indexOf("street_number") > -1) {
+                    street_number = name;
+                }
+                // /1204
+                if (component.types.indexOf("premise") > -1) {
+                    premise = name;
                 }
             }
-        };
+            if (isFromAddress) {
+                $scope.full_adress_from.city = city || "";
+                $scope.full_adress_from.street = street || "";
+                $scope.full_adress_from.rest = (premise || "") + " " + (street_number || "");
+                $scope.full_adress_from.formatted_address = formatted_address;
+            } else {
+                $scope.full_adress_to.city = city || "";
+                $scope.full_adress_to.street = street || "";
+                $scope.full_adress_to.rest = (premise || "") + " " + (street_number || "");
+                $scope.full_adress_to.formatted_address = formatted_address;
+            }
+        }
+
+        function prepareAddressForServer(addressObj) {
+            var address = "";
+
+            address += addressObj.city;
+            address += ", ";
+            address += addressObj.street;
+            address += " ";
+            address += addressObj.rest;
+
+            return address;
+        }
 
         $scope.showMap = function () {
             if (!addressIsSet()) {
-                message(3, $filter('i18next')('errors.wrong_address'));
                 return;
             }
-            if ($scope.auction.address_from && $scope.auction.address_to) {
-                if ($scope.mapIsShown) {
-                    $scope.mapIsShown = false;
-                    $("#map").hide();
-                    $("#distance").hide();
-                } else {
-                    $scope.mapIsShown = true;
-                    showMap($scope.auction.from, $scope.auction.to);
-                }
+            if ($scope.mapIsShown) {
+                $scope.mapIsShown = false;
+                $("#map").hide();
+                $("#distance").hide();
             } else {
-                message(3, $filter('i18next')('errors.wrong_address'));
+                $scope.mapIsShown = true;
+                showMap($scope.full_adress_from.formatted_address, $scope.full_adress_to.formatted_address);
             }
         };
 
@@ -87,8 +119,27 @@ angular.module('appControllers')
         }
 
         function addressIsSet() {
-            return $scope.auction.address_to && $scope.auction.address_from;
+            return cityIsSet() && streetIsSet();
         }
+
+        function cityIsSet() {
+            if ($scope.full_adress_to.city && $scope.full_adress_from.city) {
+                return true;
+            } else {
+                message(3, $filter('i18next')('errors.wrong_address_city'));
+                return false;
+            }
+        }
+
+        function streetIsSet() {
+            if ($scope.full_adress_to.street && $scope.full_adress_from.street) {
+                return true;
+            } else {
+                message(3, $filter('i18next')('errors.wrong_address_street'));
+                return false;
+            }
+        }
+
 
         function numberFieldsIsValid() {
             var freight_weight = $("#freight_weight"),
@@ -135,12 +186,16 @@ angular.module('appControllers')
             if (!numberFieldsIsValid()) {
                 return;
             }
+            if (!addressIsSet()) {
+                return;
+            }
+
             end_auction.removeClass("input-error");
 
             if (end_auction) {
                 var data = {
-                    address_from: $scope.auction.address_from,
-                    address_to: $scope.auction.address_to,
+                    address_from: prepareAddressForServer($scope.full_adress_from),
+                    address_to: prepareAddressForServer($scope.full_adress_to),
                     freight_description: $scope.auction.freight_description,
                     freight_type: $scope.auction.freight_type,
                     freight_size: $scope.auction.freight_size,
