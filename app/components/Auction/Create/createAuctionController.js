@@ -68,7 +68,7 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.wrong_address'));
                 return;
             }
-            if ($scope.auction.from && $scope.auction.to) {
+            if ($scope.auction.address_from && $scope.auction.address_to) {
                 if ($scope.mapIsShown) {
                     $scope.mapIsShown = false;
                     $("#map").hide();
@@ -87,21 +87,7 @@ angular.module('appControllers')
         }
 
         function addressIsSet() {
-            return cityIsSet() && streetIsSet();
-        }
-
-        function cityIsSet() {
-            $scope.from_city = $scope.from_address.components.city;
-            $scope.to_city = $scope.to_address.components.city;
-
-            return $scope.from_city && $scope.to_city;
-        }
-
-        function streetIsSet() {
-            $scope.from_street = $scope.from_address.components.street;
-            $scope.to_street = $scope.to_address.components.street;
-
-            return $scope.from_street && $scope.to_street;
+            return $scope.auction.address_to && $scope.auction.address_from;
         }
 
         function numberFieldsIsValid() {
@@ -138,10 +124,6 @@ angular.module('appControllers')
             if (!this.createAuctionForm.$valid) {
                 return;
             }
-            if (!addressIsSet()) {
-                message(3, $filter('i18next')('errors.wrong_address'));
-                return;
-            }
             var end_auction = $("#end_auction");
 
             if (validateDate(end_auction.val())) {
@@ -157,12 +139,8 @@ angular.module('appControllers')
 
             if (end_auction) {
                 var data = {
-                    from_city: $scope.from_city,
-                    from_street: $scope.from_address.place.name,
-
-                    to_city: $scope.to_city,
-                    to_street: $scope.to_address.place.name,
-
+                    address_from: $scope.auction.address_from,
+                    address_to: $scope.auction.address_to,
                     freight_description: $scope.auction.freight_description,
                     freight_type: $scope.auction.freight_type,
                     freight_size: $scope.auction.freight_size,

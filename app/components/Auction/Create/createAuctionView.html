@@ -21,10 +21,10 @@
     </script>
     <form name="createAuctionForm" novalidate>
     <div class="form-group half">
-        <input class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.from"
+        <input class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.address_from"
           ng-class="{'input-error' : createAuctionForm.from.$invalid && (!createAuctionForm.from.$pristine || clicked)}"
           vs-google-autocomplete
-          ng-model="auction.from"
+          ng-model="auction.address_from"
           type="text"
           name="from"
           id="from"
@@ -41,10 +41,10 @@
       </div>
 
       <div class="form-group half">
-        <input class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.to"
+        <input class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.address_to"
           ng-class="{'input-error' : createAuctionForm.to.$invalid && (!createAuctionForm.to.$pristine || clicked)}"
           vs-google-autocomplete
-          ng-model="auction.to"
+          ng-model="auction.address_to"
           type="text"
           name="to"
           id="to"

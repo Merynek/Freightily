@@ -37,6 +37,7 @@
 		"ico" : "Identification number",
 		"dic" : "VAT",
 		"bank_account" : "Bank account",
+		"address" : "Address",
 		"address_city" : "City",
 		"address_street" : "Street",
 		"address_house_number" : "House number",

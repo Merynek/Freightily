@@ -1,8 +1,8 @@
 <div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10">
     <div class="auction-label col-xs-12">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.from.city}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.address_from}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.to.city}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{item.address_to}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.freight_type.label' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.price' | i18next}}</div>
@@ -16,23 +16,15 @@
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.from' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.city}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.from.street}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_from}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
         <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.to' | i18next}}</h2>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_city' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.city}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address_street' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.to.street}}</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_to}}</span></div>
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6">

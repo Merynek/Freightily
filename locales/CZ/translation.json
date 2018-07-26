@@ -37,6 +37,7 @@
 		"ico" : "IČO",
 		"dic" : "DIČ",
 		"bank_account" : "Bankovní účet",
+		"address" : "Adresa",
 		"address_city" : "Město",
 		"address_street" : "Ulice",
 		"address_house_number" : "Číslo popisné",
