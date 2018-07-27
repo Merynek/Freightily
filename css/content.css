@@ -162,6 +162,7 @@
     padding: 10px;
     margin: 15px 0;
     box-shadow: none;
+    z-index: 1;
 }
 .auction-item .auction-detail span{
     padding: 0;

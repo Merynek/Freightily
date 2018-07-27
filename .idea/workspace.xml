@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="-sender neuvidi nic ohledne prihazování">
+    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" afterPath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" afterPath="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config.js" afterPath="$PROJECT_DIR$/app/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/content.css" afterPath="$PROJECT_DIR$/css/content.css" />
     </list>
     <list id="fe6e6e3c-e0e1-4262-a344-b3c100a82256" name="autocomplete" comment="" />
     <ignored path="Freightily.iws" />
@@ -31,16 +31,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
               <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="translation.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/locales/EN/translation.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="168" column="49" lean-forward="false" selection-start-line="168" selection-start-column="49" selection-end-line="168" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -99,6 +89,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="content.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/content.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="160" column="14" lean-forward="false" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="auctionListView.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="627">
@@ -142,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>address_city</find>
       <find>.from</find>
       <find>.to</find>
       <find>from</find>
@@ -170,8 +169,9 @@
       <find>end</find>
       <find>ng-if=&quot;withBids &amp;&amp; !expired&quot;</find>
       <find>ng-if=</find>
-      <find>ng-if</find>
       <find>user</find>
+      <find>ng-if</find>
+      <find>.auction-detail</find>
     </findStrings>
     <replaceStrings>
       <replace>createAuctionForm</replace>
@@ -241,10 +241,10 @@
         <option value="$PROJECT_DIR$/locales/EN/translation.json" />
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionView.html" />
-        <option value="$PROJECT_DIR$/app/config.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/detailAuctionDirective.js" />
+        <option value="$PROJECT_DIR$/app/config.js" />
       </list>
     </option>
   </component>
@@ -1218,11 +1218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532635610542</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="-sender neuvidi nic ohledne prihazování">
+      <created>1532685467826</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1532685467826</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424186000" />
+    <option name="totallyTimeSpent" value="424349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1324,7 +1331,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sorting, paging" />
     <MESSAGE value="city + street + house_number, refactoring" />
     <MESSAGE value="odstraneni nepotrebnych vecí + adresa staci jen street a city" />
     <MESSAGE value="lokalizace chyb ze serveru, + loklizovane vsechny hlasky" />
@@ -1349,7 +1355,8 @@
     <MESSAGE value="-zobrazeni cele adresy,&#10;-pri registraci aukce se zadava cela adresa jako jedna vec" />
     <MESSAGE value="-zmena GeoAutocompleta funkce&#10;-lokalizace spatne zadanych addres&#10;-validace adresy" />
     <MESSAGE value="-favicona" />
-    <option name="LAST_COMMIT_MESSAGE" value="-favicona" />
+    <MESSAGE value="-sender neuvidi nic ohledne prihazování" />
+    <option name="LAST_COMMIT_MESSAGE" value="-sender neuvidi nic ohledne prihazování" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1555,14 +1562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/content.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Shipments/inProgress/inProgressShipmentsView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1718,14 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1746,6 +1737,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="116" column="10" lean-forward="true" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="160" column="14" lean-forward="false" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
           <folding />
         </state>
       </provider>
