@@ -8,7 +8,7 @@
                 <span ng-if="sorting">{{sorting}}</span>
                 <i class="glyphicon glyphicon-triangle-bottom"></i>
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'from', order: 'ASC'})">
                     {{'texts.sorting.from' | i18next}} ({{'texts.sorting.ASC' | i18next}})
                 </div>
