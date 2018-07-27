@@ -14,6 +14,15 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 $urlRouterProvider.otherwise("/404");
 
  $stateProvider
+		 .state("empty", {
+			 url: "/",
+			 template: "<ui-view>",
+			 controller: function($scope, title){
+			 },
+			 onEnter: function($state){
+				 $state.go("auction")
+			 }
+		 })
 		.state('login', {
 			url: "/login",
 			controller: 'loginController',
