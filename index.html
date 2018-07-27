@@ -110,9 +110,9 @@
 						<li><span ng-click="ENlng()">en</span></li>
 					</ul>
 				</div>
-				<div class="header-right">
-					<div class="user" ng-if="isLoggedUser()" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
-					<div class="logout" ng-if="isLoggedUser()" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
+				<div ng-if="isLoggedUser()" class="header-right">
+					<div class="user" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+					<div class="logout" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
 			</div>
 		</header>

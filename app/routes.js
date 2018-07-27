@@ -45,6 +45,9 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 			 url: "/my_profile",
 			 controller: 'userProfileController',
 			 templateUrl: "app/components/Account/Profile/userProfileView.html",
+			 data: {
+                 role: [1,2,3]
+			 },
 			 resolve: {
 				 userInfo: function(UserAbility){
 					 return UserAbility.getAccountInfo().then(function(res){
