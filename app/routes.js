@@ -11,26 +11,9 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 		defaultLoadingValue: ''
 	};  
 
-	$urlRouterProvider.otherwise("/404");
+$urlRouterProvider.otherwise("/404");
 
  $stateProvider
-		.state('home', {
-			url: "/",
-			controller: 'auctionListController',
-			templateUrl: "app/components/Auction/List/auctionListView.html",
-			data: {
-				role: [1,2,3]
-			},
-			resolve: {
-				AuctionList: function(Auction){
-					return Auction.getAuctionList("", "").then(function(res){
-						return res;
-					}).catch(function(){
-						return null;
-					})
-				}
-			}
-		})
 		.state('login', {
 			url: "/login",
 			controller: 'loginController',

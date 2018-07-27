@@ -14,11 +14,14 @@ angular.module('appControllers')
     $scope.order = $stateParams.order ? $stateParams.order : "ASC";
     $scope.page = $stateParams.page ? $stateParams.page : "1";
     $scope.sorting = getSortingText();
-    refreshingData();
+    if (!checkAuctionRunning) {
+       refreshingData();
+    }
 
     function refreshingData() {
+        checkAuctionRunning = true;
         var route = $state.current.name;
-        if (route === "auction" || route === "home") {
+        if (route === "auction") {
             Auction.getAuctionCache().then(function (data) {
 
                 for (var i = 0; i < data.length; i++) {
@@ -30,6 +33,8 @@ angular.module('appControllers')
             }).catch(function (error) {
                 // message(3, $filter('i18next')(getErrorKeyByCode(error)));
             });
+        } else {
+            checkAuctionRunning = false;
         }
     }
 

@@ -8,7 +8,7 @@
 angular.module('appControllers')
   .controller('loginController', ['$scope','User', '$filter', '$state', function($scope, User, $filter, $state){
     if(User.isLoggedIn){
-      $state.go('home');
+      $state.go('auction');
     }
 
     $scope.clicked = false;
@@ -23,7 +23,7 @@ angular.module('appControllers')
           if (User.isAdmin()) {
               $state.go('users');
           } else {
-              $state.go('home');
+              $state.go('auction');
           }
         }).catch(function(error){
             message(3, $filter('i18next')(getErrorKeyByCode(error)));

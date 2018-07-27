@@ -45,3 +45,5 @@ function isValueNumber(value) {
 
 	return $.isNumeric(val);
 }
+
+var checkAuctionRunning = false;

@@ -209,7 +209,7 @@ angular.module('appControllers')
 
                 Auction.create(data).then(function () {
                     message(1, $filter('i18next')('success.auction_created'));
-                    $state.go('home');
+                    $state.go('auction');
                 }).catch(function (error) {
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 })
