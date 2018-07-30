@@ -1,8 +1,8 @@
 <div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
     <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.address_from}}</span></div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.address_to}}</span></div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_to)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>

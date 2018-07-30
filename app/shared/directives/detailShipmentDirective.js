@@ -136,6 +136,9 @@ angular.module('appDirectives')
                 this.getFreightType = function (type) {
                     return $filter('i18next')('texts.auction.freight_type.'+type);
                 };
+                this.getCity = function (address) {
+                    return address.split(",")[0];
+                };
             }
         };
     });
