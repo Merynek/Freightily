@@ -387,6 +387,7 @@
 .shipment-photos .photo:hover{
     transform: scale(1.5);
     box-shadow: 0 0 5px #000;
+    cursor: pointer;
 }
 
 .shipment-photos .no-photo {

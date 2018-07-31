@@ -58,7 +58,7 @@
 
         <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.no_photos' | i18next}}</div>
-            <img ng-repeat="photo in showPhotos" src="{{photo}}" class="photo" />
+            <img ng-repeat="photo in showPhotos" src="{{photo}}" class="photo" ng-click="vm.openImage(photo)" />
         </div>
     </div>
     <div ng-if="!newShipment" class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -74,10 +74,5 @@
                 <div id="map-{{item.ID}}" class="map"></div>
             </div>
         </div>
-        <!-- Only for Android app-->
-        <!--<div class="my-button normal-button" ng-click="vm.checkCode(item.ID, '86F10E')"><span>Check Code</span></div>
-        <div class="my-button normal-button" ng-click="vm.postGPS(item.ID)"><span>Post GPS</span></div>
-        <input type="file" id="newPhotos" class="uploadFile" accept="image/*" eg-files="photos" has-files="hasFiles" multiple>
-        <input class="btn btn-primary" type="button" ng-click="vm.uploadPhoto(item.ID, photos)" value="upload">  -->
     </div>
 </div>

@@ -76,61 +76,8 @@ angular.module('appDirectives')
                     }
                 };
 
-                //for android client only
-                this.checkCode = function(ID, code){
-                    var data = {
-                        id_shipment: ID,
-                        code: code
-                    };
-                    UserAbility.checkCode(data).then(function(data){
-                    }).catch(function(error){
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                    })
-                };
-                 //for android client only
-                this.postGPS = function(ID){
-                    var data = {
-                        id_shipment: ID,
-                        route: "49.7103929,17.1867981"
-                    };
-                    UserAbility.postGPS(data).then(function(data){
-                    }).catch(function(error){
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                    })
-                };
-
-                //for android client only
-                //only for post photos, but never use on web client
-                this.uploadPhoto = function upload(id, photos)
-                {
-                    var formData = new FormData();
-                    formData.append("id_shipment", id);
-                    angular.forEach(photos, function (photo) {
-                        formData.append(photo.name, photo);
-                    });
-
-                    postPhotos(formData).then(function(){
-                        message(1, $filter('i18next')('Upload OK!'));
-                    }).catch(function(error){
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                    })
-                };
-
-                //only for post photos, but never use on web client
-                var postPhotos = function(formData){
-                    return $q(function(resolve, reject){
-                        $http({
-                            method: 'POST',
-                            transformRequest: angular.identity,
-                            data: formData,
-                            headers: { 'token': window.localStorage.getItem("TOKEN"), 'Content-Type': undefined},
-                            url: 'http://localhost:51246/api/shipment/photo'
-                        }).then(function(response) {
-                            resolve(response.data);
-                        }).catch(function(error){
-                            reject(error);
-                        })
-                    });
+                this.openImage = function(photo) {
+                  window.open(photo);
                 };
 
                 this.getFreightType = function (type) {
