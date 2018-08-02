@@ -191,7 +191,6 @@
 			"7": "Nesprávné heslo",
 			"8": "Uživatel nebyl nalezen",
 			"9": "Pouze transporter může mazat svoje řidiče",
-			"10": "Můžete mít na sobě pouze jednu jízdu",
 			"11": "Tato jízda není pod vaší firmou",
 			"12": "Tato jízda již skončila",
 			"13": "Je potřeba minimálně jedna fotka",
@@ -200,9 +199,6 @@
 			"16": "Kód pro tuto jízdu nesouhlasí",
 			"17": "Nemáte žádné fotky pro ukončení jízdy",
 			"18": "Nemáte žádné fotky pro tuto jízdu",
-			"19": "Tuto jízdu má jiný řidič",
-			"20": "Tato jízda musí být ve stavu in progress",
-			"21": "Sledování této jízdy nebylo nalezeno v databázi",
 			"22": "Nemáte právo, obraťte se na administratora",
 			"23": "Nemáte právo, obraťte se na administratora",
 			"24": "Heslo není správné",
@@ -211,7 +207,8 @@
 			"27": "Tento uživatel má ban",
 			"28": "Tento uživatel není schválený",
 			"29": "Tento uživatel je smazaný",
-			"30": "Tato jízda neexistuje"
+			"30": "Tato jízda neexistuje",
+			"31": "Tento řidič nemá žádné jízdy"
 		}
 	},
 	"warnings": {

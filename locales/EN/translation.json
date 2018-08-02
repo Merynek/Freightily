@@ -191,7 +191,6 @@
 			"7": "Passwords is not correct",
 			"8": "User not found",
 			"9": "Only transporter can delete drivers",
-			"10": "You can have only one shipment",
 			"11": "This shipment is not for your company",
 			"12": "This shipment is finished",
 			"13": "Minimal photos for shipment is 1",
@@ -200,9 +199,6 @@
 			"16": "Code for this shipment is wrong",
 			"17": "No photos at the end of shipment",
 			"18": "No photos for this shipment",
-			"19": "This shipment has another driver",
-			"20": "This shipment must be in progress",
-			"21": "Shipment route for this shipment not exist in database",
 			"22": "No rights, contact administrator",
 			"23": "No rights, contact administrator",
 			"24": "Password is incorrect",
@@ -211,7 +207,8 @@
 			"27": "This user is banned",
 			"28": "This user is not verified",
 			"29": "This user is deleted",
-			"30": "This shipment not found"
+			"30": "This shipment not found",
+			"31": "This driver don´t have any shipments in progress"
 		}
 	},
 	"warnings": {
