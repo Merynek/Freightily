@@ -25,9 +25,7 @@
 		"about": "About",
 		"contact": "Contact",
 		"main_page": "Main page",
-		"about_company": "About company",
 		"detail": "Detail",
-		"footer_text": "By BOXART studio -> not an option -> its my work!",
 		"transporter": "Transporter",
 		"sender": "Sender",
 		"confirmPassword": "Confirm password",
@@ -35,7 +33,6 @@
         "credit": "Credit",
         "share": "share",
 		"ico" : "Identification number",
-		"dic" : "VAT",
 		"bank_account" : "Bank account",
 		"address" : "Address",
 		"address_city" : "City",
@@ -62,7 +59,6 @@
 		"freight": "Freight",
 		"my_shipment": "My shipment",
 		"shipment_manage": "Shipment manage",
-		"auction_for_assign": "Auction for assign",
 		"about_freight": "About freight",
 		"more": "More",
 		"add_driver": "Add driver",
@@ -89,7 +85,6 @@
 			"about_driver": "About driver",
 			"driver_name": "Name",
 			"driver_surname": "Surname",
-			"driver_licence": "Driver licence",
 			"driver_phone_number": "Phone number",
 			"stopShipment": "Stop shipment",
 			"photos": "Photos",
@@ -98,8 +93,7 @@
 			"no_photos": "No photos",
 			"map": "Map",
 			"show_map": "Display map",
-			"hide_map": "Hide map",
-			"open_invoice": "Open invoice"
+			"hide_map": "Hide map"
 		},
 		"tab": {
 			"auction": "Auction",
