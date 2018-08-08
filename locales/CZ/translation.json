@@ -132,15 +132,14 @@
 			"freight_description": "Popis zásilky",
 			"freight_type": {
 				"label": "Typ zásilky",
-				"1": "Chemické kapaliny",
-				"2": "Sypké",
-				"3": "Pohonné hmoty a oleje",
-				"4": "Plyny ve speciálních zařízeních",
-				"5": "Zboží citlivé povahy",
-				"6": "Rychle se kazící zboží",
-				"7": "Potravinářské zboží a krmiva",
-				"8": "Umělecké předměty",
-				"9": "Nábytek"
+				"1": "Balík do 50 kg",
+				"2": "Balík nad 50 kg",
+				"3": "Atypický balík",
+				"4": "Eur paleta",
+				"5": "Atypická paleta",
+				"6": "Chemické látky, nebezpečné látky, hořlaviny",
+				"7": "Sypký materiál",
+				"8": "Jiné"
 			},
 			"freight_size": "Velikost zásilky (slovy)",
 			"freight_weight": "Váha zásilky v kg",
