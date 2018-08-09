@@ -56,7 +56,8 @@ function initMap(mapid, route) {
                 if (status === 'OK') {
                     directionsDisplay.setDirections(response);
                 } else {
-                    window.alert('Directions request failed due to ' + status);
+                    window.alert('Zobrazení mapy se nezdařilo.\nJe možné že data z mobilních zařízení ještě nebyla zpracována');
+                    console.log('Directions request failed due to ' + status);
                 }
                 });
   }
