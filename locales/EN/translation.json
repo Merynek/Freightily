@@ -113,6 +113,7 @@
             "users": "Users"
 		},
 		"auction": {
+			"info": "Use the Symptom to enter the address to ensure correctness. You can try the correctness of the address by viewing the map.",
 			"auction_list": "Auction",
 			"bids_auction": "Bids auction",
 			"created_auction": "Created auction",

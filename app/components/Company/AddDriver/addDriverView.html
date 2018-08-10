@@ -28,37 +28,6 @@
                 ng-class="{'input-error' : addUserForm.surname.$invalid && (!addUserForm.surname.$pristine || clicked)}"
                 required />
       </div>
-      <div class="form-group half">
-        <input type="text" name="address_city" class="form-control my-input" placeholder="{{'texts.address_city' | i18next}}" ng-model="employee.address_city"
-               ng-class="{'input-error' : addUserForm.address_city.$invalid && (!addUserForm.address_city.$pristine || clicked)}"
-               required />
-      </div>
-      <div class="form-group half">
-        <input type="text" name="address_street" class="form-control my-input" placeholder="{{'texts.address_street' | i18next}}" ng-model="employee.address_street"
-               ng-class="{'input-error' : addUserForm.address_street.$invalid && (!addUserForm.address_street.$pristine || clicked)}"
-               required />
-      </div>
-      <div class="form-group half">
-        <input type="text" name="address_house_number" class="form-control my-input" placeholder="{{'texts.address_house_number' | i18next}}" ng-model="employee.address_house_number"
-               ng-class="{'input-error' : addUserForm.address_house_number.$invalid && (!addUserForm.address_house_number.$pristine || clicked)}"
-               ng-class="{'input-error' : addUserForm.address_house_number.$invalid && (!addUserForm.address_house_number.$pristine || clicked)}"
-               required />
-      </div>
-      <div class="form-group half">
-        <input type="text" name="psc" id="psc" class="form-control my-input" placeholder="{{'texts.psc' | i18next}}" ng-model="employee.psc"
-               ng-class="{'input-error' : addUserForm.psc.$invalid && (!addUserForm.psc.$pristine || clicked)}"
-               required />
-      </div>
-      <div class="form-group half">
-        <input type="text" name="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="employee.phone_number"
-               ng-class="{'input-error' : addUserForm.phone_number.$invalid && (!addUserForm.phone_number.$pristine || clicked)}"
-               ng-minlength="9" required />
-      </div>
-      <div class="form-group half">
-        <input type="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="employee.email"
-               ng-class="{'input-error' : addUserForm.email.$invalid && (!addUserForm.email.$pristine || clicked)}"
-               required />
-      </div>
       <div class="form-group text-center">
         <div class="my-button important-button big-button" ng-click="AddUser()">{{'texts.registration_user' | i18next}}</div>
       </div>

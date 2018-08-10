@@ -18,9 +18,6 @@ angular.module('appControllers')
         if(!this.addUserForm.$valid) {
           return;
         }
-        if(!numberFieldsIsValid()) {
-            return;
-        }
         if($scope.employee.password !== $scope.employee.confirmPassword){
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
@@ -30,13 +27,7 @@ angular.module('appControllers')
             password: $scope.employee.password,
             confirmpassword: $scope.employee.confirmPassword,
             name: $scope.employee.name,
-            surname: $scope.employee.surname,
-            address_city: $scope.employee.address_city,
-            address_street: $scope.employee.address_street,
-            address_house_number: $scope.employee.address_house_number,
-            psc: $scope.employee.psc,
-            phone_number: $scope.employee.phone_number,
-            email: $scope.employee.email
+            surname: $scope.employee.surname
           };
 
             User.AddUser(data).then(function(){
@@ -52,18 +43,5 @@ angular.module('appControllers')
             });
         }
       };
-
-      function numberFieldsIsValid() {
-          var psc = $("#psc");
-
-          if (!isValueNumber($scope.employee.psc)) {
-              psc.addClass("input-error");
-              message(3, $filter('i18next')('errors.psc_is_number'));
-              return false;
-          }
-          psc.removeClass("input-error");
-
-          return true;
-      }
   }
 ]);

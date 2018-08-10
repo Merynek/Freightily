@@ -113,6 +113,7 @@
             "users": "Uživatelé"
 		},
 		"auction": {
+			"info": "Pro zadávání adresy používejte našeptávač, tím zajistíte její správnost. Správnost adresy si lze vyzkoušet zobrazením mapy.",
 			"auction_list": "Aukce",
 			"bids_auction": "Aukce na které přihazuji",
 			"created_auction": "Vytvořené aukce",
