@@ -21,12 +21,12 @@
                         </span>
                     </div>
                     <div class="vacation-actions">
-                        <span class="glyphicon glyphicon-plus" title="Add vacation" ng-click="addVacation(driver.ID)"></span>
-                        <span class="glyphicon glyphicon-minus" title="Delete vacation" ng-click="removeVacation(driver.ID)"></span>
+                        <span class="glyphicon glyphicon-plus" title="{{'texts.add_vacation' | i18next}}" ng-click="addVacation(driver.ID)"></span>
+                        <span class="glyphicon glyphicon-minus" title="{{'texts.delete_vacation' | i18next}}" ng-click="removeVacation(driver.ID)"></span>
                     </div>
                 </td>
                 <td>
-                    <span class="glyphicon glyphicon-remove delete" title="Delete driver" ng-click="deleteUser(driver.ID)"></span>
+                    <span class="glyphicon glyphicon-remove delete" title="{{'texts.delete_driver' | i18next}}" ng-click="deleteUser(driver.ID)"></span>
                 </td>
             </tr>
         </table>
