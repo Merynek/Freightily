@@ -17,7 +17,7 @@ $urlRouterProvider.otherwise("/404");
 		 .state("empty", {
 			 url: "/",
 			 template: "<ui-view>",
-			 controller: function($scope, title){
+			 controller: function($scope){
 			 },
 			 onEnter: function($state){
 				 $state.go("auction")
