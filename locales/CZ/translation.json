@@ -5,6 +5,7 @@
 		"name": "Jméno",
 		"surname": "Příjmení",
 		"password": "Heslo",
+        "actions": "Akce",
 		"date": "Datum",
 		"amount": "Příhoz",
 		"driver_licence": "Řidičský průkaz",

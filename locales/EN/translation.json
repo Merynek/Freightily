@@ -5,6 +5,7 @@
 		"name": "Name",
 		"surname": "Surname",
 		"password": "Password",
+        "actions": "Actions",
 		"date": "Date",
 		"amount": "Amount",
 		"driver_licence": "Driver licence",
