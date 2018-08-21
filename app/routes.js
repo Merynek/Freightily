@@ -57,7 +57,7 @@ $urlRouterProvider.otherwise("/404");
 		 })
 	 	// ADMIN
 		 .state('users', {
-			 url: "/users",
+			 url: "/admin/users",
 			 controller: 'usersController',
 			 templateUrl: "app/components/Admin/Users/usersView.html",
 			 data: {
@@ -72,6 +72,14 @@ $urlRouterProvider.otherwise("/404");
                      })
                  }
              }
+		 })
+		 .state('map', {
+			 url: "/admin/map",
+			 controller: 'mapController',
+			 templateUrl: "app/components/Admin/Map/mapView.html",
+			 data: {
+				 role: [99]
+			 }
 		 })
 	 	// COMPANY
 		.state('add_driver', {

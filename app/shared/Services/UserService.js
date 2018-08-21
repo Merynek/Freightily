@@ -301,6 +301,24 @@ angular.module('appServices')
             });
         };
 
+		/* GET to REST api => Get Drivers position */
+        User.GetDriversPosition = function(){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'admin/drivers_position'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* PUT to REST api => delete user */
         User.DeleteUser = function(id_user, del){
             startLoading();

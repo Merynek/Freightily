@@ -71,6 +71,7 @@
 		"delete_driver": "Smazat řidiče",
         "admin": "Administrace",
         "users": "Uživatelé",
+		"map": "Mapa",
 		"no_drivers": "Žádní řidiči",
 		"sorting": {
 			"label": "Řazení",
@@ -114,7 +115,8 @@
 			"finished": "Ukončené",
 			"created": "Vytvořené",
 			"create_auction": "Vytvořit Aukci",
-            "users": "Uživatelé"
+            "users": "Uživatelé",
+			"map": "Mapa řidičů"
 		},
 		"auction": {
 			"info": "Pro zadávání adresy používejte našeptávač, tím zajistíte její správnost. Správnost adresy si lze vyzkoušet zobrazením mapy.",

@@ -1,7 +1,7 @@
-function showRouteMap(route, id_shipment){
+function showRouteMap(route, id_shipment) {
     $("#map").css("display", "block");
     initMap('map-'+id_shipment, route);
-};
+}
 
 function initMap(mapid, route) {
     var directionsService = new google.maps.DirectionsService;
@@ -11,7 +11,7 @@ function initMap(mapid, route) {
       center: {lat: 41.85, lng: -87.65}
     });
     directionsDisplay.setMap(map);
-
+    directionsDisplay.setOptions({suppressMarkers: true});
     calculateAndDisplayRoute(directionsService, directionsDisplay, route);
 }
 

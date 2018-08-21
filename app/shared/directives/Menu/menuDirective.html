@@ -58,9 +58,12 @@
     </div>
 </span>
 <span ng-if="user.isAdmin()">
-    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'users'">
+    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'admin'">
         <div class="tab" ui-sref="users" ng-class="underRoute == 'users' ? 'active' : null">
             {{'texts.tab.users' | i18next}}
+        </div>
+        <div class="tab" ui-sref="map" ng-class="underRoute == 'map' ? 'active' : null">
+            {{'texts.tab.map' | i18next}}
         </div>
     </div>
 </span>

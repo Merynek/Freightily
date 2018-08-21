@@ -1,0 +1,26 @@
+<m param="{route}">
+    <style type="text/css">
+        #mapDrivers {
+            height: 450px;
+            width: 100%;
+            border: 1px solid #e6e6f1;
+        }
+    </style>
+    <h1>{{'texts.admin' | i18next}}</h1>
+    <div class="col-md-12">
+        <h2>{{'texts.map' | i18next}}</h2>
+        <div id="mapDrivers" class="map"></div>
+        <table ng-if="drivers.length" class="table table-striped table-responsive user-list">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+            <tr class="item" ng-repeat="driver in drivers">
+                <td>{{driver.driver.username}}</td>
+                <td>{{driver.driver.name}}</td>
+                <td>{{driver.driver.surname}}</td>
+            </tr>
+        </table>
+    </div>
+</m>

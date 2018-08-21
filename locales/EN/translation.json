@@ -71,6 +71,7 @@
 		"delete_driver": "Delete driver",
         "admin": "Admin",
         "users": "Users",
+		"map": "Map",
 		"no_drivers": "No drivers",
 		"sorting": {
 			"label": "Sorting",
@@ -114,7 +115,8 @@
 			"finished": "Finished",
 			"created": "Created",
 			"create_auction": "Create Auction",
-            "users": "Users"
+            "users": "Users",
+			"map": "Map of drivers"
 		},
 		"auction": {
 			"info": "Use the Symptom to enter the address to ensure correctness. You can try the correctness of the address by viewing the map.",
