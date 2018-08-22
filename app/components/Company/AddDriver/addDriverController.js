@@ -24,6 +24,7 @@ angular.module('appControllers')
         else {
           var data = {
             username: $scope.employee.username,
+            email: $scope.employee.email,
             password: $scope.employee.password,
             confirmpassword: $scope.employee.confirmPassword,
             name: $scope.employee.name,

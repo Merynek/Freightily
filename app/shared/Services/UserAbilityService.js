@@ -25,7 +25,7 @@ angular.module('appServices')
 						resolve(response.data);
 					}).catch(function(error){
 						endLoading();
-						reject();
+						reject(error);
 					})
 			});
 		};
@@ -52,41 +52,41 @@ angular.module('appServices')
 			});
 		};
 
-		/* GET to REST api => Get map of driver path*/
-		UserAbility.getMap = function(id_shipment){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN") },
-					url: url+'shipment/route/'+id_shipment
-				}).then(function(response) {
-					endLoading();
-					resolve(response.data);
-				}).catch(function(error){
-					endLoading();
-					reject(error);
-				})
-			});
-		};
+        /* DELETE to REST api => delete user */
+        UserAbility.deleteUser = function(id_user){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'DELETE',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: url+'company/user?id_user=' + id_user
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
 
-        /* POST to REST api => delete user */ 
-		UserAbility.deleteUser = function(id_user){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'DELETE',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/user?id_user=' + id_user
-					}).then(function(response) {
-						endLoading();
-						resolve(response.data);
-					}).catch(function(error){
-						endLoading();
-						reject(error);
-					})
-			});
-		};
+		/* GET to REST api => get currently driver position */
+        UserAbility.getDriverPosition = function(id_driver){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: url+'company/position/' + id_driver
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
 
 		/* GET to REST api => get info about user */
 		UserAbility.getAccountInfo = function(){
@@ -101,7 +101,7 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
@@ -162,44 +162,24 @@ angular.module('appServices')
             });
         };
 
-
-		/* POST to REST api => Check code*/
-		UserAbility.checkCode = function(data){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'shipment/code',
-					data: param(data)
-				}).then(function(response) {
-					endLoading();
-					resolve(response.data);
-				}).catch(function(error){
-					endLoading();
-					reject(error);
-				})
-			});
-		};
-
-		/* POST to REST api => Post gps data to server*/
-		UserAbility.postGPS = function(data){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'shipment/route',
-					data: param(data)
-				}).then(function(response) {
-					endLoading();
-					resolve(response.data);
-				}).catch(function(error){
-					endLoading();
-					reject(error);
-				})
-			});
-		};
+		/* POST to REST api => Assign shipments to driver */
+        UserAbility.assignShipments = function(data){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: url+'shipment/assign',
+                    data: param(data)
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
 
 		return UserAbility;
 

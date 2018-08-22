@@ -61,18 +61,4 @@
             <img ng-repeat="photo in showPhotos" src="{{photo}}" class="photo" ng-click="vm.openImage(photo)" />
         </div>
     </div>
-    <div ng-if="!newShipment" class="map-section auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.map' | i18next}}</h2>
-        <div class="map-container-{{item.ID}}">
-            <div class="text-center show-map">
-                <div class="my-button normal-button big-button" ng-click="vm.showMap(item.ID)">
-                    <span ng-show="!mapIsDisplayed">{{'texts.shipment.show_map' | i18next}}</span>
-                    <span ng-show="mapIsDisplayed">{{'texts.shipment.hide_map' | i18next}}</span>
-                </div>
-            </div>
-            <div class="map-wrap col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div id="map-{{item.ID}}" class="map"></div>
-            </div>
-        </div>
-    </div>
 </div>

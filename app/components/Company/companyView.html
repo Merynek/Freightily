@@ -7,12 +7,15 @@
                 <th>{{'texts.username' | i18next}}</th>
                 <th>{{'texts.name' | i18next}}</th>
                 <th>{{'texts.surname' | i18next}}</th>
+                <th>{{'texts.show_current_position' | i18next}}</th>
                 <th>{{'texts.actions' | i18next}}</th>
+                <th></th>
             </tr>
             <tr class="item" ng-repeat="driver in drivers">
                 <td>{{driver.username}}</td>
                 <td>{{driver.name}}</td>
                 <td>{{driver.surname}}</td>
+                <td><span class="glyphicon glyphicon-map-marker" ng-click="getDriverPosition(driver.ID)"></span></td>
                 <td>
                     <div class='input-group datePickerVacation'>
                         <input type='text' name="vacation" class="form-control my-input inputDatePicker-{{driver.ID}}" id="vacation" placeholder="{{'texts.vacation' | i18next}}"/>
@@ -35,3 +38,15 @@
         </div>
     </div>
 </m>
+
+<style type="text/css">
+    #currentlyPositionMap {
+        height: 450px;
+        width: 100%;
+        border: 1px solid #e6e6f1;
+    }
+</style>
+<script type="text/ng-template" id="modal_map">
+    <div id="currentlyPositionMap" class="map"></div>
+    <div> {{'texts.last_gps_update' | i18next}} - {{lastGpsUpdate}}</div>
+</script>

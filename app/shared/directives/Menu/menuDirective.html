@@ -28,9 +28,6 @@
         <div class="tab"ui-sref="new_shipments" ng-class="underRoute == 'new' ? 'active' : null" >
             {{'texts.tab.new' | i18next}}
         </div>
-        <div class="tab"ui-sref="in_progress_shipments" ng-class="underRoute == 'in_progress' ? 'active' : null" >
-            {{'texts.tab.in_progress' | i18next}}
-        </div>
         <div class="tab"ui-sref="finished_shipments" ng-class="underRoute == 'finished' ? 'active' : null" >
             {{'texts.tab.finished' | i18next}}
         </div>
@@ -41,6 +38,9 @@
         </div>
         <div class="tab" ui-sref="add_driver" ng-class="underRoute == 'employee' ? 'active' : null">
             {{'texts.tab.add_driver' | i18next}}
+        </div>
+        <div class="tab" ui-sref="assignment" ng-class="underRoute == 'assignment' ? 'active' : null">
+            {{'texts.tab.assignment' | i18next}}
         </div>
     </div>
 </span>

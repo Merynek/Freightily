@@ -107,6 +107,30 @@ $urlRouterProvider.otherwise("/404");
 				 }
 			 }
 		 })
+		 .state('assignment', {
+			 url: "/company/assignment",
+			 controller: 'assignmentController',
+			 templateUrl: "app/components/Company/Assignment/assignmentView.html",
+			 data: {
+				 role: [2]
+			 },
+			 resolve: {
+				 drivers: function(UserAbility){
+					 return UserAbility.getDrivers().then(function(res){
+						 return res;
+					 }).catch(function(){
+						 return null;
+					 })
+				 },
+                 shipments: function(Shipments){
+                     return Shipments.getAllNewShipments().then(function(res){
+                         return res;
+                     }).catch(function(){
+                         return null;
+                     })
+                 }
+			 }
+		 })
 	 	// AUCTION
 		.state('auction', {
 			url: "/auction?page?sort?order",
@@ -225,24 +249,6 @@ $urlRouterProvider.otherwise("/404");
 						 return null;
 					 })
 				 }
-			 }
-		 })
-		 .state('in_progress_shipments', {
-			 url: "/shipments/progress?page",
-			 controller: 'inProgressShipmentsController',
-			 templateUrl: "app/components/Shipments/inProgress/inProgressShipmentsView.html",
-			 data: {
-				 role: [2]
-			 },
-			 resolve: {
-                 inProgressShipments: function(Shipments, $stateParams){
-                     var page = $stateParams.page || 1;
-                     return Shipments.getInProgressShipments(page).then(function(res){
-                         return res;
-                     }).catch(function(){
-                         return null;
-                     })
-                 }
 			 }
 		 })
 		 .state('finished_shipments', {

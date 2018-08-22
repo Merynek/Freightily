@@ -8,13 +8,11 @@ angular.module('appDirectives')
             scope: {
                 shipmentItem: '=',
                 newShipment: '=',
-                inProgressShipment: '=',
                 finishedShipment: '='
             },
             controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state) {
                 $scope.item = this.shipmentItem.item;
                 $scope.newShipment = this.newShipment;
-                $scope.inProgressShipment = this.inProgressShipment;
                 $scope.finishedShipment = this.finishedShipment;
                 $scope.ID = this.shipmentItem.item.ID;
                 $scope.showPhotos = [];
@@ -24,9 +22,8 @@ angular.module('appDirectives')
                 $scope.toggleDetail = function () {
                     $scope.show = !$scope.show;
                 };
-                $scope.mapIsDisplayed = false;
 
-                this.stopShipment = function(ID){
+                this.stopShipment = function(ID) {
                     var data = {
                         id_shipment: ID
                     };
@@ -53,27 +50,6 @@ angular.module('appDirectives')
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         $scope.photoReady = false;
                     })
-                };
-
-                this.showMap = function(id_shipment) {
-                    var container = $(".map-container-"+id_shipment);
-
-                    if(!$scope.mapIsDisplayed) {
-                        UserAbility.getMap(id_shipment).then(function(data){
-                            // toggle button and map
-                            $scope.mapIsDisplayed = true;
-                            container.find(".map-wrap").show();
-                            // show route
-                            showRouteMap(data, id_shipment);
-                        }).catch(function(error){
-                            $scope.mapIsDisplayed = false;
-                            container.find(".map-wrap").hide();
-                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                        })
-                    } else {
-                        $scope.mapIsDisplayed = false;
-                        container.find(".map-wrap").hide();
-                    }
                 };
 
                 this.openImage = function(photo) {

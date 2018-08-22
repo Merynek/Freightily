@@ -64,6 +64,7 @@
 		"more": "Více",
 		"add_driver": "Přidat řidiče",
 		"company": "Moje firma",
+		"assignment": "Přiřazování",
 		"win_auction": "Vyhrané aukce",
 		"vacation": "Dovolená",
 		"add_vacation": "Přidat vybranou dovolenou",
@@ -71,8 +72,11 @@
 		"delete_driver": "Smazat řidiče",
         "admin": "Administrace",
         "users": "Uživatelé",
-		"map": "Mapa",
 		"no_drivers": "Žádní řidiči",
+		"count_of_not_assigned_shipments": "Počet nepřiřazených jízd",
+		"assignment_modal_title": "Přiřaďte řidiče na jízdy",
+		"last_gps_update": "Poslední aktualizace GPS byla před ",
+		"show_current_position": "Zobrazit poslední poziciřidiče",
 		"sorting": {
 			"label": "Řazení",
 			"from": "Odkud",
@@ -84,7 +88,6 @@
 		},
 		"shipment": {
 			"new": "Nové",
-			"in_progress": "Probíhající",
 			"finished": "Ukončené",
 			"no_shipments": "Žádné zásilky...",
 			"about_driver": "O řidiči",
@@ -95,15 +98,13 @@
 			"photos": "Fotografie",
 			"photos_before": "Před",
 			"photos_after": "Po",
-			"no_photos": "Žádné fotky",
-			"map": "Mapa jízdy",
-			"show_map": "Zobrazit mapu jízdy",
-			"hide_map": "Skrýt mapu jízdy"
+			"no_photos": "Žádné fotky"
 		},
 		"tab": {
 			"auction": "Aukce",
 			"overview": "Přehled",
 			"add_driver": "Přidat řidiče",
+			"assignment": "Přiřazování jízd",
 			"shipments": "Zásilky",
 			"company": "Firma",
 			"list": "Seznam",
@@ -111,7 +112,6 @@
 			"bids": "Přihazuji",
 			"win": "Vyhrané",
 			"new": "Nové",
-			"in_progress": "Probíhající",
 			"finished": "Ukončené",
 			"created": "Vytvořené",
 			"create_auction": "Vytvořit Aukci",
@@ -193,12 +193,9 @@
 			"9": "Pouze transporter může mazat svoje řidiče",
 			"11": "Tato jízda není pod vaší firmou",
 			"12": "Tato jízda již skončila",
-			"13": "Je potřeba minimálně jedna fotka",
 			"14": "Nemůžete začít odstartovanou jízdu",
-			"15": "Můžete ukončit jizdu pouze která právě jede",
-			"16": "Kód pro tuto jízdu nesouhlasí",
-			"17": "Nemáte žádné fotky pro ukončení jízdy",
-			"18": "Nemáte žádné fotky pro tuto jízdu",
+			"15": "Můžete ukončit pouze novou jizdu která není ukončená",
+			"18": "Nemáte žádné fotky",
 			"22": "Nemáte právo, obraťte se na administratora",
 			"23": "Nemáte právo, obraťte se na administratora",
 			"24": "Heslo není správné",
@@ -208,7 +205,12 @@
 			"28": "Tento uživatel není schválený",
 			"29": "Tento uživatel je smazaný",
 			"30": "Tato jízda neexistuje",
-			"31": "Tento řidič nemá žádné jízdy"
+			"31": "Tento řidič nemá žádné jízdy",
+			"32": "Tento řidič není ve vaší firmě",
+			"33": "Tento řidič nemá zatím uloženou žádnou pozici",
+			"34": "Některé jízdy mají jiní řidiči, prosím zkontrolujte si to.",
+			"35": "Tato jízda není přiřazená na tohoto řiriče",
+			"36": "Tento řidič nelze smazat, protože je na něho přiřazená nějaká jízda"
 		}
 	},
 	"warnings": {

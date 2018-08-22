@@ -64,6 +64,7 @@
 		"more": "More",
 		"add_driver": "Add driver",
 		"company": "My company",
+		"assignment": "Assignment",
 		"win_auction": "Win auction",
 		"vacation": "Vacation",
 		"add_vacation": "Add selected vacation",
@@ -71,8 +72,11 @@
 		"delete_driver": "Delete driver",
         "admin": "Admin",
         "users": "Users",
-		"map": "Map",
 		"no_drivers": "No drivers",
+		"count_of_not_assigned_shipments": "Count of unassigned shipments",
+		"assignment_modal_title": "Assign driver to shipments",
+		"last_gps_update": "Last gps update was before ",
+		"show_current_position": "Show current driver position",
 		"sorting": {
 			"label": "Sorting",
 			"from": "From",
@@ -84,7 +88,6 @@
 		},
 		"shipment": {
 			"new": "New",
-			"in_progress": "In progress",
 			"finished": "Finished",
 			"no_shipments": "No shipments...",
 			"about_driver": "About driver",
@@ -95,15 +98,13 @@
 			"photos": "Photos",
 			"photos_before": "Before",
 			"photos_after": "After",
-			"no_photos": "No photos",
-			"map": "Map",
-			"show_map": "Display map",
-			"hide_map": "Hide map"
+			"no_photos": "No photos"
 		},
 		"tab": {
 			"auction": "Auction",
 			"overview": "Overview",
 			"add_driver": "Add driver",
+			"assignment": "Shipments assignment",
 			"shipments": "Shipments",
 			"company": "Company",
 			"list": "List",
@@ -111,7 +112,6 @@
 			"bids": "Bids",
 			"win": "Win",
 			"new": "New",
-			"in_progress": "In Progress",
 			"finished": "Finished",
 			"created": "Created",
 			"create_auction": "Create Auction",
@@ -193,12 +193,9 @@
 			"9": "Only transporter can delete drivers",
 			"11": "This shipment is not for your company",
 			"12": "This shipment is finished",
-			"13": "Minimal photos for shipment is 1",
 			"14": "You cannot start shipment in progress",
-			"15": "You can finish only shipment in progress",
-			"16": "Code for this shipment is wrong",
-			"17": "No photos at the end of shipment",
-			"18": "No photos for this shipment",
+			"15": "You can finish only new shipment where is not done",
+			"18": "No photos",
 			"22": "No rights, contact administrator",
 			"23": "No rights, contact administrator",
 			"24": "Password is incorrect",
@@ -208,7 +205,12 @@
 			"28": "This user is not verified",
 			"29": "This user is deleted",
 			"30": "This shipment not found",
-			"31": "This driver don´t have any shipments in progress"
+			"31": "This driver don´t have any shipments in progress",
+			"32": "This driver is not in your company",
+			"33": "This driver have no set position yet",
+			"34": "Some of shipments has another driver, check this.",
+			"35": "This shipment is not assigned to this driver",
+			"36": "This driver cannot be deleted because some shipments is assigned to him"
 		}
 	},
 	"warnings": {

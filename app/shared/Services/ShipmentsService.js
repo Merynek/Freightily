@@ -12,32 +12,27 @@ angular.module('appServices')
 
 		var Shipments = {};
 
-		/* GET to REST api => Get in progress shipments */
-		Shipments.getInProgressShipments = function(page){
-            var parameters = "?";
-            parameters += "page=" + page;
-
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: CONFIG.server.url+'shipment/myShipments'+parameters
-				}).then(function(response) {
-					endLoading();
-					resolve(response.data);
-				}).catch(function(error){
-					endLoading();
-					reject();
-				})
-			});
-		};
+		/* GET to REST api => Get all new shipments */
+        Shipments.getAllNewShipments = function(){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'shipment/new_shipments'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
 
 		/* GET to REST api => Get finished shipments */
 		Shipments.getFinishedShipments = function(page){
-            var parameters = "?";
-            parameters += "past=1";
-            parameters += "&page=" + page;
+            var parameters = "?past=1&page=" + page;
 
 			startLoading();
 			return $q(function(resolve, reject){
@@ -50,16 +45,14 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};
 
 		/* GET to REST api => Get new shipments */
 		Shipments.getNewShipments = function(page){
-            var parameters = "?";
-            parameters += "notStarted=1";
-            parameters += "&page=" + page;
+            var parameters = "?page=" + page;
 
 			startLoading();
 			return $q(function(resolve, reject){
@@ -72,7 +65,7 @@ angular.module('appServices')
 					resolve(response.data);
 				}).catch(function(error){
 					endLoading();
-					reject();
+					reject(error);
 				})
 			});
 		};

@@ -26,6 +26,7 @@
     "jquery-simple-timer": "0.0.5",
     "lodash": "~4.6.1",
     "moment": "^2.15.1",
+    "ng-dialog": "^1.4.0",
     "ng-i18next": "~0.5.2",
     "protractor": "~3.2.2",
     "restangular": "~1.5.2"

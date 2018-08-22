@@ -1,0 +1,40 @@
+<m param="{route}">
+    <h1>{{'texts.company' | i18next}}</h1>
+    <div class="col-md-12">
+        <h2>{{'texts.drivers' | i18next}}</h2>
+        <h3>{{'texts.count_of_not_assigned_shipments' | i18next}}({{notAssignedShipments.length}})</h3>
+        <table ng-if="drivers.length" class="table table-striped table-responsive company-list">
+            <tr>
+                <th>{{'texts.username' | i18next}}</th>
+                <th>{{'texts.actions' | i18next}}</th>
+            </tr>
+            <tr class="item" ng-repeat="driver in drivers">
+                <td>{{driver.username}}</td>
+                <td><span class="glyphicon glyphicon-pushpin" ng-click="open(driver.ID)"></span></td>
+            </tr>
+        </table>
+        <div ng-if="!drivers.length" class="text-center text-info">
+            {{'texts.no_drivers' | i18next}}
+        </div>
+    </div>
+</m>
+
+<script type="text/ng-template" id="modal">
+    <p>{{'texts.assignment_modal_title' | i18next}}</p>
+    <table class="table table-striped table-responsive company-list">
+        <tr>
+            <th>{{'texts.auction.from' | i18next}}</th>
+            <th>{{'texts.auction.to' | i18next}}</th>
+            <th>{{'texts.auction.price' | i18next}}</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="shipment in shipmentsForDriver">
+            <td>{{shipment.address_from}}</td>
+            <td>{{shipment.address_to}}</td>
+            <td>{{shipment.price}}</td>
+            <td><input type="checkbox" ng-click="setAssignment(shipment.ID, $event)" ng-checked="shipment.driver !== 0"/></td>
+        </tr>
+    </table>
+    <button ng-click="ok()">OK</button>
+    <button ng-click="cancel()">Cancel</button>
+</script>
