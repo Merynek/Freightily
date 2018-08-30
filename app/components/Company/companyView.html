@@ -18,7 +18,7 @@
                 <td><span class="glyphicon glyphicon-map-marker" ng-click="getDriverPosition(driver.ID)"></span></td>
                 <td>
                     <div class='input-group datePickerVacation'>
-                        <input type='text' name="vacation" class="form-control my-input inputDatePicker-{{driver.ID}}" id="vacation" placeholder="{{'texts.vacation' | i18next}}"/>
+                        <input type='text' name="vacation" onkeydown="return false" class="form-control my-input inputDatePicker-{{driver.ID}}" id="vacation" placeholder="{{'texts.vacation' | i18next}}"/>
                         <span class="input-group-addon" ng-click="clickDatePicker(driver.ID)">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
