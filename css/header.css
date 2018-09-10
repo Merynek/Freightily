@@ -224,7 +224,7 @@ header{
     border-bottom: 1px solid #e6e6f1;
     margin-bottom: 15px;
 }
-.menu-tabs .tab{
+.tab{
     display: inline-block;
     vertical-align: bottom;
     min-width: 120px;
@@ -235,12 +235,11 @@ header{
     border: 1px solid #e6e6f1;
     background: #e6e6f1;
 }
-.menu-tabs .tab:hover{
-    padding: 12px 15px 10px 15px;
+.tab:hover{
     font-weight: bold;
     cursor: pointer;
 }
-.menu-tabs .tab.active{
+.tab.active{
     background: #ffffff;
     border-bottom: 1px solid #ffffff;
     padding: 12px 15px;
@@ -258,6 +257,7 @@ header{
     color: #2c2d51;
     background: #e6e6f1;
     border: 1px solid #e6e6f1;
+    width: 100%;
 }
 .menu-vertical .tab:hover {
     font-weight: bold;

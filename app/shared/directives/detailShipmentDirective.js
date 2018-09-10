@@ -11,6 +11,8 @@ angular.module('appDirectives')
                 finishedShipment: '='
             },
             controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state) {
+                var self = this;
+
                 $scope.item = this.shipmentItem.item;
                 $scope.newShipment = this.newShipment;
                 $scope.finishedShipment = this.finishedShipment;
@@ -19,8 +21,11 @@ angular.module('appDirectives')
                 $scope.photos = [];
                 $scope.photoReady = false;
                 $scope.show = false;
-                $scope.toggleDetail = function () {
+                $scope.toggleDetail = function (idShipment) {
                     $scope.show = !$scope.show;
+                    if ($scope.show && !$scope.newShipment && !$scope.showPhotos.length) {
+                        self.showPhoto(idShipment, true);
+                    }
                 };
 
                 this.stopShipment = function(ID) {
@@ -41,6 +46,7 @@ angular.module('appDirectives')
 
                 this.showPhoto = function(idShipment, firstPart) {
                     $scope.showPhotos = [];
+                    $scope.firstPart = firstPart;
                     UserAbility.getPhotos(idShipment, firstPart).then(function(data){
                         for(var i = 0; i < data.length; i++) {
                             $scope.showPhotos.push(data[i]);
@@ -49,7 +55,8 @@ angular.module('appDirectives')
                     }).catch(function(error){
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         $scope.photoReady = false;
-                    })
+                    });
+                    lightbox.init();
                 };
 
                 this.openImage = function(photo) {

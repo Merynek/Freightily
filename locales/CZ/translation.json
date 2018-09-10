@@ -79,6 +79,7 @@
 		"show_current_position": "Zobrazit poslední poziciřidiče",
 		"sorting": {
 			"label": "Řazení",
+			"location": "Lokace",
 			"from": "Odkud",
 			"to": "Kam",
 			"price": "Cena",
@@ -89,15 +90,16 @@
 		"shipment": {
 			"new": "Nové",
 			"finished": "Ukončené",
+			"detail": "Detail zásilky",
 			"no_shipments": "Žádné zásilky...",
 			"about_driver": "O řidiči",
 			"driver_name": "Jméno",
 			"driver_surname": "Příjmení",
 			"driver_phone_number": "Telefonní číslo",
-			"stopShipment": "Předčasně ukončit",
+			"stopShipment": "Ukončit jízdu",
 			"photos": "Fotografie",
-			"photos_before": "Před",
-			"photos_after": "Po",
+			"photos_before": "Vyzvednutí",
+			"photos_after": "Doručení",
 			"no_photos": "Žádné fotky"
 		},
 		"tab": {
@@ -125,7 +127,7 @@
 			"created_auction": "Vytvořené aukce",
 			"favourite_auction": "Oblíbené aukce",
 			"create_auction": "Vytvořit Aukci",
-			"detail": "DETAIL",
+			"detail": "Detail aukce",
 			"pickup_places": "Místa vyzvednutí nákladu",
 			"loaded": "Nahráno",
 			"from": "Odkud",

@@ -1,4 +1,4 @@
-<div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
+<div ng-click="toggleDetail()" class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
     <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
@@ -7,37 +7,31 @@
     <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
-        <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}}</span>
+        <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
     </div>
     <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
-
 </div>
-<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2 text-center">
-    <div ng-if="vm.withFavourite" class="favouriteButton col-xs-2" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-1 text-center">
+    <div ng-if="vm.withFavourite" class="favouriteButton" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
         <span class="glyphicon glyphicon glyphicon-star" ng-click="vm.favourite()"></span>
     </div>
-    <div class="my-button normal-button phone-big-button detail-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
+    <h2 class="main-header">{{'texts.auction.detail' | i18next}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div>
-        <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.from' | i18next}}</h2>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_from}}</span></div>
+        <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="detail-row">
+                <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
+                <span class="detail-content">{{item.address_from}}</span>
             </div>
-        </div>
-        <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.to' | i18next}}</h2>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_to}}</span></div>
+            <div class="detail-row">
+                <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
+                <span class="detail-content">{{item.address_to}}</span>
             </div>
-        </div>
-        <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>
+            <hr>
+            <!--<h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>-->
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
                 <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
@@ -47,16 +41,15 @@
                 <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
-                <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
-            </div>
-            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
                 <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_weight}}</span></div>
             </div>
+            <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
+                <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
+            </div>
         </div>
     </div>
-    <div class="clean-line-lg col-xs-0 col-sm-0 col-md-12 col-lg-12"></div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-6">
         <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.history_amount' | i18next}}</h2>
         <div ng-if="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -96,7 +89,7 @@
             <h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.want_bid' | i18next}}</h2>
             <div class="has-feedback has-feedback-left col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <input type="text" ng-model="bid" class="form-control my-input bid" placeholder="{{'texts.bid' | i18next}}"/>
-                <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+                <i class="glyphicon glyphicon-usd form-control-feedback"></i>
             </div>
             <span class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <timer countdown="item.secondsToEndAuction" max-time-unit="'day'" interval="1000">{{days}} D, {{hours}}:{{minutes}}:{{seconds}}</timer>

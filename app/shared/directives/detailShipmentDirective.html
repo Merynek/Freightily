@@ -1,34 +1,45 @@
-<div class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-10">
+<div ng-click="toggleDetail(item.ID)" class="auction-info">
     <div class="auction-label col-xs-12">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-3"><span>{{vm.getCity(item.address_from)}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_to)}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-3"><span>{{vm.getCity(item.address_to)}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.freight_type.label' | i18next}}</div>
     <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
     <div class="auction-label col-xs-12">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{item.price}}</span></div>
-</div>
-<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-2">
-    <div class="my-button normal-button" ng-click="toggleDetail()"><span>{{'texts.auction.detail' | i18next}}</span></div>
+    <div class="auction-cell col-xs-12 col-sm-2"><span>{{item.price}},-</span></div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
-    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.from' | i18next}}</h2>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_from}}</span></div>
+    <h2 class="main-header">{{'texts.shipment.detail' | i18next}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
+    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="detail-row">
+            <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
+            <span class="detail-content">{{item.address_from}}</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
+            <span class="detail-content">{{item.address_to}}</span>
+        </div>
+        <hr>
+        <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
+            <span>{{'texts.shipment.stopShipment' | i18next}}</span>
+        </div>
+        <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3>{{'texts.shipment.photos' | i18next}}</h3>
+            <div class="photo-buttons">
+                <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
+                <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
+            </div>
+
+            <div class="shipment-photos">
+                <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.no_photos' | i18next}}</div>
+                <a ng-repeat="photo in showPhotos" href="{{photo}}" data-lightbox="images-{{item.ID}}" class="photo" style="background-image: url('{{photo}}')"></a>
+            </div>
         </div>
     </div>
-    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.to' | i18next}}</h2>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-4 col-lg-4"><span>{{'texts.address' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-8 col-lg-8"><span>{{item.address_to}}</span></div>
-        </div>
-    </div>
-    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>
+
+    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <!--<h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>-->
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
@@ -38,27 +49,12 @@
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
-        </div>
-        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_weight}}</span></div>
         </div>
-    </div>
-    <div ng-if="!finishedShipment" class="my-button important-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
-        <span>{{'texts.shipment.stopShipment' | i18next}}</span>
-    </div>
-    <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2 class="red col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.shipment.photos' | i18next}}</h2>
-        <div class="photo-buttons">
-            <div class="my-button normal-button" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
-            <div class="my-button normal-button" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
-        </div>
-
-        <div class="shipment-photos col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.no_photos' | i18next}}</div>
-            <img ng-repeat="photo in showPhotos" src="{{photo}}" class="photo" ng-click="vm.openImage(photo)" />
+        <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
+            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
         </div>
     </div>
 </div>

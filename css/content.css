@@ -133,7 +133,6 @@
 }
 
 .auction-item{
-    margin-top: 15px;
     padding: 0;
     min-height: 50px;
     overflow: hidden;
@@ -144,36 +143,54 @@
     border-bottom: none;
 }
 .auction-item .auction-info{
-    height: 50px;
-    padding: 0;
+    height: 65px;
+    padding: 15px 0 0 0;
+}
+.auction-item:hover {
+    background: #f5f5f5;
+}
+.auction-item .auction-info:hover {
+    cursor: pointer;
 }
 .auction-item .auction-info.auction-expired .end-date{
     color: #e91d27;
     border: none;
 }
 .auction-item .auction-button-detail{
-    padding: 0;
-    text-align: right;
-}
-.auction-item .auction-button-detail .my-button{
-    margin-right: 0;
-    margin-bottom: 0;
+    padding: 15px 0 0 0;
+    text-align: center;
 }
 .auction-item .my-button.stop-shipment{
-    float: right;
+    display: block;
+    width: 180px;
+    margin: 0 auto;
 }
 .auction-item .auction-detail{
     padding: 10px;
-    margin: 15px 0;
+    margin: 15px 0 0 0;
     box-shadow: none;
     z-index: 1;
+}
+.auction-detail .main-header {
+    margin: 10px 0;
+}
+.auction-detail .cross {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    float:right;
+    cursor: pointer;
+    margin: -10px 0 0 -5px;
 }
 .auction-item .auction-detail span{
     padding: 0;
 }
 .auction-detail .auction-detail-item{
     padding: 10px 15px;
-    border-right: 1px solid #ffffff;
+    /*border-right: 1px solid #ffffff;*/
+}
+.auction-detail .auction-detail-item .spacer {
+    height: 12px;
 }
 .auction-detail .auction-detail-item .auction-result {
     text-align: left;
@@ -205,14 +222,14 @@
 }
 .auction-detail .auction-detail-item h2{
     font-family: MyFont, serif;
-    margin: 0;
-    padding: 0 0 15px 15px;
-    padding-left: 0px;
+    margin: 0 0 8px 0;
+    padding: 0;
 }
-.auction-detail .auction-detail-item .my-button{
-    margin-right: 0;
-    margin-bottom: 0;
-    width: 155px;
+.auction-detail .auction-detail-item h3{
+    margin: 0 0 8px 0;
+}
+.auction-detail .tab {
+    min-width: 100px;
 }
 .auction-detail .auction-detail-item .my-input{
     margin-bottom: 8px;
@@ -345,7 +362,7 @@
     margin-left:-5px;
     border-bottom-color: #e6e6f1;
     margin-top:-1px;
-    left: 92%;
+    left: calc(50% - 12px);
 }
 .popover>.arrow {
     border-width: 12px;
@@ -356,6 +373,14 @@
     top: 0;
     right: 15px;
     text-align: right;
+    z-index: 1;
+}
+.photo-buttons .tab {
+    padding: 9px 15px;
+}
+.photo-buttons .tab.active {
+    padding: 10px 15px;
+    border-bottom-color: #ffffff;
 }
 
 .photo-buttons .my-button{
@@ -371,15 +396,14 @@
 .shipment-photos .photo{
     display: inline-block;
     background-size: cover;
-    width: 150px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     margin: 8px;
-    border: 1px solid #e6e6f1;
+    background: #e6e6f1 no-repeat center;
+    background-size: contain;
 }
 
 .shipment-photos .photo:hover{
-    transform: scale(1.5);
-    box-shadow: 0 0 5px #000;
     cursor: pointer;
 }
 
@@ -446,7 +470,7 @@
 @media (max-width: 900px) {
     .no-padding{
         padding-left: 5px;
-        padding-right: 5px; 
+        padding-right: 5px;
     }
 }
 
