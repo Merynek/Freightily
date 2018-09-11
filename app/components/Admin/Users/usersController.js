@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state',
-    function($scope, users, User, $filter, $state) {
+    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Shipments',
+    function($scope, users, User, $filter, $state, Shipments) {
         $scope.users = users;
         $scope.route = "admin|users";
 
@@ -62,6 +62,14 @@ angular.module('appControllers')
                         reload: true
                     });
                 }, 50);
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            })
+        };
+
+        $scope.AddShipment = function(id_transporter) {
+            Shipments.NewShipmentFromAdmin(id_transporter).then(function() {
+                message(1, $filter('i18next')('success.shipment_added'));
             }).catch(function(error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })

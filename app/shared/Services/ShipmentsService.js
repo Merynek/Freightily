@@ -70,6 +70,28 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => New shipment from admin */
+        Shipments.NewShipmentFromAdmin = function(id_transporter){
+            var parameters = "?";
+
+            startLoading();
+            parameters += "id_transporter=" + id_transporter;
+
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'admin/new_shipment'+parameters
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		return Shipments;
 
 	}]

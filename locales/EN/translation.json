@@ -225,6 +225,7 @@
         "ban_user": "Ban state was changed",
         "delete_user": "Delete state was changed",
         "verify_user": "Verify state was changed",
+		"shipment_added": "New shipment added and assign to transporter",
 		"resend_password": "Password was send to your email",
 		"change_password": "Password was changed",
 		"auction_created": "Auction was successfully created",
