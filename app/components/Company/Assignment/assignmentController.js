@@ -36,7 +36,7 @@ angular.module('appControllers')
                     scope: $scope,
                     closeByDocument: false,
                     showClose: false,
-                    closeByEscape: false,
+                    closeByEscape: true,
                     controller: ['$scope', function($scope) {
                         // controller logic
                         $scope.ok = function() {
