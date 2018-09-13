@@ -75,8 +75,18 @@
 		"no_drivers": "No drivers",
 		"count_of_not_assigned_shipments": "Count of unassigned shipments",
 		"assignment_modal_title": "Assign driver to shipments",
-		"last_gps_update": "Last gps update was before ",
+		"last_gps_update": "Last gps update",
 		"show_current_position": "Show current driver position",
+		"user": {
+			"detail": "User detail",
+			"vacation": "Vacation",
+			"delete": "Delete user",
+			"select_date": "Pick a date",
+			"my_shipments": "Assigned/Free shipments count",
+			"assign": "Assigment of shipments",
+			"assign_button": "(Un)assign shipments",
+			"is_on_vac": "State"
+		},
 		"sorting": {
 			"label": "Sorting",
 			"from": "From",

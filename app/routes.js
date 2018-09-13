@@ -1,7 +1,7 @@
 angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $locationProvider, $i18nextProvider) {
 
-    
-  // translations 
+
+  // translations
 	$i18nextProvider.options = {
 		lng: 'CZ',
 		useCookie: false,
@@ -9,7 +9,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 		fallbackLng: 'dev',
 		resGetPath: '../locales/CZ/translation.json',
 		defaultLoadingValue: ''
-	};  
+	};
 
 $urlRouterProvider.otherwise("/404");
 
@@ -105,30 +105,6 @@ $urlRouterProvider.otherwise("/404");
 						 return null;
 					 })
 				 }
-			 }
-		 })
-		 .state('assignment', {
-			 url: "/company/assignment",
-			 controller: 'assignmentController',
-			 templateUrl: "app/components/Company/Assignment/assignmentView.html",
-			 data: {
-				 role: [2]
-			 },
-			 resolve: {
-				 drivers: function(UserAbility){
-					 return UserAbility.getDrivers().then(function(res){
-						 return res;
-					 }).catch(function(){
-						 return null;
-					 })
-				 },
-                 shipments: function(Shipments){
-                     return Shipments.getAllNewShipments().then(function(res){
-                         return res;
-                     }).catch(function(){
-                         return null;
-                     })
-                 }
 			 }
 		 })
 	 	// AUCTION
@@ -272,10 +248,10 @@ $urlRouterProvider.otherwise("/404");
 		// ERROR
 		.state('404', {
 			url: '/404',
-			templateUrl: '/404.html', 
+			templateUrl: '/404.html',
 			controller: function($scope){}
 		});
-		
+
 
     $locationProvider.html5Mode(true);
 });

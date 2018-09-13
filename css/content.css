@@ -16,6 +16,8 @@
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     width: 800px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 /*auction*/
@@ -182,9 +184,6 @@
     cursor: pointer;
     margin: -10px 0 0 -5px;
 }
-.auction-item .auction-detail span{
-    padding: 0;
-}
 .auction-detail .auction-detail-item{
     padding: 10px 15px;
     /*border-right: 1px solid #ffffff;*/
@@ -231,9 +230,6 @@
 .auction-detail .tab {
     min-width: 100px;
 }
-.auction-detail .auction-detail-item .my-input{
-    margin-bottom: 8px;
-}
 .auction-detail .auction-detail-item .bid{
     margin-bottom: 0;
 }
@@ -258,6 +254,18 @@
 }
 .auction-detail .history-list div{
     padding: 5px;
+}
+.auction-detail .map {
+    margin: 10px 0;
+    height: 300px;
+    border: 1px solid #ffffff;
+}
+.auction-detail .input-group-addon {
+    background: #ffffff;
+    cursor: pointer;
+}
+.auction-detail .assign-button {
+    margin-top: 12px;
 }
 .auction-bid > div {
     padding: 0;

@@ -17,18 +17,18 @@
 }
 
 .datePickerVacation {
-    width: 75%;
-    display: inline-table;
+    width: 100%;
+    display: table;
 }
 
 .date-vacation {
-    background: red;
+    background: #e6e6f1;
+    font-weight: bold;
+    color: red;
 }
 
 .vacation-actions {
-    display: inline-block;
-    position: absolute;
-    padding-left: 25px;
+    text-align: center;
     padding-top: 10px;
 }
 .vacation-actions span{
@@ -37,7 +37,7 @@
 }
 
 .has-feedback-left .form-control-feedback {
-    left: 0; 
+    left: 0;
 }
 .form-horizontal .has-feedback-left .form-control-feedback {
     left: 12px; /* @grid-gutter-width / 2 */
@@ -112,6 +112,9 @@
     width: 40px;
     padding: 0;
     margin: 10px 0 0 0;
+}
+.my-button .glyphicon {
+    color: #aaaaaa;
 }
 .navigation-text-input {
     font-weight: bold;
