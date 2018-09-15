@@ -17,8 +17,10 @@
 }
 
 .datePickerVacation {
-    width: 100%;
-    display: table;
+    display: inline-block;
+    background: #ffffff;
+    vertical-align: top;
+    border-radius: 3px;
 }
 
 .date-vacation {
@@ -28,12 +30,17 @@
 }
 
 .vacation-actions {
+    display: inline-grid;
+    vertical-align: top;
     text-align: center;
-    padding-top: 10px;
+    padding-left: 14px;
+}
+.vacation-actions .my-button {
+    margin: 10px 0;
+    cursor: pointer;
 }
 .vacation-actions span{
-    cursor: pointer;
-    padding-right: 10px;
+    padding-right: 7px;
 }
 
 .has-feedback-left .form-control-feedback {
@@ -107,11 +114,17 @@
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 15px;
+    max-width: 100%;
 }
 .my-button.navigation {
     width: 40px;
     padding: 0;
     margin: 10px 0 0 0;
+    cursor: pointer;
+}
+.my-button.navigation[disabled] {
+    opacity: 0.4;
+    cursor: default;
 }
 .my-button .glyphicon {
     color: #aaaaaa;

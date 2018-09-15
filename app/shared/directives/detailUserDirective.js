@@ -32,6 +32,7 @@ angular.module('appDirectives')
                     $scope.show = !$scope.show;
                     if ($scope.show) {
                         $scope.getDriverPosition($scope.driver.ID);
+                        $scope.clickDatePicker($scope.driver.ID);
                     }
                 };
 
@@ -98,18 +99,19 @@ angular.module('appDirectives')
                                 return {classes: 'highlighted-cal-dates', tooltip: 'Free'};
                             }
                         },
-                        format: "dd.mm.yyyy",
-                        weekStart: 1
-                    });
+                        weekStart: 1,
+                        todayHighlight: true,
+                        language: "cs-CZ"
+                    })
                     datePicker.datepicker('show');
                 };
 
                 $scope.addVacation = function(id){
-                    var dateTime = $(".inputDatePicker-"+id).val();
+                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate");
                     if (dateTime) {
                         var data = {
                             id_user: id,
-                            date: dateTime
+                            date: dateTime.getMonth()+1 + "/" + dateTime.getDate() + "/" + dateTime.getFullYear()
                         };
 
                         User.SetVacation(data).then(function() {
@@ -127,11 +129,11 @@ angular.module('appDirectives')
                 };
 
                 $scope.removeVacation = function(id){
-                    var dateTime = $(".inputDatePicker-"+id).val();
+                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate");
 
                     if (dateTime) {
 
-                        User.DeleteVacation(id, dateTime).then(function() {
+                        User.DeleteVacation(id, dateTime.getMonth()+1 + "/" + dateTime.getDate() + "/" + dateTime.getFullYear()).then(function() {
                             message(1, $filter('i18next')('success.delete_vacation'));
                             // refresh data
                             setTimeout(function() {

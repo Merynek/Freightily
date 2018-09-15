@@ -44,11 +44,13 @@
         </div>
         <div class="detail-row">
             <div class="detail-content">
-                <div class='input-group datePickerVacation'>
-                    <input type='text' name="vacation" onkeydown="return false" class="form-control my-input inputDatePicker-{{driver.ID}}" id="vacation" placeholder="{{'texts.user.select_date' | i18next}}"/>
-                    <span class="input-group-addon" ng-click="clickDatePicker(driver.ID)">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                <!--<div class='input-group datePickerVacation'>-->
+                    <!--<input type='text' name="vacation" onkeydown="return false" class="form-control my-input" id="vacation" placeholder="{{'texts.user.select_date' | i18next}}"/>-->
+                    <!--<span class="input-group-addon" ng-click="clickDatePicker(driver.ID)">-->
+                            <!--<span class="glyphicon glyphicon-calendar"></span>-->
+                        <!--</span>-->
+                <!--</div>-->
+                <div class="inputDatePicker-{{driver.ID}} datePickerVacation">
                 </div>
                 <div class="vacation-actions">
                     <div class="my-button normal-button" ng-click="addVacation(driver.ID)">
