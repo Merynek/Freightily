@@ -53,10 +53,10 @@
                 <div class="inputDatePicker-{{driver.ID}} datePickerVacation">
                 </div>
                 <div class="vacation-actions">
-                    <div class="my-button normal-button" ng-click="addVacation(driver.ID)">
+                    <div ng-if="isVac" class="my-button normal-button" ng-click="addVacation(driver.ID)">
                         <span class="glyphicon glyphicon-plus"></span> {{'texts.add_vacation' | i18next}}
                     </div>
-                    <div class="my-button normal-button" ng-click="removeVacation(driver.ID)">
+                    <div ng-if="!isVac" class="my-button normal-button" ng-click="removeVacation(driver.ID)">
                         <span class="glyphicon glyphicon-minus"></span> {{'texts.delete_vacation' | i18next}}
                     </div>
                 </div>

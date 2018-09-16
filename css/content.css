@@ -15,9 +15,37 @@
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+    position: relative;
     width: 800px;
     height: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+.ngdialog-content .modal-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.ngdialog-content .modal-header h2 {
+    display: inline;
+    border: none;
+}
+
+.ngdialog-content .modal-body {
+    position: absolute;
+    top: 50px;
+    bottom: 72px;
+    width: 100%;
     overflow-y: auto;
+}
+
+.ngdialog-content .modal-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
 }
 
 /*auction*/

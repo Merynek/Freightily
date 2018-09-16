@@ -26,6 +26,7 @@ angular.module('appDirectives')
                 $scope.shipmentsForDriver = [];
                 $scope.assignmentsIds = [];
                 $scope.currentDriver = 0;
+                $scope.isVac = true;
 
                 $scope.show = false;
                 $scope.toggleDetail = function () {
@@ -88,12 +89,13 @@ angular.module('appDirectives')
                     var datePicker = $('.inputDatePicker-'+id),
                         vacation = getDriver(id).vacation;
 
+                    datePicker.on('changeDate', function() {
+                        $scope.isVac = isVacationDate(datePicker.datepicker("getDate"), vacation);
+                    });
+
                     datePicker.datepicker({
                         beforeShowDay: function (date) {
-                            var calender_date = date.getFullYear()+'/'+('0'+(date.getMonth()+1)).slice(-2)+'/'+('0'+date.getDate()).slice(-2),
-                                search_index = $.inArray(calender_date, vacation);
-
-                            if (search_index > -1) {
+                            if (isVacationDate(date, vacation)) {
                                 return {classes: 'date-vacation', tooltip: 'Vacation'};
                             }else {
                                 return {classes: 'highlighted-cal-dates', tooltip: 'Free'};
@@ -102,7 +104,7 @@ angular.module('appDirectives')
                         weekStart: 1,
                         todayHighlight: true,
                         language: "cs-CZ"
-                    })
+                    });
                     datePicker.datepicker('show');
                 };
 
@@ -208,6 +210,13 @@ angular.module('appDirectives')
                         })
                     }
                 };
+
+                function isVacationDate(date, vacation) {
+                    var calender_date = date.getFullYear()+'/'+('0'+(date.getMonth()+1)).slice(-2)+'/'+('0'+date.getDate()).slice(-2),
+                        search_index = $.inArray(calender_date, vacation);
+
+                    return search_index > -1;
+                }
 
                 function getDriver(id) {
                     for (var i = 0; i < $scope.drivers.length; i++) {

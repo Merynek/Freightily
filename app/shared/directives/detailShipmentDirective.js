@@ -52,8 +52,7 @@ angular.module('appDirectives')
                             $scope.showPhotos.push(data[i]);
                         }
                         $scope.photoReady = $scope.showPhotos.length > 0;
-                    }).catch(function(error){
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                    }).catch(function(){
                         $scope.photoReady = false;
                     });
                     lightbox.init();
