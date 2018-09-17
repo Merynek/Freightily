@@ -33,7 +33,7 @@ angular.module('appDirectives')
                     $scope.show = !$scope.show;
                     if ($scope.show) {
                         $scope.getDriverPosition($scope.driver.ID);
-                        $scope.clickDatePicker($scope.driver.ID);
+                        $scope.showDatePicker($scope.driver.ID);
                     }
                 };
 
@@ -85,12 +85,13 @@ angular.module('appDirectives')
                     })
                 };
 
-                $scope.clickDatePicker = function(id) {
+                $scope.showDatePicker = function(id) {
                     var datePicker = $('.inputDatePicker-'+id),
                         vacation = getDriver(id).vacation;
 
                     datePicker.on('changeDate', function() {
                         $scope.isVac = isVacationDate(datePicker.datepicker("getDate"), vacation);
+                        $scope.$digest();
                     });
 
                     datePicker.datepicker({
@@ -106,6 +107,7 @@ angular.module('appDirectives')
                         language: "cs-CZ"
                     });
                     datePicker.datepicker('show');
+                    $scope.isVac = isVacationDate(new Date(), vacation);
                 };
 
                 $scope.addVacation = function(id){

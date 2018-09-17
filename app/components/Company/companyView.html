@@ -12,7 +12,6 @@
                 </div>
             </div>
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div ng-if="!drivers.length" class="no-auction">{{'texts.auction.no_auction' | i18next}}</div>
                 <div class="auction-item" ng-repeat="driver in drivers">
                     <detail-user driver="{driver}"></detail-user>
                 </div>
