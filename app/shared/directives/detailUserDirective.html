@@ -9,7 +9,9 @@
     </div>
     <div class="auction-label col-xs-6">{{'texts.user.is_on_vac' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
-        má/nemá dovolenou
+        <div class="my-button normal-button assign-button" ng-click="assignDriver(driver.ID)">
+            {{'texts.user.assign_button' | i18next}}
+        </div>
     </div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -25,20 +27,6 @@
         </div>
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
-        <div class="detail-row">
-            <div class="detail-label"><span class="glyphicon glyphicon-list-alt"></span> {{'texts.user.assign' | i18next}}</div>
-        </div>
-        <div class="detail-row">
-            <div class="detail-content">
-                {{'texts.user.my_shipments' | i18next}}: <b>{{driverShipments.length}}</b> / {{notAssignedShipments.length}}
-            </div>
-            <div class="detail-content text-center">
-                <div class="my-button normal-button assign-button" ng-click="assignDriver(driver.ID)">
-                    {{'texts.user.assign_button' | i18next}}
-                </div>
-            </div>
-        </div>
         <div class="detail-row">
             <div class="detail-label">{{'texts.user.vacation' | i18next}}</div>
         </div>

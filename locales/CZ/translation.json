@@ -85,7 +85,7 @@
 			"select_date": "Vyberte datum",
 			"my_shipments": "Počet přiřazených/volných jízd",
 			"assign": "Přiřazování jízd",
-			"assign_button": "Přiřadit / Odebrat jízdy",
+			"assign_button": "Přiřazení",
 			"is_on_vac": "Stav"
 		},
 		"sorting": {

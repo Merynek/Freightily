@@ -85,7 +85,7 @@
 			"select_date": "Pick a date",
 			"my_shipments": "Assigned/Free shipments count",
 			"assign": "Assigment of shipments",
-			"assign_button": "(Un)assign shipments",
+			"assign_button": "Assignments",
 			"is_on_vac": "State"
 		},
 		"sorting": {
