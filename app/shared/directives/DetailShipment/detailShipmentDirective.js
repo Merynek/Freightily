@@ -1,7 +1,7 @@
 angular.module('appDirectives')
     .directive("detailShipment", function () {
         return {
-            templateUrl: 'app/shared/directives/detailShipmentDirective.html',
+            templateUrl: 'app/shared/directives/DetailShipment/detailShipmentDirective.html',
             restrict: "E",
             bindToController: true,
             controllerAs: 'vm',

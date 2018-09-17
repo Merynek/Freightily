@@ -1,7 +1,7 @@
 angular.module('appDirectives')
     .directive("detailUser", function () {
         return {
-            templateUrl: 'app/shared/directives/detailUserDirective.html',
+            templateUrl: 'app/shared/directives/DetailUser/detailUserDirective.html',
             restrict: "E",
             bindToController: true,
             controllerAs: 'vm',
@@ -111,21 +111,26 @@ angular.module('appDirectives')
                 };
 
                 $scope.addVacation = function(id){
-                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate");
+                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),
+                        month = dateTime.getMonth() + 1,
+                        formattedMonth = month.toString().length > 1 ? month : "0" + month,
+                        day = dateTime.getDate(),
+                        formattedDay = day.toString().length > 1 ? day : "0" + day,
+                        newDate;
+
                     if (dateTime) {
                         var data = {
                             id_user: id,
                             date: dateTime.getMonth()+1 + "/" + dateTime.getDate() + "/" + dateTime.getFullYear()
                         };
+                        newDate = dateTime.getFullYear() + "/" + formattedMonth + "/" + formattedDay;
+                        getDriver(id).vacation.push(newDate);
 
                         User.SetVacation(data).then(function() {
                             message(1, $filter('i18next')('success.set_vacation'));
                             // refresh data
-                            setTimeout(function() {
-                                $state.transitionTo($state.current, {}, {
-                                    reload: true
-                                });
-                            }, 50);
+                            $('.inputDatePicker-'+id).datepicker("destroy");
+                            $scope.showDatePicker(id);
                         }).catch(function(error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });
@@ -133,18 +138,22 @@ angular.module('appDirectives')
                 };
 
                 $scope.removeVacation = function(id){
-                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate");
+                    var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),
+                        month = dateTime.getMonth() + 1,
+                        formattedMonth = month.toString().length > 1 ? month : "0" + month,
+                        day = dateTime.getDate(),
+                        formattedDay = day.toString().length > 1 ? day : "0" + day,
+                        newDate;
 
                     if (dateTime) {
+                        newDate = dateTime.getFullYear() + "/" + formattedMonth + "/" + formattedDay;
+                        findAndDelete(newDate, getDriver(id).vacation);
 
                         User.DeleteVacation(id, dateTime.getMonth()+1 + "/" + dateTime.getDate() + "/" + dateTime.getFullYear()).then(function() {
                             message(1, $filter('i18next')('success.delete_vacation'));
                             // refresh data
-                            setTimeout(function() {
-                                $state.transitionTo($state.current, {}, {
-                                    reload: true
-                                });
-                            }, 50);
+                            $('.inputDatePicker-'+id).datepicker("destroy");
+                            $scope.showDatePicker(id);
                         }).catch(function(error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });
@@ -212,6 +221,13 @@ angular.module('appDirectives')
                         })
                     }
                 };
+
+                function findAndDelete(date, vacation) {
+                    var index = vacation.indexOf(date);
+                    if (index !== -1) {
+                        vacation.splice(index, 1);
+                    }
+                }
 
                 function isVacationDate(date, vacation) {
                     var calender_date = date.getFullYear()+'/'+('0'+(date.getMonth()+1)).slice(-2)+'/'+('0'+date.getDate()).slice(-2),
