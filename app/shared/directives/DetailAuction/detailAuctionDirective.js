@@ -14,6 +14,7 @@ angular.module('appDirectives')
                 $scope.item = this.auctionItem.item;
                 $scope.expired = this.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;
+                $scope.userIsBidder = false;
                 $scope.ID = this.auctionItem.item.ID;
                 var end_auction = $scope.item.end_auction.split(" ");
                 end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
@@ -26,10 +27,17 @@ angular.module('appDirectives')
                     $scope.withBids = false;
                 }
 
+                var afterHistoryLoad = function (history) {
+                    var filtered = history.filter(function (item) {
+                        return item.id_user === User.ID;
+                    });
 
-                Auction.getAuctionHistory($scope.item.ID).then(function (history) {
-                    $scope.history = history;
-                }).catch(function (error) {
+                    $scope.history = history.reverse();
+                    $scope.userIsBidder = filtered.length > 0;
+                };
+
+
+                Auction.getAuctionHistory($scope.item.ID).then(afterHistoryLoad).catch(function (error) {
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 });
 
@@ -101,9 +109,7 @@ angular.module('appDirectives')
                     }).catch(function (error) {
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
-                    Auction.getAuctionHistory($scope.item.ID).then(function (history) {
-                        $scope.history = history;
-                    }).catch(function (error) {
+                    Auction.getAuctionHistory($scope.item.ID).then(afterHistoryLoad).catch(function (error) {
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
                 }

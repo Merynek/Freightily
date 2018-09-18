@@ -160,7 +160,8 @@ angular.module('appDirectives')
                     }
                 };
 
-                $scope.assignDriver = function (id_driver) {
+                $scope.assignDriver = function (id_driver, event) {
+                    event.stopPropagation();
                     $scope.currentDriver = id_driver;
                     $scope.shipmentsForDriver = $scope.allShipments.filter(function(shipment) {
                         return shipment.driver === 0 || shipment.driver === id_driver;

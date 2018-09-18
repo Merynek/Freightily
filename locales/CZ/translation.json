@@ -16,6 +16,7 @@
 		"auction_complete": "Aukce již skončila.",
 		"auction_win": "Váše nabídka je nejnižší.",
 		"auction_lose": "Vaše nabídka nebyla nejnižší.",
+		"auction_no_bidder": "Této aukce jste se neúčastnil.",
 		"driver_assign": "Přiřadit řidiče",
 		"assign": "Přiřadit",
 		"login_to_system": "Přihlášení do systému",

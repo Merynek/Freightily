@@ -233,6 +233,10 @@
     font-weight: bold;
     color: red;
 }
+.auction-detail .auction-detail-item .auction-result .no-bidder {
+    font-size: 16px;
+    font-weight: bold;
+}
 .auction-detail .auction-detail-item .detail-row{
     padding: 5px 0;
 }
@@ -299,6 +303,9 @@
 .auction-detail .history-list div{
     padding: 5px;
 }
+.auction-detail .my-history{
+    font-weight: bold;
+}
 .auction-detail .map {
     margin: 10px 0;
     height: 317px;
@@ -309,7 +316,11 @@
     cursor: pointer;
 }
 .auction-detail .assign-button {
-    margin-top: 12px;
+    margin-right: 12px;
+}
+.auction-bid {
+    height: 50px;
+    margin-bottom: 12px;
 }
 .auction-bid > div {
     padding: 0;

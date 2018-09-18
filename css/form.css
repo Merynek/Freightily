@@ -146,6 +146,16 @@
 .my-button .glyphicon {
     color: #aaaaaa;
 }
+.assign-button {
+    width: 125px;
+    margin-top: -20px;
+}
+.bid-button {
+    float: left;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+}
 .navigation-text-input {
     font-weight: bold;
     text-align: center;
