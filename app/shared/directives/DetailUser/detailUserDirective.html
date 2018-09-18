@@ -50,12 +50,10 @@
                 </div>
             </div>
         </div>
+        <hr class="small">
         <div class="detail-row">
-            <div class="detail-label">{{'texts.user.delete' | i18next}}</div>
-        </div>
-        <div class="detail-row">
-            <div class="detail-content text-center">
-                <div class="my-button important-button" ng-click="deleteUser(driver.ID)">
+            <div class="detail-content text-right">
+                <div class="delete-user" ng-click="deleteUser(driver.ID)">
                     <span class="glyphicon glyphicon-trash delete"></span> {{'texts.delete_driver' | i18next}}
                 </div>
             </div>

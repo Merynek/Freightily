@@ -186,8 +186,9 @@ angular.module('appDirectives')
                             $scope.cancel = function() {
                                 $scope.closeThisDialog(false);
                             };
-                            $scope.setAssignment = function(id_shipment, input) {
-                                if (input.currentTarget.checked) {
+                            $scope.setAssignment = function(id_shipment, event) {
+                                $(event.currentTarget).toggleClass("my-drive");
+                                if (event.currentTarget.classList.contains("my-drive")) {
                                     $scope.assignmentsIds.push(id_shipment);
                                 } else {
                                     var index = $scope.assignmentsIds.indexOf(id_shipment);
@@ -195,7 +196,6 @@ angular.module('appDirectives')
                                         $scope.assignmentsIds.splice(index, 1);
                                     }
                                 }
-
                             }
                         }],
                         preCloseCallback: function(value) {

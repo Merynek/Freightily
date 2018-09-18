@@ -78,6 +78,8 @@
 		"last_gps_update": "Last gps update",
 		"show_current_position": "Show current driver position",
 		"days": "days",
+		"save": "Save",
+		"cancel": "Cancel",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",
@@ -86,7 +88,7 @@
 			"my_shipments": "Assigned/Free shipments count",
 			"assign": "Assigment of shipments",
 			"assign_button": "Assignments",
-			"is_on_vac": "State"
+			"assigned": "Assigned"
 		},
 		"sorting": {
 			"label": "Sorting",

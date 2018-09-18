@@ -78,6 +78,8 @@
 		"last_gps_update": "Poslední aktualizace GPS",
 		"show_current_position": "Poslední pozice řidiče",
 		"days": "dny",
+		"save": "Uložit",
+		"cancel": "Zrušit",
 		"user": {
 			"detail": "Detail uživatele",
 			"vacation": "Dovolená",
@@ -85,8 +87,8 @@
 			"select_date": "Vyberte datum",
 			"my_shipments": "Počet přiřazených/volných jízd",
 			"assign": "Přiřazování jízd",
-			"assign_button": "Přiřazení",
-			"is_on_vac": "Stav"
+			"assign_button": "Jízdy",
+			"assigned": "Přiřazeno"
 		},
 		"sorting": {
 			"label": "Řazení",
@@ -145,6 +147,7 @@
 			"to": "Kam",
 			"price": "Cena v Kč",
 			"currency": "Měna",
+			"id": "ID",
 			"load": "Naložení",
 			"load_note": "Poznámka pro naložení nákladu",
 			"unload": "Vyložení",

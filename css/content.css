@@ -236,6 +236,18 @@
 .auction-detail .auction-detail-item .detail-row{
     padding: 5px 0;
 }
+.auction-detail .delete-user{
+    display: inline-block;
+    color: #12133d;
+    cursor: pointer;
+}
+.auction-detail .delete-user:hover {
+    text-decoration: underline;
+}
+.auction-detail .delete-user .glyphicon{
+    font-size: 12px;
+    color: red;
+}
 .auction-detail .auction-detail-item .detail-row.cities{
     padding-bottom: 15px;
 }
@@ -289,7 +301,7 @@
 }
 .auction-detail .map {
     margin: 10px 0;
-    height: 300px;
+    height: 317px;
     border: 1px solid #ffffff;
 }
 .auction-detail .input-group-addon {
@@ -375,6 +387,14 @@
     padding-right: 15px;
 }
 /*My company*/
+.modal-body {
+    padding: 0;
+}
+.company-list {
+    background: #ffffff;
+    font-size: 16px;
+    margin-bottom: 0;
+}
 .company-list .delete{
     color: #e91d27;
     font-weight: bold;
@@ -386,7 +406,27 @@
 }
 
 .company-list td{
-    vertical-align: middle!important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 253px;
+    cursor: pointer;
+}
+
+.company-list .my-drive {
+    background: #e6e6f1;
+}
+
+.company-list .glyphicon {
+    display: none;
+    margin-right: 15px;
+}
+.company-list .my-drive .glyphicon {
+    display: inline;
+}
+
+.no-shipments {
+    padding-top: 15px;
 }
 
 /*Arrow on detail box*/

@@ -23,8 +23,18 @@
     border-radius: 3px;
 }
 
-.date-vacation {
-    background: #e6e6f1;
+.datepicker table tr td.today, .datepicker table tr td.today:hover {
+    background: none;
+    font-weight: bold;
+}
+.datepicker table tr td.active.active, .datepicker table tr td.active.active:hover {
+    background-image: none;
+    background-color: #12133d;
+    color: #ffffff;
+}
+
+.datepicker table tr td.date-vacation {
+    background-color: #e6e6f1;
     font-weight: bold;
     color: red;
 }
@@ -111,8 +121,8 @@
 
 .my-button{
     width: 165px;
-    height: 40px;
-    line-height: 40px;
+    height: 38px;
+    line-height: 38px;
     border: none;
     color: white;
     text-align: center;
@@ -121,6 +131,7 @@
     margin-right: 15px;
     margin-bottom: 15px;
     max-width: 100%;
+    border-radius: 3px;
 }
 .my-button.navigation {
     width: 40px;

@@ -8,7 +8,7 @@
                     <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.username' | i18next}}</span></div>
                     <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.name' | i18next}}</span></div>
                     <div class="auction-cell col-sm-4 col-md-4 col-lg-4"><span>{{'texts.user.my_shipments' | i18next}}</span></div>
-                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2"></div>{{'texts.user.is_on_vac' | i18next}}
+                    <div class="auction-cell col-sm-2 col-md-2 col-lg-2"></div>{{'texts.user.assign' | i18next}}
                 </div>
             </div>
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -31,23 +31,30 @@
         </button>
     </div>
     <div class="modal-body">
-        <table class="table table-striped table-responsive company-list">
+        <table ng-if="shipmentsForDriver.length > 0" class="table table-responsive company-list">
             <tr>
+                <th>{{'texts.auction.id' | i18next}}</th>
                 <th>{{'texts.auction.from' | i18next}}</th>
                 <th>{{'texts.auction.to' | i18next}}</th>
-                <th>{{'texts.auction.price' | i18next}}</th>
-                <th></th>
+                <th class="text-right">{{'texts.auction.price' | i18next}}</th>
+                <th class="text-right">{{'texts.user.assigned' | i18next}}</th>
             </tr>
-            <tr ng-repeat="shipment in shipmentsForDriver">
+            <tr ng-repeat="shipment in shipmentsForDriver"
+                ng-class="shipment.driver !== 0 ? 'my-drive' : ''"
+                ng-click="setAssignment(shipment.ID, $event)">
+                <td>{{shipment.ID}}</td>
                 <td>{{shipment.address_from}}</td>
                 <td>{{shipment.address_to}}</td>
-                <td>{{shipment.price}}</td>
-                <td><input type="checkbox"  ng-click="setAssignment(shipment.ID, $event)" ng-checked="shipment.driver !== 0"/></td>
+                <td class="text-right">{{shipment.price}},-</td>
+                <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
             </tr>
         </table>
+        <div ng-if="shipmentsForDriver.length == 0" class="text-center no-shipments info">
+            {{'texts.shipment.no_shipments' | i18next}}
+        </div>
     </div>
     <div class="modal-footer">
-        <div class="my-button normal-button" ng-click="ok()">Save changes</div>
-        <div class="my-button easy-button" ng-click="cancel()">Cancel</div>
+        <div class="my-button normal-button" ng-click="ok()">{{'texts.save' | i18next}}</div>
+        <div class="my-button easy-button" ng-click="cancel()">{{'texts.cancel' | i18next}}</div>
     </div>
 </script>
