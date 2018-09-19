@@ -97,9 +97,9 @@ angular.module('appDirectives')
                     datePicker.datepicker({
                         beforeShowDay: function (date) {
                             if (isVacationDate(date, vacation)) {
-                                return {classes: 'date-vacation', tooltip: 'Vacation'};
+                                return {classes: 'date-vacation', tooltip: $filter('i18next')('texts.user.vacation')};
                             }else {
-                                return {classes: 'highlighted-cal-dates', tooltip: 'Free'};
+                                return {classes: 'highlighted-cal-dates' };
                             }
                         },
                         weekStart: 1,

@@ -28,16 +28,10 @@
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="detail-row">
-            <div class="detail-label">{{'texts.user.vacation' | i18next}}</div>
+            <div class="detail-label"><span class="glyphicon glyphicon-plane"></span> {{'texts.user.vacation' | i18next}} </div>
         </div>
         <div class="detail-row">
             <div class="detail-content">
-                <!--<div class='input-group datePickerVacation'>-->
-                    <!--<input type='text' name="vacation" onkeydown="return false" class="form-control my-input" id="vacation" placeholder="{{'texts.user.select_date' | i18next}}"/>-->
-                    <!--<span class="input-group-addon" ng-click="clickDatePicker(driver.ID)">-->
-                            <!--<span class="glyphicon glyphicon-calendar"></span>-->
-                        <!--</span>-->
-                <!--</div>-->
                 <div class="inputDatePicker-{{driver.ID}} datePickerVacation">
                 </div>
                 <div class="vacation-actions">
