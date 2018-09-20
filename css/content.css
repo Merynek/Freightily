@@ -310,6 +310,21 @@
     margin: 10px 0;
     height: 317px;
     border: 1px solid #ffffff;
+    background: #ffffff;
+    border-radius: 3px;
+}
+.auction-detail .map .icon{
+    display: block;
+    color: #aaaaaa;
+    font-size: 72px;
+    margin-top: 92px;
+    text-align: center;
+}
+.auction-detail .map .info{
+    display: block;
+    font-size: 16px;
+    margin-top: 36px;
+    text-align: center;
 }
 .auction-detail .input-group-addon {
     background: #ffffff;

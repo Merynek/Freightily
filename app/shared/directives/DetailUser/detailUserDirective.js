@@ -45,6 +45,7 @@ angular.module('appDirectives')
 
                 $scope.getDriverPosition = function(id_driver) {
                     UserAbility.getDriverPosition(id_driver).then(function(data) {
+                        $scope.isMap = true;
                         var position = data.position;
 
                         console.log(data.last_position_set);
@@ -81,7 +82,9 @@ angular.module('appDirectives')
                             });
                         }
                     }).catch(function(error) {
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                        $scope.isMap = false;
+                        $scope.mapInfo = $filter('i18next')(getErrorKeyByCode(error));
+                        // message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     })
                 };
 
