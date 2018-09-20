@@ -92,49 +92,47 @@
 		<!-- My Styles -->
 		<link rel="stylesheet" href="css/form.css" />
 		<link rel="stylesheet" href="css/loader.css" />
+		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/header.css" />
 		<link rel="stylesheet" href="css/content.css" />
 		<link rel="stylesheet" href="css/footer.css" />
-
-
 	</head>
-
-
 	<body ng-app="myApp" ng-controller="MainController">
 		<!-- Loader -->
 		<div class="loadPage">
 			<div class="loader-circle"></div>
 		</div>
 		<header>
-			<div class="header-top">
-				<img src="../images/nohelogo2.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="auction" />
-				<img src="../images/nohelogo2.svg" ng-if="isLoggedAdmin()" class="header-logo" alt="FREIGHTILY LOGO" ui-sref="users" />
-				<div class="languages">
-					<ul>
-						<li><span ng-click="CZlng()">cz</span></li>
-						<li><span ng-click="ENlng()">en</span></li>
-					</ul>
+			<div class="header-content row">
+				<div class="header-left col-xs-12 col-sm-12 col-md-4 col-lg-6">
+					<div class="logo-wrapper">
+						<img src="../images/nohelogo2.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="NOHE LOGO" ui-sref="auction" />
+						<img src="../images/nohelogo2.svg" ng-if="isLoggedAdmin()" class="header-logo"alt="NOHE LOGO" ui-sref="users" />
+					</div>
+					<div class="languages">
+						<span ng-click="CZlng()">cz</span>
+						<span class="language-divider"> | </span>
+						<span ng-click="ENlng()">en</span>
+					</div>
 				</div>
-				<div ng-if="isLoggedUser()" class="header-right">
-					<div class="user" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
-					<div class="logout" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
+				<div ng-if="isLoggedUser()" class="header-right col-xs-12 col-sm-12 col-md-8 col-lg-6">
+					<div class="user col-xs-12 col-sm-9 col-md-9 col-lg-9" ui-sref="my_profile"><span class="glyphicon glyphicon-user"></span><span>{{usernameMain}} ({{roleNameMain}})</span></div>
+					<div class="logout col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>{{'texts.logout' | i18next}}</div>
 				</div>
 			</div>
 		</header>
-		<div class="middle" ng-open="afterRender()">
+		<div class="middle" ng-open="refreshFooter()">
 			<div class="row content" ui-view></div>
 			<div id="message"></div>
 		</div>
 		<footer>
-			<div class="footer-top">
-				<div class="footer-content">
-					<div class="company-contact">
-						<h3>Nohe</h3>
-						<ul>
-							<li><span class="glyphicon glyphicon-earphone"></span><span>+420 607 605 908</span></li>
-							<li><span class="glyphicon glyphicon-envelope"></span><span>info@nohe.cz</span></li>
-						</ul>
-					</div>
+			<div class="footer-content">
+				<div class="company-contact">
+					<h3>Nohe s.r.o.</h3>
+					<ul>
+						<li><span class="glyphicon glyphicon-earphone"></span><span>+420 607 605 908</span></li>
+						<li><span class="glyphicon glyphicon-envelope"></span><span>info@nohe.cz</span></li>
+					</ul>
 				</div>
 			</div>
 		</footer>

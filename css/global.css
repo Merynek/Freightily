@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "MyFont";
+    src: url(../fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "socicon";
+url(../fonts/fonts/socicon.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.red {
+    color: #e91d27;
+}
+
+body {
+    color: #2c2d51;
+    font-size: 16px;
+    font-family: MyFont;
+}
+
+h1 {
+    font-size: 34px;
+    margin: 10px 0 20px 0;
+    padding: 0 0 5px 25px;
+    border-bottom: 1px solid #e6e6f1;
+}
+
+h2 {
+    color: #2c2d51;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 5px 20px;
+    margin: 8px 0 16px 0;
+    border-bottom: 1px solid #e6e6f1;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 0 5px 15px;
+    margin: 5px 0 10px 0;
+    border-bottom: 1px solid #e6e6f1;
+}
+
+p {
+    padding-bottom: 27px;
+}
+
+#message {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 25%;
+    left: 25%;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 20px;
+    z-index: 10000;
+}
+
+.error-message{
+    background: #ffeaeb;
+    border-bottom: 2px solid #e91d27;
+    box-shadow: 0 0 15px -5px #e91d27;
+}
+.success-message{
+    background: #ffffff;
+    border-bottom: 2px solid #12133d;
+    box-shadow: 0 0 15px -5px #12133d;
+}
+.warning-message{
+    background: #ffecdb;
+    border-bottom: 2px solid #ff810a;
+    box-shadow: 0 0 15px -5px #ff810a;
+}
+
+.dropdown-menu{
+    padding: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.dropdown-menu > li > a{
+    padding: 9px 20px;
+}
+
+/* MENU */
+.menu-tabs{
+    padding-right: 0;
+    padding-left: 17%;
+    border-bottom: 1px solid #e6e6f1;
+    margin-bottom: 15px;
+}
+.tab{
+    display: inline-block;
+    vertical-align: bottom;
+    min-width: 120px;
+    max-width: 200px;
+    padding: 10px 15px;
+    margin: 0 7px;
+    text-align: center;
+    border: 1px solid #e6e6f1;
+    background: #e6e6f1;
+}
+.tab:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+.tab.active{
+    background: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding: 12px 15px;
+    font-weight: bold;
+    margin-bottom: -1px;
+}
+.menu-vertical{
+    padding-top: 5px;
+    padding-right: 25px;
+    padding-left: 0;
+}
+.menu-vertical .tab{
+    padding: 10px 15px;
+    margin: 10px 0;
+    color: #2c2d51;
+    background: #e6e6f1;
+    border: 1px solid #e6e6f1;
+    width: 100%;
+}
+.menu-vertical .tab:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-vertical .tab.active{
+    background: white;
+    font-weight: bold;
+}
+.tab-content{
+    padding-right: 0;
+}
+
+@media (max-width: 900px) {
+    .menu-tabs{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dropdown-toggle{
+        text-align: center;
+    }
+}

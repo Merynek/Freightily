@@ -47,8 +47,11 @@ angular.module('appControllers')
             $i18next.options.resGetPath = '../locales/CZ/translation.json';
         };
 
-        // Visuals by Aloush
-        $scope.afterRender = function () {
+        $( window ).resize(function() {
+            $scope.refreshFooter();
+        });
+
+        $scope.refreshFooter = function () {
             clearTimeout(this.renderDebouncer);
             this.renderDebouncer = setTimeout(function () {
                 $scope.footerFix();
