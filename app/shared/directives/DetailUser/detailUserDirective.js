@@ -217,13 +217,28 @@ angular.module('appDirectives')
                 };
 
                 $scope.deleteUser = function(id_user) {
-                    if (window.confirm($filter('i18next')("warnings.delete_driver"))) {
-                        UserAbility.deleteUser(id_user).then(function() {
-                            message(1, $filter('i18next')('success.driver_deleted'));
-                        }).catch(function(error) {
-                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                        })
-                    }
+                    ngDialog.open({
+                        template: 'delete_user',
+                        scope: $scope,
+                        closeByDocument: false,
+                        showClose: false,
+                        closeByEscape: true,
+                        height: 121,
+                        controller: ['$scope', function($scope) {
+                            // controller logic
+                            $scope.ok = function() {
+                                UserAbility.deleteUser(id_user).then(function() {
+                                    message(1, $filter('i18next')('success.driver_deleted'));
+                                }).catch(function(error) {
+                                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                                });
+                                $scope.closeThisDialog(true);
+                            };
+                            $scope.cancel = function() {
+                                $scope.closeThisDialog(false);
+                            };
+                        }]
+                    });
                 };
 
                 function findAndDelete(date, vacation) {

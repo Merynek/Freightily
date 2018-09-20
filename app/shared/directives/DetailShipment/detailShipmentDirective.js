@@ -10,7 +10,7 @@ angular.module('appDirectives')
                 newShipment: '=',
                 finishedShipment: '='
             },
-            controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state) {
+            controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state, ngDialog) {
                 var self = this;
 
                 $scope.item = this.shipmentItem.item;
@@ -32,16 +32,31 @@ angular.module('appDirectives')
                     var data = {
                         id_shipment: ID
                     };
+                    ngDialog.open({
+                        template: 'cancel_shipment',
+                        scope: $scope,
+                        closeByDocument: false,
+                        showClose: false,
+                        closeByEscape: true,
+                        height: 121,
+                        controller: ['$scope', function($scope) {
+                            // controller logic
+                            $scope.ok = function() {
+                                UserAbility.stopShipment(data).then(function(){
+                                    $state.transitionTo($state.current, {}, {
+                                        reload: true
+                                    });
+                                }).catch(function(error){
+                                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                                });
+                                $scope.closeThisDialog(true);
+                            };
+                            $scope.cancel = function() {
+                                $scope.closeThisDialog(false);
+                            };
+                        }]
+                    });
 
-                    if (window.confirm($filter('i18next')("warnings.stop_shipment"))) {
-                        UserAbility.stopShipment(data).then(function(){
-                            $state.transitionTo($state.current, {}, {
-                                reload: true
-                            });
-                        }).catch(function(error){
-                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                        })
-                    }
                 };
 
                 this.showPhoto = function(idShipment, firstPart) {

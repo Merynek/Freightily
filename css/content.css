@@ -352,6 +352,15 @@
     font-weight: bold;
     padding: 0;
 }
+.auction-detail-item div.detail-label{
+    margin-bottom: 4px;
+}
+.auction-detail-item .detail-label .glyphicon{
+    padding-right: 8px;
+    color: #aaaaaa;
+    font-size: 1.2em;
+    vertical-align: -8%;
+}
 .auction-detail-item .detail-bid {
     font-weight: bold;
     padding: 10px 0;
