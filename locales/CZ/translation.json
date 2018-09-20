@@ -81,6 +81,10 @@
 		"days": "dny",
 		"save": "Uložit",
 		"cancel": "Zrušit",
+		"show_more": "Rozbalit",
+		"show_less": "Sbalit",
+		"history_next": "Dalších ",
+		"history_next2": " příhozů...",
 		"user": {
 			"detail": "Detail uživatele",
 			"vacation": "Dovolená",

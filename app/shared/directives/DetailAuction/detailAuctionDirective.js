@@ -26,6 +26,7 @@ angular.module('appDirectives')
                 if (User.isSender() || User.isDriver()) {
                     $scope.withBids = false;
                 }
+                $scope.historyMore = false;
 
                 var afterHistoryLoad = function (history) {
                     var filtered = history.filter(function (item) {
@@ -75,6 +76,10 @@ angular.module('appDirectives')
                         $scope.priceUpdated = true;
                         $scope.item.current_price = price;
                     }
+                };
+
+                this.historyToggle = function () {
+                    $scope.historyMore = !$scope.historyMore;
                 };
 
                 this.bidAuction = function (bid) {

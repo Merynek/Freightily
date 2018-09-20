@@ -95,8 +95,17 @@
                 </div>
             </div>
         </div>
-        <!--<h3 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.auction.history_amount' | i18next}}</h3>-->
-        <div ng-if="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>
+            <span class="glyphicon glyphicon-sort-by-attributes"></span>
+            {{'texts.auction.history_amount' | i18next}}
+            <span ng-if="history.length > 3" class="show-more" ng-click="vm.historyToggle()">
+                <span ng-if="!historyMore" class="glyphicon glyphicon-menu-down"></span>
+                <span ng-if="historyMore" class="glyphicon glyphicon-menu-up"></span>
+                <label ng-if="!historyMore">{{'texts.show_more' | i18next}}</label>
+                <label ng-if="historyMore">{{'texts.show_less' | i18next}}</label>
+            </span>
+        </h3>
+        <div ng-if="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table">
             <div class="history-header row">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">#</div>
@@ -108,11 +117,33 @@
                     {{'texts.amount' | i18next}}
                 </div>
             </div>
-            <div class="history-list row">
-                <div ng-repeat="item_history in history" ng-class="(item_history.id_user == user.ID ? 'my-history ': '') + 'history-list-item row'">
+            <div class="history-list">
+                <div ng-repeat="item_history in history | limitTo: 3"
+                     ng-class="(item_history.id_user == user.ID ? 'my-history ': '') + 'history-list-item row'">
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                        {{$index +1}}
+                        {{$index + 1}}
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        {{item_history.date}}
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        {{item_history.amount}},-
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="vm.historyToggle()">
+                <div class="text-center">
+                    {{'texts.history_next' | i18next}} <b>{{history.length - 3}}</b> {{'texts.history_next2' | i18next}}
+                </div>
+            </div>
+            <div ng-if="historyMore" class="history-list">
+                <div ng-repeat="item_history in history | limitTo: history.length : 3"
+                     ng-class="(item_history.id_user == user.ID ? 'my-history ': '') + 'history-list-item row'">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                        {{$index + 4}}
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         {{item_history.date}}

@@ -278,6 +278,10 @@
 .auction-detail .auction-detail-item .bid{
     margin-bottom: 0;
 }
+.auction-detail .history-table{
+    background: #ffffff;
+    border-radius: 3px;
+}
 .auction-detail .history-header{
     font-weight: bold;
     background: #f8f8ff;
@@ -286,9 +290,23 @@
     padding: 5px;
 }
 .auction-detail .history-list{
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: 100px;
+}
+.auction-detail .show-more {
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+    font-size: 15px;
+}
+.auction-detail .show-more-list {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.auction-detail .show-more label {
+    font-weight: normal;
+    cursor: pointer;
+}
+.auction-detail .show-more .glyphicon {
+    color: #aaaaaa;
 }
 .auction-detail .my-button {
     margin-right: 0;
@@ -355,7 +373,7 @@
 .auction-detail-item div.detail-label{
     margin-bottom: 4px;
 }
-.auction-detail-item .detail-label .glyphicon{
+.auction-detail-item .detail-label .glyphicon, h3 .glyphicon{
     padding-right: 8px;
     color: #aaaaaa;
     font-size: 1.2em;

@@ -81,6 +81,10 @@
 		"days": "days",
 		"save": "Save",
 		"cancel": "Cancel",
+        "show_more": "More",
+        "show_less": "Less",
+        "history_next": "Another ",
+        "history_next2": " records...",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",
