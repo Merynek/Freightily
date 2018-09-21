@@ -148,6 +148,10 @@
     color: #aaaaaa;
     margin-left: -10px;
 }
+.my-button.navigation .glyphicon{
+    padding-right: 0;
+    margin-left: 0;
+}
 .assign-button {
     width: 125px;
     margin-top: -20px;

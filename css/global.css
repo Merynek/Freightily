@@ -102,6 +102,7 @@ p {
     text-align: center;
     border: 1px solid #e6e6f1;
     background: #e6e6f1;
+    border-radius: 5px 5px 0 0;
 }
 .tab:hover{
     font-weight: bold;
@@ -126,6 +127,7 @@ p {
     background: #e6e6f1;
     border: 1px solid #e6e6f1;
     width: 100%;
+    border-radius: 5px;
 }
 .menu-vertical .tab:hover {
     font-weight: bold;

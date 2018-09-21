@@ -363,6 +363,7 @@
     font-size: 72px;
     margin-top: 92px;
     text-align: center;
+    line-height: 72px;
 }
 .auction-detail .map .info{
     display: block;
@@ -404,6 +405,7 @@
     color: #aaaaaa;
     font-size: 1.2em;
     vertical-align: -8%;
+    line-height: 14px;
 }
 .auction-detail-item .detail-bid {
     font-weight: bold;

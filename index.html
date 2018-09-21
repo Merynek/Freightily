@@ -92,6 +92,7 @@
 		<!-- My Styles -->
 		<link rel="stylesheet" href="css/form.css" />
 		<link rel="stylesheet" href="css/loader.css" />
+		<link rel="stylesheet" href="css/flags.css" />
 		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/header.css" />
 		<link rel="stylesheet" href="css/content.css" />
@@ -110,9 +111,13 @@
 						<img src="../images/nohelogo2.svg" ng-if="isLoggedAdmin()" class="header-logo"alt="NOHE LOGO" ui-sref="users" />
 					</div>
 					<div class="languages">
-						<span ng-click="CZlng()">cz</span>
+						<span ng-click="CZlng()">
+							<img src="images/blank.gif" class="flag flag-cz">
+						</span>
 						<span class="language-divider"> | </span>
-						<span ng-click="ENlng()">en</span>
+						<span ng-click="ENlng()">
+							<img src="images/blank.gif" class="flag flag-gb">
+						</span>
 					</div>
 				</div>
 				<div ng-if="isLoggedUser()" class="header-right col-xs-12 col-sm-12 col-md-8 col-lg-6">

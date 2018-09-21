@@ -12,11 +12,16 @@
     <div class="arrow"></div>
     <h2 class="main-header">{{'texts.shipment.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="detail-row">
+        <div class="detail-row address">
+            <span class="glyphicon glyphicon-home"></span>
             <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
             <span class="detail-content">{{item.address_from}}</span>
         </div>
-        <div class="detail-row">
+        <div class="detail-row address-arrow">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+        </div>
+        <div class="detail-row address">
+            <span class="glyphicon glyphicon-flag"></span>
             <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
             <span class="detail-content">{{item.address_to}}</span>
         </div>
@@ -25,7 +30,10 @@
             <span>{{'texts.shipment.stopShipment' | i18next}}</span>
         </div>
         <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3>{{'texts.shipment.photos' | i18next}}</h3>
+            <h3>
+                <span class="glyphicon glyphicon-picture"></span>
+                {{'texts.shipment.photos' | i18next}}
+            </h3>
             <div class="photo-buttons">
                 <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
                 <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
