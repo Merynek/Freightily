@@ -36,7 +36,7 @@
 .datepicker table tr td.date-vacation {
     background-color: #e6e6f1;
     font-weight: bold;
-    color: red;
+    color: #dd0000;
 }
 
 .vacation-actions {
@@ -156,6 +156,7 @@
     margin: 0 15px 0 8px;
     height: 40px;
     line-height: 40px;
+    width: 125px;
 }
 .navigation-text-input {
     font-weight: bold;

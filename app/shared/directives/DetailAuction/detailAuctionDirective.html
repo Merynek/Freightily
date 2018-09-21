@@ -22,18 +22,27 @@
     <h2 class="main-header">{{'texts.auction.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div>
         <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="detail-row">
-                <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
+            <div class="detail-row address">
+                <span class="glyphicon glyphicon-home"></span>
+                <span class="detail-label">
+                    {{'texts.auction.from' | i18next}}:
+                </span>
                 <span class="detail-content">{{item.address_from}}</span>
             </div>
-            <div class="detail-row">
+            <div class="detail-row address-arrow">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+            </div>
+            <div class="detail-row address">
+                <span class="glyphicon glyphicon-flag"></span>
                 <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
                 <span class="detail-content">{{item.address_to}}</span>
             </div>
             <hr>
             <!--<h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>-->
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
+                <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+                    <span>{{'texts.auction.freight_description' | i18next}}:</span>
+                </div>
                 <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -57,7 +66,7 @@
                 <div class="price-label">
                     {{'texts.actual_price' | i18next}}
                 </div>
-                <div class="price">
+                <div class="price expired">
                     {{item.current_price}},-
                 </div>
             </div>
@@ -90,6 +99,10 @@
                         </div>
                     </div>
                 </div>
+                <div ng-if="win" class="info-block">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    {{'texts.auction_win' | i18next}}
+                </div>
             </div>
         </div>
         <hr class="small">
@@ -101,24 +114,26 @@
                 {{days}} {{'texts.days' | i18next}}, </span>{{hours}}:{{minutes}}:{{seconds}}
             </timer>
         </div>
-        <div ng-if="!user.isSender() && withBids" class="detail-row row">
+        <div ng-if="!user.isSender() && withBids && expired" class="detail-row row">
             <div ng-if="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
                     <span  class="win">{{'texts.auction_win' | i18next}}</span>
                 </div>
             </div>
-            <div ng-if="expired && !userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--<div ng-if="!userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+                <!--<div class="auction-result">-->
+                    <!--<span class="no-bidder">{{'texts.auction_no_bidder' | i18next}}</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div ng-if="!win && userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
-                    <span class="no-bidder">{{'texts.auction_no_bidder' | i18next}}</span>
-                </div>
-            </div>
-            <div ng-if="expired && !win && userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="auction-result">
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
                     <span class="lose">{{'texts.auction_lose' | i18next}}</span>
                 </div>
             </div>
         </div>
-        <hr class="small">
+        <hr ng-if="!expired || win || userIsBidder" class="small">
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
