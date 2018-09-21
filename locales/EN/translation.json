@@ -85,6 +85,7 @@
         "show_less": "Less",
         "history_next": "Another ",
         "history_next2": " records...",
+        "actual_price": "Actual price",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",

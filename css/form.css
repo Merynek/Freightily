@@ -144,15 +144,16 @@
     cursor: default;
 }
 .my-button .glyphicon {
+    padding-right: 7px;
     color: #aaaaaa;
+    margin-left: -10px;
 }
 .assign-button {
     width: 125px;
     margin-top: -20px;
 }
 .bid-button {
-    float: left;
-    width: 50px;
+    margin: 0 15px 0 8px;
     height: 40px;
     line-height: 40px;
 }

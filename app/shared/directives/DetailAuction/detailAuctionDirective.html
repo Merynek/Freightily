@@ -52,6 +52,47 @@
     </div>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-4 col-lg-6">
 
+        <div ng-if="expired" class="row detail-row text-center">
+            <div class="detail-label col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="price-label">
+                    {{'texts.actual_price' | i18next}}
+                </div>
+                <div class="price">
+                    {{item.current_price}},-
+                </div>
+            </div>
+            <div class="detail-label col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                <div class="info-block">
+                    <span class="glyphicon glyphicon-time"></span>
+                    {{'texts.auction_complete' | i18next}}
+                </div>
+            </div>
+        </div>
+        <div ng-if="!expired" class="row detail-row text-center">
+            <div class="detail-label col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                <div class="price-label">
+                    {{'texts.actual_price' | i18next}}
+                </div>
+                <div class="price">
+                    {{item.current_price}},-
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                <div ng-if="!win && withBids" class="auction-bid detail-row">
+                    <div class="has-feedback has-feedback-right col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" ng-model="bid" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
+                        <span class="form-control-feedback">Kč</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="my-button normal-button bid-button" ng-click="vm.bidAuction(bid)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            <span>{{'texts.bid' | i18next}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="small">
         <div ng-if="!expired" class="detail-row text-center">
             <span class="detail-content">
                 {{'texts.auction.ends_in' | i18next}}
@@ -60,25 +101,7 @@
                 {{days}} {{'texts.days' | i18next}}, </span>{{hours}}:{{minutes}}:{{seconds}}
             </timer>
         </div>
-        <div ng-if="expired" class="detail-row text-center">
-            <div class="detail-label">{{'texts.auction_complete' | i18next}}</div>
-        </div>
-        <hr class="small">
-        <div ng-if="!user.isSender() && withBids" class="detail-row ">
-            <div ng-if="!expired && !win" class="auction-bid detail-row">
-                <div class="detail-bid col-xs-12 col-sm-6 col-md-6 col-lg-6">{{'texts.want_bid' | i18next}}</div>
-                <div class="has-feedback has-feedback-right col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <input type="text" ng-model="bid" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
-                    <span class="form-control-feedback">Kč</span>
-                </div>
-                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                    <div class="my-button normal-button bid-button" ng-click="vm.bidAuction(bid)">
-                        <span class="glyphicon glyphicon-ok"></span>
-                        <!--<span>{{'texts.bid' | i18next}}</span>-->
-                    </div>
-                </div>
-            </div>
-            <hr ng-if="!expired && !win" class="small">
+        <div ng-if="!user.isSender() && withBids" class="detail-row row">
             <div ng-if="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
                     <span  class="win">{{'texts.auction_win' | i18next}}</span>
@@ -95,6 +118,7 @@
                 </div>
             </div>
         </div>
+        <hr class="small">
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
