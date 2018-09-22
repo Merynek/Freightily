@@ -365,10 +365,6 @@
     margin: 4px 0;
     font-size: 16px;
 }
-.auction-detail .address-arrow {
-    margin: -9px 0 -9px 2px;
-    font-size: 12px;
-}
 .auction-detail .map .icon{
     display: block;
     color: #aaaaaa;

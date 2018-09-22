@@ -29,9 +29,6 @@
                 </span>
                 <span class="detail-content">{{item.address_from}}</span>
             </div>
-            <div class="detail-row address-arrow">
-                <span class="glyphicon glyphicon-arrow-down"></span>
-            </div>
             <div class="detail-row address">
                 <span class="glyphicon glyphicon-flag"></span>
                 <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
@@ -107,11 +104,12 @@
         </div>
         <hr class="small">
         <div ng-if="!expired" class="detail-row text-center">
+            <span class="glyphicon glyphicon-hourglass"></span>
             <span class="detail-content">
                 {{'texts.auction.ends_in' | i18next}}
             </span>
             <timer class="detail-label" countdown="item.secondsToEndAuction" max-time-unit="'day'" interval="1000">
-                {{days}} {{'texts.days' | i18next}}, </span>{{hours}}:{{minutes}}:{{seconds}}
+                {{days}} {{'texts.days' | i18next}}, {{hours}}:{{minutes}}:{{seconds}}
             </timer>
         </div>
         <div ng-if="!user.isSender() && withBids && expired" class="detail-row row">
