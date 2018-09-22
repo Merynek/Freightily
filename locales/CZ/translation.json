@@ -187,6 +187,7 @@
 		"wrong_login" : "Chyba při přihlašování",
 		"wrong_registration": "Chyba při registraci",
 		"select_role": "Vyberte roli",
+		"set_all_inputs": "Vyplňte všechny povinné údaje",
 		"wrong_address": "Špatně zadaná adresa",
 		"wrong_address_city": "Špatně zadané město v adrese",
 		"wrong_address_street": "Špatně zadaná ulice v adrese",

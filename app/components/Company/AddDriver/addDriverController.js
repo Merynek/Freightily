@@ -16,9 +16,10 @@ angular.module('appControllers')
         $scope.clicked = true;
 
         if(!this.addUserForm.$valid) {
+          message(3, $filter('i18next')('errors.set_all_inputs'));
           return;
         }
-        if($scope.employee.password !== $scope.employee.confirmPassword){
+        if($scope.employee.password !== $scope.employee.confirmPassword) {
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
         else {

@@ -13,7 +13,7 @@ angular.module('appControllers')
 
     $scope.clicked = false;
 
-    $scope.login = function(){
+    $scope.login = function() {
         $scope.clicked = true;
         if(!$scope.loginForm.$valid) {
             return;
@@ -28,6 +28,13 @@ angular.module('appControllers')
         }).catch(function(error){
             message(3, $filter('i18next')(getErrorKeyByCode(error)));
         })
+    }
+
+    $scope.onkeyDown = function ($event) {
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+            $scope.login();
+        }
     }
   }
 ]);

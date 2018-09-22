@@ -3,6 +3,7 @@ footer {
     position: relative;
     padding: 28px 80px 28px 80px;
     background: #e6e6f1;
+    overflow: hidden;
     bottom: 0;
 }
 

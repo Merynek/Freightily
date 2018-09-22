@@ -173,6 +173,7 @@ angular.module('appControllers')
         $scope.createAuction = function () {
             $scope.clicked = true;
             if (!this.createAuctionForm.$valid) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
             var end_auction = $("#end_auction");

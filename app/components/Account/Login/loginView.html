@@ -2,11 +2,11 @@
   <h1>{{'texts.login' | i18next}}</h1>
   <form name="loginForm" ng-open="formLabels('loginForm')" novalidate>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="text" name="username" class="form-control my-input" placeholder="{{'texts.username' | i18next}}" ng-model="user.name" ng-class="{'input-error' : loginForm.username.$invalid && (!loginForm.username.$pristine || clicked)}" ng-minlength="5" required/>
+      <input type="text" name="username" ng-keypress="onkeyDown($event)" class="form-control my-input" placeholder="{{'texts.username' | i18next}}" ng-model="user.name" ng-class="{'input-error' : loginForm.username.$invalid && (!loginForm.username.$pristine || clicked)}" ng-minlength="5" required/>
       <i class="glyphicon glyphicon-user form-control-feedback"></i>
     </div>
     <div class="form-group has-feedback has-feedback-left">
-      <input type="password" name="password" class="form-control my-input" placeholder="{{'texts.password' | i18next}}" ng-model="user.password" ng-class="{'input-error' : loginForm.password.$invalid && (!loginForm.password.$pristine || clicked)}" ng-minlength="8" required/>
+      <input type="password" name="password" ng-keypress="onkeyDown($event)" class="form-control my-input" placeholder="{{'texts.password' | i18next}}" ng-model="user.password" ng-class="{'input-error' : loginForm.password.$invalid && (!loginForm.password.$pristine || clicked)}" ng-minlength="8" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
     </div>
     <div class="form-group buttons">

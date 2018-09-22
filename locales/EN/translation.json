@@ -185,6 +185,7 @@
 		"wrong_login" : "Login error",
 		"wrong_registration": "Registration error",
 		"select_role": "Select role",
+		"set_all_inputs": "Set all required inputs",
 		"wrong_address": "Wrong set address",
 		"wrong_address_city": "Wrong set city in address",
 		"wrong_address_street": "Wrong set street in address",

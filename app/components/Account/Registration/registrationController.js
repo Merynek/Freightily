@@ -18,6 +18,7 @@ angular.module('appControllers')
           return;
         }
         if(!this.registrationForm.$valid) {
+          message(3, $filter('i18next')('errors.set_all_inputs'));
           return;
         }
         if(!numberFieldsIsValid()) {
