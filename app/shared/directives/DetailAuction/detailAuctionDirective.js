@@ -38,7 +38,7 @@ angular.module('appDirectives')
                 };
 
 
-                Auction.getAuctionHistory($scope.item.ID).then(afterHistoryLoad).catch(function (error) {
+                Auction.getAuctionHistory($scope.ID).then(afterHistoryLoad).catch(function (error) {
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 });
 
@@ -67,7 +67,7 @@ angular.module('appDirectives')
                     $scope.withBids = false;
                     $scope.win = $scope.item.last_amount_user === User.ID;
                     setTimeout(function () {
-                        refreshItem($scope.item.ID)
+                        refreshItem($scope.ID)
                     }, 100);
                 });
 
@@ -75,6 +75,7 @@ angular.module('appDirectives')
                     if ($scope.item.current_price !== price) {
                         $scope.priceUpdated = true;
                         $scope.item.current_price = price;
+                        refreshItem($scope.ID);
                     }
                 };
 
@@ -89,11 +90,11 @@ angular.module('appDirectives')
                     }
                     if (bid && (($scope.item.price - bid) >= 1)) {
                         var data = {
-                            id_auction: $scope.item.ID,
+                            id_auction: $scope.ID,
                             amount: bid
                         };
                         Auction.bidAuction(data).then(function () {
-                            refreshItem($scope.item.ID);
+                            refreshItem($scope.ID);
                             message(1, $filter('i18next')('success.bid_auction'));
                         }).catch(function (error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
@@ -111,25 +112,26 @@ angular.module('appDirectives')
                         end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
                         $scope.item.end_auction = end_auction;
                         $scope.isFavourite = auctionItem.isFavourite;
+                        $scope.win = $scope.item.last_amount_user === User.ID;
                     }).catch(function (error) {
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
-                    Auction.getAuctionHistory($scope.item.ID).then(afterHistoryLoad).catch(function (error) {
+                    Auction.getAuctionHistory($scope.ID).then(afterHistoryLoad).catch(function (error) {
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
                 }
 
                 this.favourite = function () {
                     if ($scope.item.isFavourite) {
-                        Auction.deleteFromFavourite($scope.item.ID).then(function () {
-                            refreshItem($scope.item.ID);
+                        Auction.deleteFromFavourite($scope.ID).then(function () {
+                            refreshItem($scope.ID);
                         }).catch(function (error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });
                     }
                     else {
-                        Auction.addToFavourite($scope.item.ID).then(function () {
-                            refreshItem($scope.item.ID);
+                        Auction.addToFavourite($scope.ID).then(function () {
+                            refreshItem($scope.ID);
                         }).catch(function (error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
                         });

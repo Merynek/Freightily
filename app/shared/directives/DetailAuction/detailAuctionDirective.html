@@ -82,7 +82,7 @@
                 <div class="price-label">
                     {{'texts.actual_price' | i18next}}
                 </div>
-                <div class="price">
+                <div class="price" ng-class="{'new-price-big' : priceUpdated}">
                     {{item.current_price}},-
                 </div>
             </div>

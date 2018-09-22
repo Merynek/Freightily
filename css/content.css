@@ -122,15 +122,27 @@
     animation: animateNewPrice 1s 2;
     animation-direction: alternate;
 }
+.auction-list-page .new-price-big {
+    -webkit-animation: animateNewPriceBig 1s 2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation: animateNewPriceBig 1s 2;
+    animation-direction: alternate;
+}
 
 @keyframes animateNewPrice {
     0%   { font-size: 16px; font-weight: 400; }
     15%  { font-size: 18px; font-weight: 600; }
     25%  { font-size: 20px; font-weight: 900; }
     50%  { font-size: 25px; font-weight: 900; }
-    65%  { font-size: 18px; font-weight: 600; }
-    75%  { font-size: 20px; font-weight: 900; }
+    65%  { font-size: 18px; font-weight: 900; }
+    75%  { font-size: 20px; font-weight: 600; }
     100% { font-size: 16px; font-weight: 400; }
+}
+
+@keyframes animateNewPriceBig {
+    0%   { color: #2c2d51; }
+    50%  { color: #dd0000; }
+    100% { color: #2c2d51; }
 }
 
 .auction-list-page .auction-list .auction-cell span{
