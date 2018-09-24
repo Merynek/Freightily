@@ -21,9 +21,9 @@
         <div class="detail-row">
             <div class="detail-label"><span class="glyphicon glyphicon-map-marker"></span> {{'texts.show_current_position' | i18next}}</div>
             <div class="detail-content">
-                <div ng-if="isMap" id="user-map-{{driver.ID}}" class="map"></div>
-                <div ng-if="isMap"> {{'texts.last_gps_update' | i18next}}: {{lastGpsUpdate}} <b>{{lastGpsUpdateTime}}</b></div>
-                <div ng-if="!isMap" class="map">
+                <div ng-show="isMap" id="user-map-{{driver.ID}}" class="map"></div>
+                <div ng-show="isMap"> {{'texts.last_gps_update' | i18next}}: {{lastGpsUpdate}} <b>{{lastGpsUpdateTime}}</b></div>
+                <div ng-show="!isMap" class="map">
                     <div class="icon glyphicon glyphicon-globe"></div>
                     <div class="info">
                         {{mapInfo}}
