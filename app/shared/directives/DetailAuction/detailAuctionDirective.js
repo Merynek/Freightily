@@ -84,11 +84,13 @@ angular.module('appDirectives')
                 };
 
                 this.bidAuction = function (bid) {
+                    var current_price = $scope.item.current_price;
+
                     if (bid && !isValueNumber(bid)) {
                         message(3, $filter('i18next')('errors.bid_is_number'));
                         return;
                     }
-                    if (bid && (($scope.item.price - bid) >= 1)) {
+                    if (bid >=1 && ((current_price - bid) >= 1) && (current_price !== bid)) {
                         var data = {
                             id_auction: $scope.ID,
                             amount: bid
