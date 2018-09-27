@@ -284,4 +284,7 @@ input[type=checkbox] {
     .radio-group, .radio-group:nth-of-type(2){
         text-align: center;
     }
+    .form-group.full{
+        margin: 0;
+    }
 }

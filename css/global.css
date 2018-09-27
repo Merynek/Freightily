@@ -139,16 +139,31 @@ p {
 }
 .tab-content{
     padding-right: 0;
+    padding-left: 0;
 }
 
 @media (max-width: 900px) {
     .menu-tabs{
         padding-left: 20px;
     }
+    .my-button{
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 767px) {
-    .dropdown-toggle{
+    h1 {
+        padding: 0;
+    }
+    .dropdown-toggle {
         text-align: center;
     }
 }
+
+@media (max-width: 500px) {
+    /*DateTime Picker*/
+    .bootstrap-datetimepicker-widget.dropdown-menu {
+        width: 100%;
+    }
+}
+

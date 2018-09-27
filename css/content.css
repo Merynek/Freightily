@@ -592,26 +592,30 @@
 }
 
 /*Login page*/
-.login-page .my-button{
-}
-.login-page{
+.login-page {
     max-width: 558px;
     margin: 0 auto;
     padding-top: 90px;
 }
 
 /*Registration page*/
-.registration-page{
+.registration-page {
     max-width: 100%;
 }
 
 /*ForgetPassword page*/
-.forget-password-page{
+.forget-password-page {
     max-width: 558px;
     margin: 0 auto;
+    padding-top: 90px;
 }
+/*User page*/
+.user-page {
+    padding-top: 90px;
+}
+
 /*Manage page*/
-.manage-page{
+.manage-page {
     max-width: 558px;
     margin: 0 auto;
 }
@@ -647,6 +651,18 @@ hr.small {
     }
     .auction-detail-item:nth-last-child(1){
         margin-bottom: 0;
+    }
+    /*Login page*/
+    .login-page {
+        padding-top: 30px;
+    }
+    /*ForgetPassword page*/
+    .forget-password-page {
+        padding-top: 30px;
+    }
+    /*User page*/
+    .user-page {
+        padding-top: 30px;
     }
 }
 
@@ -758,6 +774,9 @@ hr.small {
         margin: 0 auto;
         text-align: center;
     }
+    .user-page .table-wrapper {
+        padding: 0;
+    }
     /*Registration page*/
     .registration-page {
         margin: 0 auto;
@@ -795,9 +814,18 @@ hr.small {
 }
 
 @media (max-width: 500px) {
-    .login-page .my-button{
+    /*Login page*/
+    .login-page .my-button {
         float: none;
         margin-right: 0;
-        margin: 0 auto;
+    }
+    /*User page*/
+    .user-page .table-wrapper .table th {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .user-page .table-wrapper .table td {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
