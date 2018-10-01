@@ -415,6 +415,18 @@
     vertical-align: -8%;
     line-height: 14px;
 }
+
+.auction-detail-item .awes-icon {
+    padding-right: 8px;
+    color: #aaaaaa;
+    font-size: 1.2em;
+    vertical-align: -8%;
+    line-height: 14px;
+}
+.auction-detail-item .normal-icon {
+    color: #2c2d51;
+}
+
 .auction-detail-item .detail-bid {
     font-weight: bold;
     padding: 10px 0;

@@ -46,19 +46,31 @@
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <!--<h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>-->
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_description' | i18next}}:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+                <span class="normal-icon glyphicon glyphicon-pencil"></span>
+                <span>{{'texts.auction.freight_description' | i18next}}:</span>
+            </div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_type.label' | i18next}}:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+                <span class="normal-icon glyphicon glyphicon-tag"></span>
+                <span>{{'texts.auction.freight_type.label' | i18next}}:</span>
+            </div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_weight' | i18next}}:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+                <i class="normal-icon awes-icon fas fa-weight-hanging"></i>
+                <span>{{'texts.auction.freight_weight' | i18next}}:</span>
+            </div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_weight}} kg</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5"><span>{{'texts.auction.freight_size' | i18next}}:</span></div>
+            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+                <span class="normal-icon glyphicon glyphicon-resize-full"></span>
+                <span>{{'texts.auction.freight_size' | i18next}}:</span>
+            </div>
             <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
         </div>
     </div>
