@@ -88,7 +88,8 @@
 .form-group.full{
     display: inline-block;
     width: 100%;
-    margin: 40px 2% 0 2%;
+    margin-top: 40px;
+    padding-left: 2%;
     vertical-align: top;
 }
 
@@ -283,8 +284,5 @@ input[type=checkbox] {
 
     .radio-group, .radio-group:nth-of-type(2){
         text-align: center;
-    }
-    .form-group.full{
-        margin: 0;
     }
 }

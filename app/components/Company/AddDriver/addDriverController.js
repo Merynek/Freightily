@@ -11,6 +11,12 @@ angular.module('appControllers')
       $scope.employee = {};
       $scope.clicked = false;
       $scope.route = "company|employee";
+      middle_no_padding();
+      $(window).resize(function () {
+          if(window.innerWidth <= 900){
+              middle_no_padding();
+          }
+      });
 
       $scope.AddUser = function() {
         $scope.clicked = true;

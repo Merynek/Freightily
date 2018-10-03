@@ -1,4 +1,4 @@
-<div ng-click="toggleDetail()" class="auction-info col-xs-12 col-sm-9 col-md-9 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
+<div ng-click="toggleDetail()" class="auction-info col-xs-12 col-sm-11 col-md-11 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
     <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
@@ -12,9 +12,9 @@
     <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
 </div>
-<div class="auction-button-detail col-xs-12 col-sm-3 col-md-3 col-lg-1 text-center">
-    <div ng-if="vm.withFavourite" class="favouriteButton" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
-        <span class="glyphicon glyphicon glyphicon-star" ng-click="vm.favourite()"></span>
+<div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
+    <div ng-if="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+        <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite()"></span>
     </div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -129,11 +129,6 @@
                     <span  class="win">{{'texts.auction_win' | i18next}}</span>
                 </div>
             </div>
-            <!--<div ng-if="!userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
-                <!--<div class="auction-result">-->
-                    <!--<span class="no-bidder">{{'texts.auction_no_bidder' | i18next}}</span>-->
-                <!--</div>-->
-            <!--</div>-->
             <div ng-if="!win && userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
                     <span class="glyphicon glyphicon-thumbs-down"></span>

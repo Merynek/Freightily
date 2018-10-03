@@ -7,6 +7,12 @@
 
 angular.module('appControllers')
     .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', function ($scope, Auction, $filter, $state) {
+        middle_no_padding();
+        $(window).resize(function () {
+            if(window.innerWidth <= 900){
+                middle_no_padding();
+            }
+        });
         var autoCompleteIsInitialized = false;
 
         $scope.route = "auction|add";

@@ -224,7 +224,7 @@
     cursor: pointer;
     margin: -10px 0 0 -5px;
 }
-.auction-detail .auction-detail-item{
+.auction-detail .auction-detail-item {
     padding: 10px 15px;
     /*border-right: 1px solid #ffffff;*/
 }
@@ -437,15 +437,15 @@
 .non-favourite{
     color: #aaaaaa;
 }
-.favouriteButton{
+.favouriteButton {
     cursor: pointer;
     margin: 5px 0 0 0;
     font-size: 20px;
 }
-.detail-button{
+.detail-button {
     width: calc(100% - 60px);
 }
-.favouriteButton:hover{
+.favouriteButton:hover {
     transform: scale(1.2);
 }
 
@@ -679,7 +679,7 @@ hr.small {
 }
 
 @media (max-width: 900px) {
-    .no-padding{
+    .no-padding {
         padding-left: 5px;
         padding-right: 5px;
     }
