@@ -91,7 +91,7 @@
 			"vacation": "Dovolená",
 			"delete": "Odstranění uživatele",
 			"select_date": "Vyberte datum",
-			"my_shipments": "Počet přiřazených/volných jízd",
+			"my_shipments": "Přiřazené / volné jízdy",
 			"assign": "Přiřazování jízd",
 			"assign_button": "Jízdy",
 			"assigned": "Přiřazeno"
@@ -170,7 +170,7 @@
 				"7": "Sypký materiál",
 				"8": "Jiné"
 			},
-			"freight_size": "Velikost zásilky (slovy)",
+			"freight_size": "Velikost (slovy)",
 			"freight_weight": "Váha zásilky (kg)",
 			"email_addressee": "Email adresáta",
 			"end_auction": "Konec aukce",

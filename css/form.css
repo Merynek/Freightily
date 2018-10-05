@@ -157,11 +157,24 @@
     width: 125px;
     margin-top: -20px;
 }
+.bid-inputs {
+    display: inline-block;
+    padding-left: 30px;
+}
 .bid-button {
-    margin: 0 15px 0 8px;
+    width: 50px;
     height: 40px;
     line-height: 40px;
-    width: 125px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    float: left;
+}
+.bid-button .glyphicon {
+    padding-left: 10px;
+    padding-top: 12px;
+    color: white!important;
+    font-size: 26px!important;
+    padding-right: 0!important;
 }
 .navigation-text-input {
     font-weight: bold;
@@ -275,7 +288,10 @@ input[type=checkbox] {
         padding-top: 5px;
         height: 50px;
     }
-
+    .assign-button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
     .form-group.half{
         display: block;

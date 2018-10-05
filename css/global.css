@@ -43,6 +43,10 @@ h3 {
     border-bottom: 1px solid #e6e6f1;
 }
 
+h3.no-border {
+    border-bottom: 0;
+}
+
 p {
     padding-bottom: 27px;
 }

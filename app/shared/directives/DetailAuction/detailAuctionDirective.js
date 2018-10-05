@@ -10,6 +10,7 @@ angular.module('appDirectives')
                 withFavourite: '='
             },
             controller: function ($scope, $filter, Auction, User) {
+                var self = this;
                 $scope.withFavourite = this.withFavourite;
                 $scope.item = this.auctionItem.item;
                 $scope.expired = this.auctionItem.item.expired;
@@ -147,6 +148,13 @@ angular.module('appDirectives')
                 this.getCity = function (address) {
                     return address.split(",")[0];
                 };
+
+                $scope.onkeyDown = function ($event, bid) {
+                    var keyCode = $event.which || $event.keyCode;
+                    if (keyCode === 13) {
+                        self.bidAuction(bid)
+                    }
+                }
             }
         }
     });

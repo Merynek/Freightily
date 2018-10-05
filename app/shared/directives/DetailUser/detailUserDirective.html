@@ -1,4 +1,4 @@
-<div ng-click="toggleDetail()" class="auction-info">
+<div ng-click="toggleDetail()" class="auction-info auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="auction-label col-xs-6">{{'texts.username' | i18next}}</div>
     <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{driver.username}}</span></div>
     <div class="auction-label col-xs-6">{{'texts.name' | i18next}}</div>
@@ -7,8 +7,7 @@
     <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <b>{{driverShipments.length}}</b> / {{notAssignedShipments.length}}
     </div>
-    <div class="auction-label col-xs-6">{{'texts.user.is_on_vac' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
+    <div class="auction-cell assignment col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <div class="my-button normal-button assign-button" ng-click="assignDriver(driver.ID, $event)">
             {{'texts.user.assign_button' | i18next}}
         </div>
@@ -50,7 +49,6 @@
                 </div>
             </div>
         </div>
-        <hr class="small">
         <div class="detail-row">
             <div class="detail-content text-right">
                 <div class="delete-user" ng-click="deleteUser(driver.ID)">

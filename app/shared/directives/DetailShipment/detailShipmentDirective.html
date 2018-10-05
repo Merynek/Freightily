@@ -1,12 +1,12 @@
-<div ng-click="toggleDetail(item.ID)" class="auction-info">
-    <div class="auction-label col-xs-12">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-3"><span>{{vm.getCity(item.address_from)}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-3"><span>{{vm.getCity(item.address_to)}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.freight_type.label' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
-    <div class="auction-label col-xs-12">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-12 col-sm-2"><span>{{item.price}},-</span></div>
+<div ng-click="toggleDetail(item.ID)" class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_from)}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_to)}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+    <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
+    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}},-</span></div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
@@ -22,12 +22,12 @@
             <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
             <span class="detail-content">{{item.address_to}}</span>
         </div>
-        <hr>
+        <div class="col-xs-12 hidden-sm col-md-12 col-lg-12 margin-divider"></div>
         <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
             <span>{{'texts.shipment.stopShipment' | i18next}}</span>
         </div>
         <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3>
+            <h3 class="no-border">
                 <span class="glyphicon glyphicon-picture"></span>
                 {{'texts.shipment.photos' | i18next}}
             </h3>
