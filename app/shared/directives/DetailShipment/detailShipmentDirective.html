@@ -11,7 +11,7 @@
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
     <h2 class="main-header">{{'texts.shipment.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
-    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding-detail">
         <div class="detail-row address">
             <span class="glyphicon glyphicon-home"></span>
             <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
@@ -22,56 +22,59 @@
             <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
             <span class="detail-content">{{item.address_to}}</span>
         </div>
-        <div class="col-xs-12 hidden-sm col-md-12 col-lg-12 margin-divider"></div>
+        <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 margin-divider"></div>
         <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
             <span>{{'texts.shipment.stopShipment' | i18next}}</span>
         </div>
-        <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h3 class="no-border">
+        <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
+            <h3 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-border no-padding-element">
                 <span class="glyphicon glyphicon-picture"></span>
                 {{'texts.shipment.photos' | i18next}}
             </h3>
-            <div class="photo-buttons">
-                <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
-                <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
-            </div>
-
-            <div class="shipment-photos">
-                <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.no_photos' | i18next}}</div>
-                <a ng-repeat="photo in showPhotos" href="{{photo}}" data-lightbox="images-{{item.ID}}" class="photo" style="background-image: url('{{photo}}')"></a>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 photo-buttons no-padding-element">
+                        <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab no-margin-element" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
+                        <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 shipment-photos">
+                    <div class="no-photo" ng-if="!photoReady">{{'texts.shipment.no_photos' | i18next}}</div>
+                    <a ng-repeat="photo in showPhotos" href="{{photo}}" data-lightbox="images-{{item.ID}}" class="photo" style="background-image: url('{{photo}}')"></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding-detail">
         <!--<h2 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{'texts.about_freight' | i18next}}</h2>-->
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+            <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <span class="normal-icon glyphicon glyphicon-pencil"></span>
                 <span>{{'texts.auction.freight_description' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{item.freight.freight_description}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+            <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <span class="normal-icon glyphicon glyphicon-tag"></span>
                 <span>{{'texts.auction.freight_type.label' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+            <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <i class="normal-icon awes-icon fas fa-weight-hanging"></i>
                 <span>{{'texts.auction.freight_weight' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_weight}} kg</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{item.freight.freight_weight}} kg</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="detail-label col-xs-3 col-sm-4 col-md-5 col-lg-5">
+            <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <span class="normal-icon glyphicon glyphicon-resize-full"></span>
                 <span>{{'texts.auction.freight_size' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-9 col-sm-8 col-md-7 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
         </div>
     </div>
 </div>

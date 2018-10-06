@@ -206,12 +206,13 @@
     text-align: center;
 }
 .auction-item .my-button.stop-shipment{
-    display: inline-block;
+    display: grid;
     width: 180px;
     margin: 0 auto;
 }
 .auction-item .auction-detail {
     border-top: 2px solid #2c2d51;
+    border-bottom: 2px solid #2c2d51;
     padding: 10px;
     margin: 15px 0 0 0;
     box-shadow: none;
@@ -259,6 +260,7 @@
     display: inline-block;
     color: #12133d;
     cursor: pointer;
+    font-weight: bold;
 }
 .auction-detail .delete-user:hover {
     text-decoration: underline;
@@ -559,11 +561,7 @@
 }
 
 .photo-buttons{
-    position: absolute;
-    top: 0;
-    right: 8px;
-    text-align: right;
-    z-index: 1;
+    /*position: absolute;*/
 }
 .photo-buttons .tab {
     padding: 9px 15px;
@@ -761,7 +759,7 @@ hr.small {
     .auction-header-line{
         display: none;
     }
-    .auction-item{
+    .auction-item {
         border-bottom: none;
     }
     .auction-item:nth-child(odd){
@@ -777,7 +775,7 @@ hr.small {
         width: calc(80% - 50px);
     }
     .auction-detail .auction-detail-item {
-        /*text-align: center;*/
+        text-align: center;
     }
     .auction-detail .detail-row.address {
         text-align: center;
@@ -872,6 +870,13 @@ hr.small {
     .auction-add-page .my-button {
         margin: 0 auto;
     }
+    /*Drivers*/
+    .drivers-page .auction-detail-item .detail-label {
+        text-align: center;
+    }
+    .drivers-page .auction-detail-item .delete-content {
+        text-align: center;
+    }
 }
 
 @media (max-width: 500px) {
@@ -897,6 +902,11 @@ hr.small {
 }
 
 @media (max-width: 370px) {
+    .auction-detail .tab {
+        min-width: unset;
+        width: 45%;
+        font-size: 12px;
+    }
     .auction-detail-item .bid-button .glyphicon{
         display: block;
     }

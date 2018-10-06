@@ -51,6 +51,14 @@ p {
     padding-bottom: 27px;
 }
 
+.no-padding-element {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.no-margin-element {
+    margin: 0!important;
+}
+
 #message {
     display: none;
     position: fixed;
@@ -172,6 +180,11 @@ p {
     }
     .dropdown-toggle {
         text-align: center;
+    }
+    #message {
+        right: 0;
+        left: 0;
+        width: 100%;
     }
 }
 
