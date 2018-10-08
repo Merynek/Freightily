@@ -12,11 +12,27 @@ angular.module('appControllers')
       $scope.clicked = false;
 
       $scope.registration = function() {
+        var username = $("#username"),
+            password = $("#password");
+
         $scope.clicked = true;
         if(!$scope.user.role) {
           message(3, $filter('i18next')('errors.select_role'));
           return;
         }
+        if($scope.user.password.length < 8) {
+          message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
+          password.addClass("input-error");
+          return;
+        }
+        password.removeClass("input-error");
+
+        if($scope.user.username.length < 8) {
+          message(3, $filter('i18next')('errors.username_must_me_greater_eight'));
+          username.addClass("input-error");
+          return;
+        }
+        username.removeClass("input-error");
         if(!this.registrationForm.$valid) {
           message(3, $filter('i18next')('errors.set_all_inputs'));
           return;
