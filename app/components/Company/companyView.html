@@ -59,7 +59,10 @@
 </script>
 <script type="text/ng-template" id="delete_user" class="modal-content">
     <div class="modal-header">
-        <h2>{{'warnings.delete_driver' | i18next}}</h2>
+        <h2>{{'warnings.delete_driver_title' | i18next}}</h2>
+    </div>
+    <div class="modal-body">
+        <span>{{'warnings.delete_driver_text' | i18next}}</span>
     </div>
     <div class="modal-footer">
         <div class="my-button normal-button" ng-click="ok()">{{'texts.delete_driver' | i18next}}</div>

@@ -22,7 +22,10 @@
 </m>
 <script type="text/ng-template" id="cancel_shipment" class="modal-content">
     <div class="modal-header">
-        <h2>{{'warnings.stop_shipment' | i18next}}</h2>
+        <h2>{{'warnings.stop_shipment_title' | i18next}}</h2>
+    </div>
+    <div class="modal-body">
+        <span>{{'warnings.stop_shipment_text' | i18next}}</span>
     </div>
     <div class="modal-footer">
         <div class="my-button normal-button" ng-click="ok()">{{'texts.shipment.stopShipment' | i18next}}</div>

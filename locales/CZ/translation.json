@@ -243,8 +243,10 @@
 		}
 	},
 	"warnings": {
-		"stop_shipment": "Jste si jistý?\nTato jízda se neprodlěne ukončí.",
-		"delete_driver": "Jste si jisty?\nŘidič bude nenávratně smazán."
+		"stop_shipment_title": "Jste si jistý?",
+		"stop_shipment_text": "Tato jízda se neprodlěne ukončí a tudíž nebudete mít k dispozici případné fotografie zásilky.",
+		"delete_driver_title": "Jste si jisty?",
+		"delete_driver_text": "Řidič bude nenávratně smazán."
 	},
 	"success": {
 		"login": "Přihlášení úspěšné",

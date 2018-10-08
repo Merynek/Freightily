@@ -242,7 +242,10 @@
 	},
 	"warnings": {
 		"stop_shipment": "Are you sure?\nThis shipment will immediately stop.",
-		"delete_driver": "Are you sure?\nDriver will be irrevocably deleted."
+		"stop_shipment_title": "Are you sure?",
+		"stop_shipment_text": "This shipment will immediately stop and you will not no photos of this shipment.",
+		"delete_driver_title": "Are you sure?",
+		"delete_driver_text": "Driver will be irrevocably deleted."
 	},
 	"success": {
 		"login": "Login success",

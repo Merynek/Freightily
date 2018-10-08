@@ -669,10 +669,18 @@ hr.small {
 }
 /*Dialogs*/
 .delete_user_dialog .ngdialog-content {
-    height: 121px!important;
+    height: 200px!important;
+}
+.delete_user_dialog .ngdialog-content .modal-body {
+    padding-top: 15px;
+    padding-left: 36px;
 }
 .cancel_shipment_dialog .ngdialog-content {
-    height: 121px!important;
+    height: 200px!important;
+}
+.cancel_shipment_dialog .ngdialog-content .modal-body{
+    padding-top: 15px;
+    padding-left: 36px;
 }
 
 @media (max-width: 1300px) {
