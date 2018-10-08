@@ -192,6 +192,7 @@ angular.module('appDirectives')
                         closeByDocument: false,
                         showClose: false,
                         closeByEscape: true,
+                        appendClassName: "assignment_driver_dialog",
                         controller: ['$scope', function($scope) {
                             // controller logic
                             $scope.ok = function() {

@@ -668,6 +668,11 @@ hr.small {
     margin: 10px 0;
 }
 /*Dialogs*/
+.assignment_driver_dialog .ngdialog-content .modal-body{
+    padding-top: 15px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
 .delete_user_dialog .ngdialog-content {
     height: 200px!important;
 }
