@@ -19,12 +19,27 @@ angular.module('appControllers')
       });
 
       $scope.AddUser = function() {
+          var username = $("#username"),
+              password = $("#password");
         $scope.clicked = true;
 
         if(!this.addUserForm.$valid) {
           message(3, $filter('i18next')('errors.set_all_inputs'));
           return;
         }
+        password.removeClass("input-error");
+        username.removeClass("input-error");
+        if($scope.employee.username.length < 8) {
+            message(3, $filter('i18next')('errors.username_must_me_greater_eight'));
+            username.addClass("input-error");
+            return;
+        }
+        if($scope.employee.password.length < 8) {
+            message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
+            password.addClass("input-error");
+            return;
+        }
+
         if($scope.employee.password !== $scope.employee.confirmPassword) {
           message(3, $filter('i18next')('errors.passwords_not_match'));
         }
