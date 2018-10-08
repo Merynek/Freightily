@@ -20,6 +20,10 @@ angular.module('appControllers')
           message(3, $filter('i18next')('errors.select_role'));
           return;
         }
+        if(!this.registrationForm.$valid) {
+          message(3, $filter('i18next')('errors.set_all_inputs'));
+          return;
+        }
         if($scope.user.password.length < 8) {
           message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
           password.addClass("input-error");
@@ -33,10 +37,7 @@ angular.module('appControllers')
           return;
         }
         username.removeClass("input-error");
-        if(!this.registrationForm.$valid) {
-          message(3, $filter('i18next')('errors.set_all_inputs'));
-          return;
-        }
+
         if(!numberFieldsIsValid()) {
           return;
         }
