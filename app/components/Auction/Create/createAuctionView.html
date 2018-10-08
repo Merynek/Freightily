@@ -25,15 +25,11 @@
         <span>{{'texts.auction.info' | i18next}}</span>
       </div>
       <div class="form-group half">
-        <input id="geoCompleteFrom" class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.address_from"
-          ng-class="{'input-error' : createAuctionForm.from.$invalid && (!createAuctionForm.from.$pristine || clicked)}"
-          required />
+        <input id="geoCompleteFrom" class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" ng-model="auction.address_from" />
       </div>
 
       <div class="form-group half">
-        <input id="geoCompleteTo" class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.address_to"
-          ng-class="{'input-error' : createAuctionForm.to.$invalid && (!createAuctionForm.to.$pristine || clicked)}"
-          required />
+        <input id="geoCompleteTo" class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" ng-model="auction.address_to" />
       </div>
       {{bindGeoEvents()}}
       <div class="form-group text-center">
@@ -61,10 +57,12 @@
       <div class="form-group"></div>
       <h3>{{'texts.about_freight' | i18next}}</h3>
       <div class="form-group half">
-        <input type="text" name="freight_description" class="form-control my-input" placeholder="{{'texts.auction.freight_description' | i18next}}" ng-model="auction.freight_description"/>
+        <input type="text" name="freight_description" id="freight_description" class="form-control my-input" placeholder="{{'texts.auction.freight_description' | i18next}}" ng-model="auction.freight_description"
+               ng-class="{'input-error' : createAuctionForm.freight_description.$invalid && (!createAuctionForm.freight_description.$pristine || clicked)}"
+               required />
       </div>
       <div class="form-group half">
-        <select class="form-control my-input" ng-model="auction.freight_type"
+        <select class="form-control my-input" ng-model="auction.freight_type" name="freight_type" id="freight_type"
                 ng-class="{'input-error' : createAuctionForm.freight_type.$invalid && (!createAuctionForm.freight_type.$pristine || clicked)}" required>
           <option value="" disabled selected>{{'texts.auction.freight_type.label' | i18next}}</option>
           <option value="1">{{'texts.auction.freight_type.1' | i18next}}</option>

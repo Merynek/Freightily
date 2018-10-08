@@ -186,6 +186,7 @@
 	"errors": {
 		"username_must_me_greater_eight": "Uživatelské jméno musí mít minimálně 8 znaků",
 		"password_must_me_greater_eight": "Heslo musí mít minimálně 8 znaků",
+		"phone_number_must_me_greater_none": "Nespravný formát telefoního čísla",
 		"no_vac_date_selected": "Datum dovolené nebyl zadán",
 		"passwords_not_match" : "Hesla se neshodují",
 		"wrong_login" : "Chyba při přihlašování",

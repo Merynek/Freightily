@@ -76,9 +76,9 @@
       required />
     </div>
     <div class="form-group half">
-      <input type="text" name="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="user.phone_number" 
+      <input type="text" name="phone_number" id="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="user.phone_number"
       ng-class="{'input-error' : registrationForm.phone_number.$invalid && (!registrationForm.phone_number.$pristine || clicked)}" 
-      ng-minlength="9" required />
+      required />
     </div>
     <div class="form-group half">
       <label><input type="checkbox" name="accept_conditions" ng-model="user.accept_conditions"/>

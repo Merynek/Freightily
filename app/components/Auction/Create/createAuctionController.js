@@ -128,6 +128,42 @@ angular.module('appControllers')
             return cityIsSet() && streetIsSet();
         }
 
+        function addressInputsAreEmpty() {
+            var geoCompleteFrom = $("#geoCompleteFrom"),
+                geoCompleteTo = $("#geoCompleteTo"),
+                isError = false;
+
+            geoCompleteFrom.removeClass("input-error");
+            geoCompleteTo.removeClass("input-error");
+            if (!geoCompleteFrom.val()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                geoCompleteFrom.addClass("input-error");
+                isError = true;
+            }
+            if (!geoCompleteTo.val()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                geoCompleteTo.addClass("input-error");
+                isError = true;
+            }
+
+            return isError;
+        }
+
+        function endAuctionInputIsEmpty() {
+            var end_auction = $("#end_auction"),
+                isError = false;
+
+            end_auction.removeClass("input-error");
+            if (!end_auction.val()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                end_auction.addClass("input-error");
+                isError = true;
+            }
+
+            return isError;
+
+        }
+
         function cityIsSet() {
             if ($scope.full_adress_to.city && $scope.full_adress_from.city) {
                 return true;
@@ -179,6 +215,16 @@ angular.module('appControllers')
         $scope.createAuction = function () {
             $scope.clicked = true;
             if (!this.createAuctionForm.$valid) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                addressInputsAreEmpty();
+                endAuctionInputIsEmpty();
+                return;
+            }
+            if (addressInputsAreEmpty()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                return;
+            }
+            if (endAuctionInputIsEmpty()) {
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
