@@ -64,6 +64,7 @@
 		"about_freight": "About freight",
 		"more": "More",
 		"add_driver": "Add driver",
+		"no_date_selected": "No date selected",
 		"company": "My company",
 		"assignment": "Assignment",
 		"win_auction": "Win auction",
@@ -181,6 +182,7 @@
 		}
 	},
 	"errors": {
+		"no_vac_date_selected": "Date for vacation is not selected",
 		"passwords_not_match" : "Passwords do not match",
 		"wrong_login" : "Login error",
 		"wrong_registration": "Registration error",

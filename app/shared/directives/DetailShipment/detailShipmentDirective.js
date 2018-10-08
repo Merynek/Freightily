@@ -36,9 +36,9 @@ angular.module('appDirectives')
                         template: 'cancel_shipment',
                         scope: $scope,
                         closeByDocument: false,
-                        showClose: false,
+                        showClose: true,
                         closeByEscape: true,
-                        height: 121,
+                        appendClassName: "cancel_shipment_dialog",
                         controller: ['$scope', function($scope) {
                             // controller logic
                             $scope.ok = function() {

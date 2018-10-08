@@ -667,6 +667,13 @@ hr.small {
 .margin-divider {
     margin: 10px 0;
 }
+/*Dialogs*/
+.delete_user_dialog .ngdialog-content {
+    height: 121px!important;
+}
+.cancel_shipment_dialog .ngdialog-content {
+    height: 121px!important;
+}
 
 @media (max-width: 1300px) {
     .auction-bid {
@@ -718,6 +725,18 @@ hr.small {
 }
 
 @media (max-width: 767px) {
+    .cancel_shipment_dialog .ngdialog-content {
+        height: 200px!important;
+    }
+    .cancel_shipment_dialog .ngdialog-content h2 {
+        padding:  0 0 5px 0;
+    }
+    .delete_user_dialog .ngdialog-content {
+        height: 200px!important;;
+    }
+    .delete_user_dialog .ngdialog-content h2 {
+        padding:  0 0 5px 0;
+    }
     .auction-bid {
         text-align: center;
     }
@@ -880,6 +899,13 @@ hr.small {
 }
 
 @media (max-width: 500px) {
+    /*Dialogs*/
+    .ngdialog .ngdialog-content .modal-footer {
+        text-align: center;
+    }
+    .ngdialog .ngdialog-content .my-button {
+        width: 120px;
+    }
     /*Auction */
     .no-padding-detail {
         padding-left: 0!important;

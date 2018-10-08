@@ -27,6 +27,7 @@ angular.module('appDirectives')
                 $scope.assignmentsIds = [];
                 $scope.currentDriver = 0;
                 $scope.isVac = true;
+                $scope.add_remove_vac_button_disabled = true;
 
                 $scope.show = false;
                 $scope.toggleDetail = function () {
@@ -93,6 +94,7 @@ angular.module('appDirectives')
                         vacation = getDriver(id).vacation;
 
                     datePicker.on('changeDate', function() {
+                        $scope.add_remove_vac_button_disabled = false;
                         $scope.isVac = isVacationDate(datePicker.datepicker("getDate"), vacation);
                         $scope.$digest();
                     });
@@ -113,7 +115,11 @@ angular.module('appDirectives')
                     $scope.isVac = isVacationDate(new Date(), vacation);
                 };
 
-                $scope.addVacation = function(id){
+                $scope.addVacation = function(id) {
+                    if ($scope.add_remove_vac_button_disabled) {
+                        message(3, $filter('i18next')('errors.no_vac_date_selected'));
+                        return;
+                    }
                     var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),
                         month = dateTime.getMonth() + 1,
                         formattedMonth = month.toString().length > 1 ? month : "0" + month,
@@ -141,6 +147,10 @@ angular.module('appDirectives')
                 };
 
                 $scope.removeVacation = function(id){
+                    if ($scope.add_remove_vac_button_disabled) {
+                        message(3, $filter('i18next')('errors.no_vac_date_selected'));
+                        return;
+                    }
                     var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),
                         month = dateTime.getMonth() + 1,
                         formattedMonth = month.toString().length > 1 ? month : "0" + month,
@@ -221,9 +231,9 @@ angular.module('appDirectives')
                         template: 'delete_user',
                         scope: $scope,
                         closeByDocument: false,
-                        showClose: false,
+                        showClose: true,
+                        appendClassName: "delete_user_dialog",
                         closeByEscape: true,
-                        height: 121,
                         controller: ['$scope', function($scope) {
                             // controller logic
                             $scope.ok = function() {
