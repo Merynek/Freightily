@@ -93,6 +93,7 @@ angular.module('appDirectives')
                     var datePicker = $('.inputDatePicker-'+id),
                         vacation = getDriver(id).vacation;
 
+                    $scope.add_remove_vac_button_disabled = true;
                     datePicker.on('changeDate', function() {
                         $scope.add_remove_vac_button_disabled = false;
                         $scope.isVac = isVacationDate(datePicker.datepicker("getDate"), vacation);
@@ -117,7 +118,6 @@ angular.module('appDirectives')
 
                 $scope.addVacation = function(id) {
                     if ($scope.add_remove_vac_button_disabled) {
-                        message(3, $filter('i18next')('errors.no_vac_date_selected'));
                         return;
                     }
                     var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),
@@ -148,7 +148,6 @@ angular.module('appDirectives')
 
                 $scope.removeVacation = function(id){
                     if ($scope.add_remove_vac_button_disabled) {
-                        message(3, $filter('i18next')('errors.no_vac_date_selected'));
                         return;
                     }
                     var dateTime = $(".inputDatePicker-"+id).datepicker("getDate"),

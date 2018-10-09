@@ -46,6 +46,14 @@
     margin: 10px 0;
     cursor: pointer;
 }
+.vacation-actions .my-button.disabled {
+    cursor: default;
+    color: gray;
+    opacity: 0.5;
+}
+.vacation-actions .my-button.normal-button.disabled:hover {
+    background: #12133d;
+}
 .vacation-actions span{
     padding-right: 7px;
 }
