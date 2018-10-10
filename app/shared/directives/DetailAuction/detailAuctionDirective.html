@@ -13,7 +13,7 @@
     <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
 </div>
 <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
-    <div ng-if="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+    <div ng-show="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
         <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite()"></span>
     </div>
 </div>
@@ -70,7 +70,7 @@
     <hr class="col-xs-12 col-sm-12 hidden-md hidden-lg">
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
 
-        <div ng-if="expired" class="row detail-row text-center">
+        <div ng-show="expired" class="row detail-row text-center">
             <div class="detail-label col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <div class="price-label">
                     {{'texts.actual_price' | i18next}}
@@ -86,8 +86,8 @@
                 </div>
             </div>
         </div>
-        <div ng-if="!expired" class="row detail-row text-center">
-            <div class="detail-label col-xs-12 col-sm-6 col-md-4 col-lg-5">
+        <div ng-show="!expired" class="row detail-row text-center">
+            <div class="detail-label col-xs-12" ng-class="user.isSender() ? 'col-sm-12 col-md-12 col-lg-12' : 'col-sm-6 col-md-4 col-lg-5'">
                 <div class="price-label">
                     {{'texts.actual_price' | i18next}}
                 </div>
@@ -95,8 +95,8 @@
                     {{item.current_price}},-
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-7">
-                <div ng-if="!win && withBids" class="auction-bid detail-row">
+            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-7" ng-show="!user.isSender()">
+                <div ng-show="!win && withBids" class="auction-bid detail-row">
                     <div class="bid-inputs">
                         <div class="bid-wrapper has-feedback has-feedback-right">
                             <input type="text" ng-model="bid" ng-keypress="onkeyDown($event, bid)" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
@@ -107,48 +107,48 @@
                         </div>
                     </div>
                 </div>
-                <div ng-if="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-block info-block-win">
+                <div ng-show="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-block info-block-win">
                     <span class="glyphicon glyphicon-thumbs-up"></span>
                     {{'texts.auction_win' | i18next}}
                 </div>
             </div>
         </div>
-        <hr ng-if="!expired || win || userIsBidder" class="small">
-        <div ng-if="!expired" class="detail-row text-center">
+        <hr ng-show="!expired || win || userIsBidder" class="small">
+        <div ng-show="!expired" class="detail-row text-center">
             <span class="glyphicon glyphicon-hourglass"></span>
             <span class="detail-content">
                 {{'texts.auction.ends_in' | i18next}}
             </span>
             <timer class="detail-label" countdown="item.secondsToEndAuction" max-time-unit="'day'" interval="1000">
-                {{days}} {{'texts.days' | i18next}}, {{hours}}:{{minutes}}:{{seconds}}
+                {{days}} {{'texts.days' | i18next}}, {{hhours}}:{{mminutes}}:{{sseconds}}
             </timer>
         </div>
-        <div ng-if="!user.isSender() && withBids && expired" class="detail-row row">
-            <div ng-if="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div ng-show="!user.isSender() && withBids && expired" class="detail-row row">
+            <div ng-show="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
                     <span class="glyphicon glyphicon-thumbs-up"></span>
                     <span  class="win">{{'texts.auction_win' | i18next}}</span>
                 </div>
             </div>
-            <div ng-if="!win && userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-show="!win && userIsBidder" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
                     <span class="glyphicon glyphicon-thumbs-down"></span>
                     <span class="lose">{{'texts.auction_lose' | i18next}}</span>
                 </div>
             </div>
         </div>
-        <hr ng-if="!expired || win || userIsBidder" class="small">
+        <hr ng-show="!expired || win || userIsBidder" class="small">
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
-            <span ng-if="history.length > 3" class="show-more" ng-click="vm.historyToggle()">
-                <span ng-if="!historyMore" class="glyphicon glyphicon-menu-down"></span>
-                <span ng-if="historyMore" class="glyphicon glyphicon-menu-up"></span>
-                <label ng-if="!historyMore">{{'texts.show_more' | i18next}}</label>
-                <label ng-if="historyMore">{{'texts.show_less' | i18next}}</label>
+            <span ng-show="history.length > 3" class="show-more" ng-click="vm.historyToggle()">
+                <span ng-show="!historyMore" class="glyphicon glyphicon-menu-down"></span>
+                <span ng-show="historyMore" class="glyphicon glyphicon-menu-up"></span>
+                <label ng-show="!historyMore">{{'texts.show_more' | i18next}}</label>
+                <label ng-show="historyMore">{{'texts.show_less' | i18next}}</label>
             </span>
         </h3>
-        <div ng-if="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table">
+        <div ng-show="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table">
             <div class="history-header row">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">#</div>
@@ -176,12 +176,12 @@
                     </div>
                 </div>
             </div>
-            <div ng-if="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="vm.historyToggle()">
+            <div ng-show="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="vm.historyToggle()">
                 <div class="text-center">
                     {{'texts.history_next' | i18next}} <b>{{history.length - 3}}</b> {{'texts.history_next2' | i18next}}
                 </div>
             </div>
-            <div ng-if="historyMore" class="history-list">
+            <div ng-show="historyMore" class="history-list">
                 <div ng-repeat="item_history in history | limitTo: history.length : 3"
                      ng-class="(item_history.id_user == user.ID ? 'my-history ': '') + 'history-list-item row'">
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
@@ -198,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <div ng-if="history.length == 0" class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div ng-show="history.length == 0" class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
             {{'texts.no_amounts' | i18next}}
         </div>
     </div>

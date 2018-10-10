@@ -65,7 +65,6 @@ angular.module('appDirectives')
                     }
                     console.log("Auction end");
                     $scope.expired = true;
-                    $scope.withBids = false;
                     $scope.win = $scope.item.last_amount_user === User.ID;
                     setTimeout(function () {
                         refreshItem($scope.ID)
