@@ -9,7 +9,7 @@
                required />
       </div>
       <div class="form-group half">
-        <input type="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="employee.email"
+        <input type="text" name="email" id="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="employee.email"
                ng-class="{'input-error' : addUserForm.email.$invalid && (!addUserForm.email.$pristine || clicked)}"
                required />
       </div>

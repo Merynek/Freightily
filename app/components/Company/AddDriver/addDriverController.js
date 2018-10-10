@@ -20,7 +20,8 @@ angular.module('appControllers')
 
       $scope.AddUser = function() {
           var username = $("#username"),
-              password = $("#password");
+              password = $("#password"),
+              email = $("#email");
         $scope.clicked = true;
 
         if(!this.addUserForm.$valid) {
@@ -29,9 +30,15 @@ angular.module('appControllers')
         }
         password.removeClass("input-error");
         username.removeClass("input-error");
+        email.removeClass("input-error");
         if($scope.employee.username.length < 8) {
             message(3, $filter('i18next')('errors.username_must_me_greater_eight'));
             username.addClass("input-error");
+            return;
+        }
+        if (!validateEmail($scope.employee.email)) {
+            message(3, $filter('i18next')('errors.wrong_email'));
+            email.addClass("input-error");
             return;
         }
         if($scope.employee.password.length < 8) {

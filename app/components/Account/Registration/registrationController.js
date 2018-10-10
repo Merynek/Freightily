@@ -14,7 +14,8 @@ angular.module('appControllers')
       $scope.registration = function() {
         var username = $("#username"),
             password = $("#password"),
-            phone_number = $("#phone_number");
+            phone_number = $("#phone_number"),
+            email = $("#email");
 
         $scope.clicked = true;
         if(!$scope.user.role) {
@@ -28,12 +29,17 @@ angular.module('appControllers')
         username.removeClass("input-error");
         password.removeClass("input-error");
         phone_number.removeClass("input-error");
+        email.removeClass("input-error");
         if($scope.user.username.length < 8) {
             message(3, $filter('i18next')('errors.username_must_me_greater_eight'));
             username.addClass("input-error");
             return;
         }
-
+        if (!validateEmail($scope.user.email)) {
+            message(3, $filter('i18next')('errors.wrong_email'));
+            email.addClass("input-error");
+            return;
+        }
         if($scope.user.password.length < 8) {
           message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
           password.addClass("input-error");

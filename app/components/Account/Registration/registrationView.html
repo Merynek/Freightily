@@ -16,7 +16,7 @@
     </div>
 
     <div class="form-group half">
-      <input type="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="user.email"
+      <input type="text" name="email" id="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="user.email"
              ng-class="{'input-error' : registrationForm.email.$invalid && (!registrationForm.email.$pristine || clicked)}"
              required />
     </div>
