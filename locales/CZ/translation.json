@@ -238,7 +238,8 @@
 			"33": "Tento řidič zatím neuložil svoji pozici.",
 			"34": "Některé jízdy mají jiní řidiči, prosím zkontrolujte si to.",
 			"35": "Tato jízda není přiřazená na tohoto řiriče",
-			"36": "Tento řidič nelze smazat, protože je na něho přiřazená nějaká jízda"
+			"36": "Tento řidič nelze smazat, protože je na něho přiřazená nějaká jízda",
+			"37": "Vás účet je zablokován na 5 minut."
 		}
 	},
 	"warnings": {

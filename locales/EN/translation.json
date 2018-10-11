@@ -236,7 +236,8 @@
 			"33": "This driver have no set position yet",
 			"34": "Some of shipments has another driver, check this.",
 			"35": "This shipment is not assigned to this driver",
-			"36": "This driver cannot be deleted because some shipments is assigned to him"
+			"36": "This driver cannot be deleted because some shipments is assigned to him",
+			"37": "Your account is blocked for 5 minutes."
 		}
 	},
 	"warnings": {
