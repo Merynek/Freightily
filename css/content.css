@@ -668,24 +668,18 @@ hr.small {
     margin: 10px 0;
 }
 /*Dialogs*/
-.assignment_driver_dialog .ngdialog-content .modal-body{
+.ngdialog .ngdialog-content .modal-body {
     padding-top: 15px;
     padding-left: 36px;
-    padding-right: 36px;
+    padding-right: 20px;
 }
+
 .delete_user_dialog .ngdialog-content {
     height: 200px!important;
 }
-.delete_user_dialog .ngdialog-content .modal-body {
-    padding-top: 15px;
-    padding-left: 36px;
-}
+
 .cancel_shipment_dialog .ngdialog-content {
     height: 200px!important;
-}
-.cancel_shipment_dialog .ngdialog-content .modal-body{
-    padding-top: 15px;
-    padding-left: 36px;
 }
 
 @media (max-width: 1300px) {
@@ -739,7 +733,7 @@ hr.small {
 
 @media (max-width: 767px) {
     .cancel_shipment_dialog .ngdialog-content {
-        height: 200px!important;
+        height: 250px!important;
     }
     .cancel_shipment_dialog .ngdialog-content h2 {
         padding:  0 0 5px 0;
