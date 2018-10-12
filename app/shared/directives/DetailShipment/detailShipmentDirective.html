@@ -1,12 +1,14 @@
-<div ng-click="toggleDetail(item.ID)" class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_from)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_to)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}},-</span></div>
+<div ng-click="toggleDetail(item.ID)" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_from)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_to)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}},-</span></div>
+    </div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>

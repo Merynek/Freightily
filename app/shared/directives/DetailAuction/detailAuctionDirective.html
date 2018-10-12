@@ -1,20 +1,22 @@
-<div ng-click="toggleDetail()" class="auction-info col-xs-12 col-sm-11 col-md-11 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
-    <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_to)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
-    <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
-        <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
+<div ng-click="toggleDetail()" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="auction-info col-xs-12 col-sm-11 col-md-11 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
+        <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_to)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+        <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
+            <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
+        </div>
+        <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
     </div>
-    <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
-    <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
-</div>
-<div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
-    <div ng-show="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
-        <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite()"></span>
+    <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
+        <div ng-show="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+            <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite($event); $event.stopPropagation()"></span>
+        </div>
     </div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">

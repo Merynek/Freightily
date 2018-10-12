@@ -177,6 +177,11 @@
     padding: 10px 0 15px 0;
 }
 
+.global-list-item {
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+}
 .auction-item{
     padding: 0;
     min-height: 50px;
@@ -193,9 +198,6 @@
 }
 .auction-item:hover {
     background: #f5f5f5;
-}
-.auction-item .auction-info:hover {
-    cursor: pointer;
 }
 .auction-item .auction-info.auction-expired .end-date{
     color: #e91d27;
@@ -311,8 +313,6 @@
 }
 .auction-detail .history-header div{
     padding: 5px;
-}
-.auction-detail .history-list{
 }
 .auction-detail .show-more {
     margin-right: 20px;
@@ -732,6 +732,9 @@ hr.small {
 }
 
 @media (max-width: 767px) {
+    .global-list-item {
+        padding-bottom: 15px;
+    }
     .cancel_shipment_dialog .ngdialog-content {
         height: 250px!important;
     }
@@ -746,7 +749,7 @@ hr.small {
     }
     .auction-bid {
         text-align: center;
-    }
+    }   
     .auction-detail .auction-detail-item .bid {
         margin-bottom: 5px;
     }
