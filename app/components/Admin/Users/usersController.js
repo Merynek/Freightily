@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Shipments',
-    function($scope, users, User, $filter, $state, Shipments) {
+    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Shipments', 'Admin',
+    function($scope, users, User, $filter, $state, Shipments, Admin) {
         $scope.users = users;
         $scope.route = "admin|users";
 
@@ -70,6 +70,14 @@ angular.module('appControllers')
         $scope.AddShipment = function(id_transporter) {
             Shipments.NewShipmentFromAdmin(id_transporter).then(function() {
                 message(1, $filter('i18next')('success.shipment_added'));
+            }).catch(function(error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            })
+        };
+
+        $scope.GetAuctionCache = function() {
+            Admin.getAuctionCache().then(function(data) {
+                console.log(data);
             }).catch(function(error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
