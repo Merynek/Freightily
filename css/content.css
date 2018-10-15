@@ -677,6 +677,10 @@ hr.small {
     padding-left: 15px;
     padding-right: 15px;
 }
+.ngdialog.ngdialog-theme-default.assignment_driver_dialog  {
+    padding-bottom: 80px;
+    padding-top: 80px;
+}
 
 .delete_user_dialog .ngdialog-content {
     height: 200px!important;
@@ -871,10 +875,6 @@ hr.small {
     }
     .company-list .auction-item .auction-cell.assigned{
         text-align: center;
-    }
-    .ngdialog.ngdialog-theme-default.assignment_driver_dialog  {
-        padding-bottom: 80px;
-        padding-top: 80px;
     }
     /*Registration page*/
     .registration-page {
