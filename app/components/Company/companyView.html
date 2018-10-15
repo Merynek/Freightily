@@ -25,31 +25,40 @@
 <script type="text/ng-template" id="modal_assign" class="modal-content">
     <div class="modal-header">
         <h2>{{'texts.assignment_modal_title' | i18next}}</h2>
-        <button ng-click="cancel()" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
     </div>
     <div class="modal-body">
-        <table ng-if="shipmentsForDriver.length > 0" class="table table-responsive company-list">
-            <tr>
-                <th>{{'texts.auction.id' | i18next}}</th>
-                <th>{{'texts.auction.from' | i18next}}</th>
-                <th>{{'texts.auction.to' | i18next}}</th>
-                <th class="text-right">{{'texts.auction.price' | i18next}}</th>
-                <th class="text-right">{{'texts.user.assigned' | i18next}}</th>
-            </tr>
-            <tr ng-repeat="shipment in shipmentsForDriver"
-                ng-class="shipment.driver !== 0 ? 'my-drive' : ''"
-                ng-click="setAssignment(shipment.ID, $event)">
-                <td>{{shipment.ID}}</td>
-                <td>{{shipment.address_from}}</td>
-                <td>{{shipment.address_to}}</td>
-                <td class="text-right">{{shipment.price}},-</td>
-                <td class="text-right"><span class="glyphicon glyphicon-ok"></span></td>
-            </tr>
-        </table>
-        <div ng-if="shipmentsForDriver.length == 0" class="text-center no-shipments info">
-            {{'texts.shipment.no_shipments' | i18next}}
+        <div class="auction-list-page company-list">
+            <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <div ng-if="shipmentsForDriver.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
+                    <div class="auction-header">
+                        <div class="auction-cell col-sm-1 col-md-1 col-lg-1"><span>{{'texts.auction.id' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.from' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.to' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.price' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>{{'texts.user.assigned' | i18next}}</span></div>
+                    </div>
+                </div>
+                <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="auction-item" ng-repeat="shipment in shipmentsForDriver"
+                         ng-class="shipment.driver !== 0 ? 'my-drive' : ''"
+                         ng-click="setAssignment(shipment.ID, $event)">
+                        <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="auction-label col-xs-6">{{'texts.auction.id' | i18next}}</div>
+                            <div class="auction-cell col-xs-6 col-sm-1 col-md-1 col-lg-1"><span>{{shipment.ID}}</span></div>
+                            <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
+                            <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{shipment.address_from}}</span></div>
+                            <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
+                            <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3 "><span>{{shipment.address_to}}</span></div>
+                            <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
+                            <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{shipment.price}},-</span></div>
+                            <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2 assigned"><span class="glyphicon glyphicon-ok"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="shipmentsForDriver.length == 0" class="text-center no-shipments info">
+                {{'texts.shipment.no_shipments' | i18next}}
+            </div>
         </div>
     </div>
     <div class="modal-footer">

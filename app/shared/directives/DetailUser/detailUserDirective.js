@@ -189,7 +189,7 @@ angular.module('appDirectives')
                         template: 'modal_assign',
                         scope: $scope,
                         closeByDocument: false,
-                        showClose: false,
+                        showClose: true,
                         closeByEscape: true,
                         appendClassName: "assignment_driver_dialog",
                         controller: ['$scope', function($scope) {
@@ -213,7 +213,7 @@ angular.module('appDirectives')
                             }
                         }],
                         preCloseCallback: function(value) {
-                            if (value) {
+                            if (value && value !== "$closeButton" && value !== "$escape") {
                                 assignShipments();
                                 $scope.shipmentsForDriver = [];
                                 $scope.assignmentsIds = [];

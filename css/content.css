@@ -29,6 +29,7 @@
 }
 
 .ngdialog-content .modal-header h2 {
+    padding-left: 0;
     display: inline;
     border: none;
 }
@@ -513,16 +514,19 @@
     cursor: pointer;
 }
 
-.company-list td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 253px;
+.company-list .auction-header-line {
+    border-bottom: 1px solid #12133d;
+}
+.company-list .auction-item {
+    border-bottom: 1px solid #12133d;
+    background: #f5f5f5!important;
+}
+.company-list .auction-info{
     cursor: pointer;
 }
 
 .company-list .my-drive {
-    background: #e6e6f1;
+    background: #e6e6f1!important;
 }
 
 .company-list .glyphicon {
@@ -670,8 +674,8 @@ hr.small {
 /*Dialogs*/
 .ngdialog .ngdialog-content .modal-body {
     padding-top: 15px;
-    padding-left: 36px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .delete_user_dialog .ngdialog-content {
@@ -864,6 +868,13 @@ hr.small {
     }
     .user-page .table-wrapper {
         padding: 0;
+    }
+    .company-list .auction-item .auction-cell.assigned{
+        text-align: center;
+    }
+    .ngdialog.ngdialog-theme-default.assignment_driver_dialog  {
+        padding-bottom: 80px;
+        padding-top: 80px;
     }
     /*Registration page*/
     .registration-page {
