@@ -51,7 +51,11 @@
                             <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3 "><span>{{shipment.address_to}}</span></div>
                             <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
                             <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{shipment.price}},-</span></div>
-                            <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2 assigned"><span class="glyphicon glyphicon-ok"></span></div>
+                            <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                <div class="assign-mark">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

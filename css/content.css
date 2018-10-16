@@ -458,6 +458,19 @@
 }
 
 /*assignments*/
+.assign-mark {
+    color: #12133d;
+    font-size: 20px;
+    margin-top: -3px;
+    margin-left: 18px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #12133d;
+}
+.assign-mark .glyphicon {
+    padding-left: 3px!important;
+    padding-top: 3px!important;
+}
 .assignments {
 }
 .assignments table{
@@ -740,6 +753,9 @@ hr.small {
 }
 
 @media (max-width: 767px) {
+    .assign-mark {
+        margin: 0 auto;
+    }
     .global-list-item {
         padding-bottom: 15px;
     }
@@ -872,9 +888,6 @@ hr.small {
     }
     .user-page .table-wrapper {
         padding: 0;
-    }
-    .company-list .auction-item .auction-cell.assigned{
-        text-align: center;
     }
     /*Registration page*/
     .registration-page {
