@@ -17,10 +17,15 @@ $urlRouterProvider.otherwise("/404");
 		 .state("empty", {
 			 url: "/",
 			 template: "<ui-view>",
-			 controller: function($scope){
-			 },
-			 onEnter: function($state){
-				 $state.go("auction")
+             data: {
+                 role: [1,2,3,99]
+             },
+			 controller: function($state, User) {
+			 	if (User.isAdmin()) {
+                    $state.go("users")
+				} else {
+                    $state.go("auction")
+				}
 			 }
 		 })
 		.state('login', {
