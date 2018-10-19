@@ -50,13 +50,7 @@ angular.module('appControllers')
                     var marker = new google.maps.Marker({
                         position: gps,
                         map: map,
-                        label: {
-                            position: 'relative',
-                            color: 'black',
-                            fontSize: '20px',
-                            fontWeight: 'bold',
-                            text: drivers[i].driver.username
-                        }
+                        title: drivers[i].driver.username
                     });
 
                     marker.addListener('click', function() {
