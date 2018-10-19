@@ -108,6 +108,7 @@
 		"shipment": {
 			"new": "New",
 			"finished": "Finished",
+			"detail": "Shipment detail",
 			"no_shipments": "No shipments...",
 			"about_driver": "About driver",
 			"driver_name": "Name",
