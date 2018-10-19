@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Shipments', 'Admin',
-    function($scope, users, User, $filter, $state, Shipments, Admin) {
+    .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Admin',
+    function($scope, users, User, $filter, $state, Admin) {
         $scope.users = users;
         $scope.route = "admin|users";
 
@@ -22,7 +22,7 @@ angular.module('appControllers')
         $scope.BanUser = function(id_user) {
             var ban = getUser(id_user).banned ? 0 : 1;
 
-            User.BanUser(id_user, ban).then(function() {
+            Admin.BanUser(id_user, ban).then(function() {
                 message(1, $filter('i18next')('success.ban_user'));
                 // refresh data
                 setTimeout(function() {
@@ -38,7 +38,7 @@ angular.module('appControllers')
         $scope.DeleteUser = function(id_user) {
             var del = getUser(id_user).deleted ? 0 : 1;
 
-            User.DeleteUser(id_user, del).then(function() {
+            Admin.DeleteUser(id_user, del).then(function() {
                 message(1, $filter('i18next')('success.delete_user'));
                 // refresh data
                 setTimeout(function() {
@@ -54,7 +54,7 @@ angular.module('appControllers')
         $scope.VerifyUser = function(id_user) {
             var verify = getUser(id_user).verified ? 0 : 1;
 
-            User.VerifyUser(id_user, verify).then(function() {
+            Admin.VerifyUser(id_user, verify).then(function() {
                 message(1, $filter('i18next')('success.verify_user'));
                 // refresh data
                 setTimeout(function() {
@@ -68,7 +68,7 @@ angular.module('appControllers')
         };
 
         $scope.AddShipment = function(id_transporter) {
-            Shipments.NewShipmentFromAdmin(id_transporter).then(function() {
+            Admin.NewShipmentFromAdmin(id_transporter).then(function() {
                 message(1, $filter('i18next')('success.shipment_added'));
             }).catch(function(error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));

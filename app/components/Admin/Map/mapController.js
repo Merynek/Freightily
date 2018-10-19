@@ -6,11 +6,11 @@
  */
 
 angular.module('appControllers')
-    .controller('mapController', ['$scope', 'User', '$filter',
-        function($scope, User, $filter) {
+    .controller('mapController', ['$scope', 'Admin', 'User', '$filter',
+        function($scope, Admin, User, $filter) {
             $scope.route = "admin|map";
             $scope.drivers = [];
-            User.GetDriversPosition().then(function(drivers) {
+            Admin.GetDriversPosition().then(function(drivers) {
                 $scope.ShowDrivers(drivers);
             }).catch(function(error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
@@ -28,15 +28,16 @@ angular.module('appControllers')
                 var i;
 
                 for (i = 0; i < drivers.length; i++) {
-                    var gps = drivers[i].last_gps_point;
+                    var gps = drivers[i].position;
 
                     if (!gps) {
                         continue;
                     }
 
                     $scope.drivers.push(drivers[i]);
-                    var arrayneco = gps.split(",");
-                    gps = {lat: Number(arrayneco[0]), lng: Number(arrayneco[1])};
+
+                    var gpsParts = gps.split(",");
+                    gps = {lat: Number(gpsParts[0]), lng: Number(gpsParts[1])};
 
                     var contentString = '<div id="content">'+
                         drivers[i].driver.username+
@@ -49,13 +50,37 @@ angular.module('appControllers')
                     var marker = new google.maps.Marker({
                         position: gps,
                         map: map,
-                        title: drivers[i].driver.name + " " + drivers[i].driver.surname
+                        label: {
+                            position: 'relative',
+                            color: 'black',
+                            fontSize: '20px',
+                            fontWeight: 'bold',
+                            text: drivers[i].driver.username
+                        }
                     });
 
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
                     });
                 }
+            }
+
+            $scope.GetLastGpsUpdate = function(last_position_set) {
+                var dateFuture = new Date(last_position_set);
+                var dateNow = new Date();
+
+                var seconds = Math.floor((dateNow - (dateFuture))/1000);
+                var minutes = Math.floor(seconds/60);
+                var hours = Math.floor(minutes/60);
+                var days = Math.floor(hours/24);
+
+                hours = hours-(days*24);
+                minutes = minutes-(days*24*60)-(hours*60);
+
+                var lastGpsUpdate = dateFuture.getDate() + "." + (dateFuture.getMonth()+1) + "." + dateFuture.getFullYear();
+                var lastGpsUpdateTime = dateFuture.getHours() + ":" + dateFuture.getMinutes();
+
+                return lastGpsUpdate + " " + lastGpsUpdateTime;
             }
         }
     ]);

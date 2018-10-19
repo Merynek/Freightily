@@ -49,7 +49,6 @@ angular.module('appDirectives')
                         $scope.isMap = true;
                         var position = data.position;
 
-                        console.log(data.last_position_set);
                         var dateFuture = new Date(data.last_position_set);
                         var dateNow = new Date();
 
