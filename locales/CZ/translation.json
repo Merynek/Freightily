@@ -176,7 +176,6 @@
 			"end_auction": "Konec aukce",
 			"min_amount": "Minimální příhoz",
 			"history_amount": "Historie příhozů",
-			"maturity": "Splatnost pracovních dní",
 			"driver": "Řidič",
 			"ends_in": "Aukce končí za ",
 			"no_auction": "Žádné dostupné aukce..."
@@ -202,7 +201,6 @@
 		"wrong_bid": "Neplatná částka přihození",
 		"weight_is_number": "Hmotnost musí být číslo",
 		"price_is_number": "Cena musí být číslo",
-		"maturity_is_number": "Splatnost dní musí být číslo",
 		"bid_is_number": "Příhoz musí být číslo",
 		"psc_is_number": "PSČ musí být číslo",
 		"ico_is_number": "IČO musí být číslo",

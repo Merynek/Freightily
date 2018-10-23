@@ -175,7 +175,6 @@
 			"end_auction": "End auction",
 			"min_amount": "Min amount",
 			"history_amount": "History amount",
-			"maturity": "Working day maturity",
 			"driver": "Driver",
 			"ends_in": "Auction ends in",
 			"no_auction": "No auction"
@@ -201,7 +200,6 @@
 		"wrong_bid": "Wrong bid",
 		"weight_is_number": "Weight must be a number",
 		"price_is_number": "Price must be a number",
-		"maturity_is_number": "Maturity must be a number",
 		"bid_is_number": "Bid must be a number",
 		"psc_is_number": "ZIP must be a number",
 		"ico_is_number": "Identification number must be a number",
