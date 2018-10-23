@@ -97,11 +97,6 @@
           </span>
         </div>
       </div>
-      <div class="form-group half">
-        <input type="text" name="maturity" id="maturity" class="form-control my-input" placeholder="{{'texts.auction.maturity' | i18next}}" ng-model="auction.maturity"
-            ng-class="{'input-error' : createAuctionForm.maturity.$invalid && (!createAuctionForm.maturity.$pristine || clicked)}"
-            required />
-      </div>
       <div class="form-group text-center">
         <div class="my-button important-button big-button" ng-click="createAuction()">{{'texts.auction.create_auction' | i18next}}</div>
       </div>

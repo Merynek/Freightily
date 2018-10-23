@@ -185,7 +185,6 @@ angular.module('appControllers')
 
         function numberFieldsIsValid() {
             var freight_weight = $("#freight_weight"),
-                maturity = $("#maturity"),
                 price = $("#price");
 
             if (!isValueNumber($scope.auction.freight_weight)) {
@@ -194,13 +193,6 @@ angular.module('appControllers')
                 return false;
             }
             freight_weight.removeClass("input-error");
-
-            if (!isValueNumber($scope.auction.maturity)) {
-                maturity.addClass("input-error");
-                message(3, $filter('i18next')('errors.maturity_is_number'));
-                return false;
-            }
-            maturity.removeClass("input-error");
 
             if (!isValueNumber($scope.auction.price)) {
                 price.addClass("input-error");
@@ -256,8 +248,7 @@ angular.module('appControllers')
                     load_note: $scope.auction.load_note,
                     unload_note: $scope.auction.unload_note,
                     price: $scope.auction.price,
-                    end_auction: end_auction.val(),
-                    maturity: $scope.auction.maturity
+                    end_auction: end_auction.val()
                 };
 
                 Auction.create(data).then(function () {

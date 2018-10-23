@@ -71,7 +71,6 @@ angular.module('appControllers')
             surname: $scope.user.surname,
             company_name: $scope.user.company_name,
             ico: $scope.user.ico,
-            bank_account: $scope.user.bank_account,
             address_city: $scope.user.address_city,
             address_street: $scope.user.address_street,
             address_house_number: $scope.user.address_house_number,
