@@ -8,7 +8,8 @@ angular.module('appDirectives')
             scope: {
                 driver: '='
             },
-            controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog) {
+            controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog, $i18next) {
+                $scope.currentLanguage = $i18next.options.lng;
                 $scope.driver = this.driver.driver;
 
                 Shipments.getAllNewShipments().then(function(res){
@@ -109,7 +110,7 @@ angular.module('appDirectives')
                         },
                         weekStart: 1,
                         todayHighlight: true,
-                        language: "cs-CZ"
+                        language: $scope.currentLanguage === "CZ" ? "cs" : "en"
                     });
                     datePicker.datepicker('show');
                     $scope.isVac = isVacationDate(new Date(), vacation);

@@ -6,26 +6,35 @@
 */
 
 angular.module('appControllers')
-  .controller('auctionListController', ['$scope', 'AuctionList', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state',
-      function($scope, AuctionList, Auction, User, UserAbility, $location, $stateParams, $filter, $state){
+  .controller('auctionListController', ['$scope', 'AuctionList', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state', '$rootScope',
+      function($scope, AuctionList, Auction, User, UserAbility, $location, $stateParams, $filter, $state, $rootScope){
     $scope.route = "auction|list";
     $scope.AuctionList = AuctionList;
     $scope.filter = $stateParams.sort;
     $scope.order = $stateParams.order ? $stateParams.order : "ASC";
     $scope.page = $stateParams.page ? $stateParams.page : "1";
     $scope.sorting = getSortingText();
-    if (!checkAuctionRunning) {
+    $scope.windowHasFocus = true;
+    if (!checkListAuctionRunning) {
        refreshingData();
     }
 
-    function refreshingData() {
-        checkAuctionRunning = true;
-        var route = $state.current.name;
-        if (route === "auction") {
-            Auction.getAuctionCache().then(function (data) {
+      $(window).focus(function() {
+          $scope.windowHasFocus = true;
+          if (!checkListAuctionRunning) {
+              refreshingData();
+          }
+      }).blur(function() {
+          $scope.windowHasFocus = false;
+      });
 
+    function refreshingData() {
+        checkListAuctionRunning = true;
+        var route = $state.current.name;
+        if (route === "auction" && $scope.windowHasFocus && $scope.AuctionList.length) {
+            Auction.getAuctionCache().then(function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    $scope.$broadcast('updateAuctionPrice', data[i].ID, data[i].price);
+                    $rootScope.$broadcast('updateAuctionPrice', data[i].ID, data[i].price);
                 }
                 setTimeout(function() {
                     refreshingData();
@@ -34,7 +43,7 @@ angular.module('appControllers')
                 // message(3, $filter('i18next')(getErrorKeyByCode(error)));
             });
         } else {
-            checkAuctionRunning = false;
+            checkListAuctionRunning = false;
         }
     }
 
