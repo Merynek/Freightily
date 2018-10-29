@@ -11,6 +11,7 @@
 		"driver_licence": "Řidičský průkaz",
 		"no_amounts": "Žádné příhozy",
 		"accept_conditions": "Souhlasím s podmínkami",
+		"accept_gdpr": "Souhlasím s gdpr",
 		"bid": "Přihodit",
 		"want_bid": "Nová nabídka",
 		"auction_complete": "Aukce již skončila.",
@@ -94,7 +95,8 @@
 			"my_shipments": "Přiřazené / volné jízdy",
 			"assign": "Přiřazování jízd",
 			"assign_button": "Jízdy",
-			"assigned": "Přiřazeno"
+			"assigned": "Přiřazeno",
+			"show_price": "Viditelnost ceny"
 		},
 		"sorting": {
 			"label": "Řazení",
@@ -174,6 +176,7 @@
 			"freight_weight": "Váha zásilky (kg)",
 			"email_addressee": "Email adresáta",
 			"end_auction": "Konec aukce",
+			"delivery": "Dodání",
 			"min_amount": "Minimální příhoz",
 			"history_amount": "Historie příhozů",
 			"driver": "Řidič",
@@ -195,6 +198,7 @@
 		"wrong_address_city": "Špatně zadané město v adrese",
 		"wrong_address_street": "Špatně zadaná ulice v adrese",
 		"invalid_auction_date": "Datum ukončení aukce musí být větší jak aktuální datum",
+		"invalid_delivery_date": "Datum dodání musí být po ukončení aukce",
 		"auction_created": "Aukce nebyla založena, zkontrolujte formulář",
 		"set_required_inputs": "Vyplňte všechny povinné položky",
 		"auction_history": "Načítání historie se nezdařilo",

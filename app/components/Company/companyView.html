@@ -35,7 +35,8 @@
                         <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.from' | i18next}}</span></div>
                         <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.to' | i18next}}</span></div>
                         <div class="auction-cell col-sm-3 col-md-3 col-lg-3"><span>{{'texts.auction.price' | i18next}}</span></div>
-                        <div class="auction-cell col-sm-2 col-md-2 col-lg-2"><span>{{'texts.user.assigned' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-1 col-md-1 col-lg-1"><span>{{'texts.user.assigned' | i18next}}</span></div>
+                        <div class="auction-cell col-sm-1 col-md-1 col-lg-1"><span>{{'texts.user.show_price' | i18next}}</span></div>
                     </div>
                 </div>
                 <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -51,8 +52,15 @@
                             <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3 "><span>{{shipment.address_to}}</span></div>
                             <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
                             <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{shipment.price}},-</span></div>
-                            <div class="auction-cell col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                            <div class="auction-cell col-xs-12 col-sm-1 col-md-1 col-lg-1">
                                 <div class="assign-mark">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </div>
+                            </div>
+                            <div class="auction-cell col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                <div class="show-price-mark"
+                                     ng-class="shipment.show_price ? 'show-price' : ''"
+                                     ng-click="setPriceVisibility(shipment.ID, $event); $event.stopPropagation()">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </div>
                             </div>

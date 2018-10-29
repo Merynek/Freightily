@@ -11,6 +11,7 @@
 		"driver_licence": "Driver licence",
 		"no_amounts": "No amounts",
 		"accept_conditions": "Accept conditions",
+		"accept_gdpr": "Accept gdpr",
 		"bid": "Bid",
 		"want_bid": "Want bid?",
 		"auction_complete": "End of auction",
@@ -94,7 +95,8 @@
 			"my_shipments": "Assigned / Free shipments",
 			"assign": "Assignments",
 			"assign_button": "Shipments",
-			"assigned": "Assigned"
+			"assigned": "Assigned",
+			"show_price": "Price visibility"
 		},
 		"sorting": {
 			"label": "Sorting",
@@ -173,6 +175,7 @@
 			"freight_weight": "Freight weight (kg)",
 			"email_addressee": "Email addressee",
 			"end_auction": "End auction",
+			"delivery": "Delivery",
 			"min_amount": "Min amount",
 			"history_amount": "History amount",
 			"driver": "Driver",
@@ -194,6 +197,7 @@
 		"wrong_address_city": "Wrong set city in address",
 		"wrong_address_street": "Wrong set street in address",
 		"invalid_auction_date": "Date of end auction must be greater than currently date",
+		"invalid_delivery_date": "Date of delivery must be after end of auction",
 		"auction_created": "Auction not created, check form",
 		"set_required_inputs": "Set all required fields",
 		"auction_history": "Load history failed",

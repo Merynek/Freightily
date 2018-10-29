@@ -120,8 +120,11 @@ angular.module('appControllers')
             }
         };
 
-        function validateDate(value) {
+        function validateAuctionEndDate(value) {
             return new Date(value) < new Date();
+        }
+        function validateDeliveryDate(value, endAuctionDate) {
+            return !(new Date(endAuctionDate) < new Date(value));
         }
 
         function addressIsSet() {
@@ -161,7 +164,20 @@ angular.module('appControllers')
             }
 
             return isError;
+        }
 
+        function deliveryInputIsEmpty() {
+            var delivery = $("#delivery"),
+                isError = false;
+
+            delivery.removeClass("input-error");
+            if (!delivery.val()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                delivery.addClass("input-error");
+                isError = true;
+            }
+
+            return isError;
         }
 
         function cityIsSet() {
@@ -210,6 +226,7 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 addressInputsAreEmpty();
                 endAuctionInputIsEmpty();
+                deliveryInputIsEmpty();
                 return;
             }
             if (addressInputsAreEmpty()) {
@@ -220,11 +237,21 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
+            if (deliveryInputIsEmpty()) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                return;
+            }
             var end_auction = $("#end_auction");
+            var delivery = $("#delivery");
 
-            if (validateDate(end_auction.val())) {
+            if (validateAuctionEndDate(end_auction.val())) {
                 end_auction.addClass("input-error");
                 message(3, $filter('i18next')('errors.invalid_auction_date'));
+                return;
+            }
+            if (validateDeliveryDate(delivery.val(), end_auction.val())) {
+                delivery.addClass("input-error");
+                message(3, $filter('i18next')('errors.invalid_delivery_date'));
                 return;
             }
 
@@ -236,6 +263,7 @@ angular.module('appControllers')
             }
 
             end_auction.removeClass("input-error");
+            delivery.removeClass("input-error");
 
             if (end_auction) {
                 var data = {
@@ -248,7 +276,8 @@ angular.module('appControllers')
                     load_note: $scope.auction.load_note,
                     unload_note: $scope.auction.unload_note,
                     price: $scope.auction.price,
-                    end_auction: end_auction.val()
+                    end_auction: end_auction.val(),
+                    delivery: delivery.val()
                 };
 
                 Auction.create(data).then(function () {

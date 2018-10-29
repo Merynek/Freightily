@@ -80,6 +80,11 @@
         {{'texts.accept_conditions' | i18next}}
       </label>
     </div>
+    <div class="form-group half">
+      <label><input type="checkbox" name="accept_gdpr" ng-model="user.accept_gdpr"/>
+        {{'texts.accept_gdpr' | i18next}}
+      </label>
+    </div>
     <div class="form-group buttons">
       <div class="my-button big-button important-button" ng-click="registration()">{{'texts.registration' | i18next}}</div>
     </div>

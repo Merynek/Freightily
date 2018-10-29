@@ -25,7 +25,7 @@ angular.module('appDirectives')
                 });
 
                 $scope.shipmentsForDriver = [];
-                $scope.assignmentsIds = [];
+                $scope.assignShipments = [];
                 $scope.currentDriver = 0;
                 $scope.isVac = true;
                 $scope.add_remove_vac_button_disabled = true;
@@ -179,10 +179,13 @@ angular.module('appDirectives')
                         return shipment.driver === 0 || shipment.driver === id_driver;
                     });
 
-                    $scope.assignmentsIds = $scope.shipmentsForDriver.filter(function(shipment) {
+                    $scope.assignShipments = $scope.shipmentsForDriver.filter(function(shipment) {
                         return shipment.driver !== 0;
                     }).map(function(shipment) {
-                        return shipment.ID;
+                        return {
+                            id_shipment: shipment.ID,
+                            show_price: shipment.show_price
+                        };
                     });
 
                     ngDialog.open({
@@ -202,25 +205,40 @@ angular.module('appDirectives')
                             };
                             $scope.setAssignment = function(id_shipment, event) {
                                 $(event.currentTarget).toggleClass("my-drive");
+                                $(event.currentTarget).find(".show-price").removeClass("show-price");
                                 if (event.currentTarget.classList.contains("my-drive")) {
-                                    $scope.assignmentsIds.push(id_shipment);
+                                    $scope.assignShipments.push({
+                                        id_shipment: id_shipment,
+                                        show_price: false
+                                    });
                                 } else {
-                                    var index = $scope.assignmentsIds.indexOf(id_shipment);
+                                    var index = $scope.assignShipments.map(function(e) { return e.id_shipment; }).indexOf(id_shipment);
                                     if (index !== -1) {
-                                        $scope.assignmentsIds.splice(index, 1);
+                                        $scope.assignShipments.splice(index, 1);
                                     }
                                 }
+                            };
+                            $scope.setPriceVisibility = function(id_shipment, event) {
+                                var ship = $scope.assignShipments.find(function(shp) {
+                                    return shp.id_shipment === id_shipment
+                                });
+                                if (!ship) {
+                                    $(event.currentTarget).removeClass("show-price");
+                                    return;
+                                }
+                                $(event.currentTarget).toggleClass("show-price");
+                                ship.show_price = event.currentTarget.classList.contains("show-price");
                             }
                         }],
                         preCloseCallback: function(value) {
                             if (value && value !== "$closeButton" && value !== "$escape") {
                                 assignShipments();
                                 $scope.shipmentsForDriver = [];
-                                $scope.assignmentsIds = [];
+                                $scope.assignShipments = [];
                                 return true;
                             }
                             $scope.shipmentsForDriver = [];
-                            $scope.assignmentsIds = [];
+                            $scope.assignShipments = [];
                             return true
                         }
                     });
@@ -277,7 +295,7 @@ angular.module('appDirectives')
                 function assignShipments() {
                     var data = {
                         id_driver: $scope.currentDriver,
-                        id_shipments: $scope.assignmentsIds
+                        shipments: $scope.assignShipments
                     };
 
                     if ($scope.shipmentsForDriver.length === 0) {

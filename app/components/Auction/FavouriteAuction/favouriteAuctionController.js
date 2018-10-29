@@ -33,7 +33,7 @@ angular.module('appControllers')
       function refreshingData() {
           checkFavouriteAuctionRunning = true;
           var route = $state.current.name;
-          if (route === "favouriteAuction" && $scope.windowHasFocus && $scope.AuctionList.length) {
+          if (route === "favouriteAuction" && $scope.windowHasFocus && $scope.AuctionList && $scope.AuctionList.length) {
               Auction.getAuctionCache().then(function (data) {
 
                   for (var i = 0; i < data.length; i++) {

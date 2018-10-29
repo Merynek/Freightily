@@ -471,6 +471,20 @@
     padding-left: 3px!important;
     padding-top: 3px!important;
 }
+
+.show-price-mark {
+    color: #12133d;
+    font-size: 20px;
+    margin-top: -3px;
+    margin-left: 18px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #12133d;
+}
+.show-price-mark .glyphicon {
+    padding-left: 3px!important;
+    padding-top: 3px!important;
+}
 .assignments {
 }
 .assignments table{
@@ -542,11 +556,19 @@
     background: #e6e6f1!important;
 }
 
-.company-list .glyphicon {
+.company-list .assign-mark .glyphicon {
     display: none;
     margin-right: 15px;
 }
-.company-list .my-drive .glyphicon {
+.company-list .show-price-mark .glyphicon {
+    display: none;
+    margin-right: 15px;
+}
+
+.company-list .my-drive .assign-mark .glyphicon {
+    display: inline;
+}
+.company-list .my-drive .show-price.show-price-mark .glyphicon {
     display: inline;
 }
 

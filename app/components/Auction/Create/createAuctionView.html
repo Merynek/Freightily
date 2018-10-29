@@ -18,6 +18,11 @@
             format: 'YYYY/MM/DD HH:mm'
           });
       });
+      $(function () {
+          $('.datetimepickerDelivery').datetimepicker({
+              format: 'YYYY/MM/DD HH:mm'
+          });
+      });
     </script>
     <form name="createAuctionForm" novalidate>
       <div class="form-group full">
@@ -92,6 +97,16 @@
           <input type='text' name="end_auction" class="form-control my-input" onkeydown="return false"  id="end_auction" placeholder="{{'texts.auction.end_auction' | i18next}}"
           ng-class="{'input-error' : createAuctionForm.end_auction.$invalid && (!createAuctionForm.end_auction.$pristine || clicked)}"
           required/>
+          <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group half">
+        <div class='input-group datetimepickerDelivery'>
+          <input type='text' name="delivery" class="form-control my-input" onkeydown="return false"  id="delivery" placeholder="{{'texts.auction.delivery' | i18next}}"
+                 ng-class="{'input-error' : createAuctionForm.delivery.$invalid && (!createAuctionForm.delivery.$pristine || clicked)}"
+                 required/>
           <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
           </span>

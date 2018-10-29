@@ -31,7 +31,7 @@ angular.module('appControllers')
     function refreshingData() {
         checkListAuctionRunning = true;
         var route = $state.current.name;
-        if (route === "auction" && $scope.windowHasFocus && $scope.AuctionList.length) {
+        if (route === "auction" && $scope.windowHasFocus && $scope.AuctionList && $scope.AuctionList.length) {
             Auction.getAuctionCache().then(function (data) {
                 for (var i = 0; i < data.length; i++) {
                     $rootScope.$broadcast('updateAuctionPrice', data[i].ID, data[i].price);
