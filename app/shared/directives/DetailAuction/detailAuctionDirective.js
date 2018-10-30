@@ -83,6 +83,14 @@ angular.module('appDirectives')
                     $scope.historyMore = !$scope.historyMore;
                 };
 
+                this.getPrintAuction = function (id) {
+                    Auction.getAuctionPrint(id).then(function () {
+                        message(1, $filter('i18next')('success.bid_auction'));
+                    }).catch(function (error) {
+                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                    });
+                };
+
                 this.bidAuction = function (bid) {
                     var current_price = $scope.item.current_price;
 

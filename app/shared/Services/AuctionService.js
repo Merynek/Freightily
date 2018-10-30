@@ -54,6 +54,38 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => Get auction print */
+        Auction.getAuctionPrint = function(id){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN"),
+						'Content-Type': 'application/json; charset=utf-8'},
+                    url: CONFIG.server.url+'auction/print/'+id
+                }).then(function(data, status, headers, config) {
+                    endLoading();
+					debugger;
+                    var file = new Blob([data], {
+                        type: 'application/csv'
+                    });
+                    //trick to download store a file having its URL
+                    var fileURL = URL.createObjectURL(file);
+                    var a = document.createElement('a');
+                    a.href = fileURL;
+                    a.target = '_blank';
+                    a.download = 'test.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
         /* GET to REST api => Get auction history */
 		Auction.getAuctionHistory = function(id){
 			startLoading();
