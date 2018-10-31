@@ -10,8 +10,8 @@
 		"amount": "Příhoz",
 		"driver_licence": "Řidičský průkaz",
 		"no_amounts": "Žádné příhozy",
-		"accept_conditions": "Souhlasím s podmínkami",
-		"accept_gdpr": "Souhlasím s gdpr",
+		"accept_conditions": "Prohlašuji, že jsem se seznámil/a a souhlasím s Obchodními podmínkami.",
+		"accept_gdpr": "Prohlašuji, že jsem se seznámil/a a souhlasím s Pravidly ochrany osobních údajů.",
 		"bid": "Přihodit",
 		"want_bid": "Nová nabídka",
 		"auction_complete": "Aukce již skončila.",
@@ -95,8 +95,7 @@
 			"my_shipments": "Přiřazené / volné jízdy",
 			"assign": "Přiřazování jízd",
 			"assign_button": "Jízdy",
-			"assigned": "Přiřazeno",
-			"show_price": "Viditelnost ceny"
+			"assigned": "Přiřazeno"
 		},
 		"sorting": {
 			"label": "Řazení",
@@ -177,6 +176,7 @@
 			"email_addressee": "Email adresáta",
 			"end_auction": "Konec aukce",
 			"delivery": "Dodání",
+			"download_print": "Stáhnout jako PDF",
 			"min_amount": "Minimální příhoz",
 			"history_amount": "Historie příhozů",
 			"driver": "Řidič",

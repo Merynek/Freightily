@@ -7,11 +7,13 @@ angular.module('appDirectives')
             controllerAs: 'vm',
             scope: {
                 auctionItem: '=',
-                withFavourite: '='
+                withFavourite: '=',
+                canDownloadPrint: '='
             },
             controller: function ($scope, $filter, Auction, User) {
                 var self = this;
                 $scope.withFavourite = this.withFavourite;
+                $scope.canDownloadPrint = this.canDownloadPrint;
                 $scope.item = this.auctionItem.item;
                 $scope.expired = this.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;

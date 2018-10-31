@@ -259,6 +259,17 @@
 .auction-detail .auction-detail-item .detail-row{
     padding: 5px 0;
 }
+.auction-detail .auction-detail-item .detail-row .download-text {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+.auction-detail .auction-detail-item .detail-row .download-text:hover {
+    text-decoration: underline;
+}
+.auction-detail .auction-detail-item .detail-row .download-text .glyphicon{
+    color: red;
+}
 .auction-detail .delete-user{
     display: inline-block;
     color: #12133d;
@@ -474,12 +485,12 @@
 
 .show-price-mark {
     color: #12133d;
-    font-size: 20px;
-    margin-top: -3px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -8px;
     margin-left: 18px;
-    height: 30px;
-    width: 30px;
-    border: 2px solid #12133d;
+    height: 40px;
+    width: 40px;
 }
 .show-price-mark .glyphicon {
     padding-left: 3px!important;
@@ -561,7 +572,7 @@
     margin-right: 15px;
 }
 .company-list .show-price-mark .glyphicon {
-    display: none;
+    color: red;
     margin-right: 15px;
 }
 
@@ -569,7 +580,7 @@
     display: inline;
 }
 .company-list .my-drive .show-price.show-price-mark .glyphicon {
-    display: inline;
+    color: green;
 }
 
 .no-shipments {
@@ -776,6 +787,9 @@ hr.small {
 
 @media (max-width: 767px) {
     .assign-mark {
+        margin: 0 auto;
+    }
+    .show-price-mark {
         margin: 0 auto;
     }
     .global-list-item {

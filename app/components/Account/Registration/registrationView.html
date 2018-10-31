@@ -76,12 +76,14 @@
       required />
     </div>
     <div class="form-group half">
-      <label><input type="checkbox" name="accept_conditions" ng-model="user.accept_conditions"/>
+    </div>
+    <div class="form-group half">
+      <label class="condition-label"><input type="checkbox" name="accept_conditions" ng-model="user.accept_conditions"/>
         {{'texts.accept_conditions' | i18next}}
       </label>
     </div>
     <div class="form-group half">
-      <label><input type="checkbox" name="accept_gdpr" ng-model="user.accept_gdpr"/>
+      <label class="condition-label"><input type="checkbox" name="accept_gdpr" ng-model="user.accept_gdpr"/>
         {{'texts.accept_gdpr' | i18next}}
       </label>
     </div>

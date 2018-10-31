@@ -21,9 +21,6 @@
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
-    <div class="my-button normal-button bid-button" ng-click="vm.getPrintAuction(item.ID)">
-        <span class="glyphicon glyphicon-circle-arrow-down"></span>
-    </div>
     <h2 class="main-header">{{'texts.auction.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding-detail">
@@ -76,6 +73,12 @@
                     <span>{{'texts.auction.delivery' | i18next}}:</span>
                 </div>
                 <div class="detail-content col-xs-6 col-sm-6 col-md-5 col-lg-6"><span>{{item.delivery}}</span></div>
+            </div>
+            <div ng-show="canDownloadPrint" class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div ng-click="vm.getPrintAuction(item.ID)" class="download-text">
+                    <span>{{'texts.auction.download_print' | i18next}}</span>
+                    <span class="glyphicon glyphicon glyphicon-download-alt"></span>
+                </div>
             </div>
         </div>
     </div>

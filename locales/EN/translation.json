@@ -10,8 +10,8 @@
 		"amount": "Amount",
 		"driver_licence": "Driver licence",
 		"no_amounts": "No amounts",
-		"accept_conditions": "Accept conditions",
-		"accept_gdpr": "Accept gdpr",
+		"accept_conditions": "I agree with terms and conditions.",
+		"accept_gdpr": "I agree to the Privacy Policy.",
 		"bid": "Bid",
 		"want_bid": "Want bid?",
 		"auction_complete": "End of auction",
@@ -95,8 +95,7 @@
 			"my_shipments": "Assigned / Free shipments",
 			"assign": "Assignments",
 			"assign_button": "Shipments",
-			"assigned": "Assigned",
-			"show_price": "Price visibility"
+			"assigned": "Assigned"
 		},
 		"sorting": {
 			"label": "Sorting",
@@ -176,6 +175,7 @@
 			"email_addressee": "Email addressee",
 			"end_auction": "End auction",
 			"delivery": "Delivery",
+			"download_print": "Download as PDF",
 			"min_amount": "Min amount",
 			"history_amount": "History amount",
 			"driver": "Driver",
