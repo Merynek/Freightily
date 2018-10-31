@@ -60,25 +60,12 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN"),
-						'Content-Type': 'application/json; charset=utf-8'},
-                    url: CONFIG.server.url+'auction/print/'+id
-                }).then(function(data, status, headers, config) {
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'auction/print/'+id,
+                    responseType: 'arraybuffer'
+                }).then(function(response) {
                     endLoading();
-					debugger;
-                    var file = new Blob([data], {
-                        type: 'application/csv'
-                    });
-                    //trick to download store a file having its URL
-                    var fileURL = URL.createObjectURL(file);
-                    var a = document.createElement('a');
-                    a.href = fileURL;
-                    a.target = '_blank';
-                    a.download = 'test.pdf';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-
+                    resolve(response.data);
                 }).catch(function(error){
                     endLoading();
                     reject(error);
