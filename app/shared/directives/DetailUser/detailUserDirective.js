@@ -39,8 +39,8 @@ angular.module('appDirectives')
                     }
                 };
 
-                UserAbility.getDrivers().then(function(res){
-                    $scope.drivers = res;
+                UserAbility.getAllMyDrivers().then(function(res){
+                    $scope.drivers = res.drivers;
                 }).catch(function(){
                     return null;
                 });
