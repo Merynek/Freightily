@@ -6,11 +6,15 @@ angular.module('appDirectives')
             bindToController: true,
             controllerAs: 'vm',
             scope: {
-                itemCount: '='
+                itemCount: '=',
+                allItemsCount: '='
             },
             controller: function ($scope, User, $stateParams, $state) {
+                var COUNT_OF_ITEMS_IN_PAGE = 10;
+
                 $scope.page = $stateParams.page ? $stateParams.page : "1";
-                $scope.isLast = this.itemCount < 10;
+                $scope.pagesCount = Math.ceil(this.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
+                $scope.isLastPage = (Number($scope.page) * COUNT_OF_ITEMS_IN_PAGE) >= this.allItemsCount;
 
                 this.minus = function () {
                     var page = (parseInt($stateParams.page));

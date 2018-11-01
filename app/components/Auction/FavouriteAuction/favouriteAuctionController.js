@@ -6,9 +6,10 @@
 */
 
 angular.module('appControllers')
-  .controller('favouriteAuctionController', ['$scope', 'favouriteAuction', 'Auction', '$state', '$rootScope',
-      function($scope, favouriteAuction, Auction, $state, $rootScope){
-    $scope.AuctionList = favouriteAuction;
+  .controller('favouriteAuctionController', ['$scope', 'favouriteAuctionResponse', 'Auction', '$state', '$rootScope',
+      function($scope, favouriteAuctionResponse, Auction, $state, $rootScope){
+    $scope.AuctionList = favouriteAuctionResponse.AuctionList;
+    $scope.AuctionListCount = favouriteAuctionResponse.Count;
     $scope.route = "auction|favourite";
     $scope.windowHasFocus = true;
     middle_no_padding();

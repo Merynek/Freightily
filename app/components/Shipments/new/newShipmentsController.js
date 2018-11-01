@@ -6,9 +6,10 @@
  */
 
 angular.module('appControllers')
-    .controller('newShipmentsController', ['$scope', 'newShipments', function($scope, newShipments){
+    .controller('newShipmentsController', ['$scope', 'newShipmentsResponse', function($scope, newShipmentsResponse){
         $scope.route = "shipments|new";
-        $scope.newShipments = newShipments;
+        $scope.shipments = newShipmentsResponse.ShipmentList;
+        $scope.shipmentsCount = newShipmentsResponse.Count;
         middle_no_padding();
         $(window).resize(function () {
             if(window.innerWidth <= 900){

@@ -13,13 +13,16 @@ angular.module('appServices')
 		var UserAbility = {};
 
 		/* GET to REST api => Get my drivers */
-		UserAbility.getDrivers = function(){
+		UserAbility.getDrivers = function(page){
+            var parameters = "?";
+            parameters += "page=" + page;
+
 			startLoading();
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
 					headers: { 'token': window.localStorage.getItem("TOKEN")},
-					url: url+'company/drivers'
+					url: url+'company/drivers'+parameters
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);

@@ -96,16 +96,21 @@ $urlRouterProvider.otherwise("/404");
 			}
 		})
 		 .state('company', {
-			 url: "/company",
+			 url: "/company?page",
 			 controller: 'companyController',
 			 templateUrl: "app/components/Company/companyView.html",
 			 data: {
 				 role: [2]
 			 },
 			 resolve: {
-				 drivers: function(UserAbility){
-					 return UserAbility.getDrivers().then(function(res){
-						 return res;
+                 driversResponse: function(UserAbility, $stateParams){
+                     var page = $stateParams.page || 1;
+
+					 return UserAbility.getDrivers(page).then(function(res){
+						 return {
+						 	drivers: res.drivers,
+						 	count: res.count
+						 };
 					 }).catch(function(){
 						 return null;
 					 })
@@ -121,12 +126,15 @@ $urlRouterProvider.otherwise("/404");
 				role: [1,2]
             },
 			resolve: {
-				AuctionList: function(Auction, $stateParams){
+				AuctionListResponse: function(Auction, $stateParams){
                     var page = $stateParams.page || 1;
 					var sort = $stateParams.sort || "";
 					var order = $stateParams.order || "";
 					return Auction.getAuctionList(sort, order, page).then(function(res){
-						return res;
+						return {
+                            AuctionList: res.AuctionList,
+                            Count: res.Count
+						};
 					}).catch(function(){
 						return null;
 					})
@@ -149,10 +157,13 @@ $urlRouterProvider.otherwise("/404");
 				role: [2]
 			},
 			resolve: {
-				favouriteAuction: function(Auction, $stateParams){
+				favouriteAuctionResponse: function(Auction, $stateParams){
                     var page = $stateParams.page || 1;
 					return Auction.getFavouriteAuction(page).then(function(res){
-						return res;
+                        return {
+                            AuctionList: res.AuctionList,
+                            Count: res.Count
+                        };
 					}).catch(function(){
 						return null;
 					})
@@ -167,10 +178,13 @@ $urlRouterProvider.otherwise("/404");
 				role: [2]
 			},
 			resolve: {
-				bidsAuction: function(Auction, $stateParams){
+				bidsAuctionResponse: function(Auction, $stateParams){
                     var page = $stateParams.page || 1;
 					return Auction.getBidsAuction(page).then(function(res){
-						return res;
+                        return {
+                            AuctionList: res.AuctionList,
+                            Count: res.Count
+                        };
 					}).catch(function(){
 						return null;
 					})
@@ -185,10 +199,13 @@ $urlRouterProvider.otherwise("/404");
 				role: [2]
 			},
 			resolve: {
-				winAuction: function(Auction, $stateParams){
+				winAuctionResponse: function(Auction, $stateParams){
                     var page = $stateParams.page || 1;
 					return Auction.getWinAuction(page).then(function(res){
-						return res;
+                        return {
+                            AuctionList: res.AuctionList,
+                            Count: res.Count
+                        };
 					}).catch(function(){
 						return null;
 					})
@@ -203,10 +220,13 @@ $urlRouterProvider.otherwise("/404");
 				 role: [1]
 			 },
 			 resolve: {
-				 createdAuction: function(Auction, $stateParams){
+				 createdAuctionResponse: function(Auction, $stateParams){
                      var page = $stateParams.page || 1;
 					 return Auction.getCreatedAuction(page).then(function(res){
-						 return res;
+                         return {
+                             AuctionList: res.AuctionList,
+                             Count: res.Count
+                         };
 					 }).catch(function(){
 						 return null;
 					 })
@@ -222,10 +242,13 @@ $urlRouterProvider.otherwise("/404");
 				 role: [2]
 			 },
 			 resolve: {
-				 newShipments: function(Shipments, $stateParams){
+				 newShipmentsResponse: function(Shipments, $stateParams){
                      var page = $stateParams.page || 1;
 					 return Shipments.getNewShipments(page).then(function(res){
-						 return res;
+                         return {
+                             shipments: res.ShipmentList,
+                             Count: res.Count
+                         };
 					 }).catch(function(){
 						 return null;
 					 })
@@ -240,10 +263,13 @@ $urlRouterProvider.otherwise("/404");
 				 role: [2]
 			 },
 			 resolve: {
-                 finishedShipments: function(Shipments, $stateParams){
+                 finishedShipmentsResponse: function(Shipments, $stateParams){
                      var page = $stateParams.page || 1;
                      return Shipments.getFinishedShipments(page).then(function(res){
-                         return res;
+                         return {
+                             shipments: res.ShipmentList,
+                             Count: res.Count
+                         };
                      }).catch(function(){
                          return null;
                      })

@@ -6,8 +6,9 @@
 */
 
 angular.module('appControllers')
-  .controller('winAuctionController', ['$scope', 'winAuction', function($scope, winAuction){
-    $scope.AuctionList = winAuction;
+  .controller('winAuctionController', ['$scope', 'winAuctionResponse', function($scope, winAuctionResponse){
+    $scope.AuctionList = winAuctionResponse.AuctionList;
+    $scope.AuctionListCount = winAuctionResponse.Count;
     $scope.route = "auction|win";
     middle_no_padding();
     $(window).resize(function () {

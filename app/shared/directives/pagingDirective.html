@@ -2,8 +2,8 @@
     <button class="my-button normal-button navigation" ng-disabled="page <= '1'" ng-click="vm.minus()">
         <span class="glyphicon glyphicon-arrow-left"></span>
     </button>
-    <input class="navigation-text-input" disabled="disabled" type="text" value="{{page}}"/>
-    <button class="my-button normal-button navigation" ng-disabled="isLast" ng-click="vm.plus()">
+    <input class="navigation-text-input" disabled="disabled" type="text" value="{{page}} / {{pagesCount}}"/>
+    <button class="my-button normal-button navigation" ng-disabled="isLastPage" ng-click="vm.plus()">
         <span class="glyphicon glyphicon-arrow-right"></span>
     </button>
 </div>

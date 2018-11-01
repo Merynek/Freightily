@@ -6,8 +6,9 @@
 */
 
 angular.module('appControllers')
-  .controller('bidsAuctionController', ['$scope', 'bidsAuction', 'Auction', '$state', '$rootScope', function($scope, bidsAuction, Auction, $state, $rootScope){
-    $scope.AuctionList = bidsAuction;
+  .controller('bidsAuctionController', ['$scope', 'bidsAuctionResponse', 'Auction', '$state', '$rootScope', function($scope, bidsAuctionResponse, Auction, $state, $rootScope){
+    $scope.AuctionList = bidsAuctionResponse.AuctionList;
+    $scope.AuctionListCount = bidsAuctionResponse.Count;
     $scope.route = "auction|bids";
     $scope.windowHasFocus = true;
     middle_no_padding();

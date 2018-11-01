@@ -14,6 +14,7 @@
                 <div class="auction-item" ng-repeat="driver in drivers">
                     <detail-user driver="{driver}"></detail-user>
                 </div>
+                <paging item-count="drivers.length" all-items-count="allDriversCount"></paging>
             </div>
         </div>
         <div ng-if="!drivers.length" class="text-center text-info">

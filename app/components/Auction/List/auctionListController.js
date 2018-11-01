@@ -6,10 +6,11 @@
 */
 
 angular.module('appControllers')
-  .controller('auctionListController', ['$scope', 'AuctionList', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state', '$rootScope',
-      function($scope, AuctionList, Auction, User, UserAbility, $location, $stateParams, $filter, $state, $rootScope){
+  .controller('auctionListController', ['$scope', 'AuctionListResponse', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state', '$rootScope',
+      function($scope, AuctionListResponse, Auction, User, UserAbility, $location, $stateParams, $filter, $state, $rootScope){
     $scope.route = "auction|list";
-    $scope.AuctionList = AuctionList;
+    $scope.AuctionList = AuctionListResponse.AuctionList;
+    $scope.AuctionListCount = AuctionListResponse.Count;
     $scope.filter = $stateParams.sort;
     $scope.order = $stateParams.order ? $stateParams.order : "ASC";
     $scope.page = $stateParams.page ? $stateParams.page : "1";

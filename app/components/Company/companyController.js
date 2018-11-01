@@ -6,9 +6,10 @@
  */
 
 angular.module('appControllers')
-    .controller('companyController', ['$scope', 'drivers',
-        function($scope, drivers) {
-            $scope.drivers = drivers;
+    .controller('companyController', ['$scope', 'driversResponse',
+        function($scope, driversResponse) {
+            $scope.drivers = driversResponse.drivers;
+            $scope.allDriversCount = driversResponse.count;
             $scope.route = "company|overview";
             middle_no_padding();
             $(window).resize(function () {
