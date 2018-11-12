@@ -6,7 +6,7 @@
  */
 
 angular.module('appControllers')
-    .controller('forgotPasswordController', ['$scope', 'UserAbility', '$filter', function ($scope, UserAbility, $filter) {
+    .controller('forgotPasswordController', ['$scope', 'UserAbility', '$filter', '$state', function ($scope, UserAbility, $filter, $state) {
          $scope.clicked = false;
 
          $scope.sendMail = function () {
@@ -22,6 +22,7 @@ angular.module('appControllers')
 
              UserAbility.sendNewPassword(data).then(function () {
                 message(1, $filter('i18next')('success.resend_password'));
+                $state.go('login');
              }).catch(function (error) {
                  message(3, $filter('i18next')(getErrorKeyByCode(error)));
              })
