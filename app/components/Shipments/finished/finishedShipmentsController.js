@@ -8,7 +8,7 @@
 angular.module('appControllers')
     .controller('finishedShipmentsController', ['$scope', 'finishedShipmentsResponse', function($scope, finishedShipmentsResponse){
         $scope.route = "shipments|finished";
-        $scope.shipments = finishedShipmentsResponse.ShipmentList;
+        $scope.shipments = finishedShipmentsResponse.shipments;
         $scope.shipmentsCount = finishedShipmentsResponse.Count;
         middle_no_padding();
         $(window).resize(function () {
