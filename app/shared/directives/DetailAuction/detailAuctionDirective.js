@@ -10,7 +10,7 @@ angular.module('appDirectives')
                 withFavourite: '=',
                 canDownloadPrint: '='
             },
-            controller: function ($scope, $filter, Auction, User) {
+            controller: function ($scope, $filter, Auction, User, ngDialog) {
                 var self = this;
                 $scope.withFavourite = this.withFavourite;
                 $scope.canDownloadPrint = this.canDownloadPrint;
@@ -112,15 +112,34 @@ angular.module('appDirectives')
                         return;
                     }
                     if (bid >=1 && ((current_price - bid) >= 1) && (current_price !== bid)) {
-                        var data = {
-                            id_auction: $scope.ID,
-                            amount: bid
-                        };
-                        Auction.bidAuction(data).then(function () {
-                            refreshItem($scope.ID);
-                            message(1, $filter('i18next')('success.bid_auction'));
-                        }).catch(function (error) {
-                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                        ngDialog.open({
+                            template: 'modal_bid_auction',
+                            scope: $scope,
+                            closeByDocument: false,
+                            showClose: true,
+                            appendClassName: "delete_user_dialog",
+                            closeByEscape: true,
+                            controller: ['$scope', function($scope) {
+                                // controller logic
+                                $scope.ok = function() {
+                                    var data = {
+                                        id_auction: $scope.ID,
+                                        amount: bid
+                                    };
+                                    $scope.bid = bid;
+                                    Auction.bidAuction(data).then(function () {
+                                        refreshItem($scope.ID);
+                                        message(1, $filter('i18next')('success.bid_auction'));
+                                        $scope.closeThisDialog(false);
+                                    }).catch(function (error) {
+                                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                                        $scope.closeThisDialog(false);
+                                    });
+                                };
+                                $scope.cancel = function() {
+                                    $scope.closeThisDialog(false);
+                                };
+                            }]
                         });
                     }
                     else {

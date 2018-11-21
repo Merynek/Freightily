@@ -63,3 +63,17 @@
 	</div>
 </div>
 </m>
+
+<script type="text/ng-template" id="modal_bid_auction" class="modal-content">
+    <div class="modal-header">
+        <h2>{{'texts.bid_auction_modal_title' | i18next}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <span>{{'texts.bid_auction_modal_text' | i18next}} {{bid}},-Kč</span>
+    </div>
+    <div class="modal-footer">
+        <div class="my-button normal-button" ng-click="ok()">{{'texts.ok' | i18next}}</div>
+        <div class="my-button easy-button" ng-click="cancel()">{{'texts.cancel' | i18next}}</div>
+    </div>
+</script>

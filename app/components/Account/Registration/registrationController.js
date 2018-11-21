@@ -55,7 +55,7 @@ angular.module('appControllers')
         if(!numberFieldsIsValid()) {
           return;
         }
-        if(!($scope.user.accept_conditions && $scope.user.accept_gdpr)) {
+        if(!($scope.user.accept_conditions)) {
           message(3, $filter('i18next')('errors.accept_conditions'));
           return;
         }
@@ -77,8 +77,7 @@ angular.module('appControllers')
             psc: $scope.user.psc,
             phone_number: $scope.user.phone_number,
             email: $scope.user.email,
-            accept_conditions: $scope.user.accept_conditions,
-            accept_gdpr: $scope.user.accept_gdpr
+            accept_conditions: $scope.user.accept_conditions
           };
           var registration = $scope.user.role === "1" ? User.registrationSender : User.registrationTransporter;
 
