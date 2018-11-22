@@ -244,7 +244,9 @@
 			"34": "Některé jízdy mají jiní řidiči, prosím zkontrolujte si to.",
 			"35": "Tato jízda není přiřazená na tohoto řiriče",
 			"36": "Tento řidič nelze smazat, protože je na něho přiřazená nějaká jízda",
-			"37": "Váš účet je dočasně zablokován. Zkuste to prosím později."
+			"37": "Váš účet je dočasně zablokován. Zkuste to prosím později.",
+			"38": "Nahrávaný obrázek musí být ve formátu .jpg nebo .png",
+			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb."
 		}
 	},
 	"warnings": {
