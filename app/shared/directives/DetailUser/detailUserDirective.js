@@ -62,8 +62,7 @@ angular.module('appDirectives')
                         minutes = minutes-(days*24*60)-(hours*60);
 
                         $scope.lastGpsUpdate = dateFuture.getDate() + "." + (dateFuture.getMonth()+1) + "." + dateFuture.getFullYear();
-                        $scope.lastGpsUpdateTime = dateFuture.getHours() + ":" + dateFuture.getMinutes();
-
+                        $scope.lastGpsUpdateTime = dateFuture.getHours() + ":" + ('0'  + dateFuture.getMinutes()).slice(-2);
 
 
                         initMap(position, id_driver);
