@@ -74,7 +74,7 @@
 		"delete_driver": "Smazat řidiče",
         "admin": "Administrace",
         "users": "Uživatelé",
-		"no_drivers": "Žádní řidiči",
+		"no_drivers": "Žádní řidiči...",
 		"count_of_not_assigned_shipments": "Počet nepřiřazených jízd",
 		"assignment_modal_title": "Přiřaďte řidiče na jízdy",
 		"bid_auction_modal_title": "Jste si jistý?",

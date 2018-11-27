@@ -11,14 +11,12 @@
                 </div>
             </div>
             <div class="auction-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div ng-if="!shipments.length" class="no-auction">{{'texts.no_drivers' | i18next}}</div>
                 <div class="auction-item" ng-repeat="driver in drivers">
                     <detail-user driver="{driver}"></detail-user>
                 </div>
                 <paging item-count="drivers.length" all-items-count="allDriversCount"></paging>
             </div>
-        </div>
-        <div ng-if="!drivers.length" class="text-center text-info">
-            {{'texts.no_drivers' | i18next}}
         </div>
     </div>
 </m>

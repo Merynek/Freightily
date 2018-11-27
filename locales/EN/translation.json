@@ -74,7 +74,7 @@
 		"delete_driver": "Delete driver",
         "admin": "Admin",
         "users": "Users",
-		"no_drivers": "No drivers",
+		"no_drivers": "No drivers...",
 		"count_of_not_assigned_shipments": "Count of unassigned shipments",
 		"assignment_modal_title": "Assign driver to shipments",
 		"bid_auction_modal_title": "Are you sure?",
