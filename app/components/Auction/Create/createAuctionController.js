@@ -6,7 +6,9 @@
  */
 
 angular.module('appControllers')
-    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', function ($scope, Auction, $filter, $state) {
+    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog',
+        function ($scope, Auction, $filter, $state, templatesResponse, ngDialog) {
+        $scope.templates = templatesResponse;
         middle_no_padding();
         $(window).resize(function () {
             if(window.innerWidth <= 900){
@@ -20,6 +22,7 @@ angular.module('appControllers')
         $scope.mapIsShown = false;
         $scope.clicked = false;
         $scope.distance = "";
+        $scope.selectedTemplate = "0";
 
         $scope.full_adress_from = {
             city: "",
@@ -39,15 +42,15 @@ angular.module('appControllers')
             if (!autoCompleteIsInitialized) {
                 autoCompleteIsInitialized = true;
                 $("#geoCompleteFrom").geocomplete().bind("geocode:result", function(event, result) {
-                    parseAdress(result, true);
+                    parseAddress(result, true);
                 });
                 $("#geoCompleteTo").geocomplete().bind("geocode:result", function(event, result) {
-                    parseAdress(result, false);
+                    parseAddress(result, false);
                 });
             }
         };
 
-        function parseAdress(locationObj, isFromAddress) {
+        function parseAddress(locationObj, isFromAddress) {
             var components = locationObj.address_components,
                 formatted_address = locationObj.formatted_address,
                 street_number,
@@ -291,5 +294,77 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.set_required_inputs'));
             }
         };
+
+        $scope.createTemplate = function() {
+            ngDialog.open({
+                template: 'modal_create_template',
+                scope: $scope,
+                closeByDocument: false,
+                showClose: true,
+                appendClassName: "create_template_dialog",
+                closeByEscape: true,
+                controller: ['$scope', function($scope) {
+                    // controller logic
+                    $scope.ok = function(template_name) {
+                        if (!template_name) {
+                            return;
+                        }
+                        var weight = $scope.auction.freight_weight;
+                        var price = $scope.auction.price;
+                        var data = {
+                            name: template_name,
+                            address_from: $scope.auction.address_from || "",
+                            address_to: $scope.auction.address_to || "",
+                            freight_description: $scope.auction.freight_description || "",
+                            freight_type: $scope.auction.freight_type || "",
+                            freight_size: $scope.auction.freight_size || "",
+                            freight_weight: weight ? weight : 0,
+                            load_note: $scope.auction.load_note || "",
+                            unload_note: $scope.auction.unload_note || "",
+                            price: price ? price : 0
+                        };
+
+                        Auction.createTemplate(data).then(function () {
+                            message(1, $filter('i18next')('success.auction_template_created'));
+                            $scope.closeThisDialog(false);
+                        }).catch(function (error) {
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                            $scope.closeThisDialog(false);
+                        })
+                    };
+                    $scope.cancel = function() {
+                        $scope.closeThisDialog(false);
+                    };
+                }]
+            });
+        };
+
+        $scope.selectTemplate = function(selectedTemplateID) {
+            if (selectedTemplateID === "0") {
+                return;
+            }
+            var template = $scope.templates.find(function (tmp) {
+                return tmp.ID.toString() === selectedTemplateID;
+            });
+
+            var weight = template.freight.freight_weight,
+                price = template.price;
+
+            $scope.auction.address_from = template.address_from;
+            $scope.auction.address_to = template.address_to;
+            $scope.auction.freight_description = template.freight.freight_description;
+            $scope.auction.freight_type = template.freight.freight_type;
+            $scope.auction.freight_size = template.freight.freight_size;
+            $("#freight_type").val(template.freight.freight_type);
+            $scope.auction.freight_weight = weight ? weight.toString(): "";
+            $scope.auction.load_note = template.load_note;
+            $scope.auction.unload_note = template.unload_note;
+            $scope.auction.price = price ? price.toString(): "";
+
+            setTimeout(function() {
+                $("#geoCompleteFrom").trigger("geocode");
+                $("#geoCompleteTo").trigger("geocode");
+            }, 0);
+        }
     }
     ]);

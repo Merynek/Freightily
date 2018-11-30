@@ -125,6 +125,43 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => Create auction template */
+        Auction.createTemplate = function(data){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    data: param(data),
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'auction/template'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
+		/* GET to REST api => Get auction templates */
+        Auction.getTemplates = function(){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'auction/template'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* POST to REST api => bid auction */
 		Auction.bidAuction = function(data){
 			startLoading();

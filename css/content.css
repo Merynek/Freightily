@@ -169,6 +169,18 @@
     background: #e6e6f1;
     font-weight: bold;
 }
+.select_auction_template {
+    font-weight: bold;
+    padding-bottom: 7px;
+}
+.auction_template_divider {
+    height: 1px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #e6e6f1;
+    margin-bottom: 20px;
+}
 
 .auction-list-page .auction-list .auction-body{
     padding: 0;
@@ -730,6 +742,9 @@ hr.small {
 
 .delete_user_dialog .ngdialog-content {
     height: 200px!important;
+}
+.create_template_dialog .ngdialog-content {
+    height: 220px!important;
 }
 
 .cancel_shipment_dialog .ngdialog-content {

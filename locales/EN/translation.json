@@ -90,6 +90,7 @@
         "history_next": "Another ",
         "history_next2": " records...",
         "actual_price": "Actual price",
+		"create_template": "Create template for auction",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",
@@ -143,6 +144,9 @@
 			"map": "Map of drivers"
 		},
 		"auction": {
+			"template_name": "Template name",
+			"no_template": "No template",
+			"select_template_label": "Templates for auction create",
 			"info": "Use the Symptom to enter the address to ensure correctness. You can try the correctness of the address by viewing the map.",
 			"auction_list": "Auction",
 			"bids_auction": "Bids auction",
@@ -267,6 +271,7 @@
 		"resend_password": "Password was send to your email",
 		"change_password": "Password was changed",
 		"auction_created": "Auction was successfully created",
+		"auction_template_created": "Template for auction was successfully created",
 		"driver_deleted": "Driver was deleted",
 		"bid_auction": "Bid success"
 	}

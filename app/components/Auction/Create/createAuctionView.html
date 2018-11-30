@@ -24,6 +24,16 @@
           });
       });
     </script>
+    <div class="form-group half">
+      <div class="select_auction_template">
+        <span>{{'texts.auction.select_template_label' | i18next}}</span>
+      </div>
+      <select class="form-control my-input" ng-model="selectedTemplate" ng-change="selectTemplate(selectedTemplate)">
+        <option value="0" selected="selected" hidden>{{'texts.auction.no_template' | i18next}}</option>
+        <option ng-repeat="template in templates" value="{{template.ID}}">{{template.name}}</option>
+      </select>
+    </div>
+    <div class="auction_template_divider"></div>
     <form name="createAuctionForm" novalidate>
       <div class="form-group full">
         <span class="glyphicon glyphicon-info-sign"></span>
@@ -112,9 +122,33 @@
           </span>
         </div>
       </div>
-      <div class="form-group text-center">
+      <div class="form-group half"></div>
+      <div class="form-group half"></div>
+      <div class="form-group half"></div>
+      <div class="form-group half text-center">
+        <div class="my-button easy-button big-button" ng-click="createTemplate()">Vytvořit šablonu</div>
+      </div>
+      <div class="form-group half text-center">
         <div class="my-button important-button big-button" ng-click="createAuction()">{{'texts.auction.create_auction' | i18next}}</div>
       </div>
     </form>
   </div>
 </m>
+
+<script type="text/ng-template" id="modal_create_template" class="modal-content">
+  <div class="modal-header">
+    <h2>{{'texts.create_template' | i18next}}</h2>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group half no-margin-element">
+      <span>{{'texts.auction.template_name' | i18next}}</span>
+      <input type='text' ng-model="template_name" name="template_name" class="form-control my-input" placeholder="{{'texts.auction.template_name' | i18next}}"
+             ng-class="template_name.length ? null : 'input-error'" />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="my-button normal-button" ng-click="ok(template_name)">{{'texts.ok' | i18next}}</div>
+    <div class="my-button easy-button" ng-click="cancel()">{{'texts.cancel' | i18next}}</div>
+  </div>
+</script>

@@ -147,7 +147,16 @@ $urlRouterProvider.otherwise("/404");
 			templateUrl: "app/components/Auction/Create/createAuctionView.html",
 			data: {
 				role: [1]
-			}
+			},
+            resolve: {
+                templatesResponse: function(Auction){
+                    return Auction.getTemplates().then(function(res){
+                        return res;
+                    }).catch(function(){
+                        return null;
+                    })
+                }
+            }
 		})
 		.state('favouriteAuction', {
 			url: "/auction/favourite?page",
