@@ -55,12 +55,12 @@
         <div id="map" style="display:none"></div>
       </div>
       <div class="form-group half">
-        <input type="text" name="load_note" class="form-control my-input" placeholder="{{'texts.auction.load_note' | i18next}}" ng-model="auction.load_note"
+        <input type="text" name="load_note" id="load_note" class="form-control my-input" placeholder="{{'texts.auction.load_note' | i18next}}" ng-model="auction.load_note"
                ng-class="{'input-error' : createAuctionForm.load_note.$invalid && (!createAuctionForm.load_note.$pristine || clicked)}"
                required />
       </div>
       <div class="form-group half">
-        <input type="text" name="unload_note" class="form-control my-input" placeholder="{{'texts.auction.unload_note' | i18next}}" ng-model="auction.unload_note"
+        <input type="text" name="unload_note" id="unload_note" class="form-control my-input" placeholder="{{'texts.auction.unload_note' | i18next}}" ng-model="auction.unload_note"
                ng-class="{'input-error' : createAuctionForm.unload_note.$invalid && (!createAuctionForm.unload_note.$pristine || clicked)}"
                required />
       </div>
@@ -101,7 +101,7 @@
         </select>
       </div>
       <div class="form-group half">
-        <input type="text" name="freight_size" class="form-control my-input" placeholder="{{'texts.auction.freight_size' | i18next}}" ng-model="auction.freight_size"
+        <input type="text" name="freight_size" id="freight_size" class="form-control my-input" placeholder="{{'texts.auction.freight_size' | i18next}}" ng-model="auction.freight_size"
                ng-class="{'input-error' : createAuctionForm.freight_size.$invalid && (!createAuctionForm.freight_size.$pristine || clicked)}"
                required />
       </div>
@@ -126,7 +126,7 @@
       <div class="form-group half"></div>
       <div class="form-group half"></div>
       <div class="form-group half text-center">
-        <div class="my-button easy-button big-button" ng-click="createTemplate()">Vytvořit šablonu</div>
+        <div class="my-button easy-button big-button" ng-click="createTemplate()">{{'texts.create_template_button' | i18next}}</div>
       </div>
       <div class="form-group half text-center">
         <div class="my-button important-button big-button" ng-click="createAuction()">{{'texts.auction.create_auction' | i18next}}</div>

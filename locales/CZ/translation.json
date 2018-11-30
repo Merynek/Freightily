@@ -90,7 +90,8 @@
 		"history_next": "Dalších ",
 		"history_next2": " příhozů...",
 		"actual_price": "Aktuální cena",
-		"create_template": "Vytvoření vzoru pro aukci",
+		"create_template": "Vytvoření šablony pro aukci",
+		"create_template_button": "Vytvoření šablony",
 		"user": {
 			"detail": "Detail uživatele",
 			"vacation": "Dovolená",
@@ -145,9 +146,9 @@
 			"map": "Mapa řidičů"
 		},
 		"auction": {
-			"template_name": "Jméno vzoru",
-			"no_template": "Žádný vzor",
-			"select_template_label": "Vzory pro vytvoření aukce",
+			"template_name": "Jméno šablony",
+			"no_template": "Bez šablony",
+			"select_template_label": "Šablony pro vytvoření aukce",
 			"info": "Pro zadávání adresy používejte našeptávač, tím zajistíte její správnost. Správnost adresy si lze vyzkoušet zobrazením mapy.",
 			"auction_list": "Aukce",
 			"bids_auction": "Aukce na které přihazuji",
@@ -271,7 +272,7 @@
 		"resend_password": "Heslo bylo posláno na váš email",
 		"change_password": "Heslo bylo změněno",
 		"auction_created": "Aukce byla úspěšně založena",
-		"auction_template_created": "Vzor pro aukci byl vytvořen",
+		"auction_template_created": "Šablona pro aukci byla vytvořen",
 		"driver_deleted": "Řidič byl smazán",
 		"bid_auction": "Přihození úspěšné"
 	}

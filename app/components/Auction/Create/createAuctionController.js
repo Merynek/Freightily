@@ -364,7 +364,38 @@ angular.module('appControllers')
             setTimeout(function() {
                 $("#geoCompleteFrom").trigger("geocode");
                 $("#geoCompleteTo").trigger("geocode");
+                triggerInputsChange();
             }, 0);
+        };
+
+        function triggerInputsChange() {
+            if ($scope.auction.address_from) {
+                $("#geoCompleteFrom").trigger("keydown");
+            }
+            if ($scope.auction.address_to) {
+                $("#geoCompleteTo").trigger("keydown");
+            }
+            if ($scope.auction.freight_description) {
+                $("#freight_description").trigger("keydown");
+            }
+            if ($scope.auction.freight_type) {
+                $("#freight_type").trigger("change");
+            }
+            if ($scope.auction.freight_size) {
+                $("#freight_size").trigger("keydown");
+            }
+            if ($scope.auction.freight_weight) {
+                $("#freight_weight").trigger("keydown");
+            }
+            if ($scope.auction.load_note) {
+                $("#load_note").trigger("keydown");
+            }
+            if ($scope.auction.unload_note) {
+                $("#unload_note").trigger("keydown");
+            }
+            if ($scope.auction.price) {
+                $("#price").trigger("keydown");
+            }
         }
     }
     ]);

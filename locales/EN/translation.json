@@ -91,6 +91,7 @@
         "history_next2": " records...",
         "actual_price": "Actual price",
 		"create_template": "Create template for auction",
+		"create_template_button": "Create template",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",
