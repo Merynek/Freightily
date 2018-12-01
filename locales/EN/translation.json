@@ -91,7 +91,7 @@
         "history_next2": " records...",
         "actual_price": "Actual price",
 		"create_template": "Create template for auction",
-		"create_template_button": "Create template",
+		"create_template_button": "Create Template",
 		"user": {
 			"detail": "User detail",
 			"vacation": "Vacation",
@@ -147,7 +147,7 @@
 		"auction": {
 			"template_name": "Template name",
 			"no_template": "No template",
-			"select_template_label": "Templates for auction create",
+			"select_template_label": "Created Templates",
 			"info": "Use the Symptom to enter the address to ensure correctness. You can try the correctness of the address by viewing the map.",
 			"auction_list": "Auction",
 			"bids_auction": "Bids auction",

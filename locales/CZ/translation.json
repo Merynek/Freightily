@@ -91,7 +91,7 @@
 		"history_next2": " příhozů...",
 		"actual_price": "Aktuální cena",
 		"create_template": "Vytvoření šablony pro aukci",
-		"create_template_button": "Vytvoření šablony",
+		"create_template_button": "Vytvořit Šablonu",
 		"user": {
 			"detail": "Detail uživatele",
 			"vacation": "Dovolená",
@@ -148,7 +148,7 @@
 		"auction": {
 			"template_name": "Jméno šablony",
 			"no_template": "Bez šablony",
-			"select_template_label": "Šablony pro vytvoření aukce",
+			"select_template_label": "Vytvořené Šablony",
 			"info": "Pro zadávání adresy používejte našeptávač, tím zajistíte její správnost. Správnost adresy si lze vyzkoušet zobrazením mapy.",
 			"auction_list": "Aukce",
 			"bids_auction": "Aukce na které přihazuji",

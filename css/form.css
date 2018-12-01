@@ -96,6 +96,10 @@
     vertical-align: top;
 }
 
+.form-group.half.half-center{
+    margin-left: 26%;
+}
+
 .form-group.full{
     display: inline-block;
     width: 100%;
@@ -307,6 +311,9 @@ input[type=checkbox] {
     .form-group.half{
         display: block;
         width: 95%;
+    }
+    .form-group.half.half-center{
+       margin: 0 auto;
     }
 
     .radio-group, .radio-group:nth-of-type(2){
