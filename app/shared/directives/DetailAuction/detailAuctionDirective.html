@@ -14,7 +14,7 @@
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
     </div>
     <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
-        <div ng-show="vm.withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+        <div ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
             <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite($event); $event.stopPropagation()"></span>
         </div>
     </div>

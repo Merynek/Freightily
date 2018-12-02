@@ -29,6 +29,9 @@ angular.module('appDirectives')
                 if (User.isSender() || User.isDriver()) {
                     $scope.withBids = false;
                 }
+                if (User.isSender()) {
+                    $scope.withFavourite = false
+                }
                 $scope.historyMore = false;
 
                 var afterHistoryLoad = function (history) {
