@@ -89,6 +89,15 @@
     width: 90%;
 }
 
+.form-group .select-template-combo {
+    width: 90%;
+    display: inline-block;
+}
+.form-group .remove-template {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
 .form-group.half{
     display: inline-block;
     width: 45%;

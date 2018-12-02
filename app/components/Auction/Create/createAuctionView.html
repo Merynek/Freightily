@@ -28,10 +28,11 @@
       <div class="select_auction_template">
         <span>{{'texts.auction.select_template_label' | i18next}}</span>
       </div>
-      <select class="form-control my-input" ng-model="selectedTemplate" ng-change="selectTemplate(selectedTemplate)">
+      <select class="form-control my-input select-template-combo" id="select-template" ng-model="selectedTemplate" ng-change="selectTemplate(selectedTemplate)">
         <option value="0" selected="selected" hidden>{{'texts.auction.no_template' | i18next}}</option>
         <option ng-repeat="template in templates" value="{{template.ID}}">{{template.name}}</option>
       </select>
+      <i ng-show="selectedTemplate !== '0'" ng-click="deleteTemplate(selectedTemplate)" class="remove-template red cross glyphicon glyphicon-remove"></i>
     </div>
     <div class="auction_template_divider"></div>
     <form name="createAuctionForm" novalidate>
@@ -134,6 +135,20 @@
     </form>
   </div>
 </m>
+
+<script type="text/ng-template" id="modal_delete_auction" class="modal-content">
+    <div class="modal-header">
+        <h2>{{'texts.delete_auction_template' | i18next}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <span>{{'texts.delete_template_modal_text' | i18next}}</span>
+    </div>
+    <div class="modal-footer">
+        <div class="my-button normal-button" ng-click="ok()">{{'texts.ok' | i18next}}</div>
+        <div class="my-button easy-button" ng-click="cancel()">{{'texts.cancel' | i18next}}</div>
+    </div>
+</script>
 
 <script type="text/ng-template" id="modal_create_template" class="modal-content">
   <div class="modal-header">

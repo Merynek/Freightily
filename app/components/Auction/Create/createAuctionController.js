@@ -295,6 +295,38 @@ angular.module('appControllers')
             }
         };
 
+        $scope.deleteTemplate = function (selectedTemplateID) {
+            if (selectedTemplateID === "0") {
+                return;
+            }
+            ngDialog.open({
+                template: 'modal_delete_auction',
+                scope: $scope,
+                closeByDocument: false,
+                showClose: true,
+                appendClassName: "delete_user_dialog",
+                closeByEscape: true,
+                controller: ['$scope', function($scope) {
+                    // controller logic
+                    $scope.ok = function() {
+                        Auction.deleteTemplate(selectedTemplateID).then(function () {
+                            message(1, $filter('i18next')('success.auction_template_delete'));
+                            $state.transitionTo($state.current, {}, {
+                                reload: true
+                            });
+                            $scope.closeThisDialog(false);
+                        }).catch(function (error) {
+                            message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                            $scope.closeThisDialog(false);
+                        });
+                    };
+                    $scope.cancel = function() {
+                        $scope.closeThisDialog(false);
+                    };
+                }]
+            });
+        };
+
         $scope.createTemplate = function() {
             ngDialog.open({
                 template: 'modal_create_template',

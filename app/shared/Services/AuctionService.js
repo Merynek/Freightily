@@ -144,6 +144,24 @@ angular.module('appServices')
             });
         };
 
+		/* DELETE to REST api => Delete auction template */
+        Auction.deleteTemplate = function(idTemplate){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'DELETE',
+                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    url: CONFIG.server.url+'auction/template/' + idTemplate
+                }).then(function() {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* GET to REST api => Get auction templates */
         Auction.getTemplates = function(){
             startLoading();

@@ -78,7 +78,9 @@
 		"count_of_not_assigned_shipments": "Count of unassigned shipments",
 		"assignment_modal_title": "Assign driver to shipments",
 		"bid_auction_modal_title": "Are you sure?",
+		"delete_auction_template": "Are you sure?",
 		"bid_auction_modal_text": "Your bid is: ",
+		"delete_template_modal_text": "Do you want delete selected template?",
 		"last_gps_update": "Last gps update",
 		"show_current_position": "Show current driver position",
 		"days": "days",
@@ -273,6 +275,7 @@
 		"change_password": "Password was changed",
 		"auction_created": "Auction was successfully created",
 		"auction_template_created": "Template for auction was successfully created",
+		"auction_template_delete": "Template successfully deleted",
 		"driver_deleted": "Driver was deleted",
 		"bid_auction": "Bid success"
 	}

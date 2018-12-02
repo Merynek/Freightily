@@ -78,7 +78,9 @@
 		"count_of_not_assigned_shipments": "Počet nepřiřazených jízd",
 		"assignment_modal_title": "Přiřaďte řidiče na jízdy",
 		"bid_auction_modal_title": "Jste si jistý?",
+		"delete_auction_template": "Jste si jistý?",
 		"bid_auction_modal_text": "Vámi zvolená částka je: ",
+		"delete_template_modal_text": "Opravdu chcete smazat vybranou šablonu?",
 		"last_gps_update": "Poslední aktualizace GPS",
 		"show_current_position": "Poslední pozice řidiče",
 		"days": "dny",
@@ -273,6 +275,7 @@
 		"change_password": "Heslo bylo změněno",
 		"auction_created": "Aukce byla úspěšně založena",
 		"auction_template_created": "Šablona pro aukci byla vytvořen",
+		"auction_template_delete": "Šablona byla smazána",
 		"driver_deleted": "Řidič byl smazán",
 		"bid_auction": "Přihození úspěšné"
 	}
