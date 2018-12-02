@@ -342,7 +342,6 @@ angular.module('appControllers')
                             return;
                         }
                         var weight = $scope.auction.freight_weight;
-                        var price = $scope.auction.price;
                         var data = {
                             name: template_name,
                             address_from: $scope.auction.address_from || "",
@@ -352,8 +351,7 @@ angular.module('appControllers')
                             freight_size: $scope.auction.freight_size || "",
                             freight_weight: weight ? weight : 0,
                             load_note: $scope.auction.load_note || "",
-                            unload_note: $scope.auction.unload_note || "",
-                            price: price ? price : 0
+                            unload_note: $scope.auction.unload_note || ""
                         };
 
                         Auction.createTemplate(data).then(function () {
@@ -379,8 +377,7 @@ angular.module('appControllers')
                 return tmp.ID.toString() === selectedTemplateID;
             });
 
-            var weight = template.freight.freight_weight,
-                price = template.price;
+            var weight = template.freight.freight_weight;
 
             $scope.auction.address_from = template.address_from;
             $scope.auction.address_to = template.address_to;
@@ -391,7 +388,6 @@ angular.module('appControllers')
             $scope.auction.freight_weight = weight ? weight.toString(): "";
             $scope.auction.load_note = template.load_note;
             $scope.auction.unload_note = template.unload_note;
-            $scope.auction.price = price ? price.toString(): "";
 
             setTimeout(function() {
                 $("#geoCompleteFrom").trigger("geocode");
@@ -424,9 +420,6 @@ angular.module('appControllers')
             }
             if ($scope.auction.unload_note) {
                 $("#unload_note").trigger("keydown");
-            }
-            if ($scope.auction.price) {
-                $("#price").trigger("keydown");
             }
         }
     }
