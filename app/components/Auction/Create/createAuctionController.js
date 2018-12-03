@@ -6,9 +6,13 @@
  */
 
 angular.module('appControllers')
-    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog',
-        function ($scope, Auction, $filter, $state, templatesResponse, ngDialog) {
-        $scope.templates = templatesResponse;
+    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog', 'User',
+        function ($scope, Auction, $filter, $state, templatesResponse, ngDialog, User) {
+        $scope.templates = [getNoValueTemplate()].concat(templatesResponse);
+        $scope.selectedTemplate = $scope.templates.find(function (t) {
+            return t.ID === 0;
+        });
+
         middle_no_padding();
         $(window).resize(function () {
             if(window.innerWidth <= 900){
@@ -18,11 +22,12 @@ angular.module('appControllers')
         var autoCompleteIsInitialized = false;
 
         $scope.route = "auction|add";
-        $scope.auction = {};
+        $scope.auction = {
+            freight_type: ""
+        };
         $scope.mapIsShown = false;
         $scope.clicked = false;
         $scope.distance = "";
-        $scope.selectedTemplate = "0";
 
         $scope.full_adress_from = {
             city: "",
@@ -228,19 +233,19 @@ angular.module('appControllers')
             if (!this.createAuctionForm.$valid) {
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 addressInputsAreEmpty();
-                endAuctionInputIsEmpty();
                 deliveryInputIsEmpty();
+                endAuctionInputIsEmpty();
                 return;
             }
             if (addressInputsAreEmpty()) {
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
-            if (endAuctionInputIsEmpty()) {
+            if (deliveryInputIsEmpty()) {
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
-            if (deliveryInputIsEmpty()) {
+            if (endAuctionInputIsEmpty()) {
                 message(3, $filter('i18next')('errors.set_all_inputs'));
                 return;
             }
@@ -295,8 +300,8 @@ angular.module('appControllers')
             }
         };
 
-        $scope.deleteTemplate = function (selectedTemplateID) {
-            if (selectedTemplateID === "0") {
+        $scope.deleteTemplate = function (selectedTemplate) {
+            if (selectedTemplate.ID === 0) {
                 return;
             }
             ngDialog.open({
@@ -309,11 +314,19 @@ angular.module('appControllers')
                 controller: ['$scope', function($scope) {
                     // controller logic
                     $scope.ok = function() {
-                        Auction.deleteTemplate(selectedTemplateID).then(function () {
+                        Auction.deleteTemplate(selectedTemplate.ID).then(function () {
                             message(1, $filter('i18next')('success.auction_template_delete'));
-                            $state.transitionTo($state.current, {}, {
-                                reload: true
-                            });
+                            var index = $scope.templates.map(function(t) { return t.ID; }).indexOf(selectedTemplate.ID),
+                                selectElement = $("#select-template-combo");
+
+                            if (index !== -1) {
+                                $scope.templates.splice(index, 1);
+                            }
+                            setTimeout(function() {
+                                selectElement.val(0);
+                                selectElement.trigger("change");
+                            }, 0);
+
                             $scope.closeThisDialog(false);
                         }).catch(function (error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
@@ -356,6 +369,17 @@ angular.module('appControllers')
 
                         Auction.createTemplate(data).then(function () {
                             message(1, $filter('i18next')('success.auction_template_created'));
+                            Auction.getTemplates().then(function (data) {
+                                while($scope.templates.length > 0) {
+                                    $scope.templates.pop();
+                                }
+                                $scope.templates.push(getNoValueTemplate());
+                                for(var i = 0; i < data.length; i++) {
+                                    $scope.templates.push(data[i]);
+                                }
+                            }).catch(function (error) {
+                                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                            });
                             $scope.closeThisDialog(false);
                         }).catch(function (error) {
                             message(3, $filter('i18next')(getErrorKeyByCode(error)));
@@ -369,12 +393,12 @@ angular.module('appControllers')
             });
         };
 
-        $scope.selectTemplate = function(selectedTemplateID) {
-            if (selectedTemplateID === "0") {
+        $scope.selectTemplate = function(selectedTemplate) {
+            if (!selectedTemplate) {
                 return;
             }
             var template = $scope.templates.find(function (tmp) {
-                return tmp.ID.toString() === selectedTemplateID;
+                return tmp.ID === selectedTemplate.ID;
             });
 
             var weight = template.freight.freight_weight;
@@ -395,6 +419,24 @@ angular.module('appControllers')
                 triggerInputsChange();
             }, 0);
         };
+
+        function getNoValueTemplate() {
+            return {
+                ID: 0,
+                name: $filter('i18next')('texts.auction.no_template'),
+                address_from: "",
+                address_to: "",
+                freight: {
+                    freight_description: "",
+                    freight_size: "",
+                    freight_type: "",
+                    freight_weight: 0
+                },
+                load_note: "",
+                owner: User.ID,
+                unload_note: ""
+            };
+        }
 
         function triggerInputsChange() {
             if ($scope.auction.address_from) {
@@ -423,4 +465,4 @@ angular.module('appControllers')
             }
         }
     }
-    ]);
+]);

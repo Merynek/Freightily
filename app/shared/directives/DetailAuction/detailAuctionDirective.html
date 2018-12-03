@@ -1,11 +1,11 @@
 <div ng-click="toggleDetail()" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="auction-info col-xs-12 col-sm-11 col-md-11 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
         <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_from)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{getCity(item.address_from)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{vm.getCity(item.address_to)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{getCity(item.address_to)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
             <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
@@ -15,7 +15,7 @@
     </div>
     <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
         <div ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
-            <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="vm.favourite($event); $event.stopPropagation()"></span>
+            <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="favourite($event); $event.stopPropagation()"></span>
         </div>
     </div>
 </div>
@@ -51,7 +51,7 @@
                     <span class="normal-icon glyphicon glyphicon-tag"></span>
                     <span>{{'texts.auction.freight_type.label' | i18next}}:</span>
                 </div>
-                <div class="detail-content col-xs-6 col-sm-6 col-md-5 col-lg-6"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+                <div class="detail-content col-xs-6 col-sm-6 col-md-5 col-lg-6"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
             </div>
             <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-label col-xs-6 col-sm-6 col-md-7 col-lg-6">
@@ -75,7 +75,7 @@
                 <div class="detail-content col-xs-6 col-sm-6 col-md-5 col-lg-6"><span>{{item.delivery}}</span></div>
             </div>
             <div ng-show="canDownloadPrint" class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div ng-click="vm.getPrintAuction(item.ID)" class="download-text">
+                <div ng-click="getPrintAuction(item.ID)" class="download-text">
                     <span>{{'texts.auction.download_print' | i18next}}</span>
                     <span class="glyphicon glyphicon glyphicon-download-alt"></span>
                 </div>
@@ -117,7 +117,7 @@
                             <input type="text" ng-model="bid" ng-keypress="onkeyDown($event, bid)" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
                             <span class="form-control-feedback">Kč</span>
                         </div>
-                        <div class="my-button normal-button bid-button" ng-click="vm.bidAuction(bid)">
+                        <div class="my-button normal-button bid-button" ng-click="bidAuction(bid)">
                             <span class="glyphicon glyphicon-circle-arrow-down"></span>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
-            <span ng-show="history.length > 3" class="show-more" ng-click="vm.historyToggle()">
+            <span ng-show="history.length > 3" class="show-more" ng-click="historyToggle()">
                 <span ng-show="!historyMore" class="glyphicon glyphicon-menu-down"></span>
                 <span ng-show="historyMore" class="glyphicon glyphicon-menu-up"></span>
                 <label ng-show="!historyMore">{{'texts.show_more' | i18next}}</label>
@@ -191,7 +191,7 @@
                     </div>
                 </div>
             </div>
-            <div ng-show="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="vm.historyToggle()">
+            <div ng-show="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="historyToggle()">
                 <div class="text-center">
                     {{'texts.history_next' | i18next}} <b>{{history.length - 3}}</b> {{'texts.history_next2' | i18next}}
                 </div>

@@ -3,8 +3,6 @@ angular.module('appDirectives')
         return {
             templateUrl: 'app/shared/directives/pagingDirective.html',
             restrict: "E",
-            bindToController: true,
-            controllerAs: 'vm',
             scope: {
                 itemCount: '=',
                 allItemsCount: '='
@@ -13,10 +11,10 @@ angular.module('appDirectives')
                 var COUNT_OF_ITEMS_IN_PAGE = 10;
 
                 $scope.page = $stateParams.page ? $stateParams.page : "1";
-                $scope.pagesCount = Math.ceil(this.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
-                $scope.isLastPage = (Number($scope.page) * COUNT_OF_ITEMS_IN_PAGE) >= this.allItemsCount;
+                $scope.pagesCount = Math.ceil($scope.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
+                $scope.isLastPage = (Number($scope.page) * COUNT_OF_ITEMS_IN_PAGE) >= $scope.allItemsCount;
 
-                this.minus = function () {
+                $scope.minus = function () {
                     var page = (parseInt($stateParams.page));
 
                     if (page) {
@@ -26,7 +24,7 @@ angular.module('appDirectives')
                     }
                     redirect();
                 };
-                this.plus = function () {
+                $scope.plus = function () {
                     var page = (parseInt($stateParams.page));
 
                     if (page) {

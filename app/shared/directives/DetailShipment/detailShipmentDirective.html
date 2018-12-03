@@ -1,11 +1,11 @@
 <div ng-click="toggleDetail(item.ID)" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_from)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{getCity(item.address_from)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{vm.getCity(item.address_to)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{getCity(item.address_to)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
         <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{item.price}},-</span></div>
     </div>
@@ -25,7 +25,7 @@
             <span class="detail-content">{{item.address_to}}</span>
         </div>
         <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 margin-divider"></div>
-        <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="vm.stopShipment(item.ID)">
+        <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="stopShipment(item.ID)">
             <span>{{'texts.shipment.stopShipment' | i18next}}</span>
         </div>
         <div ng-if="!newShipment" class="auction-detail-item col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
@@ -36,8 +36,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding-element">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 photo-buttons no-padding-element">
-                        <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab no-margin-element" ng-click="vm.showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
-                        <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="vm.showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
+                        <div ng-class="firstPart ? 'active tab' : 'tab'" class="tab no-margin-element" ng-click="showPhoto(item.ID, true)"><span>{{'texts.shipment.photos_before' | i18next}}</span></div>
+                        <div ng-class="!firstPart ? 'active tab' : 'tab'" ng-if="finishedShipment" ng-click="showPhoto(item.ID, false)"><span>{{'texts.shipment.photos_after' | i18next}}</span></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 shipment-photos">
@@ -62,7 +62,7 @@
                 <span class="normal-icon glyphicon glyphicon-tag"></span>
                 <span>{{'texts.auction.freight_type.label' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{vm.getFreightType(item.freight.freight_type)}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">

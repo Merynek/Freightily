@@ -3,22 +3,18 @@ angular.module('appDirectives')
         return {
             templateUrl: 'app/shared/directives/DetailAuction/detailAuctionDirective.html',
             restrict: "E",
-            bindToController: true,
-            controllerAs: 'vm',
             scope: {
                 auctionItem: '=',
                 withFavourite: '=',
                 canDownloadPrint: '='
             },
             controller: function ($scope, $filter, Auction, User, ngDialog) {
-                var self = this;
-                $scope.withFavourite = this.withFavourite;
-                $scope.canDownloadPrint = this.canDownloadPrint;
-                $scope.item = this.auctionItem.item;
-                $scope.expired = this.auctionItem.item.expired;
+                var self = $scope;
+                $scope.item = $scope.auctionItem.item;
+                $scope.expired = $scope.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;
                 $scope.userIsBidder = false;
-                $scope.ID = this.auctionItem.item.ID;
+                $scope.ID = $scope.auctionItem.item.ID;
                 var end_auction = $scope.item.end_auction.split(" ");
                 end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
                 $scope.item.end_auction = end_auction;
@@ -28,9 +24,6 @@ angular.module('appDirectives')
                 $scope.user = User;
                 if (User.isSender() || User.isDriver()) {
                     $scope.withBids = false;
-                }
-                if (User.isSender()) {
-                    $scope.withFavourite = false
                 }
                 $scope.historyMore = false;
 
@@ -84,11 +77,11 @@ angular.module('appDirectives')
                     }
                 };
 
-                this.historyToggle = function () {
+                $scope.historyToggle = function () {
                     $scope.historyMore = !$scope.historyMore;
                 };
 
-                this.getPrintAuction = function (id) {
+                $scope.getPrintAuction = function (id) {
                     Auction.getAuctionPrint(id).then(function (data) {
                         var file = new Blob([data], {
                             type: 'application/csv'
@@ -107,7 +100,7 @@ angular.module('appDirectives')
                     });
                 };
 
-                this.bidAuction = function (bid) {
+                $scope.bidAuction = function (bid) {
                     var current_price = $scope.item.current_price;
 
                     if (bid && !isValueNumber(bid)) {
@@ -166,7 +159,7 @@ angular.module('appDirectives')
                     });
                 }
 
-                this.favourite = function () {
+                $scope.favourite = function () {
                     if ($scope.item.isFavourite) {
                         Auction.deleteFromFavourite($scope.ID).then(function () {
                             refreshItem($scope.ID);
@@ -183,11 +176,11 @@ angular.module('appDirectives')
                     }
                 };
 
-                this.getFreightType = function (type) {
+                $scope.getFreightType = function (type) {
                     return $filter('i18next')('texts.auction.freight_type.' + type);
                 };
 
-                this.getCity = function (address) {
+                $scope.getCity = function (address) {
                     return address.split(",")[0];
                 };
 

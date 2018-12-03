@@ -28,11 +28,13 @@
       <div class="select_auction_template">
         <span>{{'texts.auction.select_template_label' | i18next}}</span>
       </div>
-      <select class="form-control my-input select-template-combo" id="select-template" ng-model="selectedTemplate" ng-change="selectTemplate(selectedTemplate)">
-        <option value="0" selected="selected" hidden>{{'texts.auction.no_template' | i18next}}</option>
-        <option ng-repeat="template in templates" value="{{template.ID}}">{{template.name}}</option>
+      <select id="select-template-combo" class="form-control my-input select-template-combo"
+              ng-change="selectTemplate(selectedTemplate)"
+              ng-options="template.name for template in templates track by template.ID"
+              ng-model="selectedTemplate">
+          <option value="" selected hidden />
       </select>
-      <i ng-show="selectedTemplate !== '0'" ng-click="deleteTemplate(selectedTemplate)" class="remove-template red cross glyphicon glyphicon-remove"></i>
+      <i ng-show="selectedTemplate.ID !== 0" ng-click="deleteTemplate(selectedTemplate)" class="remove-template red cross glyphicon glyphicon-remove"></i>
     </div>
     <div class="auction_template_divider"></div>
     <form name="createAuctionForm" novalidate>
@@ -90,7 +92,7 @@
       <div class="form-group half">
         <select class="form-control my-input" ng-model="auction.freight_type" name="freight_type" id="freight_type"
                 ng-class="{'input-error' : createAuctionForm.freight_type.$invalid && (!createAuctionForm.freight_type.$pristine || clicked)}" required>
-          <option value="" disabled selected>{{'texts.auction.freight_type.label' | i18next}}</option>
+          <option value="" disabled>{{'texts.auction.freight_type.label' | i18next}}</option>
           <option value="1">{{'texts.auction.freight_type.1' | i18next}}</option>
           <option value="2">{{'texts.auction.freight_type.2' | i18next}}</option>
           <option value="3">{{'texts.auction.freight_type.3' | i18next}}</option>

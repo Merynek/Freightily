@@ -3,14 +3,12 @@ angular.module('appDirectives')
         return {
             templateUrl: 'app/shared/directives/Menu/menuDirective.html',
             restrict: "E",
-            bindToController: true,
-            controllerAs: 'vm',
             transclude: true,
             scope: {
-                param: '='
+                param: "="
             },
             controller: function ($scope, User) {
-                var route = this.param.route;
+                var route = $scope.param.route;
                 $scope.aboveRoute = route.split("|")[0];
                 $scope.underRoute = route.split("|")[1];
                 $scope.user = User;

@@ -3,14 +3,12 @@ angular.module('appDirectives')
         return {
             templateUrl: 'app/shared/directives/DetailUser/detailUserDirective.html',
             restrict: "E",
-            bindToController: true,
-            controllerAs: 'vm',
             scope: {
-                driver: '='
+                driverParam: '=driver'
             },
             controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog, $i18next) {
                 $scope.currentLanguage = $i18next.options.lng;
-                $scope.driver = this.driver.driver;
+                $scope.driver = $scope.driverParam.driver;
 
                 Shipments.getAllNewShipments().then(function(res){
                     $scope.allShipments = res;

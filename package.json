@@ -9,8 +9,9 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
-    "angular": "~1.5.2",
-    "angular-ui-router": "~0.2.18",
+    "angular": "~1.7.5",
+    "angular-sanitize": "^1.7.5",
+    "angular-ui-router": "~1.0.20",
     "bootstrap": "~3.3.6",
     "bootstrap-datepicker": "^1.8.0",
     "bootstrap-social": "^5.0.0",

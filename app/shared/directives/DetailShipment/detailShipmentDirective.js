@@ -3,20 +3,16 @@ angular.module('appDirectives')
         return {
             templateUrl: 'app/shared/directives/DetailShipment/detailShipmentDirective.html',
             restrict: "E",
-            bindToController: true,
-            controllerAs: 'vm',
             scope: {
                 shipmentItem: '=',
                 newShipment: '=',
                 finishedShipment: '='
             },
             controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state, ngDialog) {
-                var self = this;
+                var self = $scope;
 
-                $scope.item = this.shipmentItem.item;
-                $scope.newShipment = this.newShipment;
-                $scope.finishedShipment = this.finishedShipment;
-                $scope.ID = this.shipmentItem.item.ID;
+                $scope.item = $scope.shipmentItem.item;
+                $scope.ID = $scope.shipmentItem.item.ID;
                 $scope.showPhotos = [];
                 $scope.photos = [];
                 $scope.photoReady = false;
@@ -28,7 +24,7 @@ angular.module('appDirectives')
                     }
                 };
 
-                this.stopShipment = function(ID) {
+                $scope.stopShipment = function(ID) {
                     var data = {
                         id_shipment: ID
                     };
@@ -59,7 +55,7 @@ angular.module('appDirectives')
 
                 };
 
-                this.showPhoto = function(idShipment, firstPart) {
+                $scope.showPhoto = function(idShipment, firstPart) {
                     $scope.showPhotos = [];
                     $scope.firstPart = firstPart;
                     UserAbility.getPhotos(idShipment, firstPart).then(function(data){
@@ -73,14 +69,14 @@ angular.module('appDirectives')
                     lightbox.init();
                 };
 
-                this.openImage = function(photo) {
+                $scope.openImage = function(photo) {
                   window.open(photo);
                 };
 
-                this.getFreightType = function (type) {
+                $scope.getFreightType = function (type) {
                     return $filter('i18next')('texts.auction.freight_type.'+type);
                 };
-                this.getCity = function (address) {
+                $scope.getCity = function (address) {
                     return address.split(",")[0];
                 };
             }

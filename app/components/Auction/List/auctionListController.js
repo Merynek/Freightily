@@ -15,6 +15,7 @@ angular.module('appControllers')
     $scope.order = $stateParams.order ? $stateParams.order : "ASC";
     $scope.page = $stateParams.page ? $stateParams.page : "1";
     $scope.sorting = getSortingText();
+    $scope.withFavourite = !User.isSender();
     $scope.windowHasFocus = true;
     if (!checkListAuctionRunning) {
        refreshingData();
