@@ -8,6 +8,7 @@
 angular.module('appControllers')
     .controller('usersController', ['$scope', 'users', 'User', '$filter', '$state', 'Admin',
     function($scope, users, User, $filter, $state, Admin) {
+        checkError(users.Error);
         $scope.users = users;
         $scope.route = "admin|users";
 
@@ -16,6 +17,14 @@ angular.module('appControllers')
                 if ($scope.users[i].ID === id) {
                     return $scope.users[i];
                 }
+            }
+        }
+
+        function checkError(error) {
+            if (error && error.status === 401) {
+                User.logout();
+                $state.go('login');
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
             }
         }
 

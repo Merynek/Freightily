@@ -9,6 +9,7 @@ angular.module('appControllers')
   .controller('auctionListController', ['$scope', 'AuctionListResponse', 'Auction', 'User', 'UserAbility', '$location', '$stateParams', '$filter', '$state', '$rootScope',
       function($scope, AuctionListResponse, Auction, User, UserAbility, $location, $stateParams, $filter, $state, $rootScope){
     $scope.route = "auction|list";
+    checkError(AuctionListResponse.Error);
     $scope.AuctionList = AuctionListResponse.AuctionList;
     $scope.AuctionListCount = AuctionListResponse.Count;
     $scope.filter = $stateParams.sort;
@@ -29,6 +30,14 @@ angular.module('appControllers')
       }).blur(function() {
           $scope.windowHasFocus = false;
       });
+
+      function checkError(error) {
+          if (error && error.status === 401) {
+              User.logout();
+              $state.go('login');
+              message(3, $filter('i18next')(getErrorKeyByCode(error)));
+          }
+      }
 
     function refreshingData() {
         checkListAuctionRunning = true;

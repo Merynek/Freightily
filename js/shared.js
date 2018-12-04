@@ -33,6 +33,14 @@ function getErrorKeyByCode(error) {
 	var errorData = error.data,
 		code;
 
+	if (error.status === 401) {
+        return 'errors.codes.unauthorized';
+	}
+
+	if(errorData.error === "invalid_grant") {
+		return 'errors.wrong_login';
+	}
+
 	if (errorData && errorData.errorCode) {
         code = errorData.errorCode;
         return 'errors.codes.' + code;
@@ -49,6 +57,12 @@ function isValueNumber(value) {
 	var val = value.replace(/ /g,'');
 
 	return $.isNumeric(val);
+}
+
+function getTokenFromStorage() {
+	return {
+        'Authorization': "Bearer " + window.localStorage.getItem("access_token")
+    };
 }
 
 var checkListAuctionRunning = false;

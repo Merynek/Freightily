@@ -199,7 +199,7 @@
 		"password_must_me_greater_eight": "Password must contains minimal 8 characters",
 		"phone_number_must_me_greater_none": "Phone number has wrong format",
 		"passwords_not_match" : "Passwords do not match",
-		"wrong_login" : "Login error",
+		"wrong_login" : "Login failed. Check your login inputs",
 		"wrong_registration": "Registration error",
 		"select_role": "Select role",
 		"set_all_inputs": "Set all required inputs",
@@ -219,6 +219,7 @@
 		"ico_is_number": "Identification number must be a number",
 		"accept_conditions": "You must accept conditions",
 		"codes": {
+			"unauthorized": "Session timeout",
 			"fatal": "Unknown error, contact administrator",
 			"0": "Unknown error, please contact administrator",
 			"1": "Allowed values for ban user are 0 or 1",

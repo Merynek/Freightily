@@ -6,7 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', function ($scope, $filter, userInfo, UserAbility) {
+    .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', 'User', '$state', function ($scope, $filter, userInfo, UserAbility, User, $state) {
+        checkError(userInfo.Error);
         $scope.userInfo = userInfo;
         $scope.clicked = false;
 
@@ -28,6 +29,14 @@ angular.module('appControllers')
             }).catch(function (error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
+        };
+
+        function checkError(error) {
+            if (error && error.status === 401) {
+                User.logout();
+                $state.go('login');
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            }
         }
     }
     ]);

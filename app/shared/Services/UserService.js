@@ -37,7 +37,7 @@ angular.module('appServices')
 			return User.role === 2;
 		};
 		User.isDriver = function(){
-			return User.role === 4;
+			return User.role === 3;
 		};
         User.isAdmin = function(){
             return User.role === 99;
@@ -47,29 +47,30 @@ angular.module('appServices')
 		User.login = function(username, password){
 			startLoading();
 			var data = {
-				Username: username,
-				Password: password
+                userName: username,
+                password: password,
+                grant_type: "password"
 			};
-			return $q(function(resolve, reject){
+			return $q(function(resolve, reject) {
 				$http({
 					method: 'POST',
 					data: param(data),
-					url: CONFIG.server.url+'login'
+					url: CONFIG.server.url+'token'
 				}).then(function(response) {
+					var data = response.data;
 					if (window.localStorage) {
-						if(response.data && response.data.User && response.data.Token){
-							window.localStorage.setItem("ID", response.data.User.ID);
-							window.localStorage.setItem("TOKEN", response.data.Token);
+						if(data && data.access_token){
+							window.localStorage.setItem("access_token", data.access_token);
 						}
 						else{
 							throw "Server error";
 						}						
 					}
 					User.set('isLoggedIn', true);
-					User.set('username', response.data.User.username);
-					User.set('role', response.data.User.role);
-					User.set('ID', response.data.User.ID);
-					User.setRole(response.data.User.role);
+					User.set('username', data.username);
+					User.set('role', Number(data.role));
+					User.set('ID', data.ID);
+					User.setRole(Number(data.role));
 					endLoading();
 					resolve();
 				}).catch(function(error){
@@ -79,39 +80,31 @@ angular.module('appServices')
 			});
     	};
 
-		/* POST to REST api => Logout */ 
-		User.logout = function(){
-			startLoading();
-			return $q(function(resolve, reject){
-				$http({
-					method: 'POST',
-					url: CONFIG.server.url+'logout'
-				}).then(function(response) {
-					User.set('isLoggedIn', false);
-					window.localStorage.clear();
-					endLoading();
-					resolve();
-				}).catch(function(error){
-					endLoading();
-					reject(error);
-				})
+		/* Logout */
+		User.logout = function() {
+			return $q(function(resolve) {
+                User.set('isLoggedIn', false);
+                window.localStorage.clear();
+                resolve();
 			});
 		};
 
 		/* POST to REST api => verify token */ 
-		User.getUserForToken = function(token){
+		User.getUserForToken = function(){
 			startLoading();
 			return $q(function(resolve, reject) {
 				$http({
 					method: 'POST',
 					url: CONFIG.server.url+'checkToken',
-					headers: { 'token': token }
+                    headers: getTokenFromStorage()
 				}).then(function(response) {
+                    var data = response.data;
+
 					User.set('isLoggedIn', true);
-					User.set('username', response.data.username);
-					User.set('role', response.data.role);
-					User.set('ID', response.data.ID);
-					User.setRole(response.data.role);
+					User.set('username', data.username);
+					User.set('role', data.role);
+					User.set('ID', data.ID);
+					User.setRole(data.role);
 					endLoading();
 					resolve();
 				}).catch(function(error){
@@ -164,7 +157,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'registration/driver'
 				}).then(function(response) {
 					endLoading();
@@ -183,7 +176,7 @@ angular.module('appServices')
                 $http({
                     method: 'POST',
                     data: param(data),
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'company/vacation'
                 }).then(function(response) {
                     endLoading();
@@ -206,7 +199,7 @@ angular.module('appServices')
 
                 $http({
                     method: 'DELETE',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'company/vacation'+parameters
                 }).then(function(response) {
                     endLoading();
@@ -225,7 +218,7 @@ angular.module('appServices')
 				$http({
 					method: 'GET',
 					data: param(data),
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'Account/company'
 				}).then(function(response) {
 					endLoading();
@@ -243,7 +236,7 @@ angular.module('appServices')
             return $q(function(resolve, reject) {
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'admin/users'
                 }).then(function(response) {
                     endLoading();

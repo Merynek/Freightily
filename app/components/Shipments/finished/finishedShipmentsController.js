@@ -6,7 +6,9 @@
  */
 
 angular.module('appControllers')
-    .controller('finishedShipmentsController', ['$scope', 'finishedShipmentsResponse', function($scope, finishedShipmentsResponse){
+    .controller('finishedShipmentsController', ['$scope', 'finishedShipmentsResponse', 'User', '$state', '$filter',
+        function($scope, finishedShipmentsResponse, User, $state, $filter){
+        checkError(finishedShipmentsResponse.Error);
         $scope.route = "shipments|finished";
         $scope.shipments = finishedShipmentsResponse.shipments;
         $scope.shipmentsCount = finishedShipmentsResponse.Count;
@@ -16,6 +18,14 @@ angular.module('appControllers')
                 middle_no_padding();
             }
         });
+
+        function checkError(error) {
+            if (error && error.status === 401) {
+                User.logout();
+                $state.go('login');
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            }
+        }
     }
 ]);
 

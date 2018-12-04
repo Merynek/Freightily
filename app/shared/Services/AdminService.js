@@ -23,7 +23,7 @@ angular.module('appServices')
 
                     $http({
                         method: 'PUT',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/ban'+parameters
                     }).then(function(response) {
                         endLoading();
@@ -46,7 +46,7 @@ angular.module('appServices')
 
                     $http({
                         method: 'PUT',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/verify'+parameters
                     }).then(function(response) {
                         endLoading();
@@ -69,7 +69,7 @@ angular.module('appServices')
 
                     $http({
                         method: 'PUT',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/delete'+parameters
                     }).then(function(response) {
                         endLoading();
@@ -87,7 +87,7 @@ angular.module('appServices')
                 return $q(function(resolve, reject) {
                     $http({
                         method: 'GET',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/drivers_position'
                     }).then(function(response) {
                         endLoading();
@@ -109,7 +109,7 @@ angular.module('appServices')
                 return $q(function(resolve, reject){
                     $http({
                         method: 'POST',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/new_shipment'+parameters
                     }).then(function(response) {
                         endLoading();
@@ -127,7 +127,7 @@ angular.module('appServices')
                 return $q(function(resolve, reject){
                     $http({
                         method: 'GET',
-                        headers: { 'token': window.localStorage.getItem("TOKEN")},
+                        headers: getTokenFromStorage(),
                         url: CONFIG.server.url+'admin/auction_cache'
                     }).then(function(response) {
                         endLoading();

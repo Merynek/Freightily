@@ -24,7 +24,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction'+parameters
 					}).then(function(response) {
 						endLoading();
@@ -42,7 +42,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/'+id
 					}).then(function(response) {
 						endLoading();
@@ -60,7 +60,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/print/'+id,
                     responseType: 'arraybuffer'
                 }).then(function(response) {
@@ -79,7 +79,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/history/'+id
 					}).then(function(response) {
 						endLoading();
@@ -96,7 +96,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/cache'
                 }).then(function(response) {
                     resolve(response.data);
@@ -113,7 +113,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
 					data: param(data),
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/create'
 					}).then(function(response) {
 						endLoading();
@@ -132,7 +132,7 @@ angular.module('appServices')
                 $http({
                     method: 'POST',
                     data: param(data),
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/template'
                 }).then(function(response) {
                     endLoading();
@@ -150,7 +150,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'DELETE',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/template/' + idTemplate
                 }).then(function() {
                     endLoading();
@@ -168,7 +168,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/template'
                 }).then(function(response) {
                     endLoading();
@@ -187,7 +187,7 @@ angular.module('appServices')
 				$http({
 					method: 'POST',
                     data: param(data),
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/bid'
 				}).then(function(response) {
 					endLoading();
@@ -205,7 +205,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/favourite/'+id
 				}).then(function(response) {
 					endLoading();
@@ -223,7 +223,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'DELETE',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/favourite/'+id
 				}).then(function(response) {
 					endLoading();
@@ -244,7 +244,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/win'+parameters
 					}).then(function(response) {
 						endLoading();
@@ -265,7 +265,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/favourite'+parameters
 					}).then(function(response) {
 						endLoading();
@@ -286,7 +286,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'auction/bids'+parameters
 					}).then(function(response) {
 						endLoading();
@@ -307,7 +307,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/created'+parameters
 					}).then(function(response) {
 						endLoading();

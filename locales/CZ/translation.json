@@ -200,7 +200,7 @@
 		"password_must_me_greater_eight": "Heslo musí mít minimálně 8 znaků",
 		"phone_number_must_me_greater_none": "Nespravný formát telefoního čísla",
 		"passwords_not_match" : "Hesla se neshodují",
-		"wrong_login" : "Chyba při přihlašování",
+		"wrong_login" : "Přihlášení se nezdařilo. Zkontrolujte přihlašovací údaje",
 		"wrong_registration": "Chyba při registraci",
 		"select_role": "Vyberte roli",
 		"set_all_inputs": "Vyplňte všechny povinné údaje",
@@ -220,6 +220,7 @@
 		"ico_is_number": "IČO musí být číslo",
 		"accept_conditions": "Musíte souhlasit s podmínkami",
 		"codes": {
+			"unauthorized": "Přihlášení vypršelo",
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
 			"0": "Neznámá na serveru, prosím kontaktujte administrátora",
 			"1": "Možné hodnoty pro ban uživatele jsou 0 nebo 1",

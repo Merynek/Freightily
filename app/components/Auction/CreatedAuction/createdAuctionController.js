@@ -6,7 +6,9 @@
 */
 
 angular.module('appControllers')
-  .controller('createdAuctionController', ['$scope', 'createdAuctionResponse', function($scope, createdAuctionResponse){
+  .controller('createdAuctionController', ['$scope', 'createdAuctionResponse', 'User', '$state', '$filter',
+      function($scope, createdAuctionResponse, User, $state, $filter){
+    checkError(createdAuctionResponse.Error);
     $scope.AuctionList = createdAuctionResponse.AuctionList;
     $scope.AuctionListCount = createdAuctionResponse.Count;
     $scope.route = "auction|created";
@@ -16,6 +18,15 @@ angular.module('appControllers')
         middle_no_padding();
       }
     });
+
+      function checkError(error) {
+          if (error && error.status === 401) {
+              User.logout();
+              $state.go('login');
+              message(3, $filter('i18next')(getErrorKeyByCode(error)));
+          }
+      }
+
   }
 
 ]);

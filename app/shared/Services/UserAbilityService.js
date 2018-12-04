@@ -21,7 +21,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: url+'company/drivers'+parameters
 					}).then(function(response) {
 						endLoading();
@@ -41,7 +41,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: url+'company/drivers'+parameters
                 }).then(function(response) {
                     endLoading();
@@ -59,7 +59,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: url+'shipment/photo',
 					params: {
                         id_shipment: idShipment,
@@ -81,7 +81,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'DELETE',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: url+'company/user?id_user=' + id_user
                 }).then(function(response) {
                     endLoading();
@@ -99,7 +99,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: url+'company/position/' + id_driver
                 }).then(function(response) {
                     endLoading();
@@ -117,7 +117,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: url+'company/account'
 				}).then(function(response) {
 					endLoading();
@@ -135,7 +135,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'POST',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					data: param(data),
 					url: url+'company/changePassword'
 				}).then(function() {
@@ -172,7 +172,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'POST',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: url+'shipment/stop',
                     data: param(data)
                 }).then(function(response) {
@@ -191,7 +191,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'POST',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: url+'shipment/assign',
                     data: param(data)
                 }).then(function(response) {

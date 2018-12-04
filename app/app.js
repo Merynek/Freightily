@@ -11,9 +11,7 @@
                         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
                         
                         var LoginHandler = function(callback){
-                            var token = window.localStorage.getItem("TOKEN");
-
-                            User.getUserForToken(token).then(function(response) { 
+                            User.getUserForToken().then(function(response) {
                                 return callback(false);
                             }).catch(function(){
                                 return callback(true);

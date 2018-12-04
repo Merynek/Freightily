@@ -18,7 +18,7 @@ angular.module('appServices')
             return $q(function(resolve, reject){
                 $http({
                     method: 'GET',
-                    headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'shipment/new_shipments'
                 }).then(function(response) {
                     endLoading();
@@ -38,7 +38,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'shipment/myShipments'+parameters
 				}).then(function(response) {
 					endLoading();
@@ -58,7 +58,7 @@ angular.module('appServices')
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
-					headers: { 'token': window.localStorage.getItem("TOKEN")},
+                    headers: getTokenFromStorage(),
 					url: CONFIG.server.url+'shipment/myShipments'+parameters
 				}).then(function(response) {
 					endLoading();

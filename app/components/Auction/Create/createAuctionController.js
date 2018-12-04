@@ -8,6 +8,7 @@
 angular.module('appControllers')
     .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog', 'User',
         function ($scope, Auction, $filter, $state, templatesResponse, ngDialog, User) {
+        checkError(templatesResponse.Error);
         $scope.templates = [getNoValueTemplate()].concat(templatesResponse);
         $scope.selectedTemplate = $scope.templates.find(function (t) {
             return t.ID === 0;
@@ -54,6 +55,14 @@ angular.module('appControllers')
                 });
             }
         };
+
+        function checkError(error) {
+            if (error && error.status === 401) {
+                User.logout();
+                $state.go('login');
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            }
+        }
 
         function parseAddress(locationObj, isFromAddress) {
             var components = locationObj.address_components,
