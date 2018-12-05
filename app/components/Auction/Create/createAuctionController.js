@@ -237,6 +237,64 @@ angular.module('appControllers')
             return true;
         }
 
+        function removeErrorClasses() {
+            var geoCompleteFrom = $("#geoCompleteFrom"),
+                geoCompleteTo = $("#geoCompleteTo"),
+                load_note = $("#load_note"),
+                unload_note = $("#unload_note"),
+                price = $("#price"),
+                delivery = $("#delivery"),
+                freight_description = $("#freight_description"),
+                freight_type = $("#freight_type"),
+                freight_size = $("#freight_size"),
+                freight_weight = $("#freight_weight"),
+                end_auction = $("#end_auction");
+
+            geoCompleteFrom.removeClass("input-error");
+            geoCompleteTo.removeClass("input-error");
+            load_note.removeClass("input-error");
+            unload_note.removeClass("input-error");
+            price.removeClass("input-error");
+            delivery.removeClass("input-error");
+            freight_description.removeClass("input-error");
+            freight_type.removeClass("input-error");
+            freight_size.removeClass("input-error");
+            freight_weight.removeClass("input-error");
+            end_auction.removeClass("input-error");
+        }
+
+        function addErrorClasses() {
+            var load_note = $("#load_note"),
+                unload_note = $("#unload_note"),
+                price = $("#price"),
+                freight_description = $("#freight_description"),
+                freight_type = $("#freight_type"),
+                freight_size = $("#freight_size"),
+                freight_weight = $("#freight_weight");
+
+            if (!load_note.val()) {
+                load_note.addClass("input-error");
+            }
+            if (!unload_note.val()) {
+                unload_note.addClass("input-error");
+            }
+            if (!price.val()) {
+                price.addClass("input-error");
+            }
+            if (!freight_description.val()) {
+                freight_description.addClass("input-error");
+            }
+            if (!freight_type.val()) {
+                freight_type.addClass("input-error");
+            }
+            if (!freight_size.val()) {
+                freight_size.addClass("input-error");
+            }
+            if (!freight_weight.val()) {
+                freight_weight.addClass("input-error");
+            }
+        }
+
         $scope.createAuction = function () {
             $scope.clicked = true;
             if (!this.createAuctionForm.$valid) {
@@ -244,6 +302,7 @@ angular.module('appControllers')
                 addressInputsAreEmpty();
                 deliveryInputIsEmpty();
                 endAuctionInputIsEmpty();
+                addErrorClasses();
                 return;
             }
             if (addressInputsAreEmpty()) {
@@ -410,6 +469,12 @@ angular.module('appControllers')
                 return tmp.ID === selectedTemplate.ID;
             });
 
+            if (template.ID === 0) {
+                $("#delivery").val("");
+                $("#end_auction").val("");
+                $scope.auction.price = "";
+            }
+
             var weight = template.freight.freight_weight;
 
             $scope.auction.address_from = template.address_from;
@@ -426,6 +491,7 @@ angular.module('appControllers')
                 $("#geoCompleteFrom").trigger("geocode");
                 $("#geoCompleteTo").trigger("geocode");
                 triggerInputsChange();
+                removeErrorClasses();
             }, 0);
         };
 

@@ -128,7 +128,7 @@ angular.module('appServices')
                     $http({
                         method: 'GET',
                         headers: getTokenFromStorage(),
-                        url: CONFIG.server.url+'admin/auction_cache'
+                        url: CONFIG.server.url+'admin/cache'
                     }).then(function(response) {
                         endLoading();
                         resolve(response.data);

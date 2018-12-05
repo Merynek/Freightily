@@ -37,10 +37,6 @@ function getErrorKeyByCode(error) {
         return 'errors.codes.unauthorized';
 	}
 
-	if(errorData.error === "invalid_grant") {
-		return 'errors.wrong_login';
-	}
-
 	if (errorData && errorData.errorCode) {
         code = errorData.errorCode;
         return 'errors.codes.' + code;

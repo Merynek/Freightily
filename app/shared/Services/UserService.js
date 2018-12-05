@@ -69,7 +69,7 @@ angular.module('appServices')
 					User.set('isLoggedIn', true);
 					User.set('username', data.username);
 					User.set('role', Number(data.role));
-					User.set('ID', data.ID);
+					User.set('ID', Number(data.ID));
 					User.setRole(Number(data.role));
 					endLoading();
 					resolve();

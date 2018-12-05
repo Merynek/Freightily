@@ -26,6 +26,9 @@ angular.module('appControllers')
               $state.go('auction');
           }
         }).catch(function(error){
+            if (error.data) {
+                error.data = JSON.parse(error.data.error_description);
+            }
             message(3, $filter('i18next')(getErrorKeyByCode(error)));
         })
     };
