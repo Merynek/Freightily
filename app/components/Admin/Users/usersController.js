@@ -76,14 +76,6 @@ angular.module('appControllers')
             })
         };
 
-        $scope.AddShipment = function(id_transporter) {
-            Admin.NewShipmentFromAdmin(id_transporter).then(function() {
-                message(1, $filter('i18next')('success.shipment_added'));
-            }).catch(function(error) {
-                message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            })
-        };
-
         $scope.GetAuctionCache = function() {
             Admin.getAuctionCache().then(function(data) {
                 console.log(data);

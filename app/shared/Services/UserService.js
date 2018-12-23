@@ -61,6 +61,8 @@ angular.module('appServices')
 					if (window.localStorage) {
 						if(data && data.access_token){
 							window.localStorage.setItem("access_token", data.access_token);
+                            window.localStorage.setItem("refresh_token", data.refresh_token);
+                            setTimeToNeedRefreshToken(data.expires_in);
 						}
 						else{
 							throw "Server error";
@@ -79,6 +81,44 @@ angular.module('appServices')
 				})
 			});
     	};
+
+		/* Refresh token */
+        User.refreshToken = function() {
+            var data = {
+                refresh_token: getRefreshTokenFromStorage(),
+                grant_type: "refresh_token"
+            };
+
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    data: param(data),
+                    url: CONFIG.server.url+'token'
+                }).then(function(response) {
+                    var data = response.data;
+                    if (window.localStorage) {
+                        if(data && data.access_token){
+                            window.localStorage.setItem("access_token", data.access_token);
+                            window.localStorage.setItem("refresh_token", data.refresh_token);
+                            setTimeToNeedRefreshToken(data.expires_in);
+                        }
+                        else{
+                            throw "Server error";
+                        }
+                    }
+                    User.set('isLoggedIn', true);
+                    User.set('username', data.username);
+                    User.set('role', Number(data.role));
+                    User.set('ID', Number(data.ID));
+                    User.setRole(Number(data.role));
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
 
 		/* Logout */
 		User.logout = function() {

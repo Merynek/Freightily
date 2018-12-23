@@ -16,11 +16,27 @@
                             }).catch(function(){
                                 return callback(true);
                             })
-		                };        
+		                };
 
-                        $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
+                        var RefreshTokenHandler = function(callback){
+                            User.refreshToken().then(function(response) {
+                                return callback(true);
+                            }).catch(function(){
+                                return callback(false);
+                            })
+                        };
+
+                $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
                             if(!toState) {
                                 return;
+                            }
+
+                            if(needRestartToken()) {
+                                RefreshTokenHandler(function(refreshCorrect) {
+                                    if (refreshCorrect) {
+
+                                    }
+                                })
                             }
 
                             if(!User.isLoggedIn && toState.data && toState.data.role){

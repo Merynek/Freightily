@@ -61,6 +61,23 @@ function getTokenFromStorage() {
     };
 }
 
+function getRefreshTokenFromStorage() {
+    return window.localStorage.getItem("refresh_token")
+}
+
+function setTimeToNeedRefreshToken(expired_in) {
+    var now = new Date();
+
+    now.setSeconds(now.getSeconds() + expired_in - 5);
+    window.localStorage.setItem("time_refresh_token", now);
+}
+
+function needRestartToken() {
+	var timeRefreshToken = window.localStorage.getItem("time_refresh_token");
+
+	return timeRefreshToken && new Date(timeRefreshToken) < new Date();
+}
+
 var checkListAuctionRunning = false;
 var checkFavouriteAuctionRunning = false;
 var checkBidsAuctionRunning = false;

@@ -99,28 +99,6 @@ angular.module('appServices')
                 });
             };
 
-            /* POST to REST api => New shipment */
-            Admin.NewShipmentFromAdmin = function(id_transporter){
-                var parameters = "?";
-
-                startLoading();
-                parameters += "id_transporter=" + id_transporter;
-
-                return $q(function(resolve, reject){
-                    $http({
-                        method: 'POST',
-                        headers: getTokenFromStorage(),
-                        url: CONFIG.server.url+'admin/new_shipment'+parameters
-                    }).then(function(response) {
-                        endLoading();
-                        resolve(response.data);
-                    }).catch(function(error){
-                        endLoading();
-                        reject(error);
-                    })
-                });
-            };
-
             /* GET to REST api => Get auction cache*/
             Admin.getAuctionCache = function(){
                 startLoading();

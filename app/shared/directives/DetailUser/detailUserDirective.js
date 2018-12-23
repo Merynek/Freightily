@@ -82,7 +82,6 @@ angular.module('appDirectives')
                     }).catch(function(error) {
                         $scope.isMap = false;
                         $scope.mapInfo = $filter('i18next')(getErrorKeyByCode(error));
-                        // message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     })
                 };
 
