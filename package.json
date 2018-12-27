@@ -1,12 +1,16 @@
 {
-  "name": "newProject",
-  "version": "0.0.0",
+  "name": "NOHE",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Little001/Freightily.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Martin Meravý",
   "license": "BSD",
   "dependencies": {
     "angular": "~1.7.5",
@@ -24,6 +28,7 @@
     "jquery": "~2.2.2",
     "jquery-countdown": "^2.2.0",
     "jquery-simple-timer": "0.0.5",
+    "jq-accordion": "~1.0.3",
     "lightbox2": "^2.10.0",
     "lodash": "~4.6.1",
     "moment": "^2.15.1",

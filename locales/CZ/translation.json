@@ -49,7 +49,6 @@
 		"drivers": "Řidiči",
 		"dispatcher": "Dispečer",
 		"dispatchers": "Dispečeři",
-		"show_hidden_map": "Zobrazit/Skrýt Mapu",
 		"forgot_password_text": "Na zadaný email vám zašleme nové heslo, kterým se přihlásíte do systému a můžete si ho změnit na vašem profilu.",
 		"send_password": "Poslat heslo",
 		"your_acc": "Váš účet",
@@ -184,14 +183,28 @@
 			"freight_size": "Velikost (slovy)",
 			"freight_weight": "Váha zásilky (kg)",
 			"email_addressee": "Email adresáta",
-			"end_auction": "Konec aukce",
-			"delivery": "Dodání",
+			"end_auction": "Ukončení aukce",
+			"delivery": "Dodání zásilky",
 			"download_print": "Stáhnout jako PDF",
 			"min_amount": "Minimální příhoz",
 			"history_amount": "Historie příhozů",
 			"driver": "Řidič",
 			"ends_in": "Aukce končí za ",
-			"no_auction": "Žádné dostupné aukce..."
+			"no_auction": "Žádné dostupné aukce...",
+			"locations": "Adresy",
+			"street": "Ulice",
+			"city": "Město",
+			"rest": "čp.",
+			"go_next": "Pokračovat",
+			"state": {
+				"label": "Stát",
+				"cs": "Česko",
+				"de": "Německo",
+				"pl": "Polsko",
+				"sk": "Slovensko",
+				"au": "Rakousko",
+				"hu": "Maďarsko"
+			}
 		}
 	},
 	"errors": {

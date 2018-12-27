@@ -49,7 +49,6 @@
 		"drivers": "Drivers",
 		"dispatcher": "Dispatcher",
 		"dispatchers": "Dispatchers",
-		"show_hidden_map": "Show/Hide Map",
 		"forgot_password_text": "Send new password to your email and you can change it in your profile.",
 		"send_password": "Send password",
 		"your_acc": "Your account",
@@ -190,7 +189,21 @@
 			"history_amount": "History amount",
 			"driver": "Driver",
 			"ends_in": "Auction ends in",
-			"no_auction": "No auction"
+			"no_auction": "No auction",
+			"locations": "Addresses",
+			"street": "Street",
+			"city": "City",
+			"rest": "AHN",
+			"go_next": "Continue",
+			"state": {
+				"label": "State",
+				"cs": "Czech Republic",
+				"de": "Germany",
+				"pl": "Poland",
+				"sk": "Slovakia",
+				"au": "Austria",
+				"hu": "Hungary"
+			}
 		}
 	},
 	"errors": {

@@ -6,8 +6,7 @@
  */
 
 angular.module('appControllers')
-    .controller('createAuctionController', ['$scope', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog', 'User',
-        function ($scope, Auction, $filter, $state, templatesResponse, ngDialog, User) {
+    .controller('createAuctionController', ['$scope', '$timeout', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog', 'User', function ($scope, $timeout, Auction, $filter, $state, templatesResponse, ngDialog, User) {
         checkError(templatesResponse.Error);
         $scope.templates = [getNoValueTemplate()].concat(templatesResponse);
         $scope.selectedTemplate = $scope.templates.find(function (t) {
@@ -16,11 +15,60 @@ angular.module('appControllers')
 
         middle_no_padding();
         $(window).resize(function () {
-            if(window.innerWidth <= 900){
+            if (window.innerWidth <= 900) {
                 middle_no_padding();
             }
         });
-        var autoCompleteIsInitialized = false;
+
+        var deliveryDate = null;
+        var auctionEndDate = null;
+
+        // after render
+        $timeout(function () {
+            var accordion = $( ".accordion" ),
+                dateDelivery = $('.datetimepickerDelivery'),
+                dateAuction = $('.datetimepicker1');
+
+            dateAuction.datetimepicker({
+                inline: true,
+                sideBySide: true,
+                useCurrent: false,
+                minDate: new Date(),
+                format: "YYYY/MM/DD HH:mm",
+                timeZone: "Europe/Prague",
+                locale: "cs"
+            }).on("dp.change", function (e) {
+                if (e.date) {
+                    auctionEndDate = e.date.format("YYYY/MM/DD HH:mm");
+                    dateDelivery.data("DateTimePicker").minDate(e.date);
+                }
+            });
+            dateDelivery.datetimepicker({
+                inline: true,
+                sideBySide: true,
+                useCurrent: false,
+                minDate: new Date(),
+                format: "YYYY/MM/DD HH:mm",
+                timeZone: "Europe/Prague",
+                locale: "cs"
+            }).on("dp.change", function (e) {
+                if (e.date) {
+                    deliveryDate = e.date.format("YYYY/MM/DD HH:mm");
+                }
+            });
+            accordion.accordion();
+
+            accordion.bind("accordion.open", function () {
+                setTimeout(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 300);
+            });
+            accordion.bind("accordion.close", function () {
+                setTimeout(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 300);
+            });
+        }, 10);
 
         $scope.route = "auction|add";
         $scope.auction = {
@@ -34,26 +82,13 @@ angular.module('appControllers')
             city: "",
             street: "",
             rest: "",
-            formatted_address: ""
+            state: "cs"
         };
         $scope.full_adress_to = {
             city: "",
             street: "",
             rest: "",
-            formatted_address: ""
-        };
-
-
-        $scope.bindGeoEvents = function () {
-            if (!autoCompleteIsInitialized) {
-                autoCompleteIsInitialized = true;
-                $("#geoCompleteFrom").geocomplete().bind("geocode:result", function(event, result) {
-                    parseAddress(result, true);
-                });
-                $("#geoCompleteTo").geocomplete().bind("geocode:result", function(event, result) {
-                    parseAddress(result, false);
-                });
-            }
+            state: "cs"
         };
 
         function checkError(error) {
@@ -61,53 +96,6 @@ angular.module('appControllers')
                 User.logout();
                 $state.go('login');
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            }
-        }
-
-        function parseAddress(locationObj, isFromAddress) {
-            var components = locationObj.address_components,
-                formatted_address = locationObj.formatted_address,
-                street_number,
-                component,
-                premise,
-                street,
-                city,
-                name,
-                i;
-
-            for (i = 0; i < components.length; i++) {
-                component = components[i];
-                name = component.long_name;
-
-                // Revucka
-                if (component.types.indexOf("route") > -1) {
-                    street = name;
-                }
-                // Litovel
-                if (component.types.indexOf("locality") > -1) {
-                    city = name;
-                } else if(component.types.indexOf("sublocality") > -1){
-                    city = name;
-                }
-                // /16
-                if (component.types.indexOf("street_number") > -1) {
-                    street_number = name;
-                }
-                // /1204
-                if (component.types.indexOf("premise") > -1) {
-                    premise = name;
-                }
-            }
-            if (isFromAddress) {
-                $scope.full_adress_from.city = city || "";
-                $scope.full_adress_from.street = street || "";
-                $scope.full_adress_from.rest = (premise || "") + " " + (street_number || "");
-                $scope.full_adress_from.formatted_address = formatted_address;
-            } else {
-                $scope.full_adress_to.city = city || "";
-                $scope.full_adress_to.street = street || "";
-                $scope.full_adress_to.rest = (premise || "") + " " + (street_number || "");
-                $scope.full_adress_to.formatted_address = formatted_address;
             }
         }
 
@@ -120,101 +108,66 @@ angular.module('appControllers')
             address += " ";
             address += addressObj.rest;
 
+            // address += ", ";
+            // address += $filter('i18next')('texts.auction.state.' + addressObj.state);
+
             return address;
         }
 
-        $scope.showMap = function () {
-            if (!addressIsSet()) {
-                return;
-            }
-            if ($scope.mapIsShown) {
-                $scope.mapIsShown = false;
-                $("#map").hide();
-                $("#distance").hide();
+        /**
+         * @param {number} part
+         */
+        $scope.goToPart = function (part) {
+            if (validatePart(true)) {
+                $("#acc-part-" + part).click();
             } else {
-                $scope.mapIsShown = true;
-                showMap($scope.full_adress_from.formatted_address, $scope.full_adress_to.formatted_address);
+                message(3, $filter('i18next')('errors.set_all_inputs'));
             }
+            afterValidate();
         };
+
+        /**
+         * @param {boolean} openOnly
+         * @returns {boolean}
+         */
+        function validatePart(openOnly) {
+            var inputs = openOnly ? $(".accordion.open .required") : $(".accordion .required"),
+                valid = true;
+
+            inputs.removeClass("input-error");
+
+            inputs.each(function (i, input) {
+                var $input = $(input);
+
+                if (!$input.val()) {
+                    $input.addClass("input-error");
+                    valid = false;
+                }
+            });
+
+            return valid;
+        }
+
+        function afterValidate() {
+            var invalidInputs = $(".auction-add-page .input-error, .auction-add-page .text-error");
+
+            $(".accordion h3.red").removeClass("red");
+
+            invalidInputs.each(function (i, input) {
+                var $input = $(input),
+                    parent = $input.parents(".accordion");
+
+                parent.find("h3[data-control]").addClass("red");
+            });
+        }
 
         function validateAuctionEndDate(value) {
             return new Date(value) < new Date();
         }
+
         function validateDeliveryDate(value, endAuctionDate) {
             return !(new Date(endAuctionDate) < new Date(value));
         }
-
-        function addressIsSet() {
-            return cityIsSet() && streetIsSet();
-        }
-
-        function addressInputsAreEmpty() {
-            var geoCompleteFrom = $("#geoCompleteFrom"),
-                geoCompleteTo = $("#geoCompleteTo"),
-                isError = false;
-
-            geoCompleteFrom.removeClass("input-error");
-            geoCompleteTo.removeClass("input-error");
-            if (!geoCompleteFrom.val()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                geoCompleteFrom.addClass("input-error");
-                isError = true;
-            }
-            if (!geoCompleteTo.val()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                geoCompleteTo.addClass("input-error");
-                isError = true;
-            }
-
-            return isError;
-        }
-
-        function endAuctionInputIsEmpty() {
-            var end_auction = $("#end_auction"),
-                isError = false;
-
-            end_auction.removeClass("input-error");
-            if (!end_auction.val()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                end_auction.addClass("input-error");
-                isError = true;
-            }
-
-            return isError;
-        }
-
-        function deliveryInputIsEmpty() {
-            var delivery = $("#delivery"),
-                isError = false;
-
-            delivery.removeClass("input-error");
-            if (!delivery.val()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                delivery.addClass("input-error");
-                isError = true;
-            }
-
-            return isError;
-        }
-
-        function cityIsSet() {
-            if ($scope.full_adress_to.city && $scope.full_adress_from.city) {
-                return true;
-            } else {
-                message(3, $filter('i18next')('errors.wrong_address_city'));
-                return false;
-            }
-        }
-
-        function streetIsSet() {
-            if ($scope.full_adress_to.street && $scope.full_adress_from.street) {
-                return true;
-            } else {
-                message(3, $filter('i18next')('errors.wrong_address_street'));
-                return false;
-            }
-        }
-
 
         function numberFieldsIsValid() {
             var freight_weight = $("#freight_weight"),
@@ -238,108 +191,40 @@ angular.module('appControllers')
         }
 
         function removeErrorClasses() {
-            var geoCompleteFrom = $("#geoCompleteFrom"),
-                geoCompleteTo = $("#geoCompleteTo"),
-                load_note = $("#load_note"),
-                unload_note = $("#unload_note"),
-                price = $("#price"),
-                delivery = $("#delivery"),
-                freight_description = $("#freight_description"),
-                freight_type = $("#freight_type"),
-                freight_size = $("#freight_size"),
-                freight_weight = $("#freight_weight"),
-                end_auction = $("#end_auction");
-
-            geoCompleteFrom.removeClass("input-error");
-            geoCompleteTo.removeClass("input-error");
-            load_note.removeClass("input-error");
-            unload_note.removeClass("input-error");
-            price.removeClass("input-error");
-            delivery.removeClass("input-error");
-            freight_description.removeClass("input-error");
-            freight_type.removeClass("input-error");
-            freight_size.removeClass("input-error");
-            freight_weight.removeClass("input-error");
-            end_auction.removeClass("input-error");
-        }
-
-        function addErrorClasses() {
-            var load_note = $("#load_note"),
-                unload_note = $("#unload_note"),
-                price = $("#price"),
-                freight_description = $("#freight_description"),
-                freight_type = $("#freight_type"),
-                freight_size = $("#freight_size"),
-                freight_weight = $("#freight_weight");
-
-            if (!load_note.val()) {
-                load_note.addClass("input-error");
-            }
-            if (!unload_note.val()) {
-                unload_note.addClass("input-error");
-            }
-            if (!price.val()) {
-                price.addClass("input-error");
-            }
-            if (!freight_description.val()) {
-                freight_description.addClass("input-error");
-            }
-            if (!freight_type.val()) {
-                freight_type.addClass("input-error");
-            }
-            if (!freight_size.val()) {
-                freight_size.addClass("input-error");
-            }
-            if (!freight_weight.val()) {
-                freight_weight.addClass("input-error");
-            }
+            $(".input-error").removeClass("input-error");
+            $(".text-error").removeClass("text-error");
         }
 
         $scope.createAuction = function () {
-            $scope.clicked = true;
-            if (!this.createAuctionForm.$valid) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                addressInputsAreEmpty();
-                deliveryInputIsEmpty();
-                endAuctionInputIsEmpty();
-                addErrorClasses();
-                return;
-            }
-            if (addressInputsAreEmpty()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                return;
-            }
-            if (deliveryInputIsEmpty()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                return;
-            }
-            if (endAuctionInputIsEmpty()) {
-                message(3, $filter('i18next')('errors.set_all_inputs'));
-                return;
-            }
             var end_auction = $("#end_auction");
             var delivery = $("#delivery");
 
-            if (validateAuctionEndDate(end_auction.val())) {
-                end_auction.addClass("input-error");
-                message(3, $filter('i18next')('errors.invalid_auction_date'));
+            $scope.clicked = true;
+            end_auction.removeClass("text-error");
+            delivery.removeClass("text-error");
+
+            if (!validatePart(false)) {
+                message(3, $filter('i18next')('errors.set_all_inputs'));
+                afterValidate();
                 return;
             }
-            if (validateDeliveryDate(delivery.val(), end_auction.val())) {
-                delivery.addClass("input-error");
+            if (validateAuctionEndDate(auctionEndDate)) {
+                end_auction.addClass("text-error");
+                message(3, $filter('i18next')('errors.invalid_auction_date'));
+                afterValidate();
+                return;
+            }
+            if (validateDeliveryDate(deliveryDate, auctionEndDate)) {
+                delivery.addClass("text-error");
                 message(3, $filter('i18next')('errors.invalid_delivery_date'));
+                afterValidate();
                 return;
             }
 
             if (!numberFieldsIsValid()) {
+                afterValidate();
                 return;
             }
-            if (!addressIsSet()) {
-                return;
-            }
-
-            end_auction.removeClass("input-error");
-            delivery.removeClass("input-error");
 
             if (end_auction) {
                 var data = {
@@ -352,8 +237,8 @@ angular.module('appControllers')
                     load_note: $scope.auction.load_note,
                     unload_note: $scope.auction.unload_note,
                     price: $scope.auction.price,
-                    end_auction: end_auction.val(),
-                    delivery: delivery.val()
+                    end_auction: auctionEndDate,
+                    delivery: deliveryDate
                 };
 
                 Auction.create(data).then(function () {
@@ -361,7 +246,7 @@ angular.module('appControllers')
                     $state.go('auction');
                 }).catch(function (error) {
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                })
+                });
             }
             else {
                 message(3, $filter('i18next')('errors.set_required_inputs'));
@@ -379,18 +264,20 @@ angular.module('appControllers')
                 showClose: true,
                 appendClassName: "delete_user_dialog",
                 closeByEscape: true,
-                controller: ['$scope', function($scope) {
+                controller: ['$scope', function ($scope) {
                     // controller logic
-                    $scope.ok = function() {
+                    $scope.ok = function () {
                         Auction.deleteTemplate(selectedTemplate.ID).then(function () {
                             message(1, $filter('i18next')('success.auction_template_delete'));
-                            var index = $scope.templates.map(function(t) { return t.ID; }).indexOf(selectedTemplate.ID),
+                            var index = $scope.templates.map(function (t) {
+                                    return t.ID;
+                                }).indexOf(selectedTemplate.ID),
                                 selectElement = $("#select-template-combo");
 
                             if (index !== -1) {
                                 $scope.templates.splice(index, 1);
                             }
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 selectElement.val(0);
                                 selectElement.trigger("change");
                             }, 0);
@@ -401,14 +288,14 @@ angular.module('appControllers')
                             $scope.closeThisDialog(false);
                         });
                     };
-                    $scope.cancel = function() {
+                    $scope.cancel = function () {
                         $scope.closeThisDialog(false);
                     };
                 }]
             });
         };
 
-        $scope.createTemplate = function() {
+        $scope.createTemplate = function () {
             ngDialog.open({
                 template: 'modal_create_template',
                 scope: $scope,
@@ -416,17 +303,17 @@ angular.module('appControllers')
                 showClose: true,
                 appendClassName: "create_template_dialog",
                 closeByEscape: true,
-                controller: ['$scope', function($scope) {
+                controller: ['$scope', function ($scope) {
                     // controller logic
-                    $scope.ok = function(template_name) {
+                    $scope.ok = function (template_name) {
                         if (!template_name) {
                             return;
                         }
                         var weight = $scope.auction.freight_weight;
                         var data = {
                             name: template_name,
-                            address_from: $scope.auction.address_from || "",
-                            address_to: $scope.auction.address_to || "",
+                            address_from: JSON.stringify($scope.full_adress_from),
+                            address_to: JSON.stringify($scope.full_adress_to),
                             freight_description: $scope.auction.freight_description || "",
                             freight_type: $scope.auction.freight_type || "",
                             freight_size: $scope.auction.freight_size || "",
@@ -438,11 +325,11 @@ angular.module('appControllers')
                         Auction.createTemplate(data).then(function () {
                             message(1, $filter('i18next')('success.auction_template_created'));
                             Auction.getTemplates().then(function (data) {
-                                while($scope.templates.length > 0) {
+                                while ($scope.templates.length > 0) {
                                     $scope.templates.pop();
                                 }
                                 $scope.templates.push(getNoValueTemplate());
-                                for(var i = 0; i < data.length; i++) {
+                                for (var i = 0; i < data.length; i++) {
                                     $scope.templates.push(data[i]);
                                 }
                             }).catch(function (error) {
@@ -454,14 +341,16 @@ angular.module('appControllers')
                             $scope.closeThisDialog(false);
                         })
                     };
-                    $scope.cancel = function() {
+                    $scope.cancel = function () {
                         $scope.closeThisDialog(false);
                     };
                 }]
             });
         };
 
-        $scope.selectTemplate = function(selectedTemplate) {
+        $scope.selectTemplate = function (selectedTemplate) {
+            var fullFrom, fullTo;
+
             if (!selectedTemplate) {
                 return;
             }
@@ -470,28 +359,40 @@ angular.module('appControllers')
             });
 
             if (template.ID === 0) {
-                $("#delivery").val("");
-                $("#end_auction").val("");
+                deliveryDate = null;
+                auctionEndDate = null;
+                $('.datetimepickerDelivery').data("DateTimePicker").date(null);
+                $('.datetimepicker1').data("DateTimePicker").date(null);
                 $scope.auction.price = "";
             }
 
             var weight = template.freight.freight_weight;
 
-            $scope.auction.address_from = template.address_from;
-            $scope.auction.address_to = template.address_to;
+            fullFrom = JSON.parse(template.address_from);
+            fullTo = JSON.parse(template.address_to);
+
+            $scope.full_adress_from.city = fullFrom.city;
+            $scope.full_adress_from.street = fullFrom.street;
+            $scope.full_adress_from.rest = fullFrom.rest;
+            $("#state-from").val(fullFrom.state);
+
+            $scope.full_adress_to.city = fullTo.city;
+            $scope.full_adress_to.street = fullTo.street;
+            $scope.full_adress_to.rest = fullTo.rest;
+            $("#state-to").val(fullTo.state);
+
             $scope.auction.freight_description = template.freight.freight_description;
             $scope.auction.freight_type = template.freight.freight_type;
             $scope.auction.freight_size = template.freight.freight_size;
             $("#freight_type").val(template.freight.freight_type);
-            $scope.auction.freight_weight = weight ? weight.toString(): "";
+            $scope.auction.freight_weight = weight ? weight.toString() : "";
             $scope.auction.load_note = template.load_note;
             $scope.auction.unload_note = template.unload_note;
 
-            setTimeout(function() {
-                $("#geoCompleteFrom").trigger("geocode");
-                $("#geoCompleteTo").trigger("geocode");
+            setTimeout(function () {
                 triggerInputsChange();
                 removeErrorClasses();
+                afterValidate();
             }, 0);
         };
 
@@ -499,8 +400,18 @@ angular.module('appControllers')
             return {
                 ID: 0,
                 name: $filter('i18next')('texts.auction.no_template'),
-                address_from: "",
-                address_to: "",
+                address_from: JSON.stringify({
+                    city: "",
+                    street: "",
+                    rest: "",
+                    state: "cs"
+                }),
+                address_to: JSON.stringify({
+                    city: "",
+                    street: "",
+                    rest: "",
+                    state: "cs"
+                }),
                 freight: {
                     freight_description: "",
                     freight_size: "",
@@ -514,30 +425,23 @@ angular.module('appControllers')
         }
 
         function triggerInputsChange() {
-            if ($scope.auction.address_from) {
-                $("#geoCompleteFrom").trigger("keydown");
-            }
-            if ($scope.auction.address_to) {
-                $("#geoCompleteTo").trigger("keydown");
-            }
-            if ($scope.auction.freight_description) {
-                $("#freight_description").trigger("keydown");
-            }
-            if ($scope.auction.freight_type) {
-                $("#freight_type").trigger("change");
-            }
-            if ($scope.auction.freight_size) {
-                $("#freight_size").trigger("keydown");
-            }
-            if ($scope.auction.freight_weight) {
-                $("#freight_weight").trigger("keydown");
-            }
-            if ($scope.auction.load_note) {
-                $("#load_note").trigger("keydown");
-            }
-            if ($scope.auction.unload_note) {
-                $("#unload_note").trigger("keydown");
-            }
+            var inputs = $(".auction-add-page input, .auction-add-page textarea"),
+                selects = $(".auction-add-page form select");
+
+            inputs.each(function (index, input) {
+                var $input = $(input);
+
+                if ($input.val()) {
+                    $input.trigger("keydown");
+                }
+            });
+            selects.each(function (index, select) {
+                var $select = $(select);
+
+                if ($select.val()) {
+                    $select.trigger("change");
+                }
+            });
         }
     }
-]);
+    ]);

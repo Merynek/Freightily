@@ -16,6 +16,10 @@
     padding-right: 12px; /* @padding-base-horizontal */
 }
 
+.datepickers {
+    padding-left: 20px;
+}
+
 .datePickerVacation {
     display: block;
     background: #ffffff;
@@ -23,11 +27,29 @@
     border-radius: 3px;
 }
 
-.datepicker table tr td.today, .datepicker table tr td.today:hover {
-    background: none;
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled.disabled,
+.datepicker table tr td.today.disabled.disabled:hover
+{
+    background-image: none;
+    background-color: unset;
     font-weight: bold;
 }
-.datepicker table tr td.active.active, .datepicker table tr td.active.active:hover {
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today:hover:hover {
+    background-image: none;
+    background-color: #eeeeee;
+}
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled.active:hover,
+.datepicker table tr td.active.disabled.disabled:hover {
+    background-color: #dd0000;
+}
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.active:hover {
     background-image: none;
     background-color: #12133d;
     color: #ffffff;
@@ -81,6 +103,17 @@
   padding-left: 46px;  @input-height-large;
 }
 
+.form-group.address-1 {
+    display: inline-block;
+    width: calc(100% - 90px);
+}
+
+.form-group.address-2{
+    display: inline-block;
+    width: 76px;
+    float: right;
+}
+
 .form-group {
     position: relative;
     margin-top: 40px;
@@ -89,13 +122,20 @@
     width: 90%;
 }
 
-.form-group .select-template-combo {
-    width: 90%;
-    display: inline-block;
-}
-.form-group .remove-template {
+.remove-template {
     padding-left: 10px;
     cursor: pointer;
+}
+
+.half {
+    display: inline-block;
+    width: 45%;
+    margin: 0 2% 0 2%;
+    vertical-align: top;
+}
+
+.half .form-group {
+    margin-top: 40px;
 }
 
 .form-group.half{
@@ -210,6 +250,11 @@
     text-align: center;
 }
 
+.big-input {
+    padding: 22px 16px;
+    font-size: 17px;
+}
+
 .big-button{
     width: 350px;
     padding-top: 5px;
@@ -221,7 +266,7 @@
 }
 
 .important-button:hover{
-    background: #d11a23   ;
+    background: #d11a23;
 }
 
 .normal-button{
@@ -315,6 +360,11 @@ input[type=checkbox] {
     .assign-button {
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    .half {
+        display: block;
+        width: 95%;
     }
 
     .form-group.half{

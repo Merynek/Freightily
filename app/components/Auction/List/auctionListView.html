@@ -1,44 +1,46 @@
 <m param="{route}">
 <div class="auction-list-page">
-    <h1>{{'texts.auction.auction_list' | i18next}}</h1>
-    <div class="sorting-bar">
-        <span class="sorting-label">{{'texts.sorting.label' | i18next}}:</span>
-        <div class="btn-group">
-            <button class="sorting-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span ng-if="sorting">{{sorting}}</span>
-                <i class="glyphicon glyphicon-triangle-bottom"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'from', order: 'ASC'})">
-                    {{'texts.sorting.from' | i18next}} ({{'texts.sorting.ASC' | i18next}})
+    <h1>
+        {{'texts.auction.auction_list' | i18next}}
+        <span class="heading-right sorting-bar">
+            <span class="btn-group">
+                <button class="sorting-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span ng-if="sorting">{{sorting}}</span>
+                    <span ng-if="!sorting">{{'texts.sorting.label' | i18next}}</span>
+                    <i class="glyphicon glyphicon-triangle-bottom"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'from', order: 'ASC'})">
+                        {{'texts.sorting.from' | i18next}} ({{'texts.sorting.ASC' | i18next}})
+                    </div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}',sort: 'from', order: 'DESC'})">
+                        {{'texts.sorting.from' | i18next}} ({{'texts.sorting.DESC' | i18next}})
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'to', order: 'ASC'})">
+                        {{'texts.sorting.to' | i18next}} ({{'texts.sorting.ASC' | i18next}})
+                    </div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'to', order: 'DESC'})">
+                        {{'texts.sorting.to' | i18next}} ({{'texts.sorting.DESC' | i18next}})
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'price', order: 'ASC'})">
+                        {{'texts.sorting.price' | i18next}} ({{'texts.sorting.ASC' | i18next}})
+                    </div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'price', order: 'DESC'})">
+                        {{'texts.sorting.price' | i18next}} ({{'texts.sorting.DESC' | i18next}})
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'end_auction', order: 'ASC'})">
+                        {{'texts.sorting.end_auction' | i18next}} ({{'texts.sorting.ASC' | i18next}})
+                    </div>
+                    <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'end_auction', order: 'DESC'})">
+                        {{'texts.sorting.end_auction' | i18next}} ({{'texts.sorting.DESC' | i18next}})
+                    </div>
                 </div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}',sort: 'from', order: 'DESC'})">
-                    {{'texts.sorting.from' | i18next}} ({{'texts.sorting.DESC' | i18next}})
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'to', order: 'ASC'})">
-                    {{'texts.sorting.to' | i18next}} ({{'texts.sorting.ASC' | i18next}})
-                </div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'to', order: 'DESC'})">
-                    {{'texts.sorting.to' | i18next}} ({{'texts.sorting.DESC' | i18next}})
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'price', order: 'ASC'})">
-                    {{'texts.sorting.price' | i18next}} ({{'texts.sorting.ASC' | i18next}})
-                </div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'price', order: 'DESC'})">
-                    {{'texts.sorting.price' | i18next}} ({{'texts.sorting.DESC' | i18next}})
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'end_auction', order: 'ASC'})">
-                    {{'texts.sorting.end_auction' | i18next}} ({{'texts.sorting.ASC' | i18next}})
-                </div>
-                <div class="dropdown-item" ui-sref="auction({page: '{{page}}', sort: 'end_auction', order: 'DESC'})">
-                    {{'texts.sorting.end_auction' | i18next}} ({{'texts.sorting.DESC' | i18next}})
-                </div>
-            </div>
-        </div>
-    </div>
+            </span>
+        </span>
+    </h1>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         <div ng-if="AuctionList.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-11 col-md-11 col-lg-11">

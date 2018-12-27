@@ -99,11 +99,11 @@ angular.module('appControllers')
                         labelElement.fadeIn();
                     };
                 if ($form.length > 0) {
-                    $inputs = $form.find("input");
+                    $inputs = $form.find("input, textarea");
                     $icons = $form.find(".input-group-addon");
                     $selects = $form.find("select");
                     // standart inputs
-                    $inputs.on("keydown", function () {
+                    $inputs.on("keydown change", function () {
                         makeLabel(this);
                     });
                     // datepickers
