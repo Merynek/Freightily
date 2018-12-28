@@ -70,7 +70,7 @@ angular.module('appControllers')
                 break;
             case 'end_auction': locText += $filter('i18next')('texts.sorting.end_auction.' + $scope.order);
                 break;
-            default: return "";
+            default: return $filter('i18next')('texts.sorting.end_auction.DESC');
         }
 
         return locText;

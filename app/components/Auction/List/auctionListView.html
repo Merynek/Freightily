@@ -3,6 +3,9 @@
     <h1>
         {{'texts.auction.auction_list' | i18next}}
         <span class="heading-right sorting-bar">
+            <span class="select_auction_template">
+              <label>{{'texts.sorting.label' | i18next}}</label>
+            </span>
             <span class="btn-group">
                 <button class="sorting-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span ng-if="sorting">{{sorting}}</span>
