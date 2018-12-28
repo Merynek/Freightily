@@ -80,6 +80,7 @@
 		"delete_auction_template": "Jste si jistý?",
 		"bid_auction_modal_text": "Vámi zvolená částka je: ",
 		"delete_template_modal_text": "Opravdu chcete smazat vybranou šablonu?",
+		"delete_template_text": "Smazat vybranou šablonu",
 		"last_gps_update": "Poslední aktualizace GPS",
 		"show_current_position": "Poslední pozice řidiče",
 		"days": "dny",
@@ -114,12 +115,12 @@
 				"DESC": "Kam (inverzně)"
 			},
 			"price": {
-				"ASC": "Od nejlevnějšího",
-				"DESC": "Od nejdražšího"
+				"ASC": "Nejlevnější",
+				"DESC": "Nejdražší"
 			},
 			"end_auction": {
-				"ASC": "Datum ukončení (nejstarší)",
-				"DESC": "Datum ukončení (nejnovější)"
+				"ASC": "Nejstarší",
+				"DESC": "Nejnovější"
 			}
 		},
 		"shipment": {

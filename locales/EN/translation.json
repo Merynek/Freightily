@@ -80,6 +80,7 @@
 		"delete_auction_template": "Are you sure?",
 		"bid_auction_modal_text": "Your bid is: ",
 		"delete_template_modal_text": "Do you want delete selected template?",
+		"delete_template_text": "Delete selected template",
 		"last_gps_update": "Last gps update",
 		"show_current_position": "Show current driver position",
 		"days": "days",

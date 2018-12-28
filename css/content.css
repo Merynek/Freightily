@@ -51,7 +51,6 @@
 
 /*auction*/
 .sorting-bar {
-    padding: 10px 0;
     text-align: right;
 }
 .sorting-bar .sorting-label {
@@ -64,6 +63,9 @@
     background: white;
     color: #2c2d51;
     border: 1px solid #e6e6f1;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: normal;
 }
 
 .sorting-bar .sorting-button span {
@@ -71,8 +73,12 @@
     padding-right: 10px;
 }
 
+.sorting-bar .sorting-button i {
+    vertical-align: bottom;
+}
+
 .sorting-bar .dropdown-menu {
-    width: 230px;
+    width: 200px;
 }
 .sorting-bar .dropdown-divider {
     width: 100%;
@@ -80,12 +86,22 @@
     background: #e6e6f1;
 }
 .sorting-bar .dropdown-item {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 7px 12px 7px 12px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sorting-bar .dropdown-first-gray .dropdown-item:first-child {
+    color: #909090;
+}
+.sorting-bar .dropdown-first-gray .dropdown-item:first-child:hover {
+    color: #ffffff;
 }
 .sorting-bar .dropdown-item:hover {
     cursor: pointer;
-    font-weight: bold;
+    background: #2c2d51;
+    color: #ffffff;
 }
 .left-no-padding {
     padding-left: 0;

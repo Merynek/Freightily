@@ -27,7 +27,9 @@ angular.module('appControllers')
         $timeout(function () {
             var accordion = $( ".accordion" ),
                 dateDelivery = $('.datetimepickerDelivery'),
-                dateAuction = $('.datetimepicker1');
+                dateAuction = $('.datetimepicker1'),
+                interval,
+                onAccordionChange;
 
             dateAuction.datetimepicker({
                 inline: true,
@@ -56,19 +58,21 @@ angular.module('appControllers')
                     deliveryDate = e.date.format("YYYY/MM/DD HH:mm");
                 }
             });
+
+            onAccordionChange = function () {
+                clearInterval(interval);
+                interval = setInterval(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 20);
+                setTimeout(function () {
+                    clearInterval(interval);
+                }, 300);
+            };
             accordion.accordion();
 
-            accordion.bind("accordion.open", function () {
-                setTimeout(function () {
-                    window.dispatchEvent(new Event('resize'));
-                }, 300);
-            });
-            accordion.bind("accordion.close", function () {
-                setTimeout(function () {
-                    window.dispatchEvent(new Event('resize'));
-                }, 300);
-            });
-        }, 10);
+            accordion.bind("accordion.open", onAccordionChange);
+            accordion.bind("accordion.close", onAccordionChange);
+        }, 15);
 
         $scope.route = "auction|add";
         $scope.auction = {
@@ -354,6 +358,8 @@ angular.module('appControllers')
             if (!selectedTemplate) {
                 return;
             }
+
+            $scope.selectedTemplate = selectedTemplate;
             var template = $scope.templates.find(function (tmp) {
                 return tmp.ID === selectedTemplate.ID;
             });

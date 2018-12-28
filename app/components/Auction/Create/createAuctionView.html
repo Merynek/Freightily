@@ -3,19 +3,23 @@
     <h1>
       {{'texts.auction.create_auction' | i18next}}
 
-      <span class="heading-right">
+      <span class="heading-right sorting-bar">
         <span class="select_auction_template">
-          <label for="select-template-combo">{{'texts.auction.select_template_label' | i18next}}</label>
+          <label>{{'texts.auction.select_template_label' | i18next}}</label>
         </span>
-        <span class="select_template">
-          <select id="select-template-combo" class="form-control my-input select-template-combo"
-             ng-change="selectTemplate(selectedTemplate)"
-             ng-options="template.name for template in templates track by template.ID"
-             ng-model="selectedTemplate">
-            <option value="" selected hidden />
-          </select>
+        <span class="btn-group">
+          <button class="sorting-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span>{{selectedTemplate.name}}</span>
+              <i class="glyphicon glyphicon-triangle-bottom"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right dropdown-first-gray">
+              <div class="dropdown-item" ng-repeat="template in templates" ng-click="selectTemplate(template)">
+                  {{template.name}}
+              </div>
+          </div>
         </span>
-        <i ng-show="selectedTemplate.ID !== 0" ng-click="deleteTemplate(selectedTemplate)" class="remove-template red cross glyphicon glyphicon-remove"></i>
+        <i ng-show="selectedTemplate.ID !== 0" ng-click="deleteTemplate(selectedTemplate)" class="remove-template red cross glyphicon glyphicon-remove"
+        title="{{'texts.delete_template_text' | i18next}}"></i>
       </span>
     </h1>
 
