@@ -9,14 +9,16 @@
         <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
             <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
+            <span ng-show="!expired && win" ng-class="{'highlight' : priceUpdated}" class="glyphicon glyphicon-thumbs-up bidder-state"></span>
+            <span ng-show="!expired && !win && userIsBidder" ng-class="{'highlight' : priceUpdated}" class="glyphicon glyphicon-thumbs-down bidder-state red"></span>
         </div>
         <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
     </div>
-    <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center">
-        <div ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+    <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1">
+        <span ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
             <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="favourite($event); $event.stopPropagation()"></span>
-        </div>
+        </span>
     </div>
 </div>
 <div ng-show="show" class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">

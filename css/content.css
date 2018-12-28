@@ -79,6 +79,8 @@
 
 .sorting-bar .dropdown-menu {
     width: 200px;
+    overflow-y: auto;
+    max-height: 300px;
 }
 .sorting-bar .dropdown-divider {
     width: 100%;
@@ -232,8 +234,29 @@
     border: none;
 }
 .auction-item .auction-button-detail{
-    padding: 15px 0 0 0;
-    text-align: center;
+    padding: 15px 25px 0 0;
+    text-align: right;
+}
+.auction-item .bidder-state {
+    vertical-align: middle;
+    margin-left: 10px;
+    color: #2c2d51;
+    opacity: 0.4;
+}
+.auction-item .bidder-state.highlight {
+    -webkit-animation: animateState 1s 2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation: animateState 1s 2;
+    animation-direction: alternate;
+}
+.auction-item .bidder-state.red {
+    color: #e91d27;
+}
+
+@keyframes animateState {
+    0%   { font-size: 16px; opacity: 0.4; }
+    50%  { font-size: 18px; opacity: 1; }
+    100% { font-size: 16px; opacity: 0.4; }
 }
 .auction-item .my-button.stop-shipment{
     display: grid;
