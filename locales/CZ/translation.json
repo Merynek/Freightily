@@ -104,14 +104,23 @@
 			"assigned": "Přiřazeno"
 		},
 		"sorting": {
-			"label": "Řazení",
-			"location": "Lokace",
-			"from": "Odkud",
-			"to": "Kam",
-			"price": "Cena",
-			"end_auction": "Konec aukce",
-			"ASC": "Vzestupně",
-			"DESC": "Sestupně"
+			"label": "Řadit podle",
+			"from": {
+				"ASC": "Odkud (abecedně)",
+				"DESC": "Odkud (inverzně)"
+			},
+			"to": {
+				"ASC": "Kam (abecedně)",
+				"DESC": "Kam (inverzně)"
+			},
+			"price": {
+				"ASC": "Od nejlevnějšího",
+				"DESC": "Od nejdražšího"
+			},
+			"end_auction": {
+				"ASC": "Datum ukončení (nejstarší)",
+				"DESC": "Datum ukončení (nejnovější)"
+			}
 		},
 		"shipment": {
 			"new": "Nové",
@@ -289,6 +298,8 @@
 		"change_password": "Heslo bylo změněno",
 		"auction_created": "Aukce byla úspěšně založena",
 		"auction_template_created": "Šablona pro aukci byla vytvořen",
+		"auction_template_selected": "Šablona vybrána",
+		"auction_template_unselected": "Šablona odnastavena",
 		"auction_template_delete": "Šablona byla smazána",
 		"driver_deleted": "Řidič byl smazán",
 		"bid_auction": "Přihození úspěšné"

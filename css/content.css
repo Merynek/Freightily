@@ -804,6 +804,9 @@ hr.small {
     .assign-mark {
         margin: 0 auto;
     }
+    .sorting-bar {
+        text-align: center;
+    }
     .show-price-mark {
         margin: 0 auto;
     }

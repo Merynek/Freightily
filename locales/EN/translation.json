@@ -105,12 +105,22 @@
 		},
 		"sorting": {
 			"label": "Sorting",
-			"from": "From",
-			"to": "To",
-			"price": "Price",
-			"end_auction": "End auction",
-			"ASC": "Ascending",
-			"DESC": "Descending"
+			"from": {
+				"ASC": "From (alphabetical)",
+				"DESC": "From (reverse)"
+			},
+			"to": {
+				"ASC": "To (alphabetical)",
+				"DESC": "To (reverse)"
+			},
+			"price": {
+				"ASC": "Lowest price",
+				"DESC": "Highest price"
+			},
+			"end_auction": {
+				"ASC": "End auction (older)",
+				"DESC": "End auction (newer)"
+			}
 		},
 		"shipment": {
 			"new": "New",
@@ -289,6 +299,8 @@
 		"change_password": "Password was changed",
 		"auction_created": "Auction was successfully created",
 		"auction_template_created": "Template for auction was successfully created",
+		"auction_template_selected": "Template selected",
+		"auction_template_unselected": "Template unselected",
 		"auction_template_delete": "Template successfully deleted",
 		"driver_deleted": "Driver was deleted",
 		"bid_auction": "Bid success"

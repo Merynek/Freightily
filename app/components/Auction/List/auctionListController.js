@@ -62,25 +62,16 @@ angular.module('appControllers')
         var locText = "";
 
         switch ($scope.filter) {
-            case 'from': locText += $filter('i18next')('texts.sorting.from');
+            case 'from': locText += $filter('i18next')('texts.sorting.from.' + $scope.order);
                 break;
-            case 'to': locText += $filter('i18next')('texts.sorting.to');
+            case 'to': locText += $filter('i18next')('texts.sorting.to.' + $scope.order);
                 break;
-            case 'price': locText += $filter('i18next')('texts.sorting.price');
+            case 'price': locText += $filter('i18next')('texts.sorting.price.' + $scope.order);
                 break;
-            case 'end_auction': locText += $filter('i18next')('texts.sorting.end_auction');
+            case 'end_auction': locText += $filter('i18next')('texts.sorting.end_auction.' + $scope.order);
                 break;
             default: return "";
         }
-        locText += " (";
-        switch ($scope.order) {
-            case 'ASC': locText += $filter('i18next')('texts.sorting.ASC');
-                break;
-            case 'DESC': locText += $filter('i18next')('texts.sorting.DESC');
-                break;
-        }
-
-        locText +=") ";
 
         return locText;
     }

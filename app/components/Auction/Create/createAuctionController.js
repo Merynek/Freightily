@@ -393,6 +393,7 @@ angular.module('appControllers')
                 triggerInputsChange();
                 removeErrorClasses();
                 afterValidate();
+                message(1, $filter('i18next')(template.ID ? 'success.auction_template_selected' : 'success.auction_template_unselected'));
             }, 0);
         };
 

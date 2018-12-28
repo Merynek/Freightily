@@ -378,4 +378,7 @@ input[type=checkbox] {
     .radio-group, .radio-group:nth-of-type(2){
         text-align: center;
     }
+    [data-accordion] [data-content] {
+        background: #e6e6f1;
+    }
 }

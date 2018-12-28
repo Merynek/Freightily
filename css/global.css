@@ -189,6 +189,22 @@ p {
     h1 {
         padding: 0;
     }
+
+
+    .heading-right {
+        float: none;
+        display: block;
+        vertical-align: top;
+        font-size: 16px;
+        border-top: 1px solid #eeeeee;
+        padding-top: 3px;
+        margin: 10px 0 3px;
+    }
+
+    .heading-right .select_template {
+        display: inline-block;
+    }
+
     .dropdown-toggle {
         text-align: center;
     }
