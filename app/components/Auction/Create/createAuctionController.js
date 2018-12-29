@@ -111,9 +111,8 @@ angular.module('appControllers')
             address += addressObj.street;
             address += " ";
             address += addressObj.rest;
-
-            // address += ", ";
-            // address += $filter('i18next')('texts.auction.state.' + addressObj.state);
+            address += ", ";
+            address += $filter('i18next')('texts.auction.state.' + addressObj.state);
 
             return address;
         }
@@ -238,8 +237,8 @@ angular.module('appControllers')
                     freight_type: $scope.auction.freight_type,
                     freight_size: $scope.auction.freight_size,
                     freight_weight: $scope.auction.freight_weight,
-                    load_note: $scope.auction.load_note,
-                    unload_note: $scope.auction.unload_note,
+                    load_note: $scope.auction.load_note || "",
+                    unload_note: $scope.auction.unload_note || "",
                     price: $scope.auction.price,
                     end_auction: auctionEndDate,
                     delivery: deliveryDate

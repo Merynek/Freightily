@@ -440,6 +440,12 @@
     margin: 4px 0;
     font-size: 16px;
 }
+.auction-detail .note {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #808080;
+    padding-left: 32px;
+}
 .auction-detail .map .icon{
     display: block;
     color: #aaaaaa;
