@@ -18,7 +18,7 @@ $urlRouterProvider.otherwise("/404");
 			 url: "/",
 			 template: "<ui-view>",
              data: {
-                 role: [1,2,3,99]
+                 role: [1,99]
              },
 			 controller: function($state, User) {
 			 	if (User.isAdmin()) {
@@ -43,7 +43,7 @@ $urlRouterProvider.otherwise("/404");
 			 controller: 'userProfileController',
 			 templateUrl: "app/components/Account/Profile/userProfileView.html",
 			 data: {
-                 role: [1,2,3]
+                 role: [1]
 			 },
 			 resolve: {
 				 userInfo: function(UserAbility){
@@ -96,7 +96,7 @@ $urlRouterProvider.otherwise("/404");
 			controller: 'addDriverController',
 			templateUrl: "app/components/Company/AddDriver/addDriverView.html",
 			data: {
-				role: [2]
+				role: [1]
 			}
 		})
 		 .state('company', {
@@ -104,7 +104,7 @@ $urlRouterProvider.otherwise("/404");
 			 controller: 'companyController',
 			 templateUrl: "app/components/Company/companyView.html",
 			 data: {
-				 role: [2]
+				 role: [1]
 			 },
 			 resolve: {
                  driversResponse: function(UserAbility, $stateParams){
@@ -129,7 +129,7 @@ $urlRouterProvider.otherwise("/404");
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
-				role: [1,2]
+				role: [1]
             },
 			resolve: {
 				AuctionListResponse: function(Auction, $stateParams){
@@ -173,7 +173,7 @@ $urlRouterProvider.otherwise("/404");
 			controller: 'favouriteAuctionController',
 			templateUrl: "app/components/Auction/FavouriteAuction/favouriteAuctionView.html",
 			data: {
-				role: [2]
+				role: [1]
 			},
 			resolve: {
 				favouriteAuctionResponse: function(Auction, $stateParams){
@@ -196,7 +196,7 @@ $urlRouterProvider.otherwise("/404");
 			controller: 'bidsAuctionController',
 			templateUrl: "app/components/Auction/bidsAuction/bidsAuctionView.html",
 			data: {
-				role: [2]
+				role: [1]
 			},
 			resolve: {
 				bidsAuctionResponse: function(Auction, $stateParams){
@@ -219,7 +219,7 @@ $urlRouterProvider.otherwise("/404");
 			controller: 'winAuctionController',
 			templateUrl: "app/components/Auction/winAuction/winAuctionView.html",
 			data: {
-				role: [2]
+				role: [1]
 			},
 			resolve: {
 				winAuctionResponse: function(Auction, $stateParams){
@@ -266,7 +266,7 @@ $urlRouterProvider.otherwise("/404");
 			 controller: 'newShipmentsController',
 			 templateUrl: "app/components/Shipments/new/newShipmentsView.html",
 			 data: {
-				 role: [2]
+				 role: [1]
 			 },
 			 resolve: {
 				 newShipmentsResponse: function(Shipments, $stateParams){
@@ -289,7 +289,7 @@ $urlRouterProvider.otherwise("/404");
 			 controller: 'finishedShipmentsController',
 			 templateUrl: "app/components/Shipments/finished/finishedShipmentsView.html",
 			 data: {
-				 role: [2]
+				 role: [1]
 			 },
 			 resolve: {
                  finishedShipmentsResponse: function(Shipments, $stateParams){

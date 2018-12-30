@@ -1,4 +1,4 @@
-<div ng-click="toggleDetail()" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div ng-click="toggleDetail()" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-class="driver.ID === User.ID ? 'myself' : null">
     <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="auction-label col-xs-6">{{'texts.username' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{driver.username}}</span></div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="detail-row">
+        <div class="detail-row" ng-if="driver.ID !== User.ID">
             <div class="detail-content delete-content text-right">
                 <div class="delete-user" ng-click="deleteUser(driver.ID)">
                     <span class="glyphicon glyphicon-trash delete"></span> {{'texts.delete_driver' | i18next}}

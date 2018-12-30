@@ -16,6 +16,7 @@
 		"want_bid": "Want bid?",
 		"auction_complete": "End of auction",
 		"auction_win": "Your bid is the lowest.",
+		"own_auction": "Your auction is running.",
 		"auction_lose": "Your bid was not the lowest.",
 		"auction_no_bidder": "You were not bidding in this auction.",
 		"driver_assign": "Assign driver",
@@ -277,7 +278,9 @@
 			"36": "This driver cannot be deleted because some shipments is assigned to him",
 			"37": "Your account is temporary blocked. Please try again later.",
 			"38": "Please Upload image of type .jpg,.png.",
-			"39": "Please Upload a file upto 1 mb."
+			"39": "Please Upload a file upto 1 mb.",
+			"40": "You can not bid to own auction.",
+			"41": "User can not be delete."
 		}
 	},
 	"warnings": {

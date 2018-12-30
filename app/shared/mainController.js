@@ -10,17 +10,10 @@ angular.module('appControllers')
         $scope.isLoggedUser = function () {
             if (User.isLoggedIn) {
                 $scope.usernameMain = User.username;
-                $scope.roleNameMain = User.roleName;
-                $scope.isSender = User.isSender();
-                $scope.isTransporter = User.isTransporter();
-                $scope.isDriver = User.isDriver();
                 $scope.isAdmin = User.isAdmin();
                 return true;
             }
             $scope.usernameMain = "";
-            $scope.roleNameMain = "";
-            $scope.isSender = false;
-            $scope.isTransporter = false;
             $scope.isAdmin = false;
             return false;
         };

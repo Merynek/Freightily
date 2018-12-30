@@ -108,7 +108,7 @@
             </div>
         </div>
         <div ng-show="!expired" class="row detail-row text-center">
-            <div class="detail-label col-xs-12" ng-class="user.isSender() ? 'col-sm-12 col-md-12 col-lg-12' : 'col-sm-6 col-md-4 col-lg-5'">
+            <div class="detail-label col-xs-12 col-sm-6 col-md-4 col-lg-5">
                 <div class="price-label">
                     {{'texts.actual_price' | i18next}}
                 </div>
@@ -116,9 +116,13 @@
                     {{item.current_price}},-
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-7" ng-show="!user.isSender()">
+            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-7">
                 <div ng-show="!win && withBids" class="auction-bid detail-row">
-                    <div class="bid-inputs">
+                    <div ng-show="isOwner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-block info-block-win">
+                        <span class="glyphicon glyphicon-hand-right"></span>
+                        {{'texts.own_auction' | i18next}}
+                    </div>
+                    <div ng-show="!isOwner" class="bid-inputs">
                         <div class="bid-wrapper has-feedback has-feedback-right">
                             <input type="text" ng-model="bid" ng-keypress="onkeyDown($event, bid)" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
                             <span class="form-control-feedback">Kč</span>
@@ -144,7 +148,7 @@
                 {{days}} {{'texts.days' | i18next}}, {{hhours}}:{{mminutes}}:{{sseconds}}
             </timer>
         </div>
-        <div ng-show="!user.isSender() && withBids && expired" class="detail-row row">
+        <div ng-show="withBids && expired" class="detail-row row">
             <div ng-show="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="auction-result">
                     <span class="glyphicon glyphicon-thumbs-up"></span>

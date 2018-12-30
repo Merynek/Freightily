@@ -9,6 +9,7 @@ angular.module('appDirectives')
             controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog, $i18next) {
                 $scope.currentLanguage = $i18next.options.lng;
                 $scope.driver = $scope.driverParam.driver;
+                $scope.User = User;
 
                 Shipments.getAllNewShipments().then(function(res){
                     $scope.allShipments = res;

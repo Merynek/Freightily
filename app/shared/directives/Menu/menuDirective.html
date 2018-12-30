@@ -1,4 +1,4 @@
-<span ng-if="user.isTransporter()">
+<span>
     <div class="menu-tabs col-md-12">
         <div class="tab" ui-sref="auction" ng-class="aboveRoute == 'auction' ? 'active' : null">
             {{'texts.tab.auction' | i18next}}
@@ -14,14 +14,21 @@
         <div class="tab" ui-sref="auction" ng-class="underRoute == 'list' ? 'active' : null">
             {{'texts.tab.list' | i18next}}
         </div>
-        <div class="tab" ui-sref="favouriteAuction" ng-class="underRoute == 'favourite' ? 'active' : null">
-            {{'texts.tab.favourite' | i18next}}
-        </div>
         <div class="tab" ui-sref="bidsAuction"  ng-class="underRoute == 'bids' ? 'active' : null">
             {{'texts.tab.bids' | i18next}}
         </div>
         <div class="tab" ui-sref="winAuction" ng-class="underRoute == 'win' ? 'active' : null" >
             {{'texts.tab.win' | i18next}}
+        </div>
+        <div class="tab" ui-sref="favouriteAuction" ng-class="underRoute == 'favourite' ? 'active' : null">
+            {{'texts.tab.favourite' | i18next}}
+        </div>
+        <div class="menu-divider"></div>
+        <div class="tab" ui-sref="createAuction"  ng-class="underRoute == 'add' ? 'active' : null">
+            {{'texts.tab.create_auction' | i18next}}
+        </div>
+        <div class="tab" ui-sref="createdAuction" ng-class="underRoute == 'created' ? 'active' : null">
+            {{'texts.tab.created' | i18next}}
         </div>
     </div>
     <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'shipments'">
@@ -38,19 +45,6 @@
         </div>
         <div class="tab" ui-sref="add_driver" ng-class="underRoute == 'employee' ? 'active' : null">
             {{'texts.tab.add_driver' | i18next}}
-        </div>
-    </div>
-</span>
-<span ng-if="user.isSender()">
-    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'auction'">
-        <div class="tab" ui-sref="auction" ng-class="underRoute == 'list' ? 'active' : null">
-            {{'texts.tab.list' | i18next}}
-        </div>
-        <div class="tab" ui-sref="createdAuction" ng-class="underRoute == 'created' ? 'active' : null">
-            {{'texts.tab.created' | i18next}}
-        </div>
-        <div class="tab" ui-sref="createAuction"  ng-class="underRoute == 'add' ? 'active' : null">
-            {{'texts.tab.create_auction' | i18next}}
         </div>
     </div>
 </span>

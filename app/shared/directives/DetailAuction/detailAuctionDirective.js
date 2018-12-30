@@ -22,9 +22,7 @@ angular.module('appDirectives')
                 $scope.history = {};
                 $scope.withBids = true;
                 $scope.user = User;
-                if (User.isSender() || User.isDriver()) {
-                    $scope.withBids = false;
-                }
+                $scope.isOwner = $scope.item.owner === User.ID;
                 $scope.historyMore = false;
 
                 var afterHistoryLoad = function (history) {

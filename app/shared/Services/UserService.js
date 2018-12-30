@@ -13,31 +13,18 @@ angular.module('appServices')
 			roleName : ""
 		};
 
-		//role:  1-sender  2-transporter 3-driver 99-admin
+		//role:  1-sender 99-admin
 		User.set = function (prop, value) {
 			User[prop] = value;
 		};
 
 		User.setRole = function(role){
 			switch(role){
-				case 1: User.set('roleName', "Sender");
-					break;
-				case 2: User.set('roleName', "Transporter");
-					break;
-				case 3: User.set('roleName', "Driver");
+				case 1: User.set('roleName', "User");
 					break;
                 case 99: User.set('roleName', "Admin");
                     break;
 			}
-		};
-		User.isSender = function(){
-			return User.role === 1;
-		};
-		User.isTransporter = function(){
-			return User.role === 2;
-		};
-		User.isDriver = function(){
-			return User.role === 3;
 		};
         User.isAdmin = function(){
             return User.role === 99;
@@ -154,32 +141,14 @@ angular.module('appServices')
 			});
 		};
 
-		/* POST to REST api => Registration sender */
-		User.registrationSender = function(data){
-			startLoading();
-			return $q(function(resolve, reject) {
-				$http({
-					method: 'POST',
-					data: param(data),
-					url: CONFIG.server.url+'registration/sender'
-				}).then(function(response) {
-					endLoading();
-					resolve();
-				}).catch(function(error){
-					endLoading();
-					reject(error);
-				})
-			});
-		};
-
-		/* POST to REST api => Registration transporter */
-        User.registrationTransporter = function(data){
+		/* POST to REST api => Registration user */
+        User.registrationUser = function(data){
             startLoading();
             return $q(function(resolve, reject) {
                 $http({
                     method: 'POST',
                     data: param(data),
-                    url: CONFIG.server.url+'registration/transporter'
+                    url: CONFIG.server.url+'registration/user'
                 }).then(function(response) {
                     endLoading();
                     resolve();

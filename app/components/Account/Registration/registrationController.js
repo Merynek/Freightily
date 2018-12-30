@@ -18,10 +18,6 @@ angular.module('appControllers')
             email = $("#email");
 
         $scope.clicked = true;
-        if(!$scope.user.role) {
-          message(3, $filter('i18next')('errors.select_role'));
-          return;
-        }
         if(!this.registrationForm.$valid) {
           message(3, $filter('i18next')('errors.set_all_inputs'));
           return;
@@ -79,9 +75,8 @@ angular.module('appControllers')
             email: $scope.user.email,
             accept_conditions: $scope.user.accept_conditions
           };
-          var registration = $scope.user.role === "1" ? User.registrationSender : User.registrationTransporter;
 
-          registration(data).then(function(){
+          User.registrationUser(data).then(function(){
               message(1, $filter('i18next')('success.registration'));
               $state.go('login');
           }).catch(function(error){

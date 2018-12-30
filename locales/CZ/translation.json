@@ -16,6 +16,7 @@
 		"want_bid": "Nová nabídka",
 		"auction_complete": "Aukce již skončila.",
 		"auction_win": "Vaše nabídka je nejnižší.",
+		"own_auction": "Vaše aukce právě běží.",
 		"auction_lose": "Vaše nabídka nebyla nejnižší.",
 		"auction_no_bidder": "Této aukce jste se neúčastnil.",
 		"driver_assign": "Přiřadit řidiče",
@@ -277,7 +278,9 @@
 			"36": "Tento řidič nelze smazat, protože je na něho přiřazená nějaká jízda",
 			"37": "Váš účet je dočasně zablokován. Zkuste to prosím později.",
 			"38": "Nahrávaný obrázek musí být ve formátu .jpg nebo .png",
-			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb."
+			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb.",
+			"40": "Na vlastní aukci nelze přihazovat.",
+			"41": "Uživatel nelze smazat."
 		}
 	},
 	"warnings": {
