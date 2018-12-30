@@ -117,12 +117,12 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-7">
-                <div ng-show="!win && withBids" class="auction-bid detail-row">
-                    <div ng-show="isOwner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-block info-block-win">
-                        <span class="glyphicon glyphicon-hand-right"></span>
-                        {{'texts.own_auction' | i18next}}
-                    </div>
-                    <div ng-show="!isOwner" class="bid-inputs">
+                <div ng-show="isOwner" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-block info-block-win">
+                    <span class="glyphicon glyphicon-hand-right"></span>
+                    {{'texts.own_auction' | i18next}}
+                </div>
+                <div ng-show="!win && withBids && !isOwner" class="auction-bid detail-row">
+                    <div class="bid-inputs">
                         <div class="bid-wrapper has-feedback has-feedback-right">
                             <input type="text" ng-model="bid" ng-keypress="onkeyDown($event, bid)" class="form-control text-right my-input bid" placeholder="{{'texts.amount' | i18next}}"/>
                             <span class="form-control-feedback">Kč</span>

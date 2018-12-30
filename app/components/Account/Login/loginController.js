@@ -19,6 +19,12 @@ angular.module('appControllers')
             return;
         }
         User.login($scope.user.name, $scope.user.password).then(function(){
+            if (User.isDriver()) {
+                User.logout();
+                $state.go('login');
+                message(3, $filter('i18next')("errors.driver_cant_login"));
+                return;
+            }
           message(1, $filter('i18next')('success.login'));
           if (User.isAdmin()) {
               $state.go('users');

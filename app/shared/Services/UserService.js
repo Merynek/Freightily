@@ -30,6 +30,10 @@ angular.module('appServices')
             return User.role === 99;
         };
 
+        User.isDriver = function(){
+            return User.role === 2;
+        };
+
 		/* POST to REST api => Login */ 
 		User.login = function(username, password){
 			startLoading();

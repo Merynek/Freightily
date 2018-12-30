@@ -243,6 +243,7 @@
 		"psc_is_number": "PSČ musí být číslo",
 		"ico_is_number": "IČO musí být číslo",
 		"accept_conditions": "Musíte souhlasit s podmínkami",
+		"driver_cant_login": "Přihlášení není možné",
 		"codes": {
 			"unauthorized": "Přihlášení vypršelo",
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",

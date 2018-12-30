@@ -243,6 +243,7 @@
 		"psc_is_number": "ZIP must be a number",
 		"ico_is_number": "Identification number must be a number",
 		"accept_conditions": "You must accept conditions",
+		"driver_cant_login": "Login failed",
 		"codes": {
 			"unauthorized": "Session timeout",
 			"fatal": "Unknown error, contact administrator",
