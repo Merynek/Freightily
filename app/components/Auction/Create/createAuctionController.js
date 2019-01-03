@@ -72,6 +72,7 @@ angular.module('appControllers')
 
             accordion.bind("accordion.open", onAccordionChange);
             accordion.bind("accordion.close", onAccordionChange);
+            $("#acc-part-1").click();
         }, 15);
 
         $scope.route = "auction|add";
@@ -135,6 +136,7 @@ angular.module('appControllers')
          */
         function validatePart(openOnly) {
             var inputs = openOnly ? $(".accordion.open .required") : $(".accordion .required"),
+                freight_weight = $(".accordion.open #freight_weight"),
                 valid = true;
 
             inputs.removeClass("input-error");
@@ -147,6 +149,19 @@ angular.module('appControllers')
                     valid = false;
                 }
             });
+
+            if (freight_weight.length) {
+                if (!isValueNumber($scope.auction.freight_weight)) {
+                    freight_weight.addClass("input-error");
+                    message(3, $filter('i18next')('errors.weight_is_number'));
+                    return false;
+                }
+                if ($scope.auction.freight_weight < 1) {
+                    freight_weight.addClass("input-error");
+                    message(3, $filter('i18next')('errors.weight_is_low'));
+                    return false;
+                }
+            }
 
             return valid;
         }
@@ -181,11 +196,21 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.weight_is_number'));
                 return false;
             }
+            if ($scope.auction.freight_weight < 1) {
+                freight_weight.addClass("input-error");
+                message(3, $filter('i18next')('errors.weight_is_low'));
+                return false;
+            }
             freight_weight.removeClass("input-error");
 
             if (!isValueNumber($scope.auction.price)) {
                 price.addClass("input-error");
                 message(3, $filter('i18next')('errors.price_is_number'));
+                return false;
+            }
+            if ($scope.auction.price < 50) {
+                price.addClass("input-error");
+                message(3, $filter('i18next')('errors.price_is_low'));
                 return false;
             }
             price.removeClass("input-error");
@@ -274,15 +299,13 @@ angular.module('appControllers')
                             message(1, $filter('i18next')('success.auction_template_delete'));
                             var index = $scope.templates.map(function (t) {
                                     return t.ID;
-                                }).indexOf(selectedTemplate.ID),
-                                selectElement = $("#select-template-combo");
+                                }).indexOf(selectedTemplate.ID);
 
                             if (index !== -1) {
                                 $scope.templates.splice(index, 1);
                             }
                             setTimeout(function () {
-                                selectElement.val(0);
-                                selectElement.trigger("change");
+                                $scope.selectTemplate($scope.templates[0]);
                             }, 0);
 
                             $scope.closeThisDialog(false);

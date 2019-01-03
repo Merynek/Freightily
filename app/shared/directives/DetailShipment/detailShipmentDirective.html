@@ -18,11 +18,13 @@
             <span class="glyphicon glyphicon-home"></span>
             <span class="detail-label">{{'texts.auction.from' | i18next}}:</span>
             <span class="detail-content">{{item.address_from}}</span>
+            <div ng-if="item.load_note" class="note">{{item.load_note}}</div>
         </div>
         <div class="detail-row address">
             <span class="glyphicon glyphicon-flag"></span>
             <span class="detail-label">{{'texts.auction.to' | i18next}}:</span>
             <span class="detail-content">{{item.address_to}}</span>
+            <div ng-if="item.unload_note" class="note">{{item.unload_note}}</div>
         </div>
         <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 margin-divider"></div>
         <div ng-if="!finishedShipment" class="my-button normal-button stop-shipment" ng-click="stopShipment(item.ID)">
