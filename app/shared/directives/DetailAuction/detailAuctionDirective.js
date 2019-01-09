@@ -41,9 +41,11 @@ angular.module('appDirectives')
                 });
 
                 $scope.toggleDetail = function () {
-                    var detail = $(event.target).parents("detail-auction").find(".auction-detail");
+                    var detail = $(event.target).parents("detail-auction").find(".auction-detail"),
+                        scrollY = window.scrollY;
 
-                    detail.stop().slideToggle(400);
+                    detail.stop().slideToggle(200);
+                    window.scrollTo(0, scrollY);
 
                     clearInterval(interval);
                     interval = setInterval(function () {
@@ -51,7 +53,7 @@ angular.module('appDirectives')
                     }, 33);
                     setTimeout(function () {
                         clearInterval(interval);
-                    }, 440);
+                    }, 240);
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {
