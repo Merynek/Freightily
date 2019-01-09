@@ -7,6 +7,8 @@ angular.module('appDirectives')
                 driverParam: '=driver'
             },
             controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog, $i18next) {
+                var interval;
+
                 $scope.currentLanguage = $i18next.options.lng;
                 $scope.driver = $scope.driverParam.driver;
                 $scope.User = User;
@@ -31,8 +33,20 @@ angular.module('appDirectives')
 
                 $scope.show = false;
                 $scope.toggleDetail = function () {
-                    $scope.show = !$scope.show;
-                    if ($scope.show) {
+                    var detail = $(event.target).parents("detail-user").find(".auction-detail"),
+                        visible = detail.is(":visible");
+
+                    detail.stop().slideToggle(400);
+
+                    clearInterval(interval);
+                    interval = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 33);
+                    setTimeout(function () {
+                        clearInterval(interval);
+                    }, 440);
+
+                    if (!visible) {
                         $scope.getDriverPosition($scope.driver.ID);
                         $scope.showDatePicker($scope.driver.ID);
                     }

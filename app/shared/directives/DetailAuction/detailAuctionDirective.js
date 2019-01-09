@@ -10,6 +10,7 @@ angular.module('appDirectives')
             },
             controller: function ($scope, $filter, Auction, User, ngDialog) {
                 var self = $scope;
+                var interval;
                 $scope.item = $scope.auctionItem.item;
                 $scope.expired = $scope.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;
@@ -39,12 +40,22 @@ angular.module('appDirectives')
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 });
 
-                $scope.show = false;
                 $scope.toggleDetail = function () {
-                    $scope.show = !$scope.show;
+                    var detail = $(event.target).parents("detail-auction").find(".auction-detail");
+
+                    detail.stop().slideToggle(400);
+
+                    clearInterval(interval);
+                    interval = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 33);
+                    setTimeout(function () {
+                        clearInterval(interval);
+                    }, 440);
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {
+                    // todo: k čemu to je? ..jak dostanu detail element?
                     $scope.show = id === $scope.ID;
                 });
 

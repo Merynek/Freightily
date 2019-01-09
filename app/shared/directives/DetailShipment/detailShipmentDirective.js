@@ -10,16 +10,28 @@ angular.module('appDirectives')
             },
             controller: function ($scope, $filter, Auction, User, UserAbility, $q, $http, $state, ngDialog) {
                 var self = $scope;
+                var interval;
 
                 $scope.item = $scope.shipmentItem.item;
                 $scope.ID = $scope.shipmentItem.item.ID;
                 $scope.showPhotos = [];
                 $scope.photos = [];
                 $scope.photoReady = false;
-                $scope.show = false;
                 $scope.toggleDetail = function (idShipment) {
-                    $scope.show = !$scope.show;
-                    if ($scope.show && !$scope.newShipment && !$scope.showPhotos.length) {
+                    var detail = $(event.target).parents("detail-shipment").find(".auction-detail"),
+                        visible = detail.is(":visible");
+
+                    detail.stop().slideToggle(400);
+
+                    clearInterval(interval);
+                    interval = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 33);
+                    setTimeout(function () {
+                        clearInterval(interval);
+                    }, 440);
+
+                    if (!visible && !$scope.newShipment && !$scope.showPhotos.length) {
                         self.showPhoto(idShipment, true);
                     }
                 };

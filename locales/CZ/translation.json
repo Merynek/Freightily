@@ -108,12 +108,12 @@
 		"sorting": {
 			"label": "Řadit podle",
 			"from": {
-				"ASC": "Odkud (abecedně)",
-				"DESC": "Odkud (inverzně)"
+				"ASC": "Odkud (A-Z)",
+				"DESC": "Odkud (Z-A)"
 			},
 			"to": {
-				"ASC": "Kam (abecedně)",
-				"DESC": "Kam (inverzně)"
+				"ASC": "Kam (A-Z)",
+				"DESC": "Kam (Z-A)"
 			},
 			"price": {
 				"ASC": "Nejlevnější",
