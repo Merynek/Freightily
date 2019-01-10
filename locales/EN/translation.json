@@ -246,6 +246,7 @@
 		"ico_is_number": "Identification number must be a number",
 		"accept_conditions": "You must accept conditions",
 		"driver_cant_login": "Login failed",
+		"driver_no_position": "This driver have no set position yet.",
 		"codes": {
 			"unauthorized": "Session timeout",
 			"fatal": "Unknown error, contact administrator",

@@ -8,7 +8,6 @@
 angular.module('appControllers')
   .controller('bidsAuctionController', ['$scope', 'bidsAuctionResponse', 'Auction', '$state', '$rootScope', '$filter', 'User',
       function($scope, bidsAuctionResponse, Auction, $state, $rootScope, $filter, User) {
-    checkError(bidsAuctionResponse.Error);
     $scope.AuctionList = bidsAuctionResponse.AuctionList;
     $scope.AuctionListCount = bidsAuctionResponse.Count;
     $scope.route = "auction|bids";
@@ -32,14 +31,6 @@ angular.module('appControllers')
       }).blur(function() {
           $scope.windowHasFocus = false;
       });
-
-      function checkError(error) {
-          if (error && error.status === 401) {
-              User.logout();
-              $state.go('login');
-              message(3, $filter('i18next')(getErrorKeyByCode(error)));
-          }
-      }
 
       function refreshingData() {
           checkBidsAuctionRunning = true;

@@ -246,6 +246,7 @@
 		"ico_is_number": "IČO musí být číslo",
 		"accept_conditions": "Musíte souhlasit s podmínkami",
 		"driver_cant_login": "Přihlášení není možné",
+		"driver_no_position": "Tento řidič zatím neuložil svoji pozici.",
 		"codes": {
 			"unauthorized": "Přihlášení vypršelo",
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",

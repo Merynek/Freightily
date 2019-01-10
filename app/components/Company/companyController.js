@@ -8,7 +8,6 @@
 angular.module('appControllers')
     .controller('companyController', ['$scope', 'driversResponse', 'User', '$state', '$filter',
         function($scope, driversResponse, User, $state, $filter) {
-            checkError(driversResponse.Error);
             var mySelf = driversResponse.drivers.find(function(driver) {
                 return driver.ID === User.ID;
             });
@@ -26,14 +25,6 @@ angular.module('appControllers')
                     middle_no_padding();
                 }
             });
-
-            function checkError(error) {
-                if (error && error.status === 401) {
-                    User.logout();
-                    $state.go('login');
-                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                }
-            }
     }
     ]);
 
