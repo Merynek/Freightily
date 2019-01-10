@@ -18,8 +18,14 @@ angular.module('appControllers')
             return false;
         };
 
-        $scope.isLoggedAdmin = function () {
-            return User.isAdmin();
+        $scope.resolveLogoClick = function () {
+            if (User.isAdmin()) {
+                $state.go('users');
+            } else if (User.isLoggedIn) {
+                $state.go('auction');
+            } else {
+                $state.go('login');
+            }
         };
 
         $scope.logout = function () {

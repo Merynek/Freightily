@@ -283,7 +283,8 @@
 			"38": "Please Upload image of type .jpg,.png.",
 			"39": "Please Upload a file upto 1 mb.",
 			"40": "You can not bid to own auction.",
-			"41": "User can not be delete."
+			"41": "User can not be delete.",
+			"42": "Invalid email"
 		}
 	},
 	"warnings": {

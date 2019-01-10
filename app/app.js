@@ -43,11 +43,7 @@
                                     else{
                                         for (var i = 0; i < toState.data.role.length; i++) {
                                             if(User.role == toState.data.role[i]){
-                                                $state.transitionTo(toState, toParams, {
-                                                    reload: true,
-                                                    inherit: false,
-                                                    notify: true
-                                                });
+                                                transition(toState, toParams)
                                             }
                                         }
                                     }
@@ -62,12 +58,20 @@
                     return;
                 });
 
+                function transition(toState, toParams) {
+                    $state.transitionTo(toState, toParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }
+
                 function logoutUnauthorized() {
                     $state.go('login');
-                    User.logout();
                     message(3, $filter('i18next')(getErrorKeyByCode({
                         status: 401
                     })));
+                    User.logout();
                 }
                 }]);
 }());

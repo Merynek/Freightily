@@ -283,7 +283,8 @@
 			"38": "Nahrávaný obrázek musí být ve formátu .jpg nebo .png",
 			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb.",
 			"40": "Na vlastní aukci nelze přihazovat.",
-			"41": "Uživatel nelze smazat."
+			"41": "Uživatel nelze smazat.",
+			"42": "Registrace se nezdařila, zkontrolujte platnost emailu."
 		}
 	},
 	"warnings": {
