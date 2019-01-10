@@ -246,6 +246,7 @@
 		"ico_is_number": "Identification number must be a number",
 		"accept_conditions": "You must accept conditions",
 		"driver_cant_login": "Login failed",
+		"driver_no_position": "This driver have no set position yet.",
 		"codes": {
 			"unauthorized": "Session timeout",
 			"fatal": "Unknown error, contact administrator",
@@ -282,7 +283,8 @@
 			"38": "Please Upload image of type .jpg,.png.",
 			"39": "Please Upload a file upto 1 mb.",
 			"40": "You can not bid to own auction.",
-			"41": "User can not be delete."
+			"41": "User can not be delete.",
+			"42": "Invalid email"
 		}
 	},
 	"warnings": {

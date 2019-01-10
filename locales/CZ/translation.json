@@ -246,6 +246,7 @@
 		"ico_is_number": "IČO musí být číslo",
 		"accept_conditions": "Musíte souhlasit s podmínkami",
 		"driver_cant_login": "Přihlášení není možné",
+		"driver_no_position": "Tento řidič zatím neuložil svoji pozici.",
 		"codes": {
 			"unauthorized": "Přihlášení vypršelo",
 			"fatal": "Neznámá chyba serveru, kontaktujte administratora",
@@ -282,7 +283,8 @@
 			"38": "Nahrávaný obrázek musí být ve formátu .jpg nebo .png",
 			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb.",
 			"40": "Na vlastní aukci nelze přihazovat.",
-			"41": "Uživatel nelze smazat."
+			"41": "Uživatel nelze smazat.",
+			"42": "Registrace se nezdařila, zkontrolujte platnost emailu."
 		}
 	},
 	"warnings": {

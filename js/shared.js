@@ -66,9 +66,12 @@ function getRefreshTokenFromStorage() {
 }
 
 function setTimeToNeedRefreshToken(expired_in) {
-    var now = new Date();
+    var now = new Date(),
+		hour = 3000; //10700
 
-    now.setSeconds(now.getSeconds() + expired_in - 5);
+    console.log("expired_in", expired_in);
+    now.setSeconds(now.getSeconds() + expired_in - hour);
+    console.log("refresh_token_from", now);
     window.localStorage.setItem("time_refresh_token", now);
 }
 

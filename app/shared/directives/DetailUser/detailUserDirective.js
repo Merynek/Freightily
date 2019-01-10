@@ -50,11 +50,19 @@ angular.module('appDirectives')
                     return null;
                 });
 
+                function mapNotAvailable() {
+                    $scope.isMap = false;
+                    $scope.mapInfo = $filter('i18next')("errors.driver_no_position");
+                }
+
                 $scope.getDriverPosition = function(id_driver) {
                     UserAbility.getDriverPosition(id_driver).then(function(data) {
-                        $scope.isMap = true;
                         var position = data.position;
-
+                        if (!Boolean(position)) {
+                            mapNotAvailable();
+                            return;
+                        }
+                        $scope.isMap = true;
                         var dateFuture = new Date(data.last_position_set);
                         var dateNow = new Date();
 
@@ -86,9 +94,8 @@ angular.module('appDirectives')
                                 map: map
                             });
                         }
-                    }).catch(function(error) {
-                        $scope.isMap = false;
-                        $scope.mapInfo = $filter('i18next')(getErrorKeyByCode(error));
+                    }).catch(function() {
+                        mapNotAvailable();
                     })
                 };
 

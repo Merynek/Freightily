@@ -7,7 +7,6 @@
 
 angular.module('appControllers')
     .controller('createAuctionController', ['$scope', '$timeout', 'Auction', '$filter', '$state', 'templatesResponse', 'ngDialog', 'User', function ($scope, $timeout, Auction, $filter, $state, templatesResponse, ngDialog, User) {
-        checkError(templatesResponse.Error);
         $scope.templates = [getNoValueTemplate()].concat(templatesResponse);
         $scope.selectedTemplate = $scope.templates.find(function (t) {
             return t.ID === 0;
@@ -95,14 +94,6 @@ angular.module('appControllers')
             rest: "",
             state: "cs"
         };
-
-        function checkError(error) {
-            if (error && error.status === 401) {
-                User.logout();
-                $state.go('login');
-                message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            }
-        }
 
         function prepareAddressForServer(addressObj) {
             var address = "";

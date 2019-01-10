@@ -48,22 +48,22 @@ angular.module('appServices')
 					data: param(data),
 					url: CONFIG.server.url+'token'
 				}).then(function(response) {
-					var data = response.data;
+					var responseData = response.data;
 					if (window.localStorage) {
-						if(data && data.access_token){
-							window.localStorage.setItem("access_token", data.access_token);
-                            window.localStorage.setItem("refresh_token", data.refresh_token);
-                            setTimeToNeedRefreshToken(data.expires_in);
+						if(responseData && responseData.access_token){
+							window.localStorage.setItem("access_token", responseData.access_token);
+                            window.localStorage.setItem("refresh_token", responseData.refresh_token);
+                            setTimeToNeedRefreshToken(responseData.expires_in);
 						}
 						else{
 							throw "Server error";
 						}						
 					}
 					User.set('isLoggedIn', true);
-					User.set('username', data.username);
-					User.set('role', Number(data.role));
-					User.set('ID', Number(data.ID));
-					User.setRole(Number(data.role));
+					User.set('username', responseData.username);
+					User.set('role', Number(responseData.role));
+					User.set('ID', Number(responseData.ID));
+					User.setRole(Number(responseData.role));
 					endLoading();
 					resolve();
 				}).catch(function(error){
@@ -80,33 +80,29 @@ angular.module('appServices')
                 grant_type: "refresh_token"
             };
 
-            return $q(function(resolve, reject) {
+            return $q(function() {
                 $http({
                     method: 'POST',
                     data: param(data),
-                    url: CONFIG.server.url+'token'
+                    url: CONFIG.server.url+'token',
+                    headers: getTokenFromStorage()
                 }).then(function(response) {
-                    var data = response.data;
+                    var responseData = response.data;
                     if (window.localStorage) {
-                        if(data && data.access_token){
-                            window.localStorage.setItem("access_token", data.access_token);
-                            window.localStorage.setItem("refresh_token", data.refresh_token);
-                            setTimeToNeedRefreshToken(data.expires_in);
+                        if(responseData && responseData.access_token){
+                            window.localStorage.setItem("access_token", responseData.access_token);
+                            window.localStorage.setItem("refresh_token", responseData.refresh_token);
+                            setTimeToNeedRefreshToken(responseData.expires_in);
                         }
                         else{
                             throw "Server error";
                         }
                     }
                     User.set('isLoggedIn', true);
-                    User.set('username', data.username);
-                    User.set('role', Number(data.role));
-                    User.set('ID', Number(data.ID));
-                    User.setRole(Number(data.role));
-                    endLoading();
-                    resolve();
-                }).catch(function(error){
-                    endLoading();
-                    reject(error);
+                    User.set('username', responseData.username);
+                    User.set('role', Number(responseData.role));
+                    User.set('ID', Number(responseData.ID));
+                    User.setRole(Number(responseData.role));
                 })
             });
         };

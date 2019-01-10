@@ -8,7 +8,6 @@
 angular.module('appControllers')
   .controller('favouriteAuctionController', ['$scope', 'favouriteAuctionResponse', 'Auction', '$state', '$rootScope', 'User', '$filter',
       function($scope, favouriteAuctionResponse, Auction, $state, $rootScope, User, $filter){
-    checkError(favouriteAuctionResponse.Error);
     $scope.AuctionList = favouriteAuctionResponse.AuctionList;
     $scope.AuctionListCount = favouriteAuctionResponse.Count;
     $scope.route = "auction|favourite";
@@ -31,15 +30,6 @@ angular.module('appControllers')
       }).blur(function() {
           $scope.windowHasFocus = false;
       });
-
-
-      function checkError(error) {
-          if (error && error.status === 401) {
-              User.logout();
-              $state.go('login');
-              message(3, $filter('i18next')(getErrorKeyByCode(error)));
-          }
-      }
 
       function refreshingData() {
           checkFavouriteAuctionRunning = true;

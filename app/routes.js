@@ -49,10 +49,6 @@ $urlRouterProvider.otherwise("/404");
 				 userInfo: function(UserAbility){
 					 return UserAbility.getAccountInfo().then(function(res){
 						 return res;
-                     }).catch(function(error) {
-                         return {
-                             Error: error
-                         };
                      })
 				 }
 			 }
@@ -74,10 +70,6 @@ $urlRouterProvider.otherwise("/404");
                  users: function(User){
                      return User.GetUsers().then(function(res){
                          return res;
-                     }).catch(function(error) {
-                         return {
-                             Error: error
-                         };
                      })
                  }
              }
@@ -115,10 +107,6 @@ $urlRouterProvider.otherwise("/404");
 						 	drivers: res.drivers,
 						 	count: res.count
 						 };
-                     }).catch(function(error) {
-                         return {
-                             Error: error
-                         };
                      })
 				 }
 			 }
@@ -141,10 +129,6 @@ $urlRouterProvider.otherwise("/404");
                             AuctionList: res.AuctionList,
                             Count: res.Count
 						};
-                    }).catch(function(error) {
-                        return {
-                            Error: error
-                        };
                     })
 				}
       		}
@@ -160,10 +144,6 @@ $urlRouterProvider.otherwise("/404");
                 templatesResponse: function(Auction){
                     return Auction.getTemplates().then(function(res){
                         return res;
-                    }).catch(function(error) {
-                        return {
-                            Error: error
-                        };
                     })
                 }
             }
@@ -182,10 +162,6 @@ $urlRouterProvider.otherwise("/404");
                         return {
                             AuctionList: res.AuctionList,
                             Count: res.Count
-                        };
-                    }).catch(function(error) {
-                        return {
-                            Error: error
                         };
                     })
 				}
@@ -206,10 +182,6 @@ $urlRouterProvider.otherwise("/404");
                             AuctionList: res.AuctionList,
                             Count: res.Count
                         };
-					}).catch(function(error) {
-						return {
-							Error: error
-						};
 					})
 				}
 			}
@@ -229,10 +201,6 @@ $urlRouterProvider.otherwise("/404");
                             AuctionList: res.AuctionList,
                             Count: res.Count
                         };
-                    }).catch(function(error) {
-                        return {
-                            Error: error
-                        };
                     })
 				}
 			}
@@ -251,10 +219,6 @@ $urlRouterProvider.otherwise("/404");
                          return {
                              AuctionList: res.AuctionList,
                              Count: res.Count
-                         };
-                     }).catch(function(error) {
-                         return {
-                             Error: error
                          };
                      })
 				 }
@@ -276,10 +240,6 @@ $urlRouterProvider.otherwise("/404");
                              shipments: res.ShipmentList,
                              Count: res.Count
                          };
-                     }).catch(function(error) {
-                         return {
-                             Error: error
-                         };
                      })
 				 }
 			 }
@@ -298,10 +258,6 @@ $urlRouterProvider.otherwise("/404");
                          return {
                              shipments: res.ShipmentList,
                              Count: res.Count
-                         };
-                     }).catch(function(error) {
-                         return {
-                             Error: error
                          };
                      })
                  }

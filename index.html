@@ -111,8 +111,7 @@
 			<div class="header-content row">
 				<div class="header-left col-xs-12 col-sm-12 col-md-4 col-lg-6">
 					<div class="logo-wrapper">
-						<img src="../images/nohelogo2.svg" ng-if="!isLoggedAdmin()" class="header-logo" alt="NOHE LOGO" ui-sref="auction" />
-						<img src="../images/nohelogo2.svg" ng-if="isLoggedAdmin()" class="header-logo"alt="NOHE LOGO" ui-sref="users" />
+						<img src="../images/nohelogo2.svg" class="header-logo" alt="NOHE LOGO" ng-click="resolveLogoClick()" />
 					</div>
 					<div class="languages">
 						<span ng-click="CZlng()">
