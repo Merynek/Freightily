@@ -33,18 +33,10 @@ angular.module('appDirectives')
 
                 $scope.show = false;
                 $scope.toggleDetail = function () {
-                    var detail = $(event.target).parents("detail-user").find(".auction-detail"),
-                        visible = detail.is(":visible");
+                    var detail = $(event.target).parents("detail-user"),
+                        visible = detail.find(".auction-detail").is(":visible");
 
-                    detail.stop().slideToggle(400);
-
-                    clearInterval(interval);
-                    interval = setInterval(function () {
-                        window.dispatchEvent(new Event('resize'));
-                    }, 33);
-                    setTimeout(function () {
-                        clearInterval(interval);
-                    }, 440);
+                    toggleDetail(detail);
 
                     if (!visible) {
                         $scope.getDriverPosition($scope.driver.ID);

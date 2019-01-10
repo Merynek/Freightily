@@ -78,6 +78,22 @@ function needRestartToken() {
 	return timeRefreshToken && new Date(timeRefreshToken) < new Date();
 }
 
+function toggleDetail(detailElement) {
+    var detail = detailElement.find(".auction-detail"),
+        scrollY = window.scrollY;
+
+    detail.stop().slideToggle(200);
+    window.scrollTo(0, scrollY);
+
+    clearInterval(toggleInterval);
+    toggleInterval = setInterval(function () {
+        window.dispatchEvent(new Event('resize'));
+    }, 33);
+    setTimeout(function () {
+        clearInterval(toggleInterval);
+    }, 240);
+}
 var checkListAuctionRunning = false;
 var checkFavouriteAuctionRunning = false;
 var checkBidsAuctionRunning = false;
+var toggleInterval;

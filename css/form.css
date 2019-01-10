@@ -18,6 +18,8 @@
 
 .datepickers {
     padding-left: 20px;
+    background: #e6e6f1;
+    border-radius: 5px;
 }
 
 .datePickerVacation {
@@ -37,10 +39,15 @@
     background-color: unset;
     font-weight: bold;
 }
+.datepicker table tr td:hover,
+.datepicker table tr td:hover:hover,
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today:hover:hover {
     background-image: none;
-    background-color: #eeeeee;
+    background-color: #cccccc;
+}
+.bootstrap-datetimepicker-widget table td span:hover {
+    background: #cccccc;
 }
 .datepicker table tr td.active.disabled.active,
 .datepicker table tr td.active.disabled.disabled,

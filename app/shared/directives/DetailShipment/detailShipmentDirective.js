@@ -18,18 +18,10 @@ angular.module('appDirectives')
                 $scope.photos = [];
                 $scope.photoReady = false;
                 $scope.toggleDetail = function (idShipment) {
-                    var detail = $(event.target).parents("detail-shipment").find(".auction-detail"),
-                        visible = detail.is(":visible");
+                    var detail = $(event.target).parents("detail-shipment"),
+                        visible = detail.find(".auction-detail").is(":visible");
 
-                    detail.stop().slideToggle(400);
-
-                    clearInterval(interval);
-                    interval = setInterval(function () {
-                        window.dispatchEvent(new Event('resize'));
-                    }, 33);
-                    setTimeout(function () {
-                        clearInterval(interval);
-                    }, 440);
+                    toggleDetail(detail);
 
                     if (!visible && !$scope.newShipment && !$scope.showPhotos.length) {
                         self.showPhoto(idShipment, true);

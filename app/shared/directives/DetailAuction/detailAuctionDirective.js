@@ -41,23 +41,10 @@ angular.module('appDirectives')
                 });
 
                 $scope.toggleDetail = function () {
-                    var detail = $(event.target).parents("detail-auction").find(".auction-detail"),
-                        scrollY = window.scrollY;
-
-                    detail.stop().slideToggle(200);
-                    window.scrollTo(0, scrollY);
-
-                    clearInterval(interval);
-                    interval = setInterval(function () {
-                        window.dispatchEvent(new Event('resize'));
-                    }, 33);
-                    setTimeout(function () {
-                        clearInterval(interval);
-                    }, 240);
+                    toggleDetail($(event.target).parents("detail-auction"));
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {
-                    // todo: k čemu to je? ..jak dostanu detail element?
                     $scope.show = id === $scope.ID;
                 });
 
