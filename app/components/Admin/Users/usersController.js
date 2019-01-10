@@ -74,6 +74,14 @@ angular.module('appControllers')
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })
         };
+
+        $scope.BackUp = function() {
+            Admin.BackUp().then(function() {
+                console.log("BackUp - OK");
+            }).catch(function(error) {
+                console.log("BackUp - FAIL");
+            })
+        };
     }
 ]);
 
