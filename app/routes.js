@@ -1,4 +1,4 @@
-angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $locationProvider, $i18nextProvider) {
+angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $locationProvider, $i18nextProvider, $urlServiceProvider) {
 
 
   // translations
@@ -12,6 +12,7 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $loc
 	};
 
 $urlRouterProvider.otherwise("/404");
+$urlServiceProvider.config.strictMode(false);
 
  $stateProvider
 		 .state("empty", {
@@ -221,6 +222,23 @@ $urlRouterProvider.otherwise("/404");
                              Count: res.Count
                          };
                      })
+				 }
+			 }
+		 })
+		 .state('detailAuction', {
+			 url: "/auction/:idAuction",
+			 controller: 'detailAuctionController',
+			 templateUrl: "app/components/Auction/Detail/detailAuction.html",
+			 data: {
+				 role: [1, 99]
+			 },
+			 resolve: {
+				 detailAuctionResponse: function(Auction, $stateParams) {
+				 	var idAuction = $stateParams.idAuction;
+
+				 	return Auction.getAuctionItem(idAuction).then(function(response){
+				 		return response
+					})
 				 }
 			 }
 		 })

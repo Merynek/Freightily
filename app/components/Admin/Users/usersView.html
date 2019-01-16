@@ -1,7 +1,7 @@
 <m param="{route}">
     <h1>{{'texts.admin' | i18next}}</h1>
     <div class="col-md-12">
-        <h2>{{'texts.users' | i18next}}</h2>
+        <h2>{{'texts.users' | i18next}} ({{users.length}})</h2>
         <input type="text" ng-model="id_transporter"/>
         <button ng-click="GetAuctionCache()">Get auction cache</button>
         <button ng-click="BackUp()">BackUp</button>

@@ -22,6 +22,9 @@
                     if(error.detail.status === 401) { // Unauthorized
                         logoutUnauthorized();
                     }
+                    if(error.detail.status === 400) { // Not found
+                        $state.go('empty');
+                    }
                 });
 
                 $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
