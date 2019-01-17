@@ -159,7 +159,28 @@ angular.module('appServices')
             });
         };
 
-		/* POST to REST api => Registration user */ 
+        /* POST to REST api => post code for activate account */
+        User.activateAccount = function(activate_code) {
+            var data = {
+                activate_code: activate_code
+            };
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    data: param(data),
+                    url: CONFIG.server.url+'registration/activate'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
+		/* POST to REST api => Add driver */
 		User.AddUser = function(data){
 			startLoading();
 			return $q(function(resolve, reject) {

@@ -25,6 +25,7 @@
 		"registration": "Registrace",
 		"registration_employee": "Registrace",
 		"forgot_password": "Zapomenuté heslo",
+		"activate_account": "Aktivace účtu",
 		"logout": "Odhlásit se",
 		"about": "O nás",
 		"contact": "Kontakt",
@@ -51,6 +52,9 @@
 		"dispatcher": "Dispečer",
 		"dispatchers": "Dispečeři",
 		"forgot_password_text": "Na zadaný email vám zašleme nové heslo, kterým se přihlásíte do systému a můžete si ho změnit na vašem profilu.",
+		"success_activate_account": "Účet byl aktivován.",
+		"fail_activate_account": "Tento aktivační kód již byl použit nebo neexistuje.",
+		"redirect_to_login": "Přejít na přihlášení",
 		"send_password": "Poslat heslo",
 		"your_acc": "Váš účet",
 		"actual_password": "Aktuální heslo",
@@ -285,7 +289,9 @@
 			"39": "Velikost nahrávaného obrázku nesmí být větší jak 1mb.",
 			"40": "Na vlastní aukci nelze přihazovat.",
 			"41": "Uživatel nelze smazat.",
-			"42": "Registrace se nezdařila, zkontrolujte platnost emailu."
+			"42": "Registrace se nezdařila, zkontrolujte platnost emailu.",
+			"43": "Uživatel není aktivován",
+			"44": "Aktivační kód nebyl nalezen"
 		}
 	},
 	"warnings": {
@@ -296,7 +302,7 @@
 	},
 	"success": {
 		"login": "Přihlášení úspěšné",
-		"registration": "Registrace proběhla v pořádku",
+		"registration": "Registrace proběhla v pořádku. Zaslali jsme Vám aktivační email.",
 		"set_vacation": "Datum dovolené byl uložen",
 		"delete_vacation": "Datum dovolené byl smazán",
         "ban_user": "Uživatelovi byl změněn stav banu",

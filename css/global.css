@@ -78,6 +78,13 @@ p {
     z-index: 10000;
 }
 
+.green_text {
+    color: green;
+}
+.error_text {
+    color: red;
+}
+
 .error-message{
     background: #ffeaeb;
     border-bottom: 2px solid #e91d27;

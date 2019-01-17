@@ -25,6 +25,7 @@
 		"registration": "Registration",
 		"registration_employee": "Registration",
 		"forgot_password": "Forgot password",
+		"activate_account": "Activate account",
 		"logout": "Logout",
 		"about": "About",
 		"contact": "Contact",
@@ -51,6 +52,9 @@
 		"dispatcher": "Dispatcher",
 		"dispatchers": "Dispatchers",
 		"forgot_password_text": "Send new password to your email and you can change it in your profile.",
+		"success_activate_account": "Account activated.",
+		"fail_activate_account": "This activated code is expired or not exists.",
+		"redirect_to_login": "Navigate to login",
 		"send_password": "Send password",
 		"your_acc": "Your account",
 		"actual_password": "Actual password",
@@ -285,7 +289,9 @@
 			"39": "Please Upload a file upto 1 mb.",
 			"40": "You can not bid to own auction.",
 			"41": "User can not be delete.",
-			"42": "Invalid email"
+			"42": "Invalid email",
+			"43": "User is not active",
+			"44": "Activated code not found"
 		}
 	},
 	"warnings": {
@@ -297,7 +303,7 @@
 	},
 	"success": {
 		"login": "Login success",
-		"registration": "Registration success",
+		"registration": "Registration success. Activating email sent.",
 		"set_vacation": "Date of vacation was saved",
 		"delete_vacation": "Date of vacation was deleted",
         "ban_user": "Ban state was changed",

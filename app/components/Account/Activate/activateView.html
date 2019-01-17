@@ -1,0 +1,9 @@
+<div class="user-page forget-password-page">
+    <h1>{{'texts.activate_account' | i18next}}</h1>
+    <p ng-if="success" class="green_text"><b>{{'texts.success_activate_account' | i18next}}</b></p>
+    <p ng-if="!success" class="error_text"><b>{{'texts.fail_activate_account' | i18next}}</b></p>
+    <div class="form-group buttons">
+        <div class="my-button big-button normal-button" ui-sref="login">{{'texts.redirect_to_login' | i18next}}</div>
+    </div>
+</div>
+

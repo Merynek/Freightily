@@ -39,6 +39,24 @@ $urlServiceProvider.config.strictMode(false);
 			controller: 'registrationController',
 			templateUrl: "app/components/Account/Registration/registrationView.html"
 		})
+		 .state('activate', {
+			 url: "/activate/:code",
+			 controller: 'activateController',
+			 templateUrl: "app/components/Account/Activate/activateView.html",
+             resolve: {
+                 activateResponse: function(User, $stateParams) {
+                     var code = $stateParams.code;
+                     if (!Boolean(code)) {
+                     	return false;
+					 }
+                     return User.activateAccount(code).then(function(){
+                         return true;
+                     }).catch(function() {
+                         return false;
+					 })
+                 }
+             }
+		 })
 		 .state('my_profile', {
 			 url: "/my_profile",
 			 controller: 'userProfileController',
