@@ -303,6 +303,7 @@
 	"success": {
 		"login": "Přihlášení úspěšné",
 		"registration": "Registrace proběhla v pořádku. Zaslali jsme Vám aktivační email.",
+		"registration_driver": "Registrace proběhla v pořádku.",
 		"set_vacation": "Datum dovolené byl uložen",
 		"delete_vacation": "Datum dovolené byl smazán",
         "ban_user": "Uživatelovi byl změněn stav banu",

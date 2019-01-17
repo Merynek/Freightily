@@ -61,7 +61,7 @@ angular.module('appControllers')
           };
 
             User.AddUser(data).then(function(){
-                message(1, $filter('i18next')('success.registration'));
+                message(1, $filter('i18next')('success.registration_driver'));
                 // refresh data
                 setTimeout(function() {
                     $state.transitionTo('company', {}, {

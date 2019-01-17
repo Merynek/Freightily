@@ -304,6 +304,7 @@
 	"success": {
 		"login": "Login success",
 		"registration": "Registration success. Activating email sent.",
+		"registration_driver": "Registration success.",
 		"set_vacation": "Date of vacation was saved",
 		"delete_vacation": "Date of vacation was deleted",
         "ban_user": "Ban state was changed",
