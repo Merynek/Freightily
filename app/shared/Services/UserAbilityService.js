@@ -148,6 +148,25 @@ angular.module('appServices')
 			});
 		};
 
+		/* POST to REST api => set account info */
+        UserAbility.setInfo = function(data){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    data: param(data),
+                    url: url+'company/account'
+                }).then(function() {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* POST to REST api => send new password to email*/
 		UserAbility.sendNewPassword = function(data){
 			startLoading();

@@ -75,8 +75,8 @@ angular.module('appControllers')
             })
         };
 
-        $scope.BackUp = function() {
-            Admin.BackUp().then(function() {
+        $scope.SendTestEmail = function() {
+            Admin.SendTestEmail().then(function() {
                 console.log("BackUp - OK");
             }).catch(function(error) {
                 console.log("BackUp - FAIL");

@@ -738,6 +738,9 @@
 .user-page {
     padding-top: 90px;
 }
+.user-page .table th {
+    vertical-align: middle;
+}
 
 /*Manage page*/
 .manage-page {

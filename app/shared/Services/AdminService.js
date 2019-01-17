@@ -82,13 +82,13 @@ angular.module('appServices')
             };
 
         /* POST to REST api => backup database */
-        Admin.BackUp = function(){
+        Admin.SendTestEmail = function(){
             startLoading();
             return $q(function(resolve, reject) {
                 $http({
                     method: 'POST',
                     headers: getTokenFromStorage(),
-                    url: CONFIG.server.url+'admin/backup'
+                    url: CONFIG.server.url+'admin/testEmail'
                 }).then(function(response) {
                     endLoading();
                     resolve();
