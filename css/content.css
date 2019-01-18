@@ -284,7 +284,16 @@
     padding: 5px;
     float:right;
     cursor: pointer;
+    font-size: 22px;
     margin: -10px 0 0 -5px;
+}
+.auction-detail .link {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+    margin: -10px 10px 0 -5px;
 }
 .auction-detail .auction-detail-item {
     padding: 10px 15px;
@@ -470,6 +479,26 @@
 }
 .auction-detail .assign-button {
     margin-right: 12px;
+}
+
+.auction-detail.embed .history-table {
+    background: #f8f8ff;
+}
+.auction-detail.embed .history-header {
+    background: #e6e6f1;
+}
+.auction-detail.embed hr.small {
+    border-top: 1px solid #e6e6f1;
+}
+.auction-detail.embed .address {
+    margin: 4px 0 15px;
+    font-size: 18px;
+}
+.auction-detail.embed .auction-detail-item .detail-row {
+    padding: 6px 0;
+}
+.auction-detail.embed h3 {
+    margin-top: 25px;
 }
 .auction-bid {
     overflow: hidden;

@@ -1,23 +1,6 @@
-<div class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="auction-info col-xs-12 col-sm-11 col-md-11 col-lg-11" ng-class="(expired) ? 'auction-expired' : 'nonexpired'">
-        <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{getCity(item.address_from)}}</span></div>
-        <div class="auction-label col-xs-6">{{'texts.auction.to' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2"><span>{{getCity(item.address_to)}}</span></div>
-        <div class="auction-label col-xs-6">{{'texts.auction.freight_type.label' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-4 col-md-4 col-lg-4"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
-        <div class="auction-label col-xs-6">{{'texts.auction.price' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2">
-            <span ng-class="{'new-price' : priceUpdated}" class="price">{{item.current_price}},-</span>
-            <span ng-show="!expired && win" ng-class="{'highlight' : priceUpdated}" class="glyphicon glyphicon-thumbs-up bidder-state"></span>
-            <span ng-show="!expired && !win && userIsBidder" ng-class="{'highlight' : priceUpdated}" class="glyphicon glyphicon-thumbs-down bidder-state red"></span>
-        </div>
-        <div class="auction-label col-xs-6">{{'texts.auction.end_auction' | i18next}}</div>
-        <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
-    </div>
-</div>
-<div class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h2 class="main-header">{{'texts.auction.detail' | i18next}} - {{item.ID}} </h2>
+<m param="{route}">
+<div class="auction-detail embed bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h1 class="main-header">{{'texts.auction.detail' | i18next}} - {{item.ID}} </h1>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding-detail">
             <div class="detail-row address col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -141,6 +124,7 @@
             <timer class="detail-label" countdown="item.secondsToEndAuction" max-time-unit="'day'" interval="1000">
                 {{days}} {{'texts.days' | i18next}}, {{hhours}}:{{mminutes}}:{{sseconds}}
             </timer>
+            <div class="note">{{item.end_auction}}</div>
         </div>
         <div ng-show="withBids && expired" class="detail-row row">
             <div ng-show="win" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

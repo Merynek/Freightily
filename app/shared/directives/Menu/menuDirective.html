@@ -30,6 +30,10 @@
         <div class="tab" ui-sref="createdAuction" ng-class="underRoute == 'created' ? 'active' : null">
             {{'texts.tab.created' | i18next}}
         </div>
+        <!--<div ng-show="underRoute == 'detail'" class="menu-divider"></div>-->
+        <!--<div ng-show="underRoute == 'detail'" class="tab active" ui-sref="detailAuction">-->
+            <!--{{'texts.auction.detail' | i18next}}-->
+        <!--</div>-->
     </div>
     <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'shipments'">
         <div class="tab"ui-sref="new_shipments" ng-class="underRoute == 'new' ? 'active' : null" >

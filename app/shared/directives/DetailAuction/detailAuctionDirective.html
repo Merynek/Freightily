@@ -23,7 +23,11 @@
 </div>
 <div class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
-    <h2 class="main-header">{{'texts.auction.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
+    <h2 class="main-header">
+        {{'texts.auction.detail' | i18next}} - {{item.ID}}
+        <i ng-click="toggleDetail()" class="red cross glyphicon glyphicon-remove"></i>
+        <i ui-sref="detailAuction({idAuction:{{item.ID}}})" class="link glyphicon glyphicon-share"></i>
+    </h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding-detail">
             <div class="detail-row address col-xs-12 col-sm-12 col-md-12 col-lg-12">
