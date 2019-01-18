@@ -500,6 +500,14 @@
 .auction-detail.embed h3 {
     margin-top: 25px;
 }
+.auction-detail.embed .detail-row.price-box {
+    background: #e6e6f1;
+    border-radius: 3px;
+    padding: 12px 0;
+}
+.auction-detail.embed .info-block {
+    margin-top: 6px;
+}
 .auction-bid {
     overflow: hidden;
     margin: 5px 0;
