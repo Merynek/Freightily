@@ -224,6 +224,7 @@
 		}
 	},
 	"errors": {
+		"auction_not_found": "Tato aukce neexistuje",
 		"wrong_email": "Email je ve špatném formátu",
 		"username_must_me_greater_eight": "Uživatelské jméno musí mít minimálně 8 znaků",
 		"password_must_me_greater_eight": "Heslo musí mít minimálně 8 znaků",

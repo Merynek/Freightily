@@ -224,6 +224,7 @@
 		}
 	},
 	"errors": {
+		"auction_not_found": "Tato aukce neexistuje",
 		"wrong_email": "Email has wrong format",
 		"username_must_me_greater_eight": "Username must contains minimal 8 characters",
 		"password_must_me_greater_eight": "Password must contains minimal 8 characters",

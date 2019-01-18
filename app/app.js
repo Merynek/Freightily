@@ -23,6 +23,9 @@
                         logoutUnauthorized();
                     }
                     if(error.detail.status === 400) { // Not found
+                        if (toState.name === "detailAuction") {
+                            message(3, $filter('i18next')("errors.auction_not_found"));
+                        }
                         $state.go('empty');
                     }
                 });
