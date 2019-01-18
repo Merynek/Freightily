@@ -17,8 +17,8 @@ angular.module('appDirectives')
                 $scope.showPhotos = [];
                 $scope.photos = [];
                 $scope.photoReady = false;
-                $scope.toggleDetail = function (idShipment) {
-                    var detail = $(event.target).parents("detail-shipment"),
+                $scope.toggleDetail = function ($event, idShipment) {
+                    var detail = $($event.target).parents("detail-shipment"),
                         visible = detail.find(".auction-detail").is(":visible");
 
                     toggleDetail(detail);

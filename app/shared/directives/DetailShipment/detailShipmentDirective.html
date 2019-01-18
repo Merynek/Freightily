@@ -1,4 +1,4 @@
-<div ng-click="toggleDetail(item.ID)" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div ng-click="toggleDetail($event, item.ID)" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="auction-label col-xs-6">{{'texts.auction.from' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{getCity(item.address_from)}}</span></div>
@@ -12,7 +12,7 @@
 </div>
 <div class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
-    <h2 class="main-header">{{'texts.shipment.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
+    <h2 class="main-header">{{'texts.shipment.detail' | i18next}} - {{item.ID}} <i ng-click="toggleDetail($event)" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div class="auction-detail-item col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding-detail">
         <div class="detail-row address">
             <span class="glyphicon glyphicon-home"></span>

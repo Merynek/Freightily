@@ -40,8 +40,8 @@ angular.module('appDirectives')
                     message(3, $filter('i18next')(getErrorKeyByCode(error)));
                 });
 
-                $scope.toggleDetail = function () {
-                    toggleDetail($(event.target).parents("detail-auction"));
+                $scope.toggleDetail = function ($event) {
+                    toggleDetail($($event.target).parents("detail-auction"));
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {

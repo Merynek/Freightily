@@ -1,4 +1,4 @@
-<div ng-click="toggleDetail()" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-class="driver.ID === User.ID ? 'myself' : null">
+<div ng-click="toggleDetail($event)" class="global-list-item col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-class="driver.ID === User.ID ? 'myself' : null">
     <div class="auction-info col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="auction-label col-xs-6">{{'texts.username' | i18next}}</div>
         <div class="auction-cell col-xs-6 col-sm-3 col-md-3 col-lg-3"><span>{{driver.username}}</span></div>
@@ -17,7 +17,7 @@
 </div>
 <div class="auction-detail popover bottom col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="arrow"></div>
-    <h2 class="main-header">{{'texts.user.detail' | i18next}} <i ng-click="toggleDetail()" class=" red cross glyphicon glyphicon-remove"></i></h2>
+    <h2 class="main-header">{{'texts.user.detail' | i18next}} <i ng-click="toggleDetail($event)" class=" red cross glyphicon glyphicon-remove"></i></h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="detail-row">
             <div class="detail-label"><span class="glyphicon glyphicon-map-marker"></span> {{'texts.show_current_position' | i18next}}</div>

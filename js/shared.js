@@ -99,4 +99,5 @@ function toggleDetail(detailElement) {
 var checkListAuctionRunning = false;
 var checkFavouriteAuctionRunning = false;
 var checkBidsAuctionRunning = false;
+var checkDetailAuctionRunning = false;
 var toggleInterval;
