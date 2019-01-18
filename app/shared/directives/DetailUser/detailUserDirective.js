@@ -32,8 +32,8 @@ angular.module('appDirectives')
                 $scope.add_remove_vac_button_disabled = true;
 
                 $scope.show = false;
-                $scope.toggleDetail = function () {
-                    var detail = $(event.target).parents("detail-user"),
+                $scope.toggleDetail = function ($event) {
+                    var detail = $($event.target).parents("detail-user"),
                         visible = detail.find(".auction-detail").is(":visible");
 
                     toggleDetail(detail);

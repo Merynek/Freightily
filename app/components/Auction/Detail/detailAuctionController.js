@@ -6,8 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('detailAuctionController', ['$scope', 'detailAuctionResponse' ,'$filter', 'ngDialog', 'Auction', 'User',
-        function($scope, detailAuctionResponse, $filter, ngDialog, Auction, User) {
+    .controller('detailAuctionController', ['$scope', 'detailAuctionResponse' ,'$filter', 'ngDialog', 'Auction', 'User', '$state',
+        function($scope, detailAuctionResponse, $filter, ngDialog, Auction, User, $state) {
             $scope.route = "auction|detail";
             var self = $scope;
             var interval;
@@ -26,6 +26,43 @@ angular.module('appControllers')
             $scope.user = User;
             $scope.isOwner = $scope.item.owner === User.ID;
             $scope.historyMore = false;
+            $scope.windowHasFocus = true;
+
+            if (!checkDetailAuctionRunning) {
+                refreshingData();
+            }
+
+            $(window).focus(function() {
+                $scope.windowHasFocus = true;
+                if (!checkDetailAuctionRunning) {
+                    refreshingData();
+                }
+            }).blur(function() {
+                $scope.windowHasFocus = false;
+            });
+
+            function refreshingData() {
+                checkDetailAuctionRunning = true;
+                var route = $state.current.name;
+
+                if (route === "detailAuction" && $scope.windowHasFocus && !$scope.expired) {
+                    Auction.getAuctionCache().then(function (data) {
+                        var auctionItem = data.filter(function (item) {
+                            return item.ID === $scope.ID;
+                        });
+                        if (auctionItem[0]) {
+                            $scope.updateAuctionPrice(auctionItem[0].price);
+                        }
+                        setTimeout(function() {
+                            refreshingData();
+                        }, 1000);
+                    }).catch(function (error) {
+                        // message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                    });
+                } else {
+                    checkDetailAuctionRunning = false;
+                }
+            }
 
             var afterHistoryLoad = function (history) {
                 var filtered = history.filter(function (item) {
@@ -41,20 +78,10 @@ angular.module('appControllers')
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             });
 
-            $scope.toggleDetail = function () {
-                toggleDetail($(event.target).parents("detail-auction"));
-            };
-
-            $scope.$on("openAuctionDetail", function (evt, id) {
-                $scope.show = id === $scope.ID;
-            });
-
-            $scope.$on("updateAuctionPrice", function (evt, id, price) {
+            $scope.updateAuctionPrice = function (price) {
                 $scope.priceUpdated = false;
-                if (id === $scope.ID) {
-                    $scope.refreshPrice(price);
-                }
-            });
+                $scope.refreshPrice(price);
+            };
 
             $scope.$on('timer-stopped', function (event, data) {
                 if ($scope.expired) {
@@ -107,8 +134,9 @@ angular.module('appControllers')
                     return;
                 }
                 if (bid >=1 && ((current_price - bid) >= 1) && (current_price !== bid)) {
+                    $scope.bid = bid;
                     ngDialog.open({
-                        template: 'modal_bid_auction',
+                        template: 'modal_bid_detail_auction',
                         scope: $scope,
                         closeByDocument: false,
                         showClose: true,
@@ -121,7 +149,7 @@ angular.module('appControllers')
                                     id_auction: $scope.ID,
                                     amount: bid
                                 };
-                                $scope.bid = bid;
+
                                 Auction.bidAuction(data).then(function () {
                                     refreshItem($scope.ID);
                                     message(1, $filter('i18next')('success.bid_auction'));
