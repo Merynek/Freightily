@@ -32,9 +32,9 @@
           <th>{{'texts.company_name' | i18next}}:</th>
           <td>{{userInfo.company_name}}</td>
         </tr>
-        <tr ng-if="userInfo.role === 1">
+        <tr>
           <th>{{'texts.credit' | i18next}}({{'texts.share' | i18next}}):</th>
-          <td>{{userInfo.credit}}({{userInfo.share}})</td>
+          <td>{{userInfo.credit}}({{userInfo.share}}) - {{sharePercent}}</td>
         </tr>
       </table>
     </form>

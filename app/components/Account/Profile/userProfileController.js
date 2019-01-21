@@ -10,6 +10,15 @@ angular.module('appControllers')
         $scope.userInfo = userInfo;
         $scope.clicked = false;
         $scope.clickedAcc = false;
+        $scope.sharePercent = getSharePercent();
+
+        function getSharePercent() {
+            switch ($scope.userInfo.senderLevel) {
+                case 1: return "10%";
+                default: return "10%";
+            }
+
+        }
 
         $scope.changePassword = function () {
             var data;
