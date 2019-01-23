@@ -77,6 +77,21 @@ $urlServiceProvider.config.strictMode(false);
 			 controller: 'forgotPasswordController',
 			 templateUrl: "app/components/Account/ForgotPassword/forgotPasswordView.html"
 		 })
+		 .state('notification', {
+			 url: "/notification",
+			 controller: 'notificationController',
+			 templateUrl: "app/components/Account/Notification/notificationView.html",
+			 data: {
+				 role: [1]
+			 },
+			 resolve: {
+                 notificationResponse: function(UserAbility){
+					 return UserAbility.getNotification().then(function(res){
+						 return res;
+					 })
+				 }
+			 }
+		 })
 	 	// ADMIN
 		 .state('users', {
 			 url: "/admin/users",
