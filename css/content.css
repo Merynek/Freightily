@@ -825,6 +825,23 @@ hr.small {
 .margin-divider {
     margin: 10px 0;
 }
+.notification-page .toggle-notification {
+    float: right;
+    font-size: 16px;
+}
+.notification-page .wrapper {
+    position: relative;
+}
+.notification-page .off-info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 20px;
+    background: rgba(245,245,255,0.9);
+}
 /*Dialogs*/
 .ngdialog .ngdialog-content .modal-body {
     padding-top: 15px;

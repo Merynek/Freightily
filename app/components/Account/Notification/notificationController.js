@@ -9,6 +9,8 @@ angular.module('appControllers')
     .controller('notificationController', ['notificationResponse', '$scope', '$filter', 'UserAbility', function (notificationResponse, $scope, $filter, UserAbility) {
         $scope.notificationResponse = notificationResponse;
 
+        $('#toggle-notification').bootstrapToggle();
+
         $scope.setNotification = function () {
             var data = {
                 enable: true,

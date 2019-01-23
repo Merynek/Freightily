@@ -1,3 +1,59 @@
 <div class="notification-page">
-    <div class="my-button big-button normal-button" ng-click="setNotification()">SET</div>
+    <h1>
+        {{'texts.notification.main' | i18next}}
+        <span class="toggle-notification">
+            <label>{{'texts.notification.toggle' | i18next}}</label>
+            <input id="toggle-notification" type="checkbox" checked data-toggle="toggle">
+        </span>
+    </h1>
+    <div class="col-md-6">
+        <h2>
+            {{'texts.notification.email' | i18next}}
+        </h2>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    {{'texts.notification.sender' | i18next}}
+                </th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="sender in notificationResponse.senders">
+                <td>
+                    {{sender}}
+                </td>
+                <td>
+                    <span class="glyphicon glyphicon-remove red"></span>
+                </td>
+            </tr>
+        </table>
+        <div class="info">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            {{'texts.notification.nothing' | i18next}}
+        </div>
+        <div class="my-button big-button normal-button" ng-click="setNotification()">{{'texts.notification.add' | i18next}}</div>
+    </div>
+    <div class="col-md-6">
+        <h2>
+            {{'texts.notification.sms' | i18next}}
+        </h2>
+        <div class="wrapper">
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        {{'texts.notification.sender' | i18next}}
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+            <div class="info">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                {{'texts.notification.nothing' | i18next}}
+            </div>
+            <div class="my-button big-button normal-button" ng-click="setNotification()">{{'texts.notification.add' | i18next}}</div>
+            <div class="off-info">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                {{'texts.notification.notificationOff' | i18next}}
+            </div>
+        </div>
+    </div>
 </div>
