@@ -488,7 +488,12 @@
     background: #e6e6f1;
 }
 .auction-detail.embed hr.small {
+    margin: 5px auto;
     border-top: 1px solid #e6e6f1;
+}
+.auction-detail.embed hr {
+    border-top: 1px solid #e6e6f1;
+    margin: 15px 0;
 }
 .auction-detail.embed .address {
     margin: 4px 0 15px;
@@ -498,15 +503,18 @@
     padding: 6px 0;
 }
 .auction-detail.embed h3 {
-    margin-top: 25px;
+    margin-top: 8px;
 }
 .auction-detail.embed .detail-row.price-box {
-    background: #e6e6f1;
     border-radius: 3px;
     padding: 12px 0;
 }
 .auction-detail.embed .info-block {
     margin-top: 6px;
+    background: #e6e6f1;
+}
+.auction-detail.embed .auction-detail-item .bid {
+    background: #f8f8ff;
 }
 .auction-bid {
     overflow: hidden;
