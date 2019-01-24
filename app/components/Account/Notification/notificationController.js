@@ -7,7 +7,7 @@
 
 angular.module('appControllers')
     .controller('notificationController', ['notificationResponse', '$scope', '$filter', 'UserAbility', function (notificationResponse, $scope, $filter, UserAbility) {
-        $scope.notificationResponse = notificationResponse;
+        $scope.notificationResponse = notificationResponse.notification;
 
         $('#toggle-notification').bootstrapToggle();
 

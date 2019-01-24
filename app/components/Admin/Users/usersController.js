@@ -77,9 +77,17 @@ angular.module('appControllers')
 
         $scope.SendTestEmail = function() {
             Admin.SendTestEmail().then(function() {
-                console.log("BackUp - OK");
+                console.log("mail - OK");
             }).catch(function(error) {
-                console.log("BackUp - FAIL");
+                console.log("mail - FAIL");
+            })
+        };
+
+        $scope.SendTestSms = function() {
+            Admin.SendTestSms().then(function() {
+                console.log("sms - OK");
+            }).catch(function(error) {
+                console.log("sms - FAIL");
             })
         };
     }

@@ -81,7 +81,7 @@ angular.module('appServices')
                 });
             };
 
-        /* POST to REST api => backup database */
+        /* POST to REST api => send email*/
         Admin.SendTestEmail = function(){
             startLoading();
             return $q(function(resolve, reject) {
@@ -89,6 +89,24 @@ angular.module('appServices')
                     method: 'POST',
                     headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'admin/testEmail'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
+        /* POST to REST api => send sms*/
+        Admin.SendTestSms = function(){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'admin/testSms'
                 }).then(function(response) {
                     endLoading();
                     resolve();
