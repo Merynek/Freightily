@@ -842,6 +842,20 @@ hr.small {
     font-size: 20px;
     background: rgba(245,245,255,0.9);
 }
+
+.notification-page .company {
+    vertical-align: middle;
+}
+.notification-page .action {
+    width: 120px;
+    text-align: center;
+}
+.notification-page .icon {
+    padding-right: 12px;
+}
+.notification-page .info-block {
+    padding: 12px 12px 24px;
+}
 /*Dialogs*/
 .ngdialog .ngdialog-content .modal-body {
     padding-top: 15px;

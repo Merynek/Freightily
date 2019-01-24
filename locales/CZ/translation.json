@@ -221,6 +221,26 @@
 				"au": "Rakousko",
 				"hu": "Maďarsko"
 			}
+		},
+		"notification": {
+			"main": "Nastavení notifikací",
+			"toggle": "Zasílání notifikací: ",
+			"info": "Notifikace slouží pro zasílání informačních zpráv po vytvoření aukcí vybraných firem.",
+			"toggleOn": "Zapnuto",
+			"toggleOff": "Vypnuto",
+			"sender": "Firmy pro obdržení notifikací",
+			"addLabel": "Vyberte firmu: ",
+			"empty": "(název firmy)",
+			"addButton": "Přidat firmu",
+			"maximum": "Notifikace lze nastavit maximálně pro 3 firmy.",
+			"notificationOff": "Zasílání notifikací je vypnuto",
+			"platform": "Notifikační platforma",
+			"platformCreated": "Upozornit na vytvoření nové aukce zasláním: ",
+			"platforms": {
+				"email": "E-mailu",
+				"sms": "SMS",
+				"both": "E-mailu + SMS"
+			}
 		}
 	},
 	"errors": {

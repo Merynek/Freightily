@@ -1,59 +1,74 @@
-<div class="notification-page">
+<div class="notification-page wrapper">
     <h1>
         {{'texts.notification.main' | i18next}}
         <span class="toggle-notification">
             <label>{{'texts.notification.toggle' | i18next}}</label>
-            <input id="toggle-notification" type="checkbox" checked data-toggle="toggle">
+            <input id="toggle-notification"
+                   type="checkbox"
+                   ng-checked="notificationEnabled"
+                   data-toggle="toggle"
+                   data-onstyle="nohe"
+                   data-on="{{'texts.notification.toggleOn' | i18next}}"
+                   data-off="{{'texts.notification.toggleOff' | i18next}}">
         </span>
     </h1>
-    <div class="col-md-6">
-        <h2>
-            {{'texts.notification.email' | i18next}}
-        </h2>
-        <table class="table table-striped">
-            <tr>
-                <th>
-                    {{'texts.notification.sender' | i18next}}
-                </th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="sender in notificationResponse.senders">
-                <td>
-                    {{sender}}
-                </td>
-                <td>
-                    <span class="glyphicon glyphicon-remove red"></span>
-                </td>
-            </tr>
-        </table>
-        <div class="info">
-            <span class="glyphicon glyphicon-info-sign"></span>
-            {{'texts.notification.nothing' | i18next}}
-        </div>
-        <div class="my-button big-button normal-button" ng-click="setNotification()">{{'texts.notification.add' | i18next}}</div>
+    <div class="info-block">
+        <span class="glyphicon glyphicon-info-sign icon"></span> {{'texts.notification.info' | i18next}}
     </div>
-    <div class="col-md-6">
-        <h2>
-            {{'texts.notification.sms' | i18next}}
-        </h2>
-        <div class="wrapper">
+    <div class="wrapper row">
+        <div class="col-lg-6">
+            <h3>{{'texts.notification.sender' | i18next}}</h3>
             <table class="table table-striped">
-                <tr>
-                    <th>
-                        {{'texts.notification.sender' | i18next}}
-                    </th>
-                    <th></th>
+                <tr ng-repeat="sender in senders">
+                    <td class="company">
+                        {{users[sender]}}
+                    </td>
+                    <td class="action">
+                        <span class="glyphicon glyphicon-remove red btn" ng-click="removeUser(sender)"></span>
+                    </td>
+                </tr>
+                <tr ng-show="toSelect.length && senders.length < 3">
+                    <td>
+                        <label>
+                            {{'texts.notification.addLabel' | i18next}}
+                            <select ng-model="selectedUser" ng-options="item as item.company for item in toSelect track by item.id">
+                                <option value="" disabled>{{'texts.notification.empty' | i18next}}</option>
+                            </select>
+                        </label>
+                    </td>
+                    <td>
+                        <div ng-class="selectedUser ? '' : 'disabled'" class="btn btn-xs normal-button" ng-click="addUser()">{{'texts.notification.addButton' | i18next}}</div>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr ng-show="senders.length >= 3">
+                    <td>
+                        <span class="glyphicon glyphicon-info-sign icon"></span> {{'texts.notification.maximum' | i18next}}
+                    </td>
+                    <td></td>
                 </tr>
             </table>
-            <div class="info">
-                <span class="glyphicon glyphicon-info-sign"></span>
-                {{'texts.notification.nothing' | i18next}}
-            </div>
-            <div class="my-button big-button normal-button" ng-click="setNotification()">{{'texts.notification.add' | i18next}}</div>
-            <div class="off-info">
-                <span class="glyphicon glyphicon-info-sign"></span>
-                {{'texts.notification.notificationOff' | i18next}}
-            </div>
+        </div>
+        <div class="col-lg-6">
+            <h3>{{'texts.notification.platform' | i18next}}</h3>
+            <table class="info-block table">
+                <tr>
+                    <td>
+                        {{'texts.notification.platformCreated' | i18next}}
+                    </td>
+                    <td>
+                        <select ng-model="platform" ng-change="platformChange()">
+                            <option value="1">{{'texts.notification.platforms.email' | i18next}}</option>
+                            <option value="2">{{'texts.notification.platforms.sms' | i18next}}</option>
+                            <option value="3">{{'texts.notification.platforms.both' | i18next}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="off-info" ng-show="!notificationEnabled">
+            <span class="glyphicon glyphicon-info-sign icon"></span>
+            {{'texts.notification.notificationOff' | i18next}}
         </div>
     </div>
 </div>

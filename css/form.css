@@ -276,12 +276,14 @@
     background: #d11a23;
 }
 
-.normal-button{
+.normal-button, .btn-nohe{
     background: #12133d;
+    color: #ffffff;
 }
 
-.normal-button:hover{
-    background: #292a50 ;
+.normal-button:hover, .btn-nohe:hover{
+    background: #292a50;
+    color: #ffffff;
 }
 
 .easy-button{

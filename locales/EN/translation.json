@@ -221,6 +221,26 @@
 				"au": "Austria",
 				"hu": "Hungary"
 			}
+		},
+		"notification": {
+			"main": "Notification settings",
+			"toggle": "Sending notifications: ",
+			"info": "The notification is used to send information messages after the auctions of selected companies have been created.",
+			"toggleOn": "On",
+			"toggleOff": "Off",
+			"sender": "Companies for receiving notifications",
+			"addLabel": "Select company: ",
+			"empty": "(company name)",
+			"addButton": "Add company",
+			"maximum": "Notifications can be set up for a maximum of 3 businesses.",
+			"notificationOff": "Sending notifications are turned off.",
+			"platform": "Notification platform",
+			"platformCreated": "Notify me by creating a new auction by sending: ",
+			"platforms": {
+				"email": "E-mail",
+				"sms": "SMS",
+				"both": "E-mail + SMS"
+			}
 		}
 	},
 	"errors": {
