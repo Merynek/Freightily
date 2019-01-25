@@ -1112,6 +1112,12 @@ hr.small {
     .drivers-page .auction-detail-item .delete-content {
         text-align: center;
     }
+    .notification-page .toggle-notification {
+        float: none;
+        text-align: center;
+        display: block;
+        margin: 3px 0;
+    }
 }
 
 @media (max-width: 500px) {

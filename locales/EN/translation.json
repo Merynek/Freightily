@@ -343,7 +343,7 @@
 		"auction_template_unselected": "Template unselected",
 		"auction_template_delete": "Template successfully deleted",
 		"driver_deleted": "Driver was deleted",
-		"notification_set": "Notification set",
+		"notification_set": "Notification settings saved.",
 		"bid_auction": "Bid success"
 	}
 }
