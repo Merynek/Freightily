@@ -19,29 +19,29 @@
         <div class="col-lg-6">
             <h3>{{'texts.notification.sender' | i18next}}</h3>
             <table class="table table-striped">
-                <tr ng-repeat="sender in senders">
+                <tr ng-repeat="company in setCompanies">
                     <td class="company">
-                        {{users[sender]}}
+                        {{companies[company]}}
                     </td>
                     <td class="action">
-                        <span class="glyphicon glyphicon-remove red btn" ng-click="removeUser(sender)"></span>
+                        <span class="glyphicon glyphicon-remove red btn" ng-click="removeCompany(company)"></span>
                     </td>
                 </tr>
-                <tr ng-show="toSelect.length && senders.length < 3">
+                <tr ng-show="toSelect.length && setCompanies.length < 3">
                     <td>
                         <label>
                             {{'texts.notification.addLabel' | i18next}}
-                            <select ng-model="selectedUser" ng-options="item as item.company for item in toSelect track by item.id">
+                            <select ng-model="selectedCompany" ng-options="item as item.name for item in toSelect track by item.ID">
                                 <option value="" disabled>{{'texts.notification.empty' | i18next}}</option>
                             </select>
                         </label>
                     </td>
                     <td>
-                        <div ng-class="selectedUser ? '' : 'disabled'" class="btn btn-xs normal-button" ng-click="addUser()">{{'texts.notification.addButton' | i18next}}</div>
+                        <div ng-class="selectedCompany ? '' : 'disabled'" class="btn btn-xs normal-button" ng-click="addCompany()">{{'texts.notification.addButton' | i18next}}</div>
                     </td>
                 </tr>
                 <tr></tr>
-                <tr ng-show="senders.length >= 3">
+                <tr ng-show="setCompanies.length >= 3">
                     <td>
                         <span class="glyphicon glyphicon-info-sign icon"></span> {{'texts.notification.maximum' | i18next}}
                     </td>

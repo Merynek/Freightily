@@ -7,42 +7,39 @@
 
 angular.module('appControllers')
     .controller('notificationController', ['notificationResponse', '$scope', '$filter', 'UserAbility', function (notificationResponse, $scope, $filter, UserAbility) {
-        // var response = notificationResponse;
-        var response = {
-            notification: notificationResponse || {},
-            users: [
-                {id: 1, company: "foo"},
-                {id: 2, company: "bar"},
-                {id: 3, company: "foobar"},
-                {id: 4, company: "asdf"},
-                {id: 5, company: "asdfoo"},
-                {id: 6, company: "asdbar"}
-            ]
-        };
+        var response = notificationResponse,
+            notification = response.notification,
+            companies = response.companies;
 
-        $scope.notificationEnabled = Boolean(notificationResponse);
-        $scope.senders = response.notification.senders || [];
-        $scope.platform = response.notification.platform ? response.notification.platform.toString() : "1";
+        if (!Boolean(notification)) {
+            $scope.setCompanies = [];
+            $scope.platform = "1";
+            $scope.notificationEnabled = false;
+        } else {
+            $scope.notificationEnabled = notification.enable;
+            $scope.setCompanies = notification.companies;
+            $scope.platform = notification.platform.toString();
+        }
 
-        $scope.users = [];
-        response.users.forEach(function (value) {
-            $scope.users[value.id] = value.company;
+        $scope.companies = [];
+        companies.forEach(function (value) {
+            $scope.companies[value.ID] = value.name;
         });
         updateToSelect();
 
-        $scope.selectedUser = null;
+        $scope.selectedCompany = null;
 
-        $scope.addUser = function () {
-            if (!$scope.selectedUser) {
+        $scope.addCompany = function () {
+            if (!$scope.selectedCompany) {
                 return;
             }
-            $scope.senders.push($scope.selectedUser.id);
+            $scope.setCompanies.push($scope.selectedCompany.ID);
             updateToSelect();
             setNotification();
         };
 
-        $scope.removeUser = function (id) {
-            $scope.senders.splice($scope.senders.indexOf(id), 1);
+        $scope.removeCompany = function (id) {
+            $scope.setCompanies.splice($scope.setCompanies.indexOf(id), 1);
             updateToSelect();
             setNotification();
         };
@@ -61,21 +58,22 @@ angular.module('appControllers')
         }, 10);
 
         function updateToSelect() {
-            $scope.toSelect = $scope.senders.length ?
-                response.users.filter(function (value) {
-                    return response.notification.senders.indexOf(value.id) === -1
+            $scope.toSelect = $scope.setCompanies.length ?
+                companies.filter(function (value) {
+                    return  $scope.setCompanies.indexOf(value.ID) === -1
                 }) :
-                response.users;
+                companies;
         }
 
         function setNotification() {
             var data = {
                 enable: $scope.notificationEnabled,
                 platform: parseInt($scope.platform),
-                senders: $scope.senders
+                companies: $scope.setCompanies
             };
+
             UserAbility.setNotification(data).then(function () {
-                // message set is success
+                message(1, $filter('i18next')("success.notification_set"));
             }).catch(function (error) {
                 message(3, $filter('i18next')(getErrorKeyByCode(error)));
             })

@@ -185,6 +185,7 @@
 			"unload": "Unload",
 			"unload_note": "Note for freight unload",
 			"freight_description": "Freight description",
+			"owner_company_name": "Company",
             "freight_type": {
               "label": "Freight type",
               "1": "Package up to 50 kg",
@@ -312,7 +313,8 @@
 			"41": "User can not be delete.",
 			"42": "Invalid email",
 			"43": "User is not active",
-			"44": "Activated code not found"
+			"44": "Activated code not found",
+			"45": "Cannot follow more than 3 companies"
 		}
 	},
 	"warnings": {
@@ -341,6 +343,7 @@
 		"auction_template_unselected": "Template unselected",
 		"auction_template_delete": "Template successfully deleted",
 		"driver_deleted": "Driver was deleted",
+		"notification_set": "Notification set",
 		"bid_auction": "Bid success"
 	}
 }

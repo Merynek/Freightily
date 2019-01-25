@@ -185,6 +185,7 @@
 			"unload": "Vyložení",
 			"unload_note": "Poznámka pro vyložení nákladu",
 			"freight_description": "Popis zásilky",
+			"owner_company_name": "Firma",
 			"freight_type": {
 				"label": "Typ zásilky",
 				"1": "Balík do 50 kg",
@@ -312,7 +313,8 @@
 			"41": "Uživatel nelze smazat.",
 			"42": "Registrace se nezdařila, zkontrolujte platnost emailu.",
 			"43": "Uživatel není aktivován",
-			"44": "Aktivační kód nebyl nalezen"
+			"44": "Aktivační kód nebyl nalezen",
+			"45": "Nemůžete sledovat více jak 3 firmy"
 		}
 	},
 	"warnings": {
@@ -340,6 +342,7 @@
 		"auction_template_unselected": "Šablona odnastavena",
 		"auction_template_delete": "Šablona byla smazána",
 		"driver_deleted": "Řidič byl smazán",
+		"notification_set": "Notifikace nastaveny",
 		"bid_auction": "Přihození úspěšné"
 	}
 }
