@@ -8,8 +8,9 @@
 angular.module('appControllers')
     .controller('notificationController', ['notificationResponse', '$scope', '$filter', 'UserAbility', function (notificationResponse, $scope, $filter, UserAbility) {
         var response = notificationResponse,
-            notification = response.notification,
-            companies = response.companies;
+            notification = response.notification;
+
+        $scope.companies = response.companies;
 
         if (!Boolean(notification)) {
             $scope.setCompanies = [];
@@ -21,10 +22,6 @@ angular.module('appControllers')
             $scope.platform = notification.platform.toString();
         }
 
-        $scope.companies = [];
-        companies.forEach(function (value) {
-            $scope.companies[value.ID] = value.name;
-        });
         updateToSelect();
 
         $scope.selectedCompany = null;
@@ -33,13 +30,13 @@ angular.module('appControllers')
             if (!$scope.selectedCompany) {
                 return;
             }
-            $scope.setCompanies.push($scope.selectedCompany.ID);
+            $scope.setCompanies.push($scope.selectedCompany);
             updateToSelect();
             setNotification();
         };
 
-        $scope.removeCompany = function (id) {
-            $scope.setCompanies.splice($scope.setCompanies.indexOf(id), 1);
+        $scope.removeCompany = function (name) {
+            $scope.setCompanies.splice($scope.setCompanies.indexOf(name), 1);
             updateToSelect();
             setNotification();
         };
@@ -59,10 +56,10 @@ angular.module('appControllers')
 
         function updateToSelect() {
             $scope.toSelect = $scope.setCompanies.length ?
-                companies.filter(function (value) {
-                    return  $scope.setCompanies.indexOf(value.ID) === -1
+                $scope.companies.filter(function (value) {
+                    return  $scope.setCompanies.indexOf(value) === -1
                 }) :
-                companies;
+                $scope.companies;
         }
 
         function setNotification() {

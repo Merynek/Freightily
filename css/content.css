@@ -1121,6 +1121,16 @@ hr.small {
 }
 
 @media (max-width: 500px) {
+    .notification-page .wrapper {
+        margin-right: 0;
+    }
+    .notification-page .wrapper .notification-item {
+        padding-right: 0;
+    }
+    .notification-page .wrapper .notification-item h3{
+        text-align: center;
+    }
+
     /*Dialogs*/
     .ngdialog .ngdialog-content .modal-footer {
         text-align: center;

@@ -16,12 +16,12 @@
         <span class="glyphicon glyphicon-info-sign icon"></span> {{'texts.notification.info' | i18next}}
     </div>
     <div class="wrapper row">
-        <div class="col-lg-6">
+        <div class="notification-item col-lg-6">
             <h3>{{'texts.notification.sender' | i18next}}</h3>
             <table class="table table-striped">
                 <tr ng-repeat="company in setCompanies">
                     <td class="company">
-                        {{companies[company]}}
+                        {{company}}
                     </td>
                     <td class="action">
                         <span class="glyphicon glyphicon-remove red btn" ng-click="removeCompany(company)"></span>
@@ -31,7 +31,7 @@
                     <td>
                         <label>
                             {{'texts.notification.addLabel' | i18next}}
-                            <select ng-model="selectedCompany" ng-options="item as item.name for item in toSelect track by item.ID">
+                            <select ng-model="selectedCompany" ng-options="item as item for item in toSelect track by item">
                                 <option value="" disabled>{{'texts.notification.empty' | i18next}}</option>
                             </select>
                         </label>
@@ -49,7 +49,7 @@
                 </tr>
             </table>
         </div>
-        <div class="col-lg-6">
+        <div class="notification-item col-lg-6">
             <h3>{{'texts.notification.platform' | i18next}}</h3>
             <table class="info-block table">
                 <tr>
@@ -66,7 +66,7 @@
                 </tr>
             </table>
         </div>
-        <div class="off-info" ng-show="!notificationEnabled">
+        <div class="notification-item off-info" ng-show="!notificationEnabled">
             <span class="glyphicon glyphicon-info-sign icon"></span>
             {{'texts.notification.notificationOff' | i18next}}
         </div>
