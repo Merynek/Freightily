@@ -6,7 +6,8 @@
  */
 
 angular.module('appControllers')
-    .controller('notificationController', ['notificationResponse', '$scope', '$filter', 'UserAbility', function (notificationResponse, $scope, $filter, UserAbility) {
+    .controller('notificationController', ['$scope','notificationResponse' , '$filter', 'UserAbility', function ($scope, notificationResponse, $filter, UserAbility) {
+        $scope.route = "account|notifi";
         var response = notificationResponse,
             notification = response.notification;
 
@@ -27,10 +28,11 @@ angular.module('appControllers')
         $scope.selectedCompany = null;
 
         $scope.addCompany = function () {
-            if (!$scope.selectedCompany) {
+            var selectedCompany = $(".notification-page #selectedCompany").val();
+            if (!selectedCompany) {
                 return;
             }
-            $scope.setCompanies.push($scope.selectedCompany);
+            $scope.setCompanies.push(selectedCompany);
             updateToSelect();
             setNotification();
         };

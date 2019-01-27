@@ -199,7 +199,10 @@ p {
         padding: 0;
     }
 
-
+    .menu-tabs .tab {
+        min-width: unset;
+        width: 20%;
+    }
     .heading-right {
         float: none;
         display: block;
@@ -229,7 +232,7 @@ p {
     /* MENU */
     .menu-tabs .tab {
         min-width: unset;
-        width: 26%;
+        width: 20%;
     }
     /*DateTime Picker*/
     .bootstrap-datetimepicker-widget.dropdown-menu {

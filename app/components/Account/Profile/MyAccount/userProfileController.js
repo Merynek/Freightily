@@ -6,10 +6,9 @@
  */
 
 angular.module('appControllers')
-    .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', 'User', '$state', function ($scope, $filter, userInfo, UserAbility, User, $state) {
+    .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', function ($scope, $filter, userInfo, UserAbility) {
+        $scope.route = "account|profile";
         $scope.userInfo = userInfo;
-        $scope.clicked = false;
-        $scope.clickedAcc = false;
         $scope.sharePercent = getSharePercent();
 
         function getSharePercent() {
@@ -20,38 +19,14 @@ angular.module('appControllers')
 
         }
 
-        $scope.changePassword = function () {
-            var data;
-
-            $scope.clicked = true;
-            if (!$scope.changePasswordForm.$valid) {
-                return;
-            }
-            data = {
-                currentPass: $scope.account.currentPass,
-                newPass: $scope.account.newPass,
-                newPassRe: $scope.account.newPassRe
-            };
-
-            UserAbility.changePassword(data).then(function () {
-                message(1, $filter('i18next')('success.change_password'));
-            }).catch(function (error) {
-                message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            });
-        };
-
         $scope.setInfo = function () {
             var phone_number = $(".user-page #phone_number"),
                 email = $(".user-page #email"),
                 data;
 
-            $scope.clickedAcc = true;
             phone_number.removeClass("input-error");
             email.removeClass("input-error");
 
-            if (!$scope.setAccountInfoForm.$valid) {
-                return;
-            }
             if (!validateEmail($scope.userInfo.email)) {
                 message(3, $filter('i18next')('errors.wrong_email'));
                 email.addClass("input-error");

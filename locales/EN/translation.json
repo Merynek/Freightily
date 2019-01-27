@@ -145,6 +145,10 @@
 			"no_photos": "No photos"
 		},
 		"tab": {
+			"account": "Account",
+			"profile": "Profile",
+			"change_password": "Change password",
+			"notification": "Notification",
 			"auction": "Auction",
 			"overview": "Overview",
 			"add_driver": "Add driver",

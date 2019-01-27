@@ -57,18 +57,41 @@ $urlServiceProvider.config.strictMode(false);
                  }
              }
 		 })
-		 .state('my_profile', {
-			 url: "/my_profile",
-			 controller: 'userProfileController',
-			 templateUrl: "app/components/Account/Profile/userProfileView.html",
+		 .state('account', {
+             url: "/account/profile",
+             controller: 'userProfileController',
+             templateUrl: "app/components/Account/Profile/MyAccount/userProfileView.html",
+             data: {
+                 role: [1]
+             },
+             resolve: {
+                 userInfo: function(UserAbility){
+                     return UserAbility.getAccountInfo().then(function(res){
+                         return res;
+                     })
+                 }
+             }
+		 })
+		 .state('change_password', {
+			 url: "/account/change_password",
+			 controller: 'changePasswordController',
+			 templateUrl: "app/components/Account/Profile/ChangePassword/changePasswordView.html",
 			 data: {
                  role: [1]
+			 }
+		 })
+		 .state('notification', {
+			 url: "/account/notification",
+			 controller: 'notificationController',
+			 templateUrl: "app/components/Account/Profile/Notification/notificationView.html",
+			 data: {
+				 role: [1]
 			 },
 			 resolve: {
-				 userInfo: function(UserAbility){
-					 return UserAbility.getAccountInfo().then(function(res){
+				 notificationResponse: function(UserAbility){
+					 return UserAbility.getNotification().then(function(res){
 						 return res;
-                     })
+					 })
 				 }
 			 }
 		 })
@@ -76,21 +99,6 @@ $urlServiceProvider.config.strictMode(false);
 			 url: "/forgot_password",
 			 controller: 'forgotPasswordController',
 			 templateUrl: "app/components/Account/ForgotPassword/forgotPasswordView.html"
-		 })
-		 .state('notification', {
-			 url: "/notification",
-			 controller: 'notificationController',
-			 templateUrl: "app/components/Account/Notification/notificationView.html",
-			 data: {
-				 role: [1]
-			 },
-			 resolve: {
-                 notificationResponse: function(UserAbility){
-					 return UserAbility.getNotification().then(function(res){
-						 return res;
-					 })
-				 }
-			 }
 		 })
 	 	// ADMIN
 		 .state('users', {

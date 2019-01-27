@@ -145,6 +145,10 @@
 			"no_photos": "Žádné fotky"
 		},
 		"tab": {
+			"account": "Účet",
+			"profile": "Profil",
+			"change_password": "Změna hesla",
+			"notification": "Notifikace",
 			"auction": "Aukce",
 			"overview": "Přehled",
 			"add_driver": "Přidat řidiče",

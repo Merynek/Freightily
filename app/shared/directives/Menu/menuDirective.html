@@ -9,6 +9,9 @@
         <div class="tab" ui-sref="company" ng-class="aboveRoute == 'company' ? 'active' : null">
             {{'texts.tab.company' | i18next}}
         </div>
+        <div class="tab" ui-sref="account" ng-class="aboveRoute == 'account' ? 'active' : null">
+            {{'texts.tab.account' | i18next}}
+        </div>
     </div>
     <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'auction'">
         <div class="tab" ui-sref="auction" ng-class="underRoute == 'list' ? 'active' : null">
@@ -49,6 +52,17 @@
         </div>
         <div class="tab" ui-sref="add_driver" ng-class="underRoute == 'employee' ? 'active' : null">
             {{'texts.tab.add_driver' | i18next}}
+        </div>
+    </div>
+    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'account'">
+        <div class="tab" ui-sref="account" ng-class="underRoute == 'profile' ? 'active' : null">
+            {{'texts.tab.profile' | i18next}}
+        </div>
+        <div class="tab" ui-sref="change_password" ng-class="underRoute == 'changePass' ? 'active' : null">
+            {{'texts.tab.change_password' | i18next}}
+        </div>
+        <div class="tab" ui-sref="notification" ng-class="underRoute == 'notifi' ? 'active' : null">
+            {{'texts.tab.notification' | i18next}}
         </div>
     </div>
 </span>
