@@ -65,9 +65,10 @@ angular.module('appControllers')
         }
 
         function setNotification() {
+            var platform = $(".notification-page #platform").val();
             var data = {
                 enable: $scope.notificationEnabled,
-                platform: parseInt($scope.platform),
+                platform: parseInt(platform),
                 companies: $scope.setCompanies
             };
 

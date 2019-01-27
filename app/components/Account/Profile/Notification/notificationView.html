@@ -58,7 +58,7 @@
                             {{'texts.notification.platformCreated' | i18next}}
                         </td>
                         <td>
-                            <select ng-model="platform" ng-change="platformChange()">
+                            <select ng-model="platform" id="platform" ng-change="platformChange()">
                                 <option value="1">{{'texts.notification.platforms.email' | i18next}}</option>
                                 <option value="2">{{'texts.notification.platforms.sms' | i18next}}</option>
                                 <option value="3">{{'texts.notification.platforms.both' | i18next}}</option>
