@@ -20,17 +20,17 @@ angular.module('appControllers')
             newPassRe.removeClass("input-error");
 
             if(currentPass.val().length < 8) {
-                message(3, $filter('i18next')('errors.xxx'));
+                message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 currentPass.addClass("input-error");
                 return;
             }
             if(newPass.val().length < 8) {
-                message(3, $filter('i18next')('errors.xxx'));
+                message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 newPass.addClass("input-error");
                 return;
             }
             if(newPassRe.val().length < 8) {
-                message(3, $filter('i18next')('errors.xxx'));
+                message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 newPassRe.addClass("input-error");
                 return;
             }
