@@ -56,7 +56,7 @@
 		"fail_activate_account": "This activated code is expired or not exists.",
 		"redirect_to_login": "Navigate to login",
 		"send_password": "Send password",
-		"your_acc": "Your account",
+		"your_acc": "Personal Data",
 		"actual_password": "Actual password",
 		"new_password": "New password",
 		"retype_password": "Retype password",
@@ -145,8 +145,8 @@
 			"no_photos": "No photos"
 		},
 		"tab": {
-			"account": "Account",
-			"profile": "Profile",
+			"account": "My profile",
+			"profile": "Personal Data",
 			"change_password": "Change password",
 			"notification": "Notification",
 			"auction": "Auction",
