@@ -90,7 +90,13 @@ angular.module('appControllers')
                 console.log("sms - FAIL");
             })
         };
+
+        $scope.SendNews = function() {
+            Admin.SendNewsEmail().then(function() {
+                console.log("sms - OK");
+            }).catch(function(error) {
+                console.log("sms - FAIL");
+            })
+        };
     }
 ]);
-
-

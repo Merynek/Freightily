@@ -117,6 +117,24 @@ angular.module('appServices')
             });
         };
 
+        /* POST to REST api => send News Email*/
+        Admin.SendNewsEmail = function(){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'admin/sendNewsEmail'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
             /* GET to REST api => Get Drivers position */
             Admin.GetDriversPosition = function(){
                 startLoading();
