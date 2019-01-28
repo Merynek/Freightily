@@ -8,6 +8,7 @@
 angular.module('appControllers')
     .controller('changePasswordController', ['$scope', '$filter', 'UserAbility', function ($scope, $filter, UserAbility) {
         $scope.route = "account|changePass";
+        $scope.account = {};
 
         $scope.changePassword = function () {
             var currentPass = $(".change-password-page #currentPass"),
@@ -19,26 +20,33 @@ angular.module('appControllers')
             newPass.removeClass("input-error");
             newPassRe.removeClass("input-error");
 
-            if(currentPass.val().length < 8) {
+            if($scope.account.currentPass.length < 8) {
                 message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 currentPass.addClass("input-error");
                 return;
             }
-            if(newPass.val().length < 8) {
+            if($scope.account.newPass.length < 8) {
                 message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 newPass.addClass("input-error");
                 return;
             }
-            if(newPassRe.val().length < 8) {
+            if($scope.account.newPassRe.length < 8) {
                 message(3, $filter('i18next')('errors.password_must_me_greater_eight'));
                 newPassRe.addClass("input-error");
                 return;
             }
 
+            if($scope.account.newPassRe !== $scope.account.newPass) {
+                newPass.addClass("input-error");
+                newPassRe.addClass("input-error");
+                message(3, $filter('i18next')('errors.passwords_not_match'));
+                return;
+            }
+
             data = {
-                currentPass: currentPass.val(),
-                newPass: newPass.val(),
-                newPassRe: newPassRe.val()
+                currentPass: $scope.account.currentPass,
+                newPass: $scope.account.newPass,
+                newPassRe: $scope.account.newPassRe
             };
 
             UserAbility.changePassword(data).then(function () {
