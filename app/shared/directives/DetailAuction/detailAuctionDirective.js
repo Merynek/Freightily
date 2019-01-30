@@ -11,7 +11,10 @@ angular.module('appDirectives')
             controller: function ($scope, $filter, Auction, User, ngDialog) {
                 var self = $scope;
                 var interval;
+
                 $scope.item = $scope.auctionItem.item;
+                $scope.history = {};
+                prepareHistory($scope.item.bidsHistory);
                 $scope.expired = $scope.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;
                 $scope.userIsBidder = false;
@@ -20,25 +23,19 @@ angular.module('appDirectives')
                 end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
                 $scope.item.end_auction = end_auction;
                 $scope.isFavourite = $scope.item.isFavourite;
-                $scope.history = {};
                 $scope.withBids = true;
                 $scope.user = User;
                 $scope.isOwner = $scope.item.owner === User.ID;
                 $scope.historyMore = false;
 
-                var afterHistoryLoad = function (history) {
+                function prepareHistory(history) {
                     var filtered = history.filter(function (item) {
                         return item.id_user === User.ID;
                     });
 
                     $scope.history = history.reverse();
                     $scope.userIsBidder = filtered.length > 0;
-                };
-
-
-                Auction.getAuctionHistory($scope.ID).then(afterHistoryLoad).catch(function (error) {
-                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                });
+                }
 
                 $scope.toggleDetail = function ($event) {
                     toggleDetail($($event.target).parents("detail-auction"));
@@ -144,15 +141,13 @@ angular.module('appDirectives')
                 function refreshItem(id) {
                     Auction.getAuctionItem(id).then(function (auctionItem) {
                         $scope.item = auctionItem;
+                        prepareHistory($scope.item.bidsHistory);
                         var end_auction = $scope.item.end_auction.split(" ");
                         end_auction = end_auction[0].slice(0, -4) + " " + end_auction[1].slice(0, -3);
                         $scope.item.end_auction = end_auction;
-                        $scope.isFavourite = auctionItem.isFavourite;
+                        $scope.isFavourite = $scope.item.isFavourite;
                         $scope.win = $scope.item.last_amount_user === User.ID;
                     }).catch(function (error) {
-                        message(3, $filter('i18next')(getErrorKeyByCode(error)));
-                    });
-                    Auction.getAuctionHistory($scope.ID).then(afterHistoryLoad).catch(function (error) {
                         message(3, $filter('i18next')(getErrorKeyByCode(error)));
                     });
                 }
