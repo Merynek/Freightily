@@ -4,11 +4,13 @@ angular.module('appDirectives')
             templateUrl: 'app/shared/directives/DetailUser/detailUserDirective.html',
             restrict: "E",
             scope: {
-                driverParam: '=driver'
+                driverParam: '=driver',
+                allDriversParam: '=allDrivers'
             },
             controller: function ($scope, $filter, UserAbility, User, $state, Shipments, ngDialog, $i18next) {
                 var interval;
 
+                $scope.allDrivers = $scope.allDriversParam.ownDrivers;
                 $scope.currentLanguage = $i18next.options.lng;
                 $scope.driver = $scope.driverParam.driver;
                 $scope.User = User;
@@ -43,12 +45,6 @@ angular.module('appDirectives')
                         $scope.showDatePicker($scope.driver.ID);
                     }
                 };
-
-                UserAbility.getAllMyDrivers().then(function(res){
-                    $scope.drivers = res.drivers;
-                }).catch(function(){
-                    return null;
-                });
 
                 function mapNotAvailable() {
                     $scope.isMap = false;
@@ -294,9 +290,9 @@ angular.module('appDirectives')
                 }
 
                 function getDriver(id) {
-                    for (var i = 0; i < $scope.drivers.length; i++) {
-                        if ($scope.drivers[i].ID === id) {
-                            return $scope.drivers[i];
+                    for (var i = 0; i < $scope.allDrivers.length; i++) {
+                        if ($scope.allDrivers[i].ID === id) {
+                            return $scope.allDrivers[i];
                         }
                     }
                 }

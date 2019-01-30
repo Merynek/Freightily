@@ -11,7 +11,7 @@ angular.module('appControllers')
             var mySelf = driversResponse.drivers.find(function(driver) {
                 return driver.ID === User.ID;
             });
-
+            $scope.ownDrivers = driversResponse.allOwnDrivers;
             $scope.drivers = driversResponse.drivers.filter(function( driver ) {
                 return driver.ID !== User.ID;
             });

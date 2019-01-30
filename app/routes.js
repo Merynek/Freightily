@@ -147,7 +147,8 @@ $urlServiceProvider.config.strictMode(false);
 					 return UserAbility.getDrivers(page).then(function(res){
 						 return {
 						 	drivers: res.drivers,
-						 	count: res.count
+						 	count: res.count,
+							allOwnDrivers: res.allOwnDrivers
 						 };
                      })
 				 }

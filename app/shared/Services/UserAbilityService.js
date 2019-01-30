@@ -33,26 +33,6 @@ angular.module('appServices')
 			});
 		};
 
-		/* GET to REST api => Get my all drivers */
-        UserAbility.getAllMyDrivers = function(){
-            var parameters = "?page=0";
-
-            startLoading();
-            return $q(function(resolve, reject){
-                $http({
-                    method: 'GET',
-                    headers: getTokenFromStorage(),
-                    url: url+'company/drivers'+parameters
-                }).then(function(response) {
-                    endLoading();
-                    resolve(response.data);
-                }).catch(function(error){
-                    endLoading();
-                    reject(error);
-                })
-            });
-        };
-
 		/* GET to REST api => Get all photos in shipment*/
 		UserAbility.getPhotos = function(idShipment, firstPart){
 			startLoading();
