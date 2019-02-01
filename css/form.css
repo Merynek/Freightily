@@ -273,8 +273,12 @@ label {
 }
 
 .big-input {
-    padding: 22px 16px;
+    padding:  10px 16px;
+    height: 46px;
     font-size: 17px;
+}
+.my-input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .big-button{

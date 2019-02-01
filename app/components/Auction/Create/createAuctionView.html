@@ -146,14 +146,14 @@
                 </div>
               </div>
               <div class="form-group half">
-                  <input type="number" name="quantity" min="1" autocomplete="disabled" id="quantity" class="form-control my-input required text-right" placeholder="{{'texts.auction.quantity' | i18next}}" ng-model="auction.quantity"
+                  <input type="number" name="quantity" min="1" autocomplete="disabled" id="quantity" class="big-input form-control my-input required text-right" placeholder="{{'texts.auction.quantity' | i18next}}" ng-model="auction.quantity"
                          ng-class="{'input-error' : createAuctionForm.quantity.$invalid && (!createAuctionForm.quantity.$pristine || clicked)}"
                          required />
               </div>
               <div class="form-group half">
 
                 <div class="has-feedback has-feedback-right">
-                  <input type="number" name="price" min="0" autocomplete="disabled" id="price" class="form-control my-input required text-right" placeholder="{{'texts.auction.priceItem' | i18next}}" ng-model="auction.price"
+                  <input type="number" name="price" min="0" autocomplete="disabled" id="price" class="big-input form-control my-input required text-right" placeholder="{{'texts.auction.priceItem' | i18next}}" ng-model="auction.price"
                          ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createAuctionForm.price.$pristine || clicked)}"
                          required />
                   <span class="form-control-feedback">Kč</span>
