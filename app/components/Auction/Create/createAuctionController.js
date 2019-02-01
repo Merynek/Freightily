@@ -81,14 +81,14 @@ angular.module('appControllers')
 
                 $scope.auction.quantity = Math.round($scope.auction.quantity);
                 num = $scope.auction.quantity * $scope.auction.price;
-                finalPrice.text((isNaN(num) ? "?" : num) + ",-");
+                finalPrice.text((isNaN(num) ? "0" : num) + ",-");
             });
             price.on("change keyup", function () {
                 var num;
 
                 $scope.auction.price = Math.round($scope.auction.price);
                 num = $scope.auction.quantity * $scope.auction.price;
-                finalPrice.text((isNaN(num) ? "?" : num) + ",-");
+                finalPrice.text((isNaN(num) ? "0" : num) + ",-");
             });
             setTimeout(function () {
                 quantity.change();
@@ -276,26 +276,51 @@ angular.module('appControllers')
             }
 
             if (end_auction) {
-                var data = {
-                    address_from: prepareAddressForServer($scope.full_adress_from),
-                    address_to: prepareAddressForServer($scope.full_adress_to),
-                    freight_description: $scope.auction.freight_description,
-                    freight_type: $scope.auction.freight_type,
-                    freight_size: $scope.auction.freight_size,
-                    freight_weight: $scope.auction.freight_weight,
-                    load_note: $scope.auction.load_note || "",
-                    unload_note: $scope.auction.unload_note || "",
-                    price: $scope.auction.price * $scope.auction.quantity,
-                    quantity: $scope.auction.quantity,
-                    end_auction: auctionEndDate,
-                    delivery: deliveryDate
-                };
+                var tempDate = new Date(auctionEndDate),
+                    part1 = ("0" + tempDate.getDate()).slice(-2) + "." +
+                        ("0" + tempDate.getMonth()).slice(-2) + "." +
+                        tempDate.getFullYear(),
+                    part2 = ("0" + tempDate.getHours()).slice(-2) + ":" + ("0" + tempDate.getMinutes()).slice(-2);
 
-                Auction.create(data).then(function () {
-                    message(1, $filter('i18next')('success.auction_created'));
-                    $state.go('auction');
-                }).catch(function (error) {
-                    message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                $scope.temporaryDate = part1 + " - " + part2;
+                ngDialog.open({
+                    template: 'modal_ensure_create_auction',
+                    scope: $scope,
+                    closeByDocument: false,
+                    showClose: true,
+                    appendClassName: "create_auction_ensure_dialog",
+                    closeByEscape: true,
+                    controller: ['$scope', function ($scope) {
+                        // controller logic
+                        $scope.ok = function () {
+                            var data = {
+                                address_from: prepareAddressForServer($scope.full_adress_from),
+                                address_to: prepareAddressForServer($scope.full_adress_to),
+                                freight_description: $scope.auction.freight_description,
+                                freight_type: $scope.auction.freight_type,
+                                freight_size: $scope.auction.freight_size,
+                                freight_weight: $scope.auction.freight_weight,
+                                load_note: $scope.auction.load_note || "",
+                                unload_note: $scope.auction.unload_note || "",
+                                price: $scope.auction.price * $scope.auction.quantity,
+                                quantity: $scope.auction.quantity,
+                                end_auction: auctionEndDate,
+                                delivery: deliveryDate
+                            };
+
+                            Auction.create(data).then(function () {
+                                message(1, $filter('i18next')('success.auction_created'));
+                                $state.go('auction');
+                                $scope.closeThisDialog(false);
+                            }).catch(function (error) {
+                                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+                                $scope.closeThisDialog(false);
+                            });
+                        };
+                        $scope.cancel = function () {
+                            $scope.closeThisDialog(false);
+                        };
+                    }]
                 });
             }
             else {

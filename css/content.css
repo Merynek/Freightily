@@ -894,6 +894,37 @@ hr.small {
     padding-top: 80px;
 }
 
+/*Create auction dialog*/
+.create_auction_ensure_dialog .ngdialog-content {
+    width: 600px!important;
+}
+
+.create_auction_ensure_dialog .modal-body {
+    margin: 0 0 0 10px;
+}
+
+.create_auction_ensure_dialog .modal-body .dialog-main-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+.create_auction_ensure_dialog .modal-body .auction_summary {
+    margin-top: 10px;
+    padding-right: 30px;
+}
+.create_auction_ensure_dialog .modal-body .auction_summary .item {
+    height: 32px;
+}
+.create_auction_ensure_dialog .modal-body .auction_summary table {
+    width: 100%;
+}
+.create_auction_ensure_dialog .modal-body .auction_summary .item .value {
+    text-align: right;
+    font-weight: bold;
+}
+.create_auction_ensure_dialog .ngdialog-content {
+    height: 400px!important;
+}
+
 .delete_user_dialog .ngdialog-content {
     height: 200px!important;
 }
@@ -1180,9 +1211,32 @@ hr.small {
         padding-left: 0;
         padding-right: 0;
     }
+    /*Auction-dialog create*/
+    .create_auction_ensure_dialog .ngdialog-content {
+        height: 520px!important;
+    }
+    .create_auction_ensure_dialog .modal-body .auction_summary .item {
+        height: 40px;
+    }
+    .create_auction_ensure_dialog .modal-body .auction_summary .item .title {
+        width: 48%;
+    }
+    .create_auction_ensure_dialog .modal-body .auction_summary {
+        padding-right: 25px;
+    }
+    .create_auction_ensure_dialog .modal-body {
+        padding-right: 1px!important;
+        padding-left: 1px!important;
+    }
 }
 
 @media (max-width: 370px) {
+    .create_auction_ensure_dialog .modal-body .auction_summary {
+        padding-right: 14px;
+    }
+    .create_auction_ensure_dialog .modal-body .auction_summary .item .title {
+        width: 42%;
+    }
     .auction-detail .tab {
         min-width: unset;
         width: 45%;
