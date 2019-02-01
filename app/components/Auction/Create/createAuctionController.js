@@ -27,6 +27,9 @@ angular.module('appControllers')
             var accordion = $( ".accordion" ),
                 dateDelivery = $('.datetimepickerDelivery'),
                 dateAuction = $('.datetimepicker1'),
+                price = $("#price"),
+                quantity = $("#quantity"),
+                finalPrice = $("#final-price"),
                 interval,
                 onAccordionChange;
 
@@ -72,11 +75,30 @@ angular.module('appControllers')
             accordion.bind("accordion.open", onAccordionChange);
             accordion.bind("accordion.close", onAccordionChange);
             $("#acc-part-1").click();
+
+            quantity.on("change keyup", function () {
+                var num;
+
+                $scope.auction.quantity = Math.round($scope.auction.quantity);
+                num = $scope.auction.quantity * $scope.auction.price;
+                finalPrice.text((isNaN(num) ? "?" : num) + ",-");
+            });
+            price.on("change keyup", function () {
+                var num;
+
+                $scope.auction.price = Math.round($scope.auction.price);
+                num = $scope.auction.quantity * $scope.auction.price;
+                finalPrice.text((isNaN(num) ? "?" : num) + ",-");
+            });
+            setTimeout(function () {
+                quantity.change();
+            }, 50);
         }, 15);
 
         $scope.route = "auction|add";
         $scope.auction = {
-            freight_type: ""
+            freight_type: "",
+            quantity: 1
         };
         $scope.mapIsShown = false;
         $scope.clicked = false;
@@ -180,6 +202,7 @@ angular.module('appControllers')
 
         function numberFieldsIsValid() {
             var freight_weight = $("#freight_weight"),
+                quantity = $("#quantity"),
                 price = $("#price");
 
             if (!isValueNumber($scope.auction.freight_weight)) {
@@ -194,7 +217,7 @@ angular.module('appControllers')
             }
             freight_weight.removeClass("input-error");
 
-            if (!isValueNumber($scope.auction.price)) {
+            if (!$.isNumeric($scope.auction.price)) {
                 price.addClass("input-error");
                 message(3, $filter('i18next')('errors.price_is_number'));
                 return false;
@@ -205,6 +228,13 @@ angular.module('appControllers')
                 return false;
             }
             price.removeClass("input-error");
+
+            if (!$.isNumeric($scope.auction.quantity)) {
+                quantity.addClass("input-error");
+                message(3, quantity('i18next')('errors.quantity_is_number'));
+                return false;
+            }
+            quantity.removeClass("input-error");
 
             return true;
         }
@@ -255,7 +285,8 @@ angular.module('appControllers')
                     freight_weight: $scope.auction.freight_weight,
                     load_note: $scope.auction.load_note || "",
                     unload_note: $scope.auction.unload_note || "",
-                    price: $scope.auction.price,
+                    price: $scope.auction.price * $scope.auction.quantity,
+                    quantity: $scope.auction.quantity,
                     end_auction: auctionEndDate,
                     delivery: deliveryDate
                 };

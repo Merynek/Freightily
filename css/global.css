@@ -244,6 +244,7 @@ p {
     /* MENU */
     .menu-tabs .tab {
         padding: 10px 0;
+        margin: -1px 4px;
     }
     .menu-tabs .tab.active {
         padding: 12px 0;

@@ -48,6 +48,12 @@
     width: 100%;
     height: 72px;
 }
+.table-borderless td {
+    border-top: none !important;
+}
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
 
 /*auction*/
 .sorting-bar {
@@ -417,6 +423,9 @@
     border-bottom: none;
 }
 .auction-detail .history-list div{
+    padding: 5px 0;
+}
+.auction-detail .history-list-item div{
     padding: 5px;
 }
 .auction-detail .my-history{
@@ -458,6 +467,10 @@
     font-size: 14px;
     color: #808080;
     padding-left: 32px;
+}
+.auction-detail .detail-content .note {
+    padding-left: 8px;
+    margin: 0;
 }
 .auction-detail .map .icon{
     display: block;
@@ -804,6 +817,16 @@
 .auction-add-page{
 
 }
+.auction-add-page .my-button {
+    margin: 0 auto;
+}
+.auction-add-page .auction-detail {
+    font-weight: bold;
+    line-height: 1.42857143;
+}
+.auction-add-page .form-control-feedback {
+    line-height: 46px;
+}
 hr {
     border-top: 1px solid #2c2d51;
     padding-right: 0!important;
@@ -826,8 +849,14 @@ hr.small {
     float: right;
     font-size: 16px;
 }
+.notification-page .toggle{
+    margin-left: 6px;
+}
 .notification-page .wrapper {
     position: relative;
+}
+.notification-page select {
+    margin-left: 10px;
 }
 .notification-page .off-info {
     position: absolute;
@@ -845,7 +874,7 @@ hr.small {
 }
 .notification-page .action {
     width: 120px;
-    text-align: center;
+    text-align: right;
 }
 .notification-page .icon {
     padding-right: 12px;
@@ -1098,9 +1127,6 @@ hr.small {
     .auction-add-page{
         margin: 0 auto;
         text-align: center;
-    }
-    .auction-add-page .my-button {
-        margin: 0 auto;
     }
     /*Drivers*/
     .drivers-page .auction-detail-item .detail-label {

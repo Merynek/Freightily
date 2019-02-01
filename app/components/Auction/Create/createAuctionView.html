@@ -145,14 +145,30 @@
                 <div class='datepickers datetimepickerDelivery'>
                 </div>
               </div>
+              <div class="form-group half">
+                  <input type="number" name="quantity" min="1" autocomplete="disabled" id="quantity" class="form-control big-input my-input required text-right" placeholder="{{'texts.auction.quantity' | i18next}}" ng-model="auction.quantity"
+                         ng-class="{'input-error' : createAuctionForm.quantity.$invalid && (!createAuctionForm.quantity.$pristine || clicked)}"
+                         required />
+              </div>
+              <div class="form-group half">
 
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4 form-group">
-                        <input type="text" name="price" id="price" class="form-control my-input big-input required" placeholder="{{'texts.auction.price' | i18next}}" ng-model="auction.price"
-                               ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createAuctionForm.price.$pristine || clicked)}"
-                               required />
-                    </div>
+                <div class="has-feedback has-feedback-right">
+                  <input type="number" name="price" min="0" autocomplete="disabled" id="price" class="form-control big-input my-input required text-right" placeholder="{{'texts.auction.priceItem' | i18next}}" ng-model="auction.price"
+                         ng-class="{'input-error' : createAuctionForm.price.$invalid && (!createAuctionForm.price.$pristine || clicked)}"
+                         required />
+                  <span class="form-control-feedback">Kč</span>
                 </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-offset-4 col-md-4 text-center auction-detail">
+                  <div class="price-label">
+                    {{'texts.auction.priceTotal' | i18next}}
+                  </div>
+                  <div id="final-price" class="price">
+                    ?,-
+                  </div>
+                </div>
+              </div>
               <div class="form-group half text-center">
                 <div class="my-button easy-button big-button" ng-click="createTemplate()">{{'texts.create_template_button' | i18next}}</div>
               </div>
