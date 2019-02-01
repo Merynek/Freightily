@@ -64,21 +64,30 @@
                 <span class="normal-icon glyphicon glyphicon-tag"></span>
                 <span>{{'texts.auction.freight_type.label' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{getFreightType(item.freight.freight_type)}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7">
+                <span>{{getFreightType(item.freight.freight_type)}}</span>
+                <span ng-show="item.quantity > 1" class="note">x{{item.quantity}}</span>
+            </div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <i class="normal-icon awes-icon fas fa-weight-hanging"></i>
                 <span>{{'texts.auction.freight_weight' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{item.freight.freight_weight}} kg</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7">
+                <span>{{item.freight.freight_weight}} kg</span>
+                <span ng-show="item.quantity > 1" class="note">x{{item.quantity}}</span>
+            </div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
                 <span class="normal-icon glyphicon glyphicon-resize-full"></span>
                 <span>{{'texts.auction.freight_size' | i18next}}:</span>
             </div>
-            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7"><span>{{item.freight.freight_size}}</span></div>
+            <div class="detail-content col-xs-6 col-sm-6 col-md-6 col-lg-7">
+                <span>{{item.freight.freight_size}}</span>
+                <span ng-show="item.quantity > 1" class="note">x{{item.quantity}}</span>
+            </div>
         </div>
         <div class="detail-row col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="detail-label col-xs-6 col-sm-6 col-md-6 col-lg-5">
