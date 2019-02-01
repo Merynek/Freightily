@@ -21,10 +21,12 @@ angular.module('appControllers')
 
         $scope.setInfo = function () {
             var phone_number = $(".user-page #phone_number"),
+                company_name = $(".user-page #company_name"),
                 email = $(".user-page #email"),
                 data;
 
             phone_number.removeClass("input-error");
+            company_name.removeClass("input-error");
             email.removeClass("input-error");
 
             if (!validateEmail($scope.userInfo.email)) {
@@ -37,10 +39,16 @@ angular.module('appControllers')
                 phone_number.addClass("input-error");
                 return;
             }
+            if($scope.userInfo.company_name.length < 1) {
+                message(3, $filter('i18next')('errors.company_name_is_required'));
+                company_name.addClass("input-error");
+                return;
+            }
 
             data = {
                 phone_number: $scope.userInfo.phone_number,
-                email: $scope.userInfo.email
+                email: $scope.userInfo.email,
+                company_name: $scope.userInfo.company_name
             };
 
             UserAbility.setInfo(data).then(function () {

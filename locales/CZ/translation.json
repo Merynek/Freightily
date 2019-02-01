@@ -267,6 +267,7 @@
 		"username_must_me_greater_eight": "Uživatelské jméno musí mít minimálně 8 znaků",
 		"password_must_me_greater_eight": "Heslo musí mít minimálně 8 znaků",
 		"phone_number_must_me_greater_none": "Nespravný formát telefoního čísla",
+		"company_name_is_required": "Zadejte jméno firmy",
 		"passwords_not_match" : "Hesla se neshodují",
 		"wrong_login" : "Přihlášení se nezdařilo. Zkontrolujte přihlašovací údaje",
 		"wrong_registration": "Chyba při registraci",

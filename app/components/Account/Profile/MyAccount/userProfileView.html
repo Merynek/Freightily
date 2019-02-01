@@ -29,7 +29,9 @@
           </tr>
           <tr>
             <th>{{'texts.company_name' | i18next}}:</th>
-            <td>{{userInfo.company_name}}</td>
+            <td>
+              <input type="text" id="company_name" name="company_name" class="form-control my-input" placeholder="{{'texts.company_name' | i18next}}" ng-model="userInfo.company_name" />
+            </td>
           </tr>
           <tr>
             <th>{{'texts.credit' | i18next}}({{'texts.share' | i18next}}):</th>

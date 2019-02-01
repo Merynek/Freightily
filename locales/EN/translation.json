@@ -267,6 +267,7 @@
 		"username_must_me_greater_eight": "Username must contains minimal 8 characters",
 		"password_must_me_greater_eight": "Password must contains minimal 8 characters",
 		"phone_number_must_me_greater_none": "Phone number has wrong format",
+		"company_name_is_required": "Set company name",
 		"passwords_not_match" : "Passwords do not match",
 		"wrong_login" : "Login failed. Check your login inputs",
 		"wrong_registration": "Registration error",
