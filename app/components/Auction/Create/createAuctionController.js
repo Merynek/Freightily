@@ -439,6 +439,7 @@ angular.module('appControllers')
                 $('.datetimepickerDelivery').data("DateTimePicker").date(null);
                 $('.datetimepicker1').data("DateTimePicker").date(null);
                 $scope.auction.price = "";
+                $scope.auction.quantity = 1;
             }
 
             var weight = template.freight.freight_weight;
