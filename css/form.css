@@ -409,4 +409,12 @@ input[type=checkbox] {
     [data-accordion] [data-content] {
         background: #e6e6f1;
     }
+
+    .datepickers {
+        padding: 0 15px;
+        background: #ffffff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
 }

@@ -1,7 +1,21 @@
 <m param="{route}">
   <div class="user-page">
       <h1>{{'texts.your_acc' | i18next}}</h1>
-      <form novalidate>
+
+    <div class="wrapper row">
+      <div class="col-lg-6">
+        <h3>{{'texts.credit' | i18next}}</h3>
+        <table class="table table-borderless credit-info">
+          <tr>
+            <th>{{'texts.credit_all' | i18next}}:</th>
+            <th>{{userInfo.credit}},- Kč</th>
+          </tr>
+          <tr>
+            <td>{{'texts.share' | i18next}}:</td>
+            <td><b>{{sharePercent}}</b> ({{userInfo.share}} Kč)</td>
+          </tr>
+        </table>
+        <h3>{{'texts.your_acc_info' | i18next}}</h3>
         <table class="table table-striped table-responsive">
           <tr>
             <th>{{'texts.username' | i18next}}:</th>
@@ -15,32 +29,41 @@
             <th>{{'texts.address_street' | i18next}}:</th>
             <td>{{userInfo.address_street}}</td>
           </tr>
-          <tr>
-            <th>{{'texts.email' | i18next}}:</th>
-            <td>
-              <input type="text" id="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="userInfo.email"/>
-            </td>
-          </tr>
-          <tr>
-            <th>{{'texts.phone_number' | i18next}}:</th>
-            <td>
-              <input type="text" id="phone_number" name="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="userInfo.phone_number" />
-            </td>
-          </tr>
-          <tr>
-            <th>{{'texts.company_name' | i18next}}:</th>
-            <td>
-              <input type="text" id="company_name" name="company_name" class="form-control my-input" placeholder="{{'texts.company_name' | i18next}}" ng-model="userInfo.company_name" />
-            </td>
-          </tr>
-          <tr>
-            <th>{{'texts.credit' | i18next}}({{'texts.share' | i18next}}):</th>
-            <td>{{userInfo.credit}}({{userInfo.share}}) - {{sharePercent}}</td>
-          </tr>
         </table>
-      </form>
-      <div class="form-group text-center">
-        <div class="my-button big-button normal-button" ng-click="setInfo()">{{'texts.set_account_info' | i18next}}</div>
       </div>
+      <div class="col-lg-6">
+        <h3>{{'texts.contact_acc' | i18next}}</h3>
+        <form novalidate>
+          <table class="table table-borderless">
+            <tr>
+              <td>{{'texts.company_name' | i18next}}:</td>
+              <td>
+                <input type="text" id="company_name" name="company_name" class="form-control my-input" placeholder="{{'texts.company_name' | i18next}}" ng-model="userInfo.company_name" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <hr class="light">
+              </td>
+            </tr>
+            <tr>
+              <td>{{'texts.email' | i18next}}:</td>
+              <td>
+                <input type="text" id="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="userInfo.email"/>
+              </td>
+            </tr>
+            <tr>
+              <td>{{'texts.phone_number' | i18next}}:</td>
+              <td>
+                <input type="text" id="phone_number" name="phone_number" class="form-control my-input" placeholder="{{'texts.phone_number' | i18next}}" ng-model="userInfo.phone_number" />
+              </td>
+            </tr>
+          </table>
+          <div class="form-group text-center">
+            <div class="my-button big-button normal-button" ng-click="setInfo()">{{'texts.set_account_info' | i18next}}</div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </m>

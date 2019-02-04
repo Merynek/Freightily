@@ -51,6 +51,9 @@
 .table-borderless td {
     border-top: none !important;
 }
+.table-borderless > tbody > tr > th {
+    border-top: none !important;
+}
 .table > tbody > tr > td {
     vertical-align: middle;
 }
@@ -370,7 +373,7 @@
     padding: 0;
 }
 .auction-detail .auction-detail-item h3{
-    margin: 0 0 8px 0;
+    margin: 20px 0 8px 0;
 }
 .auction-detail .tab {
     min-width: 106px;
@@ -797,6 +800,10 @@
     vertical-align: middle;
 }
 
+.user-page .credit-info {
+    margin-bottom: 30px;
+}
+
 /*Manage page*/
 .manage-page {
     max-width: 558px;
@@ -840,6 +847,10 @@ hr.small {
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+hr.light {
+    border-top: 1px #e6e6f1 dashed;
 }
 
 .margin-divider {
@@ -986,6 +997,9 @@ hr.small {
 }
 
 @media (max-width: 767px) {
+    table {
+        text-align: left !important;
+    }
     .assign-mark {
         margin: 0 auto;
     }
