@@ -11,14 +11,69 @@ angular.module('appControllers')
         $scope.userInfo = userInfo;
         $scope.sharePercent = getSharePercent();
         $scope.userInfo.share = userInfo.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
-        console.log(userInfo);
+
         function getSharePercent() {
             switch ($scope.userInfo.senderLevel) {
                 case 1: return "10%";
                 default: return "10%";
             }
-
         }
+
+        function afterRender() {
+            var ctx = document.getElementById('credit-chart').getContext('2d');
+
+            var color = Chart.helpers.color;
+            var horizontalBarChartData = {
+                datasets: [{
+                    label: $filter('i18next')('texts.charts_start'),
+                    backgroundColor: color("#12133d").alpha(0.4).rgbString(),
+                    borderColor: "#12133d",
+                    data: [
+                        $scope.userInfo.start_credit
+                    ]
+                }, {
+                    label: $filter('i18next')('texts.charts_end'),
+                    backgroundColor: color("#74ce3b").alpha(0.4).rgbString(),
+                    borderColor: "#74ce3b",
+                    data: [
+                        $scope.userInfo.end_credit
+                    ]
+                }]
+            };
+            new Chart(ctx, {
+                type: 'horizontalBar',
+                data: horizontalBarChartData,
+                options: {
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2
+                        }
+                    },
+                    responsive: true,
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: $filter('i18next')('texts.charts_label')
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                min: 0,
+                                callback: function(value, index, values) {
+                                    return value + "Kč";
+                                }
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        setTimeout(function () {
+            afterRender();
+        }, 50);
 
         $scope.setInfo = function () {
             var phone_number = $(".user-page #phone_number"),

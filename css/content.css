@@ -803,6 +803,11 @@
 .user-page .credit-info {
     margin-bottom: 30px;
 }
+.user-page .charts {
+    position: relative;
+    min-height: 150px;
+    margin: 10px 0;
+}
 
 /*Manage page*/
 .manage-page {

@@ -5,10 +5,13 @@
     <div class="wrapper">
       <div class="col-lg-6">
         <h3>{{'texts.credit' | i18next}}</h3>
+        <div class="charts">
+          <canvas id="credit-chart"></canvas>
+        </div>
         <table class="table table-borderless credit-info">
           <tr>
             <th>{{'texts.credit_all' | i18next}}:</th>
-            <td><b>{{userInfo.start_credit - userInfo.end_credit}}&nbsp;Kč</b> ({{userInfo.start_credit}}&nbsp;Kč - {{userInfo.end_credit}}&nbsp;Kč)</td>
+            <th>{{userInfo.start_credit - userInfo.end_credit}}&nbsp;Kč</th>
           </tr>
           <tr>
             <td>{{'texts.credit_reset' | i18next}}:</td>

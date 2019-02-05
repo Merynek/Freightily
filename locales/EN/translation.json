@@ -37,7 +37,7 @@
 		"company_name" : "Company name",
         "credit": "Credit",
         "share": "Nohe Share",
-        "credit_all": "Economy (start - end prices)",
+        "credit_all": "Economy",
         "credit_reset": "Unbilled amount",
 		"ico" : "Identification number",
 		"bank_account" : "Bank account",
