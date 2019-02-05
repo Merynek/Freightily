@@ -8,7 +8,11 @@
 angular.module('appControllers')
     .controller('changePasswordController', ['$scope', '$filter', 'UserAbility', function ($scope, $filter, UserAbility) {
         $scope.route = "account|changePass";
-        $scope.account = {};
+        $scope.account = {
+            currentPass: "",
+            newPass: "",
+            newPassRe: ""
+        };
 
         $scope.changePassword = function () {
             var currentPass = $(".change-password-page #currentPass"),
