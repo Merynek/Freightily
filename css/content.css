@@ -1192,6 +1192,9 @@ hr.light {
     .notification-page .phone-only {
         display: table-row;
     }
+    .notification-page .desktop-only {
+        display: none;
+    }
     .notification-page .add-company-label {
         display: block;
         margin-bottom: 15px;
