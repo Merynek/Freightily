@@ -28,17 +28,29 @@
                             <span class="glyphicon glyphicon-remove red btn" ng-click="removeCompany(company)"></span>
                         </td>
                     </tr>
-                    <tr ng-show="toSelect.length && setCompanies.length < 3">
+                    <tr class="desktop-only" ng-show="toSelect.length && setCompanies.length < 3">
                         <td>
                             <label>
                                 {{'texts.notification.addLabel' | i18next}}
-                                <select ng-model="selectedCompany" id="selectedCompany" ng-options="item as item for item in toSelect track by item">
+                                <select ng-model="selectedCompany" ng-options="item as item for item in toSelect track by item">
                                     <option value="" disabled>{{'texts.notification.empty' | i18next}}</option>
                                 </select>
                             </label>
                         </td>
                         <td class="action">
-                            <div ng-class="selectedCompany ? '' : 'disabled'" class="btn normal-button" ng-click="addCompany()">{{'texts.notification.addButton' | i18next}}</div>
+                            <div ng-class="selectedCompany ? '' : 'disabled'" class="btn normal-button" ng-click="addCompany(selectedCompany)">{{'texts.notification.addButton' | i18next}}</div>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr class="phone-only text-center" ng-show="toSelect.length && setCompanies.length < 3">
+                        <td colspan="2">
+                            <label class="add-company-label">
+                                <span>{{'texts.notification.addLabel' | i18next}}</span>
+                                <select ng-model="selectedCompany" ng-options="item as item for item in toSelect track by item">
+                                    <option value="" disabled>{{'texts.notification.empty' | i18next}}</option>
+                                </select>
+                            </label>
+                            <div ng-class="selectedCompany ? '' : 'disabled'" class="btn normal-button add-company" ng-click="addCompany(selectedCompany)">{{'texts.notification.addButton' | i18next}}</div>
                         </td>
                     </tr>
                     <tr></tr>

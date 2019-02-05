@@ -893,6 +893,9 @@ hr.light {
 .notification-page .info-block {
     padding: 12px 12px 24px;
 }
+.notification-page .desktop-only {
+    display: table-row;
+}
 /*Dialogs*/
 .ngdialog .ngdialog-content .modal-body {
     padding-top: 15px;
@@ -1185,6 +1188,20 @@ hr.light {
         text-align: center;
         display: block;
         margin: 3px 0;
+    }
+    .notification-page .phone-only {
+        display: table-row;
+    }
+    .notification-page .add-company-label {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .notification-page .add-company-label *{
+        display: block;
+        margin: 10px auto;
+    }
+    .notification-page .add-company {
+        display: inline-block;
     }
 }
 

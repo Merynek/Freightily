@@ -27,8 +27,7 @@ angular.module('appControllers')
 
         $scope.selectedCompany = null;
 
-        $scope.addCompany = function () {
-            var selectedCompany = $(".notification-page #selectedCompany").val();
+        $scope.addCompany = function (selectedCompany) {
             if (!selectedCompany) {
                 return;
             }

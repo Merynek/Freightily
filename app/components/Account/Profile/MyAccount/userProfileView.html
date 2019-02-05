@@ -8,7 +8,11 @@
         <table class="table table-borderless credit-info">
           <tr>
             <th>{{'texts.credit_all' | i18next}}:</th>
-            <th>{{userInfo.credit}},- Kč</th>
+            <td><b>{{userInfo.start_credit - userInfo.end_credit}}&nbsp;Kč</b> ({{userInfo.start_credit}}&nbsp;Kč - {{userInfo.end_credit}}&nbsp;Kč)</td>
+          </tr>
+          <tr>
+            <td>{{'texts.credit_reset' | i18next}}:</td>
+            <td>{{userInfo.credit}},-&nbsp;Kč</td>
           </tr>
           <tr>
             <td>{{'texts.share' | i18next}}:</td>

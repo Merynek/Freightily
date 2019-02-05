@@ -11,7 +11,7 @@ angular.module('appControllers')
         $scope.userInfo = userInfo;
         $scope.sharePercent = getSharePercent();
         $scope.userInfo.share = userInfo.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
-
+        console.log(userInfo);
         function getSharePercent() {
             switch ($scope.userInfo.senderLevel) {
                 case 1: return "10%";
