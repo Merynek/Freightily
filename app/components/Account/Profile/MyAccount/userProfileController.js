@@ -73,6 +73,7 @@ angular.module('appControllers')
 
         setTimeout(function () {
             afterRender();
+            window.dispatchEvent(new Event('resize'));
         }, 50);
 
         $scope.setInfo = function () {
