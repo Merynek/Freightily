@@ -50,9 +50,18 @@ angular.module('appControllers')
                             borderWidth: 2
                         }
                     },
+                    maintainAspectRatio: false,
                     responsive: true,
                     legend: {
-                        position: 'top'
+                        position: 'top',
+                        onClick: function () { }
+                    },
+                    tooltips: {
+                        cornerRadius: 3,
+                        bodySpacing: 7,
+                        callbacks: {
+                            afterLabel: function (tooltipItem, data) {}
+                        }
                     },
                     title: {
                         display: true,
