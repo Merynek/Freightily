@@ -8,10 +8,9 @@
 angular.module('appControllers')
     .controller('userProfileController', ['$scope', '$filter', 'userInfo', 'UserAbility', function ($scope, $filter, userInfo, UserAbility) {
         $scope.route = "account|profile";
-        $scope.userInfo = userInfo.user;
-        $scope.lastCreatedAuction = userInfo.lastCreatedAuction;
+        $scope.userInfo = userInfo;
         $scope.sharePercent = getSharePercent();
-        $scope.userInfo.share = userInfo.user.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
+        $scope.userInfo.share = userInfo.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
 
         function getSharePercent() {
             switch ($scope.userInfo.senderLevel) {
