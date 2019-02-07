@@ -27,7 +27,12 @@ angular.module('appControllers')
         }
 
         function afterRender() {
-            var ctx = document.getElementById('credit-chart').getContext('2d');
+            var el = document.getElementById('credit-chart');
+
+            if (!el) {
+                return;
+            }
+            var ctx = el.getContext('2d');
 
             var color = Chart.helpers.color;
             var horizontalBarChartData = {

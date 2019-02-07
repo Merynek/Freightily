@@ -2,11 +2,13 @@
   <div class="user-page">
       <h1>{{'texts.finances' | i18next}}</h1>
 
-    <div class="wrapper">
+    <div ng-if="userInfo.start_credit > 0" class="wrapper">
       <div class="col-lg-6">
         <div class="charts">
           <canvas id="credit-chart"></canvas>
         </div>
+      </div>
+      <div class="col-lg-6">
         <table class="table table-borderless credit-info">
           <tr>
             <th>{{'texts.credit_all' | i18next}}:</th>
@@ -26,6 +28,14 @@
             <td><b>{{sharePercent}}</b> ({{userInfo.share}} Kč)</td>
           </tr>
         </table>
+      </div>
+    </div>
+    <div ng-if="userInfo.start_credit == 0" class="wrapper">
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="text-center spacer">
+          <span class="glyphicon glyphicon-info-sign icon"></span>
+          {{'texts.no_finance' | i18next}}
+        </div>
       </div>
     </div>
   </div>

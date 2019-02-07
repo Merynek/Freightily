@@ -892,7 +892,7 @@ hr.light {
     width: 120px;
     text-align: right;
 }
-.notification-page .icon {
+.notification-page .icon, .user-page .icon {
     padding-right: 12px;
 }
 .notification-page .info-block {
