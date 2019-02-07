@@ -91,6 +91,24 @@ angular.module('appServices')
             });
         };
 
+        /* GET to REST api => get info about finances */
+        UserAbility.getFinancesInfo = function(){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: getTokenFromStorage(),
+                    url: url+'company/finances'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* GET to REST api => get info about user */
 		UserAbility.getAccountInfo = function(){
 			startLoading();

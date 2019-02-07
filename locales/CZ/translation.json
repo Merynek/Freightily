@@ -35,7 +35,6 @@
 		"sender": "Odesílatel",
 		"confirmPassword": "Potvrzení hesla",
 		"company_name" : "Název firmy",
-        "credit": "Přehled financí",
         "share": "Sazba",
         "credit_all": "Úspornost",
 		"credit_reset": "Nevyfakturované aukce",
@@ -63,6 +62,7 @@
 		"send_password": "Poslat heslo",
 		"your_acc": "Osobní údaje",
 		"your_acc_info": "Informace",
+        "finances": "Přehled financí",
 		"contact_acc": "Kontaktní údaje",
 		"actual_password": "Aktuální heslo",
 		"new_password": "Nové heslo",
@@ -163,6 +163,7 @@
 		},
 		"tab": {
 			"account": "Profil",
+            "finances": "Přehled financí",
 			"profile": "Osobní údaje",
 			"change_password": "Změna hesla",
 			"notification": "Notifikace",

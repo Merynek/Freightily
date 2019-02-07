@@ -72,6 +72,21 @@ $urlServiceProvider.config.strictMode(false);
                  }
              }
 		 })
+		 .state('finances', {
+			 url: "/account/finances",
+			 controller: 'financesController',
+			 templateUrl: "app/components/Account/Profile/Finances/financesView.html",
+			 data: {
+				 role: [1]
+			 },
+			 resolve: {
+                 financesInfo: function(UserAbility){
+					 return UserAbility.getFinancesInfo().then(function(res){
+						 return res;
+					 })
+				 }
+			 }
+		 })
 		 .state('change_password', {
 			 url: "/account/change_password",
 			 controller: 'changePasswordController',
