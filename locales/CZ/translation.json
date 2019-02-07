@@ -222,6 +222,7 @@
 				"8": "Jiné"
 			},
 			"freight_size": "Velikost (slovy)",
+			"freight_size_detail": "Velikost položky",
 			"freight_weight": "Váha položky",
 			"freight_quantity": "Počet položek",
 			"email_addressee": "Email adresáta",
