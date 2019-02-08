@@ -213,6 +213,16 @@ angular.module('appControllers')
                 }
             };
 
+            function computePoint(items) {
+                var firstItemAmount = items[0].amount,
+                    lastItemAmount = items[items.length - 1].amount,
+                    avg = (firstItemAmount - lastItemAmount) / items.length,
+                    value = lastItemAmount - avg,
+                    result = Math.floor(value/100)*100;
+
+                return result <= 500 ? 0 : result;
+        }
+
             function afterRender() {
                 var el = document.getElementById('credit-chart');
 
@@ -290,9 +300,7 @@ angular.module('appControllers')
                                     callback: function(value) {
                                         return value + " Kč";
                                     },
-                                    min: items.length > 1 ?
-                                        Math.floor(items[items.length - 1].amount - ((items[0].amount - items[items.length - 1].amount) / items.length))
-                                        : 0
+                                    min: items.length > 1 ? computePoint(items) : 0
                                 }
                             }]
                         }
