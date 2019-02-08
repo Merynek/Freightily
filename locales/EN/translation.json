@@ -200,6 +200,7 @@
 				"open_detail": "Open auction detail",
 				"favourite": "Favourite"
 			},
+			"history_auction_first_item": "Create auction",
 			"template_name": "Template name",
 			"no_template": "No template",
 			"select_template_label": "Created Templates",

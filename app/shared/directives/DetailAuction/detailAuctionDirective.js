@@ -14,6 +14,7 @@ angular.module('appDirectives')
 
                 $scope.item = $scope.auctionItem.item;
                 $scope.history = {};
+                $scope.item.bidsHistory.unshift(createFirstHistoryItem());
                 prepareHistory($scope.item.bidsHistory);
                 $scope.expired = $scope.auctionItem.item.expired;
                 $scope.win = $scope.item.last_amount_user === User.ID;
@@ -35,6 +36,15 @@ angular.module('appDirectives')
 
                     $scope.history = history.reverse();
                     $scope.userIsBidder = filtered.length > 0;
+                }
+
+                function createFirstHistoryItem() {
+                    return {
+                        user_img: $scope.item.owner.toString(),
+                        id_user: $scope.item.owner,
+                        amount: $scope.item.price,
+                        date: $filter('i18next')("texts.auction.history_auction_first_item")
+                    }
                 }
 
                 $scope.toggleDetail = function ($event) {

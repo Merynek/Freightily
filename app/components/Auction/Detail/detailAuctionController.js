@@ -14,6 +14,7 @@ angular.module('appControllers')
 
             $scope.item = detailAuctionResponse;
             $scope.history = {};
+            $scope.item.bidsHistory.unshift(createFirstHistoryItem());
             prepareHistory($scope.item.bidsHistory);
             $scope.expired = $scope.item.expired;
             $scope.win = $scope.item.last_amount_user === User.ID;
@@ -42,6 +43,15 @@ angular.module('appControllers')
             }).blur(function() {
                 $scope.windowHasFocus = false;
             });
+
+            function createFirstHistoryItem() {
+                return {
+                    user_img: $scope.item.owner.toString(),
+                    id_user: $scope.item.owner,
+                    amount: $scope.item.price,
+                    date: $filter('i18next')("texts.auction.history_auction_first_item")
+                }
+            }
 
             function prepareHistory(history) {
                 var filtered = history.filter(function (item) {
@@ -231,11 +241,6 @@ angular.module('appControllers')
                 }
                 var ctx = el.getContext('2d');
                 var items = $scope.history.slice(0);
-
-                items.push({
-                    date: "Počáteční cena",
-                    amount: $scope.item.price
-                });
                 items.reverse();
 
                 var data = {
