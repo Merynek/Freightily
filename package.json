@@ -14,6 +14,7 @@
   "license": "BSD",
   "dependencies": {
     "angular": "~1.7.5",
+    "angular-bootstrap": "^0.12.2",
     "angular-sanitize": "^1.7.5",
     "angular-ui-router": "~1.0.20",
     "bootstrap": "~3.3.6",

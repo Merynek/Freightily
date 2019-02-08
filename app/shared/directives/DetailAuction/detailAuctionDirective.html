@@ -16,7 +16,8 @@
         <div class="auction-cell col-xs-6 col-sm-2 col-md-2 col-lg-2 end-date"><span>{{item.end_auction}}</span></div>
     </div>
     <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1">
-        <span ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'">
+        <span ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'"
+              tooltip-placement="left" tooltip="{{'texts.auction.tooltips.favourite' | i18next}}">
             <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="favourite($event); $event.stopPropagation()"></span>
         </span>
     </div>
@@ -25,8 +26,8 @@
     <div class="arrow"></div>
     <h2 class="main-header">
         {{'texts.auction.detail' | i18next}} - {{item.ID}}
-        <i ng-click="toggleDetail($event)" class="red cross glyphicon glyphicon-remove"></i>
-        <i ui-sref="detailAuction({idAuction:{{item.ID}}})" class="link glyphicon glyphicon-share"></i>
+        <i tooltip="{{'texts.auction.tooltips.close_detail' | i18next}}" ng-click="toggleDetail($event)" class="red cross glyphicon glyphicon-remove"></i>
+        <i tooltip="{{'texts.auction.tooltips.open_detail' | i18next}}" ui-sref="detailAuction({idAuction:{{item.ID}}})" class="link glyphicon glyphicon-share"></i>
     </h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding-detail">

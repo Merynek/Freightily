@@ -1,5 +1,8 @@
 {
 	"texts": {
+		"tooltips": {
+			"remove_company_notification_list": "Odstranit"
+		},
 		"login": "Přihlášení",
 		"username": "Uživatelské jméno",
 		"name": "Jméno",
@@ -119,6 +122,9 @@
 		"create_auction_dialog_item_price": "Cena za položku",
 		"create_auction_dialog_item_total_price": "Celková počáteční cena aukce",
 		"user": {
+			"tooltips": {
+				"close_detail": "Zavřít"
+			},
 			"detail": "Detail uživatele",
 			"vacation": "Dovolená",
 			"delete": "Odstranění uživatele",
@@ -148,6 +154,9 @@
 			}
 		},
 		"shipment": {
+			"tooltips": {
+				"close_detail": "Zavřít"
+			},
 			"new": "Nové",
 			"finished": "Ukončené",
 			"detail": "Detail zásilky",
@@ -186,6 +195,11 @@
 			"map": "Mapa řidičů"
 		},
 		"auction": {
+			"tooltips": {
+				"close_detail": "Zavřít",
+				"open_detail": "Otevřít detail aukce",
+				"favourite": "Oblíbené"
+			},
 			"template_name": "Jméno šablony",
 			"no_template": "Bez šablony",
 			"select_template_label": "Vytvořené Šablony",

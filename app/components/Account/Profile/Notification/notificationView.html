@@ -25,7 +25,9 @@
                             {{company}}
                         </td>
                         <td class="action">
-                            <span class="glyphicon glyphicon-remove red btn" ng-click="removeCompany(company)"></span>
+                            <span tooltip="{{'texts.tooltips.remove_company_notification_list' | i18next}}"
+                                  class="glyphicon glyphicon-remove red btn" ng-click="removeCompany(company)">
+                            </span>
                         </td>
                     </tr>
                     <tr class="desktop-only" ng-show="toSelect.length && setCompanies.length < 3">
