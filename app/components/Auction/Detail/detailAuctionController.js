@@ -211,7 +211,98 @@ angular.module('appControllers')
                 if (keyCode === 13) {
                     self.bidAuction(bid)
                 }
+            };
+
+            function afterRender() {
+                var el = document.getElementById('credit-chart');
+
+                if (!el) {
+                    return;
+                }
+                var ctx = el.getContext('2d');
+                var items = $scope.history.slice(0);
+
+                items.push({
+                    date: "Počáteční cena",
+                    amount: $scope.item.price
+                });
+                items.reverse();
+
+                var data = {
+                    labels: items.map(function (history) {
+                        return history.date;
+                    }),
+                    datasets: [
+                        {
+                            label: "Cena",
+                            backgroundColor: "#12133d",
+                            borderColor: "#12133d",
+                            data: items.map(function (history) {
+                                return history.amount;
+                            }),
+                            fill: false,
+                            cubicInterpolationMode: "monotone"
+                        },
+                        {
+                            data: [
+                                {
+                                    y: NaN,
+                                    x: "placeholder"
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+                data.labels.push("placeholder");
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        layout: {
+                            padding: {
+                                left: 0,
+                                right: 10,
+                                top: 0,
+                                bottom: 0
+                            }
+                        },
+                        tooltips: {
+                            cornerRadius: 3,
+                            bodySpacing: 7
+                        },
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: false
+                            }],
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + " Kč";
+                                    },
+                                    min: items.length > 1 ?
+                                        Math.floor(items[items.length - 1].amount - ((items[0].amount - items[items.length - 1].amount) / items.length))
+                                        : 0
+                                }
+                            }]
+                        }
+                    }
+                });
             }
+            setTimeout(function () {
+                afterRender();
+                window.dispatchEvent(new Event('resize'));
+            }, 50);
         }
     ]);
 

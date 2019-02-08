@@ -35,7 +35,7 @@ angular.module('appControllers')
             var ctx = el.getContext('2d');
 
             var color = Chart.helpers.color;
-            var horizontalBarChartData = {
+            var data = {
                 datasets: [{
                     label: $filter('i18next')('texts.charts_start'),
                     backgroundColor: color("#12133d").alpha(0.4).rgbString(),
@@ -54,7 +54,7 @@ angular.module('appControllers')
             };
             new Chart(ctx, {
                 type: 'horizontalBar',
-                data: horizontalBarChartData,
+                data: data,
                 options: {
                     elements: {
                         rectangle: {
@@ -82,8 +82,8 @@ angular.module('appControllers')
                         xAxes: [{
                             ticks: {
                                 min: 0,
-                                callback: function(value, index, values) {
-                                    return value + "Kč";
+                                callback: function(value) {
+                                    return value + " Kč";
                                 }
                             }
                         }]
