@@ -5,7 +5,7 @@
         angular.module('appDirectives', []);
 
         angular.module('myApp', [
-                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'ui.router.state.events', 'ngDialog', 'restangular', 'jm.i18next', 'timer', 'ui.bootstrap'
+                'appServices', 'appControllers', 'appDirectives', 'ui.router', 'ui.router.state.events', 'ngDialog', 'restangular', 'jm.i18next', 'timer'
                 ])
             .run(['$rootScope', '$state', 'User', '$stateParams', '$http', '$filter', function ($rootScope, $state, User, $stateParams, $http, $filter) {
                         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
