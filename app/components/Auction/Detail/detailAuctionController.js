@@ -11,6 +11,7 @@ angular.module('appControllers')
             $scope.route = "auction|detail";
             var self = $scope;
             var interval;
+            var rendered = false;
 
             $scope.item = detailAuctionResponse;
             $scope.history = {};
@@ -223,22 +224,13 @@ angular.module('appControllers')
                 }
             };
 
-            function computePoint(items) {
-                var firstItemAmount = items[0].amount,
-                    lastItemAmount = items[items.length - 1].amount,
-                    avg = (firstItemAmount - lastItemAmount) / items.length,
-                    value = lastItemAmount - avg,
-                    result = Math.floor(value/100)*100;
-
-                return result <= 500 ? 0 : result;
-        }
-
-            function afterRender() {
+            $scope.afterRender = function() {
                 var el = document.getElementById('credit-chart');
 
-                if (!el) {
+                if (!el || rendered) {
                     return;
                 }
+                rendered = true;
                 var ctx = el.getContext('2d');
                 var items = $scope.history.slice(0);
                 items.reverse();
@@ -249,7 +241,7 @@ angular.module('appControllers')
                     }),
                     datasets: [
                         {
-                            label: "Cena",
+                            label: $filter('i18next')('texts.charts_price'),
                             backgroundColor: "#12133d",
                             borderColor: "#12133d",
                             data: items.map(function (history) {
@@ -311,11 +303,7 @@ angular.module('appControllers')
                         }
                     }
                 });
-            }
-            setTimeout(function () {
-                afterRender();
-                window.dispatchEvent(new Event('resize'));
-            }, 50);
+            };
         }
     ]);
 

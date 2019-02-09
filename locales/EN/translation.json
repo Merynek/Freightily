@@ -44,6 +44,7 @@
         "charts_label": "Auctions summary",
         "charts_start": "Created",
         "charts_end": "Done",
+        "charts_price": "Price",
         "no_finance": "You haven't create any auction yet.",
 		"ico" : "Identification number",
 		"bank_account" : "Bank account",

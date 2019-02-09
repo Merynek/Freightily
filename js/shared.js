@@ -83,7 +83,8 @@ function needRestartToken() {
 
 function toggleDetail(detailElement) {
     var detail = detailElement.find(".auction-detail"),
-        scrollY = window.scrollY;
+        scrollY = window.scrollY,
+		visible = !detail.is(":visible");
 
     detail.stop().slideToggle(200);
     window.scrollTo(0, scrollY);
@@ -95,6 +96,18 @@ function toggleDetail(detailElement) {
     setTimeout(function () {
         clearInterval(toggleInterval);
     }, 240);
+
+    return visible;
+}
+
+function computePoint(items) {
+    var firstItemAmount = items[0].amount,
+        lastItemAmount = items[items.length - 1].amount,
+        avg = (firstItemAmount - lastItemAmount) / items.length,
+        value = lastItemAmount - avg,
+        result = Math.floor(value/100)*100;
+
+    return result <= 500 ? 0 : result;
 }
 var checkListAuctionRunning = false;
 var checkFavouriteAuctionRunning = false;

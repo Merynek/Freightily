@@ -44,6 +44,7 @@
         "charts_label": "Celková cena aukcí",
         "charts_start": "Počáteční",
         "charts_end": "Konečná",
+        "charts_price": "Cena",
         "no_finance": "Zatím jste nevytvořili žádnou aukci.",
 		"ico" : "IČO",
 		"bank_account" : "Bankovní účet",

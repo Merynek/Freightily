@@ -184,14 +184,15 @@
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
-            <span ng-show="history.length > 3" class="show-more" ng-click="historyToggle()">
-                <span ng-show="!historyMore" class="glyphicon glyphicon-menu-down"></span>
-                <span ng-show="historyMore" class="glyphicon glyphicon-menu-up"></span>
-                <label ng-show="!historyMore">{{'texts.show_more' | i18next}}</label>
-                <label ng-show="historyMore">{{'texts.show_less' | i18next}}</label>
+            <span class="show-more" ng-click="chartToggle()">
+                <span ng-show="!showHistoryChart" class="chart-icon fas fa-chart-line"></span>
+                <span ng-show="showHistoryChart" class="chart-icon fas fa-list-ol"></span>
             </span>
         </h3>
-        <div ng-show="history.length > 0" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table">
+        <div ng-show="history.length > 0 && showHistoryChart" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table auction-charts">
+            <canvas class="credit-chart" id="credit-chart-{{item.ID}}"></canvas>
+        </div>
+        <div ng-show="history.length > 0 && !showHistoryChart" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 history-table">
             <div class="history-header row">
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">#</div>
@@ -221,6 +222,7 @@
             </div>
             <div ng-show="!historyMore && history.length > 3" class="history-list show-more-list" ng-click="historyToggle()">
                 <div class="text-center">
+                    <span class="glyphicon glyphicon-menu-down"></span>
                     {{'texts.history_next' | i18next}} <b>{{history.length - 3}}</b> {{'texts.history_next2' | i18next}}
                 </div>
             </div>
@@ -238,6 +240,12 @@
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         {{item_history.amount}},-
                     </div>
+                </div>
+            </div>
+            <div ng-show="historyMore && history.length > 3" class="history-list show-more-list" ng-click="historyToggle()">
+                <div class="text-center">
+                    <span class="glyphicon glyphicon-menu-up"></span>
+                    <label>{{'texts.show_less' | i18next}}</label>
                 </div>
             </div>
         </div>

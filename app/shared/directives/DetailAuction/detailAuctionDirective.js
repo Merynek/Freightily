@@ -28,6 +28,7 @@ angular.module('appDirectives')
                 $scope.user = User;
                 $scope.isOwner = $scope.item.owner === User.ID;
                 $scope.historyMore = false;
+                $scope.showHistoryChart = true;
 
                 function prepareHistory(history) {
                     var filtered = history.filter(function (item) {
@@ -48,7 +49,10 @@ angular.module('appDirectives')
                 }
 
                 $scope.toggleDetail = function ($event) {
-                    toggleDetail($($event.target).parents("detail-auction"));
+                    var visible = toggleDetail($($event.target).parents("detail-auction"));
+                    if (visible) {
+                        showChart();
+                    }
                 };
 
                 $scope.$on("openAuctionDetail", function (evt, id) {
@@ -84,6 +88,9 @@ angular.module('appDirectives')
 
                 $scope.historyToggle = function () {
                     $scope.historyMore = !$scope.historyMore;
+                };
+                $scope.chartToggle = function () {
+                    $scope.showHistoryChart = !$scope.showHistoryChart;
                 };
 
                 $scope.getPrintAuction = function (id) {
@@ -192,6 +199,86 @@ angular.module('appDirectives')
                     if (keyCode === 13) {
                         self.bidAuction(bid)
                     }
+                };
+
+                function showChart() {
+                    var el = document.getElementById('credit-chart-'+$scope.ID);
+
+                    if (!el) {
+                        return;
+                    }
+                    var ctx = el.getContext('2d');
+                    var items = $scope.history.slice(0);
+                    items.reverse();
+
+                    var data = {
+                        labels: items.map(function (history) {
+                            return history.date;
+                        }),
+                        datasets: [
+                            {
+                                label: $filter('i18next')('texts.charts_price'),
+                                backgroundColor: "#12133d",
+                                borderColor: "#12133d",
+                                data: items.map(function (history) {
+                                    return history.amount;
+                                }),
+                                fill: false,
+                                cubicInterpolationMode: "monotone"
+                            },
+                            {
+                                data: [
+                                    {
+                                        y: NaN,
+                                        x: "placeholder"
+                                    }
+                                ]
+                            }
+                        ]
+                    };
+
+                    data.labels.push("placeholder");
+
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: data,
+                        options: {
+                            maintainAspectRatio: false,
+                            responsive: true,
+                            layout: {
+                                padding: {
+                                    left: 8,
+                                    right: 5,
+                                    top: 5,
+                                    bottom: 5
+                                }
+                            },
+                            tooltips: {
+                                cornerRadius: 3,
+                                bodySpacing: 7
+                            },
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: false
+                            },
+                            scales: {
+                                xAxes: [{
+                                    display: false
+                                }],
+                                yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        callback: function(value) {
+                                            return value + " Kč";
+                                        },
+                                        min: items.length > 1 ? computePoint(items) : 0
+                                    }
+                                }]
+                            }
+                        }
+                    });
                 }
             }
         }

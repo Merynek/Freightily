@@ -398,15 +398,18 @@
 .auction-detail .history-header div{
     padding: 5px;
 }
+.auction-detail .show-more-list {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.auction-detail .show-more-list label {
+    cursor: pointer;
+}
 .auction-detail .show-more {
     margin-right: 20px;
     float: right;
     cursor: pointer;
     font-size: 15px;
-}
-.auction-detail .show-more-list {
-    margin-bottom: 5px;
-    cursor: pointer;
 }
 .auction-detail .show-more label {
     font-weight: normal;
@@ -414,6 +417,12 @@
 }
 .auction-detail .show-more .glyphicon {
     color: #aaaaaa;
+}
+.auction-detail .show-more .chart-icon {
+    color: #12133d;
+    font-size: 23px;
+    padding-right: 0;
+    margin-top: -3px;
 }
 .auction-detail .my-button {
     margin-right: 0;
@@ -501,6 +510,10 @@
     position: relative;
     min-height: 160px;
     margin: 25px 0;
+}
+.auction-detail-item .auction-charts {
+    margin: 0 0 15px;
+    padding: 13px 0;
 }
 
 .auction-detail.embed .history-table {
