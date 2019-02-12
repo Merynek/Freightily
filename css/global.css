@@ -62,6 +62,9 @@ p {
     background: #12133d;
     border: 2px solid #12133d;
 }
+.angular-tooltip.angular-tooltip-top-center:before, .angular-tooltip.angular-tooltip-top-middle:before, .angular-tooltip.angular-tooltip-top:before, .angular-tooltip.angular-tooltip-top-center:after, .angular-tooltip.angular-tooltip-top-middle:after, .angular-tooltip.angular-tooltip-top:after {
+    border-top-color: #12133d;
+}
 
 .no-padding-element {
     padding-left: 0!important;
