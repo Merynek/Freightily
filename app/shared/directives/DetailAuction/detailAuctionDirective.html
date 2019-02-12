@@ -17,7 +17,7 @@
     </div>
     <div class="auction-button-detail col-xs-12 col-sm-1 col-md-1 col-lg-1">
         <span ng-show="withFavourite" ng-class="(isFavourite) ? 'is-favourite' : 'non-favourite'"
-              tooltip-placement="left" tooltip="{{'texts.auction.tooltips.favourite' | i18next}}">
+              title="{{'texts.auction.tooltips.favourite' | i18next}}" >
             <span class="glyphicon glyphicon glyphicon-star favouriteButton" ng-click="favourite($event); $event.stopPropagation()"></span>
         </span>
     </div>
@@ -26,8 +26,8 @@
     <div class="arrow"></div>
     <h2 class="main-header">
         {{'texts.auction.detail' | i18next}} - {{item.ID}}
-        <i tooltip="{{'texts.auction.tooltips.close_detail' | i18next}}" ng-click="toggleDetail($event)" class="red cross glyphicon glyphicon-remove"></i>
-        <i tooltip="{{'texts.auction.tooltips.open_detail' | i18next}}" ui-sref="detailAuction({idAuction:{{item.ID}}})" class="link glyphicon glyphicon-share"></i>
+        <i title="{{'texts.auction.tooltips.close_detail' | i18next}}" ng-click="toggleDetail($event)" class="red cross glyphicon glyphicon-remove"></i>
+        <i title="{{'texts.auction.tooltips.open_detail' | i18next}}" ui-sref="detailAuction({idAuction:{{item.ID}}})" class="link glyphicon glyphicon-share"></i>
     </h2>
     <div class="auction-detail-item col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding-detail">
         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 no-padding-detail">
@@ -184,7 +184,8 @@
         <h3>
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
             {{'texts.auction.history_amount' | i18next}}
-            <span class="show-more" ng-click="chartToggle()">
+            <span class="show-more" ng-click="chartToggle()"
+                  title="{{(showHistoryChart ? 'texts.auction.tooltips.switch_to_table' : 'texts.auction.tooltips.switch_to_chart') | i18next}}">
                 <span ng-show="!showHistoryChart" class="chart-icon fas fa-chart-line"></span>
                 <span ng-show="showHistoryChart" class="chart-icon fas fa-list-ol"></span>
             </span>

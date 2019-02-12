@@ -4,8 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/shared/directives/DetailShipment/detailShipmentDirective.html" line="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="- auction list - performance">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+    <list default="true" id="31aeabd1-ab5c-4186-8009-fb3e1f7af199" name="Default" comment="- poctání posledního bodu v grafu">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html" afterPath="$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html" />
@@ -52,57 +51,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ui-bootstrap-tpls.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/angular-bootstrap/ui-bootstrap-tpls.js">
+      <file leaf-file-name="detailAuctionController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Auction/Detail/detailAuctionController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="2425" column="22" lean-forward="false" selection-start-line="2425" selection-start-column="13" selection-end-line="2425" selection-end-column="22" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1437590131000" expanded="true" signature="20950:21328" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="20964:21133" ph="..." />
-                <marker date="1437590131000" expanded="false" signature="21023:21035" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="21075:21118" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="21147:21312" ph="..." />
-                <marker date="1437590131000" expanded="false" signature="21206:21218" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="21258:21297" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="21390:21434" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="22238:22499" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="22300:22485" ph="..." />
-                <marker date="1437590131000" expanded="false" signature="22345:22357" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="22395:22472" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="22705:22734" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="22797:22841" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="96294:96419" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="96459:96620" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="96650:96815" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98072:98824" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98143:98203" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98290:98360" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98388:98813" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98466:98614" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98656:98797" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="98896:99217" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="98919:99069" ph="[...]" />
-                <marker date="1437590131000" expanded="true" signature="99106:99210" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="99138:99200" ph="{...}" />
-                <marker date="1437590131000" expanded="true" signature="99559:99816" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="99571:99677" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="99689:99802" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="124737:124744" ph="×" />
-                <marker date="1437590131000" expanded="true" signature="127640:127651" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="128583:128594" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="129679:129690" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="130253:130264" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="131012:131032" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="132271:132282" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="132845:132856" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="140172:140178" ph="&amp;nbsp;" />
-                <marker date="1437590131000" expanded="true" signature="140431:140442" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="140775:140786" ph="..." />
-                <marker date="1437590131000" expanded="true" signature="141415:141421" ph="&amp;nbsp;" />
-                <marker date="1437590131000" expanded="true" signature="142269:142284" ph="..." />
-              </folding>
+            <state relative-caret-position="5424">
+              <caret line="226" column="12" lean-forward="false" selection-start-line="226" selection-start-column="12" selection-end-line="226" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="64" lean-forward="true" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="185" column="56" lean-forward="false" selection-start-line="185" selection-start-column="56" selection-end-line="185" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,72 +84,20 @@
       <file leaf-file-name="translation.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/locales/EN/translation.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="45" />
+            <state relative-caret-position="412">
+              <caret line="202" column="32" lean-forward="false" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="32" />
               <folding>
-                <marker date="1549620641971" expanded="true" signature="5650:6190" ph="{&quot;account&quot;: &quot;Profile&quot;...}" />
+                <marker date="1549988226069" expanded="true" signature="5683:6223" ph="{&quot;account&quot;: &quot;Profile&quot;...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailAuctionDirective.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html">
+      <file leaf-file-name="registrationView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Account/Registration/registrationView.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detailShipmentDirective.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailShipment/detailShipmentDirective.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detailUserDirective.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailUser/detailUserDirective.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auctionListView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
+            <state relative-caret-position="-1287">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="financesView.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Finances/financesView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding>
-                <marker date="1549614941410" expanded="true" signature="1247:1260" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notificationView.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -184,8 +106,28 @@
       <file leaf-file-name="translation.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/locales/CZ/translation.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="342">
+              <caret line="202" column="32" lean-forward="false" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginView.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/Account/Login/loginView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" column="103" lean-forward="false" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -194,8 +136,18 @@
       <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="296">
+              <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -214,20 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create_auction_dialog_quantity</find>
-      <find>big-input</find>
-      <find>e si vyplněné údaje o</find>
-      <find>number</find>
-      <find>selectTemplate</find>
-      <find>desktop-only</find>
-      <find>changePassword</find>
-      <find>phone-only</find>
-      <find>w</find>
-      <find>wra</find>
-      <find>userProfileController</find>
-      <find>getAccountInfo</find>
-      <find>char</find>
-      <find>Velikost (</find>
       <find>freight_siz</find>
       <find>freight_s</find>
       <find>Přehled financí</find>
@@ -237,13 +175,27 @@
       <find>setInfo</find>
       <find>userInfo</find>
       <find>ui.bootstrap</find>
-      <find>tooltip</find>
       <find>bootstrap</find>
       <find>placement</find>
       <find>cro</find>
       <find>cros</find>
       <find>remove</find>
       <find>account</find>
+      <find>after</find>
+      <find>round</find>
+      <find>prepareHistory</find>
+      <find>computePoint</find>
+      <find>afterRender</find>
+      <find>rendered</find>
+      <find>timeout</find>
+      <find>history</find>
+      <find>showHistoryChart</find>
+      <find>angular-bootstrap</find>
+      <find>t</find>
+      <find>title</find>
+      <find>tooltip</find>
+      <find>tooltips</find>
+      <find>?</find>
     </findStrings>
     <replaceStrings>
       <replace>createAuctionForm</replace>
@@ -272,8 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/shared/mainController.js" />
-        <option value="$PROJECT_DIR$/app/shared/directives/Menu/menuDirective.js" />
         <option value="$PROJECT_DIR$/app/components/Auction/List/auctionListView.html" />
         <option value="$PROJECT_DIR$/app/shared/Services/ShipmentsService.js" />
         <option value="$PROJECT_DIR$/app/shared/Services/AuctionService.js" />
@@ -290,7 +240,6 @@
         <option value="$PROJECT_DIR$/app/components/Account/Registration/registrationView.html" />
         <option value="$PROJECT_DIR$/app/components/Account/Registration/registrationController.js" />
         <option value="$PROJECT_DIR$/app/components/Company/companyController.js" />
-        <option value="$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Login/loginController.js" />
         <option value="$PROJECT_DIR$/dist/js/output.min.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
@@ -304,25 +253,28 @@
         <option value="$PROJECT_DIR$/app/components/Auction/Create/createAuctionController.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Profile/ChangePassword/changePasswordController.js" />
         <option value="$PROJECT_DIR$/css/content.css" />
-        <option value="$PROJECT_DIR$/app/components/Auction/Detail/detailAuction.html" />
         <option value="$PROJECT_DIR$/app/components/Account/Profile/Finances/financesView.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/Menu/menuDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/Services/UserAbilityService.js" />
         <option value="$PROJECT_DIR$/app/routes.js" />
-        <option value="$PROJECT_DIR$/app/config.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileController.js" />
         <option value="$PROJECT_DIR$/app/components/Account/Profile/Finances/financesController.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileView.html" />
-        <option value="$PROJECT_DIR$/css/global.css" />
-        <option value="$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/DetailShipment/detailShipmentDirective.html" />
         <option value="$PROJECT_DIR$/app/shared/directives/DetailUser/detailUserDirective.html" />
+        <option value="$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html" />
+        <option value="$PROJECT_DIR$/app/components/Auction/Detail/detailAuctionController.js" />
+        <option value="$PROJECT_DIR$/app/components/Auction/Detail/detailAuction.html" />
+        <option value="$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.js" />
+        <option value="$PROJECT_DIR$/app/config.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/components/Account/Login/loginView.html" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/css/global.css" />
         <option value="$PROJECT_DIR$/locales/CZ/translation.json" />
         <option value="$PROJECT_DIR$/locales/EN/translation.json" />
-        <option value="$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html" />
+        <option value="$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html" />
       </list>
     </option>
   </component>
@@ -360,8 +312,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -421,6 +371,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Freightily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Freightily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -462,58 +426,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DetailUser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DetailShipment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,32 +513,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Auction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="List" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -653,42 +539,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Notification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Freightily" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Profile" />
+              <option name="myItemId" value="Login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -718,122 +576,6 @@
       <recent name="C:\Users\m.meravy\Documents\MyWok\Freightily\app\components\Account\ForgotPassword" />
       <recent name="C:\Users\m.meravy\Documents\MyWok\Freightily\app\components\Account\Profile" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/Account/Profile/Finances/financesController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/Account/Profile/Finances/financesView.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/Auction/Detail/detailAuction.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/components/Auction/Detail/detailAuctionController.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/css/content.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/locales/CZ/translation.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/locales/EN/translation.json</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1397,42 +1139,13 @@
       <workItem from="1549357128864" duration="2664000" />
       <workItem from="1549445200075" duration="2704000" />
       <workItem from="1549470206379" duration="3483000" />
-      <workItem from="1549614926018" duration="4366000" />
-    </task>
-    <task id="LOCAL-00081" summary="- designovani priřazování jízd">
-      <created>1539671453686</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1539671453686</updated>
-    </task>
-    <task id="LOCAL-00082" summary="- při prázdné route se preroutuje na spravnou page podle role">
-      <created>1539673073195</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1539673073195</updated>
-    </task>
-    <task id="LOCAL-00083" summary="- změna hláška při zablokovaném učtu">
-      <created>1539873110936</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1539873110936</updated>
-    </task>
-    <task id="LOCAL-00084" summary="- administrace refactor + zobrazování ridiců na mapě">
-      <created>1539954518332</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1539954518332</updated>
-    </task>
-    <task id="LOCAL-00085" summary="- chybejici lokalizacní hláska">
-      <created>1539954695933</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1539954695933</updated>
+      <workItem from="1549614926018" duration="5035000" />
+      <workItem from="1549638408194" duration="1533000" />
+      <workItem from="1549640049851" duration="355000" />
+      <workItem from="1549887743759" duration="388000" />
+      <workItem from="1549894134276" duration="492000" />
+      <workItem from="1549963802679" duration="1997000" />
+      <workItem from="1549986728840" duration="1831000" />
     </task>
     <task id="LOCAL-00086" summary="- mapmarker bdue mit title">
       <created>1539956116039</created>
@@ -1742,11 +1455,46 @@
       <option name="project" value="LOCAL" />
       <updated>1549532348234</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="- tooltipy">
+      <created>1549620775128</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1549620775129</updated>
+    </task>
+    <task id="LOCAL-00131" summary="- poctání posledního bodu v grafu">
+      <created>1549639197252</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1549639197253</updated>
+    </task>
+    <task id="LOCAL-00132" summary="-  Přidání počáteční ceny do historie">
+      <created>1549639847845</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1549639847845</updated>
+    </task>
+    <task id="LOCAL-00133" summary="- neukončený div">
+      <created>1549894467951</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1549894467951</updated>
+    </task>
+    <task id="LOCAL-00134" summary="- bude se zobrazovat jako defualt tabulka jako dříve (historie prihozu)">
+      <created>1549963894393</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1549963894393</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="822518000" />
+    <option name="totallyTimeSpent" value="829783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1757,24 +1505,24 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20901246" sideWeight="0.3544776" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20901246" sideWeight="0.37846482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29817834" sideWeight="0.44829425" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20901246" sideWeight="0.6455224" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29817834" sideWeight="0.44402984" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20901246" sideWeight="0.6215352" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23187633" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24786781" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502398" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1799,8 +1547,6 @@
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/environment.js.map" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/projectLoader.js.map" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/css.update.js" />
-        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/messages.js" />
-        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/config.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/sourceMapGenerator.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/modules.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/karma.config.js" />
@@ -1808,12 +1554,14 @@
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/bundler.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/fs-utils.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/index.js" />
-        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/dependencies.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/tomcat-run.js" />
+        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/dependencies.js" />
+        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/messages.js" />
+        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/config.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/send-bobwai-usage-report.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/debug.js" />
-        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/linter.js" />
         <option value="$PROJECT_DIR$/../../phoenix/peon/peon/clean-peon.js" />
+        <option value="$PROJECT_DIR$/../../phoenix/peon/peon/linter.js" />
       </list>
     </option>
   </component>
@@ -1855,11 +1603,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- mazání sablon" />
-    <MESSAGE value="- price nebude v template" />
-    <MESSAGE value="- favourite uvidi jen transpoter" />
-    <MESSAGE value="- povýšení verze angularu na 1.7.5&#10;- refresh comba u template comba" />
-    <MESSAGE value="- prechod na OAUTH&#10;- refactor" />
     <MESSAGE value="- refactor, pri vybrani sablony se refreshuje form" />
     <MESSAGE value="- refresh token" />
     <MESSAGE value="- zrušení rolí" />
@@ -1880,7 +1623,12 @@
     <MESSAGE value="- finances" />
     <MESSAGE value="- na user profil chodi jen info o uživateli" />
     <MESSAGE value="- nová stránka prehled financí" />
-    <option name="LAST_COMMIT_MESSAGE" value="- nová stránka prehled financí" />
+    <MESSAGE value="- tooltipy" />
+    <MESSAGE value="- poctání posledního bodu v grafu" />
+    <MESSAGE value="-  Přidání počáteční ceny do historie" />
+    <MESSAGE value="- neukončený div" />
+    <MESSAGE value="- bude se zobrazovat jako defualt tabulka jako dříve (historie prihozu)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- bude se zobrazovat jako defualt tabulka jako dříve (historie prihozu)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1893,20 +1641,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Login/loginView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Login/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/minified.js" />
     <entry file="file://$PROJECT_DIR$/js/ng-i18next.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1986,20 +1720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/Detail/detailAuctionController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="174" column="20" lean-forward="false" selection-start-line="174" selection-start-column="20" selection-end-line="174" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -2032,9 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10584">
           <caret line="441" column="44" lean-forward="false" selection-start-line="441" selection-start-column="44" selection-end-line="441" selection-end-column="44" />
-          <folding>
-            <marker date="1549026763393" expanded="true" signature="842:1021" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2049,7 +1766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2057,14 +1773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29040">
           <caret line="1215" column="13" lean-forward="false" selection-start-line="1215" selection-start-column="12" selection-end-line="1215" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/Detail/detailAuction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="141" column="62" lean-forward="true" selection-start-line="141" selection-start-column="62" selection-end-line="141" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -2072,7 +1780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1656">
           <caret line="69" column="10" lean-forward="false" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2080,7 +1787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2256">
           <caret line="94" column="35" lean-forward="false" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2088,6 +1794,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1968">
           <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Finances/financesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/src/tooltip/tooltip.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" />
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-bootstrap/ui-bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58056">
+          <caret line="2425" column="22" lean-forward="false" selection-start-line="2425" selection-start-column="13" selection-end-line="2425" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Finances/financesView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailUser/detailUserDirective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailShipment/detailShipmentDirective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/Detail/detailAuction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5640">
+          <caret line="235" column="10" lean-forward="false" selection-start-line="235" selection-start-column="10" selection-end-line="235" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Auction/Detail/detailAuctionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5424">
+          <caret line="226" column="12" lean-forward="false" selection-start-line="226" selection-start-column="12" selection-end-line="226" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3768">
+          <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -2100,251 +1905,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Finances/financesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/src/tooltip/tooltip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-bootstrap/ui-bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1437590131000" expanded="true" signature="19986:20364" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20000:20169" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="20059:20071" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20111:20154" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20183:20348" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="20242:20254" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20294:20333" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20426:20470" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="21274:21535" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21336:21521" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="21381:21393" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21431:21508" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21741:21770" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="21833:21877" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="95330:95455" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="95495:95656" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="95686:95851" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97108:97860" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97179:97239" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97326:97396" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97424:97849" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97502:97650" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97692:97833" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="97932:98253" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="97955:98105" ph="[...]" />
-            <marker date="1437590131000" expanded="true" signature="98142:98246" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="98174:98236" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="98595:98852" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98607:98713" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98725:98838" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="169" lean-forward="false" selection-start-line="7" selection-start-column="169" selection-end-line="7" selection-end-column="169" />
+        <state relative-caret-position="456">
+          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="30" column="62" lean-forward="false" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+        <state relative-caret-position="261">
+          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/MyAccount/userProfileView.html">
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Registration/registrationView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1287">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Account/Login/loginView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="103" lean-forward="false" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Auction/List/auctionListView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="8" column="64" lean-forward="true" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular-bootstrap/ui-bootstrap-tpls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="2425" column="22" lean-forward="false" selection-start-line="2425" selection-start-column="13" selection-end-line="2425" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1437590131000" expanded="true" signature="20950:21328" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="20964:21133" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="21023:21035" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21075:21118" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21147:21312" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="21206:21218" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21258:21297" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="21390:21434" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="22238:22499" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="22300:22485" ph="..." />
-            <marker date="1437590131000" expanded="false" signature="22345:22357" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="22395:22472" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="22705:22734" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="22797:22841" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="96294:96419" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="96459:96620" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="96650:96815" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98072:98824" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98143:98203" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98290:98360" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98388:98813" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98466:98614" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98656:98797" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="98896:99217" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="98919:99069" ph="[...]" />
-            <marker date="1437590131000" expanded="true" signature="99106:99210" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="99138:99200" ph="{...}" />
-            <marker date="1437590131000" expanded="true" signature="99559:99816" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="99571:99677" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="99689:99802" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="124737:124744" ph="×" />
-            <marker date="1437590131000" expanded="true" signature="127640:127651" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="128583:128594" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="129679:129690" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="130253:130264" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="131012:131032" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="132271:132282" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="132845:132856" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="140172:140178" ph="&amp;nbsp;" />
-            <marker date="1437590131000" expanded="true" signature="140431:140442" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="140775:140786" ph="..." />
-            <marker date="1437590131000" expanded="true" signature="141415:141421" ph="&amp;nbsp;" />
-            <marker date="1437590131000" expanded="true" signature="142269:142284" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailUser/detailUserDirective.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailShipment/detailShipmentDirective.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Finances/financesView.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <marker date="1549614941410" expanded="true" signature="1247:1260" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/locales/CZ/translation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="4" selection-end-column="10" />
+        <state relative-caret-position="296">
+          <caret line="58" column="1" lean-forward="false" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/locales/EN/translation.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="45" />
+        <state relative-caret-position="412">
+          <caret line="202" column="32" lean-forward="false" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="32" />
           <folding>
-            <marker date="1549620641971" expanded="true" signature="5650:6190" ph="{&quot;account&quot;: &quot;Profile&quot;...}" />
+            <marker date="1549988226069" expanded="true" signature="5683:6223" ph="{&quot;account&quot;: &quot;Profile&quot;...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Account/Profile/Notification/notificationView.html">
+    <entry file="file://$PROJECT_DIR$/locales/CZ/translation.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        <state relative-caret-position="342">
+          <caret line="202" column="32" lean-forward="false" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared/directives/DetailAuction/detailAuctionDirective.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="185" column="56" lean-forward="false" selection-start-line="185" selection-start-column="56" selection-end-line="185" selection-end-column="56" />
           <folding />
         </state>
       </provider>

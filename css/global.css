@@ -58,11 +58,9 @@ p {
     padding-bottom: 27px;
 }
 
-.tooltip.top .tooltip-arrow {
-    border-top-color: #12133d;
-}
-.tooltip .tooltip-inner {
-    background-color: #12133d;
+.angular-tooltip {
+    background: #12133d;
+    border: 2px solid #12133d;
 }
 
 .no-padding-element {

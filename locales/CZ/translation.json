@@ -199,7 +199,9 @@
 			"tooltips": {
 				"close_detail": "Zavřít",
 				"open_detail": "Otevřít detail aukce",
-				"favourite": "Oblíbené"
+				"favourite": "Oblíbené",
+				"switch_to_chart": "Přepnout na Graf",
+				"switch_to_table": "Přepnout na Tabulku"
 			},
 			"history_auction_first_item": "Vytvoření aukce",
 			"template_name": "Jméno šablony",

@@ -199,7 +199,9 @@
 			"tooltips": {
 				"close_detail": "Close",
 				"open_detail": "Open auction detail",
-				"favourite": "Favourite"
+				"favourite": "Favourite",
+				"switch_to_chart": "Switch to Chart",
+				"switch_to_table": "Switch to table"
 			},
 			"history_auction_first_item": "Create auction",
 			"template_name": "Template name",
