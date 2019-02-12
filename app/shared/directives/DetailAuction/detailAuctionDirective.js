@@ -28,7 +28,7 @@ angular.module('appDirectives')
                 $scope.user = User;
                 $scope.isOwner = $scope.item.owner === User.ID;
                 $scope.historyMore = false;
-                $scope.showHistoryChart = true;
+                $scope.showHistoryChart = false;
 
                 function prepareHistory(history) {
                     var filtered = history.filter(function (item) {
