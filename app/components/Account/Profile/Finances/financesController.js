@@ -165,7 +165,7 @@ angular.module('appControllers')
                             ticks: {
                                 min: 0,
                                 callback: function(value) {
-                                    return value + " Kč";
+                                    return value + ",-";
                                 }
                             }
                         }]
