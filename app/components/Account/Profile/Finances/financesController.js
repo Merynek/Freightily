@@ -11,16 +11,16 @@ angular.module('appControllers')
         $scope.userInfo = financesInfo.user;
         $scope.lastCreatedAuction = financesInfo.lastCreatedAuction;
         /* lastCreatedAuction Mock example */
-        // var mock = [
-        //    {price: 1500, currently_price: 1000, end_auction: '10.31.2018 16:00:00'},
-        //    {price: 5500, currently_price: 4500, end_auction: '11.8.2018 14:00:00'},
-        //    {price: 1800, currently_price: 800, end_auction: '12.15.2018 14:00:00'},
-        //    {price: 2500, currently_price: 500, end_auction: '1.20.2019 14:00:00'},
-        //    {price: 2200, currently_price: 2000, end_auction: '1.5.2019 14:00:00'},
-        //    {price: 500, currently_price: 300, end_auction: '2.3.2019 14:00:00'},
-        //    {price: 850, currently_price: 375, end_auction: '2.4.2019 14:00:00'},
-        //    {price: 500, currently_price: 400, end_auction: '2019-02-11 23:25:00.000'}
-        // ];
+        var mock = [
+           {price: 1500, currently_price: 1000, end_auction: '2018-11-20 16:00:00.000'},
+           {price: 5500, currently_price: 4500, end_auction: '2018-12-11 14:00:00.000'},
+           {price: 1800, currently_price: 800, end_auction: '2018-12-15 14:00:00.000'},
+           {price: 2500, currently_price: 500, end_auction: '2019-01-20 14:00:00.000'},
+           {price: 2200, currently_price: 2000, end_auction: '2019-01-05 14:00:00.000'},
+           {price: 500, currently_price: 300, end_auction: '2019-01-02 14:00:00.000'},
+           {price: 850, currently_price: 375, end_auction: '2019-02-14 14:00:00.000'},
+           {price: 500, currently_price: 400, end_auction: '2019-02-11 23:25:00.000'}
+        ];
 
         $scope.sharePercent = getSharePercent();
         $scope.userInfo.share = financesInfo.user.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
@@ -79,33 +79,57 @@ angular.module('appControllers')
         }
 
         function afterRender() {
-            var el = document.getElementById('credit-chart'),
+            var historyElement = document.getElementById('history-chart'),
+                creditElement = document.getElementById('credit-chart'),
                 chartData;
 
-            if (!el) {
+            if (!historyElement) {
                 return;
             }
-            var ctx = el.getContext('2d');
 
-            // chartData = prepareHistoryData(mock);
+           // chartData = prepareHistoryData(mock);
             chartData = prepareHistoryData($scope.lastCreatedAuction);
-            updateChartHeight(el, chartData.labels.length);
+            updateChartHeight(historyElement, chartData.labels.length);
 
             var color = Chart.helpers.color;
-            var data = {
+            var historyData = {
                 labels: chartData.labels,
                 datasets: [{
                     label: $filter('i18next')('texts.charts_start'),
-                    backgroundColor: color("#12133d").alpha(0.4).rgbString(),
+                    backgroundColor: "#12133d",
                     borderColor: "#12133d",
                     data: chartData.start
                 }, {
                     label: $filter('i18next')('texts.charts_end'),
-                    backgroundColor: color("#74ce3b").alpha(0.4).rgbString(),
-                    borderColor: "#74ce3b",
+                    backgroundColor: color("#12133d").alpha(0.2).rgbString(),
+                    borderColor: "#12133d",
                     data: chartData.end
                 }]
             };
+            var creditData = {
+                datasets: [{
+                    label: $filter('i18next')('texts.charts_start'),
+                    backgroundColor: "#12133d",
+                    borderColor: "#12133d",
+                    data: [
+                        $scope.userInfo.start_credit
+                    ]
+                }, {
+                    label: $filter('i18next')('texts.charts_end'),
+                    backgroundColor:color("#12133d").alpha(0.2).rgbString(),
+                    borderColor: "#12133d",
+                    data: [
+                        $scope.userInfo.end_credit
+                    ]
+                }]
+            };
+
+            drawChart(historyElement, historyData, $filter('i18next')('texts.charts_history_label'));
+            drawChart(creditElement, creditData, $filter('i18next')('texts.charts_label'));
+        }
+
+        function drawChart(el, data, title) {
+            var ctx = el.getContext('2d');
             new Chart(ctx, {
                 type: 'horizontalBar',
                 data: data,
@@ -119,7 +143,10 @@ angular.module('appControllers')
                     responsive: true,
                     legend: {
                         position: 'top',
-                        onClick: function () { }
+                        onClick: function () { },
+                        labels: {
+                            fontSize: 14
+                        }
                     },
                     tooltips: {
                         cornerRadius: 3,
@@ -130,7 +157,8 @@ angular.module('appControllers')
                     },
                     title: {
                         display: true,
-                        text: $filter('i18next')('texts.charts_label')
+                        text: title,
+                        fontSize: 18
                     },
                     scales: {
                         xAxes: [{
