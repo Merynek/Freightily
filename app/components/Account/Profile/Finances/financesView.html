@@ -1,6 +1,6 @@
 <m param="{route}">
   <div class="user-page">
-      <h1>{{'texts.finances' | i18next}}</h1>
+      <h1>{{'texts.finances.title' | i18next}}</h1>
     <div ng-if="userInfo.start_credit > 0" class="wrapper">
       <div class="col-lg-6">
         <div class="charts">
@@ -8,7 +8,7 @@
         </div>
         <table class="table table-borderless credit-info">
           <tr>
-            <th>{{'texts.credit_all' | i18next}}:</th>
+            <th>{{'texts.finances.credit_all' | i18next}}:</th>
             <th>{{userInfo.start_credit - userInfo.end_credit}},-&nbsp;Kč</th>
           </tr>
           <tr>
@@ -17,15 +17,19 @@
             </td>
           </tr>
           <tr>
-            <td>{{'texts.credit_reset' | i18next}}:</td>
+            <td>{{'texts.finances.credit_reset' | i18next}}:</td>
             <td>{{userInfo.credit}},-&nbsp;Kč</td>
+            <td><i tooltip="{{'texts.finances.tooltips.current_economy' | i18next}}"
+                   class="glyphicon glyphicon-question-sign"></i></td>
           </tr>
           <tr>
-            <td>{{'texts.tariff' | i18next}}:</td>
+            <td>{{'texts.finances.tariff' | i18next}}:</td>
             <td><b>{{tariffPercent}}</b></td>
+            <td><i tooltip="{{'texts.finances.tooltips.tariff' | i18next}}"
+                   class="glyphicon glyphicon-question-sign"></i></td>
           </tr>
           <tr>
-            <td>{{'texts.share' | i18next}}:</td>
+            <td>{{'texts.finances.share' | i18next}}:</td>
             <td>{{userInfo.share}},-&nbsp;Kč</td>
           </tr>
         </table>
@@ -40,7 +44,7 @@
       <div class="col-lg-8 col-lg-offset-2">
         <div class="text-center spacer">
           <span class="glyphicon glyphicon-info-sign icon"></span>
-          {{'texts.no_finance' | i18next}}
+          {{'texts.finances.no_finance' | i18next}}
         </div>
       </div>
     </div>

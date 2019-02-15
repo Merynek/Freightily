@@ -95,12 +95,12 @@ angular.module('appControllers')
             var historyData = {
                 labels: chartData.labels,
                 datasets: [{
-                    label: $filter('i18next')('texts.charts_start'),
+                    label: $filter('i18next')('texts.finances.charts_start'),
                     backgroundColor: "#12133d",
                     borderColor: "#12133d",
                     data: chartData.start
                 }, {
-                    label: $filter('i18next')('texts.charts_end'),
+                    label: $filter('i18next')('texts.finances.charts_end'),
                     backgroundColor: color("#12133d").alpha(0.2).rgbString(),
                     borderColor: "#12133d",
                     data: chartData.end
@@ -108,14 +108,14 @@ angular.module('appControllers')
             };
             var creditData = {
                 datasets: [{
-                    label: $filter('i18next')('texts.charts_start'),
+                    label: $filter('i18next')('texts.finances.charts_start'),
                     backgroundColor: "#12133d",
                     borderColor: "#12133d",
                     data: [
                         $scope.userInfo.start_credit
                     ]
                 }, {
-                    label: $filter('i18next')('texts.charts_end'),
+                    label: $filter('i18next')('texts.finances.charts_end'),
                     backgroundColor:color("#12133d").alpha(0.2).rgbString(),
                     borderColor: "#12133d",
                     data: [
@@ -124,8 +124,8 @@ angular.module('appControllers')
                 }]
             };
 
-            drawChart(historyElement, historyData, $filter('i18next')('texts.charts_history_label'));
-            drawChart(creditElement, creditData, $filter('i18next')('texts.charts_label'));
+            drawChart(historyElement, historyData, $filter('i18next')('texts.finances.charts_history_label'));
+            drawChart(creditElement, creditData, $filter('i18next')('texts.finances.charts_label'));
         }
 
         function drawChart(el, data, title) {
