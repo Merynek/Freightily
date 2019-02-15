@@ -22,13 +22,13 @@ angular.module('appControllers')
            {price: 500, currently_price: 400, end_auction: '2019-02-11 23:25:00.000'}
         ];
 
-        $scope.sharePercent = getSharePercent();
-        $scope.userInfo.share = financesInfo.user.share.toString().replace(".", ","); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
+        $scope.tariffPercent = getTarifPercent();
+        $scope.userInfo.share = financesInfo.user.share.toString(); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
 
-        function getSharePercent() {
+        function getTarifPercent() {
             switch ($scope.userInfo.senderLevel) {
-                case 1: return "10%";
-                default: return "10%";
+                case 1: return "50%";
+                default: return "50%";
             }
         }
 

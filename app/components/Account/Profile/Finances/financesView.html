@@ -9,7 +9,7 @@
         <table class="table table-borderless credit-info">
           <tr>
             <th>{{'texts.credit_all' | i18next}}:</th>
-            <th>{{userInfo.start_credit - userInfo.end_credit}}&nbsp;Kč</th>
+            <th>{{userInfo.start_credit - userInfo.end_credit}},-&nbsp;Kč</th>
           </tr>
           <tr>
             <td colspan="2">
@@ -21,8 +21,12 @@
             <td>{{userInfo.credit}},-&nbsp;Kč</td>
           </tr>
           <tr>
+            <td>{{'texts.tariff' | i18next}}:</td>
+            <td><b>{{tariffPercent}}</b></td>
+          </tr>
+          <tr>
             <td>{{'texts.share' | i18next}}:</td>
-            <td><b>{{sharePercent}}</b></td>
+            <td>{{userInfo.share}},-&nbsp;Kč</td>
           </tr>
         </table>
       </div>
