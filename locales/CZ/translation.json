@@ -52,7 +52,7 @@
 			"no_finance": "Zatím jste nevytvořili žádnou aukci.",
 			"tooltips": {
 				"current_economy": "Úspora od posledního uhrazení poplatku",
-				"tariff": "Aktuální sazba, která určuje výši poplatku. Tato hodnota je individuální."
+				"tariff": "Sazba, která určuje výši poplatku."
 			}
 		},
 		"ico" : "IČO",

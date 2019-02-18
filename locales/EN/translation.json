@@ -53,7 +53,7 @@
 			"no_finance": "You haven't create any auction yet.",
 			"tooltips": {
 				"current_economy": "Savings since last charge",
-				"tariff": "Standard rate that determines the amount of the fee. This value is individual."
+				"tariff": "The rate that determines the amount of the fee."
 			}
 		},
 		"ico" : "Identification number",

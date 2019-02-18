@@ -27,8 +27,8 @@ angular.module('appControllers')
 
         function getTarifPercent() {
             switch ($scope.userInfo.senderLevel) {
-                case 1: return "50%";
-                default: return "50%";
+                case 1: return "40%";
+                default: return "40%";
             }
         }
 
