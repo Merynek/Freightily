@@ -78,7 +78,7 @@ angular.module('appControllers')
             wrap.css({height: 86 + months * 48});
         }
 
-        function afterRender() {
+        $scope.afterRender = function() {
             var historyElement = document.getElementById('history-chart'),
                 creditElement = document.getElementById('credit-chart'),
                 chartData;
@@ -126,7 +126,7 @@ angular.module('appControllers')
 
             drawChart(historyElement, historyData, $filter('i18next')('texts.finances.charts_history_label'));
             drawChart(creditElement, creditData, $filter('i18next')('texts.finances.charts_label'));
-        }
+        };
 
         function drawChart(el, data, title) {
             var ctx = el.getContext('2d');
@@ -175,7 +175,6 @@ angular.module('appControllers')
         }
 
         setTimeout(function () {
-            afterRender();
             window.dispatchEvent(new Event('resize'));
         }, 50);
     }
