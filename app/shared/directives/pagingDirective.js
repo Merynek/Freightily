@@ -8,7 +8,7 @@ angular.module('appDirectives')
                 allItemsCount: '='
             },
             controller: function ($scope, User, $stateParams, $state) {
-                var COUNT_OF_ITEMS_IN_PAGE = 10;
+                var COUNT_OF_ITEMS_IN_PAGE = 15;
 
                 $scope.page = $stateParams.page ? $stateParams.page : "1";
                 $scope.pagesCount = Math.ceil($scope.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
