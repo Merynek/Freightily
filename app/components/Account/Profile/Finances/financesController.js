@@ -21,6 +21,7 @@ angular.module('appControllers')
            {price: 850, currently_price: 375, end_auction: '2019-02-14 14:00:00.000'},
            {price: 500, currently_price: 400, end_auction: '2019-02-11 23:25:00.000'}
         ];
+        var rendered = false;
 
         $scope.tariffPercent = getTarifPercent();
         $scope.userInfo.share = financesInfo.user.share.toString(); // todo: udělat to hezčejš? ..doplnit ,- když nebudou halíře nebo zaokrouhlovat?
@@ -83,9 +84,10 @@ angular.module('appControllers')
                 creditElement = document.getElementById('credit-chart'),
                 chartData;
 
-            if (!historyElement) {
+            if (!historyElement || rendered) {
                 return;
             }
+            rendered = true;
 
            // chartData = prepareHistoryData(mock);
             chartData = prepareHistoryData($scope.lastCreatedAuction);
@@ -126,6 +128,8 @@ angular.module('appControllers')
 
             drawChart(historyElement, historyData, $filter('i18next')('texts.finances.charts_history_label'));
             drawChart(creditElement, creditData, $filter('i18next')('texts.finances.charts_label'));
+
+            window.dispatchEvent(new Event('resize'));
         };
 
         function drawChart(el, data, title) {
@@ -173,10 +177,6 @@ angular.module('appControllers')
                 }
             });
         }
-
-        setTimeout(function () {
-            window.dispatchEvent(new Event('resize'));
-        }, 50);
     }
     ]);
 

@@ -43,7 +43,8 @@
 			"share": "Poplatek",
 			"tariff": "Sazba",
 			"credit_all": "Celková úspora",
-			"credit_reset": "Aktuální úspora",
+			"credit_reset": "Úspora",
+			"credit_reset2": "(od posledního vyúčtování)",
 			"charts_label": "Celková cena aukcí",
 			"charts_history_label": "Historie vašich aukcí",
 			"charts_start": "Počáteční",
@@ -51,8 +52,8 @@
 			"charts_price": "Cena",
 			"no_finance": "Zatím jste nevytvořili žádnou aukci.",
 			"tooltips": {
-				"current_economy": "Úspora od posledního uhrazení poplatku",
-				"tariff": "Sazba, která určuje výši poplatku."
+				"current_economy": "Úspora od posledního uhrazení poplatku, která se nuluje při každém vyúčtování.",
+				"tariff": "Procentní sazba určující výši poplatku za službu."
 			}
 		},
 		"ico" : "IČO",

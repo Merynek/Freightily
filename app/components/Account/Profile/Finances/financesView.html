@@ -12,20 +12,20 @@
             <th>{{userInfo.start_credit - userInfo.end_credit}},-&nbsp;Kč</th>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colspan="3">
               <hr class="light">
             </td>
           </tr>
-          <tr>
-            <td>{{'texts.finances.credit_reset' | i18next}}:</td>
+          <tr ng-if="userInfo.start_credit - userInfo.end_credit != userInfo.credit">
+            <td>{{'texts.finances.credit_reset' | i18next}} <span class="note">{{'texts.finances.credit_reset2' | i18next}}</span>&nbsp;:</td>
             <td>{{userInfo.credit}},-&nbsp;Kč</td>
-            <td><i tooltip="{{'texts.finances.tooltips.current_economy' | i18next}}"
+            <td class="tooltip-cell"><i tooltip="{{'texts.finances.tooltips.current_economy' | i18next}}"
                    class="glyphicon glyphicon-question-sign"></i></td>
           </tr>
           <tr>
             <td>{{'texts.finances.tariff' | i18next}}:</td>
             <td><b>{{tariffPercent}}</b></td>
-            <td><i tooltip="{{'texts.finances.tooltips.tariff' | i18next}}"
+            <td class="tooltip-cell"><i tooltip="{{'texts.finances.tooltips.tariff' | i18next}}"
                    class="glyphicon glyphicon-question-sign"></i></td>
           </tr>
           <tr>

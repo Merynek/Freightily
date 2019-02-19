@@ -14,6 +14,12 @@
     overflow: initial!important;
 }
 
+.note {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #808080;
+}
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     position: relative;
     width: 800px;
@@ -875,6 +881,9 @@ hr.small {
 
 hr.light {
     border-top: 1px #e6e6f1 dashed;
+}
+.tooltip-cell {
+    width: 32px;
 }
 
 .margin-divider {

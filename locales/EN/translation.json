@@ -44,7 +44,8 @@
 			"share": "Charge",
 			"tariff": "Tariff",
 			"credit_all": "Total economy",
-			"credit_reset": "Current economy",
+			"credit_reset": "Economy",
+			"credit_reset2": "(from recent billing)",
 			"charts_label": "Auctions summary",
 			"charts_history_label": "Auctions history",
 			"charts_start": "Created",
@@ -52,7 +53,7 @@
 			"charts_price": "Price",
 			"no_finance": "You haven't create any auction yet.",
 			"tooltips": {
-				"current_economy": "Savings since last charge",
+				"current_economy": "Savings since last charge that are reset every billing.",
 				"tariff": "The rate that determines the amount of the fee."
 			}
 		},
