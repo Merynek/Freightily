@@ -12,20 +12,14 @@ angular.module('appServices')
 		
 		var Auction = {};
 		/* GET to REST api => Get all auction */ 
-		Auction.getAuctionList = function(sort, order, page){
-			var parameters = "?";
-            parameters += "page=" + page;
-			if(sort && order) {
-                parameters += "&sort=" + sort;
-                parameters += "&order=" + order;
-			}
+		Auction.getAuctionList = function(stateParams) {
 			startLoading();
 
 			return $q(function(resolve, reject){
 				$http({
 					method: 'GET',
                     headers: getTokenFromStorage(),
-					url: CONFIG.server.url+'auction'+parameters
+					url: CONFIG.server.url+'auction'+ getAuctionFilter(stateParams)
 					}).then(function(response) {
 						endLoading();
 						resolve(response.data);
@@ -323,6 +317,35 @@ angular.module('appServices')
 
 	}]
 );
+
+var getAuctionFilter = function (stateParams) {
+    var parameters = "?";
+    parameters += "page=" + stateParams.page || 1;
+    if (stateParams.sort && stateParams.order) {
+        parameters += "&sort=" + stateParams.sort || "";
+        parameters += "&order=" + stateParams.order || "";
+    }
+    if (stateParams.minPrice) {
+        parameters += "&minPrice=" + stateParams.minPrice;
+    }
+    if (stateParams.maxPrice) {
+        parameters += "&maxPrice=" + stateParams.maxPrice;
+    }
+    if (stateParams.type) {
+        parameters += "&type=" + stateParams.type;
+    }
+    if (stateParams.expired) {
+        parameters += "&expired=" + stateParams.expired;
+    }
+    if (stateParams.address_from) {
+        parameters += "&address_from=" + stateParams.address_from;
+    }
+    if (stateParams.address_to) {
+        parameters += "&address_to=" + stateParams.address_to;
+    }
+
+    return parameters;
+};
 
 
 var param = function(obj) {

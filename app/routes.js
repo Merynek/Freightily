@@ -171,18 +171,15 @@ $urlServiceProvider.config.strictMode(false);
 		 })
 	 	// AUCTION
 		.state('auction', {
-			url: "/auction?page?sort?order",
+			url: "/auction?page?sort?order?minPrice?maxPrice?type?expired?address_from?address_to",
 			controller: 'auctionListController',
 			templateUrl: "app/components/Auction/List/auctionListView.html",
 			data: {
 				role: [1]
             },
 			resolve: {
-				AuctionListResponse: function(Auction, $stateParams){
-                    var page = $stateParams.page || 1;
-					var sort = $stateParams.sort || "";
-					var order = $stateParams.order || "";
-					return Auction.getAuctionList(sort, order, page).then(function(res){
+				AuctionListResponse: function(Auction, $stateParams) {
+					return Auction.getAuctionList($stateParams).then(function(res){
 						return {
                             AuctionList: res.AuctionList,
                             Count: res.Count
