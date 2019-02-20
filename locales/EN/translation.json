@@ -57,6 +57,11 @@
 				"tariff": "The rate that determines the amount of the fee."
 			}
 		},
+		"search": {
+			"minPrice": "Minimal price",
+			"maxPrice": "Maximal price",
+			"expired": "Show expired"
+		},
 		"ico" : "Identification number",
 		"bank_account" : "Bank account",
 		"address" : "Address",

@@ -22,7 +22,7 @@ angular.module('appDirectives')
                     } else {
                         $stateParams.page = 2;
                     }
-                    redirect();
+                    redirect($state, $stateParams);
                 };
                 $scope.plus = function () {
                     var page = (parseInt($stateParams.page));
@@ -32,19 +32,8 @@ angular.module('appDirectives')
                     } else {
                         $stateParams.page = 2;
                     }
-                    redirect();
+                    redirect($state, $stateParams);
                 };
-
-                function redirect() {
-                    $state.transitionTo($state.current.name, {
-                        sort: $stateParams.sort,
-                        order: $stateParams.order,
-                        page: $stateParams.page
-                    }, {
-                        reload: true
-                    });
-                }
-
             }
         };
     });

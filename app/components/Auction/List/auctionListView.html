@@ -44,6 +44,59 @@
             </span>
         </span>
     </h1>
+    <div class="auction-filter col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="opener text-center" ng-click="toggleSearch()">Podrobné filtrování</div>
+        <form name="searchAuctionList" novalidate>
+            <div class="advanced-filter row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input ng-model="search.minPrice" class="form-control my-input" placeholder="{{'texts.search.minPrice' | i18next}}" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input ng-model="search.maxPrice" type="number" class="form-control my-input" placeholder="{{'texts.search.maxPrice' | i18next}}" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <select class="form-control my-input" ng-model="search.type" name="freight_type" id="freight_type">
+                            <option value="" disabled>{{'texts.auction.freight_type.label' | i18next}}</option>
+                            <option value="1">{{'texts.auction.freight_type.1' | i18next}}</option>
+                            <option value="2">{{'texts.auction.freight_type.2' | i18next}}</option>
+                            <option value="3">{{'texts.auction.freight_type.3' | i18next}}</option>
+                            <option value="4">{{'texts.auction.freight_type.4' | i18next}}</option>
+                            <option value="5">{{'texts.auction.freight_type.5' | i18next}}</option>
+                            <option value="6">{{'texts.auction.freight_type.6' | i18next}}</option>
+                            <option value="7">{{'texts.auction.freight_type.7' | i18next}}</option>
+                            <option value="8">{{'texts.auction.freight_type.8' | i18next}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input ng-model="search.address_from" class="form-control my-input" placeholder="{{'texts.auction.from' | i18next}}" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input ng-model="search.address_to" class="form-control my-input" placeholder="{{'texts.auction.to' | i18next}}" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="form-control"><input ng-model="search.expired" type="checkbox"/> {{'texts.search.expired' | i18next}}</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="form-group text-center">
+                        <div ng-click="makeSearch()" class="my-button normal-button big-button">Vyhledat</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     <div class="auction-list col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
         <div ng-if="AuctionList.length" class="auction-header-line col-sm-12 col-md-12 col-lg-12">
             <div class="auction-header col-sm-11 col-md-11 col-lg-11">

@@ -109,6 +109,23 @@ function computePoint(items) {
 
     return result <= 500 ? 0 : result;
 }
+
+function redirect($state, $stateParams) {
+    $state.transitionTo($state.current.name, {
+        sort: $stateParams.sort,
+        order: $stateParams.order,
+        page: $stateParams.page,
+        minPrice: $stateParams.minPrice,
+        maxPrice: $stateParams.maxPrice,
+        type: $stateParams.type,
+        expired: $stateParams.expired,
+        address_from: $stateParams.address_from,
+        address_to: $stateParams.address_to
+    }, {
+        reload: true
+    });
+}
+
 var checkListAuctionRunning = false;
 var checkFavouriteAuctionRunning = false;
 var checkBidsAuctionRunning = false;

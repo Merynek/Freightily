@@ -56,6 +56,11 @@
 				"tariff": "Procentní sazba určující výši poplatku za službu."
 			}
 		},
+        "search": {
+          "minPrice": "Minimální cena",
+          "maxPrice": "Maximální cena",
+          "expired": "Zobrazovat expirované"
+        },
 		"ico" : "IČO",
 		"bank_account" : "Bankovní účet",
 		"address" : "Adresa",
