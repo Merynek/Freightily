@@ -40,15 +40,15 @@ angular.module('appControllers')
             });
 
             $scope.makeSearch = function () {
-                $stateParams.minPrice = $scope.search.minPrice;
-                $stateParams.maxPrice = $scope.search.maxPrice;
-                $stateParams.type = $scope.search.type;
-                $stateParams.expired = $scope.search.expired;
-                $stateParams.address_from = $scope.search.address_from;
-                $stateParams.address_to = $scope.search.address_to;
-                $stateParams.page = 1;
+                $state.params.minPrice = $scope.search.minPrice;
+                $state.params.maxPrice = $scope.search.maxPrice;
+                $state.params.type = $scope.search.type;
+                $state.params.expired = $scope.search.expired;
+                $state.params.address_from = $scope.search.address_from;
+                $state.params.address_to = $scope.search.address_to;
+                $state.params.page = 1;
 
-                redirect($state, $stateParams);
+                redirect($state, $state.params);
             };
 
             $scope.toggleSearch = function () {
