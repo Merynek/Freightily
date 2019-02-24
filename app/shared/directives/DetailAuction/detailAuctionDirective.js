@@ -217,7 +217,7 @@ angular.module('appDirectives')
                         }),
                         datasets: [
                             {
-                                label: $filter('i18next')('texts.charts_price'),
+                                label: $filter('i18next')('texts.finances.charts_price'),
                                 backgroundColor: "#12133d",
                                 borderColor: "#12133d",
                                 data: items.map(function (history) {
