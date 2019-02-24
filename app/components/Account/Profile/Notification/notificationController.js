@@ -47,6 +47,7 @@ angular.module('appControllers')
         };
 
         setTimeout(function () {
+            // after render
             var selector = $('#toggle-notification');
             selector.bootstrapToggle();
             selector.change(function () {

@@ -63,6 +63,27 @@
 .table > tbody > tr > td {
     vertical-align: middle;
 }
+/*bootstrap slider*/
+
+.slider-selection {
+    background: #12133d;
+}
+.slider-handle {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #12133d;
+}
+.tooltip-inner {
+    max-width: 50px;
+    padding: 3px 8px;
+    color: #12133d;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 4px;
+}
+.tooltip.top .tooltip-arrow {
+    display: none;
+}
 
 /*auction*/
 .sorting-bar {
@@ -221,7 +242,40 @@
     text-align: center;
     padding: 10px 0 15px 0;
 }
-
+.auction-list-page .form-group {
+    margin-top: 30px;
+}
+.auction-list-page .no-label {
+    margin-top: 20px;
+}
+.auction-list-page .no-label2 {
+    margin-top: 18px;
+}
+.auction-list-page .slider {
+    width: calc(100% - 60px);
+    margin: 0 25px;
+}
+.auction-list-page .toggle {
+    margin: 0 0 0 10px;
+}
+.auction-list-page .opener {
+    display: inline-block;
+    padding: 10px 10px 10px 0;
+    margin: 0 7px 0 0;
+    font-weight: bold;
+    cursor: pointer;
+    border-right: 1px solid #e6e6f1;
+}
+.auction-list-page .opener .glyphicon {
+    opacity: 0.3;
+}
+.auction-list-page .opener:hover .glyphicon {
+    opacity: 1;
+}
+.auction-list-page .opener .normal-icon {
+    padding: 0 8px 0 0;
+    vertical-align: -16%;
+}
 .global-list-item {
     cursor: pointer;
     padding-left: 0;

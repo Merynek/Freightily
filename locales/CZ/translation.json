@@ -59,7 +59,13 @@
         "search": {
           "minPrice": "Minimální cena",
           "maxPrice": "Maximální cena",
-          "expired": "Zobrazovat expirované"
+          "expired": "Expirované:",
+			"expiredOn": "Zobrazovat",
+			"expiredOff": "Nezobrazovat",
+			"advanced": "Vyhledávání",
+			"cancel": "Zrušit hledání",
+			"search": "Vyhledat",
+			"over": "nad "
         },
 		"ico" : "IČO",
 		"bank_account" : "Bankovní účet",

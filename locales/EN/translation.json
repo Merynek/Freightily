@@ -60,7 +60,13 @@
 		"search": {
 			"minPrice": "Minimal price",
 			"maxPrice": "Maximal price",
-			"expired": "Show expired"
+			"expired": "Expired",
+          "expiredOn": "Show",
+          "expiredOff": "No",
+          "advanced": "Searching",
+          "cancel": "Cancel search",
+          "search": "Search",
+          "over": "over "
 		},
 		"ico" : "Identification number",
 		"bank_account" : "Bank account",

@@ -17,15 +17,20 @@ angular.module('appControllers')
             $scope.sorting = getSortingText();
             $scope.withFavourite = true;
             $scope.windowHasFocus = true;
+            $scope.filterOpen = true;
+
+            var maxPrice = 5000;
+            var rendered = false;
+
             if (!checkListAuctionRunning) {
                 refreshingData();
             }
 
             $scope.search = {
-                minPrice: parseInt($stateParams.minPrice) || 0,
-                maxPrice: parseInt($stateParams.maxPrice),
-                type: parseInt($stateParams.type) || "",
-                expired: $stateParams.expired,
+                minPrice: parseInt($stateParams.minPrice) || undefined,
+                maxPrice: parseInt($stateParams.maxPrice) || undefined,
+                type: $stateParams.type || undefined,
+                expired: !$stateParams.expired,
                 address_from: $stateParams.address_from,
                 address_to: $stateParams.address_to
             };
@@ -40,20 +45,93 @@ angular.module('appControllers')
             });
 
             $scope.makeSearch = function () {
-                $state.params.minPrice = $scope.search.minPrice;
-                $state.params.maxPrice = $scope.search.maxPrice;
+                $state.params.minPrice = $scope.search.minPrice || undefined;
+                $state.params.maxPrice = $scope.search.maxPrice === maxPrice || $scope.search.maxPrice === 0 ?
+                    undefined : $scope.search.maxPrice;
                 $state.params.type = $scope.search.type;
-                $state.params.expired = $scope.search.expired;
+                $state.params.expired = $scope.search.expired ? undefined : 0;
                 $state.params.address_from = $scope.search.address_from;
                 $state.params.address_to = $scope.search.address_to;
-                $state.params.page = 1;
+                $state.params.page = undefined;
 
                 redirect($state, $state.params);
             };
 
             $scope.toggleSearch = function () {
-                $(".advanced-filter").slideToggle();
+                var filter = $(".advanced-filter");
+
+                $scope.filterOpen = !$(filter).is(":visible");
+                filter.slideToggle(function () {
+                    $scope.filterOpen = $(filter).is(":visible");
+                });
             };
+
+            $scope.resetSearch = function () {
+                if (!isSearching()) {
+                    $scope.toggleSearch();
+                    return;
+                }
+                $scope.search.minPrice = undefined;
+                $scope.search.maxPrice = undefined;
+                $scope.search.type = undefined;
+                $scope.search.expired = 1;
+                $scope.search.address_from = undefined;
+                $scope.search.address_to = undefined;
+                $scope.makeSearch();
+            };
+
+            $scope.afterRender = function () {
+                var toggleElement,
+                    sliderElement;
+
+                if (rendered) {
+                    return;
+                }
+                rendered = true;
+                toggleElement = $('#toggle-expired');
+                sliderElement = $("#slider-price");
+
+                toggleElement.bootstrapToggle();
+                toggleElement.change(function () {
+                    $scope.search.expired = $(this).prop('checked');
+                });
+
+                sliderElement.slider({
+                    min: 0,
+                    max: maxPrice,
+                    step: 100,
+                    range: true,
+                    value: [$scope.search.minPrice || 0, $scope.search.maxPrice || maxPrice],
+                    formatter: function(value) {
+                        if (value === maxPrice) {
+                            return $filter('i18next')('texts.search.over') + value + " Kč";
+                        }
+                        return value + " Kč";
+                    },
+                    tooltip_split: true,
+                    tooltip: "always"
+                }).on("change", function (e) {
+                    var values = e.value.newValue;
+
+                    $scope.search.minPrice = values[0];
+                    $scope.search.maxPrice = values[1];
+                });
+
+                if (!isSearching()) {
+                    $(".advanced-filter").hide();
+                    $scope.filterOpen = false;
+                }
+            };
+
+            function isSearching() {
+                return $scope.search.minPrice ||
+                    $scope.search.maxPrice ||
+                    $scope.search.type ||
+                    !$scope.search.expired ||
+                    $scope.search.address_from ||
+                    $scope.search.address_to;
+            }
+
             function refreshingData() {
                 checkListAuctionRunning = true;
                 var route = $state.current.name;
