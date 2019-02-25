@@ -59,7 +59,7 @@
         "search": {
           "minPrice": "Minimální cena",
           "maxPrice": "Maximální cena",
-          "expired": "Expirované:",
+          "expired": "Ukončené:",
 			"expiredOn": "Zobrazovat",
 			"expiredOff": "Nezobrazovat",
 			"advanced": "Vyhledávání",
