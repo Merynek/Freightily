@@ -63,7 +63,7 @@ angular.module('appControllers')
             var win = window.innerHeight,
                 $con = $('body').height(),
                 $f = $('footer'),
-                footerHeight = $f.height();
+                footerHeight = $f.innerHeight();
 
             $con += $f.css('position') === 'absolute' ? footerHeight : 0;
             if (win > $con) {

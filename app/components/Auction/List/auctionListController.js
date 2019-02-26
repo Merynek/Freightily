@@ -63,6 +63,7 @@ angular.module('appControllers')
                 $scope.filterOpen = !$(filter).is(":visible");
                 filter.slideToggle(function () {
                     $scope.filterOpen = $(filter).is(":visible");
+                    window.dispatchEvent(new Event('resize'));
                 });
             };
 
@@ -120,6 +121,7 @@ angular.module('appControllers')
                 if (!isSearching()) {
                     $(".advanced-filter").hide();
                     $scope.filterOpen = false;
+                    window.dispatchEvent(new Event('resize'));
                 }
             };
 

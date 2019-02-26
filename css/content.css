@@ -253,7 +253,7 @@
 }
 .auction-list-page .slider {
     width: calc(100% - 60px);
-    margin: 0 25px;
+    margin: 13px 25px 0;
 }
 .auction-list-page .toggle {
     margin: 0 0 0 10px;
@@ -1065,6 +1065,9 @@ hr.light {
     .auction-detail-item:nth-last-child(1){
         margin-bottom: 0;
     }
+    .auction-list-page .form-group {
+        margin-top: 37px;
+    }
     /*Login page*/
     .login-page {
         padding-top: 30px;
@@ -1371,5 +1374,8 @@ hr.light {
     }
     .auction-detail-item .awes-icon {
         display: none;
+    }
+    .auction-list-page .opener {
+        border-right: none;
     }
 }
