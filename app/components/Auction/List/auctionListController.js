@@ -29,7 +29,7 @@ angular.module('appControllers')
             $scope.search = {
                 minPrice: parseInt($stateParams.minPrice) || undefined,
                 maxPrice: parseInt($stateParams.maxPrice) || undefined,
-                type: $stateParams.type || undefined,
+                type: $stateParams.type || "",
                 expired: !$stateParams.expired,
                 address_from: $stateParams.address_from,
                 address_to: $stateParams.address_to
@@ -48,7 +48,7 @@ angular.module('appControllers')
                 $state.params.minPrice = $scope.search.minPrice || undefined;
                 $state.params.maxPrice = $scope.search.maxPrice === maxPrice || $scope.search.maxPrice === 0 ?
                     undefined : $scope.search.maxPrice;
-                $state.params.type = $scope.search.type;
+                $state.params.type = $scope.search.type === "any" ? undefined : $scope.search.type;
                 $state.params.expired = $scope.search.expired ? undefined : 0;
                 $state.params.address_from = $scope.search.address_from;
                 $state.params.address_to = $scope.search.address_to;

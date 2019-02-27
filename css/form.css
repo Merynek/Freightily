@@ -220,24 +220,13 @@ label {
     max-width: 100%;
     border-radius: 3px;
 }
-.my-button.navigation {
-    width: 40px;
-    padding: 0;
-    margin: 10px 0 0 0;
-    cursor: pointer;
-}
-.my-button.navigation[disabled] {
-    opacity: 0.4;
-    cursor: default;
-}
 .my-button .glyphicon {
     padding-right: 7px;
     color: #aaaaaa;
     margin-left: -10px;
 }
-.my-button.navigation .glyphicon{
-    padding-right: 0;
-    margin-left: 0;
+.placeholder-item {
+    display: none;
 }
 .assign-button {
     width: 125px;
@@ -262,16 +251,6 @@ label {
     font-size: 26px!important;
     padding-right: 0!important;
 }
-.navigation-text-input {
-    font-weight: bold;
-    text-align: center;
-    height: 40px;
-    width: 80px;
-}
-.navigation-bar {
-    text-align: center;
-}
-
 .big-input {
     padding:  10px 16px;
     height: 46px;

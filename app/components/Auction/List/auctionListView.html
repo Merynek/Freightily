@@ -5,7 +5,7 @@
         <span class="heading-right sorting-bar">
 
             <span ng-show="!filterOpen" class="opener" ng-click="toggleSearch()">
-                <span class="normal-icon glyphicon glyphicon-search"></span>
+                <span class="normal-icon glyphicon glyphicon-filter"></span>
                 {{'texts.search.advanced' | i18next}}
             </span>
             <span ng-show="filterOpen" class="opener" ng-click="resetSearch()">
@@ -72,7 +72,8 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <select class="form-control my-input" ng-model="search.type" name="freight_type" id="freight_type">
-                            <option value="" disabled>{{'texts.auction.freight_type.label' | i18next}}</option>
+                            <option class="placeholder-item" value="" disabled>{{'texts.auction.freight_type.label' | i18next}}</option>
+                            <option value="any" ng-show="search.type">{{'texts.auction.freight_type.0' | i18next}}</option>
                             <option value="1">{{'texts.auction.freight_type.1' | i18next}}</option>
                             <option value="2">{{'texts.auction.freight_type.2' | i18next}}</option>
                             <option value="3">{{'texts.auction.freight_type.3' | i18next}}</option>
@@ -92,13 +93,12 @@
                 <div class="col-md-4">
                     <div class="form-group no-label text-center">
                         <label>
-                            {{'texts.search.expired' | i18next}}
                             <input type="checkbox"
                                       id="toggle-expired"
                                       ng-checked="search.expired"
                                       data-toggle="toggle"
-                                       data-size="small"
                                       data-onstyle="nohe"
+                                   data-width="150"
                                       data-on="{{'texts.search.expiredOn' | i18next}}"
                                       data-off="{{'texts.search.expiredOff' | i18next}}"/>
                         </label>

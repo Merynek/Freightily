@@ -1,9 +1,17 @@
 <div class="navigation-bar">
-    <button class="my-button normal-button navigation" ng-disabled="page <= '1'" ng-click="minus()">
-        <span class="glyphicon glyphicon-arrow-left"></span>
+    <button class="navigation" ng-disabled="page <= '1'" ng-click="first()">
+        <span class="fas fa-angle-double-left"></span>
     </button>
-    <input class="navigation-text-input" disabled="disabled" type="text" value="{{page}} / {{pagesCount}}"/>
-    <button class="my-button normal-button navigation" ng-disabled="isLastPage" ng-click="plus()">
-        <span class="glyphicon glyphicon-arrow-right"></span>
+    <button class="navigation" ng-disabled="page <= '1'" ng-click="minus()">
+        <span class="fas fa-angle-left"></span>
+    </button>
+
+    <span class="navigation-text-input">{{page}}</span> <span class="total-page">/ {{pagesCount}}</span>
+
+    <button class="navigation" ng-disabled="isLastPage" ng-click="plus()">
+        <span class="fas fa-angle-right"></span>
+    </button>
+    <button class="navigation" ng-disabled="isLastPage" ng-click="last()">
+        <span class="fas fa-angle-double-right"></span>
     </button>
 </div>

@@ -60,10 +60,10 @@
           "minPrice": "Minimální cena",
           "maxPrice": "Maximální cena",
           "expired": "Ukončené:",
-			"expiredOn": "Zobrazovat",
-			"expiredOff": "Nezobrazovat",
-			"advanced": "Vyhledávání",
-			"cancel": "Zrušit hledání",
+			"expiredOn": "Zobrazit vše",
+			"expiredOff": "Pouze neukončené",
+			"advanced": "Filtrování",
+			"cancel": "Zrušit filtr",
 			"search": "Vyhledat",
 			"over": "nad "
         },
@@ -252,6 +252,7 @@
 			"owner_company_name": "Firma",
 			"freight_type": {
 				"label": "Typ položky",
+				"0": "Nerozhoduje",
 				"1": "Balík do 50 kg",
 				"2": "Balík nad 50 kg",
 				"3": "Atypický balík",

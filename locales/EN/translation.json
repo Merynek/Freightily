@@ -61,10 +61,10 @@
 			"minPrice": "Minimal price",
 			"maxPrice": "Maximal price",
 			"expired": "Expired",
-          "expiredOn": "Show",
-          "expiredOff": "No",
-          "advanced": "Searching",
-          "cancel": "Cancel search",
+          "expiredOn": "Show all",
+          "expiredOff": "No expired",
+          "advanced": "Filtering",
+          "cancel": "Reset filter",
           "search": "Search",
           "over": "over "
 		},
@@ -253,6 +253,7 @@
 			"owner_company_name": "Company",
             "freight_type": {
               "label": "Item type",
+              "0": "Any",
               "1": "Package up to 50 kg",
               "2": "Package over 50 kg",
               "3": "Atypical package",

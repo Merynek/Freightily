@@ -190,6 +190,46 @@ p {
     display: none;
 }
 
+/* Pager */
+
+.navigation-bar {
+    text-align: center;
+}
+.navigation-text-input {
+    font-weight: bold;
+    height: 40px;
+    color: #12133d;
+    font-size: 26px;
+    padding: 0 3px;
+    margin-left: 5px;
+}
+.navigation-text-input::-webkit-outer-spin-button,
+.navigation-text-input::-webkit-inner-spin-button {
+    display: none;
+}
+.total-page {
+    color: #808080;
+    padding: 0 3px 0 0;
+    margin-right: 5px;
+}
+.navigation {
+    width: 30px;
+    padding: 8px 0;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: #12133d;
+    background: none;
+    border: none;
+}
+.navigation[disabled] {
+    opacity: 0.4;
+    cursor: default;
+}
+.navigation .glyphicon{
+    padding-right: 0;
+    margin-left: 0;
+}
 @media (max-width: 991px) {
     /* MENU */
     .menu-tabs {
