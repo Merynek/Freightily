@@ -266,12 +266,6 @@
     cursor: pointer;
     border-right: 1px solid #e6e6f1;
 }
-.auction-list-page .opener .glyphicon {
-    opacity: 0.3;
-}
-.auction-list-page .opener:hover .glyphicon {
-    opacity: 1;
-}
 .auction-list-page .opener .normal-icon {
     padding: 0 8px 0 0;
     vertical-align: -16%;
