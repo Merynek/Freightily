@@ -9,7 +9,8 @@ angular.module('appControllers')
     .controller('notificationController', ['$scope','notificationResponse' , '$filter', 'UserAbility', function ($scope, notificationResponse, $filter, UserAbility) {
         $scope.route = "account|notifi";
         var response = notificationResponse,
-            notification = response.notification;
+            notification = response.notification,
+            rendered = false;
 
         $scope.companies = response.companies;
 
@@ -46,15 +47,19 @@ angular.module('appControllers')
             setNotification();
         };
 
-        setTimeout(function () {
-            // after render
+        $scope.afterRender = function () {
+            if (rendered) {
+                return;
+            }
+            rendered = true;
+
             var selector = $('#toggle-notification');
             selector.bootstrapToggle();
             selector.change(function () {
                 $scope.notificationEnabled = $(this).prop('checked');
                 setNotification();
             })
-        }, 10);
+        };
 
         function updateToSelect() {
             $scope.toSelect = $scope.setCompanies.length ?
