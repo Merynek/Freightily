@@ -292,6 +292,27 @@ angular.module('appServices')
 			});
 		};
 
+		/* GET to REST api => Get expired auction */
+		Auction.getExpiredAuction = function(page){
+            var parameters = "?";
+            parameters += "page=" + page;
+
+			startLoading();
+			return $q(function(resolve, reject){
+				$http({
+					method: 'GET',
+                    headers: getTokenFromStorage(),
+					url: CONFIG.server.url+'auction/expired'+parameters
+					}).then(function(response) {
+						endLoading();
+						resolve(response.data);
+					}).catch(function(error){
+						endLoading();
+						reject(error);
+					})
+			});
+		};
+
         /* GET to REST api => Get my created auction */
 		Auction.getCreatedAuction = function(page){
             var parameters = "?";

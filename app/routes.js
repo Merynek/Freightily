@@ -241,6 +241,25 @@ $urlServiceProvider.config.strictMode(false);
 				}
 			}
 		})
+		.state('expiredAuction', {
+			url: "/auction/expired?page",
+			controller: 'expiredAuctionController',
+			templateUrl: "app/components/Auction/Expired/expiredAuctionView.html",
+			data: {
+				role: [1]
+			},
+			resolve: {
+				expiredAuctionResponse: function(Auction, $stateParams){
+                    var page = $stateParams.page || 1;
+					return Auction.getExpiredAuction(page).then(function(res){
+                        return {
+                            AuctionList: res.AuctionList,
+                            Count: res.Count
+                        };
+					})
+				}
+			}
+		})
 		.state('winAuction', {
 			url: "/auction/win?page",
 			controller: 'winAuctionController',

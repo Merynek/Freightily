@@ -26,6 +26,9 @@
         <div class="tab" ui-sref="favouriteAuction" ng-class="underRoute == 'favourite' ? 'active' : null">
             {{'texts.tab.favourite' | i18next}}
         </div>
+        <div class="tab" ui-sref="expiredAuction"  ng-class="underRoute == 'expired' ? 'active' : null">
+            {{'texts.tab.expired' | i18next}}
+        </div>
         <div class="menu-divider"></div>
         <div class="tab" ui-sref="createAuction"  ng-class="underRoute == 'add' ? 'active' : null">
             {{'texts.tab.create_auction' | i18next}}
