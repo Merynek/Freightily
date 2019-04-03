@@ -171,8 +171,7 @@
 				"DESC": "Nejdražší"
 			},
 			"end_auction": {
-				"ASC": "Nejstarší",
-				"DESC": "Nejnovější"
+				"ASC": "Ukončení"
 			}
 		},
 		"shipment": {
@@ -205,7 +204,7 @@
 			"assignment": "Přiřazování jízd",
 			"shipments": "Zásilky",
 			"company": "Firma",
-			"list": "Seznam",
+			"list": "Probíhající",
 			"favourite": "Oblíbené",
 			"bids": "Přihazuji",
 			"expired": "Ukončené",

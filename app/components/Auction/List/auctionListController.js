@@ -159,7 +159,7 @@ angular.module('appControllers')
                         locText += $filter('i18next')('texts.sorting.end_auction.' + $scope.order);
                         break;
                     default:
-                        return $filter('i18next')('texts.sorting.end_auction.DESC');
+                        return $filter('i18next')('texts.sorting.end_auction.ASC');
                 }
 
                 return locText;

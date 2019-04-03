@@ -172,8 +172,7 @@
 				"DESC": "Highest price"
 			},
 			"end_auction": {
-				"ASC": "End auction (older)",
-				"DESC": "End auction (newer)"
+				"ASC": "End auction"
 			}
 		},
 		"shipment": {
