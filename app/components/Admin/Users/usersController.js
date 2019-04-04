@@ -98,5 +98,17 @@ angular.module('appControllers')
                 console.log("sms - FAIL");
             })
         };
+
+        $scope.ForFun = function() {
+            var i,
+                count = 0,
+                users = $scope.users;
+
+            for (i = 0; i < users.length; i++) {
+                count += users[i].share;
+            }
+
+            alert(count);
+        };
     }
 ]);
