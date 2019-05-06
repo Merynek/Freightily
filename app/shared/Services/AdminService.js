@@ -117,7 +117,28 @@ angular.module('appServices')
             });
         };
 
-        /* POST to REST api => send News Email*/
+        /* POST to REST api => send Invoice*/
+        Admin.Invoice = function(id_user){
+            startLoading();
+            var parameters = "?";
+            parameters += "id_user=" + id_user;
+
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'PUT',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'admin/sendInvoice'+parameters
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
+        /* PUT to REST api => send News Email*/
         Admin.SendNewsEmail = function(){
             startLoading();
             return $q(function(resolve, reject) {
