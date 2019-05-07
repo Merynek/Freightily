@@ -100,11 +100,14 @@ angular.module('appControllers')
         };
 
         $scope.Invoice = function(id_user) {
-            Admin.Invoice(id_user).then(function() {
-                console.log("invoice - OK");
-            }).catch(function(error) {
-                console.log("invoice - FAIL");
-            })
+            if (confirm("Hey!!!"))
+            {
+                Admin.Invoice(id_user).then(function() {
+                    console.log("invoice - OK");
+                }).catch(function(error) {
+                    console.log("invoice - FAIL");
+                })
+            }
         };
 
         $scope.ForFun = function() {
