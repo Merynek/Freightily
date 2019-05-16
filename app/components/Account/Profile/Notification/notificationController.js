@@ -10,9 +10,11 @@ angular.module('appControllers')
         $scope.route = "account|notifi";
         var response = notificationResponse,
             notification = response.notification,
+            hasDailyNotification = response.hasDailyNotification,
             rendered = false;
 
         $scope.companies = response.companies;
+        $scope.dailyNotificationEnabled = hasDailyNotification;
 
         if (!Boolean(notification)) {
             $scope.setCompanies = [];
@@ -58,6 +60,13 @@ angular.module('appControllers')
             selector.change(function () {
                 $scope.notificationEnabled = $(this).prop('checked');
                 setNotification();
+            });
+
+            var selector_daily = $('#toggle-daily-notification');
+            selector_daily.bootstrapToggle();
+            selector_daily.change(function () {
+                $scope.dailyNotificationEnabled = $(this).prop('checked');
+                setDailyNotification();
             })
         };
 
@@ -67,6 +76,17 @@ angular.module('appControllers')
                     return  $scope.setCompanies.indexOf(value) === -1
                 }) :
                 $scope.companies;
+        }
+
+        function setDailyNotification() {
+            var data = {
+                enable: $scope.dailyNotificationEnabled
+            };
+            UserAbility.setDailyNotification(data).then(function () {
+                message(1, $filter('i18next')("success.notification_set"));
+            }).catch(function (error) {
+                message(3, $filter('i18next')(getErrorKeyByCode(error)));
+            })
         }
 
         function setNotification() {

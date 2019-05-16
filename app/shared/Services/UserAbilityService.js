@@ -202,6 +202,43 @@ angular.module('appServices')
             });
         };
 
+        /* GET to REST api => get daily notification settings */
+        UserAbility.isSetDailyNotification = function() {
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: getTokenFromStorage(),
+                    url: url+'company/dailyNotification'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
+        /* POST to REST api => set daily notification settings*/
+        UserAbility.setDailyNotification = function(data){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    data: param(data),
+                    url: url+'company/dailyNotification'
+                }).then(function() {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* POST to REST api => send new password to email*/
 		UserAbility.sendNewPassword = function(data){
 			startLoading();

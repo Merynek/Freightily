@@ -294,8 +294,12 @@
 		},
 		"notification": {
 			"main": "Notification settings",
+			"daily_notification_title": "Daily auction overview",
+			"notification_title": "Notification of created auction",
 			"toggle": "Sending notifications: ",
+			"daily_toggle": "Sending daily overview: ",
 			"info": "The notification is used to send information messages after the auctions of selected companies have been created.",
+			"daily_info": "Sending auction overview every morning at 8:00 to your email.",
 			"toggleOn": "On",
 			"toggleOff": "Off",
 			"sender": "Companies for receiving notifications",

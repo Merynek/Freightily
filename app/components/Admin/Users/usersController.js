@@ -93,9 +93,9 @@ angular.module('appControllers')
 
         $scope.SendNews = function() {
             Admin.SendNewsEmail().then(function() {
-                console.log("sms - OK");
+                console.log("news - OK");
             }).catch(function(error) {
-                console.log("sms - FAIL");
+                console.log("news - FAIL");
             })
         };
 

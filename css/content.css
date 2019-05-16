@@ -938,8 +938,15 @@ hr.light {
     margin: 10px 0;
 }
 .notification-page .toggle-notification {
-    float: right;
     font-size: 16px;
+    display: block;
+}
+.notification-page .toggle-notification .notification-label {
+    min-width: 250px;
+}
+.notification-page .notification-content {
+    padding-left: 20px;
+    padding-bottom: 30px;
 }
 .notification-page .toggle{
     margin-left: 6px;
@@ -968,11 +975,8 @@ hr.light {
     width: 120px;
     text-align: right;
 }
-.notification-page .icon, .user-page .icon {
-    padding-right: 12px;
-}
 .notification-page .info-block {
-    padding: 12px 12px 24px;
+    padding: 12px 0 24px;
 }
 .notification-page .desktop-only {
     display: table-row;
@@ -1290,6 +1294,12 @@ hr.light {
     .notification-page .add-company {
         display: inline-block;
     }
+    .notification-page .info-block {
+        text-align: center;
+    }
+    .notification-page .wrapper h3 {
+        text-align: center;
+    }
 }
 
 @media (max-width: 500px) {
@@ -1371,5 +1381,11 @@ hr.light {
     }
     .auction-list-page .opener {
         border-right: none;
+    }
+    .notification-page .notification-content {
+        padding-left: 0;
+    }
+    .notification-page .notification-content .notification-item {
+        padding-left: 0;
     }
 }

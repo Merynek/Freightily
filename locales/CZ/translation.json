@@ -293,8 +293,12 @@
 		},
 		"notification": {
 			"main": "Nastavení notifikací",
+			"daily_notification_title": "Denní přehled",
+			"notification_title": "Notifikace při založení aukce",
 			"toggle": "Zasílání notifikací: ",
+			"daily_toggle": "Zasílání denního přehledu aukcí: ",
 			"info": "Notifikace slouží pro zasílání informačních zpráv po vytvoření aukcí vybraných firem.",
+			"daily_info": "Zásílání přehledu aukcí každé ráno v 8:00 na váš email.",
 			"toggleOn": "Zapnuto",
 			"toggleOff": "Vypnuto",
 			"sender": "Firmy pro obdržení notifikací",
