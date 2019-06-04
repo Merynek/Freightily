@@ -3,12 +3,6 @@
         <div class="tab" ui-sref="auction" ng-class="aboveRoute == 'auction' ? 'active' : null">
             {{'texts.tab.auction' | i18next}}
         </div>
-        <div class="tab" ui-sref="new_shipments" ng-class="aboveRoute == 'shipments' ? 'active' : null">
-            {{'texts.tab.shipments' | i18next}}
-        </div>
-        <div class="tab" ui-sref="company" ng-class="aboveRoute == 'company' ? 'active' : null">
-            {{'texts.tab.company' | i18next}}
-        </div>
         <div class="tab" ui-sref="account" ng-class="aboveRoute == 'account' ? 'active' : null">
             {{'texts.tab.account' | i18next}}
         </div>
@@ -35,26 +29,6 @@
         </div>
         <div class="tab" ui-sref="createdAuction" ng-class="underRoute == 'created' ? 'active' : null">
             {{'texts.tab.created' | i18next}}
-        </div>
-        <!--<div ng-show="underRoute == 'detail'" class="menu-divider"></div>-->
-        <!--<div ng-show="underRoute == 'detail'" class="tab active" ui-sref="detailAuction">-->
-            <!--{{'texts.auction.detail' | i18next}}-->
-        <!--</div>-->
-    </div>
-    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'shipments'">
-        <div class="tab"ui-sref="new_shipments" ng-class="underRoute == 'new' ? 'active' : null" >
-            {{'texts.tab.new' | i18next}}
-        </div>
-        <div class="tab"ui-sref="finished_shipments" ng-class="underRoute == 'finished' ? 'active' : null" >
-            {{'texts.tab.finished' | i18next}}
-        </div>
-    </div>
-    <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'company'">
-        <div class="tab" ui-sref="company" ng-class="underRoute == 'overview' ? 'active' : null">
-            {{'texts.tab.overview' | i18next}}
-        </div>
-        <div class="tab" ui-sref="add_driver" ng-class="underRoute == 'employee' ? 'active' : null">
-            {{'texts.tab.add_driver' | i18next}}
         </div>
     </div>
     <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'account'">

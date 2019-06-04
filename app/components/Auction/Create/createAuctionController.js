@@ -278,7 +278,7 @@ angular.module('appControllers')
             if (end_auction) {
                 var tempDate = new Date(auctionEndDate),
                     part1 = ("0" + tempDate.getDate()).slice(-2) + "." +
-                        ("0" + tempDate.getMonth()).slice(-2) + "." +
+                        ("0" +(tempDate.getMonth() + 1)).slice(-2) + "." +
                         tempDate.getFullYear(),
                     part2 = ("0" + tempDate.getHours()).slice(-2) + ":" + ("0" + tempDate.getMinutes()).slice(-2);
 
