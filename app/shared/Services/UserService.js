@@ -111,7 +111,10 @@ angular.module('appServices')
 		User.logout = function() {
 			return $q(function(resolve) {
                 User.set('isLoggedIn', false);
-                window.localStorage.clear();
+                window.localStorage.removeItem("access_token");
+                window.localStorage.removeItem("refresh_token");
+                window.localStorage.removeItem("time_refresh_token");
+
                 resolve();
 			});
 		};

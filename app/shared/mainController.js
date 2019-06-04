@@ -38,10 +38,12 @@ angular.module('appControllers')
         };
 
         $scope.ENlng = function () {
+            window.localStorage.setItem("language", 'EN');
             $i18next.options.lng = 'EN';
             $i18next.options.resGetPath = '../locales/EN/translation.json';
         };
         $scope.CZlng = function () {
+            window.localStorage.setItem("language", 'CZ');
             $i18next.options.lng = 'CZ';
             $i18next.options.resGetPath = '../locales/CZ/translation.json';
         };

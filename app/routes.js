@@ -1,13 +1,13 @@
 angular.module('myApp').config(function($stateProvider, $urlRouterProvider, $locationProvider, $i18nextProvider, $urlServiceProvider) {
 
-
+  var language = window.localStorage.getItem("language") || "CZ";
   // translations
 	$i18nextProvider.options = {
-		lng: 'CZ',
+		lng: language,
 		useCookie: false,
 		useLocalStorage: false,
 		fallbackLng: 'dev',
-		resGetPath: '../locales/CZ/translation.json',
+		resGetPath: '../locales/' + language + '/translation.json',
 		defaultLoadingValue: ''
 	};
 
