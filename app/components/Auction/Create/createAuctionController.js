@@ -222,7 +222,7 @@ angular.module('appControllers')
                 message(3, $filter('i18next')('errors.price_is_number'));
                 return false;
             }
-            if ($scope.auction.price < 50) {
+            if ($scope.auction.price < 1) {
                 price.addClass("input-error");
                 message(3, $filter('i18next')('errors.price_is_low'));
                 return false;
@@ -231,9 +231,18 @@ angular.module('appControllers')
 
             if (!$.isNumeric($scope.auction.quantity)) {
                 quantity.addClass("input-error");
-                message(3, quantity('i18next')('errors.quantity_is_number'));
+                message(3, $filter('i18next')('errors.quantity_is_number'));
                 return false;
             }
+            quantity.removeClass("input-error");
+
+            if (($scope.auction.quantity * $scope.auction.price) < 50) {
+                price.addClass("input-error");
+                quantity.addClass("input-error");
+                message(3, $filter('i18next')('errors.total_price_is_low'));
+                return false;
+            }
+            price.removeClass("input-error");
             quantity.removeClass("input-error");
 
             return true;
