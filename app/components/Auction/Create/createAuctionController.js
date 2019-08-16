@@ -108,12 +108,14 @@ angular.module('appControllers')
             city: "",
             street: "",
             rest: "",
+            psc: "",
             state: "cs"
         };
         $scope.full_adress_to = {
             city: "",
             street: "",
             rest: "",
+            psc: "",
             state: "cs"
         };
 
@@ -121,12 +123,14 @@ angular.module('appControllers')
             var address = "";
 
             address += addressObj.city;
-            address += ", ";
+            address += " ";
             address += addressObj.street;
             address += " ";
             address += addressObj.rest;
             address += ", ";
-            address += $filter('i18next')('texts.auction.state.' + addressObj.state);
+            address += addressObj.psc;
+            /*address += ", ";
+            address += $filter('i18next')('texts.auction.state.' + addressObj.state);*/
 
             return address;
         }
@@ -201,7 +205,9 @@ angular.module('appControllers')
         }
 
         function numberFieldsIsValid() {
-            var freight_weight = $("#freight_weight"),
+            var address_from_psc = $("#address_from_psc"),
+                address_to_psc = $("#address_to_psc"),
+                freight_weight = $("#freight_weight"),
                 quantity = $("#quantity"),
                 price = $("#price");
 
@@ -228,6 +234,20 @@ angular.module('appControllers')
                 return false;
             }
             price.removeClass("input-error");
+
+            if (!$.isNumeric($scope.full_adress_to.psc)) {
+                address_to_psc.addClass("input-error");
+                message(3, $filter('i18next')('errors.psc_is_number'));
+                return false;
+            }
+            address_to_psc.removeClass("input-error");
+
+            if (!$.isNumeric($scope.full_adress_from.psc)) {
+                address_from_psc.addClass("input-error");
+                message(3, $filter('i18next')('errors.psc_is_number'));
+                return false;
+            }
+            address_from_psc.removeClass("input-error");
 
             if (!$.isNumeric($scope.auction.quantity)) {
                 quantity.addClass("input-error");
@@ -459,11 +479,13 @@ angular.module('appControllers')
             $scope.full_adress_from.city = fullFrom.city;
             $scope.full_adress_from.street = fullFrom.street;
             $scope.full_adress_from.rest = fullFrom.rest;
+            $scope.full_adress_from.psc = fullFrom.psc;
             $("#state-from").val(fullFrom.state);
 
             $scope.full_adress_to.city = fullTo.city;
             $scope.full_adress_to.street = fullTo.street;
             $scope.full_adress_to.rest = fullTo.rest;
+            $scope.full_adress_to.psc = fullTo.psc;
             $("#state-to").val(fullTo.state);
 
             $scope.auction.freight_description = template.freight.freight_description;
@@ -490,12 +512,14 @@ angular.module('appControllers')
                     city: "",
                     street: "",
                     rest: "",
+                    psc: "",
                     state: "cs"
                 }),
                 address_to: JSON.stringify({
                     city: "",
                     street: "",
                     rest: "",
+                    psc: "",
                     state: "cs"
                 }),
                 freight: {

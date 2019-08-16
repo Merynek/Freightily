@@ -216,6 +216,7 @@
 			"street": "Street",
 			"city": "City",
 			"rest": "AHN",
+			"psc": "ZIP",
 			"go_next": "Continue",
 			"state": {
 				"label": "State",

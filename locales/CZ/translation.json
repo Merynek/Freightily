@@ -216,6 +216,7 @@
 			"street": "Ulice",
 			"city": "Město",
 			"rest": "čp.",
+			"psc": "PSČ",
 			"go_next": "Pokračovat",
 			"state": {
 				"label": "Stát",

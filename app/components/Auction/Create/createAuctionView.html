@@ -37,8 +37,11 @@
                 <div class="form-group address-2">
                   <input class="form-control my-input required" placeholder="{{'texts.auction.rest' | i18next}}" ng-model="full_adress_from.rest" />
                 </div>
-                <div class="form-group">
+                <div class="form-group address-1">
                   <input class="form-control my-input required" placeholder="{{'texts.auction.city' | i18next}}" ng-model="full_adress_from.city" />
+                </div>
+                <div class="form-group address-2">
+                  <input class="form-control my-input required" placeholder="{{'texts.auction.psc' | i18next}}" ng-model="full_adress_from.psc"  id="address_from_psc" />
                 </div>
                 <div class="form-group">
                   <select class="form-control my-input required" ng-model="full_adress_from.state" id="state-from">
@@ -65,8 +68,11 @@
                 <div class="form-group address-2">
                   <input class="form-control my-input required" placeholder="{{'texts.auction.rest' | i18next}}" ng-model="full_adress_to.rest" />
                 </div>
-                <div class="form-group">
+                <div class="form-group address-1">
                   <input class="form-control my-input required" placeholder="{{'texts.auction.city' | i18next}}" ng-model="full_adress_to.city" />
+                </div>
+                <div class="form-group address-2">
+                  <input class="form-control my-input required" placeholder="{{'texts.auction.psc' | i18next}}" ng-model="full_adress_to.psc" id="address_to_psc"/>
                 </div>
                 <div class="form-group">
                   <select class="form-control my-input required" ng-model="full_adress_to.state" id="state-to">
