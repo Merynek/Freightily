@@ -131,6 +131,21 @@ $urlServiceProvider.config.strictMode(false);
                  }
              }
 		 })
+		 .state('usersActivities', {
+			 url: "/admin/usersActivities",
+			 controller: 'usersActivitiesController',
+			 templateUrl: "app/components/Admin/UsersActivities/usersActivitiesView.html",
+			 data: {
+				 role: [99]
+			 },
+			 resolve: {
+				 usersActivities: function(Admin) {
+					 return Admin.getUserActivities().then(function(res){
+						 return res;
+					 })
+				 }
+			 }
+		 })
 		 .state('map', {
 			 url: "/admin/map",
 			 controller: 'mapController',

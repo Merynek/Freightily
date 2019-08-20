@@ -156,14 +156,14 @@ angular.module('appServices')
             });
         };
 
-            /* GET to REST api => Get Drivers position */
-            Admin.GetDriversPosition = function(){
+            /* GET to REST api => Get user activities*/
+            Admin.getUserActivities = function(){
                 startLoading();
-                return $q(function(resolve, reject) {
+                return $q(function(resolve, reject){
                     $http({
                         method: 'GET',
                         headers: getTokenFromStorage(),
-                        url: CONFIG.server.url+'admin/drivers_position'
+                        url: CONFIG.server.url+'admin/usersActivities'
                     }).then(function(response) {
                         endLoading();
                         resolve(response.data);

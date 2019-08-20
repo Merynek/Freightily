@@ -10,11 +10,6 @@ angular.module('appControllers')
         function($scope, Admin, User, $filter) {
             $scope.route = "admin|map";
             $scope.drivers = [];
-            Admin.GetDriversPosition().then(function(drivers) {
-                $scope.ShowDrivers(drivers);
-            }).catch(function(error) {
-                message(3, $filter('i18next')(getErrorKeyByCode(error)));
-            });
 
             $scope.ShowDrivers = function (drivers) {
                 initMap(drivers);

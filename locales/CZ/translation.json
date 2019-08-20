@@ -92,6 +92,7 @@
 		"expired_auction": "Ukončené aukce",
         "admin": "Administrace",
         "users": "Uživatelé",
+		"users_activities": "Uživatelská aktivita",
 		"bid_auction_modal_title": "Jste si jistý?",
 		"delete_auction_template": "Jste si jistý?",
 		"bid_auction_modal_text": "Vámi zvolená částka je: ",
@@ -150,7 +151,8 @@
 			"created": "Vytvořené",
 			"create_auction": "Vytvořit Aukci",
             "users": "Uživatelé",
-			"map": "Mapa řidičů"
+			"map": "Mapa řidičů",
+			"activities": "Aktivity"
 		},
 		"auction": {
 			"tooltips": {
