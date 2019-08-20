@@ -8,8 +8,12 @@
 angular.module('appControllers')
     .controller('usersActivitiesController', ['$scope', 'usersActivities',
     function($scope, usersActivities) {
-        $scope.usersActivities = usersActivities;
         $scope.route = "admin|activities";
+
+        $scope.sendersActivities = [];
+        $scope.transportersActivities = [];
+        $scope.bothActivities = [];
+        $scope.unknownActivities = [];
 
         $scope.getLastBidDate = function(activity) {
             if (activity.last_bidded_auction_id) {
@@ -24,6 +28,37 @@ angular.module('appControllers')
             }
             return "";
         };
+
+        for (var i = 0; i < usersActivities.length; i++) {
+            var activity = usersActivities[i],
+                lastBidDate = $scope.getLastBidDate(activity),
+                lastCreateDate = $scope.getLastCreatedDate(activity);
+
+            if (lastBidDate && lastCreateDate) {
+                $scope.bothActivities.push(activity);
+                continue;
+            }
+            if (lastBidDate) {
+                activity.diff = getDiff(activity.last_bidded_auction_date);
+                $scope.transportersActivities.push(activity);
+                continue;
+            }
+            if (lastCreateDate) {
+                activity.diff = getDiff(activity.last_created_auction_date);
+                $scope.sendersActivities.push(activity);
+                continue;
+            }
+            $scope.unknownActivities.push(activity);
+        }
+        $scope.sendersActivities.sort(sort);
+        $scope.transportersActivities.sort(sort);
+
+        function sort(a,  b) {
+            if (a.diff > b.diff) {
+                return 1;
+            }
+            return -1
+        }
 
         function createPrettyDate(auction_date) {
             var date = new Date(auction_date);

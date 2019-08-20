@@ -1,20 +1,72 @@
 <m param="{route}">
     <h1>{{'texts.admin' | i18next}}</h1>
     <div class="col-md-12">
-        <h2>{{'texts.users_activities' | i18next}}</h2>
-        <table ng-if="usersActivities.length" class="table table-striped table-responsive user-list">
+        <h2>Transporters</h2>
+        <table ng-if="transportersActivities.length" class="table table-striped table-responsive user-list">
+            <tr>
+                <th>Username</th>
+                <th>Last bidded</th>
+            </tr>
+            <tr class="item" ng-repeat="activity in transportersActivities">
+                <td>{{activity.user.username}}</td>
+                <td>{{getLastBidDate(activity)}}</td>
+            </tr>
+        </table>
+        <div ng-if="!transportersActivities.length" class="text-center text-info">
+            No users
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>Senders</h2>
+        <table ng-if="sendersActivities.length" class="table table-striped table-responsive user-list">
+            <tr>
+                <th>Username</th>
+                <th>Last created</th>
+                <th>Credit (share)</th>
+            </tr>
+            <tr class="item" ng-repeat="activity in sendersActivities">
+                <td>{{activity.user.username}}</td>
+                <td>{{getLastCreatedDate(activity)}}</td>
+                <td>{{activity.user.credit}}({{activity.user.share}})</td>
+            </tr>
+        </table>
+        <div ng-if="!sendersActivities.length" class="text-center text-info">
+            No users
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>Both</h2>
+        <table ng-if="bothActivities.length" class="table table-striped table-responsive user-list">
             <tr>
                 <th>Username</th>
                 <th>Last created</th>
                 <th>Last bidded</th>
             </tr>
-            <tr class="item" ng-repeat="activity in usersActivities">
+            <tr class="item" ng-repeat="activity in bothActivities">
                 <td>{{activity.user.username}}</td>
                 <td>{{getLastCreatedDate(activity)}}</td>
                 <td>{{getLastBidDate(activity)}}</td>
             </tr>
         </table>
-        <div ng-if="!usersActivities.length" class="text-center text-info">
+        <div ng-if="!bothActivities.length" class="text-center text-info">
+            No users
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>Unknown</h2>
+        <table ng-if="unknownActivities.length" class="table table-striped table-responsive user-list">
+            <tr>
+                <th>Username</th>
+                <th>Last created</th>
+                <th>Last bidded</th>
+            </tr>
+            <tr class="item" ng-repeat="activity in unknownActivities">
+                <td>{{activity.user.username}}</td>
+                <td>{{getLastCreatedDate(activity)}}</td>
+                <td>{{getLastBidDate(activity)}}</td>
+            </tr>
+        </table>
+        <div ng-if="!unknownActivities.length" class="text-center text-info">
             No users
         </div>
     </div>
