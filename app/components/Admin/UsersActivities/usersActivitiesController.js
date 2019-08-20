@@ -81,9 +81,9 @@ angular.module('appControllers')
         function isToday(someDate) {
             var today = new Date();
 
-            return someDate.getDate() == today.getDate() &&
-                someDate.getMonth() == today.getMonth() &&
-                someDate.getFullYear() == today.getFullYear()
+            return someDate.getDate() === today.getDate() &&
+                someDate.getMonth() === today.getMonth() &&
+                someDate.getFullYear() === today.getFullYear();
         }
     }
 ]);
