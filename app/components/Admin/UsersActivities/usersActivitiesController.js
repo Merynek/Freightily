@@ -67,23 +67,18 @@ angular.module('appControllers')
         }
 
         function getDiff(auction_date) {
-            var today = new Date(),
-                date1 = new Date(auction_date),
-                timeDiff = date1.getTime() - today.getTime();
+            var a = new Date(),
+                b = new Date(auction_date);
 
-            if (isToday(date1)) {
-                return 0;
-            }
-
-            return Math.ceil(timeDiff / (1000 * 3600 * 24));
+            return dateDiffInDays(a, b);
         }
 
-        function isToday(someDate) {
-            var today = new Date();
+        function dateDiffInDays(a, b) {
+            var utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate()),
+                utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()),
+                _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-            return someDate.getDate() === today.getDate() &&
-                someDate.getMonth() === today.getMonth() &&
-                someDate.getFullYear() === today.getFullYear();
+            return Math.floor((utc2 - utc1) / _MS_PER_DAY);
         }
     }
 ]);
