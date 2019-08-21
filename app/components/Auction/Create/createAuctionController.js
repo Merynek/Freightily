@@ -123,7 +123,7 @@ angular.module('appControllers')
             var address = "";
 
             address += addressObj.city;
-            address += " ";
+            address += ", ";
             address += addressObj.street;
             address += " ";
             address += addressObj.rest;
