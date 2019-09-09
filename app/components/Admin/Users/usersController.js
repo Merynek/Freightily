@@ -110,6 +110,17 @@ angular.module('appControllers')
             }
         };
 
+        $scope.Invoices = function() {
+            if (confirm("Hey!!!"))
+            {
+                Admin.Invoices().then(function() {
+                    console.log("invoices - OK");
+                }).catch(function(error) {
+                    console.log("invoices - FAIL");
+                })
+            }
+        };
+
         $scope.ForFun = function() {
             var i,
                 count = 0,

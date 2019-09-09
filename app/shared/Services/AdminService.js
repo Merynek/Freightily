@@ -138,6 +138,24 @@ angular.module('appServices')
             });
         };
 
+        /* POST to REST api => send Invoices*/
+        Admin.Invoices = function(){
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'admin/sendInvoices'
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
         /* PUT to REST api => send News Email*/
         Admin.SendNewsEmail = function(){
             startLoading();
