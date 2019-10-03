@@ -12,6 +12,7 @@
 		"date": "Date",
 		"amount": "Amount",
 		"no_amounts": "No amounts",
+		"conditions": "Terms conditions and GDPR",
 		"accept_conditions_1": "I agree with ",
 		"accept_conditions_2": "terms and conditions and GDPR.",
 		"bid": "Bid",

@@ -27,7 +27,7 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.42",
     "geocomplete": "^1.7.0",
     "google-closure-compiler": "^20181210.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-connect": "~3.2.1",
     "i18next": "~2.4.0",
     "i18next-client": "~1.11.4",

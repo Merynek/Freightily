@@ -1,19 +1,19 @@
 var gulp = require('gulp');
-var connect = require('gulp-connect')
+var connect = require('gulp-connect');
 var app             = {};
 app.files           = 'app';
 app.components   = 'app/components/**/*.js';
 app.componentsTemplates = 'app/components/**/*.html';
 
-gulp.task('default',['server']);
-
 gulp.task('server', function() {
-  	connect.server({
-  	port: 9005,
-  	host: 'localhost',
-	fallback: 'index.html'
-	});
+    connect.server({
+        port: 9005,
+        host: 'localhost',
+        fallback: 'index.html'
+    });
 });
+
+gulp.task('default', gulp.parallel('server'));
 
 const closureCompiler = require('google-closure-compiler').gulp();
 
