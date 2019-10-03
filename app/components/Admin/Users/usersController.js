@@ -110,6 +110,19 @@ angular.module('appControllers')
             }
         };
 
+        $scope.Reminde = function(id_user) {
+            var invoice_number = $("#invoice_number").val();
+
+            if (invoice_number && confirm("Hey Reminde !!!"))
+            {
+                Admin.Reminde(id_user, invoice_number).then(function() {
+                    console.log("reminde - OK");
+                }).catch(function(error) {
+                    console.log("reminde - FAIL");
+                })
+            }
+        };
+
         $scope.Invoices = function() {
             if (confirm("Hey!!!"))
             {

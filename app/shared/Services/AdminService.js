@@ -138,6 +138,29 @@ angular.module('appServices')
             });
         };
 
+        /* POST to REST api => send Reminde*/
+        Admin.Reminde = function(id_user, invoice_number){
+            startLoading();
+            var parameters = "?";
+
+            parameters += "id_user=" + id_user;
+            parameters += "&invoice_number=" + invoice_number;
+
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'POST',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'admin/sendReminde'+parameters
+                }).then(function(response) {
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
         /* POST to REST api => send Invoices*/
         Admin.Invoices = function(){
             startLoading();
