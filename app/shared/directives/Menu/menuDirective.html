@@ -44,6 +44,9 @@
         <div class="tab" ui-sref="finances" ng-class="underRoute == 'finance' ? 'active' : null">
             {{'texts.tab.finances' | i18next}}
         </div>
+         <div class="tab" ui-sref="invoices" ng-class="underRoute == 'invoices' ? 'active' : null">
+            {{'texts.tab.invoices' | i18next}}
+        </div>
     </div>
 </span>
 <span ng-if="user.isAdmin()">

@@ -87,6 +87,21 @@ $urlServiceProvider.config.strictMode(false);
 				 }
 			 }
 		 })
+		 .state('invoices', {
+			 url: "/account/invoices",
+			 controller: 'invoicesController',
+			 templateUrl: "app/components/Account/Profile/Invoices/invoicesView.html",
+			 data: {
+				 role: [1]
+			 },
+			 resolve: {
+				 invoices: function(UserAbility){
+					 return UserAbility.getInvoices().then(function(res){
+						 return res;
+					 })
+				 }
+			 }
+		 })
 		 .state('change_password', {
 			 url: "/account/change_password",
 			 controller: 'changePasswordController',
