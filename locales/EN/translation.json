@@ -41,7 +41,8 @@
 			"not_paid": "Not paid",
 			"amount": "Amount",
 			"currency": "CZK",
-			"warning_message": "You have unpaid invoices"
+			"warning_message": "You have unpaid invoices",
+			"no_invoices": "Žádné dostupné faktury..."
 		},
 		"finances": {
 			"title": "Overview of finances",
