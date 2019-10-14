@@ -10,7 +10,8 @@ angular.module('appServices')
 			username: "",
 			ID: "",
 			role: "",
-			roleName : ""
+			roleName : "",
+            hasNotPaidInvoice: false
 		};
 
 		//role:  1-sender 99-admin
@@ -32,6 +33,24 @@ angular.module('appServices')
 
         User.isDriver = function(){
             return User.role === 2;
+        };
+
+        User.isPaid = function() {
+            startLoading();
+            return $q(function(resolve, reject) {
+                $http({
+                    method: 'GET',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'company/checkNotPaidInvoices'
+                }).then(function(response) {
+                    User.set("hasNotPaidInvoice", response.data);
+                    endLoading();
+                    resolve();
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
         };
 
 		/* POST to REST api => Login */ 

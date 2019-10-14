@@ -32,7 +32,16 @@
 		"confirmPassword": "Confirm password",
 		"company_name" : "Company name",
 		"invoices": {
-			"title": "Invoices"
+			"title": "Invoices",
+			"invoice_number":  "Invoice number",
+			"due_date": "Due date",
+			"state": "State",
+			"download": "Download",
+			"paid": "Paid",
+			"not_paid": "Not paid",
+			"amount": "Amount",
+			"currency": "CZK",
+			"warning_message": "You have unpaid invoices"
 		},
 		"finances": {
 			"title": "Overview of finances",

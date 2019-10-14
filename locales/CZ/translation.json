@@ -32,7 +32,16 @@
 		"confirmPassword": "Potvrzení hesla",
 		"company_name" : "Název firmy",
 		"invoices": {
-			"title": "Faktury"
+			"title": "Faktury",
+			"invoice_number":  "Číslo faktury",
+			"due_date": "Datum splatnosti",
+			"state": "Stav",
+			"download": "Stáhnout",
+			"paid": "Zaplaceno",
+			"not_paid": "Nezaplaceno",
+			"amount": "Částka",
+			"currency": "Kč",
+			"warning_message": "Máte nezaplacené faktury"
 		},
 		"finances": {
 			"title": "Přehled financí",

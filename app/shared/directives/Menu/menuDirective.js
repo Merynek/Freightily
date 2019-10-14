@@ -12,6 +12,7 @@ angular.module('appDirectives')
                 $scope.aboveRoute = route.split("|")[0];
                 $scope.underRoute = route.split("|")[1];
                 $scope.user = User;
+                User.isPaid();
             }
         };
     });

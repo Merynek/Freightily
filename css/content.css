@@ -868,6 +868,27 @@
     margin: 0 auto;
     padding-top: 90px;
 }
+/*Invoices*/
+.invoices .download-text {
+    text-align: right;
+    cursor: pointer;
+    color: #2c2d51;
+    font-weight: bold;
+}
+.invoices .download-text:hover {
+    text-decoration: underline;
+}
+.invoices .download-text .glyphicon{
+    color: #2c2d51;
+}
+.invoices .paid {
+    color: green;
+    font-weight: bold;
+}
+.invoices .not-paid {
+    color: red;
+    font-weight: bold;
+}
 /*User page*/
 .user-page .table th {
     vertical-align: middle;

@@ -127,6 +127,25 @@ angular.module('appServices')
             });
         };
 
+        /* GET to REST api => Get invoice print */
+        UserAbility.getInvoicePrint = function(id){
+            startLoading();
+            return $q(function(resolve, reject){
+                $http({
+                    method: 'GET',
+                    headers: getTokenFromStorage(),
+                    url: CONFIG.server.url+'company/printInvoice/'+id,
+                    responseType: 'arraybuffer'
+                }).then(function(response) {
+                    endLoading();
+                    resolve(response.data);
+                }).catch(function(error){
+                    endLoading();
+                    reject(error);
+                })
+            });
+        };
+
 		/* GET to REST api => get info about user */
 		UserAbility.getAccountInfo = function(){
 			startLoading();

@@ -181,6 +181,16 @@ p {
     padding-right: 0;
     padding-left: 0;
 }
+.tab.warning {
+    float: right;
+    width: 230px;
+    max-width: 300px;
+    margin-top: 3px;
+    color: red;
+}
+.tab.warning .icon {
+    padding-right: 7px;
+}
 
 .desktop-only {
     display: block;
@@ -237,6 +247,9 @@ p {
         padding-left: 0;
         text-align: center;
     }
+    .menu-tabs .tab.warning {
+        float: none;
+    }
     .my-button {
         margin-right: 0;
     }
@@ -258,6 +271,9 @@ p {
     .menu-tabs .tab {
         min-width: unset;
         width: 20%;
+    }
+    .menu-tabs .tab.warning {
+        width: 56%;
     }
     .heading-right {
         float: none;
@@ -291,6 +307,10 @@ p {
     .menu-vertical .tab {
         width: 48%;
     }
+    .menu-tabs .tab {
+        padding: 10px 0;
+        margin: -1px 0;
+    }
 }
 
 @media (max-width: 500px) {
@@ -307,10 +327,6 @@ p {
 
 @media (max-width: 380px) {
     /* MENU */
-    .menu-tabs .tab {
-        padding: 10px 0;
-        margin: -1px 4px;
-    }
     .menu-tabs .tab.active {
         padding: 12px 0;
     }
