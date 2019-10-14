@@ -7,7 +7,7 @@
             {{'texts.tab.account' | i18next}}
         </div>
         <div ng-show="user.hasNotPaidInvoice" class="tab warning" ui-sref="invoices" ng-class="aboveRoute == 'invoices' ? 'active' : null">
-            <span class="glyphicon glyphicon-exclamation-sign icon"></span><span>{{'texts.invoices.warning_message' | i18next}}</span>
+            <span class="glyphicon glyphicon-exclamation-sign icon"></span><span class="text">{{'texts.invoices.warning_message' | i18next}}</span>
         </div>
     </div>
     <div class="menu-vertical col-md-2" ng-if="aboveRoute == 'auction'">

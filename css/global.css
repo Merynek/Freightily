@@ -191,6 +191,9 @@ p {
 .tab.warning .icon {
     padding-right: 7px;
 }
+.tab.warning .text {
+    vertical-align: text-bottom;
+}
 
 .desktop-only {
     display: block;
