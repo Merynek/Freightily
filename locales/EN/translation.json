@@ -42,7 +42,7 @@
 			"amount": "Amount",
 			"currency": "CZK",
 			"warning_message": "You have unpaid invoices",
-			"no_invoices": "Žádné dostupné faktury..."
+			"no_invoices": "No invoices..."
 		},
 		"finances": {
 			"title": "Overview of finances",
