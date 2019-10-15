@@ -42,7 +42,7 @@
 			"amount": "Částka",
 			"currency": "Kč",
 			"warning_message": "Máte nezaplacené faktury",
-            "no_invoices": "No invoices..."
+            "no_invoices": "Žádné faktury..."
 		},
 		"finances": {
 			"title": "Přehled financí",
