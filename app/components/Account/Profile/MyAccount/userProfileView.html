@@ -11,6 +11,10 @@
             <td>{{userInfo.username}}</td>
           </tr>
           <tr>
+            <th>{{'texts.email' | i18next}}:</th>
+            <td>{{userInfo.email}}</td>
+          </tr>
+          <tr>
             <th>{{'texts.address_city' | i18next}}:</th>
             <td>{{userInfo.address_city}}</td>
           </tr>
@@ -33,12 +37,6 @@
             <tr>
               <td colspan="2">
                 <hr class="light">
-              </td>
-            </tr>
-            <tr>
-              <td>{{'texts.email' | i18next}}:</td>
-              <td>
-                <input type="text" id="email" name="email" class="form-control my-input" placeholder="{{'texts.email' | i18next}}" ng-model="userInfo.email"/>
               </td>
             </tr>
             <tr>

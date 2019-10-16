@@ -13,18 +13,11 @@ angular.module('appControllers')
         $scope.setInfo = function () {
             var phone_number = $(".user-page #phone_number"),
                 company_name = $(".user-page #company_name"),
-                email = $(".user-page #email"),
                 data;
 
             phone_number.removeClass("input-error");
             company_name.removeClass("input-error");
-            email.removeClass("input-error");
 
-            if (!validateEmail($scope.userInfo.email)) {
-                message(3, $filter('i18next')('errors.wrong_email'));
-                email.addClass("input-error");
-                return;
-            }
             if($scope.userInfo.phone_number.length < 9) {
                 message(3, $filter('i18next')('errors.phone_number_must_me_greater_none'));
                 phone_number.addClass("input-error");
@@ -38,7 +31,6 @@ angular.module('appControllers')
 
             data = {
                 phone_number: $scope.userInfo.phone_number,
-                email: $scope.userInfo.email,
                 company_name: $scope.userInfo.company_name
             };
 
