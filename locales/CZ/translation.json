@@ -339,7 +339,9 @@
 			"42": "Registrace se nezdařila, zkontrolujte platnost emailu.",
 			"43": "Uživatel není aktivován",
 			"44": "Aktivační kód nebyl nalezen",
-			"45": "Nemůžete sledovat více jak 3 firmy"
+			"45": "Nemůžete sledovat více jak 3 firmy",
+			"46": "Tato faktura nebyla nalezena",
+			"47": "Tato akce není povolena. Zkontrolujte si zda máte zaplacený registrační poplatek."
 		}
 	},
 	"warnings": {

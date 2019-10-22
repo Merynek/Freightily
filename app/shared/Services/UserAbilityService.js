@@ -135,7 +135,7 @@ angular.module('appServices')
                     method: 'GET',
                     headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'company/printInvoice/'+id,
-                    responseType: 'arraybuffer'
+                    responseType: 'blob'
                 }).then(function(response) {
                     endLoading();
                     resolve(response.data);

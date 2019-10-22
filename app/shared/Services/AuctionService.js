@@ -56,7 +56,7 @@ angular.module('appServices')
                     method: 'GET',
                     headers: getTokenFromStorage(),
                     url: CONFIG.server.url+'auction/print/'+id,
-                    responseType: 'arraybuffer'
+					responseType: 'blob'
                 }).then(function(response) {
                     endLoading();
                     resolve(response.data);

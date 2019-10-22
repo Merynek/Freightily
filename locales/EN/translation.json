@@ -339,7 +339,9 @@
 			"42": "Invalid email",
 			"43": "User is not active",
 			"44": "Activated code not found",
-			"45": "Cannot follow more than 3 companies"
+			"45": "Cannot follow more than 3 companies",
+			"46": "This invoice not found",
+			"47": "You cant use this action. Check if you have paid registration fee."
 		}
 	},
 	"warnings": {

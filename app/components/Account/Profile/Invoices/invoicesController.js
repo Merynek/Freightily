@@ -12,14 +12,9 @@ angular.module('appControllers')
         $scope.invoices = invoices;
         $scope.getPrintInvoice = function (id) {
             UserAbility.getInvoicePrint(id).then(function (data) {
-                var file = new Blob([data], {
-                    type: 'application/csv'
-                });
-                //trick to download store a file having its URL
-                var fileURL = URL.createObjectURL(file);
+                var fileURL = URL.createObjectURL(data);
                 var a = document.createElement('a');
                 a.href = fileURL;
-                a.target = '_blank';
                 a.download = 'invoice-' + id +'.pdf';
                 document.body.appendChild(a);
                 a.click();
