@@ -36,7 +36,7 @@
     "jquery-countdown": "^2.2.0",
     "jquery-simple-timer": "0.0.5",
     "lightbox2": "^2.10.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.15.1",
     "natives": "^1.1.6",
     "ng-dialog": "^1.4.0",
