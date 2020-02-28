@@ -32,7 +32,7 @@
     "i18next": "~2.4.0",
     "i18next-client": "~1.11.4",
     "jq-accordion": "~1.0.3",
-    "jquery": "~2.2.2",
+    "jquery": "~3.4.0",
     "jquery-countdown": "^2.2.0",
     "jquery-simple-timer": "0.0.5",
     "lightbox2": "^2.10.0",
