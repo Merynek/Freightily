@@ -13,9 +13,10 @@ angular.module('appControllers')
                 $scope.isAdmin = User.isAdmin();
                 return true;
             }
+            $scope.masterChange = "changgged";
             $scope.usernameMain = "";
             $scope.isAdmin = false;
-            return false;
+            return true;
         };
 
         $scope.resolveLogoClick = function () {
