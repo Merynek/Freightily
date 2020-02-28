@@ -11,6 +11,7 @@ angular.module('appDirectives')
                 var COUNT_OF_ITEMS_IN_PAGE = 15;
 
                 $scope.changeMaster1 = "asda";
+                $scope.changeMaster2 = "asda";
 
                 $scope.page = $stateParams.page ? $stateParams.page : "1";
                 $scope.pagesCount = Math.ceil($scope.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
