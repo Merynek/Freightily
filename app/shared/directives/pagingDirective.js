@@ -10,6 +10,8 @@ angular.module('appDirectives')
             controller: function ($scope, User, $stateParams, $state) {
                 var COUNT_OF_ITEMS_IN_PAGE = 15;
 
+                $scope.changeMaster1 = "asda";
+
                 $scope.page = $stateParams.page ? $stateParams.page : "1";
                 $scope.pagesCount = Math.ceil($scope.allItemsCount / COUNT_OF_ITEMS_IN_PAGE) || 1;
                 $scope.isLastPage = (Number($scope.page) * COUNT_OF_ITEMS_IN_PAGE) >= $scope.allItemsCount;
