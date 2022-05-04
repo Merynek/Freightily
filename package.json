@@ -14,7 +14,7 @@
   "license": "BSD",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
-    "angular": "~1.7.5",
+    "angular": "~1.8.3",
     "angular-sanitize": "^1.7.5",
     "angular-ui-router": "~1.0.20",
     "angularjs-tooltips": "^1.0.5",
