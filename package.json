@@ -37,7 +37,7 @@
     "jquery-simple-timer": "0.0.5",
     "lightbox2": "^2.10.0",
     "lodash": "^4.17.11",
-    "moment": "^2.15.1",
+    "moment": "^2.29.4",
     "natives": "^1.1.6",
     "ng-dialog": "^1.4.0",
     "ng-i18next": "~0.5.2",
