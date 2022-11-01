@@ -41,7 +41,7 @@
     "natives": "^1.1.6",
     "ng-dialog": "^1.4.0",
     "ng-i18next": "~0.5.2",
-    "protractor": "~3.2.2",
+    "protractor": "~7.0.0",
     "restangular": "~1.5.2"
   }
 }
