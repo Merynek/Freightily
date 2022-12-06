@@ -28,7 +28,7 @@
     "geocomplete": "^1.7.0",
     "google-closure-compiler": "^20181210.0.0",
     "gulp": "^4.0.2",
-    "gulp-connect": "~3.2.1",
+    "gulp-connect": "~5.7.0",
     "i18next": "~2.4.0",
     "i18next-client": "~1.11.4",
     "jq-accordion": "~1.0.3",
@@ -41,7 +41,7 @@
     "natives": "^1.1.6",
     "ng-dialog": "^1.4.0",
     "ng-i18next": "~0.5.2",
-    "protractor": "~3.2.2",
+    "protractor": "~7.0.0",
     "restangular": "~1.5.2"
   }
 }
